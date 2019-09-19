@@ -1,0 +1,172 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#page23" gr:x="340" gr:y="1120" name="Active Items" landmark="true">
+  <ContentUnits>
+    <ProcessUnit id="sv4#page23#pu44" name="Processes" gr:x="174" gr:y="300" mode="info">
+      <Link id="sv4#page23#pu44#ln241" name="Link30" to="sv4#page23#pwu13" type="transport" validate="true">
+        <LinkParameter id="sv4#page23#pu44#ln241#par158" name="Managed Process Oids_RoleCondition19 [oid]" source="managedProcessOids" target="sv4#page23#pwu13#su64#rcond31.processOid"/>
+      </Link>
+      <Link id="sv4#page23#pu44#ln242" name="Link98" to="sv4#page23#seu24" automaticCoupling="true" type="transport" validate="true"/>
+    </ProcessUnit>
+    <GetUnit id="sv4#page23#gtu10" name="CurrentUser" gr:x="274" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv4#page23#gtu10#ln243" name="Link35" to="sv4#page23#pwu13" type="transport" validate="true">
+        <LinkParameter id="sv4#page23#gtu10#ln243#par186" name="UserCtxParam.oid_involvedUser [oid]" source="sv4#page23#gtu10.UserCtxParam" target="sv4#page23#pwu13#su64#rcond30.userOID"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit id="sv4#page23#seu24" name="Processes" gr:x="280" gr:y="293" entity="Process">
+      <Selector id="sv4#page23#seu24#su60" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#page23#seu24#su60#kcond37" name="oids" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#page23#seu24#ln244" name="Link110" to="sv4#page23#enu18" type="transport" validate="true">
+        <LinkParameter id="sv4#page23#seu24#ln244#par187" name="name_Process [label]" source="processNameArray" target="sv4#page23#enu18#sfld17_label"/>
+        <LinkParameter id="sv4#page23#seu24#ln244#par188" name="oid_Process [output]" source="processOidArray" target="sv4#page23#enu18#sfld17_output"/>
+      </Link>
+      <Link id="sv4#page23#seu24#ln245" name="Link84" to="sv4#page23#seu25" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
+    <EntryUnit id="sv4#page23#enu18" name="Search" gr:x="285" gr:y="124" fieldOrder="sv4#page23#enu18#sfld17 sv4#page23#enu18#sfld18 sv4#page23#enu18#sfld19 sv4#page23#enu18#sfld20 sv4#page23#enu18#fld24 sv4#page23#enu18#fld25" linkOrder="sv4#page23#enu18#ln247">
+      <SelectionField id="sv4#page23#enu18#sfld17" name="Process" type="string"/>
+      <Link id="sv4#page23#enu18#ln246" name="Search" to="sv4#page23#pwu13" type="transport" validate="true">
+        <LinkParameter id="sv4#page23#enu18#ln246#par189" name="Process_process [oid]" source="sv4#page23#enu18#sfld17" target="sv4#page23#pwu13#su64#rcond32.processOid"/>
+        <LinkParameter id="sv4#page23#enu18#ln246#par190" name="Activity Ready Since From_activeSinceFrom" source="sv4#page23#enu18#fld24" target="sv4#page23#pwu13#su64#acond32"/>
+        <LinkParameter id="sv4#page23#enu18#ln246#par191" name="Group_involvedGroup [oid]" source="sv4#page23#enu18#sfld19" target="sv4#page23#pwu13#su64#rcond33.groupOID"/>
+        <LinkParameter id="sv4#page23#enu18#ln246#par192" name="Status_activityFilterStatus" source="sv4#page23#enu18#sfld20" target="sv4#page23#pwu13#su64#acond34"/>
+        <LinkParameter id="sv4#page23#enu18#ln246#par193" name="User_involvedFilterUser [oid]" source="sv4#page23#enu18#sfld18" target="sv4#page23#pwu13#su64#rcond34.userOID"/>
+      </Link>
+      <Field id="sv4#page23#enu18#fld24" name="From Date" type="date" modifiable="true"/>
+      <Field id="sv4#page23#enu18#fld25" name="To Date" type="date" modifiable="true"/>
+      <SelectionField id="sv4#page23#enu18#sfld18" name="User" type="string"/>
+      <SelectionField id="sv4#page23#enu18#sfld19" name="Group" type="string"/>
+      <SelectionField id="sv4#page23#enu18#sfld20" name="Status" type="string">
+        <Slot id="sv4#page23#enu18#sfld20#slot11" name="values" label="true" output="true" value="ready|active"/>
+      </SelectionField>
+      <Link id="sv4#page23#enu18#ln247" name="Search" to="sv4#page23#tmu10" type="normal" validate="true">
+        <LinkParameter id="sv4#page23#enu18#ln247#par202" name="To Date_Input Date" source="sv4#page23#enu18#fld25" target="sv4#page23#tmu10.date"/>
+      </Link>
+    </EntryUnit>
+    <DataUnit id="sv4#page23#dau10" name="Item Details" gr:x="51" gr:y="300" entity="ActivityInstance" displayAttributes="activityInstanceProcessInstanceName activityInstanceName activityInstanceGroupName activityInstanceStatus activityInstanceReadyTimestamp activityInstanceActiveTimestamp activityInstanceLastTimestamp">
+      <Selector id="sv4#page23#dau10#su61" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#page23#dau10#su61#kcond38" name="oid" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <SelectorUnit id="sv4#page23#seu25" gr:x="414" gr:y="293" name="Groups" entity="Group">
+      <Selector id="sv4#page23#seu25#su62" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#page23#seu25#su62#rcond28" name="RoleCondition19" predicate="in" implied="false" role="process2ActivityTypes.activityType2Groups"/>
+      </Selector>
+      <Link id="sv4#page23#seu25#ln248" name="Link85" to="sv4#page23#seu26" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv4#page23#seu25#ln249" name="Link87" to="sv4#page23#enu18" type="transport" validate="true">
+        <LinkParameter id="sv4#page23#seu25#ln249#par203" name="groupName_Group [label]" source="groupNameArray" target="sv4#page23#enu18#sfld19_label"/>
+        <LinkParameter id="sv4#page23#seu25#ln249#par204" name="oid_Group [output]" source="groupOIDArray" target="sv4#page23#enu18#sfld19_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="sv4#page23#seu26" gr:x="434" gr:y="110" name="Users" entity="User">
+      <Selector id="sv4#page23#seu26#su63" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#page23#seu26#su63#rcond29" name="RoleCondition20" predicate="in" implied="false" role="Group2User"/>
+      </Selector>
+      <Link id="sv4#page23#seu26#ln250" name="Link86" to="sv4#page23#enu18" type="transport" validate="true">
+        <LinkParameter id="sv4#page23#seu26#ln250#par205" name="userName_User [label]" source="userNameArray" target="sv4#page23#enu18#sfld18_label"/>
+        <LinkParameter id="sv4#page23#seu26#ln250#par206" name="oid_User [output]" source="userOIDArray" target="sv4#page23#enu18#sfld18_output"/>
+      </Link>
+    </SelectorUnit>
+    <PowerIndexUnit id="sv4#page23#pwu13" entity="ActivityInstance" displayAttributes="activityInstanceProcessInstanceName activityInstanceProcessInstanceActiveSince activityInstanceName activityInstanceGroupName" sortable="false" checkable="false" useCountQuery="false" name="Active Items" linkOrder="sv4#page23#pwu13#ln252 sv4#page23#pwu13#ln251" gr:x="0" gr:y="37" blockFactor="10" blockWindow="5">
+      <SortAttribute attribute="activityInstanceOid" order="ascending"/>
+      <SortAttribute attribute="activityInstanceActiveTimestamp" order="ascending"/>
+      <Selector id="sv4#page23#pwu13#su64" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#page23#pwu13#su64#acond30" attributes="activityInstance2ProcessInstance.processInstanceStatus" predicate="eq" booleanOperator="or" value="active" implied="false" name="processActive"/>
+        <AttributesCondition id="sv4#page23#pwu13#su64#acond31" attributes="activityInstanceStatus" predicate="eq" booleanOperator="or" value="ready|active" implied="false" name="activityStatus" ignoreCase="true"/>
+        <AttributesCondition id="sv4#page23#pwu13#su64#acond32" attributes="activityInstanceActiveTimestamp activityInstanceReadyTimestamp" predicate="gteq" booleanOperator="or" implied="true" name="activeSinceFrom"/>
+        <AttributesCondition id="sv4#page23#pwu13#su64#acond33" attributes="activityInstanceReadyTimestamp activityInstanceActiveTimestamp" predicate="lteq" booleanOperator="or" implied="true" name="activeSinceTo"/>
+        <AttributesCondition id="sv4#page23#pwu13#su64#acond34" attributes="activityInstanceStatus" predicate="eq" booleanOperator="or" implied="true" name="activityFilterStatus" ignoreCase="true"/>
+        <RelationshipRoleCondition id="sv4#page23#pwu13#su64#rcond30" role="user2ActivityInstances.activityInstance2ProcessInstance.processInstance2ActivityInstances" predicate="in" implied="false" name="involvedUser"/>
+        <RelationshipRoleCondition id="sv4#page23#pwu13#su64#rcond31" role="process2ProcessInstances.processInstance2ActivityInstances" predicate="in" implied="false" name="managedProcesses"/>
+        <RelationshipRoleCondition id="sv4#page23#pwu13#su64#rcond32" role="process2ProcessInstances.processInstance2ActivityInstances" predicate="in" implied="true" name="process"/>
+        <RelationshipRoleCondition id="sv4#page23#pwu13#su64#rcond33" role="group2ActivityInstances.activityInstance2ProcessInstance.processInstance2ActivityInstances" predicate="in" implied="true" name="involvedGroup"/>
+        <RelationshipRoleCondition id="sv4#page23#pwu13#su64#rcond34" role="user2ActivityInstances.activityInstance2ProcessInstance.processInstance2ActivityInstances" predicate="in" implied="true" name="involvedFilterUser"/>
+      </Selector>
+      <Link id="sv4#page23#pwu13#ln251" name="diagram" to="sv4#page22#pdu5" type="normal" validate="true" newWindow="true">
+        <LinkParameter id="sv4#page23#pwu13#ln251#par207" name="processInstance.oid_Process Instance Oid" source="data[].activityInstance2ProcessInstance_processInstanceOid" target="sv4#page22#pdu5.processInstanceOid"/>
+      </Link>
+      <Link id="sv4#page23#pwu13#ln252" name="Details" to="sv4#page23#dau10" type="normal" automaticCoupling="true" validate="true" ajaxEnabled="true"/>
+    </PowerIndexUnit>
+    <TimeUnit id="sv4#page23#tmu10" gr:x="210" gr:y="215" name="NextDay">
+      <Link id="sv4#page23#tmu10#ln253" name="Link99" to="sv4#page23#pwu13" type="transport" validate="true">
+        <LinkParameter id="sv4#page23#tmu10#ln253#par210" name="Next Midnight Timestamp_activeSinceTo" source="nextMidnightTimestamp" target="sv4#page23#pwu13#su64#acond33"/>
+      </Link>
+    </TimeUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Grid containerType="cell">
+          <layout:Row>
+            <layout:Cell label="Active Items" layout:cellLayout="Print Frame">
+              <layout:Unit unitId="sv4#page23#enu18" layout:frameLayout="None">
+                <layout:Field field="sv4#page23#enu18#sfld17"/>
+                <layout:Field field="sv4#page23#enu18#sfld18"/>
+                <layout:Field field="sv4#page23#enu18#sfld19"/>
+                <layout:Field field="sv4#page23#enu18#sfld20"/>
+                <layout:Field field="sv4#page23#enu18#fld24"/>
+                <layout:Field field="sv4#page23#enu18#fld25"/>
+                <layout:Link link="sv4#page23#enu18#ln247"/>
+              </layout:Unit>
+              <layout:Unit unitId="sv4#page23#pwu13" layout:frameLayout="None">
+                <layout:LayoutParameter name="header-icon" value="active_process.png" type="frame"/>
+                <layout:Attribute attribute="activityInstanceProcessInstanceName" label="Process Name"/>
+                <layout:Attribute attribute="activityInstanceProcessInstanceActiveSince" label="Process Active Since"/>
+                <layout:Attribute attribute="activityInstanceName" label="Activity Name"/>
+                <layout:Attribute attribute="activityInstanceGroupName" label="Role"/>
+                <layout:Link link="sv4#page23#pwu13#ln252"/>
+                <layout:Link link="sv4#page23#pwu13#ln251" label="History Diagram">
+                  <layout:LayoutParameter name="show" value="icon" type="link"/>
+                </layout:Link>
+                <layout:Link link="sv4#page23#pwu13First"/>
+                <layout:Link link="sv4#page23#pwu13Previous"/>
+                <layout:Link link="sv4#page23#pwu13Block"/>
+                <layout:Link link="sv4#page23#pwu13Next"/>
+                <layout:Link link="sv4#page23#pwu13Last"/>
+                <layout:LayoutParameter name="use-alternate" value="true" type="unit"/>
+                <layout:LayoutParameter name="link-position" value="on_row" type="unit"/>
+                <layout:LayoutParameter name="use-empty-unit-message" value="true" type="unit"/>
+                <layout:LayoutParameter name="empty-unit-message" value="noItemsFound" type="unit"/>
+                <layout:LayoutParameter name="highlight" value="true" type="unit"/>
+              </layout:Unit>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page23#dau10">
+          <layout:Attribute attribute="activityInstanceProcessInstanceName" label="Process Instance Name"/>
+          <layout:Attribute attribute="activityInstanceName" label="Activity Name"/>
+          <layout:Attribute attribute="activityInstanceGroupName" label="Role"/>
+          <layout:Attribute attribute="activityInstanceStatus" label="Status"/>
+          <layout:Attribute attribute="activityInstanceReadyTimestamp" layout:attributeLayout="WRDefault/Duration" label="Ready Since"/>
+          <layout:Attribute attribute="activityInstanceActiveTimestamp" layout:attributeLayout="WRDefault/Duration" label="Active Since"/>
+          <layout:Attribute attribute="activityInstanceLastTimestamp" label="Worked At"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+</Page>

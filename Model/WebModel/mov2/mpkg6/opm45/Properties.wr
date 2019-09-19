@@ -1,0 +1,107 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="155" gr:y="5" id="mov2#mpkg6#opm45" name="llenarDatosPF">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg6#opm45#icu49" gr:x="-320" gr:y="45">
+      <InputCollectorParameter id="mov2#mpkg6#opm45#icu49#icp74" name="rfc"/>
+      <InputCollectorParameter id="mov2#mpkg6#opm45#icu49#icp73" name="curp"/>
+      <Link id="mov2#mpkg6#opm45#icu49#ln292" name="OKFlow535" to="mov2#mpkg6#opm45#seu87" type="transport" gr:bendpoints="131,-63,-424,-63;452,-60,-103,-60">
+        <LinkParameter id="mov2#mpkg6#opm45#icu49#ln292#par1995" name="curp_PASSING" source="mov2#mpkg6#opm45#icu49#icp73" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm45#icu49#ln292#par1996" name="rfc_rfc" source="mov2#mpkg6#opm45#icu49#icp74" target="mov2#mpkg6#opm45#seu87#su177#acond101"/>
+        <LinkParameter id="mov2#mpkg6#opm45#icu49#ln292#par1997" name="rfc_PASSING" source="mov2#mpkg6#opm45#icu49#icp74" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm45#icu49#ln292#par1998" name="curp_curp" source="mov2#mpkg6#opm45#icu49#icp73" target="mov2#mpkg6#opm45#seu87#su177#acond103"/>
+      </Link>
+      <OKLink id="mov2#mpkg6#opm45#icu49#oln541" name="OKFlow541" to="mov2#mpkg6#opm45#inn30">
+        <LinkParameter id="mov2#mpkg6#opm45#icu49#oln541#par1999" name="oid_Input" source="mov2#mpkg6#opm45#icu49#icp75" target="mov2#mpkg6#opm45#inn30.isnotnull"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#mpkg6#opm45#icu49#icp75" name="oid"/>
+    </InputCollectorUnit>
+    <ModuleInstanceUnit gr:x="635" gr:y="65" id="mov2#mpkg6#opm45#miu59" action="true" moduleId="mov2#opm5">
+      <OKLink id="mov2#mpkg6#opm45#miu59#oln538" name="OKFlow538" to="mov2#mpkg6#opm45#miu60">
+        <LinkParameter id="mov2#mpkg6#opm45#miu59#oln538#par1952" name="rAnio_PASSING" source="mov2#opm5#okcu1#ocp8" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu59#oln538#par1953" name="rAp1_PASSING" source="mov2#opm5#okcu1#ocp4" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu59#oln538#par1954" name="rAp2_PASSING" source="mov2#opm5#okcu1#ocp5" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu59#oln538#par1955" name="rCurp_PASSING" source="mov2#opm5#okcu1#ocp9" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu59#oln538#par1956" name="rDia_PASSING" source="mov2#opm5#okcu1#ocp6" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu59#oln538#par1958" name="rMes_PASSING" source="mov2#opm5#okcu1#ocp7" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu59#oln538#par1959" name="rNombres_PASSING" source="mov2#opm5#okcu1#ocp1" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu59#oln538#par1988" name="rFechaNacimiento_PASSING" source="mov2#opm5#okcu1#ocp67" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu59#oln538#par1989" name="rNacionalidad_PASSING" source="mov2#opm5#okcu1#ocp66" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu59#oln538#par1990" name="rSexo_PASSING" source="mov2#opm5#okcu1#ocp65" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu59#oln538#par2007" name="RFC_PASSING_rfc" sourceLinkParameter="mov2#mpkg6#opm45#inn25#oln537#par2006" target="mov2#mpkg6#opm45#miu60.mov2#opm9#icu16#icp20"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg6#opm45#miu59#kln251" name="KOFlow251" to="mov2#mpkg6#opm45#kocu38" gr:bendpoints="46,135,-719,-10">
+        <LinkParameter id="mov2#mpkg6#opm45#miu59#kln251#par1805" name="mensaje_msj" source="mov2#opm5#kocu1#ocp10" target="mov2#mpkg6#opm45#kocu38#ocp64"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="920" gr:y="65" id="mov2#mpkg6#opm45#miu60" action="true" moduleId="mov2#opm9">
+      <KOLink id="mov2#mpkg6#opm45#miu60#kln250" name="KOFlow250" to="mov2#mpkg6#opm45#kocu38" gr:bendpoints="26,136,-469,-9">
+        <LinkParameter id="mov2#mpkg6#opm45#miu60#kln250#par1806" name="mensaje_msj" source="mov2#opm9#kocu5#ocp21" target="mov2#mpkg6#opm45#kocu38#ocp64"/>
+      </KOLink>
+      <OKLink id="mov2#mpkg6#opm45#miu60#oln540" name="OKFlow540" to="mov2#mpkg6#opm45#mfu6">
+        <LinkParameter id="mov2#mpkg6#opm45#miu60#oln540#par1960" name="rAnio_PASSING_anioNac" sourceLinkParameter="mov2#mpkg6#opm45#miu59#oln538#par1952" target="mov2#mpkg6#opm45#mfu6.ent39#att259"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu60#oln540#par1961" name="rAp1_PASSING_apellido1" sourceLinkParameter="mov2#mpkg6#opm45#miu59#oln538#par1953" target="mov2#mpkg6#opm45#mfu6.ent39#att271"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu60#oln540#par1962" name="rAp2_PASSING_apellido2" sourceLinkParameter="mov2#mpkg6#opm45#miu59#oln538#par1954" target="mov2#mpkg6#opm45#mfu6.ent39#att270"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu60#oln540#par1963" name="rDia_PASSING_diaNac" sourceLinkParameter="mov2#mpkg6#opm45#miu59#oln538#par1956" target="mov2#mpkg6#opm45#mfu6.ent39#att261"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu60#oln540#par1964" name="rMes_PASSING_mesNac" sourceLinkParameter="mov2#mpkg6#opm45#miu59#oln538#par1958" target="mov2#mpkg6#opm45#mfu6.ent39#att260"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu60#oln540#par1965" name="rNombres_PASSING_nombre" sourceLinkParameter="mov2#mpkg6#opm45#miu59#oln538#par1959" target="mov2#mpkg6#opm45#mfu6.ent39#att272"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu60#oln540#par1991" name="sEmail_email" source="mov2#opm9#okcu3#ocp72" target="mov2#mpkg6#opm45#mfu6.email"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu60#oln540#par1992" name="sEstatus_PFactivo" source="mov2#opm9#okcu3#ocp70" target="mov2#mpkg6#opm45#mfu6.ent39#att262"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu60#oln540#par1993" name="rNacionalidad_PASSING_PFnacionalidad" sourceLinkParameter="mov2#mpkg6#opm45#miu59#oln538#par1989" target="mov2#mpkg6#opm45#mfu6.ent39#att265"/>
+        <LinkParameter id="mov2#mpkg6#opm45#miu60#oln540#par1994" name="rSexo_PASSING_PFsexo" sourceLinkParameter="mov2#mpkg6#opm45#miu59#oln538#par1990" target="mov2#mpkg6#opm45#mfu6.ent39#att267"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <SelectorUnit gr:x="310" gr:y="50" id="mov2#mpkg6#opm45#seu87" name="consultarPF" entity="ent39" linkOrder="mov2#mpkg6#opm45#seu87#ln291">
+      <Selector id="mov2#mpkg6#opm45#seu87#su177" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg6#opm45#seu87#su177#acond101" name="rfc" predicate="eq" booleanOperator="or" implied="false" attributes="ent39#att268"/>
+        <AttributesCondition id="mov2#mpkg6#opm45#seu87#su177#acond103" name="curp" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <OKLink id="mov2#mpkg6#opm45#seu87#oln536" name="OKFlow536" to="mov2#mpkg6#opm45#inn25">
+        <LinkParameter id="mov2#mpkg6#opm45#seu87#oln536#par1946" name="oid_Input" source="userOIDArray" target="mov2#mpkg6#opm45#inn25.isnotnull"/>
+        <LinkParameter id="mov2#mpkg6#opm45#seu87#oln536#par2003" name="RFC_PASSING" source="ent39#att268Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm45#seu87#oln536#par2004" name="userName_PASSING" source="userNameArray" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg6#opm45#seu87#kln253" name="KOFlow253" to="mov2#mpkg6#opm45#kocu38" gr:bendpoints="52,144,-1098,-1">
+        <LinkParameter id="mov2#mpkg6#opm45#seu87#kln253#par1798" name="Error al obtener los datos de la Persona._msj" sourceValue="Error al obtener los datos de la Persona." target="mov2#mpkg6#opm45#kocu38#ocp64"/>
+      </KOLink>
+      <Link id="mov2#mpkg6#opm45#seu87#ln291" name="Flow291" to="mov2#mpkg6#opm45#mfu6" type="transport" validate="true" gr:bendpoints="102,-61,-773,-61;760,-60,-115,-60">
+        <LinkParameter id="mov2#mpkg6#opm45#seu87#ln291#par1945" name="oid_KeyCondition93 [oid]" source="userOIDArray" target="mov2#mpkg6#opm45#mfu6#su180#kcond93.userOID"/>
+      </Link>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="475" gr:y="70" id="mov2#mpkg6#opm45#inn25" name="&#191;ExistePF?" emptyStringAsNull="true">
+      <OKLink id="mov2#mpkg6#opm45#inn25#oln537" name="OKFlow537" to="mov2#mpkg6#opm45#miu59">
+        <LinkParameter id="mov2#mpkg6#opm45#inn25#oln537#par2005" name="userName_PASSING_curp" sourceLinkParameter="mov2#mpkg6#opm45#seu87#oln536#par2004" target="mov2#mpkg6#opm45#miu59.mov2#opm5#icu10#icp1"/>
+        <LinkParameter id="mov2#mpkg6#opm45#inn25#oln537#par2006" name="RFC_PASSING" sourceLinkParameter="mov2#mpkg6#opm45#seu87#oln536#par2003" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg6#opm45#inn25#kln252" name="KOFlow252" to="mov2#mpkg6#opm45#kocu38" gr:bendpoints="41,137,-949,-8">
+        <LinkParameter id="mov2#mpkg6#opm45#inn25#kln252#par1804" name="La persona que intenta llenar no existe en la base de datos._msj" sourceValue="La persona que intenta llenar no existe en la base de datos." target="mov2#mpkg6#opm45#kocu38#ocp64"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <OKCollectorUnit gr:x="1400" gr:y="60" id="mov2#mpkg6#opm45#okcu26" name="OK"/>
+    <KOCollectorUnit gr:x="1400" gr:y="205" id="mov2#mpkg6#opm45#kocu38" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg6#opm45#kocu38#ocp64" name="msj"/>
+    </KOCollectorUnit>
+    <ModifyUnit gr:x="1185" gr:y="55" id="mov2#mpkg6#opm45#mfu6" name="actualizarPF" entity="ent39">
+      <Selector id="mov2#mpkg6#opm45#mfu6#su180" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg6#opm45#mfu6#su180#kcond93" name="KeyCondition93" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg6#opm45#mfu6#oln539" name="OKFlow539" to="mov2#mpkg6#opm45#okcu26" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg6#opm45#mfu6#kln249" name="KOFlow249" to="mov2#mpkg6#opm45#kocu38" gr:bendpoints="59,139,-216,-6">
+        <LinkParameter id="mov2#mpkg6#opm45#mfu6#kln249#par1812" name="Error al actualizar los datos de la persona._msj" sourceValue="Error al actualizar los datos de la persona." target="mov2#mpkg6#opm45#kocu38#ocp64"/>
+      </KOLink>
+    </ModifyUnit>
+    <IsNotNullUnit gr:x="-20" gr:y="70" id="mov2#mpkg6#opm45#inn30" name="&#191;ExisteOID?" emptyStringAsNull="true">
+      <OKLink id="mov2#mpkg6#opm45#inn30#oln542" name="OKFlow542" to="mov2#mpkg6#opm45#seu89">
+        <LinkParameter id="mov2#mpkg6#opm45#inn30#oln542#par2001" name="Input Value_KeyCondition94 [oid]" source="inputValue" target="mov2#mpkg6#opm45#seu89#su181#kcond94.userOID"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg6#opm45#inn30#kln254" name="KOFlow254" to="mov2#mpkg6#opm45#seu87" automaticCoupling="true" gr:bendpoints="74,60,-256,60;231,60,-99,60"/>
+    </IsNotNullUnit>
+    <SelectorUnit gr:x="145" gr:y="55" id="mov2#mpkg6#opm45#seu89" name="buscarRFC" entity="ent39">
+      <OKLink id="mov2#mpkg6#opm45#seu89#oln543" name="OKFlow543" to="mov2#mpkg6#opm45#seu87" automaticCoupling="true"/>
+      <Selector id="mov2#mpkg6#opm45#seu89#su181" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg6#opm45#seu89#su181#kcond94" name="KeyCondition94" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov2#mpkg6#opm45#seu89#kln255" name="KOFlow255" to="mov2#mpkg6#opm45#kocu38" gr:bendpoints="33,148,-1287,3">
+        <LinkParameter id="mov2#mpkg6#opm45#seu89#kln255#par1797" name="Error al obtener los datos de la Persona._msj" sourceValue="Error al obtener los datos de la Persona." target="mov2#mpkg6#opm45#kocu38#ocp64"/>
+      </KOLink>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,378 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym27#page59" name="Carga por fomulario" gr:x="25" gr:y="40" localized="true" layout:frameLayout="None" ignoreMasterPage="false">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym27#page59#enu88" name="Buttons" gr:x="540" gr:y="115" linkOrder="mov1#hym27#page59#enu88#ln596 mov1#hym27#page59#enu88#ln598 mov1#hym27#page59#enu88#ln597">
+      <Link id="mov1#hym27#page59#enu88#ln596" name="Finish" type="normal" validate="true" to="mov1#hym27#apu82" gr:bendpoints="112,-52,-108,99"/>
+      <Link id="mov1#hym27#page59#enu88#ln597" name="Save and Work Later" type="normal" validate="false" automaticCoupling="false" to="mov1#hym27#apu82" gr:bendpoints="164,-32,-64,96"/>
+      <Link id="mov1#hym27#page59#enu88#ln598" name="Cancel" type="normal" validate="false" automaticCoupling="false" to="mov1#hym27#pu87"/>
+    </EntryUnit>
+    <EntryUnit id="mov1#hym27#page59#enu128" name="Sociedad" gr:x="125" gr:y="295">
+      <Field id="mov1#hym27#page59#enu128#fld225" name="sociedadEEE" type="string" modifiable="true" preloaded="true"/>
+      <Field id="mov1#hym27#page59#enu128#fld226" name="sociedadDenominacion" type="string" modifiable="false" preloaded="true">
+        <VRules/>
+      </Field>
+      <Field id="mov1#hym27#page59#enu128#fld227" name="sociedadFME" type="string" modifiable="true" preloaded="true"/>
+      <Field id="mov1#hym27#page59#enu128#fld26" name="proceso" type="string" modifiable="true" preloaded="true" hidden="true"/>
+      <Field id="mov1#hym27#page59#enu128#fld34" name="instrumentoNumero" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym27#page59#enu128#fld86" name="instrumentoVolumen" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym27#page59#enu128#fld87" name="instrumentoFecha" type="date" modifiable="false" preloaded="true">
+        <VRules/>
+      </Field>
+      <Field id="mov1#hym27#page59#enu128#fld90" name="instrumentoLibro" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym27#page59#enu128#fld126" name="nombre" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym27#page59#enu128#fld127" name="numero" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym27#page59#enu128#fld149" name="primerApellido" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym27#page59#enu128#fld150" name="segundoApellido" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym27#page59#enu128#fld151" type="string" modifiable="false" name="estado" preloaded="true"/>
+      <Field id="mov1#hym27#page59#enu128#fld152" type="string" modifiable="false" name="municipio" preloaded="true"/>
+      <Field id="mov1#hym27#page59#enu128#fld383" name="denominacion" type="string" modifiable="true" preloaded="true"/>
+      <Field id="mov1#hym27#page59#enu128#fld128" name="iodPM" type="string" modifiable="false" preloaded="true"/>
+      <Link id="mov1#hym27#page59#enu128#ln1003" name="Flow1003" to="mov1#hym27#apu78" type="transport" validate="true">
+        <LinkParameter id="mov1#hym27#page59#enu128#ln1003#par3046" name="iodPM_denominacion" source="mov1#hym27#page59#enu128#fld128" target="mov1#hym27#apu78#ap38"/>
+      </Link>
+      <Link id="mov1#hym27#page59#enu128#ln1008" name="Flow1008" to="mov1#hym27#page59#apu80" type="transport" validate="true">
+        <LinkParameter id="mov1#hym27#page59#enu128#ln1008#par3063" name="iodPM_PASSING" source="mov1#hym27#page59#enu128#fld128" passing="true"/>
+      </Link>
+      <Link id="mov1#hym27#page59#enu128#ln1023" name="Flow1023" to="mov1#hym27#apu82" type="transport" validate="true" gr:bendpoints="222,-226,-443,20"/>
+    </EntryUnit>
+    <MultiMessageUnit id="mov1#hym27#page59#mssu28" name="Advertencia" gr:x="0" gr:y="0"/>
+    <EntryUnit id="mov1#hym27#page59#enu135" name="tituloPoderesPorInstrumento" gr:x="480" gr:y="210">
+      <Field id="mov1#hym27#page59#enu135#fld289" name="titulo" type="string" modifiable="false" contentType="text/html" preloaded="true">
+        <Slot id="mov1#hym27#page59#enu135#fld289#slot37" name="titulo" label="true" output="true" value="&lt;h2&gt;Instrumento&lt;/h2&gt;&lt;hr class=&quot;red&quot;&gt;"/>
+      </Field>
+    </EntryUnit>
+    <NoOpContentUnit gr:x="270" gr:y="315" id="mov1#hym27#page59#gctu3" name="modalPoder"/>
+    <HierarchicalIndexUnit id="mov1#hym27#page59#hinu7" name="Hierarchy4" gr:x="385" gr:y="320" sortable="false" entity="ent39" levelOrder="mov1#hym27#page59#hinu7#hiulvl8 mov1#hym27#page59#hinu7#hiulvl9" displayAttributes="userName ent39#att268 ent39#att272 ent39#att271 ent39#att270" blockWindow="10">
+      <HierarchicalIndexLevel id="mov1#hym27#page59#hinu7#hiulvl8" name="Level3" entity="ent64" displayAttributes="ent64#att404 ent64#att405" role="rel34#role67">
+        <Selector id="mov1#hym27#page59#hinu7#hiulvl8#su273" defaultPolicy="fill" booleanOperator="and">
+          <RelationshipRoleCondition id="mov1#hym27#page59#hinu7#hiulvl8#su273#rcond160" name="RoleCondition187" predicate="in" implied="false" role="rel42#role84"/>
+        </Selector>
+      </HierarchicalIndexLevel>
+      <Selector id="mov1#hym27#page59#hinu7#su296" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym27#page59#hinu7#su296#kcond132" name="iodPF" predicate="in" implied="false"/>
+      </Selector>
+      <HierarchicalIndexLevel id="mov1#hym27#page59#hinu7#hiulvl9" name="Level6" entity="ent77" role="rel62#role123" displayAttributes="ent77#att479">
+        <Selector id="mov1#hym27#page59#hinu7#hiulvl9#su297" defaultPolicy="fill" booleanOperator="and">
+          <RelationshipRoleCondition id="mov1#hym27#page59#hinu7#hiulvl9#su297#rcond162" name="RoleCondition189" predicate="in" implied="false" role="rel62#role123"/>
+          <RelationshipRoleCondition id="mov1#hym27#page59#hinu7#hiulvl9#su297#rcond168" name="RoleCondition194" predicate="in" implied="false" role="rel63#role125"/>
+        </Selector>
+      </HierarchicalIndexLevel>
+    </HierarchicalIndexUnit>
+    <ActivityParametersUnit gr:x="35" gr:y="75" id="mov1#hym27#page59#apu80" name="Get Parameters"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym27#page59#mssu28" layout:frameLayout="None">
+          <layout:LayoutParameter name="messageType" value="danger" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8" layout:cellLayout="Print Frame">
+        <layout:Grid containerType="grid" label="Sociedad">
+          <layout:Row>
+            <layout:Cell colspan="6">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld225">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="6">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld227">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld34">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld86">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld90">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld87">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld126">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld149">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld150">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld127">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld151">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld152">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld226" styleClass="rfcPM">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12">
+              <layout:Field unitId="mov1#hym27#page59#enu128" mode="full" field="mov1#hym27#page59#enu128#fld128" layout:fieldVisibilityConditionVariable="mov1#hym27#page59#var83"/>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym27#page59#gctu3" layout:frameLayout="gobmxStyle/modalPoder"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym27#page59#hinu7">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="ent39#att268"/>
+          <layout:Attribute attribute="ent39#att272"/>
+          <layout:Attribute attribute="ent39#att271"/>
+          <layout:Attribute attribute="ent39#att270"/>
+          <layout:Attribute attribute="ent64#att404"/>
+          <layout:Attribute attribute="ent64#att405"/>
+          <layout:Attribute attribute="ent77#att479"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8" label="Buttons" layout:cellLayout="Print Frame">
+        <layout:Unit unitId="mov1#hym27#page59#enu88" layout:frameLayout="None" manualLinks="true" manualLinkOrder="mov1#hym27#page59#enu88#ln596 mov1#hym27#page59#enu88#ln598">
+          <layout:Link link="mov1#hym27#page59#enu88#ln596" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+            <layout:LayoutParameter name="confirmation" value="false" type="link"/>
+            <layout:LayoutParameter name="confirm-message" value="Confirm Finish" type="link"/>
+          </layout:Link>
+          <layout:Link link="mov1#hym27#page59#enu88#ln598" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+  <layout:LayoutParameter name="show-breadcrumb" value="true" type="page"/>
+  <layout:LayoutParameter name="auto-refresh" value="true" type="page"/>
+  <Variable id="mov1#hym27#page59#var83" name="ocultarDenominacion" type="boolean" value="false"/>
+  <Variable id="mov1#hym27#page59#var91" name="mostrarOID" type="boolean" value="true"/>
+</Page>

@@ -1,0 +1,99 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#page124" name="Tipo de Fianza" landmark="false" localized="true" layout:pageLayout="gobmxStyle/landingFianzas" layout:frameLayout="None" gr:x="-3750" gr:y="510">
+  <ContentUnits>
+    <IndexUnit id="sv4#page124#inu24" name="Lista Tipo de Fianzas" linkOrder="sv4#page124#inu24#ln1369" gr:x="0" gr:y="0" entity="ent80" displayAttributes="ent80#att498 ent80#att499 rel57#role113.ent81#att502">
+      <Link id="sv4#page124#inu24#ln1369" name="Cambiar" to="sv4#seu325" type="normal" validate="true" newWindow="false">
+        <LinkParameter id="sv4#page124#inu24#ln1369#par4268" name="oiTidpoFianza_PASSING" source="data[].ent80#att496" passing="true"/>
+      </Link>
+    </IndexUnit>
+    <EntryUnit id="sv4#page124#enu171" name="f" linkOrder="sv4#page124#enu171#ln1372" gr:x="5" gr:y="90">
+      <Link id="sv4#page124#enu171#ln1372" name="Agregar" to="sv4#seu329" type="normal" automaticCoupling="true" validate="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page124#inu24">
+          <layout:Link link="sv4#page124#inu24#ln1369"/>
+          <layout:Attribute attribute="ent80#att498"/>
+          <layout:Attribute attribute="ent80#att499"/>
+          <layout:Attribute attribute="rel57#role113.ent81#att502"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell layout:cellLayout="Print Frame" colspan="12">
+        <layout:Grid label="f" containerType="grid">
+          <layout:Row>
+            <layout:Cell colspan="9"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="3">
+              <layout:Link unitId="sv4#page124#enu171" link="sv4#page124#enu171#ln1372">
+                <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+              </layout:Link>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+</Page>

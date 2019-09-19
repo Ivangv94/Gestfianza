@@ -1,0 +1,36 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym37#page114" name="Enviar a firmar al Notario" gr:x="10" gr:y="-5">
+  <ContentUnits>
+    <ActivityParametersUnit id="mov1#hym37#page114#apu58" name="Get Parameters" gr:x="0" gr:y="0"/>
+    <EntryUnit id="mov1#hym37#page114#enu151" name="Buttons" gr:x="260" gr:y="165">
+      <Link id="mov1#hym37#page114#enu151#ln774" name="Finish" type="normal" validate="true" automaticCoupling="false" to="mov1#hym37#apu53"/>
+      <Link id="mov1#hym37#page114#enu151#ln775" name="Save and Work Later" type="normal" validate="false" automaticCoupling="false" to="mov1#hym37#apu53" gr:bendpoints="164,-32,-64,96"/>
+      <Link id="mov1#hym37#page114#enu151#ln776" name="Cancel" type="normal" validate="false" automaticCoupling="false" to="mov1#hym37#pu140"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12" label="Buttons" layout:cellLayout="Print Frame">
+        <layout:Unit unitId="mov1#hym37#page114#enu151" layout:frameLayout="None">
+          <layout:Link link="mov1#hym37#page114#enu151#ln774">
+            <layout:LayoutParameter name="confirmation" value="true" type="link"/>
+            <layout:LayoutParameter name="confirm-message" value="Confirm Finish" type="link"/>
+          </layout:Link>
+          <layout:Link link="mov1#hym37#page114#enu151#ln775"/>
+          <layout:Link link="mov1#hym37#page114#enu151#ln776"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="auto-refresh" value="true" type="page"/>
+</Page>

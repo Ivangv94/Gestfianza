@@ -1,0 +1,48 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1125" gr:y="-430" id="sv2#page65" name="Agregar Tipo de Sociedades">
+  <ContentUnits>
+    <EntryUnit gr:x="25" gr:y="0" id="sv2#page65#enu157" name="Cargar excel" linkOrder="sv2#page65#enu157#ln998">
+      <Field id="sv2#page65#enu157#fld397" name="archivo" type="blob" modifiable="true"/>
+      <Link id="sv2#page65#enu157#ln998" name="agregar" to="sv2#exu5" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true" ajaxWaitingDialogMessage="Procesando...">
+        <LinkParameter id="sv2#page65#enu157#ln998#par3096" name="archivo_BLOB" source="sv2#page65#enu157#fld397" target="sv2#exu5.blob"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="0" gr:y="75" id="sv2#page65#mssu43" name="Message43"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page65#enu157">
+          <layout:Field field="sv2#page65#enu157#fld397"/>
+          <layout:Link link="sv2#page65#enu157#ln998"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page65#mssu43"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

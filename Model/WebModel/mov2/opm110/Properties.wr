@@ -1,0 +1,56 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-185" gr:y="1670" id="mov2#opm110" name="validaAccionistConSerie">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm110#icu150" gr:x="30" gr:y="60" linkOrder="mov2#opm110#icu150#ln1467 mov2#opm110#icu150#ln1468">
+      <InputCollectorParameter id="mov2#opm110#icu150#icp470" name="CurpAccionista"/>
+      <InputCollectorParameter id="mov2#opm110#icu150#icp471" name="serieOid"/>
+      <OKLink id="mov2#opm110#icu150#oln1444" name="OKFlow1444" to="mov2#opm110#seu317" automaticCoupling="true"/>
+      <Link id="mov2#opm110#icu150#ln1467" name="Flow1467" to="mov2#opm110#seu318" type="transport" validate="true" gr:bendpoints="125,64,-215,54;195,66,-145,56;249,66,-91,56">
+        <LinkParameter id="mov2#opm110#icu150#ln1467#par4805" name="CurpAccionista_AttCondition240" source="mov2#opm110#icu150#icp470" target="mov2#opm110#seu318#su510#acond240"/>
+      </Link>
+      <Link id="mov2#opm110#icu150#ln1468" name="Flow1468" to="mov2#opm110#seu319" type="transport" validate="true" gr:bendpoints="147,92,-418,87;303,97,-262,92;434,92,-131,87">
+        <LinkParameter id="mov2#opm110#icu150#ln1468#par4814" name="serieOid_RoleCondition313 [oid]" source="mov2#opm110#icu150#icp471" target="mov2#opm110#seu319#su511#rcond313.ent60#att389"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="290" gr:y="55" id="mov2#opm110#seu317" name="buscaParametro" entity="ent68">
+      <Selector id="mov2#opm110#seu317#su509" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm110#seu317#su509#acond239" name="AttCondition239" predicate="eq" booleanOperator="or" implied="false" attributes="ent68#att440"/>
+      </Selector>
+      <OKLink id="mov2#opm110#seu317#oln1445" name="OKFlow1445" to="mov2#opm110#seu318">
+        <LinkParameter id="mov2#opm110#seu317#oln1445#par4806" name="oidPM_RoleCondition311 [oid]" source="ent68#att441Array" target="mov2#opm110#seu318#su510#rcond311.userOID"/>
+      </OKLink>
+    </SelectorUnit>
+    <GetUnit gr:x="285" gr:y="-65" id="mov2#opm110#gtu71" name="Get71" contextParameters="UserCtxParam" linkOrder="mov2#opm110#gtu71#ln1466">
+      <Link id="mov2#opm110#gtu71#ln1466" name="Flow1466" to="mov2#opm110#seu317" type="transport" validate="true">
+        <LinkParameter id="mov2#opm110#gtu71#ln1466#par4804" name="UserCtxParam.oid_AttCondition239" source="mov2#opm110#gtu71.UserCtxParam" target="mov2#opm110#seu317#su509#acond239"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="475" gr:y="50" id="mov2#opm110#seu318" name="buscaAccionista" entity="ent39">
+      <Selector id="mov2#opm110#seu318#su510" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm110#seu318#su510#acond240" name="AttCondition240" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+        <RelationshipRoleCondition id="mov2#opm110#seu318#su510#rcond311" name="RoleCondition311" predicate="in" implied="false" role="rel20#role40"/>
+      </Selector>
+      <OKLink id="mov2#opm110#seu318#oln1446" name="OKFlow1446" to="mov2#opm110#seu319" automaticCoupling="true"/>
+    </SelectorUnit>
+    <SelectorUnit gr:x="640" gr:y="45" id="mov2#opm110#seu319" name="buscaAcciones" entity="ent61">
+      <Selector id="mov2#opm110#seu319#su511" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm110#seu319#su511#rcond312" name="RoleCondition312" predicate="in" implied="false" role="rel37#role74"/>
+        <RelationshipRoleCondition id="mov2#opm110#seu319#su511#rcond313" name="RoleCondition313" predicate="in" implied="false" role="rel33#role65"/>
+      </Selector>
+      <OKLink id="mov2#opm110#seu319#oln1447" name="OKFlow1447" to="mov2#opm110#inn67">
+        <LinkParameter id="mov2#opm110#seu319#oln1447#par4808" name="oid_Input" source="ent61#att393Array" target="mov2#opm110#inn67.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <OKCollectorUnit gr:x="1040" gr:y="-65" id="mov2#opm110#okcu117" name="OK Port117"/>
+    <KOCollectorUnit gr:x="1040" gr:y="75" id="mov2#opm110#kocu100" name="KO Port100">
+      <OutputCollectorParameter id="mov2#opm110#kocu100#ocp342" name="mensajeError"/>
+      <OutputCollectorParameter id="mov2#opm110#kocu100#ocp343" name="oid"/>
+    </KOCollectorUnit>
+    <IsNotNullUnit gr:x="830" gr:y="55" id="mov2#opm110#inn67" name="Is Not Null67">
+      <OKLink id="mov2#opm110#inn67#oln1448" name="OKFlow1448" to="mov2#opm110#kocu100">
+        <LinkParameter id="mov2#opm110#inn67#oln1448#par4809" name="El accionista ya fue registrado con la serie seleccionada._mensajeError" sourceValue="El accionista ya fue registrado con la serie seleccionada." target="mov2#opm110#kocu100#ocp342"/>
+        <LinkParameter id="mov2#opm110#inn67#oln1448#par4810" name="Input Value_oid" source="inputValue" target="mov2#opm110#kocu100#ocp343"/>
+      </OKLink>
+      <KOLink id="mov2#opm110#inn67#kln573" name="KOFlow573" to="mov2#opm110#okcu117" automaticCoupling="true"/>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

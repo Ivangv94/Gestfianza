@@ -1,0 +1,136 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym2" gr:x="2740" gr:y="-15" name="Modulo de SuperUsuario - SuperUsuario - Administrar Sistema" bpm:moduleType="activity" bpm:uuids="JKBD85VG_LSUK7T.JKCX77XY_DJ261R" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym2#icu1" name="Input" gr:x="-485" gr:y="55">
+      <OKLink id="mov1#hym2#icu1#oln19" name="OKLink" automaticCoupling="true" to="mov1#hym2#page26"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym2#pu47" name="Complete Activity" mode="completeActivity" gr:x="835" gr:y="-230"/>
+    <ProcessUnit id="mov1#hym2#pu48" name="Save Activity" mode="saveActivity" gr:x="870" gr:y="-145"/>
+    <ProcessUnit id="mov1#hym2#pu49" name="Leave Activity" mode="leaveActivity" gr:x="735" gr:y="-90"/>
+    <ActivityParametersUnit id="mov1#hym2#apu2" name="Set Parameters" gr:x="570" gr:y="-145">
+      <OKLink id="mov1#hym2#apu2#oln20" name="OKLink" automaticCoupling="false" to="mov1#hym2#pu47" codeRef="mov1#hym2#page26#enu21#ln265" gr:bendpoints="117,-50,-138,30"/>
+      <OKLink id="mov1#hym2#apu2#oln69" name="OKLink" automaticCoupling="false" to="mov1#hym2#pu48" codeRef="mov1#hym2#page26#enu21#ln266"/>
+      <OKLink id="mov1#hym2#apu2#oln255" name="OKFlow255" to="mov1#hym2#pu47" automaticCoupling="true" gr:bendpoints="124,-33,-121,62"/>
+    </ActivityParametersUnit>
+    <ModuleInstanceUnit gr:x="-235" gr:y="400" id="mov1#hym2#miu19" action="true" moduleId="mov2#mpkg3#opm13">
+      <KOLink id="mov1#hym2#miu19#kln130" name="KOFlow130" to="mov1#hym2#page26#mssu9" gr:bendpoints="39,-45,-451,65;61,-90,-429,20;399,-93,-91,17">
+        <LinkParameter id="mov1#hym2#miu19#kln130#par707" name="msj_Shown Messages" source="mov2#mpkg3#opm13#kocu4#ocp11" target="mov1#hym2#page26#mssu9.shownMessages"/>
+      </KOLink>
+      <OKLink id="mov1#hym2#miu19#oln200" name="OKFlow200" to="mov1#hym2#miu21" ajaxOpenWindow="true" ajaxWindowWidth="600" ajaxWindowHeight="250" ajaxWindowClosable="true" ajaxWindowModal="true" gr:bendpoints="151,46,-744,46;721,44,-174,44">
+        <LinkParameter id="mov1#hym2#miu19#oln200#par765" name="Se agrego al Fedatario correctamente._mensaje" sourceValue="Se agrego al Funcionario correctamente." target="mov1#hym2#miu21.mov2#hym10#icu29#icp89"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="660" gr:y="370" id="mov1#hym2#miu21" action="false" moduleId="mov2#hym10">
+      <KOLink id="mov1#hym2#miu21#kln17" name="KOFlow17" to="mov1#hym2#page26" automaticCoupling="true" gr:bendpoints="94,-10,739,300;155,-9,800,301;154,-101,799,209;-178,-157,432,228"/>
+      <OKLink id="mov1#hym2#miu21#oln254" name="OKFlow254" to="mov1#hym2#page26" automaticCoupling="true" gr:bendpoints="82,-77,732,233;-177,-105,433,280"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="40" gr:y="395" id="mov1#hym2#miu25" action="true" moduleId="mov2#mpkg3#opm14">
+      <OKLink id="mov1#hym2#miu25#oln253" name="OKFlow253" to="mov1#hym2#miu21" ajaxOpenWindow="true" ajaxWindowWidth="600" ajaxWindowHeight="250" ajaxWindowClosable="true" ajaxWindowModal="true">
+        <LinkParameter id="mov1#hym2#miu25#oln253#par766" name="Se revoco al Funcionario correctamente._mensaje" sourceValue="Se revoco al Funcionario correctamente." target="mov1#hym2#miu21.mov2#hym10#icu29#icp89"/>
+      </OKLink>
+      <KOLink id="mov1#hym2#miu25#kln141" name="KOFlow141" to="mov1#hym2#page26#mssu9" gr:bendpoints="52,-85,-173,25;145,-86,-80,24">
+        <LinkParameter id="mov1#hym2#miu25#kln141#par764" name="msj_Shown Messages" source="mov2#mpkg3#opm14#kocu9#ocp12" target="mov1#hym2#page26#mssu9.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ExcelUnit gr:x="-485" gr:y="150" id="mov1#hym2#exu1" name="Carga Archivo" mode="read" format="xls" sourceType="blob" useHeader="false" cellInfoOrder="mov1#hym2#exu1#ci1 mov1#hym2#exu1#ci2">
+      <CellInfo id="mov1#hym2#exu1#ci1" name="curp" type="string" preserveCellStyle="false" autoSizeColumn="true" column="A" rows="2:"/>
+      <CellInfo id="mov1#hym2#exu1#ci2" name="rfc" type="string" preserveCellStyle="false" autoSizeColumn="true" column="B" rows="2:"/>
+      <OKLink id="mov1#hym2#exu1#oln405" name="OKFlow405" to="mov1#hym2#lpu1">
+        <LinkParameter id="mov1#hym2#exu1#oln405#par274" name="curp_Input Array" source="mov1#hym2#exu1#ci1Array" target="mov1#hym2#lpu1.array"/>
+        <LinkParameter id="mov1#hym2#exu1#oln405#par1556" name="rfc_rfc" source="mov1#hym2#exu1#ci2Array" target="mov1#hym2#lpu1#lsa3"/>
+      </OKLink>
+    </ExcelUnit>
+    <LoopUnit gr:x="-475" gr:y="240" id="mov1#hym2#lpu1" name="Iteraciones">
+      <OKLink id="mov1#hym2#lpu1#oln406" name="OKFlow406" to="mov1#hym2#miu37" code="next">
+        <LinkParameter id="mov1#hym2#lpu1#oln406#par275" name="Next Element_curp" source="next" target="mov1#hym2#miu37.mov2#mpkg3#opm13#icu32#icp11"/>
+        <LinkParameter id="mov1#hym2#lpu1#oln406#par276" name="Funcionario SE_rol" sourceValue="Funcionario SE" target="mov1#hym2#miu37.mov2#mpkg3#opm13#icu32#icp12"/>
+        <LinkParameter id="mov1#hym2#lpu1#oln406#par1557" name="Next Element (rfc)_rfc" source="mov1#hym2#lpu1#lsa3" target="mov1#hym2#miu37.mov2#mpkg3#opm13#icu32#icp18"/>
+      </OKLink>
+      <OKLink id="mov1#hym2#lpu1#oln408" name="OKFlow408" to="mov1#hym2#page26#mssu9" automaticCoupling="true" gr:bendpoints="105,33,-675,8" code="end"/>
+      <SecondaryArray id="mov1#hym2#lpu1#lsa3" name="rfc"/>
+    </LoopUnit>
+    <ModuleInstanceUnit gr:x="-515" gr:y="385" id="mov1#hym2#miu37" action="true" moduleId="mov2#mpkg3#opm13">
+      <OKLink id="mov1#hym2#miu37#oln407" name="OKFlow407" to="mov1#hym2#lpu1" automaticCoupling="true" gr:bendpoints="-21,-62,-11,58"/>
+      <KOLink id="mov1#hym2#miu37#kln82" name="KOFlow82" to="mov1#hym2#page26#mssu9" gr:bendpoints="140,-101,-630,14;665,-105,-105,10">
+        <LinkParameter id="mov1#hym2#miu37#kln82#par280" name="msj_Shown Messages" source="mov2#mpkg3#opm13#kocu4#ocp11" target="mov1#hym2#page26#mssu9.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModifyUnit id="mov1#hym2#mfu10" name="Actualizar Elemento" gr:x="545" gr:y="-275" entity="ent2">
+      <Selector id="mov1#hym2#mfu10#su170" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym2#mfu10#su170#kcond86" name="KeyCondition74" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov1#hym2#mfu10#kln236" name="KOFlow107" to="mov1#hym2#page80#mssu25" gr:bendpoints="-9,-130,161,5">
+        <LinkParameter id="mov1#hym2#mfu10#kln236#par1020" name="Error al actualizar elemento_Shown Messages" target="mov1#hym2#page80#mssu25.shownMessages" sourceValue="Error al actualizar elemento"/>
+      </KOLink>
+      <OKLink id="mov1#hym2#mfu10#oln235" name="OKFlow235" to="mov1#hym2#page26" automaticCoupling="true"/>
+    </ModifyUnit>
+    <DeleteUnit id="mov1#hym2#dlu10" name="Eliminar ElAD" gr:x="115" gr:y="-425" entity="ent2">
+      <Selector id="mov1#hym2#dlu10#su171" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym2#dlu10#su171#kcond87" name="KeyCondition75" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym2#dlu10#oln489" name="OKFlow489" to="mov1#hym2#page26" automaticCoupling="true"/>
+      <KOLink id="mov1#hym2#dlu10#kln237" name="KOFlow237" to="mov1#hym2#page26#mssu9" gr:bendpoints="73,71,-117,-584;66,344,-124,-311;64,614,-126,-41">
+        <LinkParameter id="mov1#hym2#dlu10#kln237#par1318" name="No fue posible eliminar el elemento administrable._Shown Messages" sourceValue="No fue posible eliminar el elemento administrable." target="mov1#hym2#page26#mssu9.shownMessages"/>
+      </KOLink>
+    </DeleteUnit>
+    <ExcelUnit id="mov1#hym2#exu6" name="Cargar Archivo" gr:x="555" gr:y="135" mode="read" format="xls" sourceType="blob" cellInfoOrder="mov1#hym2#exu6#ci39 mov1#hym2#exu6#ci34 mov1#hym2#exu6#ci37 mov1#hym2#exu6#ci35 mov1#hym2#exu6#ci36 mov1#hym2#exu6#ci38 mov1#hym2#exu6#ci33 mov1#hym2#exu6#ci32" linkOrder="mov1#hym2#exu6#ln593">
+      <CellInfo id="mov1#hym2#exu6#ci32" name="DSCURP" type="string" preserveCellStyle="false" autoSizeColumn="true" column="K" rows="2:"/>
+      <CellInfo id="mov1#hym2#exu6#ci33" name="DSRFC" type="string" preserveCellStyle="false" autoSizeColumn="true" column="L" rows="2:"/>
+      <CellInfo id="mov1#hym2#exu6#ci34" name="TIPOFEDATARIO" type="string" preserveCellStyle="false" autoSizeColumn="true" column="B" rows="2:"/>
+      <CellInfo id="mov1#hym2#exu6#ci35" name="DSESTADO" type="string" preserveCellStyle="false" autoSizeColumn="true" rows="2:" column="G"/>
+      <CellInfo id="mov1#hym2#exu6#ci36" name="DSMUNICIPIO" type="string" preserveCellStyle="false" autoSizeColumn="true" rows="2:" column="H"/>
+      <CellInfo id="mov1#hym2#exu6#ci37" name="CRNUMERO" type="integer" preserveCellStyle="false" autoSizeColumn="true" column="F" rows="2:"/>
+      <CellInfo id="mov1#hym2#exu6#ci38" name="ESTATUSFEDATARIO" type="string" preserveCellStyle="false" autoSizeColumn="true" column="I" rows="2:"/>
+      <CellInfo id="mov1#hym2#exu6#ci39" name="LLFEDATARIO" type="integer" preserveCellStyle="false" autoSizeColumn="true" column="A" rows="2:"/>
+      <OKLink id="mov1#hym2#exu6#oln719" name="OKFlow719" to="mov1#hym2#lpu5" automaticCoupling="true"/>
+      <Link id="mov1#hym2#exu6#ln593" name="Flow593" to="mov1#hym2#lpu5" type="transport" validate="true" gr:bendpoints="92,12,-93,17">
+        <LinkParameter id="mov1#hym2#exu6#ln593#par323" name="CRNUMERO_CRNUMERO" source="mov1#hym2#exu6#ci37Array" target="mov1#hym2#lpu5#lsa22"/>
+        <LinkParameter id="mov1#hym2#exu6#ln593#par367" name="DSESTADO_DSESTADO" source="mov1#hym2#exu6#ci35Array" target="mov1#hym2#lpu5#lsa23"/>
+        <LinkParameter id="mov1#hym2#exu6#ln593#par689" name="DSMUNICIPIO_DSMUNICIPIO" source="mov1#hym2#exu6#ci36Array" target="mov1#hym2#lpu5#lsa24"/>
+        <LinkParameter id="mov1#hym2#exu6#ln593#par696" name="DSRFC_DSRFC" source="mov1#hym2#exu6#ci33Array" target="mov1#hym2#lpu5#lsa26"/>
+        <LinkParameter id="mov1#hym2#exu6#ln593#par706" name="ESTATUSFEDATARIO_ESTATUSFEDATARIO" source="mov1#hym2#exu6#ci38Array" target="mov1#hym2#lpu5#lsa25"/>
+        <LinkParameter id="mov1#hym2#exu6#ln593#par719" name="LLFEDATARIO_LLFEDATARIO" source="mov1#hym2#exu6#ci39Array" target="mov1#hym2#lpu5#lsa20"/>
+        <LinkParameter id="mov1#hym2#exu6#ln593#par725" name="TIPOFEDATARIO_TIPOFEDATARIO" source="mov1#hym2#exu6#ci34Array" target="mov1#hym2#lpu5#lsa21"/>
+      </Link>
+      <KOLink id="mov1#hym2#exu6#kln349" name="KOFlow349" to="mov1#hym2#page26#mssu9">
+        <LinkParameter id="mov1#hym2#exu6#kln349#par2295" name="Error en el archivo con formato Excel_Shown Messages" sourceValue="Error en el archivo con formato Excel" target="mov1#hym2#page26#mssu9.shownMessages"/>
+      </KOLink>
+    </ExcelUnit>
+    <LoopUnit id="mov1#hym2#lpu5" name="LoopFedatarios" gr:x="725" gr:y="160" linkOrder="mov1#hym2#lpu5#ln607">
+      <SecondaryArray id="mov1#hym2#lpu5#lsa20" name="LLFEDATARIO"/>
+      <SecondaryArray id="mov1#hym2#lpu5#lsa21" name="TIPOFEDATARIO"/>
+      <SecondaryArray id="mov1#hym2#lpu5#lsa22" name="CRNUMERO"/>
+      <SecondaryArray id="mov1#hym2#lpu5#lsa23" name="DSESTADO"/>
+      <SecondaryArray id="mov1#hym2#lpu5#lsa24" name="DSMUNICIPIO"/>
+      <SecondaryArray id="mov1#hym2#lpu5#lsa25" name="ESTATUSFEDATARIO"/>
+      <SecondaryArray id="mov1#hym2#lpu5#lsa26" name="DSRFC"/>
+      <OKLink id="mov1#hym2#lpu5#oln725" name="OKFlow725" to="mov1#hym2#miu96" automaticCoupling="true" code="next"/>
+      <Link id="mov1#hym2#lpu5#ln607" name="Flow607" to="mov1#hym2#miu96" type="transport" validate="true" gr:bendpoints="89,16,-151,11">
+        <LinkParameter id="mov1#hym2#lpu5#ln607#par2082" name="Next Element (CRNUMERO)_CRNUMERO" source="mov1#hym2#lpu5#lsa22" target="mov1#hym2#miu96.mov2#opm2#icu3#icp232"/>
+        <LinkParameter id="mov1#hym2#lpu5#ln607#par2083" name="Next Element_DSCURP" source="next" target="mov1#hym2#miu96.mov2#opm2#icu3#icp237"/>
+        <LinkParameter id="mov1#hym2#lpu5#ln607#par2084" name="Next Element (DSESTADO)_DSESTADO" source="mov1#hym2#lpu5#lsa23" target="mov1#hym2#miu96.mov2#opm2#icu3#icp233"/>
+        <LinkParameter id="mov1#hym2#lpu5#ln607#par2085" name="Next Element (DSMUNICIPIO)_DSMUNICIPIO" source="mov1#hym2#lpu5#lsa24" target="mov1#hym2#miu96.mov2#opm2#icu3#icp234"/>
+        <LinkParameter id="mov1#hym2#lpu5#ln607#par2086" name="Next Element (DSRFC)_DSRFC" source="mov1#hym2#lpu5#lsa26" target="mov1#hym2#miu96.mov2#opm2#icu3#icp236"/>
+        <LinkParameter id="mov1#hym2#lpu5#ln607#par2096" name="Next Element (ESTATUSFEDATARIO)_ESTATUSFEDATARIO" source="mov1#hym2#lpu5#lsa25" target="mov1#hym2#miu96.mov2#opm2#icu3#icp235"/>
+        <LinkParameter id="mov1#hym2#lpu5#ln607#par2097" name="Next Element (LLFEDATARIO)_LLFEDATARIO" source="mov1#hym2#lpu5#lsa20" target="mov1#hym2#miu96.mov2#opm2#icu3#icp218"/>
+        <LinkParameter id="mov1#hym2#lpu5#ln607#par2201" name="Next Element (TIPOFEDATARIO)_TIPOFEDATARIO" source="mov1#hym2#lpu5#lsa21" target="mov1#hym2#miu96.mov2#opm2#icu3#icp231"/>
+      </Link>
+      <OKLink id="mov1#hym2#lpu5#oln761" name="OKFlow761" to="mov1#hym2#page26#mssu9" code="end" gr:bendpoints="-107,-77,308,-162;-499,-72,-84,-157;-499,21,-84,-64">
+        <LinkParameter id="mov1#hym2#lpu5#oln761#par2202" name="Los Fedatarios fueron agregados exitosamente_Shown Messages" sourceValue="Los Fedatarios fueron agregados exitosamente" target="mov1#hym2#page26#mssu9.shownMessages"/>
+      </OKLink>
+    </LoopUnit>
+    <ModuleInstanceUnit id="mov1#hym2#miu96" gr:x="905" gr:y="160" action="true" moduleId="mov2#opm2">
+      <OKLink id="mov1#hym2#miu96#oln733" name="OKFlow733" to="mov1#hym2#lpu5" automaticCoupling="true" gr:bendpoints="-148,-39,92,-34"/>
+      <KOLink id="mov1#hym2#miu96#kln348" name="KOFlow348" to="mov1#hym2#page26#mssu9" gr:bendpoints="-169,-103,486,-183;-753,-104,-98,-184;-751,22,-96,-58">
+        <LinkParameter id="mov1#hym2#miu96#kln348#par2293" name="mensaje_Shown Messages" source="mov2#opm2#kocu55#ocp184" target="mov1#hym2#page26#mssu9.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="mov1#hym2#miu101" gr:x="555" gr:y="0" action="true" moduleId="mov2#opm2">
+      <KOLink id="mov1#hym2#miu101#kln350" name="KOFlow350" to="mov1#hym2#page26#mssu9" gr:bendpoints="-409,24,-104,-216;-411,189,-106,-51">
+        <LinkParameter id="mov1#hym2#miu101#kln350#par2318" name="mensaje_Shown Messages" source="mov2#opm2#kocu55#ocp184" target="mov1#hym2#page26#mssu9.shownMessages"/>
+      </KOLink>
+      <OKLink id="mov1#hym2#miu101#oln773" name="OKFlow773" to="mov1#hym2#page26#mssu9" gr:bendpoints="-415,12,-110,-228;-419,191,-114,-49">
+        <LinkParameter id="mov1#hym2#miu101#oln773#par2322" name="Los Fedatarios fueron agregados exitosamente_Shown Messages" sourceValue="Los Fedatarios fueron agregados exitosamente" target="mov1#hym2#page26#mssu9.shownMessages"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</HybridModule>

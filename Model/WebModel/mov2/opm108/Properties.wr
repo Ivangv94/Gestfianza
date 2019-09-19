@@ -1,0 +1,93 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-185" gr:y="1570" id="mov2#opm108" name="validaAdmin">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm108#icu148" gr:x="-165" gr:y="75" linkOrder="mov2#opm108#icu148#ln1462">
+      <OKLink id="mov2#opm108#icu148#oln1418" name="OKFlow1418" to="mov2#opm108#seu310" automaticCoupling="true"/>
+      <InputCollectorParameter id="mov2#opm108#icu148#icp469" name="pantalla"/>
+      <Link id="mov2#opm108#icu148#ln1462" name="Flow1462" to="mov2#opm108#switch93" type="transport" validate="true" gr:bendpoints="117,77,-233,67;213,82,-137,72;281,83,-69,73">
+        <LinkParameter id="mov2#opm108#icu148#ln1462#par4780" name="pantalla_Switch" source="mov2#opm108#icu148#icp469" target="mov2#opm108#switch93.switch"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="80" gr:y="70" id="mov2#opm108#seu310" name="buscaFed" entity="ent68" linkOrder="mov2#opm108#seu310#ln1460 mov2#opm108#seu310#ln1461">
+      <Selector id="mov2#opm108#seu310#su501" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm108#seu310#su501#acond234" name="oidPf" predicate="eq" booleanOperator="or" implied="false" attributes="ent68#att440"/>
+      </Selector>
+      <Link id="mov2#opm108#seu310#ln1459" name="OKFlow1419" to="mov2#opm108#seu311" type="transport" gr:bendpoints="108,-63,-297,-68;269,-64,-136,-69">
+        <LinkParameter id="mov2#opm108#seu310#ln1459#par4770" name="oidPM_RoleCondition302 [oid]" source="ent68#att441Array" target="mov2#opm108#seu311#su502#rcond302.userOID"/>
+      </Link>
+      <OKLink id="mov2#opm108#seu310#oln1423" name="OKFlow1423" to="mov2#opm108#switch93" automaticCoupling="true"/>
+      <Link id="mov2#opm108#seu310#ln1460" name="Flow1460" to="mov2#opm108#seu312" type="transport" validate="true" gr:bendpoints="22,131,-383,-4">
+        <LinkParameter id="mov2#opm108#seu310#ln1460#par4774" name="oidPM_RoleCondition302 [oid]" source="ent68#att441Array" target="mov2#opm108#seu312#su503#rcond303.userOID"/>
+      </Link>
+      <Link id="mov2#opm108#seu310#ln1461" name="Flow1461" to="mov2#opm108#seu313" type="transport" validate="true" gr:bendpoints="4,245,-381,-10">
+        <LinkParameter id="mov2#opm108#seu310#ln1461#par4777" name="oidPM_RoleCondition302 [oid]" source="ent68#att441Array" target="mov2#opm108#seu313#su504#rcond306.userOID"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit gr:x="80" gr:y="-30" id="mov2#opm108#gtu69" name="Get69" contextParameters="UserCtxParam" linkOrder="mov2#opm108#gtu69#ln1458">
+      <Link id="mov2#opm108#gtu69#ln1458" name="Flow1458" to="mov2#opm108#seu310" type="transport" validate="true">
+        <LinkParameter id="mov2#opm108#gtu69#ln1458#par4764" name="UserCtxParam.oid_oidPf" source="mov2#opm108#gtu69.UserCtxParam" target="mov2#opm108#seu310#su501#acond234"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="460" gr:y="75" id="mov2#opm108#seu311" name="buscaAdministracion" entity="ent64">
+      <Selector id="mov2#opm108#seu311#su502" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm108#seu311#su502#rcond302" name="RoleCondition302" predicate="in" implied="false" role="rel42#role84"/>
+      </Selector>
+      <OKLink id="mov2#opm108#seu311#oln1420" name="OKFlow1420" to="mov2#opm108#inn64">
+        <LinkParameter id="mov2#opm108#seu311#oln1420#par4766" name="oid_Input" source="ent64#att402Array" target="mov2#opm108#inn64.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="700" gr:y="95" id="mov2#opm108#inn64" name="existeRegistro">
+      <OKLink id="mov2#opm108#inn64#oln1421" name="OKFlow1421" to="mov2#opm108#okcu115">
+        <LinkParameter id="mov2#opm108#inn64#oln1421#par4767" name="Input Value_oids" source="inputValue" target="mov2#opm108#okcu115#ocp340"/>
+      </OKLink>
+      <KOLink id="mov2#opm108#inn64#kln565" name="KOFlow565" to="mov2#opm108#kocu98">
+        <LinkParameter id="mov2#opm108#inn64#kln565#par4768" name="Debe capturarse al menos una persona para la administracion._mensajeError" sourceValue="Debe capturarse al menos una persona para la administracion." target="mov2#opm108#kocu98#ocp339"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <OKCollectorUnit gr:x="1000" gr:y="-25" id="mov2#opm108#okcu115" name="OK Port115">
+      <OutputCollectorParameter id="mov2#opm108#okcu115#ocp340" name="oids"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1000" gr:y="105" id="mov2#opm108#kocu98" name="KO Port98">
+      <OutputCollectorParameter id="mov2#opm108#kocu98#ocp339" name="mensajeError"/>
+    </KOCollectorUnit>
+    <SwitchUnit gr:x="260" gr:y="95" id="mov2#opm108#switch93" name="pantalla">
+      <OKLink id="mov2#opm108#switch93#oln1424" name="OKFlow1424" to="mov2#opm108#seu311" automaticCoupling="true" code="administracion"/>
+      <OKLink id="mov2#opm108#switch93#oln1427" name="OKFlow1427" to="mov2#opm108#seu312" automaticCoupling="true" code="nombramientos"/>
+      <OKLink id="mov2#opm108#switch93#oln1428" name="OKFlow1428" to="mov2#opm108#seu313" automaticCoupling="true" gr:bendpoints="-5,241,-230,-4" code="apoderados"/>
+      <Case value="administracion"/>
+      <Case value="nombramientos"/>
+      <Case value="apoderados"/>
+    </SwitchUnit>
+    <IsNotNullUnit id="mov2#opm108#inn65" name="existeRegistro" gr:x="690" gr:y="225">
+      <OKLink id="mov2#opm108#inn65#oln1429" name="OKFlow1429" to="mov2#opm108#okcu115">
+        <LinkParameter id="mov2#opm108#inn65#oln1429#par4775" name="Input Value_oids" source="inputValue" target="mov2#opm108#okcu115#ocp340"/>
+      </OKLink>
+      <KOLink id="mov2#opm108#inn65#kln567" name="KOFlow567" to="mov2#opm108#kocu98">
+        <LinkParameter id="mov2#opm108#inn65#kln567#par4776" name="Debe capturarse al menos una persona para los nombramientos._mensajeError" sourceValue="Debe capturarse al menos una persona para los nombramientos." target="mov2#opm108#kocu98#ocp339"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <SelectorUnit id="mov2#opm108#seu312" name="buscaNombramientos" gr:x="450" gr:y="205" entity="ent77">
+      <Selector id="mov2#opm108#seu312#su503" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm108#seu312#su503#rcond303" name="RoleCondition302" predicate="in" implied="false" role="rel63#role125"/>
+      </Selector>
+      <OKLink id="mov2#opm108#seu312#oln1425" name="OKFlow1420" to="mov2#opm108#inn65">
+        <LinkParameter id="mov2#opm108#seu312#oln1425#par4772" name="oid_Input" source="ent77#att478Array" target="mov2#opm108#inn65.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit id="mov2#opm108#inn66" name="existeRegistro" gr:x="685" gr:y="345">
+      <OKLink id="mov2#opm108#inn66#oln1430" name="OKFlow1430" to="mov2#opm108#okcu115">
+        <LinkParameter id="mov2#opm108#inn66#oln1430#par4778" name="Input Value_oids" source="inputValue" target="mov2#opm108#okcu115#ocp340"/>
+      </OKLink>
+      <KOLink id="mov2#opm108#inn66#kln568" name="KOFlow568" to="mov2#opm108#kocu98">
+        <LinkParameter id="mov2#opm108#inn66#kln568#par4779" name="Debe capturarse al menos una persona para los apoderados._mensajeError" sourceValue="Debe capturarse al menos una persona para los apoderados." target="mov2#opm108#kocu98#ocp339"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <SelectorUnit id="mov2#opm108#seu313" name="buscaApoderados" gr:x="445" gr:y="325" entity="ent66">
+      <Selector id="mov2#opm108#seu313#su504" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm108#seu313#su504#rcond306" name="RoleCondition302" predicate="in" implied="false" role="rel41#role82"/>
+      </Selector>
+      <OKLink id="mov2#opm108#seu313#oln1426" name="OKFlow1420" to="mov2#opm108#inn66">
+        <LinkParameter id="mov2#opm108#seu313#oln1426#par4773" name="oid_Input" source="ent66#att411Array" target="mov2#opm108#inn66.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

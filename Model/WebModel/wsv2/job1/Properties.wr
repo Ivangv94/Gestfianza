@@ -1,0 +1,9 @@
+<Job xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="90" gr:y="160" id="wsv2#job1" name="verificarGarantias">
+  <OperationUnits>
+    <InitJobUnit id="wsv2#job1#iju1" name="Init Job" gr:x="0" gr:y="5">
+      <OKLink id="wsv2#job1#iju1#oln534" name="OKFlow534" to="wsv2#job1#miu58" automaticCoupling="true"/>
+    </InitJobUnit>
+    <ModuleInstanceUnit gr:x="140" gr:y="0" id="wsv2#job1#miu58" action="true" moduleId="mov2#mpkg3#opm14"/>
+  </OperationUnits>
+  <Trigger id="wsv2#job1#trg1" name="mensual" schedulePolicy="onceAMonth" day="31" hours="22" minutes="30" seconds="00"/>
+</Job>

@@ -1,0 +1,1633 @@
+<DataModel xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:wrxsd="http://www.webratio.com/2012/WebML/WRXSD">
+  <Entity id="User" name="User" duration="persistent" gr:x="20" gr:y="158" gr:hideAttributes="false" attributeOrder="userOID userName password email" db:database="db2" db:table="USER">
+    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="OID"/>
+    <Attribute name="userName" id="userName" type="string" db:column="USERNAME"/>
+    <Attribute name="password" id="password" type="password" db:column="PASSWORD"/>
+    <Attribute name="email" id="email" type="string" db:column="EMAIL"/>
+    <Attribute id="userDefaultGroupName" name="group" type="string" derivationQuery="simpleImported::Self.User2DefaultGroup.groupName"/>
+  </Entity>
+  <Entity id="Group" name="Group" duration="persistent" gr:x="250" gr:y="178" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db2" db:table="GROUP">
+    <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="OID"/>
+    <Attribute name="groupName" id="groupName" type="string" db:column="GROUPNAME"/>
+  </Entity>
+  <Entity id="Module" name="Module" duration="persistent" gr:x="472" gr:y="167" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db2" db:table="MODULE">
+    <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="OID"/>
+    <Attribute name="moduleID" id="moduleID" type="string" db:column="MODULEID"/>
+    <Attribute name="moduleName" id="moduleName" type="string" db:column="MODULENAME"/>
+    <Attribute id="moduleDomainName" name="moduleDomainName" type="string" db:column="MODULEDOMAINNAME"/>
+  </Entity>
+  <Relationship id="User2Group_Group2User" name="User_Group" sourceEntity="User" targetEntity="Group" db:database="db2" db:table="USER_GROUP">
+    <RelationshipRole1 id="User2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Group2User" name="users" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="113,42,-112,44" db:database="db2" db:table="USER">
+    <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultGroup2User" name="defaultUsers" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Group2DefaultModule_DefaultModule2Group" name="Group_DefaultModule" sourceEntity="Group" targetEntity="Module" db:database="db2" db:table="GROUP">
+    <RelationshipRole1 id="Group2DefaultModule" name="defaultModule" maxCard="1">
+      <db:JoinColumn attribute="groupOID" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultModule2Group" name="defaultGroups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="MODULE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="110,41,-115,41" db:database="db2" db:table="GROUP_MODULE">
+    <RelationshipRole1 id="Group2Module" name="modules" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Module2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="MODULE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity id="ent1" name="Documentos" db:database="db2" duration="persistent" db:table="DOCUMENTOS" gr:x="720" gr:y="65">
+    <Attribute id="ent1#att1" name="oid" db:column="OID" type="integer" key="true"/>
+    <Attribute id="ent1#att2" name="esquemadetramitacion" db:column="ESQUEMADETRAMITACION" type="string" key="false"/>
+    <Attribute id="ent1#att3" name="nombrearchivo" db:column="NOMBREARCHIVO" type="string" key="false"/>
+    <Attribute id="ent1#att4" name="tamanio" db:column="TAMANIO" type="string" key="false"/>
+    <Attribute id="ent1#att5" name="extension" db:column="EXTENSION" type="string" key="false"/>
+    <Attribute id="ent1#att6" name="folio" db:column="FOLIO" type="string" key="false"/>
+    <Attribute id="ent1#att7" name="archivo" db:column="ARCHIVO" type="string" key="false"/>
+    <Attribute id="ent1#att8" name="etapavidaempresarial" db:column="ETAPAVIDAEMPRESARIAL" type="string" key="false"/>
+    <Attribute id="ent1#att9" name="uri" db:column="URI" type="string" key="false"/>
+  </Entity>
+  <Entity id="Process" gr:x="-961" gr:y="-658" name="Process" duration="persistent" attributeOrder="processOid processCode processName processDefaultInstanceName processUUID processDescription processVersion" db:database="db2" db:table="PROCESS">
+    <Attribute id="processOid" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="processCode" name="code" type="string" db:column="CODE"/>
+    <Attribute id="processName" name="name" type="string" db:column="NAME"/>
+    <Attribute id="processDefaultInstanceName" name="default instance name" type="string" db:column="DEFAULT_INSTANCE_NAME"/>
+    <Attribute id="processDescription" name="description" type="text" contentType="text/html" db:column="DESCRIPTION" db:clob="true"/>
+    <Attribute id="processUUID" name="uuid" type="string" db:column="UUID"/>
+    <Attribute id="processVersion" name="version" type="string" db:column="VERSION"/>
+  </Entity>
+  <Entity id="ProcessInstance" gr:x="-956" gr:y="-76" name="ProcessInstance" duration="persistent" attributeOrder="processInstanceOid processInstanceCode processInstanceName processInstanceProcessName processInstanceDescription processInstanceSubProcessIndex processInstanceStatus processInstanceActiveTimestamp processInstanceCompletedTimestamp processInstanceCancelledTimestamp processInstanceAbortedTimestamp processInstanceAttachmentCount" db:database="db2" db:table="PROCESSINSTANCE">
+    <Attribute id="processInstanceOid" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="processInstanceCode" name="code" type="string" derivationQuery="simpleImported::Self.processInstance2Process.processCode"/>
+    <Attribute id="processInstanceName" name="name" type="string" db:column="NAME"/>
+    <Attribute id="processInstanceProcessName" name="process name" type="string" derivationQuery="simpleImported::Self.processInstance2Process.processName"/>
+    <Attribute id="processInstanceSubProcessIndex" name="subProcessIndex" type="integer" db:column="SUBPROCESSINDEX"/>
+    <Attribute id="processInstanceStatus" name="status" type="string" db:column="STATUS"/>
+    <Attribute id="processInstanceActiveTimestamp" name="active since" type="timestamp" db:column="ACTIVE_SINCE"/>
+    <Attribute id="processInstanceCompletedTimestamp" name="completed at" type="timestamp" db:column="COMPLETED_AT"/>
+    <Attribute id="processInstanceCancelledTimestamp" name="cancelled at" type="timestamp" db:column="CANCELLED_AT"/>
+    <Attribute id="processInstanceAbortedTimestamp" name="aborted at" type="timestamp" db:column="ABORTED_AT"/>
+    <Attribute id="processInstanceDescription" name="description" type="text" derivationQuery="simpleImported::Self.processInstance2Process.processDescription" contentType="text/html"/>
+    <Attribute id="processInstanceAttachmentCount" name="attachment count" type="integer" derivationQuery="calculated::count(Self.processInstance2Attachments(as Var1))" db:table="PROCESSINSTANCE_ATTACHMENT_COU" db:column="DER_ATTR" storageType="file">
+      <db:JoinColumn attribute="processInstanceOid" name="OID"/>
+    </Attribute>
+  </Entity>
+  <Entity id="ActivityType" gr:x="-448" gr:y="-707" name="ActivityType" duration="persistent" attributeOrder="activityTypeOid activityTypeId activityTypeCode activityTypeName activityTypeProcessName activityTypeDescription activityTypeType activityTypeExecution activityTypeDefaultInstanceName activityTypeSortNumber activityTypeUUID" db:database="db2" db:table="ACTIVITYTYPE">
+    <Attribute id="activityTypeOid" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="activityTypeId" name="ID" type="string" db:column="ID"/>
+    <Attribute id="activityTypeCode" name="code" type="string" db:column="CODE"/>
+    <Attribute id="activityTypeName" name="name" type="string" db:column="NAME"/>
+    <Attribute id="activityTypeProcessName" name="process name" type="string" derivationQuery="simpleImported::Self.activityType2Process.processName"/>
+    <Attribute id="activityTypeDefaultInstanceName" name="default instance name" type="string" db:column="DEFAULT_INSTANCE_NAME"/>
+    <Attribute id="activityTypeDescription" name="description" type="text" contentType="text/html" db:column="DESCRIPTION" db:clob="true"/>
+    <Attribute id="activityTypeType" name="type" type="string" db:column="TYPE"/>
+    <Attribute id="activityTypeExecution" name="execution" type="string" db:column="EXECUTION"/>
+    <Attribute id="activityTypeSortNumber" name="sort number" type="float" db:column="SORT_NUMBER"/>
+    <Attribute id="activityTypeUUID" name="uuid" type="string" db:column="UUID"/>
+  </Entity>
+  <Entity id="ActivityInstance" gr:x="-445" gr:y="-166" name="ActivityInstance" duration="persistent" attributeOrder="activityInstanceOid activityInstanceCode activityInstanceName activityInstanceProcessInstanceName activityInstanceProcessName activityInstanceActivityTypeName activityInstanceDescription activityInstanceUserName activityInstanceGroupName activityInstanceExecution activityInstanceType activityInstanceStatus activityInstanceReadyTimestamp activityInstanceActiveTimestamp activityInstanceCompletedTimestamp activityInstanceAbortedTimestamp activityInstanceCancelledTimestamp activityInstanceLastTimestamp activityInstanceProcessInstanceActiveSince activityInstanceRollbackable activityInstanceContext" db:database="db2" db:table="ACTIVITYINSTANCE">
+    <Attribute id="activityInstanceOid" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="activityInstanceCode" name="code" type="string" derivationQuery="simpleImported::Self.activityInstance2ActivityType.activityTypeCode"/>
+    <Attribute id="activityInstanceName" name="name" type="string" db:column="NAME"/>
+    <Attribute id="activityInstanceProcessInstanceName" name="process instance name" type="string" derivationQuery="simpleImported::Self.activityInstance2ProcessInstance.processInstanceName"/>
+    <Attribute id="activityInstanceProcessName" name="process name" type="string" derivationQuery="simpleImported::Self.activityInstance2ProcessInstance.processInstanceProcessName"/>
+    <Attribute id="activityInstanceActivityTypeName" name="activity name" type="string" derivationQuery="simpleImported::Self.activityInstance2ActivityType.activityTypeName"/>
+    <Attribute id="activityInstanceDescription" name="description" type="text" derivationQuery="simpleImported::Self.activityInstance2ActivityType.activityTypeDescription" contentType="text/html"/>
+    <Attribute id="activityInstanceUserName" name="userName" type="string" derivationQuery="simpleImported::Self.activityInstance2User.userName"/>
+    <Attribute id="activityInstanceGroupName" name="group" type="string" derivationQuery="simpleImported::Self.activityInstance2Group.groupName"/>
+    <Attribute id="activityInstanceExecution" name="execution" type="string" derivationQuery="simpleImported::Self.activityInstance2ActivityType.activityTypeExecution"/>
+    <Attribute id="activityInstanceType" name="type" type="string" derivationQuery="simpleImported::Self.activityInstance2ActivityType.activityTypeType"/>
+    <Attribute id="activityInstanceStatus" name="status" type="string" db:column="STATUS"/>
+    <Attribute id="activityInstanceReadyTimestamp" name="ready since" type="timestamp" db:column="READY_SINCE"/>
+    <Attribute id="activityInstanceActiveTimestamp" name="active since" type="timestamp" db:column="ACTIVE_SINCE"/>
+    <Attribute id="activityInstanceCompletedTimestamp" name="completed at" type="timestamp" db:column="COMPLETED_AT"/>
+    <Attribute id="activityInstanceAbortedTimestamp" name="aborted at" type="timestamp" db:column="ABORTED_AT"/>
+    <Attribute id="activityInstanceCancelledTimestamp" name="cancelled at" type="timestamp" db:column="CANCELLED_AT"/>
+    <Attribute id="activityInstanceLastTimestamp" name="worked at" type="timestamp" db:column="WORKED_AT"/>
+    <Attribute id="activityInstanceProcessInstanceActiveSince" name="process active since" type="timestamp" derivationQuery="simpleImported::Self.activityInstance2ProcessInstance.processInstanceActiveTimestamp"/>
+    <Attribute id="activityInstanceProcessInstanceAttachmentCount" name="process attachment count" type="integer" derivationQuery="simpleImported::Self.activityInstance2ProcessInstance.processInstanceAttachmentCount"/>
+    <Attribute id="activityInstanceRollbackable" name="rollbackable" type="boolean" db:column="ROLLBACKABLE"/>
+    <Attribute id="activityInstanceContext" name="context" type="string" db:column="CONTEXT"/>
+  </Entity>
+  <Entity id="ParameterType" gr:x="-1289" gr:y="-620" name="ParameterType" duration="persistent" attributeOrder="parameterTypeOid parameterTypeName parameterTypeDescription parameterTypeType" db:database="db2" db:table="PARAMETERTYPE">
+    <Attribute id="parameterTypeOid" name="oid" type="integer" key="true" db:column="OID"/>
+    <Attribute id="parameterTypeName" name="name" type="string" db:column="NAME"/>
+    <Attribute id="parameterTypeDescription" name="description" type="string" contentType="text/html" db:column="DESCRIPTION"/>
+    <Attribute id="parameterTypeType" name="type" type="string" db:column="TYPE"/>
+  </Entity>
+  <Entity id="ParameterInstance" gr:x="-1301" gr:y="0" name="ParameterInstance" duration="persistent" attributeOrder="parameterInstanceOid parameterInstanceName parameterInstanceValue parameterInstanceCurrent parameterInstanceTimestamp" db:database="db2" db:table="PARAMETERINSTANCE">
+    <Attribute id="parameterInstanceOid" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="parameterInstanceName" name="name" type="string" derivationQuery="simpleImported::Self.parameterInstance2ParameterType.parameterTypeName"/>
+    <Attribute id="parameterInstanceValue" name="value" type="string" db:column="VALUE"/>
+    <Attribute id="parameterInstanceCurrent" name="current" type="boolean" db:column="CURRENT"/>
+    <Attribute id="parameterInstanceTimestamp" name="timestamp" type="timestamp" db:column="TIMESTAMP"/>
+  </Entity>
+  <Entity id="SequenceFlow" gr:x="-416" gr:y="-940" name="SequenceFlow" duration="persistent" attributeOrder="sequenceFlowOid sequenceFlowLabel sequenceFlowCondition sequenceFlowDefault sequenceFlowSortNumber" db:database="db2" db:table="SEQUENCEFLOW">
+    <Attribute id="sequenceFlowOid" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="sequenceFlowLabel" name="label" type="string" db:column="LABEL"/>
+    <Attribute id="sequenceFlowCondition" name="condition" type="string" db:column="CONDITION"/>
+    <Attribute id="sequenceFlowDefault" name="default" type="boolean" db:column="DEFAULT"/>
+    <Attribute id="sequenceFlowSortNumber" name="sort number" type="float" db:column="SORT_NUMBER"/>
+  </Entity>
+  <Entity id="Notification" gr:x="-160" gr:y="275" name="Notification" duration="persistent" attributeOrder="notificationOid notificationMessage notificationRead" db:database="db2" db:table="NOTIFICATION">
+    <Attribute id="notificationOid" name="oid" key="true" type="integer" db:column="OID"/>
+    <Attribute id="notificationMessage" name="message" type="string" db:column="MESSAGE"/>
+    <Attribute id="notificationRead" name="read" type="boolean" db:column="READ"/>
+  </Entity>
+  <Entity id="Note" gr:x="-712" gr:y="-261" name="Note" duration="persistent" attributeOrder="noteOid noteText noteTimestamp noteUserName" db:database="db2" db:table="NOTE">
+    <Attribute id="noteOid" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="noteText" name="text" type="text" db:column="TEXT" db:clob="true"/>
+    <Attribute id="noteTimestamp" name="timestamp" type="timestamp" db:column="TIMESTAMP"/>
+    <Attribute id="noteUserName" name="userName" type="string" derivationQuery="simpleImported::Self.note2User.userName"/>
+  </Entity>
+  <Entity id="Attachment" name="Attachment" duration="persistent" gr:x="-423" gr:y="585" attributeOrder="attachmentOid attachmentFile attachmentTitle attachmentTimestamp attachmentUserName" db:database="db2" db:table="ATTACHMENT">
+    <Attribute id="attachmentOid" name="oid" key="true" type="integer" db:column="OID"/>
+    <Attribute id="attachmentFile" name="file" type="blob" storageType="file" db:column="FILE"/>
+    <Attribute id="attachmentTitle" name="title" type="string" db:column="TITLE"/>
+    <Attribute id="attachmentTimestamp" name="timestamp" type="timestamp" db:column="TIMESTAMP"/>
+    <Attribute id="attachmentUserName" name="userName" type="string" derivationQuery="simpleImported::Self.attachment2User.userName"/>
+  </Entity>
+  <Relationship id="ProcessInstance_Process" name="ProcessInstance_Process" sourceEntity="ProcessInstance" targetEntity="Process" db:database="db2" db:table="PROCESSINSTANCE">
+    <RelationshipRole1 id="processInstance2Process" name="process" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="processInstanceOid" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="process2ProcessInstances" name="processInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="processOid" name="PROCESS_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="ActivityType_ActivityInstance" name="ActivityType_ActivityInstance" sourceEntity="ActivityType" targetEntity="ActivityInstance" db:database="db2" db:table="ACTIVITYINSTANCE">
+    <RelationshipRole1 id="activityType2ActivityInstances" name="activityInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="activityTypeOid" name="ACTIVITYTYPE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="activityInstance2ActivityType" name="activityType" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="activityInstanceOid" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Process_ActivityType" name="Process_ActivityType" sourceEntity="Process" targetEntity="ActivityType" db:database="db2" db:table="ACTIVITYTYPE">
+    <RelationshipRole1 id="process2ActivityTypes" name="activityTypes" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="processOid" name="PROCESS_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="activityType2Process" name="process" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="activityTypeOid" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="ProcessInstance_ActivityInstance" name="ProcessInstance_ActivityInstance" sourceEntity="ProcessInstance" targetEntity="ActivityInstance" db:database="db2" db:table="ACTIVITYINSTANCE">
+    <RelationshipRole1 id="processInstance2ActivityInstances" name="activityInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="processInstanceOid" name="PROCESSINSTANCE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="activityInstance2ProcessInstance" name="processInstance" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="activityInstanceOid" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="ParameterType_ParameterInstance" name="ParameterType_ParameterInstance" sourceEntity="ParameterType" targetEntity="ParameterInstance" db:database="db2" db:table="PARAMETERINSTANCE">
+    <RelationshipRole1 id="parameterType2ParameterInstances" name="parameterInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="parameterTypeOid" name="PARAMETERTYPE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="parameterInstance2ParameterType" name="parameterType" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="parameterInstanceOid" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Process_ParameterType" name="Process_ParameterType" sourceEntity="Process" targetEntity="ParameterType" db:database="db2" db:table="PARAMETERTYPE">
+    <RelationshipRole1 id="process2ParameterTypes" name="parameterTypes" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="processOid" name="PROCESS_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="parameterType2Process" name="process" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="parameterTypeOid" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="ProcessInstance_ParameterInstance" name="ProcessInstance_ParameterInstance" sourceEntity="ProcessInstance" targetEntity="ParameterInstance" db:database="db2" db:table="PARAMETERINSTANCE">
+    <RelationshipRole1 id="processInstance2ParameterInstances" name="parameterInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="processInstanceOid" name="PROCESSINSTANCE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="parameterInstance2ProcessInstance" name="processInstance" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="parameterInstanceOid" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="ParameterInstance_ActivityInstance" name="ParameterInstance_ActivityInstance" sourceEntity="ParameterInstance" targetEntity="ActivityInstance" gr:bendpoints="200,-232,-685,-265;391,-232,-494,-265" db:database="db2" db:table="PARAMETERINSTANCE">
+    <RelationshipRole1 id="parameterInstance2ActivityInstance" name="activityInstance" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="parameterInstanceOid" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="activityInstance2ParameterInstances" name="parameterInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="activityInstanceOid" name="ACTIVITYINSTANCE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="NextActivityType_PreviousSequenceFlow" name="NextActivityType_PreviousSequenceFlow" sourceEntity="ActivityType" targetEntity="SequenceFlow" gr:bendpoints="71,-188,75,104" db:database="db2" db:table="SEQUENCEFLOW">
+    <RelationshipRole1 id="nextActivityType2PreviousSequenceFlows" name="previousConditions" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="activityTypeOid" name="ACTIVITYTYPE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="previousSequenceFlow2NextActivityType" name="nextActivityType" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="sequenceFlowOid" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="PreviousActivityType_NextSequenceFlow" name="PreviousActivityType_NextSequenceFlow" sourceEntity="ActivityType" targetEntity="SequenceFlow" gr:bendpoints="-76,-188,-72,104" db:database="db2" db:table="SEQUENCEFLOW">
+    <RelationshipRole1 id="previousActivityType2NextSequenceFlows" name="nextConditions" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="activityTypeOid" name="ACTIVITYTYPE_OID_2"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="nextSequenceFlow2PreviousActivityType" name="previousActivityType" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="sequenceFlowOid" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="PreviousActivityInstance_NextActivityInstance" name="PreviousActivityInstance_NextActivityInstance" sourceEntity="ActivityInstance" targetEntity="ActivityInstance" gr:bendpoints="-118,188,-118,188;-139,133,-139,133" db:database="db2" db:table="PREVIOUSACTIVITYINSTANCE_NEXTA">
+    <RelationshipRole1 id="previousActivityInstance2NextActivityInstances" name="nextActivityInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="activityInstanceOid" name="ACTIVITYINSTANCE_OID_2"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="nextActivityInstance2PreviousActivityInstances" name="previousActivityInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="activityInstanceOid" name="ACTIVITYINSTANCE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="User_ActivityInstance" name="User_ActivityInstance" sourceEntity="User" targetEntity="ActivityInstance" db:database="db2" db:table="ACTIVITYINSTANCE">
+    <RelationshipRole1 id="user2ActivityInstances" name="activityInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="activityInstance2User" name="user" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="activityInstanceOid" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="ActivityInstance_CandidateUser" name="ActivityInstance_CandidateUser" sourceEntity="ActivityInstance" targetEntity="User" gr:bendpoints="201,161,-240,0" db:database="db2" db:table="ACTIVITYINSTANCE_CANDIDATEUSER">
+    <RelationshipRole1 id="activityInstance2CandidateUsers" name="activityInstanceCandidateUsers" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="activityInstanceOid" name="ACTIVITYINSTANCE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="candidateUser2ActivityInstances" name="candidateUserActivityInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Group_ActivityType" name="Group_ActivityType" sourceEntity="Group" targetEntity="ActivityType" gr:bendpoints="-112,-546,582,244" db:database="db2" db:table="GROUP_ACTIVITYTYPE">
+    <RelationshipRole1 id="group2ActivityTypes" name="activityTypes" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="activityType2Groups" name="groups" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="activityTypeOid" name="ACTIVITYTYPE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="User_Notifications" name="User_Notifications" sourceEntity="User" targetEntity="Notification" db:database="db2" db:table="USER_NOTIFICATIONS">
+    <RelationshipRole1 id="user2Notifications" name="notifications" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="notification2Users" name="users" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="notificationOid" name="NOTIFICATION_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="ActivityInstance_Notifications" name="ActivityInstance_Notification" sourceEntity="ActivityInstance" targetEntity="Notification" db:database="db2" db:table="NOTIFICATION">
+    <RelationshipRole1 id="activityInstance2Notifications" name="notifications" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="activityInstanceOid" name="ACTIVITYINSTANCE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="notification2ActivityInstance" name="activityInstance" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="notificationOid" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Note_ProcessInstance" name="Note_ProcessInstance" sourceEntity="Note" targetEntity="ProcessInstance" db:database="db2" db:table="NOTE_PROCESSINSTANCE">
+    <RelationshipRole1 id="note2ProcessInstances" name="processInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="noteOid" name="NOTE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="processInstance2Notes" name="processNotes" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="processInstanceOid" name="PROCESSINSTANCE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Note_ActivityInstance" name="Note_ActivityInstance" sourceEntity="Note" targetEntity="ActivityInstance" db:database="db2" db:table="NOTE_ACTIVITYINSTANCE">
+    <RelationshipRole1 id="note2ActivityInstances" name="activityInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="noteOid" name="NOTE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="activityInstance2Notes" name="activityInstanceNotes" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="activityInstanceOid" name="ACTIVITYINSTANCE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="ActivityInstance_NextActivityInstanceNotes" name="ActivityInstance_NextActivityInstanceNotes" sourceEntity="ActivityInstance" targetEntity="Note" gr:bendpoints="-230,-100,54,178" db:database="db2" db:table="NOTE">
+    <RelationshipRole1 id="nextActivityInstance2Notes" name="nextActivityInstanceNote" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="activityInstanceOid" name="ACTIVITYINSTANCE_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="note2NextActivityInstance" name="activityInstance" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="noteOid" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Note_User" name="Note_User" sourceEntity="Note" targetEntity="User" gr:bendpoints="386,-66,-342,-498" db:database="db2" db:table="NOTE">
+    <RelationshipRole1 id="note2User" name="user" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="noteOid" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="user2Notes" name="userNotes" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="ActivityInstance_Group" name="ActivityInstance_Group" sourceEntity="ActivityInstance" targetEntity="Group" gr:bendpoints="564,-84,-130,-240" db:database="db2" db:table="ACTIVITYINSTANCE">
+    <RelationshipRole1 id="activityInstance2Group" name="activityInstanceGroup" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="activityInstanceOid" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="group2ActivityInstances" name="activityInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Attachment_ProcessInstance" name="Attachment_ProcessInstance" sourceEntity="Attachment" targetEntity="ProcessInstance" db:database="db2" db:table="ATTACHMENT_PROCESSINSTANCE">
+    <RelationshipRole1 id="attachment2ProcessInstances" name="processInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="attachmentOid" name="ATTACHMENT_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="processInstance2Attachments" name="processAttachments" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="processInstanceOid" name="PROCESSINSTANCE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Attachment_User" name="Attachment_User" sourceEntity="Attachment" targetEntity="User" db:database="db2" db:table="ATTACHMENT">
+    <RelationshipRole1 id="attachment2User" name="user" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="attachmentOid" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="user2Attachments" name="userAttachments" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="SubprocessInstances_ParentProcessInstance" name="SubprocessInstances_ParentProcessInstance" sourceEntity="ProcessInstance" targetEntity="ProcessInstance" gr:bendpoints="-123,149,-123,149;-153,98,-153,98" db:database="db2" db:table="PROCESSINSTANCE">
+    <RelationshipRole1 id="subprocessInstance2ParentProcessInstance" name="ParentProcessInstance" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="processInstanceOid" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="parentProcessInstance2SubprocessInstances" name="SubprocessInstances" maxCard="N" cascadeDelete="false">
+      <db:JoinColumn attribute="processInstanceOid" name="PROCESSINSTANCE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="280" gr:y="-740" id="ent2" name="Elementos Administrables" duration="persistent" attributeOrder="ent2#att10 ent2#att11 ent2#att12" db:database="db2" db:table="ELEMENTOS_ADMINISTRABLES">
+    <Attribute id="ent2#att10" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent2#att11" name="elemento administrable" type="string" db:column="ELEMENTO_ADMINISTRABLE"/>
+    <Attribute id="ent2#att12" name="valor" type="string" db:column="VALOR"/>
+  </Entity>
+  <Entity id="ent3" name="Cadenas" duration="persistent" attributeOrder="ent3#att13 ent3#att30 ent3#att29 ent3#att28 ent3#att27 ent3#att26 ent3#att25 ent3#att24 ent3#att23 ent3#att22 ent3#att21 ent3#att20 ent3#att19 ent3#att18 ent3#att17 ent3#att16 ent3#att15 ent3#att14 ent3#att483 ent3#att484 ent3#att485 ent3#att486 ent3#att487" db:database="db2" db:table="CADENAS" gr:x="-145" gr:y="-1220">
+    <Attribute id="ent3#att13" name="oid" key="true" type="integer" db:column="OID"/>
+    <Attribute id="ent3#att14" name="xml_sig_tag" type="text" db:column="XML_SIG_TAG" db:clob="true"/>
+    <Attribute id="ent3#att15" name="modulus" type="text" db:column="MODULUS" db:clob="true"/>
+    <Attribute id="ent3#att16" name="certificado_x509" type="text" db:column="CERTIFICADO_X509" db:clob="true"/>
+    <Attribute id="ent3#att17" name="nombre_emisor_cert" type="text" db:column="NOMBRE_EMISOR_CERT" db:clob="true"/>
+    <Attribute id="ent3#att18" name="nombre_sujeto_x509" type="text" db:column="NOMBRE_SUJETO_X509" db:clob="true"/>
+    <Attribute id="ent3#att19" name="documento_firmado" type="blob" db:column="DOCUMENTO_FIRMADO"/>
+    <Attribute id="ent3#att20" name="uri" type="url" db:column="URI"/>
+    <Attribute id="ent3#att21" name="sello_digital" type="text" db:column="SELLO_DIGITAL" db:clob="true"/>
+    <Attribute id="ent3#att22" name="hash_cadena" type="string" db:column="HASH_CADENA"/>
+    <Attribute id="ent3#att23" name="fechas_vigencia" type="string" db:column="FECHAS_VIGENCIA"/>
+    <Attribute id="ent3#att24" name="serie_cert" type="string" db:column="SERIE_CERT"/>
+    <Attribute id="ent3#att25" name="cadena" type="text" db:column="CADENA" db:clob="true"/>
+    <Attribute id="ent3#att26" name="time_stamp" type="string" db:column="TIME_STAMP"/>
+    <Attribute id="ent3#att27" name="curp_o_rfc_firmante" type="string" db:column="CURP_O_RFC_FIRMANTE"/>
+    <Attribute id="ent3#att28" name="nombre_o_razon_social_firmante" type="string" db:column="NOMBRE_O_RAZON_SOCIAL_FIRMANTE"/>
+    <Attribute id="ent3#att29" name="proceso" type="integer" db:column="PROCESO"/>
+    <Attribute id="ent3#att30" name="folio" type="string" db:column="FOLIO"/>
+    <Attribute id="ent3#att483" name="xmlM4" type="text" db:column="XMLM4" db:clob="true"/>
+    <Attribute id="ent3#att484" name="elaboradoPor" type="string" db:column="ELABORADOPOR"/>
+    <Attribute id="ent3#att485" name="firmado" type="boolean" db:column="FIRMADO"/>
+    <Attribute id="ent3#att486" name="xml" type="text" db:column="XML" db:clob="true"/>
+    <Attribute id="ent3#att487" name="oidPM" type="integer" db:column="OIDPM"/>
+  </Entity>
+  <Entity id="ent4" name="Buffer" duration="volatile" attributeOrder="ent4#att31 ent4#att32 ent4#att33 ent4#att34 ent4#att35" volatileStorage="database" gr:x="730" gr:y="-175">
+    <Attribute id="ent4#att31" name="oid" key="true" type="integer"/>
+    <Attribute id="ent4#att32" name="key" type="blob"/>
+    <Attribute id="ent4#att33" name="cer" type="blob"/>
+    <Attribute id="ent4#att34" name="archivo" type="blob"/>
+    <Attribute id="ent4#att35" name="imagen" type="blob"/>
+  </Entity>
+  <Entity id="ent6" name="Basurita" duration="volatile" attributeOrder="ent6#att36 ent6#att37 ent6#att38 ent6#att39 ent6#att40" volatileStorage="database" gr:x="571" gr:y="-965">
+    <Attribute id="ent6#att36" name="oid" key="true" type="integer"/>
+    <Attribute id="ent6#att37" name="key" type="blob"/>
+    <Attribute id="ent6#att38" name="cer" type="blob"/>
+    <Attribute id="ent6#att39" name="archivo" type="blob"/>
+    <Attribute id="ent6#att40" name="imagen" type="blob"/>
+  </Entity>
+  <Entity gr:x="750" gr:y="-945" id="ent5" name="Texto" duration="persistent" attributeOrder="ent5#att41 ent5#att42 ent5#att43" db:database="db2" db:table="TEXTO">
+    <Attribute id="ent5#att41" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent5#att43" name="texto" type="text" db:column="TEXTO" db:clob="true"/>
+    <Attribute id="ent5#att42" name="descripcion" type="string" db:column="DESCRIPCION"/>
+  </Entity>
+  <Entity id="ent7" name="buffer Expediente" duration="volatile" attributeOrder="ent7#att44 ent7#att45" volatileStorage="database" gr:x="364" gr:y="-980">
+    <Attribute id="ent7#att44" name="oid" key="true" type="integer"/>
+    <Attribute id="ent7#att45" name="archivo" type="blob"/>
+  </Entity>
+  <Package id="pkg1" name="ineQA" gr:x="1815" gr:y="-455">
+    <Package id="pkg1#pkg2" name="ineServiceSCHEMA2FineProyecto2FRecursos2Fwsdls2FXMLSchema_1307210518" gr:x="0" gr:y="0">
+      <Entity id="pkg1#pkg2#ent9" name="validaDatosResponse" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp1" wrxsd:type="{http://servicios.mediador.ine.apps.economia.gob.mx/}validaDatosResponse[Element]" gr:x="0" gr:y="0">
+        <Attribute id="pkg1#pkg2#ent9#att61" name="oid" type="integer" key="true"/>
+      </Entity>
+      <Entity id="pkg1#pkg2#ent10" name="validaDatos" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp1" wrxsd:type="{http://servicios.mediador.ine.apps.economia.gob.mx/}validaDatos[ComplexType]" gr:x="0" gr:y="65">
+        <Attribute id="pkg1#pkg2#ent10#att62" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg1#pkg2#ent10#att63" name="ocr" type="string" key="false" wrxsd:element="ocr[Element]"/>
+        <Attribute id="pkg1#pkg2#ent10#att64" name="cic" type="string" key="false" wrxsd:element="cic[Element]"/>
+        <Attribute id="pkg1#pkg2#ent10#att65" name="numeroEmision" type="string" key="false" wrxsd:element="numeroEmision[Element]"/>
+        <Attribute id="pkg1#pkg2#ent10#att66" name="claveElector" type="string" key="false" wrxsd:element="claveElector[Element]"/>
+        <Attribute id="pkg1#pkg2#ent10#att67" name="nombre" type="string" key="false" wrxsd:element="nombre[Element]"/>
+        <Attribute id="pkg1#pkg2#ent10#att68" name="apellidoPaterno" type="string" key="false" wrxsd:element="apellidoPaterno[Element]"/>
+        <Attribute id="pkg1#pkg2#ent10#att69" name="apellidoMaterno" type="string" key="false" wrxsd:element="apellidoMaterno[Element]"/>
+        <Attribute id="pkg1#pkg2#ent10#att70" name="anioEmision" type="string" key="false" wrxsd:element="anioEmision[Element]"/>
+        <Attribute id="pkg1#pkg2#ent10#att71" name="anioResgistro" type="string" key="false" wrxsd:element="anioResgistro[Element]"/>
+        <Attribute id="pkg1#pkg2#ent10#att72" name="curp" type="string" key="false" wrxsd:element="curp[Element]"/>
+      </Entity>
+      <Entity id="pkg1#pkg2#ent11" name="validacionDatosWS" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp1" wrxsd:type="{http://servicios.mediador.ine.apps.economia.gob.mx/}validacionDatosWS[ComplexType]" gr:x="210" gr:y="50">
+        <Attribute id="pkg1#pkg2#ent11#att73" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg1#pkg2#ent11#att74" name="codigoRespuesta" type="integer" key="false" wrxsd:element="codigoRespuesta[Element]"/>
+        <Attribute id="pkg1#pkg2#ent11#att75" name="numeroSolicitud" type="string" key="false" wrxsd:element="numeroSolicitud[Element]"/>
+        <Attribute id="pkg1#pkg2#ent11#att76" name="reporteRobo" type="string" key="false" wrxsd:element="reporteRobo[Element]"/>
+        <Attribute id="pkg1#pkg2#ent11#att77" name="situacionRegistral" type="string" key="false" wrxsd:element="situacionRegistral[Element]"/>
+      </Entity>
+      <Entity id="pkg1#pkg2#ent12" name="errorWS" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp1" wrxsd:type="{http://servicios.mediador.ine.apps.economia.gob.mx/}errorWS[ComplexType]" gr:x="420" gr:y="265">
+        <Attribute id="pkg1#pkg2#ent12#att78" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg1#pkg2#ent12#att79" name="error" type="boolean" key="false" wrxsd:element="error[Element]"/>
+        <Attribute id="pkg1#pkg2#ent12#att80" name="mensaje" type="string" key="false" wrxsd:element="mensaje[Element]"/>
+      </Entity>
+      <Entity id="pkg1#pkg2#ent13" name="validacionWS" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp1" wrxsd:type="{http://servicios.mediador.ine.apps.economia.gob.mx/}validacionWS[ComplexType]" gr:x="420" gr:y="0">
+        <Attribute id="pkg1#pkg2#ent13#att81" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg1#pkg2#ent13#att82" name="anioEmision" type="boolean" key="false" wrxsd:element="anioEmision[Element]"/>
+        <Attribute id="pkg1#pkg2#ent13#att83" name="anioRegistro" type="boolean" key="false" wrxsd:element="anioRegistro[Element]"/>
+        <Attribute id="pkg1#pkg2#ent13#att84" name="apellidoMaterno" type="boolean" key="false" wrxsd:element="apellidoMaterno[Element]"/>
+        <Attribute id="pkg1#pkg2#ent13#att85" name="apellidoPaterno" type="boolean" key="false" wrxsd:element="apellidoPaterno[Element]"/>
+        <Attribute id="pkg1#pkg2#ent13#att86" name="claveElector" type="boolean" key="false" wrxsd:element="claveElector[Element]"/>
+        <Attribute id="pkg1#pkg2#ent13#att87" name="curp" type="boolean" key="false" wrxsd:element="curp[Element]"/>
+        <Attribute id="pkg1#pkg2#ent13#att88" name="nombre" type="boolean" key="false" wrxsd:element="nombre[Element]"/>
+        <Attribute id="pkg1#pkg2#ent13#att89" name="numeroEmision" type="boolean" key="false" wrxsd:element="numeroEmision[Element]"/>
+      </Entity>
+    </Package>
+  </Package>
+  <Relationship id="rel1" name="validaDatosResponse_validacionDatosWS" sourceEntity="pkg1#pkg2#ent9" targetEntity="pkg1#pkg2#ent11" wrxsd:element="resultadoValidacion[Element]">
+    <RelationshipRole1 id="rel1#role1" name="resultadoValidacion" maxCard="1"/>
+    <RelationshipRole2 id="rel1#role2" name="resultadoValidacionInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel2" name="validacionDatosWS_errorWS" sourceEntity="pkg1#pkg2#ent11" targetEntity="pkg1#pkg2#ent12" wrxsd:element="error[Element]">
+    <RelationshipRole1 id="rel2#role3" name="error" maxCard="1"/>
+    <RelationshipRole2 id="rel2#role4" name="errorInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel3" name="validacionDatosWS_validacionWS" sourceEntity="pkg1#pkg2#ent11" targetEntity="pkg1#pkg2#ent13" wrxsd:element="validacion[Element]">
+    <RelationshipRole1 id="rel3#role5" name="validacion" maxCard="1"/>
+    <RelationshipRole2 id="rel3#role6" name="validacionInverse" maxCard="1"/>
+  </Relationship>
+  <Package id="pkg3" name="renapoDes" gr:x="2915" gr:y="110">
+    <Package id="pkg3#pkg4" name="consultaCurpServiceXsd1" gr:x="0" gr:y="0">
+      <Entity id="pkg3#pkg4#ent14" name="ConsultaCurpResponseMessage" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}ConsultaCurpResponseMessage[Element]" gr:x="0" gr:y="180">
+        <Attribute id="pkg3#pkg4#ent14#att90" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent14#att91" name="curp" type="string" key="false" wrxsd:element="curp[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent14#att92" name="nombres" type="string" key="false" wrxsd:element="nombres[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent14#att93" name="apellidoPaterno" type="string" key="false" wrxsd:element="apellidoPaterno[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent14#att94" name="apellidoMaterno" type="string" key="false" wrxsd:element="apellidoMaterno[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent14#att95" name="sexo" type="string" key="false" wrxsd:element="sexo[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent14#att96" name="fechaNacimiento" type="string" key="false" wrxsd:element="fechaNacimiento[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent14#att97" name="nacionalidad" type="string" key="false" wrxsd:element="nacionalidad[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent14#att98" name="documentoProbatorio" type="string" key="false" wrxsd:element="documentoProbatorio[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent14#att99" name="cveEntidadNac" type="string" key="false" wrxsd:element="cveEntidadNac[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent14#att100" name="cveEntidadEmisora" type="string" key="false" wrxsd:element="cveEntidadEmisora[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent14#att101" name="statusCurp" type="string" key="false" wrxsd:element="statusCurp[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent14#att102" name="responseCode" type="string" key="false" wrxsd:element="responseCode[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent14#att103" name="responseMessage" type="string" key="false" wrxsd:element="responseMessage[Attribute]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent15" name="ConsultaCurpResponseMessage_ActaNacimiento" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}ConsultaCurpResponseMessage/ActaNacimiento[Element]" gr:x="210" gr:y="205">
+        <Attribute id="pkg3#pkg4#ent15#att104" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent15#att105" name="anioRegistro" type="string" key="false" wrxsd:element="anioRegistro[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent15#att106" name="foja" type="string" key="false" wrxsd:element="foja[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent15#att107" name="tomo" type="string" key="false" wrxsd:element="tomo[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent15#att108" name="libro" type="string" key="false" wrxsd:element="libro[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent15#att109" name="numActa" type="string" key="false" wrxsd:element="numActa[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent15#att110" name="crip" type="string" key="false" wrxsd:element="crip[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent15#att111" name="numEntidadReg" type="string" key="false" wrxsd:element="numEntidadReg[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent15#att112" name="cveMunicipioReg" type="string" key="false" wrxsd:element="cveMunicipioReg[Attribute]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent16" name="ConsultaCurpResponseMessage_DocumentoMigratorio" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}ConsultaCurpResponseMessage/DocumentoMigratorio[Element]" gr:x="210" gr:y="470">
+        <Attribute id="pkg3#pkg4#ent16#att113" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent16#att114" name="numRegExtranjeros" type="string" key="false" wrxsd:element="numRegExtranjeros[Attribute]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent17" name="ConsultaCurpResponseMessage_CartaNaturalizacion" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}ConsultaCurpResponseMessage/CartaNaturalizacion[Element]" gr:x="210" gr:y="90">
+        <Attribute id="pkg3#pkg4#ent17#att115" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent17#att116" name="anioRegistro" type="string" key="false" wrxsd:element="anioRegistro[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent17#att117" name="folioCarta" type="string" key="false" wrxsd:element="folioCarta[Attribute]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent18" name="ConsultaCurpResponseMessage_CertificadoNacionalidad" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}ConsultaCurpResponseMessage/CertificadoNacionalidad[Element]" gr:x="210" gr:y="560">
+        <Attribute id="pkg3#pkg4#ent18#att118" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent18#att119" name="anioRegistro" type="string" key="false" wrxsd:element="anioRegistro[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent18#att120" name="folioCarta" type="string" key="false" wrxsd:element="folioCarta[Attribute]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent19" name="ConsultaCurpResponseMessage_OficioSolicitanteRefugiado" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}ConsultaCurpResponseMessage/OficioSolicitanteRefugiado[Element]" gr:x="210" gr:y="0">
+        <Attribute id="pkg3#pkg4#ent19#att121" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent19#att122" name="crip" type="string" key="false" wrxsd:element="crip[Attribute]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent20" name="consultaCurpResponse" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}consultaCurpResponse[Element]" gr:x="0" gr:y="838">
+        <Attribute id="pkg3#pkg4#ent20#att123" name="oid" type="integer" key="true"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent21" name="consultaCurpResponse_response" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}consultaCurpResponse/{http://ws.curp.ms.se.gob.mx/}response[Element]" gr:x="210" gr:y="675">
+        <Attribute id="pkg3#pkg4#ent21#att124" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent21#att125" name="curp" type="string" key="false" wrxsd:element="curp[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent21#att126" name="nombres" type="string" key="false" wrxsd:element="nombres[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent21#att127" name="apellidoPaterno" type="string" key="false" wrxsd:element="apellidoPaterno[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent21#att128" name="apellidoMaterno" type="string" key="false" wrxsd:element="apellidoMaterno[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent21#att129" name="sexo" type="string" key="false" wrxsd:element="sexo[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent21#att130" name="fechaNacimiento" type="string" key="false" wrxsd:element="fechaNacimiento[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent21#att131" name="nacionalidad" type="string" key="false" wrxsd:element="nacionalidad[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent21#att132" name="documentoProbatorio" type="string" key="false" wrxsd:element="documentoProbatorio[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent21#att133" name="cveEntidadNac" type="string" key="false" wrxsd:element="cveEntidadNac[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent21#att134" name="cveEntidadEmisora" type="string" key="false" wrxsd:element="cveEntidadEmisora[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent21#att135" name="statusCurp" type="string" key="false" wrxsd:element="statusCurp[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent21#att136" name="responseCode" type="string" key="false" wrxsd:element="responseCode[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent21#att137" name="responseMessage" type="string" key="false" wrxsd:element="responseMessage[Attribute]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent22" name="consultaCurpResponse_response_ActaNacimiento" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}consultaCurpResponse/{http://ws.curp.ms.se.gob.mx/}response/ActaNacimiento[Element]" gr:x="420" gr:y="800">
+        <Attribute id="pkg3#pkg4#ent22#att138" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent22#att139" name="anioRegistro" type="string" key="false" wrxsd:element="anioRegistro[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent22#att140" name="foja" type="string" key="false" wrxsd:element="foja[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent22#att141" name="tomo" type="string" key="false" wrxsd:element="tomo[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent22#att142" name="libro" type="string" key="false" wrxsd:element="libro[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent22#att143" name="numActa" type="string" key="false" wrxsd:element="numActa[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent22#att144" name="crip" type="string" key="false" wrxsd:element="crip[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent22#att145" name="numEntidadReg" type="string" key="false" wrxsd:element="numEntidadReg[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent22#att146" name="cveMunicipioReg" type="string" key="false" wrxsd:element="cveMunicipioReg[Attribute]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent23" name="consultaCurpResponse_response_DocumentoMigratorio" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}consultaCurpResponse/{http://ws.curp.ms.se.gob.mx/}response/DocumentoMigratorio[Element]" gr:x="420" gr:y="505">
+        <Attribute id="pkg3#pkg4#ent23#att147" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent23#att148" name="numRegExtranjeros" type="string" key="false" wrxsd:element="numRegExtranjeros[Attribute]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent24" name="consultaCurpResponse_response_CartaNaturalizacion" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}consultaCurpResponse/{http://ws.curp.ms.se.gob.mx/}response/CartaNaturalizacion[Element]" gr:x="420" gr:y="390">
+        <Attribute id="pkg3#pkg4#ent24#att149" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent24#att150" name="anioRegistro" type="string" key="false" wrxsd:element="anioRegistro[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent24#att151" name="folioCarta" type="string" key="false" wrxsd:element="folioCarta[Attribute]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent25" name="consultaCurpResponse_response_CertificadoNacionalidad" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}consultaCurpResponse/{http://ws.curp.ms.se.gob.mx/}response/CertificadoNacionalidad[Element]" gr:x="420" gr:y="595">
+        <Attribute id="pkg3#pkg4#ent25#att152" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent25#att153" name="anioRegistro" type="string" key="false" wrxsd:element="anioRegistro[Attribute]"/>
+        <Attribute id="pkg3#pkg4#ent25#att154" name="folioCarta" type="string" key="false" wrxsd:element="folioCarta[Attribute]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent26" name="consultaCurpResponse_response_OficioSolicitanteRefugiado" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}consultaCurpResponse/{http://ws.curp.ms.se.gob.mx/}response/OficioSolicitanteRefugiado[Element]" gr:x="420" gr:y="710">
+        <Attribute id="pkg3#pkg4#ent26#att155" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent26#att156" name="crip" type="string" key="false" wrxsd:element="crip[Attribute]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent27" name="consultaCurp" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}consultaCurp[ComplexType]" gr:x="0" gr:y="686">
+        <Attribute id="pkg3#pkg4#ent27#att157" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent27#att158" name="curp" type="string" key="false" wrxsd:element="curp[Element]"/>
+        <Attribute id="pkg3#pkg4#ent27#att159" name="se-usuario" type="string" key="false" wrxsd:element="se-usuario[Element]"/>
+        <Attribute id="pkg3#pkg4#ent27#att160" name="se-password" type="string" key="false" wrxsd:element="se-password[Element]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent28" name="testURL" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}testURL[ComplexType]" gr:x="0" gr:y="0">
+        <Attribute id="pkg3#pkg4#ent28#att161" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent28#att162" name="arg0" type="string" key="false" wrxsd:element="arg0[Element]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent29" name="testURLResponse" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}testURLResponse[ComplexType]" gr:x="0" gr:y="583">
+        <Attribute id="pkg3#pkg4#ent29#att163" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent29#att164" name="return" type="boolean" key="false" wrxsd:element="return[Element]"/>
+      </Entity>
+      <Entity id="pkg3#pkg4#ent30" name="Exception" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp2" wrxsd:type="{http://ws.curp.ms.se.gob.mx/}Exception[ComplexType]" gr:x="0" gr:y="90">
+        <Attribute id="pkg3#pkg4#ent30#att165" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg3#pkg4#ent30#att166" name="message" type="string" key="false" wrxsd:element="message[Element]"/>
+      </Entity>
+    </Package>
+  </Package>
+  <Relationship id="rel4" name="ConsultaCurpResponseMessage_ConsultaCurpResponseMessage_ActaNacimiento" sourceEntity="pkg3#pkg4#ent14" targetEntity="pkg3#pkg4#ent15" wrxsd:element="ActaNacimiento[Element]">
+    <RelationshipRole1 id="rel4#role7" name="ActaNacimiento" maxCard="1"/>
+    <RelationshipRole2 id="rel4#role8" name="ActaNacimientoInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel5" name="ConsultaCurpResponseMessage_ConsultaCurpResponseMessage_DocumentoMigratorio" sourceEntity="pkg3#pkg4#ent14" targetEntity="pkg3#pkg4#ent16" wrxsd:element="DocumentoMigratorio[Element]">
+    <RelationshipRole1 id="rel5#role9" name="DocumentoMigratorio" maxCard="1"/>
+    <RelationshipRole2 id="rel5#role10" name="DocumentoMigratorioInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel6" name="ConsultaCurpResponseMessage_ConsultaCurpResponseMessage_CartaNaturalizacion" sourceEntity="pkg3#pkg4#ent14" targetEntity="pkg3#pkg4#ent17" wrxsd:element="CartaNaturalizacion[Element]">
+    <RelationshipRole1 id="rel6#role11" name="CartaNaturalizacion" maxCard="1"/>
+    <RelationshipRole2 id="rel6#role12" name="CartaNaturalizacionInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel7" name="ConsultaCurpResponseMessage_ConsultaCurpResponseMessage_CertificadoNacionalidad" sourceEntity="pkg3#pkg4#ent14" targetEntity="pkg3#pkg4#ent18" wrxsd:element="CertificadoNacionalidad[Element]">
+    <RelationshipRole1 id="rel7#role13" name="CertificadoNacionalidad" maxCard="1"/>
+    <RelationshipRole2 id="rel7#role14" name="CertificadoNacionalidadInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel8" name="ConsultaCurpResponseMessage_ConsultaCurpResponseMessage_OficioSolicitanteRefugiado" sourceEntity="pkg3#pkg4#ent14" targetEntity="pkg3#pkg4#ent19" wrxsd:element="OficioSolicitanteRefugiado[Element]">
+    <RelationshipRole1 id="rel8#role15" name="OficioSolicitanteRefugiado" maxCard="1"/>
+    <RelationshipRole2 id="rel8#role16" name="OficioSolicitanteRefugiadoInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel9" name="consultaCurpResponse_consultaCurpResponse_response" sourceEntity="pkg3#pkg4#ent20" targetEntity="pkg3#pkg4#ent21" wrxsd:element="response[Element]">
+    <RelationshipRole1 id="rel9#role17" name="response" maxCard="1"/>
+    <RelationshipRole2 id="rel9#role18" name="responseInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel10" name="consultaCurpResponse_response_consultaCurpResponse_response_ActaNacimiento" sourceEntity="pkg3#pkg4#ent21" targetEntity="pkg3#pkg4#ent22" wrxsd:element="ActaNacimiento[Element]">
+    <RelationshipRole1 id="rel10#role19" name="ActaNacimiento" maxCard="1"/>
+    <RelationshipRole2 id="rel10#role20" name="ActaNacimientoInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel11" name="consultaCurpResponse_response_consultaCurpResponse_response_DocumentoMigratorio" sourceEntity="pkg3#pkg4#ent21" targetEntity="pkg3#pkg4#ent23" wrxsd:element="DocumentoMigratorio[Element]">
+    <RelationshipRole1 id="rel11#role21" name="DocumentoMigratorio" maxCard="1"/>
+    <RelationshipRole2 id="rel11#role22" name="DocumentoMigratorioInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel12" name="consultaCurpResponse_response_consultaCurpResponse_response_CartaNaturalizacion" sourceEntity="pkg3#pkg4#ent21" targetEntity="pkg3#pkg4#ent24" wrxsd:element="CartaNaturalizacion[Element]">
+    <RelationshipRole1 id="rel12#role23" name="CartaNaturalizacion" maxCard="1"/>
+    <RelationshipRole2 id="rel12#role24" name="CartaNaturalizacionInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel13" name="consultaCurpResponse_response_consultaCurpResponse_response_CertificadoNacionalidad" sourceEntity="pkg3#pkg4#ent21" targetEntity="pkg3#pkg4#ent25" wrxsd:element="CertificadoNacionalidad[Element]">
+    <RelationshipRole1 id="rel13#role25" name="CertificadoNacionalidad" maxCard="1"/>
+    <RelationshipRole2 id="rel13#role26" name="CertificadoNacionalidadInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel14" name="consultaCurpResponse_response_consultaCurpResponse_response_OficioSolicitanteRefugiado" sourceEntity="pkg3#pkg4#ent21" targetEntity="pkg3#pkg4#ent26" wrxsd:element="OficioSolicitanteRefugiado[Element]">
+    <RelationshipRole1 id="rel14#role27" name="OficioSolicitanteRefugiado" maxCard="1"/>
+    <RelationshipRole2 id="rel14#role28" name="OficioSolicitanteRefugiadoInverse" maxCard="1"/>
+  </Relationship>
+  <Package id="pkg5" name="satProd" gr:x="1645" gr:y="190">
+    <Package id="pkg5#pkg6" name="sATIdCInternoProxyServiceWsdlTypeWsdlPos0" gr:x="0" gr:y="0">
+      <Entity id="pkg5#pkg6#ent31" name="ConsultaIdCInternoRequestDTOWrapper" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp3" wrxsd:type="{http://servicio.sat.economia.gob.mx}ConsultaIdCInternoRequestDTOWrapper[Element]" gr:x="0" gr:y="788">
+        <Attribute id="pkg5#pkg6#ent31#att167" name="oid" type="integer" key="true"/>
+      </Entity>
+      <Entity id="pkg5#pkg6#ent32" name="ConsultaIdCInternoResponseDTOWrapper" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp3" wrxsd:type="{http://servicio.sat.economia.gob.mx}ConsultaIdCInternoResponseDTOWrapper[Element]" gr:x="0" gr:y="323">
+        <Attribute id="pkg5#pkg6#ent32#att168" name="oid" type="integer" key="true"/>
+      </Entity>
+      <Entity id="pkg5#pkg6#ent33" name="denominacionVO" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp3" wrxsd:type="{http://servicio.sat.economia.gob.mx}denominacionVO[ComplexType]" gr:x="210" gr:y="700">
+        <Attribute id="pkg5#pkg6#ent33#att169" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg5#pkg6#ent33#att170" name="cud" type="string" key="false" wrxsd:element="cud[Element]"/>
+        <Attribute id="pkg5#pkg6#ent33#att171" name="denominacion" type="string" key="false" wrxsd:element="denominacion[Element]"/>
+        <Attribute id="pkg5#pkg6#ent33#att172" name="fechaEmision" type="timestamp" key="false" wrxsd:element="fechaEmision[Element]"/>
+        <Attribute id="pkg5#pkg6#ent33#att173" name="idContratoSocial" type="decimal" key="false" wrxsd:element="idContratoSocial[Element]"/>
+        <Attribute id="pkg5#pkg6#ent33#att174" name="idDenominacion" type="decimal" key="false" wrxsd:element="idDenominacion[Element]"/>
+        <Attribute id="pkg5#pkg6#ent33#att175" name="rfc" type="string" key="false" wrxsd:element="rfc[Element]"/>
+        <Attribute id="pkg5#pkg6#ent33#att176" name="vigencia" type="decimal" key="false" wrxsd:element="vigencia[Element]"/>
+      </Entity>
+      <Entity id="pkg5#pkg6#ent34" name="contribuyenteVO" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp3" wrxsd:type="{http://servicio.sat.economia.gob.mx}contribuyenteVO[ComplexType]" gr:x="210" gr:y="10">
+        <Attribute id="pkg5#pkg6#ent34#att177" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg5#pkg6#ent34#att178" name="apellidoMaterno" type="string" key="false" wrxsd:element="apellidoMaterno[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att179" name="apellidoPaterno" type="string" key="false" wrxsd:element="apellidoPaterno[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att180" name="correoElectronicoRfc" type="string" key="false" wrxsd:element="correoElectronicoRfc[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att181" name="curp" type="string" key="false" wrxsd:element="curp[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att182" name="cveDetSitCont" type="string" key="false" wrxsd:element="cveDetSitCont[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att183" name="cveSegmento" type="string" key="false" wrxsd:element="cveSegmento[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att184" name="cveSitContDom" type="string" key="false" wrxsd:element="cveSitContDom[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att185" name="descSitCont" type="string" key="false" wrxsd:element="descSitCont[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att186" name="descsitContDom" type="string" key="false" wrxsd:element="descsitContDom[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att187" name="dfFFin" type="string" key="false" wrxsd:element="dfFFin[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att188" name="dfFInicio" type="string" key="false" wrxsd:element="dfFInicio[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att189" name="dfFolio" type="string" key="false" wrxsd:element="dfFolio[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att190" name="dfTipo" type="string" key="false" wrxsd:element="dfTipo[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att191" name="estatus" type="string" key="false" wrxsd:element="estatus[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att192" name="fechaNacimiento" type="string" key="false" wrxsd:element="fechaNacimiento[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att193" name="nacionalidad" type="string" key="false" wrxsd:element="nacionalidad[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att194" name="nomComercial" type="string" key="false" wrxsd:element="nomComercial[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att195" name="nombre" type="string" key="false" wrxsd:element="nombre[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att196" name="paisOrigen" type="string" key="false" wrxsd:element="paisOrigen[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att197" name="segmento" type="string" key="false" wrxsd:element="segmento[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att198" name="tipoPersona" type="string" key="false" wrxsd:element="tipoPersona[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att199" name="cSitCont" type="string" key="false" wrxsd:element="cSitCont[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att200" name="cSitDom" type="string" key="false" wrxsd:element="cSitDom[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att201" name="fIniOpers" type="string" key="false" wrxsd:element="fIniOpers[Element]"/>
+        <Attribute id="pkg5#pkg6#ent34#att202" name="fSitCont" type="string" key="false" wrxsd:element="fSitCont[Element]"/>
+      </Entity>
+      <Entity id="pkg5#pkg6#ent35" name="domicilioVO" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp3" wrxsd:type="{http://servicio.sat.economia.gob.mx}domicilioVO[ComplexType]" gr:x="420" gr:y="0">
+        <Attribute id="pkg5#pkg6#ent35#att203" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg5#pkg6#ent35#att204" name="admLocRecaudacion" type="string" key="false" wrxsd:element="admLocRecaudacion[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att205" name="calle" type="string" key="false" wrxsd:element="calle[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att206" name="codigoPostal" type="string" key="false" wrxsd:element="codigoPostal[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att207" name="colonia" type="string" key="false" wrxsd:element="colonia[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att208" name="correoElectronico" type="string" key="false" wrxsd:element="correoElectronico[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att209" name="cveAdmLocRecaudacion" type="string" key="false" wrxsd:element="cveAdmLocRecaudacion[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att210" name="cveColonia" type="string" key="false" wrxsd:element="cveColonia[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att211" name="cveEntidadFederativa" type="string" key="false" wrxsd:element="cveEntidadFederativa[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att212" name="cveLocalidad" type="string" key="false" wrxsd:element="cveLocalidad[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att213" name="cveMunicipio" type="string" key="false" wrxsd:element="cveMunicipio[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att214" name="entidadFederativa" type="string" key="false" wrxsd:element="entidadFederativa[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att215" name="entreCalle" type="string" key="false" wrxsd:element="entreCalle[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att216" name="fechaAltaDom" type="timestamp" key="false" wrxsd:element="fechaAltaDom[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att217" name="idAsentamiento" type="decimal" key="false" wrxsd:element="idAsentamiento[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att218" name="idColonia" type="decimal" key="false" wrxsd:element="idColonia[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att219" name="idDomicilio" type="decimal" key="false" wrxsd:element="idDomicilio[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att220" name="idEntidadFederativa" type="decimal" key="false" wrxsd:element="idEntidadFederativa[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att221" name="idGeoreferencia" type="decimal" key="false" wrxsd:element="idGeoreferencia[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att222" name="idLocalidad" type="decimal" key="false" wrxsd:element="idLocalidad[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att223" name="idMunicipio" type="decimal" key="false" wrxsd:element="idMunicipio[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att224" name="idRegion" type="decimal" key="false" wrxsd:element="idRegion[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att225" name="idTelefono" type="decimal" key="false" wrxsd:element="idTelefono[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att226" name="idTipoDomicilio" type="decimal" key="false" wrxsd:element="idTipoDomicilio[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att227" name="idTipoVialidad" type="decimal" key="false" wrxsd:element="idTipoVialidad[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att228" name="inmueble" type="string" key="false" wrxsd:element="inmueble[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att229" name="localidad" type="string" key="false" wrxsd:element="localidad[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att230" name="municipio" type="string" key="false" wrxsd:element="municipio[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att231" name="numeroExterior" type="string" key="false" wrxsd:element="numeroExterior[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att232" name="numeroInterior" type="string" key="false" wrxsd:element="numeroInterior[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att233" name="paisResidencia" type="string" key="false" wrxsd:element="paisResidencia[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att234" name="referenciasAdicionales" type="string" key="false" wrxsd:element="referenciasAdicionales[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att235" name="tipoInmueble" type="string" key="false" wrxsd:element="tipoInmueble[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att236" name="tipoVialidad" type="string" key="false" wrxsd:element="tipoVialidad[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att237" name="vialidad" type="string" key="false" wrxsd:element="vialidad[Element]"/>
+        <Attribute id="pkg5#pkg6#ent35#att238" name="yCalle" type="string" key="false" wrxsd:element="yCalle[Element]"/>
+      </Entity>
+      <Entity id="pkg5#pkg6#ent36" name="telefonoVO" duration="volatile" volatileStorage="database" wrxsd:provider="xsdp3" wrxsd:type="{http://servicio.sat.economia.gob.mx}telefonoVO[ComplexType]" gr:x="630" gr:y="375">
+        <Attribute id="pkg5#pkg6#ent36#att239" name="oid" type="integer" key="true"/>
+        <Attribute id="pkg5#pkg6#ent36#att240" name="cvLada" type="string" key="false" wrxsd:element="cvLada[Element]"/>
+        <Attribute id="pkg5#pkg6#ent36#att241" name="desTelefono" type="string" key="false" wrxsd:element="desTelefono[Element]"/>
+        <Attribute id="pkg5#pkg6#ent36#att242" name="idDomicilio" type="integer" key="false" wrxsd:element="idDomicilio[Element]"/>
+        <Attribute id="pkg5#pkg6#ent36#att243" name="idTelefono" type="integer" key="false" wrxsd:element="idTelefono[Element]"/>
+        <Attribute id="pkg5#pkg6#ent36#att244" name="tipoTelefono" type="integer" key="false" wrxsd:element="tipoTelefono[Element]"/>
+      </Entity>
+    </Package>
+  </Package>
+  <Relationship id="rel15" name="ConsultaIdCInternoRequestDTOWrapper_denominacionVO" sourceEntity="pkg5#pkg6#ent31" targetEntity="pkg5#pkg6#ent33" wrxsd:element="ConsultaIdCInternoRequestDTO/denominacionVO[Element]">
+    <RelationshipRole1 id="rel15#role29" name="ConsultaIdCInternoRequestDTO_denominacionVO" maxCard="1"/>
+    <RelationshipRole2 id="rel15#role30" name="ConsultaIdCInternoRequestDTO_denominacionVOInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel16" name="ConsultaIdCInternoResponseDTOWrapper_contribuyenteVO" sourceEntity="pkg5#pkg6#ent32" targetEntity="pkg5#pkg6#ent34" wrxsd:element="ConsultaIdCInternoResponseDTO/invitacionSocioVO[Element]">
+    <RelationshipRole1 id="rel16#role31" name="ConsultaIdCInternoResponseDTO_invitacionSocioVO" maxCard="1"/>
+    <RelationshipRole2 id="rel16#role32" name="ConsultaIdCInternoResponseDTO_invitacionSocioVOInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel17" name="contribuyenteVO_domicilioVO" sourceEntity="pkg5#pkg6#ent34" targetEntity="pkg5#pkg6#ent35" wrxsd:element="domicilioVO[Element]">
+    <RelationshipRole1 id="rel17#role33" name="domicilioVO" maxCard="1"/>
+    <RelationshipRole2 id="rel17#role34" name="domicilioVOInverse" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel18" name="domicilioVO_telefonoVO" sourceEntity="pkg5#pkg6#ent35" targetEntity="pkg5#pkg6#ent36" wrxsd:element="telefono[Element]">
+    <RelationshipRole1 id="rel18#role35" name="telefono" maxCard="1"/>
+    <RelationshipRole2 id="rel18#role36" name="telefonoInverse" maxCard="1"/>
+  </Relationship>
+  <Entity id="ent37" name="Mandato" duration="persistent" attributeOrder="ent37#att245 ent37#att247 ent37#att246 ent37#att249 ent37#att248 ent37#att303 ent37#att304 ent37#att306 ent37#att307" db:database="db2" db:table="MANDATO" gr:x="525" gr:y="1145">
+    <Attribute id="ent37#att245" name="oid" key="true" type="integer" db:column="OID"/>
+    <Attribute id="ent37#att246" name="fechaRevocacion" key="false" type="timestamp" db:column="FECHACADUCIDAD"/>
+    <Attribute id="ent37#att247" name="fechaOtorgamiento" key="false" type="timestamp" db:column="FECHAINICIO"/>
+    <Attribute id="ent37#att248" name="uripdf" type="string" db:column="URIPDF" key="false"/>
+    <Attribute id="ent37#att249" name="urixml" type="string" db:column="URIXML" key="false"/>
+    <Attribute id="ent37#att303" name="cargoPF" type="string" key="false" db:column="CARGOPF"/>
+    <Attribute id="ent37#att304" name="activo" type="boolean" key="false" db:column="ACTIVO"/>
+    <Attribute id="ent37#att307" name="comentariosFacultad" type="string" db:column="COMENTARIOSFACULTAD"/>
+    <Attribute id="ent37#att306" name="tipoFacultad" type="string" db:column="TIPOFACULTAD"/>
+  </Entity>
+  <Entity id="ent38" name="PersonaMoral" duration="persistent" attributeOrder="ent38#att255 ent38#att254 ent38#att253 ent38#att252 ent38#att251 ent38#att250 ent38#att415 ent38#att416 ent38#att417 ent38#att418 ent38#att419 ent38#att420 ent38#att421 ent38#att422 ent38#att423 ent38#att424 ent38#att425 ent38#att432 ent38#att459 ent38#att460 ent38#att461 ent38#att462 ent38#att463 ent38#att477 ent38#att482 ent38#att466 ent38#att467" db:database="db2" db:table="PERSONAMORAL" gr:x="525" gr:y="535">
+    <Attribute id="ent38#att250" name="telefono" type="string" db:column="TELEFONO" key="false"/>
+    <Attribute id="ent38#att251" name="repLegalPorDefault" type="string" derivationQuery="simpleImported::Self.rel22#role44.ent39#att269" key="false"/>
+    <Attribute id="ent38#att252" name="activo" type="boolean" db:column="ACTIVO" key="false"/>
+    <Attribute id="ent38#att253" name="fechaCaducidad" type="timestamp" db:column="FECHACADUCIDAD" key="false"/>
+    <Attribute id="ent38#att254" name="fechaInscripcion" type="timestamp" db:column="FECHAINSCRIPCION" key="false"/>
+    <Attribute id="ent38#att255" name="razonSocial" type="string" db:column="RAZONSOCIAL" key="false"/>
+    <Generalization superEntity="User">
+      <db:JoinColumn name="USER_OID" attribute="userOID"/>
+    </Generalization>
+    <Attribute id="ent38#att425" name="tipoCapital" type="string" db:column="TIPOCAPITAL" key="false"/>
+    <Attribute id="ent38#att424" name="noInterior" type="integer" db:column="NOINTERIOR" key="false"/>
+    <Attribute id="ent38#att423" name="noExterior" type="integer" db:column="NOEXTERIOR" key="false"/>
+    <Attribute id="ent38#att422" name="yCalle" type="string" db:column="YCALLE" key="false"/>
+    <Attribute id="ent38#att421" name="entreCalle" type="string" db:column="ENTRECALLE" key="false"/>
+    <Attribute id="ent38#att420" name="calle" type="string" db:column="CALLE" key="false"/>
+    <Attribute id="ent38#att419" name="colonia" type="string" db:column="COLONIA" key="false"/>
+    <Attribute id="ent38#att418" name="localidad" type="string" db:column="LOCALIDAD" key="false"/>
+    <Attribute id="ent38#att417" name="municipioDelegacion" type="string" db:column="MUNICIPIODELEGACION" key="false"/>
+    <Attribute id="ent38#att416" name="entFederativa" type="string" db:column="ENTFEDERATIVA" key="false"/>
+    <Attribute id="ent38#att415" name="codigoPostal" type="string" db:column="CODIGOPOSTAL" key="false"/>
+    <Attribute id="ent38#att432" name="tipoPM" type="string" db:column="TIPOPM" key="false"/>
+    <Attribute id="ent38#att463" name="denominacionMUA" type="string" db:column="DENOMINACIONMUA" key="false"/>
+    <Attribute id="ent38#att462" name="objetoSocial" type="string" db:column="OBJETOSOCIAL" key="false"/>
+    <Attribute id="ent38#att461" name="CUDoNumExpediente" type="string" db:column="CUDONUMEXPEDIENTE" key="false"/>
+    <Attribute id="ent38#att460" name="tipoSociedad" type="string" db:column="TIPOSOCIEDAD" key="false"/>
+    <Attribute id="ent38#att459" name="fechaAutorizacionMUA" type="timestamp" db:column="FECHAAUTORIZACIONMUA" key="false"/>
+    <Attribute id="ent38#att477" name="quienAutoriza" type="string" db:column="QUIENAUTORIZA" key="false"/>
+    <Attribute id="ent38#att482" name="fechaDeConstitucion" type="string" db:column="FECHADECONSTITUCION" key="false"/>
+    <Attribute id="ent38#att467" name="conExpresion" type="string" db:column="CONEXPRESION"/>
+    <Attribute id="ent38#att466" name="capitalSocialMinimo" type="string" db:column="CAPITALSOCIALMINIMO"/>
+  </Entity>
+  <Entity id="ent39" name="PersonaFisica" duration="persistent" attributeOrder="ent39#att272 ent39#att271 ent39#att270 ent39#att269 ent39#att268 ent39#att267 ent39#att266 ent39#att265 ent39#att264 ent39#att263 ent39#att262 ent39#att261 ent39#att260 ent39#att259 ent39#att258 ent39#att257 ent39#att256 ent39#att426 ent39#att427 ent39#att428 ent39#att431" db:database="db2" db:table="PERSONAFISICA" gr:x="-10" gr:y="520">
+    <Attribute id="ent39#att256" name="PFtelefono" type="string" db:column="PFTELEFONO" key="false"/>
+    <Attribute id="ent39#att257" name="representadaPorDefault" type="string" derivationQuery="simpleImported::Self.rel21#role42.ent38#att255" key="false"/>
+    <Attribute id="ent39#att258" name="fechaNac" type="string" db:column="FECHANAC" key="false"/>
+    <Attribute id="ent39#att259" name="anioNac" type="string" db:column="ANIONAC" key="false"/>
+    <Attribute id="ent39#att260" name="mesNac" type="string" db:column="MESNAC" key="false"/>
+    <Attribute id="ent39#att261" name="diaNac" type="string" db:column="DIANAC" key="false"/>
+    <Attribute id="ent39#att262" name="PFactivo" type="boolean" db:column="PFACTIVO" key="false"/>
+    <Attribute id="ent39#att263" name="fechaCaducidad" type="timestamp" db:column="FECHACADUCIDAD" key="false"/>
+    <Attribute id="ent39#att264" name="fechaInscripcion" type="timestamp" db:column="FECHAINSCRIPCION" key="false"/>
+    <Attribute id="ent39#att265" name="PFnacionalidad" type="string" db:column="PFNACIONALIDAD" key="false"/>
+    <Attribute id="ent39#att266" name="entidadNac" type="string" db:column="ENTIDADNAC" key="false"/>
+    <Attribute id="ent39#att267" name="PFsexo" type="string" db:column="PFSEXO" key="false"/>
+    <Attribute id="ent39#att268" name="RFC" type="string" db:column="RFC" key="false"/>
+    <Attribute id="ent39#att269" name="nombreCompleto" type="string" db:column="NOMBRECOMPLETO" key="false"/>
+    <Attribute id="ent39#att270" name="apellido2" type="string" db:column="APELLIDO2" key="false"/>
+    <Attribute id="ent39#att271" name="apellido1" type="string" db:column="APELLIDO1" key="false"/>
+    <Attribute id="ent39#att272" name="nombre" type="string" db:column="NOMBRE" key="false"/>
+    <Generalization superEntity="User">
+      <db:JoinColumn name="USER_OID" attribute="userOID"/>
+    </Generalization>
+    <Attribute id="ent39#att426" name="conFacultades" type="string" db:column="CONFACULTADES" key="false"/>
+    <Attribute id="ent39#att427" name="facultadesNom" type="string" db:column="FACULTADESNOM" key="false"/>
+    <Attribute id="ent39#att428" name="facultadesApo" type="string" db:column="FACULTADESAPO" key="false"/>
+    <Attribute id="ent39#att431" name="tipoPF" type="string" db:column="TIPOPF"/>
+  </Entity>
+  <Relationship id="rel19" name="PersonaFisica_Poder" sourceEntity="ent39" targetEntity="ent37" db:database="db2" db:table="PERSONAFISICA">
+    <RelationshipRole1 id="rel19#role37" name="Otorgante" maxCard="1">
+      <db:JoinColumn name="USER_OID" attribute="userOID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel19#role38" name="ApoderadosPFPF" maxCard="N">
+      <db:JoinColumn name="MANDATO_OID" attribute="ent37#att245"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel20" name="PersonaFisica_PersonaMoral" sourceEntity="ent39" targetEntity="ent38" db:database="db2" db:table="PERSONAFISICA_PERSONAMORAL">
+    <RelationshipRole1 id="rel20#role39" name="Personas morales" maxCard="N">
+      <db:JoinColumn name="PERSONAFISICA_OID" attribute="userOID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel20#role40" name="Persona fisicas" maxCard="N">
+      <db:JoinColumn name="PERSONAMORAL_OID" attribute="userOID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel21" name="PersonaFisica_RepresentanteLegal" sourceEntity="ent38" targetEntity="ent39" db:database="db2" db:table="PERSONAFISICA" gr:bendpoints="-269,90,276,55">
+    <RelationshipRole1 id="rel21#role41" name="RepresentantePorDefecto" maxCard="N">
+      <db:JoinColumn name="PERSONAMORAL_OID" attribute="userOID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel21#role42" name="RepresentadaPorDefecto" maxCard="1">
+      <db:JoinColumn name="USER_OID" attribute="userOID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel22" name="PersonaMoral_PersonaFisica" sourceEntity="ent39" targetEntity="ent38" db:database="db2" db:table="PERSONAMORAL" gr:bendpoints="267,-91,-278,-56">
+    <RelationshipRole1 id="rel22#role43" name="RepresentanteLegalToPersonaMoral" maxCard="N">
+      <db:JoinColumn name="PERSONAFISICA_OID" attribute="userOID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel22#role44" name="PersonaMoralToRepresentanteLegal" maxCard="1">
+      <db:JoinColumn name="USER_OID" attribute="userOID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel23" name="Mandato_PersonaFisica" sourceEntity="ent37" targetEntity="ent39" db:database="db2" db:table="MANDATO" gr:bendpoints="-240,-85,200,185">
+    <RelationshipRole1 id="rel23#role45" name="Apoderado" maxCard="1">
+      <db:JoinColumn name="OID" attribute="ent37#att245"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel23#role46" name="Otorgantes" maxCard="N">
+      <db:JoinColumn name="PERSONAFISICA_OID" attribute="userOID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel24" name="PersonaMoral_Poder" sourceEntity="ent38" targetEntity="ent37" db:database="db2" db:table="PERSONAMORAL">
+    <RelationshipRole1 id="rel24#role47" name="Otorgante" maxCard="1">
+      <db:JoinColumn name="USER_OID" attribute="userOID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel24#role48" name="Apoderados" maxCard="N">
+      <db:JoinColumn name="MANDATO_OID" attribute="ent37#att245"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel31" name="Dependencia" sourceEntity="ent39" targetEntity="ent39" gr:bendpoints="7,257,7,257;-69,257,-69,257" db:database="db2" db:table="PERSONAFISICA">
+    <RelationshipRole1 id="rel31#role61" name="DependeDE" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="PERSONAFISICA_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel31#role62" name="EsDependienteDE" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity id="ent41" gr:x="1395" gr:y="1095" name="Decisiones" bpm:uuid="JL464E1P_7IM" db:database="db2" db:table="DECISIONES">
+    <Attribute id="ent41#att49" name="OID" type="integer" key="true" db:column="OID"/>
+    <Attribute id="ent41#att50" name="FormaDeCarga" type="string" bpm:uuid="JL464I50_6YW" db:column="FORMADECARGA"/>
+    <Attribute id="ent41#att51" name="InformacionValida" type="string" bpm:uuid="JL4677YF_758" db:column="INFORMACIONVALIDA"/>
+  </Entity>
+  <Entity id="ent42" gr:x="1165" gr:y="1120" name="Poder" bpm:uuid="JL46S7S6_1DM" db:database="db2" db:table="PODER">
+    <Attribute id="ent42#att52" name="OID" type="integer" key="true" db:column="OID"/>
+    <Attribute id="ent42#att53" name="poderXMLaFirmar" type="string" bpm:uuid="JL46S9NO_67N" db:column="PODERXMLAFIRMAR"/>
+    <Attribute id="ent42#att54" name="poderPDFaFirmar" type="string" bpm:uuid="JL46SUJ0_200" db:column="PODERPDFAFIRMAR"/>
+    <Attribute id="ent42#att55" name="poderXMLFirmado" type="string" bpm:uuid="JL46T05A_2K2" db:column="PODERXMLFIRMADO"/>
+    <Attribute id="ent42#att56" name="poderPDFFirmado" type="string" bpm:uuid="JL46T529_EW" db:column="PODERPDFFIRMADO"/>
+    <Attribute id="ent42#att57" name="boletaDeInscripcion" type="string" bpm:uuid="JL46UVL4_1ZZ" db:column="BOLETADEINSCRIPCION"/>
+  </Entity>
+  <Entity gr:x="-385" gr:y="755" id="ent8" name="DatosFedatario" duration="persistent" attributeOrder="ent8#att46 ent8#att48 ent8#att58 ent8#att278 ent8#att281 ent8#att47 ent8#att274 ent8#att400 ent8#att401" db:database="db2" db:table="DATOSNOTARIO">
+    <Attribute id="ent8#att46" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent8#att58" name="municipio" type="string" db:column="MUNICIPIO"/>
+    <Attribute id="ent8#att48" name="entidad" type="string" db:column="ENTIDAD"/>
+    <Attribute id="ent8#att278" name="numero" type="string" db:column="NUMERO"/>
+    <Attribute id="ent8#att281" name="estatus" type="string" db:column="ESTATUS"/>
+    <Attribute id="ent8#att47" name="tipo" type="string" db:column="TIPO"/>
+    <Attribute id="ent8#att274" name="activo" type="string" db:column="ACTIVO"/>
+    <Attribute id="ent8#att400" name="llFedatario" type="integer" db:column="LLFEDATARIO"/>
+    <Attribute id="ent8#att401" name="estatusFedatario" type="string" db:column="ESTATUSFEDATARIO"/>
+  </Entity>
+  <Relationship id="rel25" name="DatosNotario_PersonaFisica" sourceEntity="ent8" targetEntity="ent39" db:database="db2" db:table="DATOSNOTARIO">
+    <RelationshipRole1 id="rel25#role49" name="DatosNotarioToPersonaFisica" maxCard="1">
+      <db:JoinColumn attribute="ent8#att46" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel25#role50" name="PersonaFisicaToDatosNotario" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAFISICA_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity id="ent43" gr:x="1400" gr:y="1210" name="archivoXML" bpm:uuid="JL5BUSOB_1BJ" db:database="db2" db:table="ARCHIVOXML">
+    <Attribute id="ent43#att59" name="OID" type="integer" key="true" db:column="OID"/>
+    <Attribute id="ent43#att60" name="XML" type="blob" bpm:uuid="JL5BUWBM_4V7" db:column="XML"/>
+  </Entity>
+  <Entity gr:x="930" gr:y="1120" id="ent44" name="Bitacora" duration="persistent" attributeOrder="ent44#att289 ent44#att290 ent44#att291 ent44#att292 ent44#att293 ent44#att275 ent44#att276 ent44#att277 ent44#att282 ent44#att439" db:database="db2" db:table="BITACORA">
+    <Attribute id="ent44#att289" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent44#att293" name="oidUser" type="integer" db:column="OIDUSER" key="false"/>
+    <Attribute id="ent44#att292" name="response" type="blob" db:column="RESPONSE" key="false"/>
+    <Attribute id="ent44#att291" name="request" type="blob" db:column="REQUEST" key="false"/>
+    <Attribute id="ent44#att290" name="uri" type="string" db:column="URI" key="false"/>
+    <Attribute id="ent44#att275" name="timestamp" type="timestamp" db:column="TIMESTAMP" key="false"/>
+    <Attribute id="ent44#att276" name="processinstance_oid" type="string" db:column="PROCESSINSTANCE_OID" key="false"/>
+    <Attribute id="ent44#att277" name="servicio" type="string" db:column="SERVICIO" key="false"/>
+    <Attribute id="ent44#att282" name="exitoso" type="string" db:column="EXITOSO" key="false"/>
+    <Attribute id="ent44#att439" name="oidPM" type="integer" key="false" db:column="OIDPM"/>
+  </Entity>
+  <db:Database id="db2" name="expedienteOracle" type="Oracle 11g (Thin Driver)" url="jdbc:oracle:thin:@172.18.53.173:1521:orades01" username="EXPEDIENTE" password="Md2208G" schema="EXPEDIENTE"/>
+  <Relationship id="rel28" name="Mandato_DatosFedatario" sourceEntity="ent37" targetEntity="ent8" db:database="db2" db:table="MANDATO" gr:bendpoints="-536,59,404,208">
+    <RelationshipRole1 id="rel28#role55" name="MandatoToDatosFedatario" maxCard="1">
+      <db:JoinColumn attribute="ent37#att245" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel28#role56" name="DatosFedatarioToMandato" maxCard="N">
+      <db:JoinColumn attribute="ent8#att46" name="DATOSNOTARIO_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="350" gr:y="1350" id="ent45" name="Instrumento" duration="persistent" attributeOrder="ent45#att279 ent45#att280 ent45#att283 ent45#att296 ent45#att297 ent45#att298 ent45#att299" db:database="db2" db:table="INSTRUMENTO">
+    <Attribute id="ent45#att279" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent45#att299" name="foja" type="string" db:column="FOJA"/>
+    <Attribute id="ent45#att298" name="libro" type="string" db:column="LIBRO"/>
+    <Attribute id="ent45#att297" name="volumen" type="string" db:column="VOLUMEN"/>
+    <Attribute id="ent45#att296" name="numero" type="string" db:column="NUMERO"/>
+    <Attribute id="ent45#att283" name="isEscritura" type="string" db:column="ISESCRITURA"/>
+    <Attribute id="ent45#att280" name="fecha" type="string" db:column="FECHA"/>
+  </Entity>
+  <Relationship id="rel27" name="Instrumento_Mandato" sourceEntity="ent45" targetEntity="ent37" db:database="db2" db:table="MANDATO">
+    <RelationshipRole1 id="rel27#role53" name="InstrumentoToMandato" maxCard="N">
+      <db:JoinColumn attribute="ent45#att279" name="INSTRUMENTO_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel27#role54" name="MandatoToInstrumento" maxCard="1">
+      <db:JoinColumn attribute="ent37#att245" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="1055" gr:y="-25" id="ent47" name="AuxiliarM10" duration="persistent" attributeOrder="ent47#att308 ent47#att309 ent47#att310 ent47#att311 ent47#att312 ent47#att313" db:database="db2" db:table="AUXILIARM10">
+    <Attribute id="ent47#att308" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent47#att313" name="antecedentes" type="string" db:column="ANTECEDENTES"/>
+    <Attribute id="ent47#att312" name="datosNotario_OID" type="string" db:column="DATOSNOTARIO_OID"/>
+    <Attribute id="ent47#att311" name="rfcNotario" type="string" db:column="RFCNOTARIO"/>
+    <Attribute id="ent47#att310" name="folioMercantil" type="string" db:column="FOLIOMERCANTIL"/>
+    <Attribute id="ent47#att309" name="rfcPM" type="string" db:column="RFCPM"/>
+  </Entity>
+  <Entity gr:x="1365" gr:y="-35" id="ent49" name="AuxiliarApoderado" duration="persistent" attributeOrder="ent49#att316 ent49#att317 ent49#att318 ent49#att319 ent49#att320 ent49#att321 ent49#att322" db:database="db2" db:table="APODERADO">
+    <Attribute id="ent49#att316" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent49#att322" name="facultadesApoderado" type="string" db:column="FACULTADESAPODERADO"/>
+    <Attribute id="ent49#att321" name="totalParcial" type="string" db:column="TOTALPARCIAL"/>
+    <Attribute id="ent49#att320" name="estatus" type="string" db:column="ESTATUS"/>
+    <Attribute id="ent49#att319" name="cargo" type="string" db:column="CARGO"/>
+    <Attribute id="ent49#att318" name="curp" type="string" db:column="CURP"/>
+    <Attribute id="ent49#att317" name="rfc" type="string" db:column="RFC"/>
+  </Entity>
+  <Relationship id="rel29" name="apoderado_AuxiliarM10" sourceEntity="ent49" targetEntity="ent47" db:database="db2" db:table="APODERADO">
+    <RelationshipRole1 id="rel29#role57" name="apoderadoToAuxiliarM10" maxCard="1">
+      <db:JoinColumn attribute="ent49#att316" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel29#role58" name="AuxiliarM10Toapoderado" maxCard="N">
+      <db:JoinColumn attribute="ent47#att308" name="AUXILIARM10_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="1055" gr:y="185" id="ent50" name="AuxiliarInstrumento" duration="persistent" attributeOrder="ent50#att323 ent50#att324 ent50#att325 ent50#att326 ent50#att327" db:database="db2" db:table="AUXILIARINSTRUMENTO">
+    <Attribute id="ent50#att323" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent50#att327" name="fechaInstrumento" type="string" db:column="FECHAINSTRUMENTO"/>
+    <Attribute id="ent50#att326" name="libro" type="string" db:column="LIBRO"/>
+    <Attribute id="ent50#att325" name="volumen" type="string" db:column="VOLUMEN"/>
+    <Attribute id="ent50#att324" name="numero" type="string" db:column="NUMERO"/>
+  </Entity>
+  <Relationship id="rel30" name="AuxiliarM10_AuxiliarInstrumento" sourceEntity="ent47" targetEntity="ent50" db:database="db2" db:table="AUXILIARINSTRUMENTO">
+    <RelationshipRole1 id="rel30#role59" name="AuxiliarM10ToAuxiliarInstrumento" maxCard="N">
+      <db:JoinColumn attribute="ent47#att308" name="AUXILIARM10_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel30#role60" name="AuxiliarInstrumentoToAuxiliarM10" maxCard="1">
+      <db:JoinColumn attribute="ent50#att323" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="2660" gr:y="1245" id="ent46" name="PRUEBA" duration="persistent" volatileStorage="database" attributeOrder="ent46#att300 ent46#att301 ent46#att302" db:database="db2" db:table="PRUEBA">
+    <Attribute id="ent46#att300" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent46#att301" name="rfcFedatario" type="string" db:column="RFCFEDATARIO"/>
+    <Attribute id="ent46#att302" name="poderDescripcion" type="string" db:column="PODERDESCRIPCION"/>
+  </Entity>
+  <Entity gr:x="760" gr:y="1365" id="ent48" name="xml" duration="persistent" attributeOrder="ent48#att305 ent48#att314 ent48#att315 ent48#att328" db:database="db2" db:table="XML">
+    <Attribute id="ent48#att305" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent48#att328" name="index" type="integer" db:column="INDEX"/>
+    <Attribute id="ent48#att315" name="value" type="string" db:column="VALUE"/>
+    <Attribute id="ent48#att314" name="tag" type="string" db:column="TAG"/>
+  </Entity>
+  <Relationship id="rel32" name="xml_xml" sourceEntity="ent48" targetEntity="ent48" gr:bendpoints="104,34,104,34;104,-34,104,-34" db:database="db2" db:table="XML">
+    <RelationshipRole1 id="rel32#role63" name="toChildNode" maxCard="1">
+      <db:JoinColumn attribute="ent48#att305" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel32#role64" name="fromChildNode" maxCard="N">
+      <db:JoinColumn attribute="ent48#att305" name="XML_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-990" gr:y="-1180" id="ent51" name="auxINE" duration="persistent" attributeOrder="ent51#att329 ent51#att330 ent51#att335 ent51#att336 ent51#att337 ent51#att338 ent51#att339 ent51#att340 ent51#att341 ent51#att343 ent51#att344 ent51#att345 ent51#att346 ent51#att347 ent51#att348 ent51#att349 ent51#att350 ent51#att351 ent51#att352 ent51#att354 ent51#att355" db:database="db2" db:table="AUXINE">
+    <Attribute id="ent51#att329" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent51#att330" name="anioEmision" type="string" db:column="DESCRIPCION" key="false"/>
+    <Attribute id="ent51#att350" name="vNumeroEmision" type="boolean" db:column="VNUMEROEMISION" key="false"/>
+    <Attribute id="ent51#att349" name="vNombre" type="boolean" db:column="VNOMBRE" key="false"/>
+    <Attribute id="ent51#att348" name="vCurp" type="boolean" db:column="VCURP" key="false"/>
+    <Attribute id="ent51#att347" name="vClaveElector" type="boolean" db:column="VCLAVEELECTOR" key="false"/>
+    <Attribute id="ent51#att346" name="vApellido2" type="boolean" db:column="VAPELLIDO2" key="false"/>
+    <Attribute id="ent51#att345" name="vApellido1" type="boolean" db:column="VAPELLIDO1" key="false"/>
+    <Attribute id="ent51#att344" name="vAnioRegistro" type="boolean" db:column="VANIOREGISTRO" key="false"/>
+    <Attribute id="ent51#att343" name="vAnioEmision" type="boolean" db:column="VANIOEMISION" key="false"/>
+    <Attribute id="ent51#att341" name="numeroEmision" type="string" db:column="NUMEROEMISION" key="false"/>
+    <Attribute id="ent51#att340" name="nombre" type="string" db:column="NOMBRE" key="false"/>
+    <Attribute id="ent51#att339" name="curp" type="string" db:column="CURP" key="false"/>
+    <Attribute id="ent51#att338" name="claveElector" type="string" db:column="CLAVEELECTOR" key="false"/>
+    <Attribute id="ent51#att337" name="apellido2" type="string" db:column="APELLIDO2" key="false"/>
+    <Attribute id="ent51#att336" name="apellido1" type="string" db:column="APELLIDO1" key="false"/>
+    <Attribute id="ent51#att335" name="anioRegistro" type="string" db:column="ANIOREGISTRO" key="false"/>
+    <Attribute id="ent51#att351" name="servicio" db:column="SERVICIO" type="string" key="false"/>
+    <Attribute id="ent51#att352" name="estatus" db:column="ESTATUS" type="string" key="false"/>
+    <Attribute id="ent51#att354" name="timestamp" type="string" db:column="TIMESTAMP"/>
+    <Attribute id="ent51#att355" name="userOID" type="integer" db:column="USEROID"/>
+  </Entity>
+  <Entity gr:x="1075" gr:y="-745" id="ent53" name="verificacionIdentificacion" duration="persistent" attributeOrder="ent53#att333 ent53#att334 ent53#att342 ent53#att353 ent53#att331" db:database="db2" db:table="VERIFICACIONIDENTIFICACION">
+    <Attribute id="ent53#att333" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent53#att334" name="proceso" type="string" db:column="PROCESO"/>
+    <Attribute id="ent53#att342" name="cadenaOriginal" type="string" db:column="CADENAORIGINAL"/>
+    <Attribute id="ent53#att353" name="userOID" type="string" db:column="USEROID"/>
+    <Attribute id="ent53#att331" name="cadena" type="string" db:column="CADENA"/>
+  </Entity>
+  <Entity gr:x="1420" gr:y="-955" id="ent52" name="DatosPersona" duration="persistent" attributeOrder="ent52#att332 ent52#att356 ent52#att357 ent52#att358 ent52#att359 ent52#att360 ent52#att361 ent52#att362 ent52#att363 ent52#att364 ent52#att365 ent52#att366 ent52#att367 ent52#att368" db:database="db2" db:table="DATOSPERSONA">
+    <Attribute id="ent52#att332" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent52#att368" name="userOID" type="string" db:column="USEROID"/>
+    <Attribute id="ent52#att367" name="rfc" type="string" db:column="RFC"/>
+    <Attribute id="ent52#att366" name="ocr" type="string" db:column="OCR"/>
+    <Attribute id="ent52#att365" name="numEmision" type="string" db:column="NUMEMISION"/>
+    <Attribute id="ent52#att364" name="nombre" type="string" db:column="NOMBRE"/>
+    <Attribute id="ent52#att363" name="FeNa" type="string" db:column="FENA"/>
+    <Attribute id="ent52#att362" name="curp" type="string" db:column="CURP"/>
+    <Attribute id="ent52#att361" name="claveElectoral" type="string" db:column="CLAVEELECTORAL"/>
+    <Attribute id="ent52#att360" name="cic" type="string" db:column="CIC"/>
+    <Attribute id="ent52#att359" name="ap2" type="string" db:column="AP2"/>
+    <Attribute id="ent52#att358" name="ap1" type="string" db:column="AP1"/>
+    <Attribute id="ent52#att357" name="anioReg" type="string" db:column="ANIOREG"/>
+    <Attribute id="ent52#att356" name="anioEmision" type="string" db:column="ANIOEMISION"/>
+  </Entity>
+  <Entity gr:x="1025" gr:y="-390" id="ent54" name="Apoderado" duration="volatile" volatileStorage="database" volatileScope="application" attributeOrder="ent54#att369 ent54#att370 ent54#att371 ent54#att372 ent54#att373">
+    <Attribute id="ent54#att369" key="true" name="oid" type="integer"/>
+    <Attribute id="ent54#att373" name="cargo" type="string"/>
+    <Attribute id="ent54#att372" name="nombreCompleto" type="string"/>
+    <Attribute id="ent54#att371" name="RFC" type="string"/>
+    <Attribute id="ent54#att370" name="CURP" type="string"/>
+  </Entity>
+  <Entity id="ent55" name="Poder" duration="volatile" volatileScope="application" attributeOrder="ent55#att374 ent55#att378 ent55#att377 ent55#att376" volatileStorage="database" gr:x="1310" gr:y="-370">
+    <Attribute id="ent55#att374" name="oid" key="true" type="integer"/>
+    <Attribute id="ent55#att376" name="nombreCompleto" type="string"/>
+    <Attribute id="ent55#att377" name="RFC" type="string"/>
+    <Attribute id="ent55#att378" name="CURP" type="string"/>
+  </Entity>
+  <Entity gr:x="-1065" gr:y="510" id="ent56" name="Conteo" duration="persistent" attributeOrder="ent56#att375 ent56#att379 ent56#att380 ent56#att381 ent56#att382" db:database="db2" db:table="CONTEO">
+    <Attribute id="ent56#att375" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent56#att379" name="username" type="string" db:column="USERNAME" key="false"/>
+    <Attribute id="ent56#att380" name="curpVerificado" type="string" db:column="CURPVERIFICADO" key="false"/>
+    <Attribute id="ent56#att381" name="oidUser" type="integer" db:column="OIDUSER" key="false"/>
+    <Attribute id="ent56#att382" name="fechaVerificacion" type="timestamp" db:column="FECHAVERIFICACION"/>
+  </Entity>
+  <Entity gr:x="-1215" gr:y="-1110" id="ent57" name="catalogoMovimientoPoder" duration="persistent" attributeOrder="ent57#att383 ent57#att384" db:database="db2" db:table="CATALOGOMOVIMIENTOPODER">
+    <Attribute id="ent57#att383" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent57#att384" name="tipoMovimiento" type="string" db:column="TIPOMOVIMIENTO"/>
+  </Entity>
+  <Entity gr:x="-1225" gr:y="-930" id="ent58" name="catalogoTipoFacultades" duration="persistent" attributeOrder="ent58#att385 ent58#att386" db:database="db2" db:table="CATALOGOTIPOFACULTADES">
+    <Attribute id="ent58#att385" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent58#att386" name="descripcion" type="string" db:column="DESCRIPCION"/>
+  </Entity>
+  <Entity gr:x="-1365" gr:y="-820" id="ent59" name="catalogoCategoriaSociedades" duration="persistent" attributeOrder="ent59#att387 ent59#att388" db:database="db2" db:table="CATALOGOCATEGORIASOCIEDADES">
+    <Attribute id="ent59#att387" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent59#att388" name="categoria" type="string" db:column="CATEGORIA"/>
+  </Entity>
+  <Entity id="ent60" name="EstructuraAccionaria" duration="persistent" attributeOrder="ent60#att389 ent60#att390 ent60#att391 ent60#att392 ent60#att395" db:database="db2" db:table="ESTRUCTURAACCIONARIA" gr:x="665" gr:y="315">
+    <Attribute id="ent60#att389" name="oid" key="true" type="integer" db:column="OID"/>
+    <Attribute id="ent60#att390" name="valorAccion" type="decimal" db:column="VALORACCION"/>
+    <Attribute id="ent60#att391" name="tipoAccion" type="string" db:column="TIPOACCION"/>
+    <Attribute id="ent60#att392" name="totalAcciones" type="integer" db:column="TOTALACCIONES"/>
+    <Attribute id="ent60#att395" name="serieAccion" type="string" db:column="SERIEACCION"/>
+  </Entity>
+  <Entity id="ent61" name="Acciones" duration="persistent" attributeOrder="ent61#att393 ent61#att394" db:database="db2" db:table="ACCIONES" gr:x="390" gr:y="350">
+    <Attribute id="ent61#att393" name="oid" key="true" type="integer" db:column="OID"/>
+    <Attribute id="ent61#att394" name="numAcciones" type="integer" db:column="NUMACCIONES"/>
+  </Entity>
+  <Relationship id="rel33" name="EstructuraAccionaria_Acciones" sourceEntity="ent60" targetEntity="ent61" db:database="db2" db:table="ACCIONES">
+    <RelationshipRole1 id="rel33#role65" name="EstructuraAccionariaToAcciones" maxCard="N">
+      <db:JoinColumn name="ESTRUCTURAACCIONARIA_OID" attribute="ent60#att389"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel33#role66" name="AccionesToEstructuraAccionaria" maxCard="1">
+      <db:JoinColumn name="OID" attribute="ent61#att393"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel35" name="EstructuraAccionaria_PersonaMoral" sourceEntity="ent60" targetEntity="ent38" db:database="db2" db:table="ESTRUCTURAACCIONARIA">
+    <RelationshipRole1 id="rel35#role69" name="EstructuraAccionariaToPersonaMoral" maxCard="1">
+      <db:JoinColumn attribute="ent60#att389" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel35#role70" name="PersonaMoralToEstructuraAccionaria" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAMORAL_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel36" name="Acciones_PersonaMoral" sourceEntity="ent61" targetEntity="ent38" db:database="db2" db:table="ACCIONES">
+    <RelationshipRole1 id="rel36#role71" name="AccionesToPersonaMoral" maxCard="1">
+      <db:JoinColumn attribute="ent61#att393" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel36#role72" name="PersonaMoralToAcciones" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAMORAL_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel37" name="Acciones_PersonaFisica" sourceEntity="ent61" targetEntity="ent39" db:database="db2" db:table="ACCIONES">
+    <RelationshipRole1 id="rel37#role73" name="AccionesToPersonaFisica" maxCard="1">
+      <db:JoinColumn attribute="ent61#att393" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel37#role74" name="PersonaFisicaToAcciones" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAFISICA_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity id="ent62" gr:x="565" gr:y="1460" name="parametros" bpm:uuid="JO7UCD2U_72D" duration="volatile" volatileStorage="database" attributeOrder="ent62#att396 ent62#att397">
+    <Attribute id="ent62#att396" name="OID" type="integer" key="true"/>
+    <Attribute id="ent62#att397" name="denominacion" type="string" bpm:uuid="JO7UCHCM_3Y5"/>
+  </Entity>
+  <Entity gr:x="-1340" gr:y="-1030" id="ent63" name="catalogoTipoSociedades" duration="persistent" attributeOrder="ent63#att398 ent63#att399" db:database="db2" db:table="CATALOGOTIPOSOCIEDADES">
+    <Attribute id="ent63#att398" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent63#att399" name="tipoSociedad" type="string" db:column="TIPOSOCIEDAD"/>
+  </Entity>
+  <Entity gr:x="-245" gr:y="1060" id="ent64" name="Administracion" duration="persistent" attributeOrder="ent64#att402 ent64#att403 ent64#att404 ent64#att405 ent64#att406 ent64#att414 ent64#att433" db:database="db2" db:table="ADMINISTRACION">
+    <Attribute id="ent64#att402" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent64#att406" name="nombramiento" type="string" db:column="NOMBRAMIENTO"/>
+    <Attribute id="ent64#att405" name="descripcion" type="text" db:column="DESCRIPCION" db:clob="true"/>
+    <Attribute id="ent64#att404" name="facultad" type="string" db:column="FACULTAD"/>
+    <Attribute id="ent64#att403" name="tipo" type="string" db:column="TIPO"/>
+    <Attribute id="ent64#att414" name="oidTipoFacultad" type="integer" db:column="OIDTIPOFACULTAD"/>
+    <Attribute id="ent64#att433" name="estatus" type="string" db:column="ESTATUS"/>
+  </Entity>
+  <Entity gr:x="205" gr:y="1090" id="ent65" name="Nombramientos" duration="persistent" attributeOrder="ent65#att407 ent65#att408 ent65#att409 ent65#att410 ent65#att430 ent65#att434" db:database="db2" db:table="NOMBRAMIENTOS">
+    <Attribute id="ent65#att407" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent65#att410" name="cargo" type="string" db:column="CARGO" key="false"/>
+    <Attribute id="ent65#att409" name="descripcionFacultad" type="text" db:column="DESCRIPCIONFACULTAD" db:clob="true" key="false"/>
+    <Attribute id="ent65#att408" name="facultad" type="string" db:column="FACULTAD" key="false"/>
+    <Attribute id="ent65#att430" name="oidTipoFacultad" type="integer" db:column="OIDTIPOFACULTAD"/>
+    <Attribute id="ent65#att434" name="estatus" type="string" db:column="ESTATUS"/>
+  </Entity>
+  <Entity gr:x="35" gr:y="1295" id="ent66" name="Apoderados" duration="persistent" attributeOrder="ent66#att411 ent66#att412 ent66#att413 ent66#att429 ent66#att436" db:database="db2" db:table="APODERADOS">
+    <Attribute id="ent66#att411" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent66#att413" name="descripcionFacultad" type="text" db:column="DESCRIPCIONFACULTAD" db:clob="true" key="false"/>
+    <Attribute id="ent66#att412" name="facultad" type="string" db:column="FACULTAD" key="false"/>
+    <Attribute id="ent66#att429" name="oidTipoFacultad" type="integer" key="false" db:column="OIDTIPOFACULTAD"/>
+    <Attribute id="ent66#att436" name="estatus" type="string" db:column="ESTATUS"/>
+  </Entity>
+  <Relationship id="rel34" name="PersonaFisica_Administracion" sourceEntity="ent39" targetEntity="ent64" db:database="db2" db:table="ADMINISTRACION">
+    <RelationshipRole1 id="rel34#role67" name="PersonaFisicaToAdministracion" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAFISICA_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel34#role68" name="AdministracionToPersonaFisica" maxCard="1">
+      <db:JoinColumn attribute="ent64#att402" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel38" name="Nombramientos_PersonaFisica" sourceEntity="ent65" targetEntity="ent39" db:database="db2" db:table="NOMBRAMIENTOS">
+    <RelationshipRole1 id="rel38#role75" name="NombramientosToPersonaFisica" maxCard="1">
+      <db:JoinColumn attribute="ent65#att407" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel38#role76" name="PersonaFisicaToNombramientos" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAFISICA_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel39" name="Apoderados_PersonaFisica" sourceEntity="ent66" targetEntity="ent39" gr:bendpoints="80,-236,50,369" db:database="db2" db:table="APODERADOS">
+    <RelationshipRole1 id="rel39#role77" name="ApoderadosToPersonaFisica" maxCard="1">
+      <db:JoinColumn attribute="ent66#att411" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel39#role78" name="PersonaFisicaToApoderados" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAFISICA_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel40" name="Nombramientos_PersonaMoral" sourceEntity="ent65" targetEntity="ent38" db:database="db2" db:table="NOMBRAMIENTOS">
+    <RelationshipRole1 id="rel40#role79" name="NombramientosToPersonaMoral" maxCard="1">
+      <db:JoinColumn attribute="ent65#att407" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel40#role80" name="PersonaMoralToNombramientos" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAMORAL_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel41" name="Apoderados_PersonaMoral" sourceEntity="ent66" targetEntity="ent38" gr:bendpoints="325,-67,-235,548" db:database="db2" db:table="APODERADOS">
+    <RelationshipRole1 id="rel41#role81" name="ApoderadosToPersonaMoral" maxCard="1">
+      <db:JoinColumn attribute="ent66#att411" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel41#role82" name="PersonaMoralToApoderados" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAMORAL_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel42" name="Administracion_PersonaMoral" sourceEntity="ent64" targetEntity="ent38" db:database="db2" db:table="ADMINISTRACION">
+    <RelationshipRole1 id="rel42#role83" name="AdministracionToPersonaMoral" maxCard="1">
+      <db:JoinColumn attribute="ent64#att402" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel42#role84" name="PersonaMoralToAdministracion" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAMORAL_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="1000" gr:y="525" id="ent73" name="expedienteElectronico" duration="persistent" attributeOrder="ent73#att451 ent73#att452 ent73#att453 ent73#att454 ent73#att455" db:database="db2" db:table="EXPEDIENTEELECTRONICO">
+    <Attribute id="ent73#att451" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent73#att455" name="anioConstitucion" type="string" db:column="ANIOCONSTITUCION"/>
+    <Attribute id="ent73#att454" name="fechaConstitucion" type="string" db:column="FECHACONSTITUCION"/>
+    <Attribute id="ent73#att453" name="numeroConsecutivo" type="string" db:column="NUMEROCONSECUTIVO"/>
+    <Attribute id="ent73#att452" name="expedienteElectronico" type="string" db:column="EXPEDIENTEELECTRONICO"/>
+  </Entity>
+  <Entity gr:x="1045" gr:y="740" id="ent74" name="numeroConsecutivo" duration="persistent" attributeOrder="ent74#att456 ent74#att457 ent74#att458" db:database="db2" db:table="NUMEROCONSECUTIVO">
+    <Attribute id="ent74#att456" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent74#att457" name="consecutivo" type="string" db:column="CONSECUTIVO"/>
+    <Attribute id="ent74#att458" name="anio" type="string" db:column="ANIO"/>
+  </Entity>
+  <Relationship id="rel54" name="PersonaMoral_expedienteElectronico" sourceEntity="ent38" targetEntity="ent73" db:database="db2" db:table="EXPEDIENTEELECTRONICO">
+    <RelationshipRole1 id="rel54#role107" name="PersonaMoralToexpedienteElectronico" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="PERSONAMORAL_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel54#role108" name="expedienteElectronicoToPersonaMoral" maxCard="1">
+      <db:JoinColumn attribute="ent73#att451" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel55" name="PersonaMoral_numeroConsecutivo" sourceEntity="ent38" targetEntity="ent74" db:database="db2" db:table="NUMEROCONSECUTIVO">
+    <RelationshipRole1 id="rel55#role109" name="PersonaMoralTonumeroConsecutivo" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="PERSONAMORAL_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel55#role110" name="numeroConsecutivoToPersonaMoral" maxCard="1">
+      <db:JoinColumn attribute="ent74#att456" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel56" name="expedienteElectronico_numeroConsecutivo" sourceEntity="ent73" targetEntity="ent74" db:database="db2" db:table="NUMEROCONSECUTIVO">
+    <RelationshipRole1 id="rel56#role111" name="expedienteElectronicoTonumeroConsecutivo" maxCard="1">
+      <db:JoinColumn attribute="ent73#att451" name="EXPEDIENTEELECTRONICO_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel56#role112" name="numeroConsecutivoToexpedienteElectronico" maxCard="1">
+      <db:JoinColumn attribute="ent74#att456" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="965" gr:y="905" id="ent76" name="instrumentos" duration="persistent" attributeOrder="ent76#att470 ent76#att471 ent76#att472 ent76#att473 ent76#att474 ent76#att475 ent76#att476" db:database="db2" db:table="INSTRUMENTOS">
+    <Attribute id="ent76#att470" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent76#att476" name="numeroInstrumento" type="string" db:column="NUMEROINSTRUMENTO"/>
+    <Attribute id="ent76#att475" name="deFecha" type="timestamp" db:column="DEFECHA"/>
+    <Attribute id="ent76#att474" name="conDuracion" type="string" db:column="CONDURACION"/>
+    <Attribute id="ent76#att473" name="tipoinstrumento" type="string" db:column="TIPOINSTRUMENTO"/>
+    <Attribute id="ent76#att472" name="libro" type="string" db:column="LIBRO"/>
+    <Attribute id="ent76#att471" name="volumen" type="string" db:column="VOLUMEN"/>
+  </Entity>
+  <Relationship id="rel59" name="instrumentos_PersonaMoral" sourceEntity="ent76" targetEntity="ent38" db:database="db2" db:table="PERSONAMORAL">
+    <RelationshipRole1 id="rel59#role117" name="instrumentosToPersonaMoral" maxCard="1">
+      <db:JoinColumn attribute="ent76#att470" name="INSTRUMENTOS_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel59#role118" name="PersonaMoralToinstrumentos" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-265" gr:y="1275" id="ent77" name="NombramientoOCargo" duration="persistent" attributeOrder="ent77#att478 ent77#att479 ent77#att480 ent77#att481 ent77#att445" db:database="db2" db:table="NOMBRAMIENTOOCARGO">
+    <Attribute id="ent77#att478" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent77#att479" name="Nombramiento" type="string" key="false" db:column="NOMBRAMIENTO"/>
+    <Attribute id="ent77#att481" name="Tipo" type="string" db:column="TIPO"/>
+    <Attribute id="ent77#att480" name="Cargo" type="string" db:column="CARGO"/>
+    <Attribute id="ent77#att445" name="revocado" type="string" db:column="REVOCADO"/>
+  </Entity>
+  <Relationship id="rel60" name="Administracion_NombramientoOCargo" sourceEntity="ent64" targetEntity="ent77" db:database="db2" db:table="NOMBRAMIENTOOCARGO">
+    <RelationshipRole1 id="rel60#role119" name="AdministracionToNombramientoOCargo" maxCard="1">
+      <db:JoinColumn attribute="ent64#att402" name="ADMINISTRACION_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel60#role120" name="NombramientoOCargoToAdministracion" maxCard="1">
+      <db:JoinColumn attribute="ent77#att478" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel61" name="Nombramientos_NombramientoOCargo" sourceEntity="ent65" targetEntity="ent77" db:database="db2" db:table="NOMBRAMIENTOOCARGO">
+    <RelationshipRole1 id="rel61#role121" name="NombramientosToNombramientoOCargo" maxCard="1">
+      <db:JoinColumn attribute="ent65#att407" name="NOMBRAMIENTOS_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel61#role122" name="NombramientoOCargoToNombramientos" maxCard="1">
+      <db:JoinColumn attribute="ent77#att478" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel62" name="PersonaFisica_NombramientoOCargo" sourceEntity="ent39" targetEntity="ent77" gr:bendpoints="-105,420,180,-165" db:database="db2" db:table="NOMBRAMIENTOOCARGO">
+    <RelationshipRole1 id="rel62#role123" name="PersonaFisicaToNombramientoOCargo" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAFISICA_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel62#role124" name="NombramientoOCargoToPersonaFisica" maxCard="1">
+      <db:JoinColumn attribute="ent77#att478" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel63" name="PersonaMoral_NombramientoOCargo" sourceEntity="ent38" targetEntity="ent77" db:database="db2" db:table="NOMBRAMIENTOOCARGO">
+    <RelationshipRole1 id="rel63#role125" name="PersonaMoralToNombramientoOCargo" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAMORAL_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel63#role126" name="NombramientoOCargoToPersonaMoral" maxCard="1">
+      <db:JoinColumn attribute="ent77#att478" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-580" gr:y="1015" id="ent67" name="Revocaciones" duration="persistent" attributeOrder="ent67#att437 ent67#att438 ent67#att442 ent67#att443 ent67#att444" db:database="db2" db:table="REVOCACIONES">
+    <Attribute id="ent67#att437" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent67#att438" name="revocacionTotal" type="boolean" db:column="REVOCACIONTOTAL" key="false"/>
+    <Attribute id="ent67#att444" name="apoderado" type="string" db:column="APODERADO"/>
+    <Attribute id="ent67#att443" name="nombramiento" type="string" db:column="NOMBRAMIENTO"/>
+    <Attribute id="ent67#att442" name="administracion" type="string" db:column="ADMINISTRACION"/>
+  </Entity>
+  <Relationship id="rel43" name="PersonaFisica_Revocaciones" sourceEntity="ent39" targetEntity="ent67" gr:bendpoints="-273,260,272,-20" db:database="db2" db:table="REVOCACIONES">
+    <RelationshipRole1 id="rel43#role85" name="PersonaFisicaToRevocaciones" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="PERSONAFISICA_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel43#role86" name="RevocacionesToPersonaFisica" maxCard="1">
+      <db:JoinColumn attribute="ent67#att437" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel44" name="PersonaMoral_Revocaciones" sourceEntity="ent38" targetEntity="ent67" gr:bendpoints="-426,212,659,-37" db:database="db2" db:table="REVOCACIONES">
+    <RelationshipRole1 id="rel44#role87" name="PersonaMoralToRevocaciones" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="PERSONAMORAL_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel44#role88" name="RevocacionesToPersonaMoral" maxCard="1">
+      <db:JoinColumn attribute="ent67#att437" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-975" gr:y="1160" id="ent68" name="parametro" duration="volatile" volatileStorage="database" attributeOrder="ent68#att435 ent68#att440 ent68#att441 ent68#att494">
+    <Attribute id="ent68#att435" key="true" name="oid" type="integer"/>
+    <Attribute id="ent68#att441" name="oidPM" type="integer"/>
+    <Attribute id="ent68#att440" name="oidFedatario" type="integer"/>
+    <Attribute id="ent68#att494" name="origenSociedad" type="string"/>
+  </Entity>
+  <Entity gr:x="-530" gr:y="1290" id="ent69" name="OrganoDeVigilancia" duration="persistent" attributeOrder="ent69#att446 ent69#att447" db:database="db2" db:table="ORGANODEVIGILANCIA">
+    <Attribute id="ent69#att446" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent69#att447" name="descripcionOrgano" type="text" db:column="DESCRIPCIONORGANO" db:clob="true"/>
+  </Entity>
+  <Relationship id="rel45" name="PersonaFisica_OrganoDeVigilancia" sourceEntity="ent39" targetEntity="ent69" db:database="db2" db:table="ORGANODEVIGILANCIA">
+    <RelationshipRole1 id="rel45#role89" name="PersonaFisicaToOrganoDeVigilancia" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAFISICA_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel45#role90" name="OrganoDeVigilanciaToPersonaFisica" maxCard="1">
+      <db:JoinColumn attribute="ent69#att446" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel46" name="PersonaMoral_OrganoDeVigilancia" sourceEntity="ent38" targetEntity="ent69" db:database="db2" db:table="ORGANODEVIGILANCIA">
+    <RelationshipRole1 id="rel46#role91" name="PersonaMoralToOrganoDeVigilancia" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="PERSONAMORAL_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel46#role92" name="OrganoDeVigilanciaToPersonaMoral" maxCard="1">
+      <db:JoinColumn attribute="ent69#att446" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-725" gr:y="1420" id="ent70" name="auxAcciones" duration="volatile" volatileStorage="database" attributeOrder="ent70#att448 ent70#att449 ent70#att450 ent70#att464 ent70#att465">
+    <Attribute id="ent70#att448" key="true" name="oid" type="integer"/>
+    <Attribute id="ent70#att450" name="serieAccion" type="string" key="false"/>
+    <Attribute id="ent70#att449" name="valorAccion" type="integer" key="false"/>
+    <Attribute id="ent70#att464" name="oidPF" type="integer"/>
+    <Attribute id="ent70#att465" name="oidPM" type="integer"/>
+  </Entity>
+  <Entity gr:x="-205" gr:y="605" id="ent71" name="PersonalFedatario" duration="persistent" attributeOrder="ent71#att468 ent71#att469" db:database="db2" db:table="PERSONALFEDATARIO">
+    <Attribute id="ent71#att468" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent71#att469" name="oidPersonal" type="integer" db:column="OIDPERSONAL"/>
+  </Entity>
+  <Relationship id="rel48" name="PersonalFedatario_DatosFedatario" sourceEntity="ent71" targetEntity="ent8" db:database="db2" db:table="PERSONALFEDATARIO">
+    <RelationshipRole1 id="rel48#role95" name="PersonalFedatarioToDatosFedatario" maxCard="1">
+      <db:JoinColumn attribute="ent71#att468" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel48#role96" name="DatosFedatarioToPersonalFedatario" maxCard="N">
+      <db:JoinColumn attribute="ent8#att46" name="DATOSNOTARIO_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-930" gr:y="1315" id="ent72" name="auxiliarTotal" duration="volatile" volatileStorage="database" attributeOrder="ent72#att488 ent72#att489 ent72#att490 ent72#att491 ent72#att492 ent72#att493">
+    <Attribute id="ent72#att488" key="true" name="oid" type="integer"/>
+    <Attribute id="ent72#att489" name="oidPM" type="integer"/>
+    <Attribute id="ent72#att490" name="tipoCapital" type="string"/>
+    <Attribute id="ent72#att491" name="cantidad" type="integer"/>
+    <Attribute id="ent72#att492" name="serie" type="string"/>
+    <Attribute id="ent72#att493" name="valorAccion" type="integer"/>
+  </Entity>
+  <Entity id="ent95" name="Fianza" db:database="db2" duration="persistent" db:table="FIANZA" gr:x="-865" gr:y="805">
+    <Attribute id="ent95#att556" name="oid" db:column="OID" type="decimal" key="true"/>
+    <Attribute id="ent95#att557" name="esadicional" db:column="ESADICIONAL" type="string" key="false"/>
+    <Attribute id="ent95#att558" name="monto" db:column="MONTO" type="string" key="false"/>
+    <Attribute id="ent95#att559" name="fechatermino" db:column="FECHATERMINO" type="timestamp" key="false"/>
+    <Attribute id="ent95#att560" name="fechaorotgamiento" db:column="FECHAOROTGAMIENTO" type="timestamp" key="false"/>
+    <Attribute id="ent95#att561" name="tipo" db:column="TIPO" type="string" key="false"/>
+    <Attribute id="ent95#att562" name="activa" db:column="ACTIVA" type="integer" key="false"/>
+    <Attribute id="ent95#att563" name="vigencia" db:column="VIGENCIA" type="string" key="false"/>
+  </Entity>
+  <Relationship id="rel75" name="FianzaDatosfedatario" db:database="db2" db:table="FIANZA" sourceEntity="ent95" targetEntity="ent8">
+    <RelationshipRole1 id="rel75#role149" name="FianzaToDatosfedatario" maxCard="1">
+      <db:JoinColumn attribute="ent95#att556" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel75#role150" name="DatosfedatarioToFianza" maxCard="N">
+      <db:JoinColumn attribute="ent8#att46" name="DATOSNOTARIO_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-1090" gr:y="1760" id="ent96" name="Fedatarios" duration="persistent" attributeOrder="ent96#att564 ent96#att565 ent96#att566 ent96#att567 ent96#att568 ent96#att577 ent96#att569 ent96#att570 ent96#att571 ent96#att572 ent96#att573 ent96#att574 ent96#att575 ent96#att576 ent96#att578" db:database="db2" db:table="FEDATARIOS">
+    <Attribute id="ent96#att564" key="true" name="oidFedatario" type="integer" db:column="OIDFEDATARIO"/>
+    <Attribute id="ent96#att565" name="nombreFed" type="string" db:column="NOMBREFED"/>
+    <Attribute id="ent96#att566" name="primApellido" type="string" db:column="PRIMAPELLIDO"/>
+    <Attribute id="ent96#att567" name="segunApellido" type="string" db:column="SEGUNAPELLIDO"/>
+    <Attribute id="ent96#att568" name="oidEstado" type="integer" db:column="OIDESTADO"/>
+    <Attribute id="ent96#att569" name="numFed" type="integer" db:column="NUMFED"/>
+    <Attribute id="ent96#att570" name="correoFed" type="string" db:column="CORREOFED"/>
+    <Attribute id="ent96#att571" type="integer" db:column="ESTATUSFED" name="oidEstatusFed"/>
+    <Attribute id="ent96#att572" name="nombreComFed" type="string" derivationQuery="simpleCalculated::Self.ent96#att565 || ' ' || Self.ent96#att566 || ' ' || Self.ent96#att567"/>
+    <Attribute id="ent96#att573" name="oidCalidadFed" type="integer" db:column="OIDCALIDADFED"/>
+    <Attribute id="ent96#att574" name="oidTipoFed" type="integer" db:column="OIDTIPOFED"/>
+    <Attribute id="ent96#att575" name="rfcFed" type="string" db:column="RFCFED"/>
+    <Attribute id="ent96#att576" name="curpFed" type="string" db:column="CURPFED"/>
+    <Attribute id="ent96#att577" name="oidMunicipio" type="integer" db:column="OIDMUNICIPIO"/>
+    <Attribute id="ent96#att578" name="oidObservaciones" type="integer" db:column="OIDOBSERVACIONES"/>
+    <Attribute id="ent96#att497" name="nombrecomfed" db:column="NOMBRECOMFED" type="string" key="false"/>
+  </Entity>
+  <Entity gr:x="-685" gr:y="1850" id="ent97" name="Estados" duration="persistent" attributeOrder="ent97#att579 ent97#att580" db:database="db2" db:table="ESTADOS">
+    <Attribute id="ent97#att579" key="true" name="oidEstado" type="integer" db:column="OIDESTADO"/>
+    <Attribute id="ent97#att580" name="nombreEstado" type="string" db:column="NOMBREESTADO"/>
+  </Entity>
+  <Relationship id="rel78" name="FedatariosEstados" db:database="db2" db:table="FEDATARIOS" sourceEntity="ent96" targetEntity="ent97">
+    <RelationshipRole1 id="rel78#role155" name="FedatariosToEstados" maxCard="1">
+      <db:JoinColumn attribute="ent96#att564" name="OIDFEDATARIO"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel78#role156" name="EstadosToFedatarios" maxCard="N">
+      <db:JoinColumn attribute="ent97#att579" name="OIDESTADO"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-680" gr:y="1750" id="ent98" name="EstatusFedatario" duration="persistent" attributeOrder="ent98#att581 ent98#att582" db:database="db2" db:table="ESTATUSFEDATARIO">
+    <Attribute id="ent98#att581" key="true" name="oidEstatusFed" type="integer" db:column="OIDESTATUSFED"/>
+    <Attribute id="ent98#att582" name="nombreEstatusFed" type="string" db:column="NOMBREESTATUSFED"/>
+  </Entity>
+  <Entity gr:x="-705" gr:y="1660" id="ent40" name="CalidadFedatario" duration="persistent" attributeOrder="ent40#att273 ent40#att284" db:database="db2" db:table="CALIDADFEDATARIO">
+    <Attribute id="ent40#att273" key="true" name="oidCalidadFed" type="integer" db:column="OIDCALIDADFED"/>
+    <Attribute id="ent40#att284" name="nombreCalidadFed" type="string" db:column="NOMBRECALIDADFED"/>
+  </Entity>
+  <Relationship id="rel26" name="FedatariosCalidadfedatario" db:database="db2" db:table="FEDATARIOS" sourceEntity="ent96" targetEntity="ent40">
+    <RelationshipRole1 id="rel26#role51" name="FedatariosToCalidadfedatario" maxCard="1">
+      <db:JoinColumn attribute="ent96#att564" name="OIDFEDATARIO"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel26#role52" name="CalidadfedatarioToFedatarios" maxCard="N">
+      <db:JoinColumn attribute="ent40#att273" name="OIDCALIDADFED"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel47" name="FedatariosEstatusfedatario" db:database="db2" db:table="FEDATARIOS" sourceEntity="ent96" targetEntity="ent98">
+    <RelationshipRole1 id="rel47#role93" name="FedatariosToEstatusfedatario" maxCard="1">
+      <db:JoinColumn attribute="ent96#att564" name="OIDFEDATARIO"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel47#role94" name="EstatusfedatarioToFedatarios" maxCard="N">
+      <db:JoinColumn attribute="ent98#att581" name="ESTATUSFED"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-980" gr:y="1650" id="ent75" name="TipoFedatario" duration="persistent" attributeOrder="ent75#att285 ent75#att286" db:database="db2" db:table="TIPOFEDATARIO">
+    <Attribute id="ent75#att285" key="true" name="oidTipoFedatario" type="integer" db:column="OIDTIPOFEDATARIO"/>
+    <Attribute id="ent75#att286" name="nombreTipoFed" type="string" db:column="NOMBRETIPOFED"/>
+  </Entity>
+  <Entity gr:x="-670" gr:y="1995" id="ent78" name="Municipios" duration="persistent" attributeOrder="ent78#att287 ent78#att288 ent78#att294" db:database="db2" db:table="MUNICIPIOS">
+    <Attribute id="ent78#att287" key="true" name="oidMunicipio" type="integer" db:column="OIDMUNICIPIO"/>
+    <Attribute id="ent78#att288" name="nombreMunicipio" type="string" db:column="NOMBREMUNICIPIO"/>
+    <Attribute id="ent78#att294" name="oidEstado" type="integer" db:column="OIDESTADO"/>
+  </Entity>
+  <Entity gr:x="-1275" gr:y="1650" id="ent79" name="Observaciones" duration="persistent" attributeOrder="ent79#att295 ent79#att495" db:database="db2" db:table="OBSERVACIONES">
+    <Attribute id="ent79#att295" key="true" name="oidObservaciones" type="integer" db:column="OIDOBSERVACIONES"/>
+    <Attribute id="ent79#att495" name="nombreObservacion" type="string" db:column="NOMBREOBSERVACION"/>
+  </Entity>
+  <Relationship id="rel49" name="MunicipiosEstados" db:database="db2" db:table="MUNICIPIOS" sourceEntity="ent78" targetEntity="ent97">
+    <RelationshipRole1 id="rel49#role97" name="MunicipiosToEstados" maxCard="1">
+      <db:JoinColumn attribute="ent78#att287" name="OIDMUNICIPIO"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel49#role98" name="EstadosToMunicipios" maxCard="N">
+      <db:JoinColumn attribute="ent97#att579" name="OIDESTADO"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel50" name="FedatariosMunicipios" db:database="db2" db:table="FEDATARIOS" sourceEntity="ent96" targetEntity="ent78">
+    <RelationshipRole1 id="rel50#role99" name="FedatariosToMunicipios" maxCard="1">
+      <db:JoinColumn attribute="ent96#att564" name="OIDFEDATARIO"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel50#role100" name="MunicipiosToFedatarios" maxCard="N">
+      <db:JoinColumn attribute="ent78#att287" name="OIDMUNICIPIO"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel51" name="FedatariosObservaciones" db:database="db2" db:table="FEDATARIOS" sourceEntity="ent96" targetEntity="ent79">
+    <RelationshipRole1 id="rel51#role101" name="FedatariosToObservaciones" maxCard="1">
+      <db:JoinColumn attribute="ent96#att564" name="OIDFEDATARIO"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel51#role102" name="ObservacionesToFedatarios" maxCard="N">
+      <db:JoinColumn attribute="ent79#att295" name="OIDOBSERVACIONES"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel52" name="FedatariosTipofedatario" db:database="db2" db:table="FEDATARIOS" sourceEntity="ent96" targetEntity="ent75">
+    <RelationshipRole1 id="rel52#role103" name="FedatariosToTipofedatario" maxCard="1">
+      <db:JoinColumn attribute="ent96#att564" name="OIDFEDATARIO"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel52#role104" name="TipofedatarioToFedatarios" maxCard="N">
+      <db:JoinColumn attribute="ent75#att285" name="OIDTIPOFED"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-1640" gr:y="1820" id="ent83" name="Afianzadora" duration="persistent" attributeOrder="ent83#att515 ent83#att516 ent83#att517" db:database="db2" db:table="AFIANZADORA">
+    <Attribute id="ent83#att515" key="true" name="oidAfianzadora" type="integer" db:column="OIDAFIANZADORA"/>
+    <Attribute id="ent83#att516" name="nombreAfianzadora" type="string" db:column="NOMBREAFIANZADORA"/>
+    <Attribute id="ent83#att517" name="estatusAfianzadora" type="integer" db:column="ESTATUSAFIANZADORA"/>
+  </Entity>
+  <Entity gr:x="-1975" gr:y="1820" id="ent84" name="EstatusAfianzadora" duration="persistent" attributeOrder="ent84#att518 ent84#att519" db:database="db2" db:table="ESTATUSAFIANZADORA">
+    <Attribute id="ent84#att518" key="true" name="oidEstatusAfianzadora" type="integer" db:column="OIDESTATUSAFIANZADORA"/>
+    <Attribute id="ent84#att519" name="nombreEstatusAfianzadora" type="string" db:column="NOMBREESTATUSAFIANZADORA"/>
+  </Entity>
+  <Entity gr:x="-1640" gr:y="1955" id="ent85" name="EstatusCtrlFianza" duration="persistent" attributeOrder="ent85#att520 ent85#att521" db:database="db2" db:table="ESTATUSCTRLFIANZA">
+    <Attribute id="ent85#att520" key="true" name="oidEstatusCtrlFia" type="integer" db:column="OIDESTATUSCTRLFIA"/>
+    <Attribute id="ent85#att521" name="estatusCtrl" type="string" db:column="ESTATUSCTRL"/>
+  </Entity>
+  <Entity gr:x="-1635" gr:y="2080" id="ent86" name="TipoGarantia" duration="persistent" attributeOrder="ent86#att522 ent86#att523" db:database="db2" db:table="TIPOGARANTIA">
+    <Attribute id="ent86#att522" key="true" name="oidTipoGar" type="integer" db:column="OIDTIPOGAR"/>
+    <Attribute id="ent86#att523" name="mbreTipoGar" type="string" db:column="MBRETIPOGAR"/>
+  </Entity>
+  <Entity id="ent87" name="Controlfianzas" db:database="db2" duration="persistent" db:table="CONTROLFIANZAS" gr:x="-1360" gr:y="1835">
+    <Attribute id="ent87#att524" name="oidcontrolfianzas" db:column="OIDCONTROLFIANZAS" type="integer" key="true"/>
+    <Attribute id="ent87#att525" name="numeropoliza" db:column="NUMEROPOLIZA" type="string" key="false"/>
+    <Attribute id="ent87#att526" name="fechainicio" db:column="FECHAINICIO" type="timestamp" key="false"/>
+    <Attribute id="ent87#att527" name="fechatermino" db:column="FECHATERMINO" type="timestamp" key="false"/>
+    <Attribute id="ent87#att528" name="montofianza" db:column="MONTOFIANZA" type="string" key="false"/>
+    <Attribute id="ent87#att503" name="oidtipofianza" db:column="OIDTIPOFIANZA" type="decimal" key="false"/>
+    <Attribute id="ent87#att546" name="conteodias" db:column="CONTEODIAS" type="decimal" key="false"/>
+  </Entity>
+  <Relationship id="rel65" name="AfianzadoraEstatusafianzadora" db:database="db2" db:table="AFIANZADORA" sourceEntity="ent83" targetEntity="ent84">
+    <RelationshipRole1 id="rel65#role129" name="AfianzadoraToEstatusafianzadora" maxCard="1">
+      <db:JoinColumn attribute="ent83#att515" name="OIDAFIANZADORA"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel65#role130" name="EstatusafianzadoraToAfianzadora" maxCard="N">
+      <db:JoinColumn attribute="ent84#att518" name="ESTATUSAFIANZADORA"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel66" name="ControlfianzasAfianzadora" db:database="db2" db:table="CONTROLFIANZAS" sourceEntity="ent87" targetEntity="ent83">
+    <RelationshipRole1 id="rel66#role131" name="ControlfianzasToAfianzadora" maxCard="1">
+      <db:JoinColumn attribute="ent87#att524" name="OIDCONTROLFIANZAS"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel66#role132" name="AfianzadoraToControlfianzas" maxCard="N">
+      <db:JoinColumn attribute="ent83#att515" name="OIDAFIANZADORA"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel67" name="ControlfianzasCalidadfedatario" db:database="db2" db:table="CONTROLFIANZAS" sourceEntity="ent87" targetEntity="ent40">
+    <RelationshipRole1 id="rel67#role133" name="ControlfianzasToCalidadfedatario" maxCard="1">
+      <db:JoinColumn attribute="ent87#att524" name="OIDCONTROLFIANZAS"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel67#role134" name="CalidadfedatarioToControlfianzas" maxCard="N">
+      <db:JoinColumn attribute="ent40#att273" name="OIDCALIDADFED"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel68" name="ControlfianzasEstados" db:database="db2" db:table="CONTROLFIANZAS" sourceEntity="ent87" targetEntity="ent97">
+    <RelationshipRole1 id="rel68#role135" name="ControlfianzasToEstados" maxCard="1">
+      <db:JoinColumn attribute="ent87#att524" name="OIDCONTROLFIANZAS"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel68#role136" name="EstadosToControlfianzas" maxCard="N">
+      <db:JoinColumn attribute="ent97#att579" name="OIDESTADO"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel69" name="ControlfianzasEstatusctrlfianza" db:database="db2" db:table="CONTROLFIANZAS" sourceEntity="ent87" targetEntity="ent85">
+    <RelationshipRole1 id="rel69#role137" name="ControlfianzasToEstatusctrlfianza" maxCard="1">
+      <db:JoinColumn attribute="ent87#att524" name="OIDCONTROLFIANZAS"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel69#role138" name="EstatusctrlfianzaToControlfianzas" maxCard="N">
+      <db:JoinColumn attribute="ent85#att520" name="OIDESTATUSCTRLFIA"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel70" name="ControlfianzasFedatarios" db:database="db2" db:table="CONTROLFIANZAS" sourceEntity="ent87" targetEntity="ent96">
+    <RelationshipRole1 id="rel70#role139" name="ControlfianzasToFedatarios" maxCard="1">
+      <db:JoinColumn attribute="ent87#att524" name="OIDCONTROLFIANZAS"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel70#role140" name="FedatariosToControlfianzas" maxCard="N">
+      <db:JoinColumn attribute="ent96#att564" name="OIDFEDATARIO"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel71" name="ControlfianzasMunicipios" db:database="db2" db:table="CONTROLFIANZAS" sourceEntity="ent87" targetEntity="ent78">
+    <RelationshipRole1 id="rel71#role141" name="ControlfianzasToMunicipios" maxCard="1">
+      <db:JoinColumn attribute="ent87#att524" name="OIDCONTROLFIANZAS"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel71#role142" name="MunicipiosToControlfianzas" maxCard="N">
+      <db:JoinColumn attribute="ent78#att287" name="OIDMUNICIPIO"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel73" name="ControlfianzasTipogarantia" db:database="db2" db:table="CONTROLFIANZAS" sourceEntity="ent87" targetEntity="ent86">
+    <RelationshipRole1 id="rel73#role145" name="ControlfianzasToTipogarantia" maxCard="1">
+      <db:JoinColumn attribute="ent87#att524" name="OIDCONTROLFIANZAS"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel73#role146" name="TipogarantiaToControlfianzas" maxCard="N">
+      <db:JoinColumn attribute="ent86#att522" name="OIDTIPOGAR"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-1670" gr:y="1660" id="ent80" name="TipoFianza" duration="persistent" attributeOrder="ent80#att496 ent80#att498 ent80#att499 ent80#att500" db:database="db2" db:table="TIPOFIANZA">
+    <Attribute id="ent80#att496" key="true" name="oiTidpoFianza" type="integer" db:column="OITIDPOFIANZA"/>
+    <Attribute id="ent80#att498" name="nombreTipoFianza" type="string" db:column="NOMBRETIPOFIANZA"/>
+    <Attribute id="ent80#att499" name="comentarioTipoFianza" type="string" db:column="COMENTARIOTIPOFIANZA"/>
+    <Attribute id="ent80#att500" name="oidEstatusTipoFia" type="integer" db:column="OIDESTATUSTIPOFIA"/>
+  </Entity>
+  <Entity gr:x="-1675" gr:y="1565" id="ent81" name="EstatusTipoFianza" duration="persistent" attributeOrder="ent81#att501 ent81#att502" db:database="db2" db:table="ESTATUSTIPOFIANZA">
+    <Attribute id="ent81#att501" key="true" name="oidEstatusTipFia" type="integer" db:column="OIDESTATUSTIPFIA"/>
+    <Attribute id="ent81#att502" name="nombreEstatusTipoFia" type="string" db:column="NOMBREESTATUSTIPOFIA"/>
+  </Entity>
+  <Relationship id="rel53" name="ControlfianzasTipofianza" db:database="db2" db:table="CONTROLFIANZAS" sourceEntity="ent87" targetEntity="ent80">
+    <RelationshipRole1 id="rel53#role105" name="ControlfianzasToTipofianza" maxCard="1">
+      <db:JoinColumn attribute="ent87#att524" name="OIDCONTROLFIANZAS"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel53#role106" name="TipofianzaToControlfianzas" maxCard="N">
+      <db:JoinColumn attribute="ent80#att496" name="OIDTIPOFIANZA"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel57" name="TipofianzaEstatustipofianza" db:database="db2" db:table="TIPOFIANZA" sourceEntity="ent80" targetEntity="ent81">
+    <RelationshipRole1 id="rel57#role113" name="TipofianzaToEstatustipofianza" maxCard="1">
+      <db:JoinColumn attribute="ent80#att496" name="OITIDPOFIANZA"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel57#role114" name="EstatustipofianzaToTipofianza" maxCard="N">
+      <db:JoinColumn attribute="ent81#att501" name="OIDESTATUSTIPOFIA"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-355" gr:y="1875" id="ent82" name="Parametros" duration="persistent" attributeOrder="ent82#att504 ent82#att505 ent82#att506 ent82#att507 ent82#att508" db:database="db2" db:table="PARAMETROS">
+    <Attribute id="ent82#att504" key="true" name="oidParametro" type="integer" db:column="OIDPARAMETRO"/>
+    <Attribute id="ent82#att505" name="oidEstado" type="integer" db:column="OIDESTADO"/>
+    <Attribute id="ent82#att506" name="montoParametro" type="string" db:column="MONTOPARAMETRO"/>
+    <Attribute id="ent82#att507" name="fechaInicio" type="timestamp" db:column="FECHAINICIO"/>
+    <Attribute id="ent82#att508" name="fechaActualizacion" type="timestamp" db:column="FECHAACTUALIZACION"/>
+  </Entity>
+  <Relationship id="rel58" name="ParametrosEstados" db:database="db2" db:table="PARAMETROS" sourceEntity="ent82" targetEntity="ent97">
+    <RelationshipRole1 id="rel58#role115" name="ParametrosToEstados" maxCard="1">
+      <db:JoinColumn attribute="ent82#att504" name="OIDPARAMETRO"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel58#role116" name="EstadosToParametros" maxCard="N">
+      <db:JoinColumn attribute="ent97#att579" name="OIDESTADO"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-1965" gr:y="1500" id="ent88" name="Ctrlfia" duration="persistent" attributeOrder="ent88#att509 ent88#att510 ent88#att511 ent88#att512 ent88#att513 ent88#att514 ent88#att529 ent88#att530 ent88#att531 ent88#att532 ent88#att533 ent88#att534 ent88#att535" db:database="db2" db:table="CTRLFIA">
+    <Attribute id="ent88#att509" key="true" name="oidCtrlFia" type="integer" db:column="OIDCTRLFIA"/>
+    <Attribute id="ent88#att510" name="oidFedatario" type="integer" db:column="OIDFEDATARIO"/>
+    <Attribute id="ent88#att511" name="oidAfianzadora" type="integer" db:column="OIDAFIANZADORA"/>
+    <Attribute id="ent88#att512" name="numPoliza" type="string" db:column="NUMPOLIZA"/>
+    <Attribute id="ent88#att513" name="fechaInic" type="timestamp" db:column="FECHAINIC"/>
+    <Attribute id="ent88#att514" name="fechaTerm" type="timestamp" db:column="FECHATERM"/>
+    <Attribute id="ent88#att529" name="montoFia" type="string" db:column="MONTOFIA"/>
+    <Attribute id="ent88#att530" name="oidEstatusCtrl" type="integer" db:column="OIDESTATUSCTRL"/>
+    <Attribute id="ent88#att531" name="oidCalidadFed" type="integer" db:column="OIDCALIDADFED"/>
+    <Attribute id="ent88#att532" name="oidTipoGar" type="integer" db:column="OIDTIPOGAR"/>
+    <Attribute id="ent88#att533" name="oidEstado" type="integer" db:column="OIDESTADO"/>
+    <Attribute id="ent88#att534" name="oidMunicipio" type="integer" db:column="OIDMUNICIPIO"/>
+    <Attribute id="ent88#att535" name="oidTipoFianza" type="integer" db:column="OIDTIPOFIANZA"/>
+  </Entity>
+  <Entity gr:x="-1900" gr:y="1960" id="ent89" name="auxCtrlFianzas" duration="volatile" volatileStorage="database" attributeOrder="ent89#att536 ent89#att537 ent89#att538 ent89#att539 ent89#att540 ent89#att541 ent89#att542 ent89#att543 ent89#att544 ent89#att545">
+    <Attribute id="ent89#att536" key="true" name="oidcontrolfianzas" type="integer"/>
+    <Attribute id="ent89#att537" name="numeropoliza" type="string"/>
+    <Attribute id="ent89#att538" name="fechaTermino" type="timestamp" key="false"/>
+    <Attribute id="ent89#att539" name="montoFianza" type="string"/>
+    <Attribute id="ent89#att540" name="conteoDias" type="integer"/>
+    <Attribute id="ent89#att541" name="nombrefed" type="string"/>
+    <Attribute id="ent89#att542" type="string" name="primapellido"/>
+    <Attribute id="ent89#att543" name="segunapellido" type="string"/>
+    <Attribute id="ent89#att544" name="municipio" type="string"/>
+    <Attribute id="ent89#att545" name="estado" type="string"/>
+  </Entity>
+</DataModel>

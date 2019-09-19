@@ -1,0 +1,13 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="165" id="mov2#mpkg8#opm64" name="validarSociedad">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg8#opm64#icu86" name="Input Collector" gr:x="30" gr:y="60">
+      <OKLink id="mov2#mpkg8#opm64#icu86#oln105" name="OKFlow105" to="mov2#mpkg8#opm64#okcu67">
+        <LinkParameter id="mov2#mpkg8#opm64#icu86#oln105#par319" name="AMS0302205L7_rfcSociedad" sourceValue="AMS0302205L7" target="mov2#mpkg8#opm64#okcu67#ocp180"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="660" gr:y="60" id="mov2#mpkg8#opm64#okcu67" name="OK">
+      <OutputCollectorParameter id="mov2#mpkg8#opm64#okcu67#ocp180" name="rfcSociedad"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="660" gr:y="180" id="mov2#mpkg8#opm64#kocu53" name="KO"/>
+  </OperationUnits>
+</OperationModule>

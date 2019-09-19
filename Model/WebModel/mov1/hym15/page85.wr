@@ -1,0 +1,146 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym15#page85" name="Elementos a validar" layout:pageLayout="gobmxStyle/Bootstrap" gr:x="195" gr:y="-235">
+  <ContentUnits>
+    <ActivityParametersUnit id="mov1#hym15#page85#apu31" name="Get Parameters" gr:x="5" gr:y="0">
+      <Link id="mov1#hym15#page85#apu31#ln698" name="Flow698" to="mov1#hym15#miu85" type="transport" validate="true" gr:bendpoints="300,0,-700,-620">
+        <LinkParameter id="mov1#hym15#page85#apu31#ln698#par2698" name="Process Instance Oid_proceso" source="processInstanceOid" target="mov1#hym15#miu85.mov2#mpkg8#opm59#icu85#icp202"/>
+      </Link>
+    </ActivityParametersUnit>
+    <EntryUnit id="mov1#hym15#page85#enu105" name="Form11" linkOrder="mov1#hym15#page85#enu105#ln167" gr:x="105" gr:y="110">
+      <MultiSelectionField id="mov1#hym15#page85#enu105#msfld2" name="Elementos a Validar" type="string" splitOutput="true" preselectValue="CURP">
+        <Slot id="mov1#hym15#page85#enu105#msfld2#slot12" name="Elementos a validar" label="true" output="true" value="CURP|RFC|E.Firma|Credencial de Elector"/>
+      </MultiSelectionField>
+      <Link id="mov1#hym15#page85#enu105#ln167" name="Continuar" to="mov1#hym15#scu75" type="normal" validate="true" ajaxEnabled="false">
+        <LinkParameter id="mov1#hym15#page85#enu105#ln167#par3" name="Elementos a Validar[Elementos a validar]_seleccion" source="mov1#hym15#page85#enu105#msfld2#slot12" target="mov1#hym15#scu75.seleccion"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit id="mov1#hym15#page85#mssu14" name="Message6" gr:x="0" gr:y="110"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym15#page85#mssu14">
+          <layout:LayoutParameter name="messageType" value="warning" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Field unitId="mov1#hym15#page85#enu105" field="mov1#hym15#page85#enu105#msfld2" mode="value" layout:fieldLayout="WRDefault/EntryUnit"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Grid containerType="grid">
+          <layout:Row>
+            <layout:Cell colspan="9"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="3">
+              <layout:Link unitId="mov1#hym15#page85#enu105" link="mov1#hym15#page85#enu105#ln167">
+                <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+              </layout:Link>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+</Page>

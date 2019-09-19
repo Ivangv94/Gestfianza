@@ -1,0 +1,162 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym15#page86" name="Selecciona tipo de INE" localized="true" gr:x="750" gr:y="830">
+  <ContentUnits>
+    <NoOpContentUnit id="mov1#hym15#page86#gctu10" name="ViewComponent3" gr:x="0" gr:y="0"/>
+    <NoOpContentUnit id="mov1#hym15#page86#gctu11" name="ViewComponent5" gr:x="160" gr:y="0"/>
+    <EntryUnit id="mov1#hym15#page86#enu106" name="Buttons" linkOrder="mov1#hym15#page86#enu106#ln634 mov1#hym15#page86#enu106#ln637" gr:x="60" gr:y="110">
+      <Field id="mov1#hym15#page86#enu106#fld97" name="cadena" type="string" modifiable="true" preloaded="true"/>
+      <Link id="mov1#hym15#page86#enu106#ln634" name="Selecciona tipo de INE A, B y C" to="mov1#hym15#page88" type="normal" validate="true"/>
+      <Link id="mov1#hym15#page86#enu106#ln637" name="Selecciona tipo de INE D y E" to="mov1#hym15#page93" type="normal" validate="true"/>
+    </EntryUnit>
+    <NoOpContentUnit gr:x="215" gr:y="100" id="mov1#hym15#page86#gctu16" name="ViewComponent16"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid" layout:frameLayout="gobmxStyle/inePDF">
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym15#page86#gctu11" layout:unitLayout="gobmxStyle/identidadTipoINEABC"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="2"/>
+      <layout:Cell/>
+      <layout:Cell colspan="2">
+        <layout:Grid containerType="grid">
+          <layout:Row>
+            <layout:Cell colspan="12">
+              <layout:Link unitId="mov1#hym15#page86#enu106" link="mov1#hym15#page86#enu106#ln634"/>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell colspan="8"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym15#page86#gctu10" layout:unitLayout="gobmxStyle/identidadTipoINEDE"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="2"/>
+      <layout:Cell/>
+      <layout:Cell colspan="2">
+        <layout:Grid containerType="grid">
+          <layout:Row>
+            <layout:Cell colspan="12">
+              <layout:Link unitId="mov1#hym15#page86#enu106" link="mov1#hym15#page86#enu106#ln637"/>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell colspan="8"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Field unitId="mov1#hym15#page86#enu106" field="mov1#hym15#page86#enu106#fld97" mode="full" styleClass="hidden"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym15#page86#gctu16"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="mov1#hym15#page86#var8" name="cadena"/>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+  <layout:LayoutParameter name="show-right-column" value="false" type="page"/>
+  <layout:LayoutParameter name="show-page-title" value="true" type="page"/>
+</Page>

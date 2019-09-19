@@ -1,0 +1,47 @@
+<MasterPage xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv5#mpage5" name="MasterPage 1" gr:x="1075" gr:y="225" localized="true">
+  <ContentUnits>
+    <GetUnit id="sv5#mpage5#gtu7" name="UserAndGroup" gr:x="0" gr:y="10" contextParameters="UserCtxParam">
+      <Link id="sv5#mpage5#gtu7#ln492" name="Link56" to="sv5#mpage5#dau8" type="transport" validate="true">
+        <LinkParameter id="sv5#mpage5#gtu7#ln492#par1558" name="UserCtxParam.oid_oid [oid]" source="sv5#mpage5#gtu7.UserCtxParam" target="sv5#mpage5#dau8#su172#kcond90.userOID"/>
+      </Link>
+    </GetUnit>
+    <DataUnit id="sv5#mpage5#dau8" name="Current User" gr:x="170" gr:y="0" entity="ent39" displayAttributes="ent39#att269" linkOrder="sv5#mpage5#dau8#ln494">
+      <Selector id="sv5#mpage5#dau8#su172" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv5#mpage5#dau8#su172#kcond90" name="oid" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv5#mpage5#dau8#ln494" name="Salir" to="sv5#lou5" automaticCoupling="true" type="normal" validate="true"/>
+    </DataUnit>
+  </ContentUnits>
+  <layout:CustomLocation name="User">
+    <layout:Grid containerType="cell">
+      <layout:Row>
+        <layout:Cell>
+          <layout:Grid containerType="grid" label="Current User">
+            <layout:Row>
+              <layout:Cell colspan="9">
+                <layout:Attribute unitId="sv5#mpage5#dau8" mode="full" attribute="ent39#att269">
+                  <layout:LayoutParameter name="label-position" value="none" type="attribute"/>
+                </layout:Attribute>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell colspan="3">
+                <layout:Link unitId="sv5#mpage5#dau8" link="sv5#mpage5#dau8#ln494">
+                  <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+                </layout:Link>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:Cell>
+      </layout:Row>
+    </layout:Grid>
+  </layout:CustomLocation>
+</MasterPage>

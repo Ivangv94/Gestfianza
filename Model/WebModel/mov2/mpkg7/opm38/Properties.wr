@@ -1,0 +1,22 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="25" gr:y="235" id="mov2#mpkg7#opm38" name="consultar">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg7#opm38#icu26" name="Input Collector" gr:x="30" gr:y="60">
+      <OKLink id="mov2#mpkg7#opm38#icu26#oln531" name="OKFlow531" to="mov2#mpkg7#opm38#miu56" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <ModuleInstanceUnit gr:x="360" gr:y="65" id="mov2#mpkg7#opm38#miu56" action="true" moduleId="mov2#mpkg7#opm23">
+      <OKLink id="mov2#mpkg7#opm38#miu56#oln532" name="OKFlow532" to="mov2#mpkg7#opm38#miu57">
+        <LinkParameter id="mov2#mpkg7#opm38#miu56#oln532#par1918" name="oidPF_oidPF" source="mov2#mpkg7#opm23#okcu15#ocp47" target="mov2#mpkg7#opm38#miu57.mov2#mpkg7#opm37#icu25#icp55"/>
+        <LinkParameter id="mov2#mpkg7#opm38#miu56#oln532#par1919" name="oidPM_oidPM" source="mov2#mpkg7#opm23#okcu15#ocp46" target="mov2#mpkg7#opm38#miu57.mov2#mpkg7#opm37#icu25#icp54"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg7#opm38#miu56#kln247" name="KOFlow247" to="mov2#mpkg7#opm38#kocu37" automaticCoupling="true" gr:bendpoints="87,131,-578,6"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="660" gr:y="65" id="mov2#mpkg7#opm38#miu57" action="true" moduleId="mov2#mpkg7#opm37">
+      <OKLink id="mov2#mpkg7#opm38#miu57#oln533" name="OKFlow533" to="mov2#mpkg7#opm38#okcu25" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg7#opm38#miu57#kln246" name="KOFlow246" to="mov2#mpkg7#opm38#kocu37" automaticCoupling="true" gr:bendpoints="134,121,-226,-4"/>
+    </ModuleInstanceUnit>
+    <KOCollectorUnit gr:x="1020" gr:y="185" id="mov2#mpkg7#opm38#kocu37" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg7#opm38#kocu37#ocp63" name="msj"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit gr:x="1020" gr:y="60" id="mov2#mpkg7#opm38#okcu25" name="OK"/>
+  </OperationUnits>
+</OperationModule>

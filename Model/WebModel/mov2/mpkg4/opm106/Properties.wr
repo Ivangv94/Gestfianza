@@ -1,0 +1,162 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg4#opm106" name="firmadoSEXML" gr:x="0" gr:y="205">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg4#opm106#icu146" gr:x="-470" gr:y="75">
+      <InputCollectorParameter id="mov2#mpkg4#opm106#icu146#icp456" name="cadena(base64)"/>
+      <OKLink id="mov2#mpkg4#opm106#icu146#oln1386" name="OKFlow1082" to="mov2#mpkg4#opm106#scu214" automaticCoupling="true"/>
+      <Link id="mov2#mpkg4#opm106#icu146#ln1427" name="Flow1192" to="mov2#mpkg4#opm106#scu217" type="transport" validate="true" gr:bendpoints="201,-75,-869,-75;954,-69,-116,-69">
+        <LinkParameter id="mov2#mpkg4#opm106#icu146#ln1427#par4574" name="cadena(base64)_cadena" source="mov2#mpkg4#opm106#icu146#icp456" target="mov2#mpkg4#opm106#scu217.cadena"/>
+      </Link>
+      <Link id="mov2#mpkg4#opm106#icu146#ln1428" name="Flow1197" to="mov2#mpkg4#opm106#scu214" type="transport" validate="true">
+        <LinkParameter id="mov2#mpkg4#opm106#icu146#ln1428#par4575" name="cadena(base64)_base64" source="mov2#mpkg4#opm106#icu146#icp456" target="mov2#mpkg4#opm106#scu214.base64"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#mpkg4#opm106#okcu113" name="OK" gr:x="1860" gr:y="25">
+      <OutputCollectorParameter id="mov2#mpkg4#opm106#okcu113#ocp319" name="selloSE"/>
+      <OutputCollectorParameter id="mov2#mpkg4#opm106#okcu113#ocp320" name="numeroDeControl"/>
+      <OutputCollectorParameter id="mov2#mpkg4#opm106#okcu113#ocp321" name="firmaSE"/>
+      <OutputCollectorParameter id="mov2#mpkg4#opm106#okcu113#ocp322" name="fecha"/>
+      <OutputCollectorParameter id="mov2#mpkg4#opm106#okcu113#ocp323" name="estampaTiempoSE"/>
+      <OutputCollectorParameter id="mov2#mpkg4#opm106#okcu113#ocp324" name="base64DelSha2"/>
+      <OutputCollectorParameter id="mov2#mpkg4#opm106#okcu113#ocp325" name="xml"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov2#mpkg4#opm106#kocu96" name="KO" gr:x="1860" gr:y="310">
+      <OutputCollectorParameter id="mov2#mpkg4#opm106#kocu96#ocp326" name="msj"/>
+    </KOCollectorUnit>
+    <ScriptUnit id="mov2#mpkg4#opm106#scu213" name="procesar_respuesta" gr:x="820" gr:y="85">
+      <ScriptUnitText xml:space="preserve">#input String xml
+#output ruteo,firmaSE,selloSE
+String a0 = xml.split("&lt;return&gt;").getAt(1);
+String b0 = a0.split("&lt;/return&gt;").getAt(0);
+String a = xml.split("&lt;return&gt;").getAt(2);
+String b = a.split("&lt;/return&gt;").getAt(0);
+String firmaSE = "";
+String selloSE = "";
+String dirtyFirmaSE = "";
+String dirtySelloSE = "";
+String ruteo = "";
+if(b.equals("Satisfactorio") &amp;&amp; b0.equals("0")){
+    ruteo = "0";
+    
+    dirtyFirmaSE = xml.split("&lt;return&gt;").getAt(3);
+    firmaSE = dirtyFirmaSE.split("&lt;/return&gt;").getAt(0);
+    
+    dirtySelloSE =  xml.split("&lt;return&gt;").getAt(4);
+    selloSE = dirtySelloSE.split("&lt;/return&gt;").getAt(0);
+} else {
+    ruteo = "1"
+}
+return["ruteo":ruteo,"firmaSE":firmaSE,"selloSE":selloSE]</ScriptUnitText>
+      <KOLink id="mov2#mpkg4#opm106#scu213#kln549" name="KOFlow440" to="mov2#mpkg4#opm106#kocu96" automaticCoupling="true" gr:bendpoints="79,224,-791,-11"/>
+      <Link id="mov2#mpkg4#opm106#scu213#ln1429" name="OKFlow1090" to="mov2#mpkg4#opm106#okcu113" type="transport" gr:bendpoints="140,-74,-740,-64;402,-77,-478,-67;639,-73,-241,-63">
+        <LinkParameter id="mov2#mpkg4#opm106#scu213#ln1429#par4576" name="firmaSE_firmaSE" source="result(firmaSE)" target="mov2#mpkg4#opm106#okcu113#ocp321"/>
+        <LinkParameter id="mov2#mpkg4#opm106#scu213#ln1429#par4577" name="selloSE_selloSE" source="result(selloSE)" target="mov2#mpkg4#opm106#okcu113#ocp319"/>
+      </Link>
+      <OKLink id="mov2#mpkg4#opm106#scu213#oln1387" name="OKFlow1098" to="mov2#mpkg4#opm106#miu163" automaticCoupling="true"/>
+      <Link id="mov2#mpkg4#opm106#scu213#ln1430" name="Flow1202" to="mov2#mpkg4#opm106#scu216" type="transport" validate="true" gr:bendpoints="126,-57,-474,-57;451,-59,-149,-59">
+        <LinkParameter id="mov2#mpkg4#opm106#scu213#ln1430#par4578" name="firmaSE_firma" source="result(firmaSE)" target="mov2#mpkg4#opm106#scu216.firma"/>
+        <LinkParameter id="mov2#mpkg4#opm106#scu213#ln1430#par4579" name="selloSE_sello" source="result(selloSE)" target="mov2#mpkg4#opm106#scu216.sello"/>
+      </Link>
+    </ScriptUnit>
+    <ModuleInstanceUnit id="mov2#mpkg4#opm106#miu163" gr:x="1055" gr:y="80" action="true" moduleId="mov2#mpkg4#opm100">
+      <Link id="mov2#mpkg4#opm106#miu163#ln1431" name="OKFlow1099" to="mov2#mpkg4#opm106#okcu113" codeRef="mov2#mpkg4#opm100#okcu106" type="transport" gr:bendpoints="144,-50,-506,-40;432,-55,-218,-45">
+        <LinkParameter id="mov2#mpkg4#opm106#miu163#ln1431#par4580" name="EstampaDeTiempo_estamapaTiempoSE" source="mov2#mpkg1#opm25#okcu28#ocp78" target="mov2#mpkg4#opm106#okcu113#ocp323"/>
+      </Link>
+      <KOLink id="mov2#mpkg4#opm106#miu163#kln550" name="KOFlow449" to="mov2#mpkg4#opm106#kocu96" gr:bendpoints="93,218,-547,-17">
+        <LinkParameter id="mov2#mpkg4#opm106#miu163#kln550#par4581" name="msj_msj" source="mov2#mpkg1#opm25#kocu22#ocp79" target="mov2#mpkg4#opm106#kocu96#ocp326"/>
+      </KOLink>
+      <Link id="mov2#mpkg4#opm106#miu163#ln1432" name="OKFlow1104" to="mov2#mpkg4#opm106#scu216" codeRef="mov2#mpkg4#opm100#okcu106" type="transport" gr:bendpoints="132,-41,-238,-41;244,-42,-126,-42">
+        <LinkParameter id="mov2#mpkg4#opm106#miu163#ln1432#par4582" name="EstampaDeTiempo_estampaDeTiempo" source="mov2#mpkg1#opm25#okcu28#ocp78" target="mov2#mpkg4#opm106#scu216.estampaDeTiempo"/>
+      </Link>
+      <OKLink id="mov2#mpkg4#opm106#miu163#oln1388" name="OKFlow1173" to="mov2#mpkg4#opm106#tmu28" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ScriptUnit id="mov2#mpkg4#opm106#scu214" name="b64aXML" gr:x="-140" gr:y="85">
+      <ScriptUnitText xml:space="preserve">#input String base64
+#output xmlOriginal
+byte[] decoded = base64.decodeBase64();
+String xmlOriginal = new String(decoded);
+return["xmlOriginal":xmlOriginal]</ScriptUnitText>
+      <OKLink id="mov2#mpkg4#opm106#scu214#oln1389" name="OKFlow1100" to="mov2#mpkg4#opm106#gxu11">
+        <LinkParameter id="mov2#mpkg4#opm106#scu214#oln1389#par4583" name="xmlOriginal_Text" source="result(xmlOriginal)" target="mov2#mpkg4#opm106#gxu11.text"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg4#opm106#scu214#kln551" name="KOFlow468" to="mov2#mpkg4#opm106#kocu96" gr:bendpoints="38,257,-1852,22">
+        <LinkParameter id="mov2#mpkg4#opm106#scu214#kln551#par4584" name="Error al convertir el base64 del XML._msj" target="mov2#mpkg4#opm106#kocu96#ocp326" sourceValue="Error al convertir el base64 del XML."/>
+      </KOLink>
+    </ScriptUnit>
+    <GetXMLUnit id="mov2#mpkg4#opm106#gxu11" name="Canonicalizar" gr:x="35" gr:y="85" sourceType="text">
+      <OKLink id="mov2#mpkg4#opm106#gxu11#oln1390" name="OKFlow1101" to="mov2#mpkg4#opm106#scu215">
+        <LinkParameter id="mov2#mpkg4#opm106#gxu11#oln1390#par4585" name="Retrieved XML Document_cadenaOriginal" source="xmlDocument" target="mov2#mpkg4#opm106#scu215.cadenaOriginal"/>
+      </OKLink>
+      <Link id="mov2#mpkg4#opm106#gxu11#ln1433" name="Flow1203" to="mov2#mpkg4#opm106#scu216" type="transport" validate="true" gr:bendpoints="106,-80,-1354,-80;1289,-80,-171,-80">
+        <LinkParameter id="mov2#mpkg4#opm106#gxu11#ln1433#par4586" name="Retrieved XML Document_xmlOriginal" source="xmlDocument" target="mov2#mpkg4#opm106#scu216.xmlOriginal"/>
+      </Link>
+      <KOLink id="mov2#mpkg4#opm106#gxu11#kln552" name="KOFlow470" to="mov2#mpkg4#opm106#kocu96" gr:bendpoints="66,249,-1664,14">
+        <LinkParameter id="mov2#mpkg4#opm106#gxu11#kln552#par4587" name="Error al canonicalizar el XML original._msj" target="mov2#mpkg4#opm106#kocu96#ocp326" sourceValue="Error al canonicalizar el XML original."/>
+      </KOLink>
+    </GetXMLUnit>
+    <ScriptUnit id="mov2#mpkg4#opm106#scu215" name="base64delSHA2" gr:x="235" gr:y="85">
+      <ScriptUnitText xml:space="preserve">#input String cadenaOriginal
+#output base64DelSha2
+//#output strtDiges
+/// Libs para mensajes encriptados
+import java.security.MessageDigest
+/// Obtener hashCadenaOriginal en SHA-256 -SHA2-
+MessageDigest sha2 = MessageDigest.getInstance("SHA-256")
+byte[] dirtyCadenaOriginal = cadenaOriginal.toString().getBytes();
+sha2deCadenaOriginal = sha2.digest(dirtyCadenaOriginal);
+/// Obtener el base64 del hash SHA2 de la cadena original
+def base64DelSha2 = sha2deCadenaOriginal.encodeBase64().toString();
+return["base64DelSha2":base64DelSha2]
+/*
+//String str=&#8216;&#8217;&#8217;abc&#8217;&#8217;'
+byte[] buffer = cadenaOriginal.toString().getBytes(&#8220;utf-8&#8221;)
+MessageDigest messageDigest = MessageDigest.getInstance(&#8220;SHA-256&#8221;)
+byte[] digest = messageDigest.digest(buffer)
+def strtDiges = new sun.misc.BASE64Encoder().encode(digest)
+return["strtDiges":strtDiges]*/
+</ScriptUnitText>      <OKLink id="mov2#mpkg4#opm106#scu215#oln1391" name="OKFlow1102" to="mov2#mpkg4#opm106#scu217" automaticCoupling="true"/>      <Link id="mov2#mpkg4#opm106#scu215#ln1434" name="Flow1229" to="mov2#mpkg4#opm106#miu163" type="transport" validate="true" gr:bendpoints="86,-63,-829,-63;714,-55,-201,-55">        <LinkParameter id="mov2#mpkg4#opm106#scu215#ln1434#par4588" name="base64DelSha2_digestion" source="result(base64DelSha2)" target="mov2#mpkg4#opm106#miu163.mov2#mpkg1#opm25#icu35#icp96"/>      </Link>      <KOLink id="mov2#mpkg4#opm106#scu215#kln553" name="KOFlow469" to="mov2#mpkg4#opm106#kocu96" automaticCoupling="true" gr:bendpoints="60,241,-1495,6"/>      <Link id="mov2#mpkg4#opm106#scu215#ln1435" name="Flow1259" to="mov2#mpkg4#opm106#okcu113" type="transport" validate="true" gr:bendpoints="93,-85,-1472,-75;732,-85,-833,-75;1312,-81,-253,-71">        <LinkParameter id="mov2#mpkg4#opm106#scu215#ln1435#par4589" name="base64DelSha2_base64DelSha2" source="result(base64DelSha2)" target="mov2#mpkg4#opm106#okcu113#ocp324"/>      </Link>    </ScriptUnit>    <ScriptUnit id="mov2#mpkg4#opm106#scu216" name="procesar_respuesta" gr:x="1560" gr:y="85">      <ScriptUnitText xml:space="preserve">#input String xmlOriginal, String firma, String sello, String estampaDeTiempo
+#output xmlFinal, xmlOriginal
+String cierre = '''	&lt;certificacionSE&gt;
+ 		&lt;firmaSE&gt;
+ 			''' + firma + '''
+ 		&lt;/firmaSE&gt;
+ 		&lt;selloSE&gt;
+ 			''' + sello + '''
+ 		&lt;/selloSE&gt;
+ 		&lt;estampaDeTiempoSE&gt;
+ 			''' + estampaDeTiempo + '''
+ 		&lt;/estampaDeTiempoSE&gt;
+ 	&lt;/certificacionSE&gt;
+&lt;/documento-digital-firmado-con-e-firma&gt;''';
+String xmlFinal = xmlOriginal.replaceAll("&lt;/documento-digital-firmado-con-e-firma&gt;", cierre);
+return["xmlFinal":xmlFinal, "xmlOriginal":xmlOriginal]</ScriptUnitText>
+      <KOLink id="mov2#mpkg4#opm106#scu216#kln554" name="KOFlow448" to="mov2#mpkg4#opm106#kocu96" gr:bendpoints="77,220,-193,-15">
+        <LinkParameter id="mov2#mpkg4#opm106#scu216#kln554#par4590" name="Error en el WS de Firmado_msj" target="mov2#mpkg4#opm106#kocu96#ocp326" sourceValue="Error en el WS de Firmado"/>
+      </KOLink>
+      <OKLink id="mov2#mpkg4#opm106#scu216#oln1392" name="OKFlow1132" to="mov2#mpkg4#opm106#okcu113">
+        <LinkParameter id="mov2#mpkg4#opm106#scu216#oln1392#par4591" name="xmlFinal_xml" source="result(xmlFinal)" target="mov2#mpkg4#opm106#okcu113#ocp325"/>
+      </OKLink>
+    </ScriptUnit>
+    <TimeUnit id="mov2#mpkg4#opm106#tmu28" name="Time41" gr:x="1390" gr:y="85">
+      <Link id="mov2#mpkg4#opm106#tmu28#ln1436" name="Flow1260" to="mov2#mpkg4#opm106#okcu113" type="transport" validate="true" gr:bendpoints="103,-40,-372,-30;284,-39,-191,-29">
+        <LinkParameter id="mov2#mpkg4#opm106#tmu28#ln1436#par4592" name="Current/Input Date_fecha" source="currentDate" target="mov2#mpkg4#opm106#okcu113#ocp322"/>
+      </Link>
+      <OKLink id="mov2#mpkg4#opm106#tmu28#oln1393" name="OKFlow1174" to="mov2#mpkg4#opm106#scu216" automaticCoupling="true"/>
+    </TimeUnit>
+    <ScriptUnit id="mov2#mpkg4#opm106#scu217" name="firmarCadena" gr:x="440" gr:y="85" script="WEB-INF/descr/groovy/firmaCadena.groovy">
+      <KOLink id="mov2#mpkg4#opm106#scu217#kln555" name="KOFlow73" to="mov2#mpkg4#opm106#kocu96" gr:bendpoints="114,235,-1186,0">
+        <LinkParameter id="mov2#mpkg4#opm106#scu217#kln555#par4593" name="Error al firmar la cadena original._msj" target="mov2#mpkg4#opm106#kocu96#ocp326" sourceValue="Error al firmar la cadena original."/>
+      </KOLink>
+      <OKLink id="mov2#mpkg4#opm106#scu217#oln1394" name="Flow269" to="mov2#mpkg4#opm106#miu164">
+        <LinkParameter id="mov2#mpkg4#opm106#scu217#oln1394#par4594" name="xmlRequest_request" source="result(xmlRequest)" target="mov2#mpkg4#opm106#miu164.mov2#opm6#icu2#icp64"/>
+        <LinkParameter id="mov2#mpkg4#opm106#scu217#oln1394#par4595" name="xmlResponse_response" source="result(xmlResponse)" target="mov2#mpkg4#opm106#miu164.mov2#opm6#icu2#icp66"/>
+        <LinkParameter id="mov2#mpkg4#opm106#scu217#oln1394#par4596" name="xmlResponse_PASSING" source="result(xmlResponse)" passing="true"/>
+        <LinkParameter id="mov2#mpkg4#opm106#scu217#oln1394#par4597" name="SOAFIRMA Firmar Cadena_servicio" target="mov2#mpkg4#opm106#miu164.mov2#opm6#icu2#icp72" sourceValue="SOAFIRMA Firmar Cadena"/>
+      </OKLink>
+    </ScriptUnit>
+    <ModuleInstanceUnit id="mov2#mpkg4#opm106#miu164" gr:x="610" gr:y="80" action="true" moduleId="mov2#opm6">
+      <OKLink id="mov2#mpkg4#opm106#miu164#oln1395" name="OKFlow529" to="mov2#mpkg4#opm106#scu213">
+        <LinkParameter id="mov2#mpkg4#opm106#miu164#oln1395#par4598" name="xmlResponse_PASSING_xml" sourceLinkParameter="mov2#mpkg4#opm106#scu217#oln1394#par4596" target="mov2#mpkg4#opm106#scu213.xml"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</OperationModule>

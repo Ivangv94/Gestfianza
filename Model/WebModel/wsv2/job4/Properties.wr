@@ -1,0 +1,22 @@
+<Job xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-15" gr:y="410" id="wsv2#job4" name="conteoDias">
+  <OperationUnits>
+    <InitJobUnit id="wsv2#job4#iju4" name="Init Job" gr:x="35" gr:y="0">
+      <OKLink id="wsv2#job4#iju4#oln1585" name="OKFlow1585" to="wsv2#job4#qu14" automaticCoupling="true"/>
+    </InitJobUnit>
+    <QueryUnit gr:x="150" gr:y="0" id="wsv2#job4#qu14" name="Query14" mode="update" language="SQL" db="db2">
+      <QueryText xml:space="preserve">UPDATE CONTROLFIANZAS SET CONTEODIAS = TRUNC(FECHATERMINO)-TRUNC(SYSDATE);</QueryText>
+      <OKLink id="wsv2#job4#qu14#oln1667" name="OKFlow1667" to="wsv2#job4#miu176" automaticCoupling="true"/>
+    </QueryUnit>
+    <ModuleInstanceUnit gr:x="210" gr:y="75" id="wsv2#job4#miu176" action="true" moduleId="mov2#mpkg9#opm117">
+      <OKLink id="wsv2#job4#miu176#oln1668" name="OKFlow1668" to="wsv2#job4#miu181" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="0" gr:y="120" id="wsv2#job4#miu181" action="true" moduleId="mov2#mpkg9#opm126">
+      <OKLink id="wsv2#job4#miu181#oln1669" name="OKFlow1669" to="wsv2#job4#miu182" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="215" gr:y="180" id="wsv2#job4#miu182" action="true" moduleId="mov2#mpkg9#opm125">
+      <OKLink id="wsv2#job4#miu182#oln1670" name="OKFlow1670" to="wsv2#job4#miu183" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="25" gr:y="255" id="wsv2#job4#miu183" action="true" moduleId="mov2#mpkg9#opm124"/>
+  </OperationUnits>
+  <Trigger id="wsv2#job4#trg4" name="Trigger4" schedulePolicy="everyDay" minutes="00" hours="00" seconds="00"/>
+</Job>

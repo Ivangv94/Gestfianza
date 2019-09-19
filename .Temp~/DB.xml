@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DBMetaData driverMajorVersion="10" driverMinorVersion="2" driverVersion="10.2.0.1.0" productVersion="Oracle Database 11g Release 11.1.0.0.0 - Production" identifierQuoteString="&quot;" transactionLevel="Read Committed" driverName="Oracle JDBC driver" productName="Oracle">
+  <Schema name="EXPEDIENTE"/>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ACCIONES" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="NUMACCIONES" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ESTRUCTURAACCIONARIA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAMORAL_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAFISICA_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="ESTRUCTURAACCIONARIA_OID" foreignColumnName="OID" name="FK_ACCIONES_ESTRUCTURAACCIONAR" foreignTableName="ESTRUCTURAACCIONARIA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAFISICA_OID" foreignColumnName="USER_OID" name="FK_ACCIONES_PERSONAFISICA" foreignTableName="PERSONAFISICA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAMORAL_OID" foreignColumnName="USER_OID" name="FK_ACCIONES_PERSONAMORAL" foreignTableName="PERSONAMORAL" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ACTIVITYINSTANCE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NAME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="STATUS" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="READY_SINCE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="ACTIVE_SINCE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="COMPLETED_AT" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="ABORTED_AT" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="CANCELLED_AT" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="WORKED_AT" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="1" decimalDigits="0" webMLType="integer" name="ROLLBACKABLE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CONTEXT" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="GROUP_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ACTIVITYTYPE_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PROCESSINSTANCE_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="USER_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="ACTIVITYTYPE_OID" foreignColumnName="OID" name="FK_ACTIVITYINSTANCE_ACTIVITYTY" foreignTableName="ACTIVITYTYPE" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="GROUP_OID" foreignColumnName="OID" name="FK_ACTIVITYINSTANCE_GROUP" foreignTableName="GROUP" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PROCESSINSTANCE_OID" foreignColumnName="OID" name="FK_ACTIVITYINSTANCE_PROCESSINS" foreignTableName="PROCESSINSTANCE" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="USER_OID" foreignColumnName="OID" name="FK_ACTIVITYINSTANCE_USER" foreignTableName="USER" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ACTIVITYINSTANCE_CANDIDATEUSER" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ACTIVITYINSTANCE_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="USER_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="ACTIVITYINSTANCE_OID" foreignColumnName="OID" name="FK_ACTIVITYINSTANCE_CANDIDAT_2" foreignTableName="ACTIVITYINSTANCE" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="USER_OID" foreignColumnName="OID" name="FK_ACTIVITYINSTANCE_CANDIDATEU" foreignTableName="USER" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ACTIVITYTYPE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CODE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NAME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="DEFAULT_INSTANCE_NAME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="DESCRIPTION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TYPE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="EXECUTION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="6" indexed="unknown" autoIncrement="false" type="FLOAT" size="126" decimalDigits="0" name="SORT_NUMBER" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="UUID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PROCESS_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="PROCESS_OID" foreignColumnName="OID" name="FK_ACTIVITYTYPE_PROCESS" foreignTableName="PROCESS" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ADMINISTRACION" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBRAMIENTO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="DESCRIPCION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FACULTAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIPO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAFISICA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDTIPOFACULTAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAMORAL_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ESTATUS" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="PERSONAFISICA_OID" foreignColumnName="USER_OID" name="FK_ADMINISTRACION_PERSONAFISIC" foreignTableName="PERSONAFISICA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAMORAL_OID" foreignColumnName="USER_OID" name="FK_ADMINISTRACION_PERSONAMORAL" foreignTableName="PERSONAMORAL" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="AFIANZADORA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDAFIANZADORA" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBREAFIANZADORA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ESTATUSAFIANZADORA" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="ESTATUSAFIANZADORA" foreignColumnName="OIDESTATUSAFIANZADORA" name="AFIANZADORA_FK1" foreignTableName="ESTATUSAFIANZADORA" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="APODERADO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FACULTADESAPODERADO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TOTALPARCIAL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ESTATUS" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CARGO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CURP" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="RFC" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="AUXILIARM10_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="AUXILIARM10_OID" foreignColumnName="OID" name="FK_APODERADO_AUXILIARM10" foreignTableName="AUXILIARM10" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="APODERADOS" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="DESCRIPCIONFACULTAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FACULTAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAFISICA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAMORAL_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDTIPOFACULTAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ESTATUS" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="PERSONAFISICA_OID" foreignColumnName="USER_OID" name="FK_APODERADOS_PERSONAFISICA" foreignTableName="PERSONAFISICA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAMORAL_OID" foreignColumnName="USER_OID" name="FK_APODERADOS_PERSONAMORAL" foreignTableName="PERSONAMORAL" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ARCHIVOXML" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="XML" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ATTACHMENT" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FILE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TITLE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="TIMESTAMP" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="USER_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="USER_OID" foreignColumnName="OID" name="FK_ATTACHMENT_USER" foreignTableName="USER" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ATTACHMENT_PROCESSINSTANCE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ATTACHMENT_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PROCESSINSTANCE_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="ATTACHMENT_OID" foreignColumnName="OID" name="FK_ATTACHMENT_PROCESSINSTANCE" foreignTableName="ATTACHMENT" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PROCESSINSTANCE_OID" foreignColumnName="OID" name="FK_ATTACHMENT_PROCESSINSTANC_2" foreignTableName="PROCESSINSTANCE" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="AUXILIARAPODERADO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FACULTADESAPODERADO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TOTALPARCIAL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ESTATUS" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CARGO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CURP" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="RFC" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="AUXILIARINSTRUMENTO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FECHAINSTRUMENTO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="LIBRO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VOLUMEN" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NUMERO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="AUXILIARM10_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="AUXILIARM10_OID" foreignColumnName="OID" name="FK_AUXILIARINSTRUMENTO_AUXILIA" foreignTableName="AUXILIARM10" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="AUXILIARM10" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ANTECEDENTES" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="DATOSNOTARIO_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="RFCNOTARIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FOLIOMERCANTIL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="RFCPM" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="AUXINE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="SERVICIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ESTATUS" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="DESCRIPCION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ANIOREGISTRO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="APELLIDO1" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="APELLIDO2" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CLAVEELECTOR" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CURP" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBRE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NUMEROEMISION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VANIOEMISION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VANIOREGISTRO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VAPELLIDO1" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VAPELLIDO2" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VCLAVEELECTOR" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VCURP" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VNOMBRE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VNUMEROEMISION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIMESTAMP" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="USEROID" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="BITACORA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="OIDUSER" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="RESPONSE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="REQUEST" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="URI" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIMESTAMP" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="PROCESSINSTANCE_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="SERVICIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="EXITOSO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDPM" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="CADENAS" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="XML_SIG_TAG" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="MODULUS" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="CERTIFICADO_X509" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="NOMBRE_EMISOR_CERT" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="NOMBRE_SUJETO_X509" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="DOCUMENTO_FIRMADO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="URI" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="SELLO_DIGITAL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="HASH_CADENA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FECHAS_VIGENCIA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="SERIE_CERT" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="CADENA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIME_STAMP" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CURP_O_RFC_FIRMANTE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBRE_O_RAZON_SOCIAL_FIRMANTE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PROCESO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FOLIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="XMLM4" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ELABORADOPOR" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="1" decimalDigits="0" webMLType="integer" name="FIRMADO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="XML" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDPM" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="CALIDADFEDATARIO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDCALIDADFED" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBRECALIDADFED" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="CATALOGOCATEGORIASOCIEDADES" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CATEGORIA" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="CATALOGOMOVIMIENTOPODER" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIPOMOVIMIENTO" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="CATALOGOTIPOFACULTADES" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="DESCRIPCION" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="CATALOGOTIPOSOCIEDADES" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIPOSOCIEDAD" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="CONTEO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="USERNAME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CURPVERIFICADO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDUSER" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHAVERIFICACION" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="CONTROLFIANZAS" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDCONTROLFIANZAS" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDFEDATARIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDAFIANZADORA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NUMEROPOLIZA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHAINICIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHATERMINO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="MONTOFIANZA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDESTATUSCTRLFIA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDCALIDADFED" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDTIPOGAR" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDESTADO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDMUNICIPIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDTIPOFIANZA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="22" decimalDigits="0" name="CONTEODIAS" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="OIDAFIANZADORA" foreignColumnName="OIDAFIANZADORA" name="CONTROLFIANZAS_FK2" foreignTableName="AFIANZADORA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="OIDCALIDADFED" foreignColumnName="OIDCALIDADFED" name="CONTROFIANZAS_FK2" foreignTableName="CALIDADFEDATARIO" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="OIDESTADO" foreignColumnName="OIDESTADO" name="CONTROFIANZAS_FK3" foreignTableName="ESTADOS" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="OIDESTATUSCTRLFIA" foreignColumnName="OIDESTATUSCTRLFIA" name="CONTROLFIANZAS_FK3" foreignTableName="ESTATUSCTRLFIANZA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="OIDFEDATARIO" foreignColumnName="OIDFEDATARIO" name="CONTROFIANZAS_FK1" foreignTableName="FEDATARIOS" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="OIDMUNICIPIO" foreignColumnName="OIDMUNICIPIO" name="CONTROFIANZAS_FK4" foreignTableName="MUNICIPIOS" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="OIDTIPOFIANZA" foreignColumnName="OITIDPOFIANZA" name="CONTROLFIANZAS_FK1" foreignTableName="TIPOFIANZA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="OIDTIPOGAR" foreignColumnName="OIDTIPOGAR" name="CONTROLFIANZAS_FK4" foreignTableName="TIPOGARANTIA" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="CTRLFIA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDCTRLFIA" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDFEDATARIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDAFIANZADORA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NUMPOLIZA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHAINIC" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHATERM" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="MONTOFIA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDESTATUSCTRL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDCALIDADFED" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDTIPOGAR" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDESTADO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDMUNICIPIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDTIPOFIANZA" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="DATOSNOTARIO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="MUNICIPIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ENTIDAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NUMERO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ESTATUS" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIPO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PERSONAFISICA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ACTIVO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="LLFEDATARIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ESTATUSFEDATARIO" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="PERSONAFISICA_OID" foreignColumnName="USER_OID" name="FK_DATOSNOTARIO_PERSONAFISICA" foreignTableName="PERSONAFISICA" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="DATOSPERSONA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="USEROID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="RFC" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="OCR" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NUMEMISION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBRE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FENA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CURP" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CLAVEELECTORAL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CIC" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="AP2" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="AP1" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ANIOREG" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ANIOEMISION" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="DECISIONES" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FORMADECARGA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="INFORMACIONVALIDA" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="DOCUMENTOS" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ESQUEMADETRAMITACION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBREARCHIVO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TAMANIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="EXTENSION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FOLIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ARCHIVO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ETAPAVIDAEMPRESARIAL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="URI" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ELEMENTOS_ADMINISTRABLES" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ELEMENTO_ADMINISTRABLE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VALOR" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ESTADOS" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDESTADO" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBREESTADO" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ESTATUSAFIANZADORA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDESTATUSAFIANZADORA" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBREESTATUSAFIANZADORA" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ESTATUSCTRLFIANZA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDESTATUSCTRLFIA" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ESTATUSCTRL" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ESTATUSFEDATARIO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDESTATUSFED" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBREESTATUSFED" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ESTATUSTIPOFIANZA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDESTATUSTIPFIA" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBREESTATUSTIPOFIA" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ESTRUCTURAACCIONARIA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="2" name="VALORACCION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIPOACCION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="TOTALACCIONES" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAMORAL_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="SERIEACCION" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="PERSONAMORAL_OID" foreignColumnName="USER_OID" name="FK_ESTRUCTURAACCIONARIA_PERSON" foreignTableName="PERSONAMORAL" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="EXPEDIENTEELECTRONICO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ANIOCONSTITUCION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FECHACONSTITUCION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NUMEROCONSECUTIVO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="EXPEDIENTEELECTRONICO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAMORAL_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="PERSONAMORAL_OID" foreignColumnName="USER_OID" name="FK_EXPEDIENTEELECTRONICO_PERSO" foreignTableName="PERSONAMORAL" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="FEDATARIOS" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDFEDATARIO" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBREFED" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="PRIMAPELLIDO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="SEGUNAPELLIDO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDESTADO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="NUMFED" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CORREOFED" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ESTATUSFED" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBRECOMFED" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDCALIDADFED" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDTIPOFED" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="RFCFED" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CURPFED" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDMUNICIPIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDOBSERVACIONES" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="OIDCALIDADFED" foreignColumnName="OIDCALIDADFED" name="FEDATARIOS_FK3" foreignTableName="CALIDADFEDATARIO" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="OIDESTADO" foreignColumnName="OIDESTADO" name="FK_FEDATARIOS_ESTADOS" foreignTableName="ESTADOS" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="ESTATUSFED" foreignColumnName="OIDESTATUSFED" name="FEDATARIOS_FK2" foreignTableName="ESTATUSFEDATARIO" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="OIDMUNICIPIO" foreignColumnName="OIDMUNICIPIO" name="FEDATARIOS_FK5" foreignTableName="MUNICIPIOS" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="OIDOBSERVACIONES" foreignColumnName="OIDOBSERVACIONES" name="FEDATARIOS_FK4" foreignTableName="OBSERVACIONES" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="OIDTIPOFED" foreignColumnName="OIDTIPOFEDATARIO" name="FEDATARIOS_FK1" foreignTableName="TIPOFEDATARIO" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="FIANZA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ESADICIONAL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="MONTO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHATERMINO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHAOROTGAMIENTO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIPO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="1" decimalDigits="0" webMLType="integer" name="ACTIVA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VIGENCIA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="DATOSNOTARIO_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="DATOSNOTARIO_OID" foreignColumnName="OID" name="FK_FIANZA_DATOSNOTARIO" foreignTableName="DATOSNOTARIO" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="GROUP" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="GROUPNAME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="MODULE_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="MODULE_OID" foreignColumnName="OID" name="FK_GROUP_MODULE" foreignTableName="MODULE" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="GROUP_ACTIVITYTYPE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="GROUP_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ACTIVITYTYPE_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="ACTIVITYTYPE_OID" foreignColumnName="OID" name="FK_GROUP_ACTIVITYTYPE_ACTIVITY" foreignTableName="ACTIVITYTYPE" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="GROUP_OID" foreignColumnName="OID" name="FK_GROUP_ACTIVITYTYPE_GROUP" foreignTableName="GROUP" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="GROUP_MODULE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="GROUP_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="MODULE_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="GROUP_OID" foreignColumnName="OID" name="FK_GROUP_MODULE_GROUP" foreignTableName="GROUP" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="MODULE_OID" foreignColumnName="OID" name="FK_GROUP_MODULE_MODULE" foreignTableName="MODULE" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="HT_PERSONAFISICA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="USER_OID" primaryKey="false" notNull="true"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="HT_PERSONAMORAL" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="USER_OID" primaryKey="false" notNull="true"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="INSTRUMENTO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FOJA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="LIBRO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VOLUMEN" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NUMERO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ISESCRITURA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FECHA" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="INSTRUMENTOS" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NUMEROINSTRUMENTO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="DEFECHA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CONDURACION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIPOINSTRUMENTO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="LIBRO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VOLUMEN" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="MANDATO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHACADUCIDAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHAINICIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="URIPDF" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="URIXML" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PERSONAFISICA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="DATOSNOTARIO_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="INSTRUMENTO_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CARGOPF" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="1" decimalDigits="0" webMLType="integer" name="ACTIVO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIPOFACULTAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="COMENTARIOSFACULTAD" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="DATOSNOTARIO_OID" foreignColumnName="OID" name="FK_MANDATO_DATOSNOTARIO" foreignTableName="DATOSNOTARIO" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="INSTRUMENTO_OID" foreignColumnName="OID" name="FK_MANDATO_INSTRUMENTO" foreignTableName="INSTRUMENTO" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAFISICA_OID" foreignColumnName="USER_OID" name="FK_MANDATO_PERSONAFISICA" foreignTableName="PERSONAFISICA" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="MODULE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="MODULEID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="MODULENAME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="MODULEDOMAINNAME" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="MUNICIPIOS" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDMUNICIPIO" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBREMUNICIPIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDESTADO" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="OIDESTADO" foreignColumnName="OIDESTADO" name="MUNICIPIOS_FK1" foreignTableName="ESTADOS" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="NOMBRAMIENTOOCARGO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBRAMIENTO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIPO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CARGO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="ADMINISTRACION_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="NOMBRAMIENTOS_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAFISICA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAMORAL_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="REVOCADO" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="ADMINISTRACION_OID" foreignColumnName="OID" name="FK_NOMBRAMIENTOOCARGO_ADMINIST" foreignTableName="ADMINISTRACION" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="NOMBRAMIENTOS_OID" foreignColumnName="OID" name="FK_NOMBRAMIENTOOCARGO_NOMBRAMI" foreignTableName="NOMBRAMIENTOS" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAFISICA_OID" foreignColumnName="USER_OID" name="FK_NOMBRAMIENTOOCARGO_PERSONAF" foreignTableName="PERSONAFISICA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAMORAL_OID" foreignColumnName="USER_OID" name="FK_NOMBRAMIENTOOCARGO_PERSONAM" foreignTableName="PERSONAMORAL" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="NOMBRAMIENTOS" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CARGO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="DESCRIPCIONFACULTAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FACULTAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAFISICA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAMORAL_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDTIPOFACULTAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ESTATUS" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="PERSONAFISICA_OID" foreignColumnName="USER_OID" name="FK_NOMBRAMIENTOS_PERSONAFISICA" foreignTableName="PERSONAFISICA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAMORAL_OID" foreignColumnName="USER_OID" name="FK_NOMBRAMIENTOS_PERSONAMORAL" foreignTableName="PERSONAMORAL" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="NOTE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="TEXT" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="TIMESTAMP" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ACTIVITYINSTANCE_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="USER_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="ACTIVITYINSTANCE_OID" foreignColumnName="OID" name="FK_NOTE_ACTIVITYINSTANCE" foreignTableName="ACTIVITYINSTANCE" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="USER_OID" foreignColumnName="OID" name="FK_NOTE_USER" foreignTableName="USER" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="NOTE_ACTIVITYINSTANCE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="NOTE_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ACTIVITYINSTANCE_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="ACTIVITYINSTANCE_OID" foreignColumnName="OID" name="FK_NOTE_ACTIVITYINSTANCE_ACTIV" foreignTableName="ACTIVITYINSTANCE" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="NOTE_OID" foreignColumnName="OID" name="FK_NOTE_ACTIVITYINSTANCE_NOTE" foreignTableName="NOTE" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="NOTE_PROCESSINSTANCE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="NOTE_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PROCESSINSTANCE_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="NOTE_OID" foreignColumnName="OID" name="FK_NOTE_PROCESSINSTANCE_NOTE" foreignTableName="NOTE" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PROCESSINSTANCE_OID" foreignColumnName="OID" name="FK_NOTE_PROCESSINSTANCE_PROCES" foreignTableName="PROCESSINSTANCE" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="NOTIFICATION" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="MESSAGE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="1" decimalDigits="0" webMLType="integer" name="READ" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ACTIVITYINSTANCE_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="ACTIVITYINSTANCE_OID" foreignColumnName="OID" name="FK_NOTIFICATION_ACTIVITYINSTAN" foreignTableName="ACTIVITYINSTANCE" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="NUMEROCONSECUTIVO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CONSECUTIVO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAMORAL_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="EXPEDIENTEELECTRONICO_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ANIO" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="EXPEDIENTEELECTRONICO_OID" foreignColumnName="OID" name="FK_NUMEROCONSECUTIVO_EXPEDIENT" foreignTableName="EXPEDIENTEELECTRONICO" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAMORAL_OID" foreignColumnName="USER_OID" name="FK_NUMEROCONSECUTIVO_PERSONAMO" foreignTableName="PERSONAMORAL" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="OBSERVACIONES" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDOBSERVACIONES" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBREOBSERVACION" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="ORGANODEVIGILANCIA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="DESCRIPCIONORGANO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAFISICA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAMORAL_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="PERSONAFISICA_OID" foreignColumnName="USER_OID" name="FK_ORGANODEVIGILANCIA_PERSONAF" foreignTableName="PERSONAFISICA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAMORAL_OID" foreignColumnName="USER_OID" name="FK_ORGANODEVIGILANCIA_PERSONAM" foreignTableName="PERSONAMORAL" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="PARAMETERINSTANCE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VALUE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="1" decimalDigits="0" webMLType="integer" name="CURRENT" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="TIMESTAMP" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ACTIVITYINSTANCE_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PARAMETERTYPE_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PROCESSINSTANCE_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="ACTIVITYINSTANCE_OID" foreignColumnName="OID" name="FK_PARAMETERINSTANCE_ACTIVITYI" foreignTableName="ACTIVITYINSTANCE" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PARAMETERTYPE_OID" foreignColumnName="OID" name="FK_PARAMETERINSTANCE_PARAMETER" foreignTableName="PARAMETERTYPE" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PROCESSINSTANCE_OID" foreignColumnName="OID" name="FK_PARAMETERINSTANCE_PROCESSIN" foreignTableName="PROCESSINSTANCE" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="PARAMETERTYPE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NAME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="DESCRIPTION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TYPE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PROCESS_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="PROCESS_OID" foreignColumnName="OID" name="FK_PARAMETERTYPE_PROCESS" foreignTableName="PROCESS" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="PARAMETROS" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDPARAMETRO" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDESTADO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="MONTOPARAMETRO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHAINICIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHAACTUALIZACION" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="OIDESTADO" foreignColumnName="OIDESTADO" name="PARAMETROS_FK1" foreignTableName="ESTADOS" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="PERSONAFISICA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="USER_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="PFTELEFONO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FECHANAC" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ANIONAC" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="MESNAC" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="DIANAC" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="1" decimalDigits="0" webMLType="integer" name="PFACTIVO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHACADUCIDAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHAINSCRIPCION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="PFNACIONALIDAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ENTIDADNAC" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="PFSEXO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="RFC" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBRECOMPLETO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="APELLIDO2" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="APELLIDO1" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBRE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="MANDATO_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PERSONAMORAL_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PERSONAFISICA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CONFACULTADES" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FACULTADESNOM" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FACULTADESAPO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIPOPF" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="MANDATO_OID" foreignColumnName="OID" name="FK_PERSONAFISICA_MANDATO" foreignTableName="MANDATO" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAFISICA_OID" foreignColumnName="USER_OID" name="FK_PERSONAFISICA_PERSONAFISICA" foreignTableName="PERSONAFISICA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAMORAL_OID" foreignColumnName="USER_OID" name="FK_PERSONAFISICA_PERSONAMORA_3" foreignTableName="PERSONAMORAL" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="USER_OID" foreignColumnName="OID" name="FK_PERSONAFISICA_USER" foreignTableName="USER" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="PERSONAFISICA_PERSONAMORAL" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PERSONAFISICA_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PERSONAMORAL_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="PERSONAFISICA_OID" foreignColumnName="USER_OID" name="FK_PERSONAFISICA_PERSONAMORAL" foreignTableName="PERSONAFISICA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAMORAL_OID" foreignColumnName="USER_OID" name="FK_PERSONAFISICA_PERSONAMORA_2" foreignTableName="PERSONAMORAL" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="PERSONALFEDATARIO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDPERSONAL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="DATOSNOTARIO_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="DATOSNOTARIO_OID" foreignColumnName="OID" name="FK_PERSONALFEDATARIO_DATOSNOTA" foreignTableName="DATOSNOTARIO" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="PERSONAMORAL" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="USER_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TELEFONO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="1" decimalDigits="0" webMLType="integer" name="ACTIVO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHACADUCIDAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHAINSCRIPCION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="RAZONSOCIAL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PERSONAFISICA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="MANDATO_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CODIGOPOSTAL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ENTFEDERATIVA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="MUNICIPIODELEGACION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="LOCALIDAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="COLONIA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CALLE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ENTRECALLE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="YCALLE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="NOEXTERIOR" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="NOINTERIOR" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIPOCAPITAL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIPOPM" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="FECHAAUTORIZACIONMUA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TIPOSOCIEDAD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CUDONUMEXPEDIENTE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="OBJETOSOCIAL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="DENOMINACIONMUA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="INSTRUMENTOS_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="QUIENAUTORIZA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="FECHADECONSTITUCION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CAPITALSOCIALMINIMO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CONEXPRESION" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="INSTRUMENTOS_OID" foreignColumnName="OID" name="FK_PERSONAMORAL_INSTRUMENTOS" foreignTableName="INSTRUMENTOS" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="MANDATO_OID" foreignColumnName="OID" name="FK_PERSONAMORAL_MANDATO" foreignTableName="MANDATO" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAFISICA_OID" foreignColumnName="USER_OID" name="FK_PERSONAMORAL_PERSONAFISICA" foreignTableName="PERSONAFISICA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="USER_OID" foreignColumnName="OID" name="FK_PERSONAMORAL_USER" foreignTableName="USER" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="PODER" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="PODERXMLAFIRMAR" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="PODERPDFAFIRMAR" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="PODERXMLFIRMADO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="PODERPDFFIRMADO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="BOLETADEINSCRIPCION" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="PREVIOUSACTIVITYINSTANCE_NEXTA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ACTIVITYINSTANCE_OID_2" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ACTIVITYINSTANCE_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="ACTIVITYINSTANCE_OID" foreignColumnName="OID" name="FK_PREVIOUSACTIVITYINSTANCE_2" foreignTableName="ACTIVITYINSTANCE" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="ACTIVITYINSTANCE_OID_2" foreignColumnName="OID" name="FK_PREVIOUSACTIVITYINSTANCE_NE" foreignTableName="ACTIVITYINSTANCE" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="PROCESS" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CODE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NAME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="DEFAULT_INSTANCE_NAME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="DESCRIPTION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="UUID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VERSION" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="PROCESSINSTANCE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NAME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="SUBPROCESSINDEX" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="STATUS" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="ACTIVE_SINCE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="COMPLETED_AT" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="CANCELLED_AT" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP(6)" size="11" decimalDigits="6" name="ABORTED_AT" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PROCESS_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="PROCESSINSTANCE_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="PROCESS_OID" foreignColumnName="OID" name="FK_PROCESSINSTANCE_PROCESS" foreignTableName="PROCESS" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PROCESSINSTANCE_OID" foreignColumnName="OID" name="FK_PROCESSINSTANCE_PROCESSINST" foreignTableName="PROCESSINSTANCE" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="PRUEBA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="RFCFEDATARIO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="PODERDESCRIPCION" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="REVOCACIONES" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="1" decimalDigits="0" webMLType="integer" name="REVOCACIONTOTAL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAFISICA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="19" decimalDigits="0" name="PERSONAMORAL_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="ADMINISTRACION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBRAMIENTO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="APODERADO" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="PERSONAFISICA_OID" foreignColumnName="USER_OID" name="FK_REVOCACIONES_PERSONAFISICA" foreignTableName="PERSONAFISICA" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="PERSONAMORAL_OID" foreignColumnName="USER_OID" name="FK_REVOCACIONES_PERSONAMORAL" foreignTableName="PERSONAMORAL" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="SEQUENCEFLOW" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="LABEL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CONDITION" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="1" decimalDigits="0" webMLType="integer" name="DEFAULT" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="6" indexed="unknown" autoIncrement="false" type="FLOAT" size="126" decimalDigits="0" name="SORT_NUMBER" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ACTIVITYTYPE_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="ACTIVITYTYPE_OID_2" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="ACTIVITYTYPE_OID" foreignColumnName="OID" name="FK_SEQUENCEFLOW_ACTIVITYTYPE" foreignTableName="ACTIVITYTYPE" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="ACTIVITYTYPE_OID_2" foreignColumnName="OID" name="FK_SEQUENCEFLOW_ACTIVITYTYPE_2" foreignTableName="ACTIVITYTYPE" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="TEXTO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="4000" decimalDigits="0" name="TEXTO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="DESCRIPCION" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="TIPOFEDATARIO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDTIPOFEDATARIO" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBRETIPOFED" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="TIPOFIANZA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OITIDPOFIANZA" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="NOMBRETIPOFIANZA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="COMENTARIOTIPOFIANZA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDESTATUSTIPOFIA" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="OIDESTATUSTIPOFIA" foreignColumnName="OIDESTATUSTIPFIA" name="TIPOFIANZA_FK1" foreignTableName="ESTATUSTIPOFIANZA" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="TIPOGARANTIA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OIDTIPOGAR" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="MBRETIPOGAR" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="USER" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="USERNAME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="PASSWORD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="EMAIL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="GROUP_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="GROUP_OID" foreignColumnName="OID" name="FK_USER_GROUP" foreignTableName="GROUP" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="USER_GROUP" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="USER_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="GROUP_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="GROUP_OID" foreignColumnName="OID" name="FK_USER_GROUP_GROUP" foreignTableName="GROUP" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="USER_OID" foreignColumnName="OID" name="FK_USER_GROUP_USER" foreignTableName="USER" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="USER_NOTIFICATIONS" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="USER_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="NOTIFICATION_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="NOTIFICATION_OID" foreignColumnName="OID" name="FK_USER_NOTIFICATIONS_NOTIFICA" foreignTableName="NOTIFICATION" foreignSchemaName="EXPEDIENTE"/>
+    <ForeignKey localColumnName="USER_OID" foreignColumnName="OID" name="FK_USER_NOTIFICATIONS_USER" foreignTableName="USER" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="VERIFICACIONIDENTIFICACION" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="PROCESO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CADENAORIGINAL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="USEROID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="CADENA" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="XML" type="TABLE" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="INDEX" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="VALUE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR2" size="1020" decimalDigits="0" name="TAG" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="XML_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="XML_OID" foreignColumnName="OID" name="FK_XML_XML" foreignTableName="XML" foreignSchemaName="EXPEDIENTE"/>
+  </Table>
+  <Table schema="EXPEDIENTE" ignoreIndexes="false" name="PROCESSINSTANCE_ATTACHMENT_COU" type="VIEW" refreshed="true">
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="10" decimalDigits="0" name="OID" primaryKey="false" notNull="true"/>
+    <Column sqlTypeId="3" indexed="unknown" autoIncrement="false" type="NUMBER" size="22" decimalDigits="0" name="DER_ATTR" primaryKey="false" notNull="false"/>
+  </Table>
+</DBMetaData>

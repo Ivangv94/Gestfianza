@@ -1,0 +1,39 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg4#opm100" name="obtenerEstampaTiempoXML" gr:x="295" gr:y="100">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg4#opm100#icu140" gr:x="-85" gr:y="60">
+      <InputCollectorParameter id="mov2#mpkg4#opm100#icu140#icp402" name="digestion"/>
+      <OKLink id="mov2#mpkg4#opm100#icu140#oln1322" name="OKFlow174" to="mov2#mpkg4#opm100#scu196" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#mpkg4#opm100#okcu106" name="OK" gr:x="940" gr:y="-20">
+      <OutputCollectorParameter id="mov2#mpkg4#opm100#okcu106#ocp276" name="EstampaDeTiempo"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov2#mpkg4#opm100#kocu90" name="KO " gr:x="940" gr:y="145">
+      <OutputCollectorParameter id="mov2#mpkg4#opm100#kocu90#ocp277" name="msj"/>
+    </KOCollectorUnit>
+    <ScriptUnit id="mov2#mpkg4#opm100#scu195" name="procesar_respuesta" gr:x="605" gr:y="70" script="WEB-INF/descr/groovy/procesarEstampaDeTiempo.groovy">
+      <ScriptUnitText xml:space="preserve">#input array
+#output estampaDeTiempo
+String estampaDeTiempo=array.getAt(2).toString();
+return["estampaDeTiempo":estampaDeTiempo]</ScriptUnitText>
+      <OKLink id="mov2#mpkg4#opm100#scu195#oln1323" name="OKFlow1097" to="mov2#mpkg4#opm100#okcu106" gr:bendpoints="129,-81,-251,-1">
+        <LinkParameter id="mov2#mpkg4#opm100#scu195#oln1323#par4307" name="estampaDeTiempo_EstampaDeTiempo" source="result(estampaDeTiempo)" target="mov2#mpkg4#opm100#okcu106#ocp276"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg4#opm100#scu195#kln508" name="KOFlow445" to="mov2#mpkg4#opm100#kocu90" gr:bendpoints="123,83,-247,-2">
+        <LinkParameter id="mov2#mpkg4#opm100#scu195#kln508#par4308" name="Error en el WS de la estampa de tiempo SE_msj" target="mov2#mpkg4#opm100#kocu90#ocp277" sourceValue="Error en el WS de la estampa de tiempo SE"/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit id="mov2#mpkg4#opm100#scu196" name="solicitarSello" gr:x="200" gr:y="70" script="WEB-INF/descr/groovy/obtenerEstampaDeTiempo.groovy">
+      <OKLink id="mov2#mpkg4#opm100#scu196#oln1324" name="OKFlow1096" to="mov2#mpkg4#opm100#miu155">
+        <LinkParameter id="mov2#mpkg4#opm100#scu196#oln1324#par4309" name="xmlResponse_PASSING" source="result(xmlResponse)" passing="true"/>
+        <LinkParameter id="mov2#mpkg4#opm100#scu196#oln1324#par4310" name="xmlRequest_request" source="result(xmlRequest)" target="mov2#mpkg4#opm100#miu155.mov2#opm6#icu2#icp64"/>
+        <LinkParameter id="mov2#mpkg4#opm100#scu196#oln1324#par4311" name="xmlResponse_response" source="result(xmlResponse)" target="mov2#mpkg4#opm100#miu155.mov2#opm6#icu2#icp66"/>
+        <LinkParameter id="mov2#mpkg4#opm100#scu196#oln1324#par4312" name="SOAFIRMA obtenerSello_servicio" target="mov2#mpkg4#opm100#miu155.mov2#opm6#icu2#icp72" sourceValue="SOAFIRMA obtenerSello"/>
+      </OKLink>
+    </ScriptUnit>
+    <ModuleInstanceUnit id="mov2#mpkg4#opm100#miu155" gr:x="380" gr:y="65" action="true" moduleId="mov2#opm6">
+      <OKLink id="mov2#mpkg4#opm100#miu155#oln1325" name="OKFlow527" to="mov2#mpkg4#opm100#scu195">
+        <LinkParameter id="mov2#mpkg4#opm100#miu155#oln1325#par4313" name="xmlResponse_PASSING_array" sourceLinkParameter="mov2#mpkg4#opm100#scu196#oln1324#par4309" target="mov2#mpkg4#opm100#scu195.array"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</OperationModule>

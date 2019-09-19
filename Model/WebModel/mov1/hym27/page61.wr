@@ -1,0 +1,85 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-430" gr:y="100" id="mov1#hym27#page61" name="Tipo de Persona" localized="true">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="75" id="mov1#hym27#page61#enu94" name="Buttons" linkOrder="mov1#hym27#page61#enu94#ln983 mov1#hym27#page61#enu94#ln984">
+      <Link id="mov1#hym27#page61#enu94#ln983" name="Finish" to="mov1#hym27#switch72" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="mov1#hym27#page61#enu94#ln984" name="Cancel" to="mov1#hym27#pu87" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="209,-260,-1021,-315;1143,-260,-87,-315"/>
+    </EntryUnit>
+    <EntryUnit id="mov1#hym27#page61#enu96" gr:x="15" gr:y="0">
+      <SelectionField id="mov1#hym27#page61#enu96#sfld80" name="PMoPF" type="string">
+        <Slot id="mov1#hym27#page61#enu96#sfld80#slot59" label="true" output="true" value="Persona F&#237;sica|Persona Moral"/>
+      </SelectionField>
+      <Field id="mov1#hym27#page61#enu96#fld382" name="rfc" type="string" modifiable="true"/>
+      <Link id="mov1#hym27#page61#enu96#ln988" name="Flow988" to="mov1#hym27#seu164" type="transport" validate="true" gr:bendpoints="76,73,141,-217">
+        <LinkParameter id="mov1#hym27#page61#enu96#ln988#par3074" name="rfc_AttCondition167" source="mov1#hym27#page61#enu96#fld382" target="mov1#hym27#seu164#su298#acond169"/>
+      </Link>
+      <Link id="mov1#hym27#page61#enu96#ln38" name="Flow38" to="mov1#hym27#switch72" type="transport" validate="true" gr:bendpoints="-117,77,57,-103">
+        <LinkParameter id="mov1#hym27#page61#enu96#ln38#par318" name="PMoPF_Switch" source="mov1#hym27#page61#enu96#sfld80" target="mov1#hym27#switch72.switch"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym27#page61#enu96" layout:frameLayout="None">
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+          <layout:Field field="mov1#hym27#page61#enu96#fld382">
+            <layout:LayoutParameter name="label-position" value="top" type="field"/>
+          </layout:Field>
+          <layout:Field field="mov1#hym27#page61#enu96#sfld80">
+            <layout:LayoutParameter name="label-position" value="top" type="field"/>
+            <layout:LayoutParameter name="selection-field-rendering" value="radio" type="field"/>
+          </layout:Field>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym27#page61#enu94" layout:frameLayout="None">
+          <layout:Link link="mov1#hym27#page61#enu94#ln983" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link link="mov1#hym27#page61#enu94#ln984" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+</Page>

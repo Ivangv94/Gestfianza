@@ -1,0 +1,48 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm90" name="filtroPfApoderadosRevocacion" gr:x="95" gr:y="1270">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm90#icu129" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm90#icu129#icp381" name="oidPM"/>
+      <OKLink id="mov2#opm90#icu129#oln1054" name="OKFlow981" to="mov2#opm90#seu189">
+        <LinkParameter id="mov2#opm90#icu129#oln1054#par3450" name="oidPM_KeyCondition136 [oid]" source="mov2#opm90#icu129#icp381" target="mov2#opm90#seu189#su364#kcond165.userOID"/>
+      </OKLink>
+      <Link id="mov2#opm90#icu129#ln1115" name="Flow1059" to="mov2#opm90#okcu95" type="transport" validate="true" gr:bendpoints="177,-66,-463,-46;300,-72,-340,-52;649,-55,-161,-65">
+        <LinkParameter id="mov2#opm90#icu129#ln1115#par3451" name="oidPM_oidPM" source="mov2#opm90#icu129#icp381" target="mov2#opm90#okcu95#ocp250"/>
+      </Link>
+      <Link id="mov2#opm90#icu129#ln1116" name="Flow1062" to="mov2#opm90#seu191" type="transport" validate="true" gr:bendpoints="179,105,-401,90;567,109,-13,104">
+        <LinkParameter id="mov2#opm90#icu129#ln1116#par3452" name="oidPM_RoleCondition199 [oid]" source="mov2#opm90#icu129#icp381" target="mov2#opm90#seu191#su366#rcond226.userOID"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#opm90#seu189" name="PM" gr:x="295" gr:y="55" entity="ent38">
+      <Selector id="mov2#opm90#seu189#su364" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm90#seu189#su364#kcond165" name="KeyCondition136" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm90#seu189#oln1055" name="OKFlow982" to="mov2#opm90#seu190" automaticCoupling="true"/>
+      <KOLink id="mov2#opm90#seu189#kln447" name="KOFlow422" to="mov2#opm90#kocu80" automaticCoupling="true" gr:bendpoints="-1,68,-416,3"/>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm90#seu190" name="PF" gr:x="400" gr:y="55" entity="ent39">
+      <Selector id="mov2#opm90#seu190#su365" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm90#seu190#su365#rcond224" name="RoleCondition182" predicate="in" implied="false" role="rel20#role40"/>
+        <AttributesCondition id="mov2#opm90#seu190#su365#acond174" name="AttCondition172" predicate="eq" booleanOperator="or" implied="false" attributes="ent39#att428" value="FAP"/>
+        <AttributesCondition id="mov2#opm90#seu190#su365#acond181" name="AttCondition181" predicate="null" booleanOperator="or" implied="false" attributes="rel43#role85.ent67#att444"/>
+      </Selector>
+      <OKLink id="mov2#opm90#seu190#oln1056" name="OKFlow983" to="mov2#opm90#seu191">
+        <LinkParameter id="mov2#opm90#seu190#oln1056#par3453" name="oid_RoleCondition198 [oid]" source="userOIDArray" target="mov2#opm90#seu191#su366#rcond225.userOID"/>
+      </OKLink>
+      <KOLink id="mov2#opm90#seu190#kln448" name="KOFlow421" to="mov2#opm90#kocu80" automaticCoupling="true" gr:bendpoints="120,89,-290,-1"/>
+    </SelectorUnit>
+    <KOCollectorUnit id="mov2#opm90#kocu80" name="KO Port71" gr:x="840" gr:y="155"/>
+    <OKCollectorUnit id="mov2#opm90#okcu95" name="OK Port86" gr:x="840" gr:y="70">
+      <OutputCollectorParameter id="mov2#opm90#okcu95#ocp249" name="oidPF"/>
+      <OutputCollectorParameter id="mov2#opm90#okcu95#ocp250" name="oidPM"/>
+    </OKCollectorUnit>
+    <SelectorUnit id="mov2#opm90#seu191" name="Selector184" gr:x="650" gr:y="55" entity="ent66">
+      <Selector id="mov2#opm90#seu191#su366" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm90#seu191#su366#rcond225" name="RoleCondition198" predicate="in" implied="false" role="rel39#role78"/>
+        <RelationshipRoleCondition id="mov2#opm90#seu191#su366#rcond226" name="RoleCondition199" predicate="in" implied="false" role="rel41#role82"/>
+      </Selector>
+      <OKLink id="mov2#opm90#seu191#oln1057" name="OKFlow1006" to="mov2#opm90#okcu95">
+        <LinkParameter id="mov2#opm90#seu191#oln1057#par3454" name="ApoderadosToPersonaFisica.oid_oidPF" source="rel39#role77_userOIDArray" target="mov2#opm90#okcu95#ocp249"/>
+      </OKLink>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

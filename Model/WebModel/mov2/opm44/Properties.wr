@@ -1,0 +1,16 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="705" gr:y="585" id="mov2#opm44" name="inscribirPoderPrueba">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm44#icu48" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm44#icu48#icp193" name="rfcFedatario"/>
+      <InputCollectorParameter id="mov2#opm44#icu48#icp194" name="poderDescripcion"/>
+      <OKLink id="mov2#opm44#icu48#oln586" name="OKFlow586" to="mov2#opm44#cru22">
+        <LinkParameter id="mov2#opm44#icu48#oln586#par2142" name="poderDescripcion_poderDescripcion" source="mov2#opm44#icu48#icp194" target="mov2#opm44#cru22.ent46#att302"/>
+        <LinkParameter id="mov2#opm44#icu48#oln586#par2143" name="rfcFedatario_rfcFedatario" source="mov2#opm44#icu48#icp193" target="mov2#opm44#cru22.ent46#att301"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="615" gr:y="65" id="mov2#opm44#okcu57" name="OK Port57"/>
+    <CreateUnit gr:x="340" gr:y="60" id="mov2#opm44#cru22" name="guardarProceso" entity="ent46">
+      <OKLink id="mov2#opm44#cru22#oln587" name="OKFlow587" to="mov2#opm44#okcu57" automaticCoupling="true"/>
+    </CreateUnit>
+  </OperationUnits>
+</OperationModule>

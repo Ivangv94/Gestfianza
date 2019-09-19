@@ -1,0 +1,29 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-140" gr:y="1010" id="mov2#opm80" name="accionesPorPM">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm80#icu119" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm80#icu119#icp348" name="oidPM"/>
+      <OKLink id="mov2#opm80#icu119#oln974" name="OKFlow974" to="mov2#opm80#seu173">
+        <LinkParameter id="mov2#opm80#icu119#oln974#par3238" name="oidPM_KeyCondition132 [oid]" source="mov2#opm80#icu119#icp348" target="mov2#opm80#seu173#su307#kcond134.userOID"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#opm80#seu173" name="PM" gr:x="355" gr:y="45" entity="ent38">
+      <Selector id="mov2#opm80#seu173#su307" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm80#seu173#su307#kcond134" name="KeyCondition132" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm80#seu173#oln975" name="Flow1039" to="mov2#opm80#seu174" automaticCoupling="true"/>
+      <KOLink id="mov2#opm80#seu173#kln419" name="KOFlow419" to="mov2#opm80#kocu70" automaticCoupling="true" gr:bendpoints="82,78,-428,-7"/>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm80#seu174" name="Selector169" gr:x="540" gr:y="55" entity="ent60">
+      <Selector id="mov2#opm80#seu174#su308" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm80#seu174#su308#rcond180" name="RoleCondition177" predicate="in" implied="false" role="rel35#role70"/>
+      </Selector>
+      <OKLink id="mov2#opm80#seu174#oln976" name="OKFlow976" to="mov2#opm80#okcu85">
+        <LinkParameter id="mov2#opm80#seu174#oln976#par3233" name="oid_oidAcciones" source="ent60#att389Array" target="mov2#opm80#okcu85#ocp220"/>
+      </OKLink>
+    </SelectorUnit>
+    <OKCollectorUnit gr:x="800" gr:y="45" id="mov2#opm80#okcu85" name="OK Port85">
+      <OutputCollectorParameter id="mov2#opm80#okcu85#ocp220" name="oidAcciones"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="800" gr:y="135" id="mov2#opm80#kocu70" name="KO Port70"/>
+  </OperationUnits>
+</OperationModule>

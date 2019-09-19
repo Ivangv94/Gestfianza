@@ -1,0 +1,9 @@
+<Job xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="530" gr:y="390" id="wsv2#job3" name="inscribirPoder">
+  <OperationUnits>
+    <InitJobUnit id="wsv2#job3#iju3" name="Init Job">
+      <OKLink id="wsv2#job3#iju3#oln615" name="OKFlow615" to="wsv2#job3#miu83" automaticCoupling="true"/>
+    </InitJobUnit>
+    <ModuleInstanceUnit gr:x="110" gr:y="45" id="wsv2#job3#miu83" action="true" moduleId="mov2#opm58"/>
+  </OperationUnits>
+  <Trigger id="wsv2#job3#trg3" name="Trigger3" schedulePolicy="onUserLogout"/>
+</Job>

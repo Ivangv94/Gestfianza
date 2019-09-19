@@ -1,0 +1,73 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="515" gr:y="775" id="mov2#opm69" name="agregarAcciones">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm69#icu108" name="Input Collector" gr:x="-295" gr:y="135"/>
+    <OKCollectorUnit gr:x="1110" gr:y="35" id="mov2#opm69#okcu75" name="OK Port75"/>
+    <KOCollectorUnit gr:x="1110" gr:y="115" id="mov2#opm69#kocu60" name="KO Port60"/>
+    <SelectorUnit id="mov2#opm69#seu142" name="AccionesCF" gr:x="225" gr:y="120">
+      <Selector id="mov2#opm69#seu142#su260" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm69#seu142#su260#rcond148" name="ea" predicate="in" implied="false"/>
+        <RelationshipRoleCondition id="mov2#opm69#seu142#su260#rcond149" name="pf" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm69#seu142#oln788" name="OKFlow1321" to="mov2#opm69#inn45">
+        <LinkParameter id="mov2#opm69#seu142#oln788#par2472" name="oid_Input" source="ent30#att282Array" target="mov2#opm69#inn45.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm69#seu147" name="EAoidCV" gr:x="535" gr:y="110">
+      <Selector id="mov2#opm69#seu147#su261" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm69#seu147#su261#rcond150" name="PMoid" predicate="in" implied="false"/>
+        <AttributesCondition id="mov2#opm69#seu147#su261#acond148" name="tipoAccion" predicate="eq" booleanOperator="or" implied="false"/>
+      </Selector>
+      <Link id="mov2#opm69#seu147#ln795" name="OKFlow1288" to="mov2#opm69#cru35" type="transport" automaticCoupling="true" gr:bendpoints="165,-165,-115,-155"/>
+      <OKLink id="mov2#opm69#seu147#oln789" name="OKFlow1323" to="mov2#opm69#seu149" automaticCoupling="true"/>
+      <Link id="mov2#opm69#seu147#ln796" name="Flow1350" to="mov2#opm69#mfu29" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="184,114,-281,-46"/>
+    </SelectorUnit>
+    <CreateUnit id="mov2#opm69#cru35" name="AccionesCV" gr:x="995" gr:y="5"/>
+    <SelectorUnit id="mov2#opm69#seu148" name="EAoidCF" gr:x="0" gr:y="120">
+      <Selector id="mov2#opm69#seu148#su262" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm69#seu148#su262#rcond151" name="PMoid" predicate="in" implied="false"/>
+        <AttributesCondition id="mov2#opm69#seu148#su262#acond149" name="tipoAccion" predicate="eq" booleanOperator="or" implied="false"/>
+      </Selector>
+      <Link id="mov2#opm69#seu148#ln797" name="Flow1312" to="mov2#opm69#cru36" type="transport" automaticCoupling="true" gr:bendpoints="163,-128,-142,-123"/>
+      <OKLink id="mov2#opm69#seu148#oln790" name="OKFlow1312" to="mov2#opm69#seu142" automaticCoupling="true"/>
+      <Link id="mov2#opm69#seu148#ln798" name="Flow1316" to="mov2#opm69#mfu28" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="106,125,-304,-20"/>
+    </SelectorUnit>
+    <ModifyUnit id="mov2#opm69#mfu28" name="AccionesCF" gr:x="320" gr:y="235">
+      <Selector id="mov2#opm69#mfu28#su263" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm69#mfu28#su263#rcond152" name="EA" predicate="in" implied="false"/>
+        <RelationshipRoleCondition id="mov2#opm69#mfu28#su263#rcond153" name="PF" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm69#mfu28#oln791" name="OKFlow1317" to="mov2#opm69#seu147">
+        <LinkParameter id="mov2#opm69#mfu28#oln791#par2473" name="V_tipoAccion" target="mov2#opm69#seu147#su261#acond148" sourceValue="V"/>
+      </OKLink>
+    </ModifyUnit>
+    <IsNotNullUnit id="mov2#opm69#inn45" name="&#191;Existe?" gr:x="430" gr:y="140">
+      <KOLink id="mov2#opm69#inn45#kln359" name="KOFlow542" to="mov2#opm69#cru36" automaticCoupling="true"/>
+      <OKLink id="mov2#opm69#inn45#oln792" name="OKFlow1313" to="mov2#opm69#mfu28" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <CreateUnit id="mov2#opm69#cru36" name="AccionesCF" gr:x="445" gr:y="0">
+      <OKLink id="mov2#opm69#cru36#oln793" name="OKFlow1281" to="mov2#opm69#seu147">
+        <LinkParameter id="mov2#opm69#cru36#oln793#par2474" name="V_tipoAccion" target="mov2#opm69#seu147#su261#acond148" sourceValue="V"/>
+      </OKLink>
+      <Link id="mov2#opm69#cru36#ln799" name="Flow1349" to="mov2#opm69#seu149" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="301,-9,-149,-149"/>
+    </CreateUnit>
+    <ModifyUnit id="mov2#opm69#mfu29" name="AccionesCV" gr:x="985" gr:y="265">
+      <Selector id="mov2#opm69#mfu29#su264" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm69#mfu29#su264#rcond154" name="EA" predicate="in" implied="false"/>
+        <RelationshipRoleCondition id="mov2#opm69#mfu29#su264#rcond155" name="PF" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+    <SelectorUnit id="mov2#opm69#seu149" name="AccionesCF" gr:x="760" gr:y="115">
+      <Selector id="mov2#opm69#seu149#su265" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm69#seu149#su265#rcond156" name="ea" predicate="in" implied="false"/>
+        <RelationshipRoleCondition id="mov2#opm69#seu149#su265#rcond157" name="pf" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm69#seu149#oln794" name="OKFlow1324" to="mov2#opm69#inn46">
+        <LinkParameter id="mov2#opm69#seu149#oln794#par2475" name="oid_Input" source="ent30#att282Array" target="mov2#opm69#inn46.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit id="mov2#opm69#inn46" name="&#191;Existe?" gr:x="1030" gr:y="150">
+      <KOLink id="mov2#opm69#inn46#kln360" name="KOFlow543" to="mov2#opm69#cru35" automaticCoupling="true"/>
+      <OKLink id="mov2#opm69#inn46#oln795" name="OKFlow1325" to="mov2#opm69#mfu29" automaticCoupling="true"/>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

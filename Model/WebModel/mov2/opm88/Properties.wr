@@ -1,0 +1,51 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm88" name="filtroPfAdministracionRevocacion" gr:x="95" gr:y="1170">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm88#icu127" gr:x="-60" gr:y="60">
+      <InputCollectorParameter id="mov2#opm88#icu127#icp378" name="oidPM"/>
+      <OKLink id="mov2#opm88#icu127#oln1046" name="OKFlow981" to="mov2#opm88#seu172">
+        <LinkParameter id="mov2#opm88#icu127#oln1046#par3439" name="oidPM_KeyCondition136 [oid]" source="mov2#opm88#icu127#icp378" target="mov2#opm88#seu172#su358#kcond163.userOID"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm88#icu127#icp379" name="mostrar"/>
+      <Link id="mov2#opm88#icu127#ln1111" name="Flow1042" to="mov2#opm88#okcu93" type="transport" validate="true" gr:bendpoints="159,-65,-481,-45;319,-71,-321,-51;487,-67,-153,-47">
+        <LinkParameter id="mov2#opm88#icu127#ln1111#par3440" name="mostrar_mostrar" source="mov2#opm88#icu127#icp379" target="mov2#opm88#okcu93#ocp245"/>
+        <LinkParameter id="mov2#opm88#icu127#ln1111#par3441" name="oidPM_oidPM" source="mov2#opm88#icu127#icp378" target="mov2#opm88#okcu93#ocp246"/>
+      </Link>
+      <Link id="mov2#opm88#icu127#ln1112" name="Flow1060" to="mov2#opm88#seu185" type="transport" validate="true" gr:bendpoints="198,91,-462,76;545,91,-115,76">
+        <LinkParameter id="mov2#opm88#icu127#ln1112#par3442" name="oidPM_RoleCondition193 [oid]" source="mov2#opm88#icu127#icp378" target="mov2#opm88#seu185#su360#rcond220.userOID"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#opm88#seu172" name="PM" gr:x="250" gr:y="55" entity="ent38">
+      <Selector id="mov2#opm88#seu172#su358" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm88#seu172#su358#kcond163" name="KeyCondition136" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov2#opm88#seu172#kln443" name="KOFlow422" to="mov2#opm88#kocu78" automaticCoupling="true" gr:bendpoints="64,72,-606,7"/>
+      <OKLink id="mov2#opm88#seu172#oln1047" name="OKFlow1000" to="mov2#opm88#seu181" automaticCoupling="true"/>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm88#seu181" name="PF" gr:x="365" gr:y="50" entity="ent39">
+      <Selector id="mov2#opm88#seu181#su359" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm88#seu181#su359#acond168" name="AttCondition172" predicate="eq" booleanOperator="or" implied="false" attributes="ent39#att426" value="FAD"/>
+        <RelationshipRoleCondition id="mov2#opm88#seu181#su359#rcond218" name="RoleCondition186" predicate="in" implied="false" role="rel20#role40"/>
+        <AttributesCondition id="mov2#opm88#seu181#su359#acond177" name="AttCondition177" predicate="null" booleanOperator="or" implied="false" attributes="rel43#role85.ent67#att442"/>
+      </Selector>
+      <OKLink id="mov2#opm88#seu181#oln1048" name="OKFlow983" to="mov2#opm88#seu185">
+        <LinkParameter id="mov2#opm88#seu181#oln1048#par3443" name="oid_RoleCondition188 [oid]" source="userOIDArray" target="mov2#opm88#seu185#su360#rcond219.userOID"/>
+      </OKLink>
+      <KOLink id="mov2#opm88#seu181#kln444" name="KOFlow421" to="mov2#opm88#kocu78" automaticCoupling="true"/>
+    </SelectorUnit>
+    <KOCollectorUnit id="mov2#opm88#kocu78" name="KO Port71" gr:x="855" gr:y="125"/>
+    <OKCollectorUnit id="mov2#opm88#okcu93" name="OK Port86" gr:x="855" gr:y="40">
+      <OutputCollectorParameter id="mov2#opm88#okcu93#ocp244" name="oidPF"/>
+      <OutputCollectorParameter id="mov2#opm88#okcu93#ocp245" name="mostrar"/>
+      <OutputCollectorParameter id="mov2#opm88#okcu93#ocp246" name="oidPM"/>
+    </OKCollectorUnit>
+    <SelectorUnit id="mov2#opm88#seu185" name="Administracion" gr:x="635" gr:y="65" entity="ent64">
+      <Selector id="mov2#opm88#seu185#su360" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm88#seu185#su360#rcond219" name="RoleCondition188" predicate="in" implied="false" role="rel34#role67"/>
+        <RelationshipRoleCondition id="mov2#opm88#seu185#su360#rcond220" name="RoleCondition193" predicate="in" implied="false" role="rel42#role84"/>
+      </Selector>
+      <OKLink id="mov2#opm88#seu185#oln1049" name="OKFlow1001" to="mov2#opm88#okcu93">
+        <LinkParameter id="mov2#opm88#seu185#oln1049#par3444" name="AdministracionToPersonaFisica.oid_oidPF" source="rel34#role68_userOIDArray" target="mov2#opm88#okcu93#ocp244"/>
+      </OKLink>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,14 @@
+<Job xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="550" gr:y="20" id="wsv2#job2" name="llenarDatosPF">
+  <OperationUnits>
+    <InitJobUnit id="wsv2#job2#iju2" name="Init Job" gr:x="0" gr:y="135">
+      <OKLink id="wsv2#job2#iju2#oln544" name="OKFlow544" to="wsv2#job2#miu61" automaticCoupling="true"/>
+    </InitJobUnit>
+    <GetUnit gr:x="175" gr:y="0" id="wsv2#job2#gtu16" name="getUser" contextParameters="UserCtxParam" linkOrder="wsv2#job2#gtu16#ln293">
+      <Link id="wsv2#job2#gtu16#ln293" name="Flow293" to="wsv2#job2#miu61" type="transport" validate="true">
+        <LinkParameter id="wsv2#job2#gtu16#ln293#par2002" name="UserCtxParam.oid_oid" source="wsv2#job2#gtu16.UserCtxParam" target="wsv2#job2#miu61.mov2#mpkg6#opm45#icu49#icp75"/>
+      </Link>
+    </GetUnit>
+    <ModuleInstanceUnit gr:x="125" gr:y="130" id="wsv2#job2#miu61" action="true" moduleId="mov2#mpkg6#opm45"/>
+  </OperationUnits>
+  <Trigger id="wsv2#job2#trg2" name="Trigger2" schedulePolicy="onUserLogout"/>
+</Job>

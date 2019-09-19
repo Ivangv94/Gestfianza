@@ -1,0 +1,53 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov2#hym10#page28" name="Confirmacion" secure="false" localized="false" layout:style="gobmxStyle" layout:pageLayout="gobmxStyle/Empty" layout:linkLayout="gobmxStyle/Default" gr:x="95" gr:y="-55">
+  <ContentUnits>
+    <MultiMessageUnit id="mov2#hym10#page28#mssu10" name="Instrucciones" gr:x="0" gr:y="0"/>
+    <EntryUnit id="mov2#hym10#page28#enu25" name="Buttons" linkOrder="mov2#hym10#page28#enu25#ln277 mov2#hym10#page28#enu25#ln278" gr:x="30" gr:y="65">
+      <Link id="mov2#hym10#page28#enu25#ln277" name="Confirmar" to="mov2#hym10#okcu24" type="normal" automaticCoupling="true" validate="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true" ajaxWaitingDialogMessage="Procesando ..." gr:bendpoints="148,-4,-187,81"/>
+      <Link id="mov2#hym10#page28#enu25#ln278" name="Cancelar" to="mov2#hym10#kocu18" type="normal" validate="true" gr:bendpoints="44,11,-291,-94;145,10,-190,-95" ajaxEnabled="true" ajaxOpenWaitingDialog="true" ajaxWaitingDialogMessage="Procesando ..."/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid" layout:frameLayout="None">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov2#hym10#page28#mssu10" layout:unitVisibilityConditionVariable="mov2#hym10#page28#var19" layout:unitVisibilityConditionNegated="true">
+          <layout:LayoutParameter name="messageType" value="warning" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov2#hym10#page28#enu25">
+          <layout:Link link="mov2#hym10#page28#enu25#ln277" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link link="mov2#hym10#page28#enu25#ln278" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="mov2#hym10#page28#var19" name="mensajeErrorEncendido" type="boolean" value="0"/>
+</Page>

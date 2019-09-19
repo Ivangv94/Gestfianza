@@ -1,0 +1,32 @@
+<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="560" id="wsv1#port1" name="consulta" secure="false">
+  <OperationUnits>
+    <SolicitUnit id="wsv1#port1#slu2" name="obtenerPoderesSociedadRequest" invocationStyle="SOAP" requestMethod="POST" gr:x="0" gr:y="5">
+      <RequestBodyParameter id="wsv1#port1#slu2#slp3" name="InformacionSociedad" minCard="1" maxCard="1" fragmentOrder="wsv1#port1#slu2#slp3#spf21 wsv1#port1#slu2#slp3#spf6 wsv1#port1#slu2#slp3#spf5">
+        <SimpleParameterFragment id="wsv1#port1#slu2#slp3#spf5" name="rfc" minCard="1" maxCard="1" xsdType="{http://www.w3.org/2001/XMLSchema}string[SimpleType]"/>
+        <SimpleParameterFragment id="wsv1#port1#slu2#slp3#spf6" name="folioMercantil" minCard="1" maxCard="1" xsdType="{http://www.w3.org/2001/XMLSchema}string[SimpleType]"/>
+        <SimpleParameterFragment id="wsv1#port1#slu2#slp3#spf21" name="expedienteElectronico" minCard="1" maxCard="1"/>
+      </RequestBodyParameter>
+      <OKLink id="wsv1#port1#slu2#oln54" name="OKFlow54" to="wsv1#port1#rsu2" automaticCoupling="true"/>
+    </SolicitUnit>
+    <ResponseUnit gr:x="1090" gr:y="0" id="wsv1#port1#rsu2" name="poderesFirmadosResponse" contentType="XML" statusCode="200" customDescriptor="false">
+      <ResponseBodyParameter id="wsv1#port1#rsu2#rsp5" name="poderesFirmados" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port1#rsu2#rsp5#spf79" name="numeroProceso" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port1#rsu2#rsp5#spf80" name="idAntecedente" minCard="1" maxCard="1"/>
+        <ComplexParameterFragment id="wsv1#port1#rsu2#rsp5#cpf16" name="DatosRegistro" minCard="1" maxCard="1">
+          <ComplexParameterFragment id="wsv1#port1#rsu2#rsp5#cpf16#cpf17" name="Poder" minCard="1" maxCard="1">
+            <SimpleParameterFragment id="wsv1#port1#rsu2#rsp5#cpf16#cpf17#spf85" name="consecutivo" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port1#rsu2#rsp5#cpf16#cpf17#spf86" name="idRegistroFacultad" minCard="1" maxCard="1"/>
+          </ComplexParameterFragment>
+        </ComplexParameterFragment>
+        <SimpleParameterFragment id="wsv1#port1#rsu2#rsp5#spf87" name="urlRupaXML" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port1#rsu2#rsp5#spf88" name="urlRupaPDF" minCard="1" maxCard="1"/>
+        <ComplexParameterFragment id="wsv1#port1#rsu2#rsp5#cpf18" name="SIGER" minCard="1" maxCard="1">
+          <ComplexParameterFragment id="wsv1#port1#rsu2#rsp5#cpf18#cpf19" name="Poder" minCard="1" maxCard="1">
+            <SimpleParameterFragment id="wsv1#port1#rsu2#rsp5#cpf18#cpf19#spf90" name="urlXML" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port1#rsu2#rsp5#cpf18#cpf19#spf91" name="urlPDF" minCard="1" maxCard="1"/>
+          </ComplexParameterFragment>
+        </ComplexParameterFragment>
+      </ResponseBodyParameter>
+    </ResponseUnit>
+  </OperationUnits>
+</Port>

@@ -1,0 +1,34 @@
+<SiteView xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv9" name="Personal Fedatario" homePage="sv9#page99" landmarks="sv9#page99 sv9#page102 sv9#page101" protected="true" bpm:uuids="JKBD85VG_LSUK7T.JNXEW49H_RCLC7T" secure="false" localized="true">
+  <OperationUnits>
+    <ResumeActivityUnit id="sv9#rau6" name="Resume Activity" gr:x="835" gr:y="485">
+      <KOLink id="sv9#rau6#kln298" name="KOLink4" to="sv9#page103#pu41">
+        <LinkParameter id="sv9#rau6#kln298#par244" name="Error Info_Error Info" source="errorInfo" target="sv9#page103#pu41.errorInfo"/>
+      </KOLink>
+    </ResumeActivityUnit>
+    <StartProcessUnit id="sv9#spu8" name="Start Process" gr:x="845" gr:y="230">
+      <KOLink id="sv9#spu8#kln299" name="KOLink3" to="sv9#page103#pu41">
+        <LinkParameter id="sv9#spu8#kln299#par245" name="Error Info_Error Info" source="errorInfo" target="sv9#page103#pu41.errorInfo"/>
+      </KOLink>
+    </StartProcessUnit>
+    <DeleteUnit id="sv9#dlu11" name="Remove Notification" gr:x="459" gr:y="42" entity="Notification">
+      <Selector id="sv9#dlu11#su201" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv9#dlu11#su201#kcond100" name="oids" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+    <ModifyUnit id="sv9#mfu20" gr:x="322" gr:y="41" name="Mark as Read" entity="Notification" bulk="false">
+      <Selector id="sv9#mfu20#su205" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv9#mfu20#su205#kcond106" name="oids" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+    <LogoutUnit id="sv9#lou3" name="Logout User" gr:x="1395" gr:y="245" siteView="sv1"/>
+    <ProcessUnit id="sv9#pu33" name="Rollback Activity" gr:x="600" gr:y="906" mode="rollback">
+      <KOLink id="sv9#pu33#kln300" name="KOLink9" to="sv9#page103#pu41">
+        <LinkParameter id="sv9#pu33#kln300#par314" name="Error Info_Error Info" source="errorInfo" target="sv9#page103#pu41.errorInfo"/>
+      </KOLink>
+      <OKLink id="sv9#pu33#oln34" name="OKLink42" to="sv9#page100#pdu9" gr:bendpoints="-133,-47,97,-47">
+        <LinkParameter id="sv9#pu33#oln34#par317" name="Process Instance Oid_PASSING_Process Instance Oid" sourceLinkParameter="sv9#page100#pdu9#ln719#par514" target="sv9#page100#pdu9.processInstanceOid"/>
+      </OKLink>
+    </ProcessUnit>
+  </OperationUnits>
+  <layout:LayoutParameter name="show-left-column" value="true" type="page"/>
+</SiteView>

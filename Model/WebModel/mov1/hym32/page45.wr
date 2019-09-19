@@ -1,0 +1,66 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-10" gr:y="505" id="mov1#hym32#page45" name="Apoderado">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym32#page45#enu121" name="Instrumento" gr:x="245" gr:y="0">
+      <Field id="mov1#hym32#page45#enu121#fld219" name="instrumentoNumero" type="string" modifiable="true"/>
+      <Field id="mov1#hym32#page45#enu121#fld220" name="instrumentoVolumen" type="string" modifiable="true"/>
+      <Field id="mov1#hym32#page45#enu121#fld221" name="instrumentoLibro" type="string" modifiable="true"/>
+      <Field id="mov1#hym32#page45#enu121#fld222" name="instrumentoFecha" type="date" modifiable="true"/>
+    </EntryUnit>
+    <EntryUnit id="mov1#hym32#page45#enu122" name="tituloApoderado" gr:x="0" gr:y="5">
+      <Field id="mov1#hym32#page45#enu122#fld223" name="titulo" type="string" modifiable="false" contentType="text/html" preloaded="true">
+        <Slot id="mov1#hym32#page45#enu122#fld223#slot17" name="titulo" label="true" output="true" value="&lt;h2&gt;AgregarApoderado&lt;/h2&gt;&lt;hr class=&quot;red&quot;&gt;"/>
+      </Field>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym32#page45#enu121">
+          <layout:Field field="mov1#hym32#page45#enu121#fld219">
+            <layout:LayoutParameter name="label-position" value="top" type="field"/>
+          </layout:Field>
+          <layout:Field field="mov1#hym32#page45#enu121#fld220">
+            <layout:LayoutParameter name="label-position" value="top" type="field"/>
+          </layout:Field>
+          <layout:Field field="mov1#hym32#page45#enu121#fld221">
+            <layout:LayoutParameter name="label-position" value="top" type="field"/>
+          </layout:Field>
+          <layout:Field field="mov1#hym32#page45#enu121#fld222">
+            <layout:LayoutParameter name="label-position" value="top" type="field"/>
+          </layout:Field>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym32#page45#enu122" layout:frameLayout="None">
+          <layout:Field field="mov1#hym32#page45#enu122#fld223" layout:fieldLayout="WRDefault/FieldValue"/>
+          <layout:LayoutParameter name="button-group" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-label" value="false" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

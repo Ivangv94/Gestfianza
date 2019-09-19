@@ -1,0 +1,119 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg3#opm13" name="agregarRol" gr:x="10" gr:y="60">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg3#opm13#icu32" gr:x="-505" gr:y="120">
+      <InputCollectorParameter id="mov2#mpkg3#opm13#icu32#icp11" name="curp"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm13#icu32#icp12" name="rol"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm13#icu32#icp18" name="rfc"/>
+      <Link id="mov2#mpkg3#opm13#icu32#ln1237" name="OKFlow1185" to="mov2#mpkg3#opm13#miu65" type="transport" gr:bendpoints="156,119,-480,-17">
+        <LinkParameter id="mov2#mpkg3#opm13#icu32#ln1237#par3885" name="rfc_rfc" source="mov2#mpkg3#opm13#icu32#icp18" target="mov2#mpkg3#opm13#miu65.mov2#opm9#icu16#icp20"/>
+      </Link>
+      <OKLink id="mov2#mpkg3#opm13#icu32#oln1190" name="OKFlow1190" to="mov2#mpkg3#opm13#seu6">
+        <LinkParameter id="mov2#mpkg3#opm13#icu32#oln1190#par3886" name="curp_curp" source="mov2#mpkg3#opm13#icu32#icp11" target="mov2#mpkg3#opm13#seu6#su11#acond11"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#mpkg3#opm13#seu6" name="buscarPF" gr:x="-95" gr:y="130" entity="ent39" linkOrder="mov2#mpkg3#opm13#seu6#ln1209 mov2#mpkg3#opm13#seu6#ln1227 mov2#mpkg3#opm13#seu6#ln1238">
+      <Selector id="mov2#mpkg3#opm13#seu6#su11" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg3#opm13#seu6#su11#acond11" name="curp" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <KOLink id="mov2#mpkg3#opm13#seu6#kln9" name="KOFlow116" to="mov2#mpkg3#opm13#kocu4" gr:bendpoints="33,248,-1698,33">
+        <LinkParameter id="mov2#mpkg3#opm13#seu6#kln9#par70" name="Error al validar si el usuario ya existe._msj" target="mov2#mpkg3#opm13#kocu4#ocp11" sourceValue="Error al validar si el usuario ya existe."/>
+      </KOLink>
+      <OKLink id="mov2#mpkg3#opm13#seu6#oln1181" name="OKFlow1181" to="mov2#mpkg3#opm13#inn60">
+        <LinkParameter id="mov2#mpkg3#opm13#seu6#oln1181#par3875" name="oid_Input" source="userOIDArray" target="mov2#mpkg3#opm13#inn60.isnotnull"/>
+      </OKLink>
+      <Link id="mov2#mpkg3#opm13#seu6#ln1209" name="Flow1209" to="mov2#mpkg3#opm13#seu230" type="transport" validate="true" gr:bendpoints="86,-126,-504,-130;497,-123,-93,-127">
+        <LinkParameter id="mov2#mpkg3#opm13#seu6#ln1209#par3877" name="oid_AttCondition196" source="userOIDArray" target="mov2#mpkg3#opm13#seu230#su426#acond196"/>
+      </Link>
+      <Link id="mov2#mpkg3#opm13#seu6#ln1227" name="Flow1227" to="mov2#mpkg3#opm13#cru71" type="transport" validate="true" gr:bendpoints="5,212,-979,102;757,218,-227,108">
+        <LinkParameter id="mov2#mpkg3#opm13#seu6#ln1227#par3881" name="oid_oidPersonal" source="userOIDArray" target="mov2#mpkg3#opm13#cru71.ent71#att469"/>
+      </Link>
+      <Link id="mov2#mpkg3#opm13#seu6#ln1238" name="Flow1238" to="mov2#mpkg3#opm13#mfu42" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="114,-131,-1080,-131;1328,-129,-86,-129"/>
+    </SelectorUnit>
+    <KOCollectorUnit id="mov2#mpkg3#opm13#kocu4" name="KO" gr:x="1570" gr:y="350">
+      <OutputCollectorParameter id="mov2#mpkg3#opm13#kocu4#ocp11" name="msj"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit id="mov2#mpkg3#opm13#okcu2" name="OK" gr:x="1570" gr:y="125">
+      <OutputCollectorParameter id="mov2#mpkg3#opm13#okcu2#ocp264" name="mensajeExito"/>
+    </OKCollectorUnit>
+    <ModuleInstanceUnit gr:x="75" gr:y="270" id="mov2#mpkg3#opm13#miu65" action="true" moduleId="mov2#opm9">
+      <OKLink id="mov2#mpkg3#opm13#miu65#oln1191" name="OKFlow1191" to="mov2#mpkg3#opm13#cru73">
+        <LinkParameter id="mov2#mpkg3#opm13#miu65#oln1191#par3887" name="sFechaNacimiento_anioNac" source="mov2#opm9#okcu3#ocp69" target="mov2#mpkg3#opm13#cru73.ent39#att259"/>
+        <LinkParameter id="mov2#mpkg3#opm13#miu65#oln1191#par3888" name="sAp1_apellido1" source="mov2#opm9#okcu3#ocp18" target="mov2#mpkg3#opm13#cru73.ent39#att271"/>
+        <LinkParameter id="mov2#mpkg3#opm13#miu65#oln1191#par3889" name="sAp2_apellido2" source="mov2#opm9#okcu3#ocp19" target="mov2#mpkg3#opm13#cru73.ent39#att270"/>
+        <LinkParameter id="mov2#mpkg3#opm13#miu65#oln1191#par3890" name="sEmail_email" source="mov2#opm9#okcu3#ocp72" target="mov2#mpkg3#opm13#cru73.email"/>
+        <LinkParameter id="mov2#mpkg3#opm13#miu65#oln1191#par3891" name="sNombres_nombre" source="mov2#opm9#okcu3#ocp17" target="mov2#mpkg3#opm13#cru73.ent39#att272"/>
+        <LinkParameter id="mov2#mpkg3#opm13#miu65#oln1191#par3892" name="sNacionalidad_PFnacionalidad" source="mov2#opm9#okcu3#ocp68" target="mov2#mpkg3#opm13#cru73.ent39#att265"/>
+        <LinkParameter id="mov2#mpkg3#opm13#miu65#oln1191#par3893" name="sCurp_userName" source="mov2#opm9#okcu3#ocp20" target="mov2#mpkg3#opm13#cru73.userName"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm13#miu65#kln492" name="KOFlow492" to="mov2#mpkg3#opm13#kocu4" gr:bendpoints="35,72,-1476,-13">
+        <LinkParameter id="mov2#mpkg3#opm13#miu65#kln492#par3895" name="mensaje_msj" source="mov2#opm9#kocu5#ocp21" target="mov2#mpkg3#opm13#kocu4#ocp11"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <IsNotNullUnit gr:x="125" gr:y="140" id="mov2#mpkg3#opm13#inn60" name="&#191;Existe?">
+      <OKLink id="mov2#mpkg3#opm13#inn60#oln1182" name="OKFlow1182" to="mov2#mpkg3#opm13#seu229" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg3#opm13#inn60#kln491" name="KOFlow491" to="mov2#mpkg3#opm13#miu65" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <SelectorUnit gr:x="345" gr:y="125" id="mov2#mpkg3#opm13#seu229" name="buscar en datosNotario " entity="ent8">
+      <Selector id="mov2#mpkg3#opm13#seu229#su425" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg3#opm13#seu229#su425#rcond260" name="RoleCondition260" predicate="in" implied="false" role="rel25#role50"/>
+      </Selector>
+      <OKLink id="mov2#mpkg3#opm13#seu229#oln1183" name="OKFlow1183" to="mov2#mpkg3#opm13#seu230" automaticCoupling="true"/>
+    </SelectorUnit>
+    <GetUnit gr:x="210" gr:y="55" id="mov2#mpkg3#opm13#gtu57" name="Get57" contextParameters="UserCtxParam" linkOrder="mov2#mpkg3#opm13#gtu57#ln1208">
+      <Link id="mov2#mpkg3#opm13#gtu57#ln1208" name="Flow1208" to="mov2#mpkg3#opm13#seu229" type="transport" validate="true">
+        <LinkParameter id="mov2#mpkg3#opm13#gtu57#ln1208#par3876" name="UserCtxParam.oid_RoleCondition260 [oid]" source="mov2#mpkg3#opm13#gtu57.UserCtxParam" target="mov2#mpkg3#opm13#seu229#su425#rcond260.userOID"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="585" gr:y="125" id="mov2#mpkg3#opm13#seu230" name="buscarPersonalFedatario" entity="ent71">
+      <Selector id="mov2#mpkg3#opm13#seu230#su426" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg3#opm13#seu230#su426#rcond261" name="RoleCondition261" role="rel48#role96" predicate="in" implied="false"/>
+        <AttributesCondition id="mov2#mpkg3#opm13#seu230#su426#acond196" name="AttCondition196" predicate="eq" booleanOperator="or" implied="false" attributes="ent71#att469"/>
+      </Selector>
+      <OKLink id="mov2#mpkg3#opm13#seu230#oln1184" name="OKFlow1184" to="mov2#mpkg3#opm13#inn61">
+        <LinkParameter id="mov2#mpkg3#opm13#seu230#oln1184#par3878" name="oid_Input" source="ent71#att468Array" target="mov2#mpkg3#opm13#inn61.isnotnull"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm13#seu230#kln496" name="KOFlow496" to="mov2#mpkg3#opm13#kocu4" gr:bendpoints="24,223,-982,8">
+        <LinkParameter id="mov2#mpkg3#opm13#seu230#kln496#par3899" name="Error al obtener el personal._msj" sourceValue="Error al obtener el personal." target="mov2#mpkg3#opm13#kocu4#ocp11"/>
+      </KOLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="850" gr:y="145" id="mov2#mpkg3#opm13#inn61" name="&#191;Es personalFedatario?">
+      <KOLink id="mov2#mpkg3#opm13#inn61#kln490" name="KOFlow490" to="mov2#mpkg3#opm13#cru71" automaticCoupling="true"/>
+      <OKLink id="mov2#mpkg3#opm13#inn61#oln1187" name="OKFlow1187" to="mov2#mpkg3#opm13#seu231"/>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="835" gr:y="270" id="mov2#mpkg3#opm13#cru71" name="insertar en personalFedatario" entity="ent71">
+      <OKLink id="mov2#mpkg3#opm13#cru71#oln1188" name="OKFlow1188" to="mov2#mpkg3#opm13#seu231"/>
+      <KOLink id="mov2#mpkg3#opm13#cru71#kln495" name="KOFlow495" to="mov2#mpkg3#opm13#kocu4" gr:bendpoints="152,65,-594,-15">
+        <LinkParameter id="mov2#mpkg3#opm13#cru71#kln495#par3898" name="Error al agregar el personal_msj" sourceValue="Error al agregar el personal" target="mov2#mpkg3#opm13#kocu4#ocp11"/>
+      </KOLink>
+    </CreateUnit>
+    <GetUnit gr:x="1100" gr:y="280" id="mov2#mpkg3#opm13#gtu58" name="Get58" contextParameters="UserCtxParam">
+      <Link id="mov2#mpkg3#opm13#gtu58#ln1230" name="Flow1230" to="mov2#mpkg3#opm13#cru71" type="transport" validate="true">
+        <LinkParameter id="mov2#mpkg3#opm13#gtu58#ln1230#par3882" name="UserCtxParam.oid_DatosFedatario.oid(PersonalFedatarioToDatosFedatario)" source="mov2#mpkg3#opm13#gtu58.UserCtxParam" target="mov2#mpkg3#opm13#cru71.rel48#role95.ent8#att46"/>
+      </Link>
+    </GetUnit>
+    <CreateUnit gr:x="350" gr:y="265" id="mov2#mpkg3#opm13#cru73" name="inserta PF" entity="ent39" linkOrder="mov2#mpkg3#opm13#cru73#ln1239">
+      <OKLink id="mov2#mpkg3#opm13#cru73#oln1192" name="OKFlow1192" to="mov2#mpkg3#opm13#cru71" automaticCoupling="true"/>
+      <Link id="mov2#mpkg3#opm13#cru73#ln1239" name="Flow1239" to="mov2#mpkg3#opm13#mfu42" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="47,120,-923,250;432,124,-538,254;930,117,-40,247"/>
+    </CreateUnit>
+    <SelectorUnit id="mov2#mpkg3#opm13#seu231" entity="Group" gr:x="1090" gr:y="130" name="consultaRol">
+      <Selector id="mov2#mpkg3#opm13#seu231#su428" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg3#opm13#seu231#su428#acond197" name="AttCondition197" predicate="eq" booleanOperator="or" implied="false" attributes="groupName" value="Personal Fedatario"/>
+      </Selector>
+      <OKLink id="mov2#mpkg3#opm13#seu231#oln1194" name="OKFlow1194" to="mov2#mpkg3#opm13#mfu42" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg3#opm13#seu231#kln494" name="KOFlow494" to="mov2#mpkg3#opm13#kocu4">
+        <LinkParameter id="mov2#mpkg3#opm13#seu231#kln494#par3897" name="Error al obtener el Rol_msj" sourceValue="Error al obtener el Rol" target="mov2#mpkg3#opm13#kocu4#ocp11"/>
+      </KOLink>
+    </SelectorUnit>
+    <ModifyUnit gr:x="1315" gr:y="130" id="mov2#mpkg3#opm13#mfu42" name="actualizaRol" entity="User">
+      <Selector id="mov2#mpkg3#opm13#mfu42#su429" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg3#opm13#mfu42#su429#kcond192" name="KeyCondition192" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg3#opm13#mfu42#oln1195" name="OKFlow1195" to="mov2#mpkg3#opm13#okcu2">
+        <LinkParameter id="mov2#mpkg3#opm13#mfu42#oln1195#par3894" name="Personal agregado con &#233;xito_mensajeExito" sourceValue="Personal agregado con &#233;xito" target="mov2#mpkg3#opm13#okcu2#ocp264"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm13#mfu42#kln493" name="KOFlow493" to="mov2#mpkg3#opm13#kocu4">
+        <LinkParameter id="mov2#mpkg3#opm13#mfu42#kln493#par3896" name="Error al agregar o actualizar Rol_msj" sourceValue="Error al agregar o actualizar Rol" target="mov2#mpkg3#opm13#kocu4#ocp11"/>
+      </KOLink>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,193 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym36#page113" name="Organo de Vigilancia" gr:x="10" gr:y="-5" localized="true">
+  <ContentUnits>
+    <ActivityParametersUnit id="mov1#hym36#page113#apu52" name="Get Parameters" gr:x="0" gr:y="0"/>
+    <EntryUnit id="mov1#hym36#page113#enu150" name="Buttons" gr:x="330" gr:y="150">
+      <Link id="mov1#hym36#page113#enu150#ln771" name="Finish" type="normal" validate="true" to="mov1#hym36#seu224">
+        <LinkParameter id="mov1#hym36#page113#enu150#ln771#par2998" name="denominacion_PASSING_KeyCondition155 [oid]" sourceLinkParameter="mov1#hym36#page113#enu92#ln982#par2997" target="mov1#hym36#seu224#su302#kcond175.userOID"/>
+      </Link>
+      <Link id="mov1#hym36#page113#enu150#ln772" name="Save and Work Later" type="normal" validate="false" to="mov1#hym36#apu51" gr:bendpoints="141,-73,-89,117"/>
+      <Link id="mov1#hym36#page113#enu150#ln773" name="Cancel" type="normal" validate="false" automaticCoupling="false" to="mov1#hym36#pu137"/>
+    </EntryUnit>
+    <EntryUnit id="mov1#hym36#page113#enu92" name="Organo de Vigilancia" gr:x="20" gr:y="130" fieldOrder="mov1#hym36#page113#enu92#fld318 mov1#hym36#page113#enu92#fld319 mov1#hym36#page113#enu92#fld363 mov1#hym36#page113#enu92#fld368" linkOrder="mov1#hym36#page113#enu92#ln136">
+      <Field id="mov1#hym36#page113#enu92#fld318" name="organoDeVigilancia" type="text" modifiable="true"/>
+      <Field id="mov1#hym36#page113#enu92#fld319" name="rfc" type="string" modifiable="true"/>
+      <Field id="mov1#hym36#page113#enu92#fld363" name="curp" type="string" modifiable="true"/>
+      <Field id="mov1#hym36#page113#enu92#fld368" name="denominacion" type="string" modifiable="false" preloaded="true"/>
+      <Link id="mov1#hym36#page113#enu92#ln136" name="agregar" to="mov1#hym36#miu129" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true" ajaxWaitingDialogMessage="Procesando...">
+        <LinkParameter id="mov1#hym36#page113#enu92#ln136#par4187" name="curp_curp" source="mov1#hym36#page113#enu92#fld363" target="mov1#hym36#miu129.mov2#opm92#icu131#icp389"/>
+        <LinkParameter id="mov1#hym36#page113#enu92#ln136#par4188" name="organoDeVigilancia_descOrgano" source="mov1#hym36#page113#enu92#fld318" target="mov1#hym36#miu129.mov2#opm92#icu131#icp390"/>
+        <LinkParameter id="mov1#hym36#page113#enu92#ln136#par4189" name="denominacion_oidPM" source="mov1#hym36#page113#enu92#fld368" target="mov1#hym36#miu129.mov2#opm92#icu131#icp383"/>
+        <LinkParameter id="mov1#hym36#page113#enu92#ln136#par4190" name="rfc_rfc" source="mov1#hym36#page113#enu92#fld319" target="mov1#hym36#miu129.mov2#opm92#icu131#icp388"/>
+      </Link>
+      <Link id="mov1#hym36#page113#enu92#ln982" name="Flow982" to="mov1#hym36#page113#enu150" type="transport" validate="true">
+        <LinkParameter id="mov1#hym36#page113#enu92#ln982#par2997" name="denominacion_PASSING" source="mov1#hym36#page113#enu92#fld368" passing="true"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit id="mov1#hym36#page113#mssu45" name="Message44" gr:x="225" gr:y="55"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym36#page113#mssu45"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8" layout:cellLayout="Print Frame" layout:frameLayout="None">
+        <layout:Grid containerType="grid" label="Organo de Vigilancia">
+          <layout:Row>
+            <layout:Cell colspan="12">
+              <layout:Field unitId="mov1#hym36#page113#enu92" mode="full" field="mov1#hym36#page113#enu92#fld368" layout:fieldVisibilityConditionVariable="mov1#hym36#page113#var110"/>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="6">
+              <layout:Field unitId="mov1#hym36#page113#enu92" mode="full" field="mov1#hym36#page113#enu92#fld319">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="6">
+              <layout:Field unitId="mov1#hym36#page113#enu92" mode="full" field="mov1#hym36#page113#enu92#fld363">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12" rowspan="3">
+              <layout:Field unitId="mov1#hym36#page113#enu92" mode="full" field="mov1#hym36#page113#enu92#fld318">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="4"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Link unitId="mov1#hym36#page113#enu92" link="mov1#hym36#page113#enu92#ln136">
+                <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+              </layout:Link>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8" label="Buttons" layout:cellLayout="Print Frame">
+        <layout:Unit unitId="mov1#hym36#page113#enu150" layout:frameLayout="None" manualLinks="true" manualLinkOrder="mov1#hym36#page113#enu150#ln771 mov1#hym36#page113#enu150#ln773">
+          <layout:Link link="mov1#hym36#page113#enu150#ln771" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+            <layout:LayoutParameter name="confirmation" value="false" type="link"/>
+            <layout:LayoutParameter name="confirm-message" value="Confirm Finish" type="link"/>
+          </layout:Link>
+          <layout:Link link="mov1#hym36#page113#enu150#ln773" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+  <layout:LayoutParameter name="auto-refresh" value="true" type="page"/>
+  <Variable id="mov1#hym36#page113#var110" name="ocultarDenominacion" type="boolean" value="false"/>
+</Page>

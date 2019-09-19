@@ -1,0 +1,27 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="195" gr:y="210" id="mov2#mpkg7#opm47" name="guardarMandatosPorPoder">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg7#opm47#icu71" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#mpkg7#opm47#icu71#icp186" name="rfcPM"/>
+      <InputCollectorParameter id="mov2#mpkg7#opm47#icu71#icp185" name="rfc"/>
+      <InputCollectorParameter id="mov2#mpkg7#opm47#icu71#icp184" name="curp"/>
+      <InputCollectorParameter id="mov2#mpkg7#opm47#icu71#icp183" name="comentariosFacultad"/>
+      <InputCollectorParameter id="mov2#mpkg7#opm47#icu71#icp182" name="tipoFacultad"/>
+      <InputCollectorParameter id="mov2#mpkg7#opm47#icu71#icp181" name="cargoPF"/>
+      <InputCollectorParameter id="mov2#mpkg7#opm47#icu71#icp180" name="fechaRevocacion"/>
+      <InputCollectorParameter id="mov2#mpkg7#opm47#icu71#icp179" name="fechaOtorgamiento"/>
+      <InputCollectorParameter id="mov2#mpkg7#opm47#icu71#icp188" name="proceso"/>
+      <OKLink id="mov2#mpkg7#opm47#icu71#oln561" name="OKFlow561" to="mov2#mpkg7#opm47#cru13">
+        <LinkParameter id="mov2#mpkg7#opm47#icu71#oln561#par315" name="curp_curp" source="mov2#mpkg7#opm47#icu71#icp184" target="mov2#mpkg7#opm47#cru13.ent49#att318"/>
+        <LinkParameter id="mov2#mpkg7#opm47#icu71#oln561#par316" name="rfc_rfc" source="mov2#mpkg7#opm47#icu71#icp185" target="mov2#mpkg7#opm47#cru13.ent49#att317"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="660" gr:y="95" id="mov2#mpkg7#opm47#okcu49" name="OK"/>
+    <KOCollectorUnit gr:x="660" gr:y="220" id="mov2#mpkg7#opm47#kocu42" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg7#opm47#kocu42#ocp143" name="msj"/>
+    </KOCollectorUnit>
+    <CreateUnit gr:x="390" gr:y="125" id="mov2#mpkg7#opm47#cru13" name="GuardarAuxiliar" entity="ent49">
+      <OKLink id="mov2#mpkg7#opm47#cru13#oln562" name="OKFlow562" to="mov2#mpkg7#opm47#okcu49" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg7#opm47#cru13#kln270" name="KOFlow270" to="mov2#mpkg7#opm47#kocu42" automaticCoupling="true"/>
+    </CreateUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,40 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#page135" name="Seleccionar Fedatario" localized="true" layout:frameLayout="None" gr:x="-1170" gr:y="210" layout:pageLayout="gobmxStyle/Empty">
+  <ContentUnits>
+    <PowerIndexUnit id="sv4#page135#pwu37" name="Selecciona Fedatario" linkOrder="sv4#page135#pwu37#ln1514" gr:x="0" gr:y="0" sortable="true" checkable="false" useCountQuery="false" entity="ent96" displayAttributes="ent96#att569 rel50#role99.ent78#att288 ent96#att565 ent96#att566 ent96#att567">
+      <Selector id="sv4#page135#pwu37#su528" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#page135#pwu37#su528#kcond228" name="Busca" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#page135#pwu37#ln1514" name="Seleccionar" to="sv4#page137#enu183" type="normal" validate="true" ajaxOpenWindow="false">
+        <LinkParameter id="sv4#page135#pwu37#ln1514#par4422" name="false_Mostrar" targetVariable="sv4#page137#var131" sourceValue="false"/>
+        <LinkParameter id="sv4#page135#pwu37#ln1514#par4423" name="true_Ocultar" targetVariable="sv4#page137#var132" sourceValue="true"/>
+        <LinkParameter id="sv4#page135#pwu37#ln1514#par4424" name="nombrecfed_Nombre" source="data[].ent96#att572" target="sv4#page137#enu183#fld529_slot"/>
+        <LinkParameter id="sv4#page135#pwu37#ln1514#par4744" name="oidFedatario_PASSING" source="data[].ent96#att564" passing="true"/>
+      </Link>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid" layout:frameLayout="WRDefault/Empty" layout:cellLayout="None">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page135#pwu37">
+          <layout:Link link="sv4#page135#pwu37#ln1514"/>
+          <layout:Attribute attribute="ent96#att569"/>
+          <layout:Attribute attribute="rel50#role99.ent78#att288"/>
+          <layout:Attribute attribute="ent96#att565"/>
+          <layout:Attribute attribute="ent96#att566"/>
+          <layout:Attribute attribute="ent96#att567"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,67 @@
+<SiteView xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv5" name="Funcionario SE" homePage="sv5#pcu2" landmarks="sv5#page29 sv5#page32 sv5#page31" protected="true" bpm:uuids="JKBD85VG_LSUK7T.JKK18GEM_PQ0T35" secure="false">
+  <OperationUnits>
+    <ResumeActivityUnit id="sv5#rau3" name="Resume Activity" gr:x="835" gr:y="485">
+      <KOLink id="sv5#rau3#kln90" name="KOLink4" to="sv5#page33#pu56">
+        <LinkParameter id="sv5#rau3#kln90#par614" name="Error Info_Error Info" source="errorInfo" target="sv5#page33#pu56.errorInfo"/>
+      </KOLink>
+    </ResumeActivityUnit>
+    <StartProcessUnit id="sv5#spu3" name="Start Process" gr:x="845" gr:y="230">
+      <KOLink id="sv5#spu3#kln121" name="KOLink3" to="sv5#page33#pu56">
+        <LinkParameter id="sv5#spu3#kln121#par616" name="Error Info_Error Info" source="errorInfo" target="sv5#page33#pu56.errorInfo"/>
+      </KOLink>
+    </StartProcessUnit>
+    <DeleteUnit id="sv5#dlu5" name="Remove Notification" gr:x="459" gr:y="42" entity="Notification">
+      <Selector id="sv5#dlu5#su74" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv5#dlu5#su74#kcond43" name="oids" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+    <ModifyUnit id="sv5#mfu9" gr:x="322" gr:y="41" name="Mark as Read" entity="Notification" bulk="false">
+      <Selector id="sv5#mfu9#su75" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv5#mfu9#su75#kcond44" name="oids" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+    <LogoutUnit id="sv5#lou5" name="Logout User" gr:x="1415" gr:y="260" siteView="sv1"/>
+    <ProcessUnit id="sv5#pu51" name="Rollback Activity" gr:x="600" gr:y="906" mode="rollback">
+      <KOLink id="sv5#pu51#kln123" name="KOLink9" to="sv5#page33#pu56">
+        <LinkParameter id="sv5#pu51#kln123#par617" name="Error Info_Error Info" source="errorInfo" target="sv5#page33#pu56.errorInfo"/>
+      </KOLink>
+      <OKLink id="sv5#pu51#oln216" name="OKLink42" to="sv5#page30#pdu6" gr:bendpoints="-133,-47,97,-47">
+        <LinkParameter id="sv5#pu51#oln216#par618" name="Process Instance Oid_PASSING_Process Instance Oid" sourceLinkParameter="sv5#page30#pdu6#ln312#par677" target="sv5#page30#pdu6.processInstanceOid"/>
+      </OKLink>
+    </ProcessUnit>
+    <SelectorUnit id="sv5#seu11" name="buscarProceso" gr:x="1255" gr:y="490" entity="ActivityType">
+      <Selector id="sv5#seu11#su39" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv5#seu11#su39#acond21" name="name" predicate="eq" booleanOperator="or" implied="false" attributes="activityTypeName" value="Agregar Fedatario"/>
+      </Selector>
+      <OKLink id="sv5#seu11#oln21" name="OKFlow431" to="sv5#spu4" automaticCoupling="true"/>
+    </SelectorUnit>
+    <StartProcessUnit id="sv5#spu4" name="Start Process" gr:x="1050" gr:y="505">
+      <KOLink id="sv5#spu4#kln16" name="KOFlow16" to="sv5#page33#pu56">
+        <LinkParameter id="sv5#spu4#kln16#par129" name="Error Info_Error Info" source="errorInfo" target="sv5#page33#pu56.errorInfo"/>
+      </KOLink>
+    </StartProcessUnit>
+    <UserActivitiesUnit id="sv5#uau5" name="Active" gr:x="1835" gr:y="500" activityStatus="runnable">
+      <OKLink id="sv5#uau5#oln22" name="OKFlow1224" to="sv5#seu18">
+        <LinkParameter id="sv5#uau5#oln22#par127" name="Activity Instance Oids_oids [oid]" source="activityInstanceOids" target="sv5#seu18#su48#kcond22.activityInstanceOid"/>
+      </OKLink>
+    </UserActivitiesUnit>
+    <SelectorUnit id="sv5#seu18" name="Work Items" gr:x="1670" gr:y="485" entity="ActivityInstance" maxResults="1">
+      <Selector id="sv5#seu18#su48" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv5#seu18#su48#kcond22" name="oids" predicate="in" implied="false"/>
+        <RelationshipRoleCondition id="sv5#seu18#su48#rcond100" name="activityType" predicate="in" implied="true" role="activityType2ActivityInstances"/>
+      </Selector>
+      <SortAttribute attribute="activityInstanceReadyTimestamp" order="descending"/>
+      <OKLink id="sv5#seu18#oln65" name="OKFlow1225" to="sv5#switch23">
+        <LinkParameter id="sv5#seu18#oln65#par128" name="Data Size_Switch" source="dataSize" target="sv5#switch23.switch"/>
+      </OKLink>
+    </SelectorUnit>
+    <ParameterCollectorUnit id="sv5#pcu2" name="agregarFedatario" customURLName="agregarFedatarioFuncionario" gr:x="1960" gr:y="505">
+      <OKLink id="sv5#pcu2#oln66" name="OKFlow1198" to="sv5#uau5" automaticCoupling="true"/>
+    </ParameterCollectorUnit>
+    <SwitchUnit id="sv5#switch23" name="dataSize" gr:x="1520" gr:y="505">
+      <Case value="1"/>
+      <OKLink id="sv5#switch23#oln67" name="OKFlow1240" to="sv5#seu11" automaticCoupling="true"/>
+    </SwitchUnit>
+  </OperationUnits>
+  <layout:LayoutParameter name="show-left-column" value="true" type="page"/>
+</SiteView>

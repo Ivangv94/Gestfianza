@@ -1,0 +1,34 @@
+<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1095" gr:y="935" id="wsv1#port6" name="guardarPoderPersona">
+  <OperationUnits>
+    <SolicitUnit id="wsv1#port6#slu7" name="guardarPoder" invocationStyle="REST" requestMethod="GET" gr:x="0" gr:y="5">
+      <QueryStringParameter id="wsv1#port6#slu7#rrp1" name="curp"/>
+      <QueryStringParameter id="wsv1#port6#slu7#rrp2" name="rfc"/>
+      <QueryStringParameter id="wsv1#port6#slu7#rrp3" name="tipoFac"/>
+      <QueryStringParameter id="wsv1#port6#slu7#rrp4" name="descripcionFac"/>
+      <QueryStringParameter id="wsv1#port6#slu7#rrp5" name="fechaOtorgamiento"/>
+      <QueryStringParameter id="wsv1#port6#slu7#rrp6" name="fechaRevocacion"/>
+      <QueryStringParameter id="wsv1#port6#slu7#rrp7" name="cargoPF"/>
+      <QueryStringParameter id="wsv1#port6#slu7#rrp8" name="proceso"/>
+      <OKLink id="wsv1#port6#slu7#oln113" name="OKFlow113" to="wsv1#port6#miu99">
+        <LinkParameter id="wsv1#port6#slu7#oln113#par350" name="cargoPF_cargoPF" source="map(wsv1#port6#slu7#rrp7)" target="wsv1#port6#miu99.mov2#mpkg7#opm47#icu71#icp181"/>
+        <LinkParameter id="wsv1#port6#slu7#oln113#par351" name="descripcionFac_comentariosFacultad" source="map(wsv1#port6#slu7#rrp4)" target="wsv1#port6#miu99.mov2#mpkg7#opm47#icu71#icp183"/>
+        <LinkParameter id="wsv1#port6#slu7#oln113#par352" name="curp_curp" source="map(wsv1#port6#slu7#rrp1)" target="wsv1#port6#miu99.mov2#mpkg7#opm47#icu71#icp184"/>
+        <LinkParameter id="wsv1#port6#slu7#oln113#par353" name="fechaOtorgamiento_fechaOtorgamiento" source="map(wsv1#port6#slu7#rrp5)" target="wsv1#port6#miu99.mov2#mpkg7#opm47#icu71#icp179"/>
+        <LinkParameter id="wsv1#port6#slu7#oln113#par354" name="fechaRevocacion_fechaRevocacion" source="map(wsv1#port6#slu7#rrp6)" target="wsv1#port6#miu99.mov2#mpkg7#opm47#icu71#icp180"/>
+        <LinkParameter id="wsv1#port6#slu7#oln113#par424" name="proceso_proceso" source="map(wsv1#port6#slu7#rrp8)" target="wsv1#port6#miu99.mov2#mpkg7#opm47#icu71#icp188"/>
+        <LinkParameter id="wsv1#port6#slu7#oln113#par481" name="rfc_rfc" source="map(wsv1#port6#slu7#rrp2)" target="wsv1#port6#miu99.mov2#mpkg7#opm47#icu71#icp185"/>
+        <LinkParameter id="wsv1#port6#slu7#oln113#par570" name="tipoFac_tipoFacultad" source="map(wsv1#port6#slu7#rrp3)" target="wsv1#port6#miu99.mov2#mpkg7#opm47#icu71#icp182"/>
+      </OKLink>
+    </SolicitUnit>
+    <ModuleInstanceUnit gr:x="195" gr:y="10" id="wsv1#port6#miu99" action="true" moduleId="mov2#mpkg7#opm47">
+      <OKLink id="wsv1#port6#miu99#oln123" name="OKFlow123" to="wsv1#port6#rsu5">
+        <LinkParameter id="wsv1#port6#miu99#oln123#par4" name="200 - OK_HTTP Status Code" sourceValue="200 - OK" target="wsv1#port6#rsu5.statusCode"/>
+      </OKLink>
+      <KOLink id="wsv1#port6#miu99#kln33" name="KOFlow33" to="wsv1#port6#eru3">
+        <LinkParameter id="wsv1#port6#miu99#kln33#par242" name="msj_HTTP Status Code" source="mov2#mpkg7#opm47#kocu42#ocp143" target="wsv1#port6#eru3.statusCode"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ResponseUnit gr:x="715" gr:y="0" id="wsv1#port6#rsu5" name="Response5" contentType="JSON" statusCode="200"/>
+    <ErrorResponseUnit gr:x="585" gr:y="135" id="wsv1#port6#eru3" name="Error Response3" contentType="XML" statusCode="500"/>
+  </OperationUnits>
+</Port>

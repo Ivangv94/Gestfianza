@@ -1,0 +1,52 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page9" name="Gestionar TyC" gr:x="-225" gr:y="-220" localized="true">
+  <ContentUnits>
+    <SelectorUnit id="sv2#page9#seu50" name="buscarTyC" gr:x="0" gr:y="50" entity="ent5">
+      <Selector id="sv2#page9#seu50#su139" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#page9#seu50#su139#acond18" name="Descripcion" predicate="eq" booleanOperator="or" implied="false" value="TYC" attributes="ent5#att42"/>
+      </Selector>
+      <Link id="sv2#page9#seu50#ln66" name="Flow1262" to="sv2#page9#enu62" type="transport" validate="true">
+        <LinkParameter id="sv2#page9#seu50#ln66#par579" name="texto_TYC visible" source="ent5#att43Array" target="sv2#page9#enu62#fld169_slot"/>
+        <LinkParameter id="sv2#page9#seu50#ln66#par580" name="texto_TyC editable" source="ent5#att43Array" target="sv2#page9#enu62#fld170_slot"/>
+      </Link>
+      <Link id="sv2#page9#seu50#ln72" name="Flow1285" to="sv2#mfu4" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="202,0,-198,75"/>
+    </SelectorUnit>
+    <EntryUnit id="sv2#page9#enu62" name="TyC" linkOrder="sv2#page9#enu62#ln73 sv2#page9#enu62#ln74" gr:x="215" gr:y="0">
+      <Field id="sv2#page9#enu62#fld169" name="TYC visible" type="text" modifiable="false" preloaded="true" contentType="text/html"/>
+      <Field id="sv2#page9#enu62#fld170" name="TyC editable" type="text" modifiable="true" preloaded="true" contentType="text/html"/>
+      <Link id="sv2#page9#enu62#ln73" name="Editar TyC" to="sv2#seu45" type="normal" automaticCoupling="true" validate="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true"/>
+      <Link id="sv2#page9#enu62#ln74" name="Guardar" to="sv2#mfu4" type="normal" validate="true" ajaxEnabled="true">
+        <LinkParameter id="sv2#page9#enu62#ln74#par599" name="TyC editable_PASSING" source="sv2#page9#enu62#fld170" passing="true"/>
+        <LinkParameter id="sv2#page9#enu62#ln74#par1863" name="TyC editable_texto" source="sv2#page9#enu62#fld170" target="sv2#mfu4.ent5#att43"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page9#enu62" layout:frameLayout="None">
+          <layout:Field field="sv2#page9#enu62#fld169" layout:fieldLayout="WRDefault/FieldValue" layout:fieldVisibilityConditionVariable="sv2#page9#var10" layout:fieldVisibilityConditionNegated="true"/>
+          <layout:Field field="sv2#page9#enu62#fld170" layout:fieldVisibilityConditionVariable="sv2#page9#var10"/>
+          <layout:Link link="sv2#page9#enu62#ln73" layout:linkVisibilityConditionVariable="sv2#page9#var10" layout:linkVisibilityConditionNegated="true" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv2#page9#enu62#ln74" layout:linkVisibilityConditionVariable="sv2#page9#var10" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:LayoutParameter name="show-label" value="false" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv2#page9#var10" name="editar" type="boolean" value="false"/>
+</Page>

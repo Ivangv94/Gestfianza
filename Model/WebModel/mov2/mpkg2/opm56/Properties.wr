@@ -1,0 +1,46 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="200" id="mov2#mpkg2#opm56" name="armarNombreCompleto">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg2#opm56#icu80" name="Input Collector" gr:x="30" gr:y="60">
+      <OKLink id="mov2#mpkg2#opm56#icu80#oln601" name="OKFlow601" to="mov2#mpkg2#opm56#miu77" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <ModuleInstanceUnit gr:x="305" gr:y="65" id="mov2#mpkg2#opm56#miu77" action="true" moduleId="mov2#mpkg6#opm57" linkOrder="mov2#mpkg2#opm56#miu77#ln498">
+      <OKLink id="mov2#mpkg2#opm56#miu77#oln602" name="OKFlow602" to="mov2#mpkg2#opm56#inn35">
+        <LinkParameter id="mov2#mpkg2#opm56#miu77#oln602#par2195" name="nombre_Input" source="mov2#mpkg6#opm57#okcu55#ocp169" target="mov2#mpkg2#opm56#inn35.isnotnull"/>
+      </OKLink>
+      <Link id="mov2#mpkg2#opm56#miu77#ln498" name="Flow498" to="mov2#mpkg2#opm56#mfu15" type="transport" validate="true" gr:bendpoints="120,-63,-655,-63;674,-63,-101,-63" codeRef="mov2#mpkg6#opm57#okcu55">
+        <LinkParameter id="mov2#mpkg2#opm56#miu77#ln498#par2196" name="OK.user_oid_KeyCondition99 [oid]" source="mov2#mpkg6#opm57#okcu55#ocp156" target="mov2#mpkg2#opm56#mfu15#su193#kcond99.userOID"/>
+      </Link>
+      <KOLink id="mov2#mpkg2#opm56#miu77#kln290" name="KOFlow290" to="mov2#mpkg2#opm56#kocu48" gr:bendpoints="58,74,-1002,4">
+        <LinkParameter id="mov2#mpkg2#opm56#miu77#kln290#par2197" name="msj_msj" source="mov2#mpkg6#opm57#kocu47#ocp155" target="mov2#mpkg2#opm56#kocu48#ocp174"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <GetUnit gr:x="355" gr:y="-45" id="mov2#mpkg2#opm56#gtu32" name="getUser" contextParameters="UserCtxParam" linkOrder="mov2#mpkg2#opm56#gtu32#ln497">
+      <Link id="mov2#mpkg2#opm56#gtu32#ln497" name="Flow497" to="mov2#mpkg2#opm56#miu77" type="transport" validate="true">
+        <LinkParameter id="mov2#mpkg2#opm56#gtu32#ln497#par2194" name="UserCtxParam.oid_oid" source="mov2#mpkg2#opm56#gtu32.UserCtxParam" target="mov2#mpkg2#opm56#miu77.mov2#mpkg6#opm57#icu81#icp197"/>
+      </Link>
+    </GetUnit>
+    <ScriptUnit gr:x="845" gr:y="70" id="mov2#mpkg2#opm56#scu67" name="armarNombreCompleto">
+      <OKLink id="mov2#mpkg2#opm56#scu67#oln604" name="OKFlow604" to="mov2#mpkg2#opm56#mfu15"/>
+      <KOLink id="mov2#mpkg2#opm56#scu67#kln288" name="KOFlow288" to="mov2#mpkg2#opm56#kocu48" gr:bendpoints="91,71,-439,1">
+        <LinkParameter id="mov2#mpkg2#opm56#scu67#kln288#par2198" name="Error al armar el nombre completo del usuario._msj" sourceValue="Error al armar el nombre completo del usuario." target="mov2#mpkg2#opm56#kocu48#ocp174"/>
+      </KOLink>
+    </ScriptUnit>
+    <OKCollectorUnit gr:x="1350" gr:y="60" id="mov2#mpkg2#opm56#okcu56" name="OK"/>
+    <KOCollectorUnit gr:x="1350" gr:y="130" id="mov2#mpkg2#opm56#kocu48" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg2#opm56#kocu48#ocp174" name="msj"/>
+    </KOCollectorUnit>
+    <IsNotNullUnit gr:x="565" gr:y="70" id="mov2#mpkg2#opm56#inn35" name="&#191;Existen Nombre Completo?" emptyStringAsNull="true">
+      <OKLink id="mov2#mpkg2#opm56#inn35#oln603" name="OKFlow603" to="mov2#mpkg2#opm56#kocu48" automaticCoupling="true" gr:bendpoints="96,72,-699,2"/>
+      <KOLink id="mov2#mpkg2#opm56#inn35#kln287" name="KOFlow287" to="mov2#mpkg2#opm56#scu67" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <ModifyUnit gr:x="1125" gr:y="55" id="mov2#mpkg2#opm56#mfu15" name="actualizarPF" entity="ent39">
+      <Selector id="mov2#mpkg2#opm56#mfu15#su193" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg2#opm56#mfu15#su193#kcond99" name="KeyCondition99" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg2#opm56#mfu15#oln605" name="OKFlow605" to="mov2#mpkg2#opm56#okcu56" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg2#opm56#mfu15#kln289" name="KOFlow289" to="mov2#mpkg2#opm56#kocu48" gr:bendpoints="47,69,-238,-1">
+        <LinkParameter id="mov2#mpkg2#opm56#mfu15#kln289#par2199" name="Error al actualizar al usuario._msj" sourceValue="Error al actualizar al usuario." target="mov2#mpkg2#opm56#kocu48#ocp174"/>
+      </KOLink>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

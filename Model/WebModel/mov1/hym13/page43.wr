@@ -1,0 +1,199 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym13#page43" name="Credencial de Elector" gr:x="520" gr:y="1155" localized="true">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym13#page43#enu42" name="Form13" gr:x="10" gr:y="125">
+      <Field id="mov1#hym13#page43#enu42#fld80" name="cadena" type="string" modifiable="true" preloaded="true"/>
+      <Link id="mov1#hym13#page43#enu42#ln670" name="Selecciona tipo de INE A, B y C" to="mov1#hym13#page43#enu125" type="transport" validate="true">
+        <LinkParameter id="mov1#hym13#page43#enu42#ln670#par2230" name="cadena_cadena" source="mov1#hym13#page43#enu42#fld80" target="mov1#hym13#page43#enu125#fld234_slot"/>
+        <LinkParameter id="mov1#hym13#page43#enu42#ln670#par2233" name="ap1_PASSING" sourceLinkParameter="mov1#hym13#scu17#ln151#par623" passing="true"/>
+        <LinkParameter id="mov1#hym13#page43#enu42#ln670#par2234" name="ap2_PASSING" sourceLinkParameter="mov1#hym13#scu17#ln151#par624" passing="true"/>
+        <LinkParameter id="mov1#hym13#page43#enu42#ln670#par2235" name="curp_PASSING" sourceLinkParameter="mov1#hym13#scu17#ln151#par625" passing="true"/>
+        <LinkParameter id="mov1#hym13#page43#enu42#ln670#par2244" name="nombres_PASSING" sourceLinkParameter="mov1#hym13#scu17#ln151#par626" passing="true"/>
+        <LinkParameter id="mov1#hym13#page43#enu42#ln670#par2257" name="feNa_PASSING" sourceLinkParameter="mov1#hym13#scu17#ln151#par627" passing="true"/>
+        <LinkParameter id="mov1#hym13#page43#enu42#ln670#par2280" name="rfc_PASSING" sourceLinkParameter="mov1#hym13#scu17#ln151#par2298" passing="true"/>
+      </Link>
+    </EntryUnit>
+    <NoOpContentUnit id="mov1#hym13#page43#gctu17" name="ViewComponent3" gr:x="140" gr:y="20"/>
+    <EntryUnit id="mov1#hym13#page43#enu125" name="Form13" linkOrder="mov1#hym13#page43#enu125#ln665 mov1#hym13#page43#enu125#ln666" gr:x="0" gr:y="0">
+      <Field id="mov1#hym13#page43#enu125#fld234" name="cadena" type="string" modifiable="true" preloaded="true"/>
+      <Link id="mov1#hym13#page43#enu125#ln665" name="Continuar" to="mov1#hym13#scu18" type="normal" validate="true">
+        <LinkParameter id="mov1#hym13#page43#enu125#ln665#par1547" name="cadena_cadena" source="mov1#hym13#page43#enu125#fld234" target="mov1#hym13#scu18.cadena"/>
+        <LinkParameter id="mov1#hym13#page43#enu125#ln665#par2044" name="ap1_PASSING_ap1" sourceLinkParameter="mov1#hym13#page43#enu42#ln670#par2233" target="mov1#hym13#scu18.ap1"/>
+        <LinkParameter id="mov1#hym13#page43#enu125#ln665#par2125" name="ap2_PASSING_ap2" sourceLinkParameter="mov1#hym13#page43#enu42#ln670#par2234" target="mov1#hym13#scu18.ap2"/>
+        <LinkParameter id="mov1#hym13#page43#enu125#ln665#par2225" name="curp_PASSING_curp" sourceLinkParameter="mov1#hym13#page43#enu42#ln670#par2235" target="mov1#hym13#scu18.curp"/>
+        <LinkParameter id="mov1#hym13#page43#enu125#ln665#par2226" name="nombres_PASSING_nombres" sourceLinkParameter="mov1#hym13#page43#enu42#ln670#par2244" target="mov1#hym13#scu18.nombres"/>
+        <LinkParameter id="mov1#hym13#page43#enu125#ln665#par2227" name="feNa_PASSING_feNa" sourceLinkParameter="mov1#hym13#page43#enu42#ln670#par2257" target="mov1#hym13#scu18.feNa"/>
+        <LinkParameter id="mov1#hym13#page43#enu125#ln665#par2228" name="rfc_PASSING" sourceLinkParameter="mov1#hym13#page43#enu42#ln670#par2280" passing="true"/>
+        <LinkParameter id="mov1#hym13#page43#enu125#ln665#par2229" name="rfc_PASSING_rfc" sourceLinkParameter="mov1#hym13#page43#enu42#ln670#par2280" target="mov1#hym13#scu18.rfc"/>
+      </Link>
+      <Link id="mov1#hym13#page43#enu125#ln666" name="Cancelar" to="mov1#hym13#page21" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-508,-12,347,1103;-912,-311,-57,804"/>
+    </EntryUnit>
+    <EntryUnit id="mov1#hym13#page43#enu126" name="Datos de la persona a verificar con INE" gr:x="90" gr:y="140">
+      <Field id="mov1#hym13#page43#enu126#fld236" name="claveElector" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym13#page43#enu126#fld236#mnd68" name="Mandatory12"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym13#page43#enu126#fld237" name="numeroEmision" type="integer" modifiable="true">
+        <VRules/>
+      </Field>
+      <Field id="mov1#hym13#page43#enu126#fld263" name="ocr" type="integer" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym13#page43#enu126#fld263#mnd73" name="Mandatory14"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym13#page43#enu126#fld264" name="anioEmision" type="integer" modifiable="true">
+        <VRules/>
+      </Field>
+      <Field id="mov1#hym13#page43#enu126#fld265" name="anioReg" type="integer" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym13#page43#enu126#fld265#mnd75" name="Mandatory3"/>
+        </VRules>
+      </Field>
+      <Link id="mov1#hym13#page43#enu126#ln671" name="Flow100" to="mov1#hym13#scu18" type="transport" validate="true" gr:bendpoints="47,-152,7,383">
+        <LinkParameter id="mov1#hym13#page43#enu126#ln671#par2283" name="anioEmision_anioEmision" source="mov1#hym13#page43#enu126#fld264" target="mov1#hym13#scu18.anioEmision"/>
+        <LinkParameter id="mov1#hym13#page43#enu126#ln671#par2288" name="anioReg_anioReg" source="mov1#hym13#page43#enu126#fld265" target="mov1#hym13#scu18.anioReg"/>
+        <LinkParameter id="mov1#hym13#page43#enu126#ln671#par2289" name="claveElector_claveElector" source="mov1#hym13#page43#enu126#fld236" target="mov1#hym13#scu18.claveElector"/>
+        <LinkParameter id="mov1#hym13#page43#enu126#ln671#par2290" name="numeroEmision_numEmision" source="mov1#hym13#page43#enu126#fld237" target="mov1#hym13#scu18.numEmision"/>
+        <LinkParameter id="mov1#hym13#page43#enu126#ln671#par2291" name="ocr_ocr" source="mov1#hym13#page43#enu126#fld263" target="mov1#hym13#scu18.ocr"/>
+        <LinkParameter id="mov1#hym13#page43#enu126#ln671#par2292" name="CIC_cic" source="mov1#hym13#page43#enu126#fld266" target="mov1#hym13#scu18.cic"/>
+      </Link>
+      <Field id="mov1#hym13#page43#enu126#fld266" name="CIC" type="string" modifiable="true"/>
+      <Link id="mov1#hym13#page43#enu126#ln281" name="Flow281" to="mov1#hym13#pcu15" type="transport" validate="true">
+        <LinkParameter id="mov1#hym13#page43#enu126#ln281#par1538" name="anioEmision_a&#241;oEmision" source="mov1#hym13#page43#enu126#fld264" target="mov1#hym13#pcu15#pcp22"/>
+        <LinkParameter id="mov1#hym13#page43#enu126#ln281#par1539" name="anioReg_a&#241;oReg" source="mov1#hym13#page43#enu126#fld265" target="mov1#hym13#pcu15#pcp20"/>
+        <LinkParameter id="mov1#hym13#page43#enu126#ln281#par1540" name="CIC_CIC" source="mov1#hym13#page43#enu126#fld266" target="mov1#hym13#pcu15#pcp23"/>
+        <LinkParameter id="mov1#hym13#page43#enu126#ln281#par1541" name="claveElector_claveElector" source="mov1#hym13#page43#enu126#fld236" target="mov1#hym13#pcu15#pcp21"/>
+        <LinkParameter id="mov1#hym13#page43#enu126#ln281#par1542" name="numeroEmision_numEmision" source="mov1#hym13#page43#enu126#fld237" target="mov1#hym13#pcu15#pcp37"/>
+        <LinkParameter id="mov1#hym13#page43#enu126#ln281#par1543" name="ocr_OCR" source="mov1#hym13#page43#enu126#fld263" target="mov1#hym13#pcu15#pcp24"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Field unitId="mov1#hym13#page43#enu42" field="mov1#hym13#page43#enu42#fld80" mode="full" styleClass="hidden"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym13#page43#gctu17" layout:frameLayout="gobmxStyle/inePDF"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym13#page43#enu126" layout:frameLayout="None">
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+          <layout:Field label="Clave de Elector" field="mov1#hym13#page43#enu126#fld236"/>
+          <layout:Field label="N&#250;mero de emisi&#243;n" field="mov1#hym13#page43#enu126#fld237"/>
+          <layout:Field label="N&#250;mero OCR" field="mov1#hym13#page43#enu126#fld263"/>
+          <layout:Field label="A&#241;o de emisi&#243;n" field="mov1#hym13#page43#enu126#fld264"/>
+          <layout:Field label="A&#241;o de registro" field="mov1#hym13#page43#enu126#fld265"/>
+          <layout:Field field="mov1#hym13#page43#enu126#fld266"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym13#page43#enu125" layout:frameLayout="None">
+          <layout:Field field="mov1#hym13#page43#enu125#fld234" styleClass="hidden"/>
+          <layout:Link label="Continuar" link="mov1#hym13#page43#enu125#ln665" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link label="Cancelar" link="mov1#hym13#page43#enu125#ln666" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="mov1#hym13#page43#var13" name="cadena"/>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+  <layout:LayoutParameter name="show-right-column" value="false" type="page"/>
+  <layout:LayoutParameter name="show-page-title" value="true" type="page"/>
+</Page>

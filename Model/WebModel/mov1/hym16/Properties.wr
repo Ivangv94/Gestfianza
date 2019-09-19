@@ -1,0 +1,217 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym16" gr:x="160" gr:y="170" name="Constituir Sociedad Mercantil - Fedatario - Estructura accionaria de la sociedad" bpm:moduleType="activity" bpm:uuids="JKBD85VG_LSUK7T.JKBDMOOB_NY3029" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym16#icu94" name="Input" gr:x="-485" gr:y="55">
+      <OKLink id="mov1#hym16#icu94#oln612" name="OKLink" to="mov1#hym16#apu79"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym16#pu113" name="Complete Activity" mode="completeActivity" gr:x="800" gr:y="0"/>
+    <ProcessUnit id="mov1#hym16#pu114" name="Save Activity" mode="saveActivity" gr:x="800" gr:y="150"/>
+    <ProcessUnit id="mov1#hym16#pu115" name="Leave Activity" mode="leaveActivity" gr:x="850" gr:y="245"/>
+    <ActivityParametersUnit id="mov1#hym16#apu29" name="Set Parameters" gr:x="560" gr:y="100">
+      <OKLink id="mov1#hym16#apu29#oln613" name="OKLink" automaticCoupling="false" to="mov1#hym16#pu113" customDescriptor="false" codeRef="mov1#hym16#page90#enu45#ln154"/>
+      <OKLink id="mov1#hym16#apu29#oln614" name="OKLink" automaticCoupling="false" to="mov1#hym16#pu114" codeRef="mov1#hym16#page90#enu45#ln155"/>
+      <ActivityParameter id="mov1#hym16#apu29#ap8" name="denominacion.OID" bpm:uuid="JO7UDIJ0_2IK787"/>
+      <ActivityParameter id="mov1#hym16#apu29#ap1" name="denominacion" bpm:uuid="JO7UDIJ0_2IK787"/>
+    </ActivityParametersUnit>
+    <SelectorUnit gr:x="0" gr:y="360" id="mov1#hym16#seu127" name="Selector127" entity="ent38" linkOrder="mov1#hym16#seu127#ln887">
+      <Selector id="mov1#hym16#seu127#su110" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym16#seu127#su110#kcond118" name="KeyCondition118" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym16#seu127#oln159" name="OKFlow159" to="mov1#hym16#scu100">
+        <LinkParameter id="mov1#hym16#seu127#oln159#par2688" name="tipoCapital_tipoCapital" source="ent38#att425Array" target="mov1#hym16#scu100.tipoCapital"/>
+      </OKLink>
+      <Link id="mov1#hym16#seu127#ln887" name="Flow887" to="mov1#hym16#page90#hinu2" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
+    <DeleteUnit gr:x="195" gr:y="370" id="mov1#hym16#dlu13" name="Eliminar" entity="ent60">
+      <Selector id="mov1#hym16#dlu13#su236" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym16#dlu13#su236#kcond120" name="KeyCondition120" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+    <CreateUnit gr:x="755" gr:y="425" id="mov1#hym16#cru25" name="Create25" entity="ent60">
+      <OKLink id="mov1#hym16#cru25#oln1161" name="OKFlow1161" to="mov1#hym16#seu250" automaticCoupling="true"/>
+    </CreateUnit>
+    <SelectorUnit gr:x="420" gr:y="445" id="mov1#hym16#seu130" name="Selector130" entity="ent60">
+      <Selector id="mov1#hym16#seu130#su239" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym16#seu130#su239#acond128" name="serieAccion" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att395"/>
+        <AttributesCondition id="mov1#hym16#seu130#su239#acond130" name="tipoAccion" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att391"/>
+      </Selector>
+      <OKLink id="mov1#hym16#seu130#oln207" name="OKFlow207" to="mov1#hym16#inn39">
+        <LinkParameter id="mov1#hym16#seu130#oln207#par612" name="oid_Input" source="ent60#att389Array" target="mov1#hym16#inn39.isnotnull"/>
+        <LinkParameter id="mov1#hym16#seu130#oln207#par3202" name="numAcciones_PASSING" sourceLinkParameter="mov1#hym16#pcu16#oln721#par3200" passing="true"/>
+        <LinkParameter id="mov1#hym16#seu130#oln207#par3203" name="valorAccion_PASSING" sourceLinkParameter="mov1#hym16#pcu16#oln721#par3201" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <ScriptUnit gr:x="905" gr:y="105" id="mov1#hym16#scu24" name="validaSerie"/>
+    <IsNotNullUnit gr:x="590" gr:y="390" id="mov1#hym16#inn39" name="Is Not Null39">
+      <KOLink id="mov1#hym16#inn39#kln329" name="KOFlow329" to="mov1#hym16#cru25">
+        <LinkParameter id="mov1#hym16#inn39#kln329#par3204" name="numAcciones_PASSING_totalAcciones" sourceLinkParameter="mov1#hym16#seu130#oln207#par3202" target="mov1#hym16#cru25.ent60#att392"/>
+        <LinkParameter id="mov1#hym16#inn39#kln329#par3205" name="valorAccion_PASSING_valorAccion" sourceLinkParameter="mov1#hym16#seu130#oln207#par3203" target="mov1#hym16#cru25.ent60#att390"/>
+      </KOLink>
+      <OKLink id="mov1#hym16#inn39#oln723" name="OKFlow723" to="mov1#hym16#mfu22">
+        <LinkParameter id="mov1#hym16#inn39#oln723#par1778" name="Input Value_KeyCondition123 [oid]" source="inputValue" target="mov1#hym16#mfu22#su240#kcond123.ent60#att389"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <SwitchUnit gr:x="660" gr:y="210" id="mov1#hym16#switch5" name="Switch5" linkOrder="mov1#hym16#switch5#ln1030 mov1#hym16#switch5#ln1031">
+      <Case value="Capital Fijo"/>
+      <Case value="Capital Variable"/>
+      <OKLink id="mov1#hym16#switch5#oln708" name="OKFlow708" to="mov1#hym16#pcu16" code="Capital Fijo" gr:bendpoints="-100,23,65,-67">
+        <LinkParameter id="mov1#hym16#switch5#oln708#par3193" name="F_tipoAccion" sourceValue="F" target="mov1#hym16#pcu16#pcp3"/>
+      </OKLink>
+      <OKLink id="mov1#hym16#switch5#oln712" name="OKFlow712" to="mov1#hym16#pcu16" gr:bendpoints="-61,60,104,-30" code="Capital Variable">
+        <LinkParameter id="mov1#hym16#switch5#oln712#par1731" name="V_tipo" sourceValue="V" target="mov1#hym16#pcu16#pcp3"/>
+      </OKLink>
+      <Link id="mov1#hym16#switch5#ln1030" name="Flow1030" to="mov1#hym16#pcu16" type="transport" validate="true" gr:bendpoints="-311,160,104,-135">
+        <LinkParameter id="mov1#hym16#switch5#ln1030#par3221" name="numeroDeAccionesDeCapitalVariable_PASSING_numAcciones" sourceLinkParameter="mov1#hym16#scu135#oln970#par3216" target="mov1#hym16#pcu16#pcp43"/>
+        <LinkParameter id="mov1#hym16#switch5#ln1030#par3222" name="seriesCapitalVariable_PASSING_serie" sourceLinkParameter="mov1#hym16#scu135#oln970#par3218" target="mov1#hym16#pcu16#pcp40"/>
+        <LinkParameter id="mov1#hym16#switch5#ln1030#par3223" name="valorDeLaAccionCapitalVariable_PASSING_valorAccion" sourceLinkParameter="mov1#hym16#scu135#oln970#par3220" target="mov1#hym16#pcu16#pcp42"/>
+      </Link>
+      <Link id="mov1#hym16#switch5#ln1031" name="Flow1031" to="mov1#hym16#pcu16" type="transport" validate="true" gr:bendpoints="-142,200,273,-95">
+        <LinkParameter id="mov1#hym16#switch5#ln1031#par3224" name="numeroDeAcciones_PASSING_numAcciones" sourceLinkParameter="mov1#hym16#scu135#oln970#par3215" target="mov1#hym16#pcu16#pcp43"/>
+        <LinkParameter id="mov1#hym16#switch5#ln1031#par3225" name="series_PASSING_serie" sourceLinkParameter="mov1#hym16#scu135#oln970#par3217" target="mov1#hym16#pcu16#pcp40"/>
+        <LinkParameter id="mov1#hym16#switch5#ln1031#par3226" name="valorDeLaAccion_PASSING_valorAccion" sourceLinkParameter="mov1#hym16#scu135#oln970#par3219" target="mov1#hym16#pcu16#pcp42"/>
+      </Link>
+    </SwitchUnit>
+    <ParameterCollectorUnit gr:x="225" gr:y="475" id="mov1#hym16#pcu16" name="datosSociedad">
+      <CollectorParameter id="mov1#hym16#pcu16#pcp40" name="serie"/>
+      <CollectorParameter id="mov1#hym16#pcu16#pcp3" name="tipoAccion"/>
+      <OKLink id="mov1#hym16#pcu16#oln721" name="OKFlow721" to="mov1#hym16#seu130">
+        <LinkParameter id="mov1#hym16#pcu16#oln721#par1751" name="serie_serieAccion" source="mov1#hym16#pcu16#pcp40" target="mov1#hym16#seu130#su239#acond128"/>
+        <LinkParameter id="mov1#hym16#pcu16#oln721#par1752" name="tipo_tipoAccion" source="mov1#hym16#pcu16#pcp3" target="mov1#hym16#seu130#su239#acond130"/>
+        <LinkParameter id="mov1#hym16#pcu16#oln721#par3200" name="numAcciones_PASSING" source="mov1#hym16#pcu16#pcp43" passing="true"/>
+        <LinkParameter id="mov1#hym16#pcu16#oln721#par3201" name="valorAccion_PASSING" source="mov1#hym16#pcu16#pcp42" passing="true"/>
+      </OKLink>
+      <Link id="mov1#hym16#pcu16#ln609" name="Flow609" to="mov1#hym16#cru25" type="transport" validate="true" gr:bendpoints="265,0,-260,60">
+        <LinkParameter id="mov1#hym16#pcu16#ln609#par1753" name="serie_serieAccion" source="mov1#hym16#pcu16#pcp40" target="mov1#hym16#cru25.ent60#att395"/>
+        <LinkParameter id="mov1#hym16#pcu16#ln609#par1767" name="tipo_tipoAccion" source="mov1#hym16#pcu16#pcp3" target="mov1#hym16#cru25.ent60#att391"/>
+      </Link>
+      <Link id="mov1#hym16#pcu16#ln610" name="Flow610" to="mov1#hym16#mfu22" type="transport" validate="true" gr:bendpoints="119,75,-351,5">
+        <LinkParameter id="mov1#hym16#pcu16#ln610#par1785" name="serie_serieAccion" source="mov1#hym16#pcu16#pcp40" target="mov1#hym16#mfu22.ent60#att395"/>
+        <LinkParameter id="mov1#hym16#pcu16#ln610#par1786" name="tipo_tipoAccion" source="mov1#hym16#pcu16#pcp3" target="mov1#hym16#mfu22.ent60#att391"/>
+        <LinkParameter id="mov1#hym16#pcu16#ln610#par1794" name="oidPM_PersonaMoral.oid(EstructuraAccionariaToPersonaMoral)" source="mov1#hym16#pcu16#pcp41" target="mov1#hym16#mfu22.rel35#role69.userOID"/>
+      </Link>
+      <CollectorParameter id="mov1#hym16#pcu16#pcp41" name="oidPM"/>
+      <CollectorParameter id="mov1#hym16#pcu16#pcp42" name="valorAccion"/>
+      <CollectorParameter id="mov1#hym16#pcu16#pcp43" name="numAcciones"/>
+      <Link id="mov1#hym16#pcu16#ln1228" name="Flow1228" to="mov1#hym16#seu250" type="transport" validate="true" gr:bendpoints="136,82,-519,62;333,81,-322,61;543,82,-112,62">
+        <LinkParameter id="mov1#hym16#pcu16#ln1228#par3817" name="oidPM_KeyCondition188 [oid]" source="mov1#hym16#pcu16#pcp41" target="mov1#hym16#seu250#su422#kcond188.userOID"/>
+      </Link>
+    </ParameterCollectorUnit>
+    <ModifyUnit gr:x="700" gr:y="520" id="mov1#hym16#mfu22" name="Update22" entity="ent60">
+      <Selector id="mov1#hym16#mfu22#su240" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym16#mfu22#su240#kcond123" name="KeyCondition123" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym16#mfu22#oln1162" name="OKFlow1162" to="mov1#hym16#seu250" automaticCoupling="true"/>
+    </ModifyUnit>
+    <ScriptUnit gr:x="0" gr:y="495" id="mov1#hym16#scu100" name="modalidadCapital">
+      <ScriptUnitText xml:space="preserve">#input String tipoCapital
+#output mostrarCF, mostrarCV
+
+Boolean mostrarCF;
+Boolean mostrarCV;
+
+if (tipoCapital == 'F') {
+
+mostrarCF = true;
+mostrarCV = false;
+
+} else
+
+if (tipoCapital == 'V'){
+
+mostrarCF = false;
+mostrarCV = true;
+
+}
+
+return["mostrarCF":mostrarCF, "mostrarCV":mostrarCV]</ScriptUnitText>
+      <OKLink id="mov1#hym16#scu100#oln842" name="OKFlow842" to="mov1#hym16#page90#enu130">
+        <LinkParameter id="mov1#hym16#scu100#oln842#par2689" name="mostrarCF_modalidadCapitalF" source="result(mostrarCF)" targetVariable="mov1#hym16#page90#var65"/>
+        <LinkParameter id="mov1#hym16#scu100#oln842#par2690" name="mostrarCV_modalidadCapitalV" source="result(mostrarCV)" targetVariable="mov1#hym16#page90#var64"/>
+        <LinkParameter id="mov1#hym16#scu100#oln842#par2691" name="Capital Fijo_capitalFijo" sourceValue="Capital Fijo" target="mov1#hym16#page90#enu130#fld343_slot"/>
+      </OKLink>
+    </ScriptUnit>
+    <SwitchUnit gr:x="585" gr:y="-95" id="mov1#hym16#switch70" name="expresion">
+      <Case value="Con expresi&#243;n de valor nominal"/>
+      <Case value="Sin expresi&#243;n de valor nominal"/>
+      <OKLink id="mov1#hym16#switch70#oln911" name="OKFlow911" to="mov1#hym16#page90#enu130" code="Sin expresi&#243;n de valor nominal" gr:bendpoints="-167,35,258,-195">
+        <LinkParameter id="mov1#hym16#switch70#oln911#par3010" name="true_valorNominal" sourceValue="true" targetVariable="mov1#hym16#page90#var81"/>
+      </OKLink>
+      <OKLink id="mov1#hym16#switch70#oln912" name="OKFlow912" to="mov1#hym16#page90#enu130" gr:bendpoints="-207,120,258,-70" code="Con expresi&#243;n de valor nominal">
+        <LinkParameter id="mov1#hym16#switch70#oln912#par3011" name="false_valorNominal" sourceValue="false" targetVariable="mov1#hym16#page90#var81"/>
+      </OKLink>
+    </SwitchUnit>
+    <ScriptUnit gr:x="855" gr:y="330" id="mov1#hym16#scu124" name="valorNominal">
+      <ScriptUnitText xml:space="preserve">#input String seleccionVN
+#output mosrtar
+
+boolean mostrar;
+
+if(seleccionVN == "Con expresi&#243;n de valor nominal"){
+mostrar = false;
+
+}else mostrar = true;
+
+return["mostrar":mostrar]</ScriptUnitText>
+      <OKLink id="mov1#hym16#scu124#oln913" name="OKFlow913" to="mov1#hym16#page90#enu130">
+        <LinkParameter id="mov1#hym16#scu124#oln913#par3009" name="mosrtar_valorNominal" source="result(mosrtar)" targetVariable="mov1#hym16#page90#var81"/>
+      </OKLink>
+    </ScriptUnit>
+    <ActivityParametersUnit id="mov1#hym16#apu79" name="Get Parameters" gr:x="-220" gr:y="100">
+      <ActivityParameter id="mov1#hym16#apu79#ap24" name="denominacion.OID" bpm:uuid="JO7UDIJ0_2IK787"/>
+      <OKLink id="mov1#hym16#apu79#oln969" name="OKFlow969" to="mov1#hym16#seu127" gr:bendpoints="67,170,-138,-95">
+        <LinkParameter id="mov1#hym16#apu79#oln969#par3175" name="denominacion.denominacion_KeyCondition118 [oid]" source="mov1#hym16#apu79#ap24" target="mov1#hym16#seu127#su110#kcond118.userOID"/>
+      </OKLink>
+    </ActivityParametersUnit>
+    <ScriptUnit gr:x="390" gr:y="285" id="mov1#hym16#scu135" name="Script135">
+      <ScriptUnitText xml:space="preserve">#input String capitalFijo, String tipoCapital
+#output resultado
+
+String resultado
+
+if(capitalFijo == "Capital Fijo"  &amp;&amp; tipoCapital.equals(null)){
+
+resultado = "Capital Fijo"
+
+
+}else if (capitalFijo == "Capital Fijo" &amp;&amp; tipoCapital == "Capital Fijo"){
+
+resultado = "Capital Fijo"
+
+}else if (capitalFijo == "Capital Fijo" &amp;&amp; tipoCapital == "Capital Variable"){
+
+resultado = "Capital Variable"
+
+}
+
+return ["resultado":resultado]</ScriptUnitText>
+      <OKLink id="mov1#hym16#scu135#oln970" name="OKFlow970" to="mov1#hym16#switch5">
+        <LinkParameter id="mov1#hym16#scu135#oln970#par3214" name="resultado_Switch" source="result(resultado)" target="mov1#hym16#switch5.switch"/>
+        <LinkParameter id="mov1#hym16#scu135#oln970#par3215" name="numeroDeAcciones_PASSING" sourceLinkParameter="mov1#hym16#page90#enu130#ln1029#par3187" passing="true"/>
+        <LinkParameter id="mov1#hym16#scu135#oln970#par3216" name="numeroDeAccionesDeCapitalVariable_PASSING" sourceLinkParameter="mov1#hym16#page90#enu130#ln932#par3185" passing="true"/>
+        <LinkParameter id="mov1#hym16#scu135#oln970#par3217" name="series_PASSING" sourceLinkParameter="mov1#hym16#page90#enu130#ln1029#par3188" passing="true"/>
+        <LinkParameter id="mov1#hym16#scu135#oln970#par3218" name="seriesCapitalVariable_PASSING" sourceLinkParameter="mov1#hym16#page90#enu130#ln932#par3177" passing="true"/>
+        <LinkParameter id="mov1#hym16#scu135#oln970#par3219" name="valorDeLaAccion_PASSING" sourceLinkParameter="mov1#hym16#page90#enu130#ln1029#par3189" passing="true"/>
+        <LinkParameter id="mov1#hym16#scu135#oln970#par3220" name="valorDeLaAccionCapitalVariable_PASSING" sourceLinkParameter="mov1#hym16#page90#enu130#ln932#par3186" passing="true"/>
+      </OKLink>
+    </ScriptUnit>
+    <ModifyUnit gr:x="1260" gr:y="515" id="mov1#hym16#mfu40" name="actualizaPM" entity="ent38">
+      <Selector id="mov1#hym16#mfu40#su421" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym16#mfu40#su421#kcond187" name="KeyCondition187" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+    <SelectorUnit gr:x="895" gr:y="515" id="mov1#hym16#seu250" name="buscaPM" entity="ent38">
+      <Selector id="mov1#hym16#seu250#su422" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym16#seu250#su422#kcond188" name="KeyCondition188" predicate="in" implied="false"/>
+        <AttributesCondition id="mov1#hym16#seu250#su422#acond192" name="AttCondition192" predicate="null" booleanOperator="or" implied="false" attributes="ent38#att466"/>
+      </Selector>
+      <OKLink id="mov1#hym16#seu250#oln1163" name="OKFlow1163" to="mov1#hym16#inn59">
+        <LinkParameter id="mov1#hym16#seu250#oln1163#par3818" name="oid_Input" source="userOIDArray" target="mov1#hym16#inn59.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="1070" gr:y="535" id="mov1#hym16#inn59" name="cuenta con capital">
+      <OKLink id="mov1#hym16#inn59#oln1164" name="OKFlow1164" to="mov1#hym16#mfu40">
+        <LinkParameter id="mov1#hym16#inn59#oln1164#par3819" name="Input Value_KeyCondition187 [oid]" source="inputValue" target="mov1#hym16#mfu40#su421#kcond187.userOID"/>
+      </OKLink>
+      <KOLink id="mov1#hym16#inn59#kln480" name="KOFlow480" to="mov1#hym16#page90" automaticCoupling="true"/>
+    </IsNotNullUnit>
+  </OperationUnits>
+</HybridModule>

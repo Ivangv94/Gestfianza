@@ -1,0 +1,36 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym9#page81" name="Firmar Poder" gr:x="10" gr:y="-5">
+  <ContentUnits>
+    <ActivityParametersUnit id="mov1#hym9#page81#apu26" name="Get Parameters" gr:x="0" gr:y="0"/>
+    <EntryUnit id="mov1#hym9#page81#enu35" name="Buttons" gr:x="260" gr:y="165">
+      <Link id="mov1#hym9#page81#enu35#ln268" name="Finish" type="normal" validate="true" automaticCoupling="false" to="mov1#hym9#apu24"/>
+      <Link id="mov1#hym9#page81#enu35#ln500" name="Save and Work Later" type="normal" validate="false" automaticCoupling="false" to="mov1#hym9#apu24" gr:bendpoints="164,-32,-64,96"/>
+      <Link id="mov1#hym9#page81#enu35#ln501" name="Cancel" type="normal" validate="false" automaticCoupling="false" to="mov1#hym9#pu23"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12" label="Buttons" layout:cellLayout="Print Frame">
+        <layout:Unit unitId="mov1#hym9#page81#enu35" layout:frameLayout="None">
+          <layout:Link link="mov1#hym9#page81#enu35#ln268">
+            <layout:LayoutParameter name="confirmation" value="true" type="link"/>
+            <layout:LayoutParameter name="confirm-message" value="Confirm Finish" type="link"/>
+          </layout:Link>
+          <layout:Link link="mov1#hym9#page81#enu35#ln500"/>
+          <layout:Link link="mov1#hym9#page81#enu35#ln501"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="auto-refresh" value="true" type="page"/>
+</Page>

@@ -1,0 +1,114 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov2#mpkg1#hym12#page35" name="Firmar con e.firma" secure="false" localized="true" ignoreMasterPage="true" layout:style="gobmxStyle" layout:pageLayout="gobmxStyle/Empty" layout:linkLayout="gobmxStyle/Default" gr:x="345" gr:y="-70">
+  <ContentUnits>
+    <EntryUnit id="mov2#mpkg1#hym12#page35#enu31" name="Firmar con e.firma" linkOrder="mov2#mpkg1#hym12#page35#enu31#ln369" gr:x="0" gr:y="80">
+      <Field id="mov2#mpkg1#hym12#page35#enu31#fld53" name="PasswordEfirma:" type="password" modifiable="true" preloaded="false">
+        <VRules>
+          <MandatoryValidationRule id="mov2#mpkg1#hym12#page35#enu31#fld53#mnd5" name="NotNull"/>
+        </VRules>
+      </Field>
+      <Field id="mov2#mpkg1#hym12#page35#enu31#fld54" name="ArchivoCER" type="blob" modifiable="true" preloaded="false">
+        <VRules>
+          <MandatoryValidationRule id="mov2#mpkg1#hym12#page35#enu31#fld54#mnd6" name="NotNull"/>
+          <RegularExpressionValidationRule id="mov2#mpkg1#hym12#page35#enu31#fld54#regex4" name="extensionCER" errorMessage="Solamente se aceptan archivos con extensi&#243;n .cer &#243; .CER" regex="^.*\.(cer|CER)$"/>
+        </VRules>
+      </Field>
+      <Field id="mov2#mpkg1#hym12#page35#enu31#fld55" name="ArchivoKEY" type="blob" modifiable="true" preloaded="false">
+        <VRules>
+          <MandatoryValidationRule id="mov2#mpkg1#hym12#page35#enu31#fld55#mnd7" name="NotNull"/>
+          <RegularExpressionValidationRule id="mov2#mpkg1#hym12#page35#enu31#fld55#regex5" name="extensionKEY" errorMessage="Solamente se aceptan archivos con extensi&#243;n .key &#243; .KEY" regex="^.*\.(key|KEY)$"/>
+        </VRules>
+      </Field>
+      <Field id="mov2#mpkg1#hym12#page35#enu31#fld56" name="xmlOriginal" type="text" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="mov2#mpkg1#hym12#page35#enu31#fld57" name="curpOrfcFirmante" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="mov2#mpkg1#hym12#page35#enu31#fld58" name="folio" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="mov2#mpkg1#hym12#page35#enu31#fld59" name="rfcOcurp" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Link id="mov2#mpkg1#hym12#page35#enu31#ln369" name="Firmar con e.firma" to="mov2#mpkg1#hym12#miu31" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="mov2#mpkg1#hym12#page35#enu31#ln369#par1191" name="ambiente_ambiente" source="mov2#mpkg1#hym12#page35#enu31#fld61" target="mov2#mpkg1#hym12#miu31.mov2#mpkg1#opm26#icu36#icp104"/>
+        <LinkParameter id="mov2#mpkg1#hym12#page35#enu31#ln369#par1192" name="xmlOriginal_cadenaOriginal" source="mov2#mpkg1#hym12#page35#enu31#fld56" target="mov2#mpkg1#hym12#miu31.mov2#mpkg1#opm26#icu36#icp103"/>
+        <LinkParameter id="mov2#mpkg1#hym12#page35#enu31#ln369#par1193" name="ArchivoCER_CER" source="mov2#mpkg1#hym12#page35#enu31#fld54" target="mov2#mpkg1#hym12#miu31.mov2#mpkg1#opm26#icu36#icp102"/>
+        <LinkParameter id="mov2#mpkg1#hym12#page35#enu31#ln369#par1194" name="PasswordEfirma:_contrasenia" source="mov2#mpkg1#hym12#page35#enu31#fld53" target="mov2#mpkg1#hym12#miu31.mov2#mpkg1#opm26#icu36#icp101"/>
+        <LinkParameter id="mov2#mpkg1#hym12#page35#enu31#ln369#par1195" name="rfcOcurp_CURPoRFCdelFirmante" source="mov2#mpkg1#hym12#page35#enu31#fld59" target="mov2#mpkg1#hym12#miu31.mov2#mpkg1#opm26#icu36#icp100"/>
+        <LinkParameter id="mov2#mpkg1#hym12#page35#enu31#ln369#par1196" name="folio_folio" source="mov2#mpkg1#hym12#page35#enu31#fld58" target="mov2#mpkg1#hym12#miu31.mov2#mpkg1#opm26#icu36#icp99"/>
+        <LinkParameter id="mov2#mpkg1#hym12#page35#enu31#ln369#par1197" name="ArchivoKEY_KEY" source="mov2#mpkg1#hym12#page35#enu31#fld55" target="mov2#mpkg1#hym12#miu31.mov2#mpkg1#opm26#icu36#icp98"/>
+        <LinkParameter id="mov2#mpkg1#hym12#page35#enu31#ln369#par1198" name="proceso_proceso" source="mov2#mpkg1#hym12#page35#enu31#fld63" target="mov2#mpkg1#hym12#miu31.mov2#mpkg1#opm26#icu36#icp105"/>
+        <LinkParameter id="mov2#mpkg1#hym12#page35#enu31#ln369#par1199" name="ultimoNodo_ultimoNodo" source="mov2#mpkg1#hym12#page35#enu31#fld60" target="mov2#mpkg1#hym12#miu31.mov2#mpkg1#opm26#icu36#icp97"/>
+      </Link>
+      <Field id="mov2#mpkg1#hym12#page35#enu31#fld60" name="ultimoNodo" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="mov2#mpkg1#hym12#page35#enu31#fld61" name="ambiente" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="mov2#mpkg1#hym12#page35#enu31#fld62" name="xmlAfirmar" type="blob" modifiable="false" preloaded="true" hidden="false"/>
+      <Field id="mov2#mpkg1#hym12#page35#enu31#fld63" name="proceso" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Link id="mov2#mpkg1#hym12#page35#enu31#ln370" name="Flow289" to="mov2#mpkg1#hym12#okcu32" type="transport" validate="true" gr:bendpoints="118,-49,-717,-49;664,-50,-171,-50">
+        <LinkParameter id="mov2#mpkg1#hym12#page35#enu31#ln370#par937" name="xmlAfirmar_doc" source="mov2#mpkg1#hym12#page35#enu31#fld62" target="mov2#mpkg1#hym12#okcu32#ocp97"/>
+        <LinkParameter id="mov2#mpkg1#hym12#page35#enu31#ln370#par938" name="folio_nombreArchivo" source="mov2#mpkg1#hym12#page35#enu31#fld58" target="mov2#mpkg1#hym12#okcu32#ocp93"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit id="mov2#mpkg1#hym12#page35#mssu12" name="mensajeDeError" gr:x="245" gr:y="235"/>
+    <MultiMessageUnit id="mov2#mpkg1#hym12#page35#mssu13" name="Instrucciones" gr:x="15" gr:y="0">
+      <Message xml:space="preserve">Introduciendo los siguientes datos plasmar&#225;s tu e.firma en un documento XML (que se almacena permanentemente en el Archivo Digital) y en un PDF para mejor visualizaci&#243;n, con m&#250;ltiples c&#243;digos de seguridad que garantizan su autenticidad, integridad, confidencialidad, no repudio y almacenamiento seguro.</Message>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid" layout:frameLayout="None">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov2#mpkg1#hym12#page35#mssu13" layout:unitVisibilityConditionVariable="mov2#mpkg1#hym12#page35#var24" layout:unitVisibilityConditionNegated="true"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov2#mpkg1#hym12#page35#mssu12" layout:unitVisibilityConditionVariable="mov2#mpkg1#hym12#page35#var24">
+          <layout:LayoutParameter name="messageType" value="danger" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov2#mpkg1#hym12#page35#enu31" manualFields="true" manualFieldOrder="mov2#mpkg1#hym12#page35#enu31#fld54 mov2#mpkg1#hym12#page35#enu31#fld55 mov2#mpkg1#hym12#page35#enu31#fld53">
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+          <layout:LayoutParameter name="mandatory-fields" value="true" type="unit"/>
+          <layout:LayoutParameter name="show-title" value="false" type="frame"/>
+          <layout:LayoutParameter name="panel-type" value="warning" type="frame"/>
+          <layout:Link link="mov2#mpkg1#hym12#page35#enu31#ln369" styleClass="pull-right firmar">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Field field="mov2#mpkg1#hym12#page35#enu31#fld54" styleClass="btn-file fileCer"/>
+          <layout:Field field="mov2#mpkg1#hym12#page35#enu31#fld55" styleClass="btn-file fileKey"/>
+          <layout:Field field="mov2#mpkg1#hym12#page35#enu31#fld53" styleClass="pwdPrivateKey"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="mov2#mpkg1#hym12#page35#var24" name="mensajeErrorEncendido" type="boolean" value="0"/>
+</Page>

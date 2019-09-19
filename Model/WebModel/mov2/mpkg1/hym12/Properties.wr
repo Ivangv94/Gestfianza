@@ -1,0 +1,93 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg1#hym12" name="firmarConEfirma" gr:x="0" gr:y="105">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg1#hym12#icu40" gr:x="-240" gr:y="-30">
+      <InputCollectorParameter id="mov2#mpkg1#hym12#icu40#icp126" name="ultimoNodo"/>
+      <InputCollectorParameter id="mov2#mpkg1#hym12#icu40#icp127" name="xmlOriginal"/>
+      <InputCollectorParameter id="mov2#mpkg1#hym12#icu40#icp128" name="rfcOcurp"/>
+      <OKLink id="mov2#mpkg1#hym12#icu40#oln288" name="Start" to="mov2#mpkg1#hym12#gxu7">
+        <LinkParameter id="mov2#mpkg1#hym12#icu40#oln288#par909" name="xmlOriginal_Text" source="mov2#mpkg1#hym12#icu40#icp127" target="mov2#mpkg1#hym12#gxu7.text"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#mpkg1#hym12#icu40#icp129" name="folio"/>
+      <Link id="mov2#mpkg1#hym12#icu40#ln362" name="Flow7088" to="mov2#mpkg1#hym12#scu42" type="transport" validate="true" gr:bendpoints="87,27,-138,-103;86,130,-139,0">
+        <LinkParameter id="mov2#mpkg1#hym12#icu40#ln362#par910" name="folio_folio" source="mov2#mpkg1#hym12#icu40#icp129" target="mov2#mpkg1#hym12#scu42.folio"/>
+      </Link>
+      <Link id="mov2#mpkg1#hym12#icu40#ln363" name="Flow7095" to="mov2#mpkg1#hym12#scu43" type="transport" validate="true" gr:bendpoints="81,344,-144,-1">
+        <LinkParameter id="mov2#mpkg1#hym12#icu40#ln363#par911" name="folio_folio" source="mov2#mpkg1#hym12#icu40#icp129" target="mov2#mpkg1#hym12#scu43.folio"/>
+      </Link>
+      <Link id="mov2#mpkg1#hym12#icu40#ln364" name="Flow7098" to="mov2#mpkg1#hym12#page35#enu31" type="transport" validate="true" gr:bendpoints="140,-45,-425,-75;425,-42,-140,-72">
+        <LinkParameter id="mov2#mpkg1#hym12#icu40#ln364#par912" name="folio_folio" source="mov2#mpkg1#hym12#icu40#icp129" target="mov2#mpkg1#hym12#page35#enu31#fld58_slot"/>
+        <LinkParameter id="mov2#mpkg1#hym12#icu40#ln364#par913" name="rfcOcurp_rfcOcurp" source="mov2#mpkg1#hym12#icu40#icp128" target="mov2#mpkg1#hym12#page35#enu31#fld59_slot"/>
+        <LinkParameter id="mov2#mpkg1#hym12#icu40#ln364#par914" name="ultimoNodo_ultimoNodo" source="mov2#mpkg1#hym12#icu40#icp126" target="mov2#mpkg1#hym12#page35#enu31#fld60_slot"/>
+        <LinkParameter id="mov2#mpkg1#hym12#icu40#ln364#par915" name="ambiente_ambiente" source="mov2#mpkg1#hym12#icu40#icp131" target="mov2#mpkg1#hym12#page35#enu31#fld61_slot"/>
+        <LinkParameter id="mov2#mpkg1#hym12#icu40#ln364#par916" name="proceso_proceso" source="mov2#mpkg1#hym12#icu40#icp130" target="mov2#mpkg1#hym12#page35#enu31#fld63_slot"/>
+        <LinkParameter id="mov2#mpkg1#hym12#icu40#ln364#par917" name="rfcOcurp_curpOrfcFirmante" source="mov2#mpkg1#hym12#icu40#icp128" target="mov2#mpkg1#hym12#page35#enu31#fld57_slot"/>
+      </Link>
+      <InputCollectorParameter id="mov2#mpkg1#hym12#icu40#icp130" name="proceso"/>
+      <InputCollectorParameter id="mov2#mpkg1#hym12#icu40#icp131" name="ambiente"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#mpkg1#hym12#okcu32" name="OK " gr:x="1155" gr:y="0">
+      <OutputCollectorParameter id="mov2#mpkg1#hym12#okcu32#ocp93" name="nombreArchivo"/>
+      <OutputCollectorParameter id="mov2#mpkg1#hym12#okcu32#ocp94" name="url"/>
+      <OutputCollectorParameter id="mov2#mpkg1#hym12#okcu32#ocp95" name="selloDigital"/>
+      <OutputCollectorParameter id="mov2#mpkg1#hym12#okcu32#ocp96" name="blobXMLfirmado"/>
+      <OutputCollectorParameter id="mov2#mpkg1#hym12#okcu32#ocp97" name="doc"/>
+    </OKCollectorUnit>
+    <ModuleInstanceUnit id="mov2#mpkg1#hym12#miu31" gr:x="810" gr:y="40" action="true" moduleId="mov2#mpkg1#opm26">
+      <OKLink id="mov2#mpkg1#hym12#miu31#oln289" name="OKFlow99" to="mov2#mpkg1#hym12#okcu32">
+        <LinkParameter id="mov2#mpkg1#hym12#miu31#oln289#par918" name="selloDigital_selloDigital" source="mov2#mpkg1#opm26#okcu29#ocp81" target="mov2#mpkg1#hym12#okcu32#ocp95"/>
+        <LinkParameter id="mov2#mpkg1#hym12#miu31#oln289#par919" name="uriVerificacion_url" source="mov2#mpkg1#opm26#okcu29#ocp80" target="mov2#mpkg1#hym12#okcu32#ocp94"/>
+        <LinkParameter id="mov2#mpkg1#hym12#miu31#oln289#par920" name="blobXMLfirmado_blobXMLfirmado" source="mov2#mpkg1#opm26#okcu29#ocp83" target="mov2#mpkg1#hym12#okcu32#ocp96"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#hym12#miu31#ln365" name="KOFlow43" to="mov2#mpkg1#hym12#page35#mssu12" type="transport" gr:bendpoints="1,156,261,1" codeRef="mov2#mpkg1#opm26#kocu23">
+        <LinkParameter id="mov2#mpkg1#hym12#miu31#ln365#par921" name="Error_Shown Messages" source="mov2#mpkg1#opm26#kocu23#ocp84" target="mov2#mpkg1#hym12#page35#mssu12.shownMessages"/>
+        <LinkParameter id="mov2#mpkg1#hym12#miu31#ln365#par922" name="1_mensajeErrorEncendido" targetVariable="mov2#mpkg1#hym12#page35#var24" sourceValue="1"/>
+      </Link>
+      <KOLink id="mov2#mpkg1#hym12#miu31#kln160" name="KOFlow499" to="mov2#mpkg1#hym12#page35" automaticCoupling="true" gr:bendpoints="-110,26,270,-4"/>
+    </ModuleInstanceUnit>
+    <GetXMLUnit id="mov2#mpkg1#hym12#gxu7" name="canonicalizar" gr:x="40" gr:y="15" sourceType="text">
+      <OKLink id="mov2#mpkg1#hym12#gxu7#oln290" name="OKFlow796" to="mov2#mpkg1#hym12#scu42" automaticCoupling="true"/>
+      <Link id="mov2#mpkg1#hym12#gxu7#ln366" name="Flow7096" to="mov2#mpkg1#hym12#scu43" type="transport" validate="true" gr:bendpoints="116,0,116,-345;115,317,115,-28;97,319,97,-26">
+        <LinkParameter id="mov2#mpkg1#hym12#gxu7#ln366#par923" name="Retrieved XML Document_xmlCanonicalizado" source="xmlDocument" target="mov2#mpkg1#hym12#scu43.xmlCanonicalizado"/>
+      </Link>
+    </GetXMLUnit>
+    <ScriptUnit id="mov2#mpkg1#hym12#scu42" name="Crear nombre XML" gr:x="25" gr:y="145">
+      <OKLink id="mov2#mpkg1#hym12#scu42#oln291" name="OKFlow797" to="mov2#mpkg1#hym12#cru17">
+        <LinkParameter id="mov2#mpkg1#hym12#scu42#oln291#par924" name="nombreXml_archivo" source="result(nombreXml)" target="mov2#mpkg1#hym12#cru17.ent4#att34"/>
+        <LinkParameter id="mov2#mpkg1#hym12#scu42#oln291#par925" name="nombreXml_archivo [file name]" source="result(nombreXml)" target="mov2#mpkg1#hym12#cru17.ent4#att34_name"/>
+      </OKLink>
+      <ScriptUnitText xml:space="preserve">#input folio
+#output nombreXml
+
+nombreXml = folio + ".xml";
+
+return["nombreXml":nombreXml]</ScriptUnitText>
+    </ScriptUnit>
+    <CreateUnit id="mov2#mpkg1#hym12#cru17" name="Crear basurita" gr:x="40" gr:y="245" entity="ent4">
+      <OKLink id="mov2#mpkg1#hym12#cru17#oln292" name="OKFlow800" to="mov2#mpkg1#hym12#scu43">
+        <LinkParameter id="mov2#mpkg1#hym12#cru17#oln292#par926" name="docPdf_archivo" source="ent4#att34Array" target="mov2#mpkg1#hym12#scu43.archivo"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#hym12#cru17#ln367" name="Flow241" to="mov2#mpkg1#hym12#page35#enu31" type="transport" validate="true">
+        <LinkParameter id="mov2#mpkg1#hym12#cru17#ln367#par927" name="archivo_xmlAfirmar" source="ent4#att34Array" target="mov2#mpkg1#hym12#page35#enu31#fld62_slot"/>
+      </Link>
+    </CreateUnit>
+    <ScriptUnit id="mov2#mpkg1#hym12#scu43" name="Escribir en disco duro" gr:x="15" gr:y="360">
+      <ScriptUnitText xml:space="preserve">#input archivo,String xmlCanonicalizado,folio
+#output nombreDocumentoFirmado,xmlCanonicalizado
+
+String bufferDir = rtx.getUploadDirectory();
+String dirtyArchivo = archivo.toString()
+String archivoXml = dirtyArchivo.substring(1,dirtyArchivo.length()-1)
+String ubicacionArchivo = bufferDir + archivoXml
+
+new File(ubicacionArchivo).write(xmlCanonicalizado)
+
+nombreDoc = folio + ".xml"; 
+
+return["nombreDocumentoFirmado":nombreDoc,"xmlCanonicalizado":xmlCanonicalizado]</ScriptUnitText>
+      <Link id="mov2#mpkg1#hym12#scu43#ln368" name="OKFlow803" to="mov2#mpkg1#hym12#page35#enu31" type="transport">
+        <LinkParameter id="mov2#mpkg1#hym12#scu43#ln368#par928" name="xmlCanonicalizado_xmlOriginal" source="result(xmlCanonicalizado)" target="mov2#mpkg1#hym12#page35#enu31#fld56_slot"/>
+      </Link>
+      <OKLink id="mov2#mpkg1#hym12#scu43#oln293" name="OKFlow100" to="mov2#mpkg1#hym12#page35#enu31" automaticCoupling="true" gr:bendpoints="341,1,1,316"/>
+    </ScriptUnit>
+  </OperationUnits>
+</HybridModule>

@@ -1,0 +1,49 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page68" name="prueba WS" gr:x="455" gr:y="-250" localized="true">
+  <ContentUnits>
+    <EntryUnit id="sv2#page68#enu63" name="Prueba" linkOrder="sv2#page68#enu63#ln75 sv2#page68#enu63#ln499 sv2#page68#enu63#ln507 sv2#page68#enu63#ln515" gr:x="0" gr:y="0">
+      <Field id="sv2#page68#enu63#fld171" name="uri" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv2#page68#enu63#fld172" name="request" type="text" modifiable="true" preloaded="true"/>
+      <Field id="sv2#page68#enu63#fld173" name="response" type="text" modifiable="false" preloaded="true"/>
+      <Link id="sv2#page68#enu63#ln75" name="Probar" to="sv2#scu4" type="normal" validate="true">
+        <LinkParameter id="sv2#page68#enu63#ln75#par605" name="request_dirtyXmlRequest" source="sv2#page68#enu63#fld172" target="sv2#scu4.dirtyXmlRequest"/>
+        <LinkParameter id="sv2#page68#enu63#ln75#par606" name="uri_endpointURL" source="sv2#page68#enu63#fld171" target="sv2#scu4.endpointURL"/>
+        <LinkParameter id="sv2#page68#enu63#ln75#par608" name="uri_PASSING" source="sv2#page68#enu63#fld171" passing="true"/>
+        <LinkParameter id="sv2#page68#enu63#ln75#par62" name="request_PASSING" source="sv2#page68#enu63#fld172" passing="true"/>
+      </Link>
+      <Link id="sv2#page68#enu63#ln499" name="Flow499" to="sv2#miu78" type="normal" validate="true">
+        <LinkParameter id="sv2#page68#enu63#ln499#par2200" name="RUFA950512HB5_rfc" sourceValue="RUFA950512HB5" target="sv2#miu78.mov2#opm9#icu16#icp20"/>
+      </Link>
+      <Link id="sv2#page68#enu63#ln507" name="INE" to="sv2#scu70" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#page68#enu63#ln515" name="ineprod" to="sv2#scu72" type="normal" automaticCoupling="true" validate="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page68#enu63" layout:frameLayout="None">
+          <layout:Field field="sv2#page68#enu63#fld171"/>
+          <layout:Field field="sv2#page68#enu63#fld172"/>
+          <layout:Field field="sv2#page68#enu63#fld173"/>
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+          <layout:Link link="sv2#page68#enu63#ln75" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv2#page68#enu63#ln499"/>
+          <layout:Link link="sv2#page68#enu63#ln507"/>
+          <layout:Link link="sv2#page68#enu63#ln515"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

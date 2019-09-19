@@ -1,0 +1,54 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page70" name="Subir archivo" gr:x="1455" gr:y="-80" localized="true">
+  <ContentUnits>
+    <EntryUnit id="sv2#page70#enu65" name="Subir archivo" linkOrder="sv2#page70#enu65#ln95" gr:x="0" gr:y="0">
+      <Field id="sv2#page70#enu65#fld176" name="archivo (.war)" type="blob" modifiable="true"/>
+      <Link id="sv2#page70#enu65#ln95" name="Subir" to="sv2#cru4" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true" ajaxWaitingDialogMessage="Procesando ...">
+        <LinkParameter id="sv2#page70#enu65#ln95#par1865" name="archivo (.war)_archivo" source="sv2#page70#enu65#fld176" target="sv2#cru4.ent6#att39"/>
+        <LinkParameter id="sv2#page70#enu65#ln95#par1866" name="archivo (.war)_archivo [file name]" source="sv2#page70#enu65#fld157" target="sv2#cru4.ent6#att39_name"/>
+      </Link>
+      <Field id="sv2#page70#enu65#fld157" name="nombre" type="string" modifiable="true" preloaded="false"/>
+    </EntryUnit>
+    <MultiMessageUnit id="sv2#page70#mssu18" name="Mensajes" gr:x="10" gr:y="70"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv2#page70#mssu18"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv2#page70#enu65" layout:frameLayout="None">
+          <layout:Link link="sv2#page70#enu65#ln95" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+          <layout:Field field="sv2#page70#enu65#fld176"/>
+          <layout:Field field="sv2#page70#enu65#fld157"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

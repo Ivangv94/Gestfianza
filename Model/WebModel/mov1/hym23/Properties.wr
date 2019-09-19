@@ -1,0 +1,56 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym23" gr:x="2740" gr:y="85" name="Modulo de fedatario - Fedatario - Agregar Personal" bpm:moduleType="activity" bpm:uuids="JKBD85VG_LSUK7T.JKU859WZ_PJD7Q1" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym23#icu53" name="Input" gr:x="-470" gr:y="105">
+      <OKLink id="mov1#hym23#icu53#oln409" name="OKLink" automaticCoupling="true" to="mov1#hym23#page8"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym23#pu12" name="Complete Activity" mode="completeActivity" gr:x="995" gr:y="-95"/>
+    <ProcessUnit id="mov1#hym23#pu13" name="Save Activity" mode="saveActivity" gr:x="1010" gr:y="-10"/>
+    <ProcessUnit id="mov1#hym23#pu14" name="Leave Activity" mode="leaveActivity" gr:x="765" gr:y="75"/>
+    <ActivityParametersUnit id="mov1#hym23#apu46" name="Set Parameters" gr:x="760" gr:y="-35">
+      <OKLink id="mov1#hym23#apu46#oln410" name="OKLink" automaticCoupling="false" to="mov1#hym23#pu12" codeRef="mov1#hym23#page8#enu68#ln49"/>
+      <OKLink id="mov1#hym23#apu46#oln411" name="OKLink" automaticCoupling="false" to="mov1#hym23#pu13" codeRef="mov1#hym23#page8#enu68#ln50"/>
+    </ActivityParametersUnit>
+    <ExcelUnit gr:x="-220" gr:y="165" id="mov1#hym23#exu4" name="Carga Archivo" mode="read" format="xls" sourceType="blob">
+      <OKLink id="mov1#hym23#exu4#oln418" name="OKFlow418" to="mov1#hym23#lpu3">
+        <LinkParameter id="mov1#hym23#exu4#oln418#par378" name="curp_Input Array" source="mov1#hym23#exu4#ci7Array" target="mov1#hym23#lpu3.array"/>
+        <LinkParameter id="mov1#hym23#exu4#oln418#par468" name="rfc_rfc" source="mov1#hym23#exu4#ci8Array" target="mov1#hym23#lpu3#lsa2"/>
+      </OKLink>
+      <CellInfo id="mov1#hym23#exu4#ci7" name="curp" type="string" preserveCellStyle="false" autoSizeColumn="true" column="A" rows="2:"/>
+      <CellInfo id="mov1#hym23#exu4#ci8" name="rfc" type="string" preserveCellStyle="false" autoSizeColumn="true" column="B" rows="2:"/>
+    </ExcelUnit>
+    <LoopUnit gr:x="-210" gr:y="260" id="mov1#hym23#lpu3" name="Iteraciones">
+      <OKLink id="mov1#hym23#lpu3#oln419" name="OKFlow419" to="mov1#hym23#miu41" code="next">
+        <LinkParameter id="mov1#hym23#lpu3#oln419#par376" name="Next Element_curp" source="next" target="mov1#hym23#miu41.mov2#mpkg3#opm13#icu32#icp11"/>
+        <LinkParameter id="mov1#hym23#lpu3#oln419#par414" name="Personal del fedatario_rol" sourceValue="Personal del fedatario" target="mov1#hym23#miu41.mov2#mpkg3#opm13#icu32#icp12"/>
+        <LinkParameter id="mov1#hym23#lpu3#oln419#par469" name="Next Element (rfc)_rfc" source="mov1#hym23#lpu3#lsa2" target="mov1#hym23#miu41.mov2#mpkg3#opm13#icu32#icp18"/>
+      </OKLink>
+      <OKLink id="mov1#hym23#lpu3#oln432" name="OKFlow432" to="mov1#hym23#page8" automaticCoupling="true" code="end"/>
+      <SecondaryArray id="mov1#hym23#lpu3#lsa2" name="rfc"/>
+    </LoopUnit>
+    <ModuleInstanceUnit gr:x="-250" gr:y="380" id="mov1#hym23#miu41" action="true" moduleId="mov2#mpkg3#opm13">
+      <OKLink id="mov1#hym23#miu41#oln420" name="OKFlow420" to="mov1#hym23#lpu3" automaticCoupling="true" gr:bendpoints="-33,-69,-33,56"/>
+      <KOLink id="mov1#hym23#miu41#kln84" name="KOFlow84" to="mov1#hym23#page8#mssu17" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="65" gr:y="380" id="mov1#hym23#miu42" action="true" moduleId="mov2#mpkg3#opm13">
+      <KOLink id="mov1#hym23#miu42#kln85" name="KOFlow85" to="mov1#hym23#page8#mssu17">
+        <LinkParameter id="mov1#hym23#miu42#kln85#par3900" name="msj_Shown Messages" source="mov2#mpkg3#opm13#kocu4#ocp11" target="mov1#hym23#page8#mssu17.shownMessages"/>
+      </KOLink>
+      <OKLink id="mov1#hym23#miu42#oln421" name="OKFlow421" to="mov1#hym23#miu44" gr:bendpoints="99,50,-476,50;467,50,-108,50" ajaxOpenWindow="true" ajaxWindowModal="true" ajaxWindowWidth="600" ajaxWindowHeight="200">
+        <LinkParameter id="mov1#hym23#miu42#oln421#par410" name="Se agrego el rol correctamente._mensaje" target="mov1#hym23#miu44.mov2#hym10#icu29#icp89" source="mov2#mpkg3#opm13#okcu2#ocp264"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="315" gr:y="380" id="mov1#hym23#miu43" action="true" moduleId="mov2#mpkg3#opm14">
+      <KOLink id="mov1#hym23#miu43#kln86" name="KOFlow86" to="mov1#hym23#page8#mssu17" automaticCoupling="true"/>
+      <OKLink id="mov1#hym23#miu43#oln422" name="OKFlow422" to="mov1#hym23#miu44" automaticCoupling="true" ajaxOpenWindow="true" ajaxWindowWidth="600" ajaxWindowHeight="400" ajaxWindowModal="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="560" gr:y="380" id="mov1#hym23#miu44" action="false" moduleId="mov2#hym10">
+      <KOLink id="mov1#hym23#miu44#kln87" name="KOFlow87" to="mov1#hym23#page8" automaticCoupling="true"/>
+      <OKLink id="mov1#hym23#miu44#oln423" name="OKFlow423" to="mov1#hym23#page8" automaticCoupling="true" gr:bendpoints="-85,-38,350,247"/>
+    </ModuleInstanceUnit>
+    <DeleteUnit gr:x="1420" gr:y="175" id="mov1#hym23#dlu9" name="Eliminar Personal" entity="ent39">
+      <Selector id="mov1#hym23#dlu9#su43" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym23#dlu9#su43#kcond96" name="KeyCondition96" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+  </OperationUnits>
+</HybridModule>

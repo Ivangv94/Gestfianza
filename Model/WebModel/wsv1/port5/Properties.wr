@@ -1,0 +1,13 @@
+<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="555" gr:y="935" id="wsv1#port5" name="inscribirPoderPrueba">
+  <OperationUnits>
+    <SolicitUnit id="wsv1#port5#slu6" name="inscribirPoderPrueba" invocationStyle="SOAP" requestMethod="POST" gr:x="0" gr:y="5">
+      <RequestBodyParameter id="wsv1#port5#slu6#slp10" name="rfcFedatario" minCard="1" maxCard="1"/>
+      <RequestBodyParameter id="wsv1#port5#slu6#slp16" name="poderDescripcion" minCard="1" maxCard="1"/>
+      <OKLink id="wsv1#port5#slu6#oln588" name="OKFlow588" to="wsv1#port5#miu81">
+        <LinkParameter id="wsv1#port5#slu6#oln588#par2205" name="poderDescripcion_poderDescripcion" source="map(wsv1#port5#slu6#slp16)" target="wsv1#port5#miu81.mov2#opm44#icu48#icp194"/>
+        <LinkParameter id="wsv1#port5#slu6#oln588#par2206" name="rfcFedatario_rfcFedatario" source="map(wsv1#port5#slu6#slp10)" target="wsv1#port5#miu81.mov2#opm44#icu48#icp193"/>
+      </OKLink>
+    </SolicitUnit>
+    <ModuleInstanceUnit gr:x="265" gr:y="0" id="wsv1#port5#miu81" action="true" moduleId="mov2#opm44"/>
+  </OperationUnits>
+</Port>

@@ -1,0 +1,626 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-185" gr:y="1310" id="mov2#opm94" name="armaRequestM4">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm94#icu133" gr:x="-30" gr:y="60" linkOrder="mov2#opm94#icu133#ln1101">
+      <InputCollectorParameter id="mov2#opm94#icu133#icp387" name="oidPM"/>
+      <OKLink id="mov2#opm94#icu133#oln461" name="OKFlow461" to="mov2#opm94#seu122">
+        <LinkParameter id="mov2#opm94#icu133#oln461#par243" name="oidPM_oidPM [oid]" source="mov2#opm94#icu133#icp387" target="mov2#opm94#seu122#su197#kcond133.userOID"/>
+      </OKLink>
+      <Link id="mov2#opm94#icu133#ln1101" name="Flow1101" to="mov2#opm94#cru62" type="transport" validate="true" gr:bendpoints="172,-217,-4088,-227;2150,-229,-2110,-239;3850,-219,-410,-229">
+        <LinkParameter id="mov2#opm94#icu133#ln1101#par3408" name="oidPM_oidPM" source="mov2#opm94#icu133#icp387" target="mov2#opm94#cru62.ent44#att439"/>
+      </Link>
+    </InputCollectorUnit>
+    <ScriptUnit id="mov2#opm94#scu139" name="obtenerRequestM4" gr:x="4085" gr:y="80">
+      <ScriptUnitText xml:space="preserve">#input String tipoSocial, String isModalidadCV, String noInstrumento, String volumen, String libro, String deFecha, String tipoFedatario, String llFedatario, String tipoAutoridad, String autoridad, String denominacionRazon,String conDuracion, String idEstado, String idMunicipio, String domicilio, String idOficina, String objetoSocial, String capitalSocialMinimo, String conExpresion, String tipoAdministracion, String conFacultadesPara, String organoDeVigilanciaConformadoPor, String quienAutoriza, String cud, String noExpediente, String fechaAutorizacion, String derivadaDe, String razonSocial, String domicilioSociedad, String noInstrumentoFed, String idTipoDoc, String nacionalidadFed, String nombreSolicitante, curpAccionistas, curpAdministracion, curpNombramientos, curpApoderados, nombreORazon, primerApellido, nacionalidad, rfcAccionistas, participacion, serieAccion, totalSocio, segundoApellido, direccion, fechaNacimiento, fechaConstitucion, valorAccion, nombreAdmin, primerApellidoAdmin, segundoApellidoAdmin, fechaNacORfc, nombramiento, nombreNombramientos, ape1Nombramientos, ape2Nombramientos, rfcNombramientos, cargo, nombramientoFacultades, nombresApoderados, apellidos1Apoderados, apellidos2Apoderados, rfcApoderados, facultadesApoderados
+
+#output m4
+
+/*
+String [] curpAccionistas = ['CAAP930404HDFMXD07','VEGL861115HDFGDS01', 'SINV801112HDFLVL08']
+String [] curpAdministracion =  ['CAAP930404HDFMXD07','VEGL861115HDFGDS01'] 
+String [] curpNombramientos = ['RUFA950512HDFBRX09', 'SINV801112HDFLVL08']
+String [] curpApoderados = ['CAAP930404HDFMXD07','VEGL861115HDFGDS01','SINV801112HDFLVL08']
+String [] nombreORazon = ['PEDRO', 'GUSTAVO VARGAS','VALTER']
+String [] primerApellido = ['CAMPOS', 'VARGAS', 'SILVA']
+String [] nacionalidad = ['MEX', 'MEX', 'MEX']
+String [] rfcAccionistas = ['CAAP930404BD8','VALG940908H86','SINV801112AP7']
+String [] participacion = ['500', '600', '400']
+String [] serieAccion = ['AB', 'AC', 'AB']
+String [] totalSocio = ['500', '600', '400']
+String [] segundoApellido = ['CAMPOS','LOZADA','NAVA']
+String [] direccion = ['NULL', 'NULL', 'NULL']
+String [] fechaNacimiento = ['NULL', 'NULL', 'NULL']
+String [] fechaConstitucion = ['NULL', 'NULL', 'NULL']
+String [] valorAccion = ['NULL', 'NULL', 'NULL']
+String [] nombreAdmin = ['PEDRO', 'GUSTAVO VARGAS']
+String [] primerApellidoAdmin = ['CAMPOS', 'VARGAS']
+String [] segundoApellidoAdmin = ['A&#209;ORVE', 'LOZADA']
+String [] fechaNacORfc = ['CAAP930404BD8','VALG940908H86']
+String [] nombramiento = ['GERENTE', 'SUB GERENTE']
+String [] nombreNombramientos = ['AXEL', 'VALTER']
+String [] ape1Nombramientos = ['RUBIO', 'SILVA']
+String [] ape2Nombramientos = ['FRANCISCO', 'NAVA']
+String [] rfcNombramientos = ['RUFA950512HB5', 'SINV801112AP7']
+String [] cargo = ['TEFSG', 'SKJDHFJKSF']
+String [] nombramientoFacultades = ['kjhadlkhdkajdkjad', 'a&#241;dkjsnkadmnlksjmd']
+String [] nombresApoderados = ['PEDRO', 'GUSTAVO ALBERTO', 'VALTER'] 
+String [] apellidos1Apoderados = ['CAMPOS', 'VARGAS', 'SILVA']
+String [] apellidos2Apoderados = ['A&#209;ORVE', 'LOZADA', 'NAVA']
+String [] rfcApoderados = ['CAAP930404BD8','VALG940908H86','SINV801112AP7'] 
+String [] facultadesApoderados = ['dukjhbckdjsfcniufskjnc', 'csvcdvdvdv', 'sfvdvgdgvdvdvd']
+String tipoSocial = '81'
+String isModalidadCV = 'SI'
+String noInstrumento = '388'
+String volumen = '30'
+String libro = '40'
+String deFecha = '1998/09/09'
+String tipoFedatario = 'Notario p&#250;blico'
+String llFedatario = '2'
+String tipoAutoridad = '?'
+String autoridad = '?'
+String denominacionRazon = 'SAS SA DE CV'
+String conDuracion = '11 a&#241;os'
+String idEstado = '12'
+String idMunicipio = '13'
+String domicilio = '?'
+String idOficina = '1'
+String objetoSocial = 'jhdnjskfnskjfhnsf'
+String capitalSocialMinimo = '10000'
+String conExpresion = 'SI'
+String tipoAdministracion = 'COLEGIADA'
+String conFacultadesPara = 'jbkecjebcjkeb chj'
+String organoDeVigilanciaConformadoPor = 'jsnckjfncdfkjncfd'
+String quienAutoriza = 'SE'
+String cud = '98765'
+String noExpediente = '13243546'
+String fechaAutorizacion = '1998/09/08'
+String derivadaDe = 'Fusi&#243;n'
+String razonSocial = 'SE SA DE CV'
+String domicilioSociedad = 'NULL'
+String noInstrumentoFed = '3'
+String idTipoDoc = '3'
+String nacionalidadFed = 'MEX'
+String nombreSolicitante = 'FED'
+*/
+
+String m4Administracion = ""
+String m4Nombramientos = ""
+String m4Apoderados = ""
+String m4Accionistas = ""
+String m4Fusiones = ""
+
+
+
+
+for (int i = 0; i&lt;curpAccionistas.size(); i++){
+
+if (valorAccion[i].equals('NULL')){valorAccion[i]='?'}
+
+
+m4Accionistas=m4Accionistas+'''&lt;!--1 or more repetitions:--&gt;
+            &lt;m4SuscritoComoSigue&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4Nombre_Denominacion_RazonSocial&gt;'''+nombreORazon[i]+'''&lt;/m4Nombre_Denominacion_RazonSocial&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4PrimerApellido&gt;'''+primerApellido[i]+'''&lt;/m4PrimerApellido&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4SegundoApellido&gt;'''+segundoApellido[i]+'''&lt;/m4SegundoApellido&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4Nacionalidad&gt;'''+nacionalidad[i]+'''&lt;/m4Nacionalidad&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4Direccion&gt;'''+direccion[i]+'''&lt;/m4Direccion&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4CURP&gt;'''+curpAccionistas[i]+'''&lt;/m4CURP&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4RFC&gt;'''+rfcAccionistas[i]+'''&lt;/m4RFC&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4FechaNacimiento&gt;'''+fechaNacimiento[i]+'''&lt;/m4FechaNacimiento&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4FechaConstitucion&gt;'''+fechaConstitucion[i]+'''&lt;/m4FechaConstitucion&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4NoAcciones_PartSociales&gt;'''+participacion[i]+'''&lt;/m4NoAcciones_PartSociales&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4Serie&gt;'''+serieAccion[i]+'''&lt;/m4Serie&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4Valor&gt;'''+valorAccion[i]+'''&lt;/m4Valor&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4Total&gt;'''+totalSocio[i]+'''&lt;/m4Total&gt;
+            &lt;/m4SuscritoComoSigue&gt;'''
+
+       };
+       
+     //  println(m4Accionistas)
+
+for (int i = 0; i&lt;curpAdministracion.size(); i++){
+
+
+m4Administracion=m4Administracion+''' &lt;!--1 or more repetitions:--&gt;
+            &lt;m4ACargoDe&gt;
+               &lt;m4Nombre&gt;'''+nombreAdmin[i]+'''&lt;/m4Nombre&gt;
+               &lt;m4PrimerApellido&gt;'''+primerApellidoAdmin[i]+'''&lt;/m4PrimerApellido&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4SegundoApellido&gt;'''+segundoApellidoAdmin[i]+'''&lt;/m4SegundoApellido&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4RFC_FechaNacimiento&gt;'''+fechaNacORfc[i]+'''&lt;/m4RFC_FechaNacimiento&gt;
+               &lt;m4Nombramiento&gt;'''+nombramiento[i]+'''&lt;/m4Nombramiento&gt;
+            &lt;/m4ACargoDe&gt;'''
+
+
+}
+//println(m4Administracion)
+
+for (int i = 0; i&lt;curpNombramientos.size(); i++){
+m4Nombramientos=m4Nombramientos+'''&lt;!--Zero or more repetitions:--&gt;
+            &lt;m4Nombramientos&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4Nombre&gt;'''+nombreNombramientos[i]+'''&lt;/m4Nombre&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4ApellidoPaterno&gt;'''+ape1Nombramientos[i]+'''&lt;/m4ApellidoPaterno&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4ApellidoMaterno&gt;'''+ape2Nombramientos[i]+'''&lt;/m4ApellidoMaterno&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4RFC_FechaNacimiento&gt;'''+rfcNombramientos[i]+'''&lt;/m4RFC_FechaNacimiento&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4Cargo&gt;'''+cargo[i]+'''&lt;/m4Cargo&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4Facultades&gt;'''+nombramientoFacultades[i]+'''&lt;/m4Facultades&gt;
+            &lt;/m4Nombramientos&gt;'''
+}
+
+//println(m4Nombramientos)
+
+for(int i = 0; i&lt;curpApoderados.size(); i++){
+m4Apoderados =m4Apoderados+'''&lt;!--Zero or more repetitions:--&gt;
+            &lt;m4Apoderados&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4Nombre&gt;'''+nombresApoderados[i]+'''&lt;/m4Nombre&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4ApellidoPaterno&gt;'''+apellidos1Apoderados[i]+'''&lt;/m4ApellidoPaterno&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4ApellidoMaterno&gt;'''+apellidos2Apoderados[i]+'''&lt;/m4ApellidoMaterno&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4RFC_FechaNacimiento&gt;'''+rfcApoderados[i]+'''&lt;/m4RFC_FechaNacimiento&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4Facultades&gt;'''+facultadesApoderados[i]+'''&lt;/m4Facultades&gt;
+            &lt;/m4Apoderados&gt;'''
+}
+//println(m4Apoderados)
+
+
+
+String m4='''&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.siger.ws.siger2.se.gob.mx/"&gt;
+ &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ser:inscripcionSociedadM4&gt;
+         &lt;!--Optional:--&gt;
+         &lt;arg0&gt;
+            &lt;m4IdTipoSocial&gt;''' +tipoSocial+ '''&lt;/m4IdTipoSocial&gt;
+            &lt;m4ConModalidadCapitalVariable&gt;'''+isModalidadCV+'''&lt;/m4ConModalidadCapitalVariable&gt;
+            &lt;m4PorInstrumentoNo&gt;'''+noInstrumento+'''&lt;/m4PorInstrumentoNo&gt;
+            &lt;!--Optional:--&gt;
+            &lt;m4Volumen&gt;'''+volumen+'''&lt;/m4Volumen&gt;
+            &lt;!--Optional:--&gt;
+            &lt;m4Libro&gt;'''+libro+'''&lt;/m4Libro&gt;
+            &lt;m4DeFecha&gt;'''+deFecha+'''&lt;/m4DeFecha&gt;
+            &lt;m4OtorgadoAnte&gt;'''+tipoFedatario+'''&lt;/m4OtorgadoAnte&gt;
+            &lt;!--Optional:--&gt;
+            &lt;m4IdFedatario&gt;'''+llFedatario+'''&lt;/m4IdFedatario&gt;
+            &lt;!--Optional:--&gt;
+            &lt;m4TipoAutoridad&gt;'''+tipoAutoridad+'''&lt;/m4TipoAutoridad&gt;
+            &lt;!--Optional:--&gt;
+            &lt;m4Autoridad&gt;'''+autoridad+'''&lt;/m4Autoridad&gt;
+            &lt;m4SociedadDenominada&gt;'''+denominacionRazon+'''&lt;/m4SociedadDenominada&gt;
+            &lt;m4Duracion&gt;'''+conDuracion+'''&lt;/m4Duracion&gt;
+            &lt;m4DomicilioSocialEn_IdEdo&gt;'''+idEstado+'''&lt;/m4DomicilioSocialEn_IdEdo&gt;
+            &lt;m4DomicilioSocialEn_IdMun&gt;'''+idMunicipio+'''&lt;/m4DomicilioSocialEn_IdMun&gt;
+            &lt;m4DomicilioSocialEn_Domicilio&gt;'''+domicilio+'''&lt;/m4DomicilioSocialEn_Domicilio&gt;
+            &lt;m4IdOficina&gt;'''+idOficina+'''&lt;/m4IdOficina&gt;
+            &lt;m4ObjetoSocial&gt;'''+objetoSocial+'''&lt;/m4ObjetoSocial&gt;
+            &lt;m4CapitalSocialMin&gt;'''+capitalSocialMinimo+'''&lt;/m4CapitalSocialMin&gt;
+            &lt;m4ConExpresionNominal&gt;'''+conExpresion+'''&lt;/m4ConExpresionNominal&gt;
+            '''+m4Accionistas+
+            '''&lt;m4Administracion&gt;'''+tipoAdministracion+'''&lt;/m4Administracion&gt;
+            &lt;m4ConFacultadesPara&gt;'''+conFacultadesPara+'''&lt;/m4ConFacultadesPara&gt;
+            '''+m4Administracion+'''
+            
+            '''+m4Nombramientos+'''
+            
+            '''+m4Apoderados+
+            
+            '''&lt;!--Optional:--&gt;
+            &lt;m4OrganoVigilanciaConformadoPor&gt;'''+organoDeVigilanciaConformadoPor+'''&lt;/m4OrganoVigilanciaConformadoPor&gt;
+            &lt;m4IdAutorizacionPermisoDeLa&gt;'''+quienAutoriza+'''&lt;/m4IdAutorizacionPermisoDeLa&gt;'''+
+            '''&lt;!--Optional:--&gt;
+            &lt;m4CUD&gt;'''+cud+'''&lt;/m4CUD&gt;
+            &lt;!--Optional:--&gt;
+            &lt;m4ExpedienteNo&gt;'''+noExpediente+'''&lt;/m4ExpedienteNo&gt;
+            &lt;m4Fecha&gt;'''+fechaAutorizacion+'''&lt;/m4Fecha&gt;
+            &lt;!--Optional:--&gt;
+            &lt;m4OtrasAutorizaciones&gt;?&lt;/m4OtrasAutorizaciones&gt;
+            &lt;!--Optional:--&gt;
+            &lt;m4SeConstituyoPorSuscripcionPublica&gt;?&lt;/m4SeConstituyoPorSuscripcionPublica&gt;
+            &lt;!--Optional:--&gt;
+            &lt;m4SociedadDerivadaDe&gt;'''+derivadaDe+'''&lt;/m4SociedadDerivadaDe&gt;'''+
+            '''&lt;!--Zero or more repetitions:--&gt;
+            &lt;m4SociedadesRelacionadasFusionEscision&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4Denominacion_RazonSocial&gt;'''+razonSocial+'''&lt;/m4Denominacion_RazonSocial&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4Domicilio&gt;'''+domicilioSociedad+'''&lt;/m4Domicilio&gt;
+               &lt;!--Optional:--&gt;
+               &lt;m4FME_AntecedenteRegistral&gt;?&lt;/m4FME_AntecedenteRegistral&gt;
+            &lt;/m4SociedadesRelacionadasFusionEscision&gt;'''+
+
+            '''&lt;m4NoDocumento&gt;'''+noInstrumentoFed+'''&lt;/m4NoDocumento&gt;
+            &lt;m4IdTipoDocumento&gt;'''+idTipoDoc+'''&lt;/m4IdTipoDocumento&gt;
+            &lt;m4Nacionalidad&gt;'''+nacionalidadFed+'''&lt;/m4Nacionalidad&gt;
+            &lt;m4Solicitante&gt;'''+nombreSolicitante+'''&lt;/m4Solicitante&gt;
+         &lt;/arg0&gt;
+      &lt;/ser:inscripcionSociedadM4&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;'''
+           
+            
+           
+            
+           
+//println(m4)
+
+return["m4":m4]&#8203;</ScriptUnitText>
+      <OKLink id="mov2#opm94#scu139#oln1081" name="OKFlow1081" to="mov2#opm94#cru62">
+        <LinkParameter id="mov2#opm94#scu139#oln1081#par2335" name="m4_request" source="result(m4)" target="mov2#opm94#cru62.ent44#att291"/>
+      </OKLink>
+      <KOLink id="mov2#opm94#scu139#kln458" name="KOFlow458" to="mov2#opm94#kocu84" gr:bendpoints="88,58,-292,-12">
+        <LinkParameter id="mov2#opm94#scu139#kln458#par3597" name="Error en el script para armar el request_mensaje" sourceValue="Error en el script para armar el request" target="mov2#opm94#kocu84#ocp262"/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit id="mov2#opm94#scu140" name="concatenarCadenas" gr:x="1145" gr:y="65" linkOrder="mov2#opm94#scu140#ln1098">
+      <ScriptUnitText xml:space="preserve">#input curpAdministracion, facultadesAdmin, descripcionesAdmin, curpOrgano, descripcionOrgano
+#output administracion, organo
+
+/*
+String [] curpAdministracion =  ['CAAP930404HDFMXD07','VEGL861115HDFGDS01']
+String [] facultadesAdmin = ['jkhacsbdkcjhdfcb sdfhjkcs fdkchjdcbakjhcbadhjf', 'TODakjbcbk j adfkcjfdAS2']
+String [] descripcionesAdmin = ['desc1 akuzxbjkhcbf cjfhcb jf', 'desc2 ajfhcbabkfducjhbd fk cadkfjh']
+
+String [] curpOrgano = ['CAAP930404HDFMXD07', 'VEGL861115HDFGDS01', 'SINV801112HDFLVL08']
+String [] descripcionOrgano = ['dshjdhxajhcbshjfsfd', 'ad&#241;xoamelk srfdksj cnss', 'xlsdknccksjd ekdhnaedj slhdc']
+*/
+
+String concatenaFacultades
+String concatenaOrgano
+
+ArrayList&lt;String&gt; administracion = new ArrayList&lt;String&gt;();
+ArrayList&lt;String&gt; organo = new ArrayList&lt;String&gt;();
+
+for (int i = 0; i&lt;curpAdministracion.size(); i++) {
+
+concatenaFacultades =curpAdministracion[i] + "|"+ "Facultad:" + facultadesAdmin[i] + "|"+ "Descripci&#243;n:" + descripcionesAdmin[i]
+administracion.add(concatenaFacultades)
+
+//println(concatenaFacultades)
+
+}
+
+for (int i = 0; i&lt;curpOrgano.size(); i++) {
+
+ concatenaOrgano = curpOrgano[i] + "|" + "Descripci&#243;n:" + descripcionOrgano[i]
+
+organo.add(concatenaOrgano)
+
+}
+//String adminM4 = '''&lt;m4ConFacultadesPara&gt;'''+administracion+'''&lt;/m4ConFacultadesPara&gt;'''
+//println(administracion)
+//println(adminM4)
+//println(organo)
+return["administracion":administracion, "organo":organo]</ScriptUnitText>
+      <OKLink id="mov2#opm94#scu140#oln1015" name="OKFlow1015" to="mov2#opm94#seu199">
+        <LinkParameter id="mov2#opm94#scu140#oln1015#par3552" name="Accionista_TIPOPF" sourceValue="Accionista" target="mov2#opm94#seu199#su340#acond185"/>
+      </OKLink>
+      <Link id="mov2#opm94#scu140#ln1098" name="Flow1098" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="42,-204,-2893,-219;1430,-214,-1505,-229;2683,-157,-252,-172">
+        <LinkParameter id="mov2#opm94#scu140#ln1098#par3267" name="administracion_conFacultadesPara" source="result(administracion)" target="mov2#opm94#scu139.conFacultadesPara"/>
+        <LinkParameter id="mov2#opm94#scu140#ln1098#par3321" name="organo_organoDeVigilanciaConformadoPor" source="result(organo)" target="mov2#opm94#scu139.organoDeVigilanciaConformadoPor"/>
+      </Link>
+    </ScriptUnit>
+    <SelectorUnit gr:x="235" gr:y="55" id="mov2#opm94#seu122" name="buscaPM" entity="ent38" linkOrder="mov2#opm94#seu122#ln1102">
+      <Selector id="mov2#opm94#seu122#su197" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm94#seu122#su197#kcond133" name="oidPM" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu122#oln462" name="OKFlow462" to="mov2#opm94#seu170">
+        <LinkParameter id="mov2#opm94#seu122#oln462#par3409" name="FAD_AttCondition165" sourceValue="FAD" target="mov2#opm94#seu170#su337#acond165"/>
+        <LinkParameter id="mov2#opm94#seu122#oln462#par3410" name="oid_RoleCondition203 [oid]" source="userOIDArray" target="mov2#opm94#seu170#su337#rcond203.userOID"/>
+      </OKLink>
+      <Link id="mov2#opm94#seu122#ln40" name="Flow40" to="mov2#opm94#seu162" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="93,59,-442,59;186,70,-239,55;402,60,-133,60"/>
+      <Link id="mov2#opm94#seu122#ln601" name="Flow601" to="mov2#opm94#seu198" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="110,82,-635,77;327,86,-418,81;596,83,-149,78"/>
+      <Link id="mov2#opm94#seu122#ln954" name="Flow954" to="mov2#opm94#seu199" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="96,93,-1044,83;551,97,-589,87;902,85,-238,75"/>
+      <Link id="mov2#opm94#seu122#ln973" name="Flow973" to="mov2#opm94#seu201" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="75,116,-1315,31;658,123,-732,38;1056,122,-334,37"/>
+      <Link id="mov2#opm94#seu122#ln975" name="Flow975" to="mov2#opm94#seu202" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="117,-93,-1528,-118;801,-89,-844,-114;1531,-91,-114,-116"/>
+      <Link id="mov2#opm94#seu122#ln976" name="Flow976" to="mov2#opm94#seu203" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="59,-97,-1801,-122;913,-97,-947,-122;1828,-97,-32,-122"/>
+      <Link id="mov2#opm94#seu122#ln977" name="Flow977" to="mov2#opm94#seu204" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="55,143,-2030,118;1024,155,-1061,130;2029,156,-56,131"/>
+      <Link id="mov2#opm94#seu122#ln978" name="Flow978" to="mov2#opm94#seu206" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="32,178,-2268,153;1119,197,-1181,172;2117,182,-183,157"/>
+      <Link id="mov2#opm94#seu122#ln1087" name="Flow1087" to="mov2#opm94#seu209" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="93,212,-3062,192;1555,227,-1600,207;3135,205,-20,185"/>
+      <Link id="mov2#opm94#seu122#ln1089" name="Flow1089" to="mov2#opm94#seu210" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="74,226,-3336,201;1696,244,-1714,219;3150,232,-260,207"/>
+      <Link id="mov2#opm94#seu122#ln1094" name="Flow1094" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="163,-165,-3547,-170;1846,-188,-1864,-193;3487,-151,-223,-156">
+        <LinkParameter id="mov2#opm94#seu122#ln1094#par3017" name="tipoCapital_isModalidadCV" source="ent38#att425Array" target="mov2#opm94#scu139.isModalidadCV"/>
+        <LinkParameter id="mov2#opm94#seu122#ln1094#par3024" name="tipoSociedad_tipoSocial" source="ent38#att460Array" target="mov2#opm94#scu139.tipoSocial"/>
+        <LinkParameter id="mov2#opm94#seu122#ln1094#par3184" name="razonSocial_denominacionRazon" source="ent38#att255Array" target="mov2#opm94#scu139.denominacionRazon"/>
+        <LinkParameter id="mov2#opm94#seu122#ln1094#par3249" name="objetoSocial_objetoSocial" source="ent38#att462Array" target="mov2#opm94#scu139.objetoSocial"/>
+        <LinkParameter id="mov2#opm94#seu122#ln1094#par3330" name="CUDoNumExpediente_cud" source="ent38#att461Array" target="mov2#opm94#scu139.cud"/>
+        <LinkParameter id="mov2#opm94#seu122#ln1094#par3331" name="fechaAutorizacionMUA_fechaAutorizacion" source="ent38#att459Array" target="mov2#opm94#scu139.fechaAutorizacion"/>
+        <LinkParameter id="mov2#opm94#seu122#ln1094#par3392" name="CUDoNumExpediente_noExpediente" source="ent38#att461Array" target="mov2#opm94#scu139.noExpediente"/>
+        <LinkParameter id="mov2#opm94#seu122#ln1094#par3396" name="quienAutoriza_quienAutoriza" source="ent38#att477Array" target="mov2#opm94#scu139.quienAutoriza"/>
+        <LinkParameter id="mov2#opm94#seu122#ln1094#par3397" name="razonSocial_razonSocial" source="ent38#att255Array" target="mov2#opm94#scu139.razonSocial"/>
+      </Link>
+      <Link id="mov2#opm94#seu122#ln1095" name="Flow1095" to="mov2#opm94#seu211" type="transport" validate="true" gr:bendpoints="62,235,-3588,205;1790,261,-1860,231;3170,240,-480,210">
+        <LinkParameter id="mov2#opm94#seu122#ln1095#par3026" name="PersonaMoralToinstrumentos.oid_KeyCondition142 [oid]" source="rel59#role118_ent76#att470Array" target="mov2#opm94#seu211#su381#kcond142.ent76#att470"/>
+      </Link>
+      <Link id="mov2#opm94#seu122#ln1102" name="Flow1102" to="mov2#opm94#seu156" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="58,-80,-272,-100;231,-83,-99,-103"/>
+    </SelectorUnit>
+    <SelectorUnit gr:x="535" gr:y="55" id="mov2#opm94#seu156" name="buscaAdministracion" entity="ent64">
+      <Selector id="mov2#opm94#seu156#su245" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu156#su245#rcond55" name="RoleCondition55" predicate="in" implied="false" role="rel42#role84"/>
+        <RelationshipRoleCondition id="mov2#opm94#seu156#su245#rcond242" name="RoleCondition242" predicate="in" implied="false" role="rel34#role67"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu156#oln530" name="OKFlow530" to="mov2#opm94#seu212">
+        <LinkParameter id="mov2#opm94#seu156#oln530#par3411" name="AdministracionToPersonaFisica.oid_KeyCondition154 [oid]" source="rel34#role68_userOIDArray" target="mov2#opm94#seu212#su382#kcond154.userOID"/>
+      </OKLink>
+      <Link id="mov2#opm94#seu156#ln944" name="Flow944" to="mov2#opm94#scu140" type="transport" validate="true" gr:bendpoints="138,-58,-642,-53;392,-60,-388,-55;685,-57,-95,-52">
+        <LinkParameter id="mov2#opm94#seu156#ln944#par695" name="descripcion_descripcionesAdmin" source="ent64#att405Array" target="mov2#opm94#scu140.descripcionesAdmin"/>
+        <LinkParameter id="mov2#opm94#seu156#ln944#par854" name="facultad_facultadesAdmin" source="ent64#att404Array" target="mov2#opm94#scu140.facultadesAdmin"/>
+      </Link>
+      <Link id="mov2#opm94#seu156#ln1097" name="Flow1097" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="-1,249,-3716,239;1872,273,-1843,263;3006,254,-709,244">
+        <LinkParameter id="mov2#opm94#seu156#ln1097#par3255" name="tipo_tipoAdministracion" source="ent64#att403Array" target="mov2#opm94#scu139.tipoAdministracion"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="730" gr:y="55" id="mov2#opm94#seu162" name="obtenerOrgano" entity="ent69" linkOrder="mov2#opm94#seu162#ln953">
+      <Selector id="mov2#opm94#seu162#su303" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu162#su303#rcond202" name="RoleCondition202" predicate="in" implied="false" role="rel46#role91"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu162#oln943" name="OKFlow943" to="mov2#opm94#seu198" automaticCoupling="true"/>
+      <Link id="mov2#opm94#seu162#ln953" name="Flow953" to="mov2#opm94#scu140" type="transport" validate="true" gr:bendpoints="115,69,-290,74;211,71,-194,76;302,68,-103,73">
+        <LinkParameter id="mov2#opm94#seu162#ln953#par2330" name="descripcionOrgano_descripcionOrgano" source="ent69#att447Array" target="mov2#opm94#scu140.descripcionOrgano"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="375" gr:y="55" id="mov2#opm94#seu170" name="obtenerPfAdmin" entity="ent39">
+      <Selector id="mov2#opm94#seu170#su337" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu170#su337#rcond203" name="RoleCondition203" predicate="in" implied="false" role="rel20#role40"/>
+        <AttributesCondition id="mov2#opm94#seu170#su337#acond165" name="AttCondition165" predicate="eq" booleanOperator="or" implied="false" attributes="ent39#att426"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu170#oln925" name="OKFlow925" to="mov2#opm94#seu156" automaticCoupling="true" gr:bendpoints="78,21,-97,6"/>
+      <Link id="mov2#opm94#seu170#ln1086" name="Flow1086" to="mov2#opm94#seu209" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="54,194,-2761,179;1392,210,-1423,195;2785,187,-30,172"/>
+    </SelectorUnit>
+    <SelectorUnit gr:x="940" gr:y="55" id="mov2#opm94#seu198" name="obtenerPfOrgano" entity="ent39">
+      <Selector id="mov2#opm94#seu198#su338" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu198#su338#rcond204" name="RoleCondition204" predicate="in" implied="false" role="rel20#role40"/>
+        <RelationshipRoleCondition id="mov2#opm94#seu198#su338#rcond205" name="RoleCondition205" predicate="in" implied="false" role="rel45#role90"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu198#oln958" name="OKFlow958" to="mov2#opm94#scu140">
+        <LinkParameter id="mov2#opm94#seu198#oln958#par2331" name="userName_curpOrgano" source="userNameArray" target="mov2#opm94#scu140.curpOrgano"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="1350" gr:y="65" id="mov2#opm94#seu199" name="obtenerAccionistas" entity="ent39">
+      <Selector id="mov2#opm94#seu199#su340" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu199#su340#rcond206" name="RoleCondition206" predicate="in" implied="false" role="rel20#role40"/>
+        <AttributesCondition id="mov2#opm94#seu199#su340#acond185" name="TIPOPF" predicate="eq" booleanOperator="or" implied="false" attributes="ent39#att431"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu199#oln1017" name="OKFlow1017" to="mov2#opm94#seu201" automaticCoupling="true"/>
+      <Link id="mov2#opm94#seu199#ln974" name="Flow974" to="mov2#opm94#seu200" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="mov2#opm94#seu199#ln985" name="Flow985" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="113,-130,-1682,-140;879,-133,-916,-143;1735,-130,-60,-140">
+        <LinkParameter id="mov2#opm94#seu199#ln985#par2891" name="userName_curpAccionistas" source="userNameArray" target="mov2#opm94#scu139.curpAccionistas"/>
+        <LinkParameter id="mov2#opm94#seu199#ln985#par2911" name="fechaNac_fechaNacimiento" source="ent39#att258Array" target="mov2#opm94#scu139.fechaNacimiento"/>
+        <LinkParameter id="mov2#opm94#seu199#ln985#par2912" name="PFnacionalidad_nacionalidad" source="ent39#att265Array" target="mov2#opm94#scu139.nacionalidad"/>
+        <LinkParameter id="mov2#opm94#seu199#ln985#par2913" name="apellido1_primerApellido" source="ent39#att271Array" target="mov2#opm94#scu139.primerApellido"/>
+        <LinkParameter id="mov2#opm94#seu199#ln985#par2917" name="RFC_rfcAccionistas" source="ent39#att268Array" target="mov2#opm94#scu139.rfcAccionistas"/>
+        <LinkParameter id="mov2#opm94#seu199#ln985#par2918" name="apellido2_segundoApellido" source="ent39#att270Array" target="mov2#opm94#scu139.segundoApellido"/>
+        <LinkParameter id="mov2#opm94#seu199#ln985#par2941" name="nombre_nombreORazon" source="ent39#att272Array" target="mov2#opm94#scu139.nombreORazon"/>
+      </Link>
+      <Link id="mov2#opm94#seu199#ln1006" name="Flow1006" to="mov2#opm94#qu7" type="transport" validate="true" gr:bendpoints="112,158,-338,43;325,160,-125,45">
+        <LinkParameter id="mov2#opm94#seu199#ln1006#par2929" name="oid_oidPF" source="userOIDArray" target="mov2#opm94#qu7.mov2#opm94#qu7#qi9"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="1560" gr:y="20" id="mov2#opm94#seu200" name="obtenerAccionesPorAccionista" entity="ent61" linkOrder="mov2#opm94#seu200#ln986 mov2#opm94#seu200#ln1024">
+      <Selector id="mov2#opm94#seu200#su342" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu200#su342#rcond208" name="RoleCondition208" predicate="in" implied="false" role="rel37#role74"/>
+        <RelationshipRoleCondition id="mov2#opm94#seu200#su342#rcond209" name="RoleCondition209" predicate="in" implied="false" role="rel33#role65"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu200#oln1037" name="OKFlow1037" to="mov2#opm94#qu7">
+        <LinkParameter id="mov2#opm94#seu200#oln1037#par2928" name="oid_oidAcciones" source="ent61#att393Array" target="mov2#opm94#qu7.mov2#opm94#qu7#qi10"/>
+      </OKLink>
+      <Link id="mov2#opm94#seu200#ln986" name="Flow986" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="273,-108,-1277,-158;778,-114,-772,-164;1500,-100,-50,-150">
+        <LinkParameter id="mov2#opm94#seu200#ln986#par2925" name="numAcciones_participacion" source="ent61#att394Array" target="mov2#opm94#scu139.participacion"/>
+      </Link>
+      <Link id="mov2#opm94#seu200#ln1024" name="Flow1024" to="mov2#opm94#seu208" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
+    <SelectorUnit gr:x="1585" gr:y="160" id="mov2#opm94#seu201" name="obtenerEA" entity="ent60">
+      <Selector id="mov2#opm94#seu201#su341" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu201#su341#rcond207" name="RoleCondition207" predicate="in" implied="false" role="rel35#role70"/>
+        <AttributesCondition id="mov2#opm94#seu201#su341#acond178" name="AttCondition178" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att391" value="F"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu201#oln1036" name="OKFlow1036" to="mov2#opm94#seu200" automaticCoupling="true"/>
+    </SelectorUnit>
+    <SelectorUnit gr:x="2060" gr:y="65" id="mov2#opm94#seu202" name="obtenerPfNombramientos" entity="ent39">
+      <Selector id="mov2#opm94#seu202#su343" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu202#su343#rcond230" name="RoleCondition230" predicate="in" implied="false" role="rel20#role40"/>
+        <AttributesCondition id="mov2#opm94#seu202#su343#acond167" name="AttCondition167" predicate="eq" booleanOperator="or" implied="false" attributes="ent39#att427" value="FNO"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu202#oln1041" name="OKFlow1041" to="mov2#opm94#seu203" automaticCoupling="true"/>
+      <Link id="mov2#opm94#seu202#ln1088" name="Flow1088" to="mov2#opm94#seu210" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="34,219,-1506,209;754,225,-786,215;1269,204,-271,194"/>
+    </SelectorUnit>
+    <SelectorUnit gr:x="2280" gr:y="65" id="mov2#opm94#seu203" name="obtenerNombramientos" entity="ent65" linkOrder="mov2#opm94#seu203#ln1155">
+      <Selector id="mov2#opm94#seu203#su344" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu203#su344#rcond231" name="RoleCondition231" predicate="in" implied="false" role="rel38#role76"/>
+        <RelationshipRoleCondition id="mov2#opm94#seu203#su344#rcond232" name="RoleCondition232" predicate="in" implied="false" role="rel40#role80"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu203#oln1042" name="OKFlow1042" to="mov2#opm94#seu214">
+        <LinkParameter id="mov2#opm94#seu203#oln1042#par3430" name="NombramientosToPersonaFisica.oid_KeyCondition154 [oid]" source="rel38#role75_userOIDArray" target="mov2#opm94#seu214#su384#kcond157.userOID"/>
+      </OKLink>
+      <Link id="mov2#opm94#seu203#ln1155" name="Flow1155" to="mov2#opm94#scu139" type="transport" validate="true">
+        <LinkParameter id="mov2#opm94#seu203#ln1155#par3601" name="descripcionFacultad_nombramientoFacultades" source="ent65#att409Array" target="mov2#opm94#scu139.nombramientoFacultades"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="2510" gr:y="65" id="mov2#opm94#seu204" name="obtenerPfApoderados" entity="ent39">
+      <Selector id="mov2#opm94#seu204#su345" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu204#su345#rcond233" name="RoleCondition233" predicate="in" implied="false" role="rel20#role40"/>
+        <AttributesCondition id="mov2#opm94#seu204#su345#acond176" name="AttCondition176" predicate="eq" booleanOperator="or" implied="false" attributes="ent39#att428" value="FAP"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu204#oln1045" name="OKFlow1045" to="mov2#opm94#seu206" automaticCoupling="true"/>
+    </SelectorUnit>
+    <SelectorUnit gr:x="2940" gr:y="70" id="mov2#opm94#seu205" name="obtenerFedatario" entity="ent39" linkOrder="mov2#opm94#seu205#ln1099">
+      <Selector id="mov2#opm94#seu205#su346" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm94#seu205#su346#kcond141" name="KeyCondition141" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu205#oln1080" name="OKFlow1080" to="mov2#opm94#seu207" automaticCoupling="true"/>
+      <Link id="mov2#opm94#seu205#ln1099" name="Flow1099" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="127,61,-1023,66;551,73,-599,78;989,67,-161,72">
+        <LinkParameter id="mov2#opm94#seu205#ln1099#par3400" name="PFnacionalidad_nacionalidadFed" source="ent39#att265Array" target="mov2#opm94#scu139.nacionalidadFed"/>
+        <LinkParameter id="mov2#opm94#seu205#ln1099#par3401" name="nombreCompleto_nombreSolicitante" source="ent39#att269Array" target="mov2#opm94#scu139.nombreSolicitante"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="2730" gr:y="65" id="mov2#opm94#seu206" name="obtenerApoderados" entity="ent66" linkOrder="mov2#opm94#seu206#ln1156">
+      <Selector id="mov2#opm94#seu206#su347" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu206#su347#rcond234" name="RoleCondition234" predicate="in" implied="false" role="rel39#role78"/>
+        <RelationshipRoleCondition id="mov2#opm94#seu206#su347#rcond235" name="RoleCondition235" predicate="in" implied="false" role="rel41#role82"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu206#oln1077" name="OKFlow1077" to="mov2#opm94#seu215">
+        <LinkParameter id="mov2#opm94#seu206#oln1077#par3469" name="ApoderadosToPersonaFisica.oid_KeyCondition154 [oid]" source="rel39#role77_userOIDArray" target="mov2#opm94#seu215#su385#kcond158.userOID"/>
+      </OKLink>
+      <Link id="mov2#opm94#seu206#ln1156" name="Flow1156" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="265,-111,-1085,-106;482,-112,-868,-107;1043,-109,-307,-104">
+        <LinkParameter id="mov2#opm94#seu206#ln1156#par3602" name="descripcionFacultad_facultadesApoderados" source="ent66#att413Array" target="mov2#opm94#scu139.facultadesApoderados"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit gr:x="2595" gr:y="-110" id="mov2#opm94#gtu48" name="Get48" contextParameters="UserCtxParam" linkOrder="mov2#opm94#gtu48#ln980">
+      <Link id="mov2#opm94#gtu48#ln980" name="Flow980" to="mov2#opm94#seu205" type="transport" validate="true">
+        <LinkParameter id="mov2#opm94#gtu48#ln980#par2332" name="UserCtxParam.oid_KeyCondition141 [oid]" source="mov2#opm94#gtu48.UserCtxParam" target="mov2#opm94#seu205#su346#kcond141.userOID"/>
+      </Link>
+    </GetUnit>
+    <CreateUnit gr:x="4275" gr:y="70" id="mov2#opm94#cru62" name="guardaEnBitacora" entity="ent44">
+      <OKLink id="mov2#opm94#cru62#oln1082" name="OKFlow1082" to="mov2#opm94#okcu99" automaticCoupling="true"/>
+      <KOLink id="mov2#opm94#cru62#kln245" name="KOFlow245" to="mov2#opm94#kocu84">
+        <LinkParameter id="mov2#opm94#cru62#kln245#par3598" name="Error al almacenar en Bitacora_mensaje" sourceValue="Error al almacenar en Bitacora" target="mov2#opm94#kocu84#ocp262"/>
+      </KOLink>
+    </CreateUnit>
+    <OKCollectorUnit gr:x="4425" gr:y="-15" id="mov2#opm94#okcu99" name="OK Port99"/>
+    <KOCollectorUnit gr:x="4425" gr:y="140" id="mov2#opm94#kocu84" name="KO Port84">
+      <OutputCollectorParameter id="mov2#opm94#kocu84#ocp262" name="mensaje"/>
+    </KOCollectorUnit>
+    <SelectorUnit gr:x="3145" gr:y="70" id="mov2#opm94#seu207" name="obtenerDatosFedatario" entity="ent8" linkOrder="mov2#opm94#seu207#ln1096">
+      <Selector id="mov2#opm94#seu207#su356" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu207#su356#rcond236" name="RoleCondition236" predicate="in" implied="false" role="rel25#role50"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu207#oln1083" name="OKFlow1083" to="mov2#opm94#seu209" automaticCoupling="true"/>
+      <Link id="mov2#opm94#seu207#ln1096" name="Flow1096" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="44,-90,-881,-85;666,-88,-259,-83">
+        <LinkParameter id="mov2#opm94#seu207#ln1096#par3065" name="activo_direccion" source="ent8#att274Array" target="mov2#opm94#scu139.direccion"/>
+        <LinkParameter id="mov2#opm94#seu207#ln1096#par3066" name="llFedatario_llFedatario" source="ent8#att400Array" target="mov2#opm94#scu139.llFedatario"/>
+        <LinkParameter id="mov2#opm94#seu207#ln1096#par3176" name="tipo_tipoFedatario" source="ent8#att47Array" target="mov2#opm94#scu139.tipoFedatario"/>
+        <LinkParameter id="mov2#opm94#seu207#ln1096#par3398" name="3_idTipoDoc" sourceValue="3" target="mov2#opm94#scu139.idTipoDoc"/>
+        <LinkParameter id="mov2#opm94#seu207#ln1096#par3399" name="llFedatario_noInstrumentoFed" source="ent8#att400Array" target="mov2#opm94#scu139.noInstrumentoFed"/>
+      </Link>
+    </SelectorUnit>
+    <QueryUnit gr:x="1795" gr:y="200" id="mov2#opm94#qu7" name="sumaAcciones" mode="select" language="SQL" db="db2" linkOrder="mov2#opm94#qu7#ln1012">
+      <QueryText xml:space="preserve">SELECT SUM(NUMACCIONES) FROM ACCIONES WHERE PERSONAFISICA_OID = (:oidPF) AND ACCIONES.OID = (:oidAcciones)</QueryText>
+      <QueryInput id="mov2#opm94#qu7#qi9" name="oidPF" required="true"/>
+      <QueryInput id="mov2#opm94#qu7#qi10" name="oidAcciones" required="true"/>
+      <QueryOutput id="mov2#opm94#qu7#qo7" name="numeroAcciones" type="integer"/>
+      <OKLink id="mov2#opm94#qu7#oln1084" name="OKFlow1084" to="mov2#opm94#seu208" automaticCoupling="true"/>
+      <Link id="mov2#opm94#qu7#ln1012" name="Flow1012" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="709,3,-656,113;1228,-2,-137,108">
+        <LinkParameter id="mov2#opm94#qu7#ln1012#par2930" name="numeroAcciones (Array)_totalSocio" source="mov2#opm94#qu7#qo7" target="mov2#opm94#scu139.totalSocio"/>
+      </Link>
+    </QueryUnit>
+    <SelectorUnit gr:x="1855" gr:y="70" id="mov2#opm94#seu208" name="obtenerSerie" entity="ent60" linkOrder="mov2#opm94#seu208#ln1037">
+      <Selector id="mov2#opm94#seu208#su378" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu208#su378#rcond237" name="RoleCondition237" predicate="in" implied="false" role="rel33#role66"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu208#oln1085" name="OKFlow1085" to="mov2#opm94#seu202" automaticCoupling="true"/>
+      <Link id="mov2#opm94#seu208#ln1037" name="Flow1037" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="112,80,-1393,85;755,89,-750,94;1301,84,-204,89">
+        <LinkParameter id="mov2#opm94#seu208#ln1037#par2931" name="serieAccion_serieAccion" source="ent60#att395Array" target="mov2#opm94#scu139.serieAccion"/>
+        <LinkParameter id="mov2#opm94#seu208#ln1037#par2935" name="valorAccion_valorAccion" source="ent60#att390Array" target="mov2#opm94#scu139.valorAccion"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="3350" gr:y="70" id="mov2#opm94#seu209" name="obtenerNombramiento" entity="ent77" linkOrder="mov2#opm94#seu209#ln1090">
+      <Selector id="mov2#opm94#seu209#su379" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu209#su379#rcond238" name="RoleCondition238" predicate="in" implied="false" role="rel62#role123"/>
+        <RelationshipRoleCondition id="mov2#opm94#seu209#su379#rcond239" name="RoleCondition239" predicate="in" implied="false" role="rel63#role125"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu209#oln1094" name="OKFlow1094" to="mov2#opm94#seu210" automaticCoupling="true"/>
+      <Link id="mov2#opm94#seu209#ln1090" name="Flow1090" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="126,-80,-429,-65;331,-81,-224,-66">
+        <LinkParameter id="mov2#opm94#seu209#ln1090#par2958" name="Nombramiento_nombramiento" source="ent77#att479Array" target="mov2#opm94#scu139.nombramiento"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="3605" gr:y="75" id="mov2#opm94#seu210" name="obtenerCargo" entity="ent77" linkOrder="mov2#opm94#seu210#ln1091">
+      <Selector id="mov2#opm94#seu210#su380" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm94#seu210#su380#rcond240" name="RoleCondition240" predicate="in" implied="false" role="rel62#role123"/>
+        <RelationshipRoleCondition id="mov2#opm94#seu210#su380#rcond241" name="RoleCondition241" predicate="in" implied="false" role="rel63#role125"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu210#oln1099" name="OKFlow1099" to="mov2#opm94#seu211" automaticCoupling="true"/>
+      <Link id="mov2#opm94#seu210#ln1091" name="Flow1091" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="71,-63,-229,-43">
+        <LinkParameter id="mov2#opm94#seu210#ln1091#par2965" name="Cargo_cargo" source="ent77#att480Array" target="mov2#opm94#scu139.cargo"/>
+      </Link>
+      <KOLink id="mov2#opm94#seu210#kln470" name="KOFlow470" to="mov2#opm94#kocu84" gr:bendpoints="316,91,-529,36">
+        <LinkParameter id="mov2#opm94#seu210#kln470#par3600" name="Error al obtener el cargo_mensaje" sourceValue="Error al obtener el cargo" target="mov2#opm94#kocu84#ocp262"/>
+      </KOLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="3835" gr:y="75" id="mov2#opm94#seu211" name="obtenerInstrumentos" entity="ent76">
+      <Selector id="mov2#opm94#seu211#su381" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm94#seu211#su381#kcond142" name="KeyCondition142" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu211#oln1100" name="OKFlow1100" to="mov2#opm94#scu139">
+        <LinkParameter id="mov2#opm94#seu211#oln1100#par3045" name="deFecha_deFecha" source="ent76#att475Array" target="mov2#opm94#scu139.deFecha"/>
+        <LinkParameter id="mov2#opm94#seu211#oln1100#par3061" name="libro_libro" source="ent76#att472Array" target="mov2#opm94#scu139.libro"/>
+        <LinkParameter id="mov2#opm94#seu211#oln1100#par3062" name="numeroInstrumento_noInstrumento" source="ent76#att476Array" target="mov2#opm94#scu139.noInstrumento"/>
+        <LinkParameter id="mov2#opm94#seu211#oln1100#par3064" name="volumen_volumen" source="ent76#att471Array" target="mov2#opm94#scu139.volumen"/>
+        <LinkParameter id="mov2#opm94#seu211#oln1100#par3206" name="conDuracion_conDuracion" source="ent76#att474Array" target="mov2#opm94#scu139.conDuracion"/>
+        <LinkParameter id="mov2#opm94#seu211#oln1100#par3603" name="SRE_autoridad" sourceValue="SRE" target="mov2#opm94#scu139.autoridad"/>
+        <LinkParameter id="mov2#opm94#seu211#oln1100#par3604" name="NO_conExpresion" sourceValue="NO" target="mov2#opm94#scu139.conExpresion"/>
+        <LinkParameter id="mov2#opm94#seu211#oln1100#par3605" name="FUSION_derivadaDe" sourceValue="FUSION" target="mov2#opm94#scu139.derivadaDe"/>
+        <LinkParameter id="mov2#opm94#seu211#oln1100#par3606" name="eryuopkhds_domicilio" sourceValue="eryuopkhds" target="mov2#opm94#scu139.domicilio"/>
+        <LinkParameter id="mov2#opm94#seu211#oln1100#par3607" name="2018-12-26_fechaConstitucion" sourceValue="2018-12-26" target="mov2#opm94#scu139.fechaConstitucion"/>
+        <LinkParameter id="mov2#opm94#seu211#oln1100#par3608" name="9_idEstado" sourceValue="9" target="mov2#opm94#scu139.idEstado"/>
+        <LinkParameter id="mov2#opm94#seu211#oln1100#par3609" name="10_idMunicipio" sourceValue="10" target="mov2#opm94#scu139.idMunicipio"/>
+        <LinkParameter id="mov2#opm94#seu211#oln1100#par3610" name="SE_tipoAutoridad" sourceValue="SE" target="mov2#opm94#scu139.tipoAutoridad"/>
+      </OKLink>
+      <KOLink id="mov2#opm94#seu211#kln469" name="KOFlow469" to="mov2#opm94#kocu84" gr:bendpoints="222,61,-383,11">
+        <LinkParameter id="mov2#opm94#seu211#kln469#par3599" name="Error al obtener_mensaje" sourceValue="Error al obtener los instrumentos" target="mov2#opm94#kocu84#ocp262"/>
+      </KOLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="690" gr:y="200" id="mov2#opm94#seu212" name="adminPF" entity="ent39" linkOrder="mov2#opm94#seu212#ln1106 mov2#opm94#seu212#ln1108">
+      <Selector id="mov2#opm94#seu212#su382" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm94#seu212#su382#kcond154" name="KeyCondition154" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu212#oln1102" name="OKFlow1102" to="mov2#opm94#seu162" automaticCoupling="true"/>
+      <Link id="mov2#opm94#seu212#ln1106" name="Flow1106" to="mov2#opm94#scu140" type="transport" validate="true" gr:bendpoints="474,-27,-11,123">
+        <LinkParameter id="mov2#opm94#seu212#ln1106#par3412" name="userName_curpAdministracion" source="userNameArray" target="mov2#opm94#scu140.curpAdministracion"/>
+      </Link>
+      <Link id="mov2#opm94#seu212#ln1108" name="Flow1108" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="93,28,-3327,163;1790,48,-1630,183;3066,45,-354,180">
+        <LinkParameter id="mov2#opm94#seu212#ln1108#par3413" name="userName_curpAdministracion" source="userNameArray" target="mov2#opm94#scu139.curpAdministracion"/>
+        <LinkParameter id="mov2#opm94#seu212#ln1108#par3414" name="fechaNac_fechaNacORfc" source="ent39#att258Array" target="mov2#opm94#scu139.fechaNacORfc"/>
+        <LinkParameter id="mov2#opm94#seu212#ln1108#par3415" name="nombre_nombreAdmin" source="ent39#att272Array" target="mov2#opm94#scu139.nombreAdmin"/>
+        <LinkParameter id="mov2#opm94#seu212#ln1108#par3416" name="apellido1_primerApellidoAdmin" source="ent39#att271Array" target="mov2#opm94#scu139.primerApellidoAdmin"/>
+        <LinkParameter id="mov2#opm94#seu212#ln1108#par3417" name="apellido2_segundoApellidoAdmin" source="ent39#att270Array" target="mov2#opm94#scu139.segundoApellidoAdmin"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm94#seu214" name="NombramientosPF" gr:x="2415" gr:y="-55" entity="ent39" linkOrder="mov2#opm94#seu214#ln1153">
+      <Selector id="mov2#opm94#seu214#su384" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm94#seu214#su384#kcond157" name="KeyCondition154" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu214#oln1104" name="OKFlow1104" to="mov2#opm94#seu204" automaticCoupling="true"/>
+      <Link id="mov2#opm94#seu214#ln1153" name="Flow1153" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="1021,0,-649,-120;1366,1,-304,-119">
+        <LinkParameter id="mov2#opm94#seu214#ln1153#par3431" name="apellido1_ape1Nombramientos" source="ent39#att271Array" target="mov2#opm94#scu139.ape1Nombramientos"/>
+        <LinkParameter id="mov2#opm94#seu214#ln1153#par3434" name="apellido2_ape2Nombramientos" source="ent39#att270Array" target="mov2#opm94#scu139.ape2Nombramientos"/>
+        <LinkParameter id="mov2#opm94#seu214#ln1153#par3435" name="userName_curpNombramientos" source="userNameArray" target="mov2#opm94#scu139.curpNombramientos"/>
+        <LinkParameter id="mov2#opm94#seu214#ln1153#par3437" name="nombre_nombreNombramientos" source="ent39#att272Array" target="mov2#opm94#scu139.nombreNombramientos"/>
+        <LinkParameter id="mov2#opm94#seu214#ln1153#par3438" name="fechaNac_rfcNombramientos" source="ent39#att258Array" target="mov2#opm94#scu139.rfcNombramientos"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm94#seu215" name="ApoderadosPF" gr:x="2855" gr:y="-70" entity="ent39" linkOrder="mov2#opm94#seu215#ln1154">
+      <Selector id="mov2#opm94#seu215#su385" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm94#seu215#su385#kcond158" name="KeyCondition154" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm94#seu215#oln1105" name="OKFlow1105" to="mov2#opm94#seu205" automaticCoupling="true"/>
+      <Link id="mov2#opm94#seu215#ln1154" name="Flow1154" to="mov2#opm94#scu139" type="transport" validate="true" gr:bendpoints="636,6,-609,-129;946,6,-299,-129">
+        <LinkParameter id="mov2#opm94#seu215#ln1154#par3474" name="apellido1_apellidos1Apoderados" source="ent39#att271Array" target="mov2#opm94#scu139.apellidos1Apoderados"/>
+        <LinkParameter id="mov2#opm94#seu215#ln1154#par3526" name="apellido2_apellidos2Apoderados" source="ent39#att270Array" target="mov2#opm94#scu139.apellidos2Apoderados"/>
+        <LinkParameter id="mov2#opm94#seu215#ln1154#par3527" name="userName_curpApoderados" source="userNameArray" target="mov2#opm94#scu139.curpApoderados"/>
+        <LinkParameter id="mov2#opm94#seu215#ln1154#par3550" name="nombre_nombresApoderados" source="ent39#att272Array" target="mov2#opm94#scu139.nombresApoderados"/>
+        <LinkParameter id="mov2#opm94#seu215#ln1154#par3551" name="fechaNac_rfcApoderados" source="ent39#att258Array" target="mov2#opm94#scu139.rfcApoderados"/>
+      </Link>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

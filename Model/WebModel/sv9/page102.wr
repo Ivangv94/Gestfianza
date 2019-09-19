@@ -1,0 +1,131 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv9#page102" name="Completed Processes" landmark="true" gr:x="-150" gr:y="777">
+  <ContentUnits>
+    <PowerIndexUnit id="sv9#page102#pwu31" gr:x="170" gr:y="45" name="Completed Processes" sortable="false" checkable="false" entity="ProcessInstance" linkOrder="sv9#page102#pwu31#ln735 sv9#page102#pwu31#ln736" displayAttributes="processInstanceName processInstanceCompletedTimestamp" blockFactor="10" blockWindow="5">
+      <Selector id="sv9#page102#pwu31#su217" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv9#page102#pwu31#su217#acond118" name="status" predicate="eq" booleanOperator="or" implied="false" attributes="processInstanceStatus" value="completed"/>
+        <RelationshipRoleCondition id="sv9#page102#pwu31#su217#rcond121" name="managedProcesses" predicate="in" implied="false" role="process2ProcessInstances"/>
+        <RelationshipRoleCondition id="sv9#page102#pwu31#su217#rcond122" name="involvedUser" predicate="in" implied="false" role="user2ActivityInstances.activityInstance2ProcessInstance"/>
+        <AttributesCondition id="sv9#page102#pwu31#su217#acond119" name="completedAfter" predicate="gteq" booleanOperator="or" implied="true" attributes="processInstanceCompletedTimestamp"/>
+        <AttributesCondition id="sv9#page102#pwu31#su217#acond120" name="completedBefore" predicate="lteq" booleanOperator="or" implied="true" attributes="processInstanceCompletedTimestamp"/>
+        <RelationshipRoleCondition id="sv9#page102#pwu31#su217#rcond123" name="process" predicate="in" implied="true" role="process2ProcessInstances"/>
+      </Selector>
+      <Link id="sv9#page102#pwu31#ln735" name="activities" to="sv9#page102#inu22" type="normal" automaticCoupling="true" validate="true" ajaxEnabled="true"/>
+      <Link id="sv9#page102#pwu31#ln736" name="diagram" to="sv9#page100#pdu9" automaticCoupling="true" type="normal" validate="true" newWindow="true"/>
+      <SortAttribute attribute="processInstanceCompletedTimestamp" order="ascending"/>
+      <SortAttribute attribute="processInstanceOid" order="ascending"/>
+      <SortAttribute attribute="processInstanceName" order="ascending"/>
+    </PowerIndexUnit>
+    <GetUnit id="sv9#page102#gtu45" name="User" gr:x="56" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv9#page102#gtu45#ln737" name="Link101" to="sv9#page102#pwu31" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+    <IndexUnit id="sv9#page102#inu22" entity="ActivityInstance" displayAttributes="activityInstanceActivityTypeName activityInstanceCompletedTimestamp activityInstanceUserName activityInstanceGroupName" name="Completed Activities" gr:x="180" gr:y="276">
+      <SortAttribute attribute="activityInstanceCompletedTimestamp" order="ascending"/>
+      <SortAttribute attribute="activityInstanceOid" order="ascending"/>
+      <SortAttribute attribute="activityInstanceActivityTypeName" order="ascending"/>
+      <Selector id="sv9#page102#inu22#su218" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv9#page102#inu22#su218#rcond124" name="processActivities" predicate="in" implied="false" role="processInstance2ActivityInstances"/>
+        <AttributesCondition id="sv9#page102#inu22#su218#acond121" name="userExecution" predicate="eq" booleanOperator="or" implied="false" attributes="activityInstanceExecution" value="user"/>
+      </Selector>
+    </IndexUnit>
+    <ProcessUnit id="sv9#page102#pu40" name="Processes" gr:x="100" gr:y="286" mode="info">
+      <Link id="sv9#page102#pu40#ln738" name="Link100" to="sv9#page102#pwu31" type="transport" validate="true">
+        <LinkParameter id="sv9#page102#pu40#ln738#par573" name="Managed Process Oids_managedProcesses [oid]" source="managedProcessOids" target="sv9#page102#pwu31#su217#rcond121.processOid"/>
+      </Link>
+      <Link id="sv9#page102#pu40#ln739" name="Link96" to="sv9#page102#seu111" automaticCoupling="true" type="transport" validate="true"/>
+    </ProcessUnit>
+    <SelectorUnit id="sv9#page102#seu111" name="Processes" gr:x="0" gr:y="279" entity="Process">
+      <Selector id="sv9#page102#seu111#su219" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv9#page102#seu111#su219#kcond114" name="oids" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv9#page102#seu111#ln740" name="Link110" to="sv9#page102#enu140" type="transport" validate="true">
+        <LinkParameter id="sv9#page102#seu111#ln740#par574" name="name_Process [label]" source="processNameArray" target="sv9#page102#enu140#sfld70_label"/>
+        <LinkParameter id="sv9#page102#seu111#ln740#par591" name="oid_Process [output]" source="processOidArray" target="sv9#page102#enu140#sfld70_output"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit id="sv9#page102#enu140" name="Search" gr:x="5" gr:y="100" fieldOrder="sv9#page102#enu140#sfld70 sv9#page102#enu140#fld312 sv9#page102#enu140#fld313" linkOrder="sv9#page102#enu140#ln742">
+      <SelectionField id="sv9#page102#enu140#sfld70" name="Process" type="string"/>
+      <Field id="sv9#page102#enu140#fld312" name="From Date" type="date" modifiable="true"/>
+      <Field id="sv9#page102#enu140#fld313" name="To Date" type="date" modifiable="true"/>
+      <Link id="sv9#page102#enu140#ln741" name="Search" to="sv9#page102#pwu31" type="transport" validate="true">
+        <LinkParameter id="sv9#page102#enu140#ln741#par592" name="From Date_completedAfter" source="sv9#page102#enu140#fld312" target="sv9#page102#pwu31#su217#acond119"/>
+        <LinkParameter id="sv9#page102#enu140#ln741#par593" name="Process_process [oid]" source="sv9#page102#enu140#sfld70" target="sv9#page102#pwu31#su217#rcond123.processOid"/>
+      </Link>
+      <Link id="sv9#page102#enu140#ln742" name="Search" to="sv9#page102#tmu25" type="normal" validate="true">
+        <LinkParameter id="sv9#page102#enu140#ln742#par620" name="To Date_Input Date" source="sv9#page102#enu140#fld313" target="sv9#page102#tmu25.date"/>
+      </Link>
+    </EntryUnit>
+    <TimeUnit id="sv9#page102#tmu25" name="NextDay" gr:x="84" gr:y="177">
+      <Link id="sv9#page102#tmu25#ln743" name="Link101" to="sv9#page102#pwu31" type="transport" validate="true">
+        <LinkParameter id="sv9#page102#tmu25#ln743#par633" name="Next Midnight Timestamp_completedBefore" source="nextMidnightTimestamp" target="sv9#page102#pwu31#su217#acond120"/>
+      </Link>
+    </TimeUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Grid containerType="cell">
+          <layout:Row>
+            <layout:Cell layout:cellLayout="Print Frame" label="Completed Processes">
+              <layout:Unit unitId="sv9#page102#enu140" layout:frameLayout="None">
+                <layout:Field field="sv9#page102#enu140#sfld70"/>
+                <layout:Field field="sv9#page102#enu140#fld312"/>
+                <layout:Field field="sv9#page102#enu140#fld313"/>
+                <layout:Link link="sv9#page102#enu140#ln742"/>
+              </layout:Unit>
+              <layout:Unit unitId="sv9#page102#pwu31" layout:frameLayout="None">
+                <layout:Attribute attribute="processInstanceName" label="Process Name"/>
+                <layout:Attribute attribute="processInstanceCompletedTimestamp" label="Completed at"/>
+                <layout:Link link="sv9#page102#pwu31#ln735"/>
+                <layout:Link link="sv9#page102#pwu31#ln736" label="History Diagram">
+                  <layout:LayoutParameter name="show" value="icon" type="link"/>
+                </layout:Link>
+                <layout:Link link="sv9#page102#pwu31First"/>
+                <layout:Link link="sv9#page102#pwu31Previous"/>
+                <layout:Link link="sv9#page102#pwu31Block"/>
+                <layout:Link link="sv9#page102#pwu31Next"/>
+                <layout:Link link="sv9#page102#pwu31Last"/>
+                <layout:LayoutParameter name="link-position" value="on_row" type="unit"/>
+                <layout:LayoutParameter name="use-empty-unit-message" value="true" type="unit"/>
+                <layout:LayoutParameter name="empty-unit-message" value="noProcessInstancesFound" type="unit"/>
+              </layout:Unit>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv9#page102#inu22">
+          <layout:LayoutParameter name="use-alternate" value="true" type="unit"/>
+          <layout:Attribute attribute="activityInstanceActivityTypeName" label="Activity"/>
+          <layout:Attribute attribute="activityInstanceCompletedTimestamp" label="Completed at"/>
+          <layout:Attribute attribute="activityInstanceUserName" label="Username"/>
+          <layout:Attribute attribute="activityInstanceGroupName" label="Group"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+</Page>

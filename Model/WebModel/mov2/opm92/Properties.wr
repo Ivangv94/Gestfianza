@@ -1,0 +1,67 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="570" gr:y="1195" id="mov2#opm92" name="agregarOrganoDeVigilancia">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm92#icu131" gr:x="-65" gr:y="65" linkOrder="mov2#opm92#icu131#ln1147 mov2#opm92#icu131#ln1100">
+      <InputCollectorParameter id="mov2#opm92#icu131#icp383" name="oidPM"/>
+      <InputCollectorParameter id="mov2#opm92#icu131#icp388" name="rfc"/>
+      <InputCollectorParameter id="mov2#opm92#icu131#icp389" name="curp"/>
+      <OKLink id="mov2#opm92#icu131#oln1091" name="OKFlow1091" to="mov2#opm92#miu136">
+        <LinkParameter id="mov2#opm92#icu131#oln1091#par3568" name="curp_curp" source="mov2#opm92#icu131#icp389" target="mov2#opm92#miu136.mov2#opm93#icu132#icp385"/>
+        <LinkParameter id="mov2#opm92#icu131#oln1091#par3569" name="oidPM_oidPM" source="mov2#opm92#icu131#icp383" target="mov2#opm92#miu136.mov2#opm93#icu132#icp384"/>
+        <LinkParameter id="mov2#opm92#icu131#oln1091#par3570" name="rfc_rfc" source="mov2#opm92#icu131#icp388" target="mov2#opm92#miu136.mov2#opm93#icu132#icp386"/>
+      </OKLink>
+      <Link id="mov2#opm92#icu131#ln1146" name="Flow1146" to="mov2#opm92#seu197" type="transport" validate="true" gr:bendpoints="207,79,-408,74;427,80,-188,75">
+        <LinkParameter id="mov2#opm92#icu131#ln1146#par3575" name="oidPM_RoleCondition229 [oid]" source="mov2#opm92#icu131#icp383" target="mov2#opm92#seu197#su377#rcond229.userOID"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm92#icu131#icp390" name="descOrgano"/>
+      <Link id="mov2#opm92#icu131#ln1147" name="Flow1147" to="mov2#opm92#cru69" type="transport" validate="true" gr:bendpoints="155,-65,-850,-75;886,-62,-119,-72">
+        <LinkParameter id="mov2#opm92#icu131#ln1147#par3576" name="descOrgano_descripcionOrgano" source="mov2#opm92#icu131#icp390" target="mov2#opm92#cru69.ent69#att447"/>
+        <LinkParameter id="mov2#opm92#icu131#ln1147#par3577" name="oidPM_PersonaMoral.oid(OrganoDeVigilanciaToPersonaMoral)" source="mov2#opm92#icu131#icp383" target="mov2#opm92#cru69.rel46#role92.userOID"/>
+      </Link>
+      <Link id="mov2#opm92#icu131#ln1100" name="Flow1100" to="mov2#opm92#okcu97" type="transport" validate="true" gr:bendpoints="172,-102,-1198,-72;683,-108,-687,-78;1115,-107,-255,-77">
+        <LinkParameter id="mov2#opm92#icu131#ln1100#par3403" name="oidPM_oidPM" source="mov2#opm92#icu131#icp383" target="mov2#opm92#okcu97#ocp261"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="1305" gr:y="50" id="mov2#opm92#okcu97" name="OK Port97">
+      <OutputCollectorParameter id="mov2#opm92#okcu97#ocp259" name="mensaje"/>
+      <OutputCollectorParameter id="mov2#opm92#okcu97#ocp261" name="oidPM"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1305" gr:y="185" id="mov2#opm92#kocu82" name="KO Port82">
+      <OutputCollectorParameter id="mov2#opm92#kocu82#ocp260" name="msj"/>
+    </KOCollectorUnit>
+    <ModuleInstanceUnit gr:x="245" gr:y="90" id="mov2#opm92#miu136" action="true" moduleId="mov2#opm93" linkOrder="mov2#opm92#miu136#ln1148">
+      <OKLink id="mov2#opm92#miu136#oln1092" name="OKFlow1092" to="mov2#opm92#seu197">
+        <LinkParameter id="mov2#opm92#miu136#oln1092#par3571" name="oidPF_RoleCondition228 [oid]" source="mov2#opm93#okcu98#ocp256" target="mov2#opm92#seu197#su377#rcond228.userOID"/>
+      </OKLink>
+      <Link id="mov2#opm92#miu136#ln1148" name="Flow1148" to="mov2#opm92#cru69" type="transport" validate="true" gr:bendpoints="258,83,-412,78;495,84,-175,79">
+        <LinkParameter id="mov2#opm92#miu136#ln1148#par3578" name="OK Port74.oidPF_PersonaFisica.oid(OrganoDeVigilanciaToPersonaFisica)" source="mov2#opm93#okcu98#ocp256" target="mov2#opm92#cru69.rel45#role90.userOID"/>
+      </Link>
+      <KOLink id="mov2#opm92#miu136#kln465" name="KOFlow465" to="mov2#opm92#kocu82" gr:bendpoints="140,93,-895,-7">
+        <LinkParameter id="mov2#opm92#miu136#kln465#par3579" name="msj_msj" source="mov2#opm93#kocu83#ocp258" target="mov2#opm92#kocu82#ocp260"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <SelectorUnit gr:x="575" gr:y="75" id="mov2#opm92#seu197" name="Selector197" entity="ent69">
+      <Selector id="mov2#opm92#seu197#su377" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm92#seu197#su377#rcond228" name="RoleCondition228" predicate="in" implied="false" role="rel45#role89"/>
+        <RelationshipRoleCondition id="mov2#opm92#seu197#su377#rcond229" name="RoleCondition229" predicate="in" implied="false" role="rel46#role91"/>
+      </Selector>
+      <OKLink id="mov2#opm92#seu197#oln1093" name="OKFlow1093" to="mov2#opm92#inn58">
+        <LinkParameter id="mov2#opm92#seu197#oln1093#par3573" name="oid_Input" source="ent69#att446Array" target="mov2#opm92#inn58.isnotnull"/>
+      </OKLink>
+      <KOLink id="mov2#opm92#seu197#kln466" name="KOFlow466" to="mov2#opm92#kocu82" gr:bendpoints="146,71,-609,-29">
+        <LinkParameter id="mov2#opm92#seu197#kln466#par3580" name="Error al Consultar el Organo de Vigilancia_msj" sourceValue="Error al Consultar el Organo de Vigilancia" target="mov2#opm92#kocu82#ocp260"/>
+      </KOLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="800" gr:y="95" id="mov2#opm92#inn58" name="&#191;Existe Organo?">
+      <KOLink id="mov2#opm92#inn58#kln464" name="OKFlow1094" to="mov2#opm92#cru69" automaticCoupling="true"/>
+      <OKLink id="mov2#opm92#inn58#oln1095" name="OKFlow1095" to="mov2#opm92#okcu97" gr:bendpoints="116,-59,-439,-24;319,-57,-236,-22">
+        <LinkParameter id="mov2#opm92#inn58#oln1095#par3574" name="La persona ya forma parte del organo de vigilancia_mensaje" sourceValue="La persona ya forma parte del organo de vigilancia" target="mov2#opm92#okcu97#ocp259"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="980" gr:y="90" id="mov2#opm92#cru69" name="OrganoDeVigilancia" entity="ent69">
+      <OKLink id="mov2#opm92#cru69#oln1096" name="OKFlow1096" to="mov2#opm92#okcu97" automaticCoupling="true"/>
+      <KOLink id="mov2#opm92#cru69#kln467" name="KOFlow467" to="mov2#opm92#kocu82">
+        <LinkParameter id="mov2#opm92#cru69#kln467#par3581" name="Error al agregar el Organo de Vigilancia_msj" sourceValue="Error al agregar el Organo de Vigilancia" target="mov2#opm92#kocu82#ocp260"/>
+      </KOLink>
+    </CreateUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,33 @@
+<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="695" id="wsv1#port3" name="validarFedatario">
+  <OperationUnits>
+    <SolicitUnit id="wsv1#port3#slu3" name="validarFedatario" invocationStyle="SOAP" requestMethod="POST" gr:x="0" gr:y="10">
+      <RequestBodyParameter id="wsv1#port3#slu3#slp4" name="datosFedatario" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port3#slu3#slp4#spf10" name="rfc" minCard="1" maxCard="1" xsdType="{http://www.w3.org/2001/XMLSchema}string[SimpleType]"/>
+      </RequestBodyParameter>
+      <OKLink id="wsv1#port3#slu3#oln557" name="OKFlow557" to="wsv1#port3#miu67">
+        <LinkParameter id="wsv1#port3#slu3#oln557#par1869" name="datosFedatario/rfc_rfc" source="map(wsv1#port3#slu3#slp4_datosFedatario$rfc)" target="wsv1#port3#miu67.mov2#mpkg2#opm27#icu37#icp189"/>
+      </OKLink>
+    </SolicitUnit>
+    <ResponseUnit id="wsv1#port3#rsu3" name="validarFedatario" gr:x="940" gr:y="0" contentType="XML" statusCode="200">
+      <ResponseBodyParameter id="wsv1#port3#rsu3#rsp2" name="datosFedatario" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port3#rsu3#rsp2#spf7" name="isFedatario" minCard="1" maxCard="1" xsdType="{http://www.w3.org/2001/XMLSchema}boolean[SimpleType]"/>
+        <SimpleParameterFragment id="wsv1#port3#rsu3#rsp2#spf8" name="fianzaVigente" minCard="1" maxCard="1" xsdType="{http://www.w3.org/2001/XMLSchema}boolean[SimpleType]"/>
+        <SimpleParameterFragment id="wsv1#port3#rsu3#rsp2#spf9" name="finDeVigencia" minCard="1" maxCard="1" xsdType="{http://www.w3.org/2001/XMLSchema}dateTime[SimpleType]"/>
+      </ResponseBodyParameter>
+    </ResponseUnit>
+    <ErrorResponseUnit gr:x="925" gr:y="95" id="wsv1#port3#eru2" name="Error Response2" contentType="XML" statusCode="500">
+      <ResponseBodyParameter id="wsv1#port3#eru2#erp1" name="Error"/>
+      <ResponseBodyParameter id="wsv1#port3#eru2#erp2" name="Codigo"/>
+    </ErrorResponseUnit>
+    <ModuleInstanceUnit gr:x="410" gr:y="5" id="wsv1#port3#miu67" action="true" moduleId="mov2#mpkg2#opm27">
+      <KOLink id="wsv1#port3#miu67#kln42" name="KOFlow42" to="wsv1#port3#eru2">
+        <LinkParameter id="wsv1#port3#miu67#kln42#par1907" name="msj_Error" source="mov2#mpkg2#opm27#kocu40#ocp144" target="wsv1#port3#eru2#erp1"/>
+      </KOLink>
+      <OKLink id="wsv1#port3#miu67#oln376" name="OKFlow376" to="wsv1#port3#rsu3">
+        <LinkParameter id="wsv1#port3#miu67#oln376#par1844" name="fianzaVigente_datosFedatario/fianzaVigente" source="mov2#mpkg2#opm27#okcu42#ocp146" target="wsv1#port3#rsu3#rsp2.datosFedatario$fianzaVigente"/>
+        <LinkParameter id="wsv1#port3#miu67#oln376#par1845" name="finVigencia_datosFedatario/finDeVigencia" source="mov2#mpkg2#opm27#okcu42#ocp148" target="wsv1#port3#rsu3#rsp2.datosFedatario$finDeVigencia"/>
+        <LinkParameter id="wsv1#port3#miu67#oln376#par1864" name="isFedatario_datosFedatario/isFedatario" source="mov2#mpkg2#opm27#okcu42#ocp145" target="wsv1#port3#rsu3#rsp2.datosFedatario$isFedatario"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Port>

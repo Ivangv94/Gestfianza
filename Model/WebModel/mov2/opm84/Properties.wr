@@ -1,0 +1,167 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-170" gr:y="1095" id="mov2#opm84" name="agregarPoderesPorTipo">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm84#icu123" gr:x="-405" gr:y="-90" linkOrder="mov2#opm84#icu123#ln1068 mov2#opm84#icu123#ln1080 mov2#opm84#icu123#ln1081 mov2#opm84#icu123#ln1082 mov2#opm84#icu123#ln1085">
+      <InputCollectorParameter id="mov2#opm84#icu123#icp321" name="tipoPoder"/>
+      <OKLink id="mov2#opm84#icu123#oln915" name="OKFlow915" to="mov2#opm84#switch74">
+        <LinkParameter id="mov2#opm84#icu123#oln915#par3250" name="tipoPoder_Switch" source="mov2#opm84#icu123#icp321" target="mov2#opm84#switch74.switch"/>
+      </OKLink>
+      <Link id="mov2#opm84#icu123#ln794" name="Flow794" to="mov2#opm84#switch71" type="transport" validate="true" gr:bendpoints="151,82,-429,72;326,91,-254,81;479,84,-101,74">
+        <LinkParameter id="mov2#opm84#icu123#ln794#par2329" name="tipoPoder_Switch" source="mov2#opm84#icu123#icp321" target="mov2#opm84#switch71.switch"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp354" name="RFC"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp352" name="oidPM"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp325" name="CURP"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp355" name="Nombramiento"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp371" name="oidTitulosCredito"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp370" name="oidPyC"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp369" name="oidPoderesEsp"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp368" name="oidActosDominio"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp367" name="oidActosAdmin"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp366" name="facultadTitulosCredito"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp365" name="facultadPyC"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp364" name="facultadPoderesEsp"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp363" name="facultadActosDominio"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp362" name="facultadActosAdmin"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp361" name="descTitulosCredito"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp360" name="descPyC"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp359" name="descPoderesEsp"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp358" name="descActosDominio"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp357" name="descActosAdmin"/>
+      <InputCollectorParameter id="mov2#opm84#icu123#icp356" name="Cargo"/>
+      <Link id="mov2#opm84#icu123#ln1068" name="Flow1068" to="mov2#opm84#miu122" type="transport" validate="true" gr:bendpoints="110,109,-400,104;248,113,-262,108;421,113,-89,108">
+        <LinkParameter id="mov2#opm84#icu123#ln1068#par3332" name="CURP_curp" source="mov2#opm84#icu123#icp325" target="mov2#opm84#miu122.mov2#opm87#icu126#icp375"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1068#par3333" name="oidPM_oidPM" source="mov2#opm84#icu123#icp352" target="mov2#opm84#miu122.mov2#opm87#icu126#icp374"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1068#par3334" name="RFC_rfc" source="mov2#opm84#icu123#icp354" target="mov2#opm84#miu122.mov2#opm87#icu126#icp376"/>
+      </Link>
+      <Link id="mov2#opm84#icu123#ln1080" name="Flow1080" to="mov2#opm84#miu119" type="transport" validate="true" gr:bendpoints="135,-136,-865,-1">
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3338" name="descActosAdmin_descActosAdmin" source="mov2#opm84#icu123#icp357" target="mov2#opm84#miu119.mov2#opm72#icu111#icp277"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3339" name="descActosDominio_descActosDominio" source="mov2#opm84#icu123#icp358" target="mov2#opm84#miu119.mov2#opm72#icu111#icp278"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3340" name="descPoderesEsp_descPoderesEsp" source="mov2#opm84#icu123#icp359" target="mov2#opm84#miu119.mov2#opm72#icu111#icp280"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3341" name="descPyC_descPyC" source="mov2#opm84#icu123#icp360" target="mov2#opm84#miu119.mov2#opm72#icu111#icp276"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3342" name="descTitulosCredito_descTitulosCredito" source="mov2#opm84#icu123#icp361" target="mov2#opm84#miu119.mov2#opm72#icu111#icp279"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3343" name="facultadActosAdmin_facultadActosAdmin" source="mov2#opm84#icu123#icp362" target="mov2#opm84#miu119.mov2#opm72#icu111#icp266"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3344" name="facultadActosDominio_facultadActosDominio" source="mov2#opm84#icu123#icp363" target="mov2#opm84#miu119.mov2#opm72#icu111#icp268"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3345" name="facultadPoderesEsp_facultadPoderesEsp" source="mov2#opm84#icu123#icp364" target="mov2#opm84#miu119.mov2#opm72#icu111#icp272"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3346" name="facultadPyC_facultadPyC" source="mov2#opm84#icu123#icp365" target="mov2#opm84#miu119.mov2#opm72#icu111#icp264"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3347" name="facultadTitulosCredito_facultadTitulosCredito" source="mov2#opm84#icu123#icp366" target="mov2#opm84#miu119.mov2#opm72#icu111#icp270"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3348" name="oidActosAdmin_oidActosAdmin" source="mov2#opm84#icu123#icp367" target="mov2#opm84#miu119.mov2#opm72#icu111#icp265"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3349" name="descActosDominio_oidActosDominio" source="mov2#opm84#icu123#icp358" target="mov2#opm84#miu119.mov2#opm72#icu111#icp267"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3350" name="oidPoderesEsp_oidPoderesEsp" source="mov2#opm84#icu123#icp369" target="mov2#opm84#miu119.mov2#opm72#icu111#icp271"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3351" name="oidPyC_oidPyC" source="mov2#opm84#icu123#icp370" target="mov2#opm84#miu119.mov2#opm72#icu111#icp263"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3352" name="oidTitulosCredito_oidTitulosCredito" source="mov2#opm84#icu123#icp371" target="mov2#opm84#miu119.mov2#opm72#icu111#icp269"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1080#par3353" name="Nombramiento_nombramiento" source="mov2#opm84#icu123#icp355" target="mov2#opm84#miu119.mov2#opm72#icu111#icp275"/>
+      </Link>
+      <Link id="mov2#opm84#icu123#ln1081" name="Flow1081" to="mov2#opm84#miu120" type="transport" validate="true" gr:bendpoints="188,162,-842,152;518,168,-512,158;813,131,-217,121">
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3354" name="Cargo_cargo" source="mov2#opm84#icu123#icp356" target="mov2#opm84#miu120.mov2#opm73#icu112#icp286"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3355" name="descActosAdmin_descActosAdmin" source="mov2#opm84#icu123#icp357" target="mov2#opm84#miu120.mov2#opm73#icu112#icp284"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3356" name="descActosDominio_descActosDominio" source="mov2#opm84#icu123#icp358" target="mov2#opm84#miu120.mov2#opm73#icu112#icp283"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3357" name="descPoderesEsp_descPoderesEsp" source="mov2#opm84#icu123#icp359" target="mov2#opm84#miu120.mov2#opm73#icu112#icp281"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3358" name="descPyC_descPyC" source="mov2#opm84#icu123#icp360" target="mov2#opm84#miu120.mov2#opm73#icu112#icp285"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3359" name="descTitulosCredito_descTitulosCredito" source="mov2#opm84#icu123#icp361" target="mov2#opm84#miu120.mov2#opm73#icu112#icp282"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3360" name="facultadActosAdmin_facultadActosAdmin" source="mov2#opm84#icu123#icp362" target="mov2#opm84#miu120.mov2#opm73#icu112#icp294"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3361" name="facultadActosDominio_facultadActosDominio" source="mov2#opm84#icu123#icp363" target="mov2#opm84#miu120.mov2#opm73#icu112#icp292"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3362" name="facultadPoderesEsp_facultadPoderesEsp" source="mov2#opm84#icu123#icp364" target="mov2#opm84#miu120.mov2#opm73#icu112#icp288"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3363" name="facultadPyC_facultadPyC" source="mov2#opm84#icu123#icp365" target="mov2#opm84#miu120.mov2#opm73#icu112#icp296"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3364" name="facultadTitulosCredito_facultadTitulosCredito" source="mov2#opm84#icu123#icp366" target="mov2#opm84#miu120.mov2#opm73#icu112#icp290"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3365" name="oidActosAdmin_oidActosAdmin" source="mov2#opm84#icu123#icp367" target="mov2#opm84#miu120.mov2#opm73#icu112#icp295"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3366" name="oidActosDominio_oidActosDominio" source="mov2#opm84#icu123#icp368" target="mov2#opm84#miu120.mov2#opm73#icu112#icp293"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3367" name="oidPoderesEsp_oidPoderesEsp" source="mov2#opm84#icu123#icp369" target="mov2#opm84#miu120.mov2#opm73#icu112#icp289"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3368" name="oidPyC_oidPyC" source="mov2#opm84#icu123#icp370" target="mov2#opm84#miu120.mov2#opm73#icu112#icp297"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3369" name="oidTitulosCredito_oidTitulosCredito" source="mov2#opm84#icu123#icp371" target="mov2#opm84#miu120.mov2#opm73#icu112#icp291"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1081#par3370" name="oidPM_oidPM" source="mov2#opm84#icu123#icp352" target="mov2#opm84#miu120.mov2#opm73#icu112#icp314"/>
+      </Link>
+      <Link id="mov2#opm84#icu123#ln1082" name="Flow1082" to="mov2#opm84#miu121" type="transport" validate="true" gr:bendpoints="141,188,-874,28;805,192,-210,32">
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3372" name="descActosAdmin_descActosAdmin" source="mov2#opm84#icu123#icp357" target="mov2#opm84#miu121.mov2#opm74#icu113#icp273"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3373" name="descActosDominio_descActosDominio" source="mov2#opm84#icu123#icp358" target="mov2#opm84#miu121.mov2#opm74#icu113#icp257"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3374" name="descPoderesEsp_descPoderesEsp" source="mov2#opm84#icu123#icp359" target="mov2#opm84#miu121.mov2#opm74#icu113#icp255"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3375" name="descPyC_descPyC" source="mov2#opm84#icu123#icp360" target="mov2#opm84#miu121.mov2#opm74#icu113#icp298"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3376" name="descTitulosCredito_descTitulosCredito" source="mov2#opm84#icu123#icp361" target="mov2#opm84#miu121.mov2#opm74#icu113#icp256"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3377" name="facultadActosAdmin_facultadActosAdmin" source="mov2#opm84#icu123#icp362" target="mov2#opm84#miu121.mov2#opm74#icu113#icp307"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3378" name="facultadActosDominio_facultadActosDominio" source="mov2#opm84#icu123#icp363" target="mov2#opm84#miu121.mov2#opm74#icu113#icp305"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3379" name="facultadPoderesEsp_facultadPoderesEsp" source="mov2#opm84#icu123#icp364" target="mov2#opm84#miu121.mov2#opm74#icu113#icp301"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3380" name="facultadPyC_facultadPyC" source="mov2#opm84#icu123#icp365" target="mov2#opm84#miu121.mov2#opm74#icu113#icp309"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3381" name="facultadTitulosCredito_facultadTitulosCredito" source="mov2#opm84#icu123#icp366" target="mov2#opm84#miu121.mov2#opm74#icu113#icp303"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3382" name="oidActosAdmin_oidActosAdmin" source="mov2#opm84#icu123#icp367" target="mov2#opm84#miu121.mov2#opm74#icu113#icp308"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3383" name="oidActosDominio_oidActosDominio" source="mov2#opm84#icu123#icp368" target="mov2#opm84#miu121.mov2#opm74#icu113#icp306"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3384" name="oidPM_oidPM" source="mov2#opm84#icu123#icp352" target="mov2#opm84#miu121.mov2#opm74#icu113#icp315"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3385" name="oidPoderesEsp_oidPoderesEsp" source="mov2#opm84#icu123#icp369" target="mov2#opm84#miu121.mov2#opm74#icu113#icp302"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3386" name="oidPyC_oidPyC" source="mov2#opm84#icu123#icp370" target="mov2#opm84#miu121.mov2#opm74#icu113#icp310"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1082#par3387" name="oidTitulosCredito_oidTitulosCredito" source="mov2#opm84#icu123#icp371" target="mov2#opm84#miu121.mov2#opm74#icu113#icp304"/>
+      </Link>
+      <Link id="mov2#opm84#icu123#ln1085" name="Flow1085" to="mov2#opm84#okcu90" type="transport" validate="true" gr:bendpoints="101,-201,-1294,-91;1144,-202,-251,-92">
+        <LinkParameter id="mov2#opm84#icu123#ln1085#par3395" name="tipoPoder_tipoPoder" source="mov2#opm84#icu123#icp321" target="mov2#opm84#okcu90#ocp242"/>
+        <LinkParameter id="mov2#opm84#icu123#ln1085#par3407" name="oidPM_oidPM" source="mov2#opm84#icu123#icp352" target="mov2#opm84#okcu90#ocp243"/>
+      </Link>
+    </InputCollectorUnit>
+    <SwitchUnit gr:x="445" gr:y="75" id="mov2#opm84#switch71" name="tipoPoder">
+      <Case value="Administraci&#243;n"/>
+      <Case value="Nombramientos"/>
+      <Case value="Apoderados"/>
+      <OKLink id="mov2#opm84#switch71#oln920" name="OKFlow920" to="mov2#opm84#miu119" automaticCoupling="true" code="Administraci&#243;n"/>
+      <OKLink id="mov2#opm84#switch71#oln921" name="OKFlow921" to="mov2#opm84#miu120" automaticCoupling="true" code="Nombramientos"/>
+      <OKLink id="mov2#opm84#switch71#oln923" name="OKFlow923" to="mov2#opm84#miu121" automaticCoupling="true" code="Apoderados"/>
+    </SwitchUnit>
+    <ModuleInstanceUnit gr:x="620" gr:y="-60" id="mov2#opm84#miu119" action="true" moduleId="mov2#opm72">
+      <OKLink id="mov2#opm84#miu119#oln997" name="OKFlow997" to="mov2#opm84#okcu90">
+        <LinkParameter id="mov2#opm84#miu119#oln997#par3174" name="Administraci&#243;n agregada con &#233;xito_OK" sourceValue="Administraci&#243;n agregada con &#233;xito" target="mov2#opm84#okcu90#ocp233"/>
+      </OKLink>
+      <KOLink id="mov2#opm84#miu119#kln427" name="KOFlow427" to="mov2#opm84#kocu75">
+        <LinkParameter id="mov2#opm84#miu119#kln427#par3173" name="mensaje error_error" source="mov2#opm72#kocu63#ocp207" target="mov2#opm84#kocu75#ocp232"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="635" gr:y="85" id="mov2#opm84#miu120" action="true" moduleId="mov2#opm73">
+      <OKLink id="mov2#opm84#miu120#oln1007" name="OKFlow1007" to="mov2#opm84#okcu90">
+        <LinkParameter id="mov2#opm84#miu120#oln1007#par3178" name="Nombramiento agregado con &#233;xito_OK" sourceValue="Nombramiento agregado con &#233;xito" target="mov2#opm84#okcu90#ocp233"/>
+      </OKLink>
+      <KOLink id="mov2#opm84#miu120#kln429" name="KOFlow429" to="mov2#opm84#kocu75">
+        <LinkParameter id="mov2#opm84#miu120#kln429#par3172" name="mensaje error_error" source="mov2#opm73#kocu64#ocp208" target="mov2#opm84#kocu75#ocp232"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="630" gr:y="235" id="mov2#opm84#miu121" action="true" moduleId="mov2#opm74">
+      <OKLink id="mov2#opm84#miu121#oln1008" name="OKFlow1008" to="mov2#opm84#okcu90">
+        <LinkParameter id="mov2#opm84#miu121#oln1008#par3179" name="Apoderado agregado con &#233;xito_OK" sourceValue="Apoderado agregado con &#233;xito" target="mov2#opm84#okcu90#ocp233"/>
+      </OKLink>
+      <KOLink id="mov2#opm84#miu121#kln430" name="KOFlow430" to="mov2#opm84#kocu75">
+        <LinkParameter id="mov2#opm84#miu121#kln430#par3171" name="mensaje error_error" source="mov2#opm74#kocu65#ocp194" target="mov2#opm84#kocu75#ocp232"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="85" gr:y="80" id="mov2#opm84#miu122" action="true" moduleId="mov2#opm87">
+      <OKLink id="mov2#opm84#miu122#oln924" name="OKFlow924" to="mov2#opm84#switch71" automaticCoupling="true"/>
+      <Link id="mov2#opm84#miu122#ln913" name="Flow913" to="mov2#opm84#miu119" type="transport" validate="true" gr:bendpoints="256,-50,-224,-10">
+        <LinkParameter id="mov2#opm84#miu122#ln913#par2333" name="OK Port74.oidPF_oidPF" source="mov2#opm87#okcu92#ocp239" target="mov2#opm84#miu119.mov2#opm72#icu111#icp274"/>
+        <LinkParameter id="mov2#opm84#miu122#ln913#par2334" name="OK Port74.oidPM_oidPM" source="mov2#opm87#okcu92#ocp240" target="mov2#opm84#miu119.mov2#opm72#icu111#icp311"/>
+      </Link>
+      <Link id="mov2#opm84#miu122#ln930" name="Flow930" to="mov2#opm84#miu120" type="transport" validate="true" gr:bendpoints="248,61,-247,11">
+        <LinkParameter id="mov2#opm84#miu122#ln930#par3371" name="OK Port74.oidPF_oidPF" source="mov2#opm87#okcu92#ocp239" target="mov2#opm84#miu120.mov2#opm73#icu112#icp287"/>
+      </Link>
+      <Link id="mov2#opm84#miu122#ln931" name="Flow931" to="mov2#opm84#miu121" type="transport" validate="true" gr:bendpoints="222,133,-273,-2">
+        <LinkParameter id="mov2#opm84#miu122#ln931#par2378" name="OK Port74.oidPF_oidPF" source="mov2#opm87#okcu92#ocp239" target="mov2#opm84#miu121.mov2#opm74#icu113#icp300"/>
+      </Link>
+      <KOLink id="mov2#opm84#miu122#kln432" name="KOFlow432" to="mov2#opm84#kocu75">
+        <LinkParameter id="mov2#opm84#miu122#kln432#par3170" name="msj_error" source="mov2#opm68#kocu59#ocp192" target="mov2#opm84#kocu75#ocp232"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <KOCollectorUnit gr:x="1010" gr:y="180" id="mov2#opm84#kocu75" name="KO Port75">
+      <OutputCollectorParameter id="mov2#opm84#kocu75#ocp232" name="error"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit gr:x="1010" gr:y="-40" id="mov2#opm84#okcu90" name="OK Port90">
+      <OutputCollectorParameter id="mov2#opm84#okcu90#ocp233" name="OK"/>
+      <OutputCollectorParameter id="mov2#opm84#okcu90#ocp242" name="tipoPoder"/>
+      <OutputCollectorParameter id="mov2#opm84#okcu90#ocp243" name="oidPM"/>
+    </OKCollectorUnit>
+    <SwitchUnit id="mov2#opm84#switch74" name="tipoPoder" gr:x="-105" gr:y="80">
+      <Case value="Administraci&#243;n"/>
+      <Case value="Nombramientos"/>
+      <Case value="Apoderados"/>
+      <OKLink id="mov2#opm84#switch74#oln1019" name="OKFlow1019" to="mov2#opm84#miu122" code="Nombramientos">
+        <LinkParameter id="mov2#opm84#switch74#oln1019#par3336" name="FNO_conFacultades" sourceValue="FNO" target="mov2#opm84#miu122.mov2#opm87#icu126#icp377"/>
+      </OKLink>
+      <OKLink id="mov2#opm84#switch74#oln1020" name="OKFlow1020" to="mov2#opm84#miu122" gr:bendpoints="94,62,-206,57" code="Apoderados">
+        <LinkParameter id="mov2#opm84#switch74#oln1020#par3337" name="FAP_conFacultades" sourceValue="FAP" target="mov2#opm84#miu122.mov2#opm87#icu126#icp377"/>
+      </OKLink>
+      <OKLink id="mov2#opm84#switch74#oln1021" name="OKFlow1021" to="mov2#opm84#miu122" gr:bendpoints="93,-54,-207,-59" code="Administraci&#243;n">
+        <LinkParameter id="mov2#opm84#switch74#oln1021#par3335" name="FAD_conFacultades" sourceValue="FAD" target="mov2#opm84#miu122.mov2#opm87#icu126#icp377"/>
+      </OKLink>
+    </SwitchUnit>
+  </OperationUnits>
+</OperationModule>

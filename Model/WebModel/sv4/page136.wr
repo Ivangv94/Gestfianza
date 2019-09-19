@@ -1,0 +1,45 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#page136" name="Selecci&#243;n de Fedatario" layout:pageLayout="gobmxStyle/Empty" layout:frameLayout="None" gr:x="-2230" gr:y="450" localized="true">
+  <ContentUnits>
+    <PowerIndexUnit id="sv4#page136#pwu38" name="Seleccionar Fedatario" linkOrder="sv4#page136#pwu38#ln1515" gr:x="0" gr:y="0" sortable="true" checkable="false" useCountQuery="false" entity="ent96" displayAttributes="ent96#att569 rel50#role99.ent78#att288 ent96#att565 ent96#att566 ent96#att567">
+      <Selector id="sv4#page136#pwu38#su531" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#page136#pwu38#su531#kcond231" name="busca" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#page136#pwu38#ln1515" name="Seleccionar" to="sv4#page134#enu177" type="normal" validate="true">
+        <LinkParameter id="sv4#page136#pwu38#ln1515#par4894" name="nombreFed_Nombre" source="data[].ent96#att565" target="sv4#page134#enu177#fld520_slot"/>
+        <LinkParameter id="sv4#page136#pwu38#ln1515#par4895" name="primApellido_Primer Apellido" source="data[].ent96#att566" target="sv4#page134#enu177#fld521_slot"/>
+        <LinkParameter id="sv4#page136#pwu38#ln1515#par4896" name="segunApellido_Segundo Apellido" source="data[].ent96#att567" target="sv4#page134#enu177#fld523_slot"/>
+        <LinkParameter id="sv4#page136#pwu38#ln1515#par1796" name="FedatariosToCalidadfedatario.oidCalidadFed_PASSING" source="data[].rel26#role51_ent40#att273" passing="true"/>
+        <LinkParameter id="sv4#page136#pwu38#ln1515#par2285" name="FedatariosToEstados.oidEstado_PASSING" source="data[].rel78#role155_ent97#att579" passing="true"/>
+        <LinkParameter id="sv4#page136#pwu38#ln1515#par2328" name="FedatariosToMunicipios.oidMunicipio_PASSING" source="data[].rel50#role99_ent78#att287" passing="true"/>
+        <LinkParameter id="sv4#page136#pwu38#ln1515#par4041" name="oidFedatario_PASSING" source="data[].ent96#att564" passing="true"/>
+        <LinkParameter id="sv4#page136#pwu38#ln1515#par4320" name="FedatariosToEstatusfedatario.oidEstatusFed_PASSING" source="data[].rel47#role93_ent98#att581" passing="true"/>
+        <LinkParameter id="sv4#page136#pwu38#ln1515#par4321" name="FedatariosToTipofedatario.oidTipoFedatario_PASSING" source="data[].rel52#role103_ent75#att285" passing="true"/>
+      </Link>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page136#pwu38">
+          <layout:Link link="sv4#page136#pwu38#ln1515"/>
+          <layout:Attribute attribute="ent96#att569"/>
+          <layout:Attribute attribute="rel50#role99.ent78#att288"/>
+          <layout:Attribute attribute="ent96#att565"/>
+          <layout:Attribute attribute="ent96#att566"/>
+          <layout:Attribute attribute="ent96#att567"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

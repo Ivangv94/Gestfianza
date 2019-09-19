@@ -1,0 +1,52 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg3#opm55" name="iniciarActividadPRUEBA" gr:x="0" gr:y="275">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg3#opm55#icu83" gr:x="-110" gr:y="60">
+      <OKLink id="mov2#mpkg3#opm55#icu83#oln427" name="OKFlow577" to="mov2#mpkg3#opm55#uau1" automaticCoupling="true"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm55#icu83#icp195" name="nombreActividad"/>
+      <Link id="mov2#mpkg3#opm55#icu83#ln505" name="Flow487" to="mov2#mpkg3#opm55#seu14" type="transport" validate="true" gr:bendpoints="143,-63,-577,-63;656,-63,-64,-63">
+        <LinkParameter id="mov2#mpkg3#opm55#icu83#ln505#par1601" name="nombreActividad_name" source="mov2#mpkg3#opm55#icu83#icp195" target="mov2#mpkg3#opm55#seu14#su41#acond23"/>
+      </Link>
+    </InputCollectorUnit>
+    <SwitchUnit id="mov2#mpkg3#opm55#switch1" name="dataSize" gr:x="520" gr:y="70">
+      <Case value="1"/>
+      <OKLink id="mov2#mpkg3#opm55#switch1#oln428" name="OKFlow1240" to="mov2#mpkg3#opm55#seu14" automaticCoupling="true"/>
+    </SwitchUnit>
+    <SelectorUnit id="mov2#mpkg3#opm55#seu13" name="Work Items" gr:x="325" gr:y="50" entity="ActivityInstance" maxResults="1">
+      <Selector id="mov2#mpkg3#opm55#seu13#su21" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg3#opm55#seu13#su21#kcond8" name="oids" predicate="in" implied="false"/>
+        <RelationshipRoleCondition id="mov2#mpkg3#opm55#seu13#su21#rcond8" name="activityType" predicate="in" implied="true" role="activityType2ActivityInstances"/>
+      </Selector>
+      <SortAttribute attribute="activityInstanceReadyTimestamp" order="descending"/>
+      <OKLink id="mov2#mpkg3#opm55#seu13#oln429" name="OKFlow1225" to="mov2#mpkg3#opm55#switch1">
+        <LinkParameter id="mov2#mpkg3#opm55#seu13#oln429#par1602" name="Data Size_Switch" source="dataSize" target="mov2#mpkg3#opm55#switch1.switch"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm55#seu13#kln281" name="KOFlow279" to="mov2#mpkg3#opm55#kocu45" gr:bendpoints="41,108,-589,-2">
+        <LinkParameter id="mov2#mpkg3#opm55#seu13#kln281#par1603" name="Error al buscar las instancias de las actividades._msj" target="mov2#mpkg3#opm55#kocu45#ocp176" sourceValue="Error al buscar las instancias de las actividades."/>
+      </KOLink>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#mpkg3#opm55#seu14" name="buscarProceso" gr:x="660" gr:y="55" entity="ActivityType">
+      <Selector id="mov2#mpkg3#opm55#seu14#su41" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg3#opm55#seu14#su41#acond23" name="name" predicate="eq" booleanOperator="or" implied="false" attributes="activityTypeName"/>
+      </Selector>
+      <OKLink id="mov2#mpkg3#opm55#seu14#oln430" name="OKFlow579" to="mov2#mpkg3#opm55#spu6">
+        <LinkParameter id="mov2#mpkg3#opm55#seu14#oln430#par1890" name="oid_Start Activity Type Oid" source="activityTypeOidArray" target="mov2#mpkg3#opm55#spu6.startActivityTypeOid"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm55#seu14#kln282" name="KOFlow280" to="mov2#mpkg3#opm55#kocu45" gr:bendpoints="57,110,-228,0">
+        <LinkParameter id="mov2#mpkg3#opm55#seu14#kln282#par1820" name="Error al buscar el proceso._msj" target="mov2#mpkg3#opm55#kocu45#ocp176" sourceValue="Error al buscar el proceso."/>
+      </KOLink>
+    </SelectorUnit>
+    <UserActivitiesUnit id="mov2#mpkg3#opm55#uau1" name="Active" gr:x="170" gr:y="65" activityStatus="runnable">
+      <OKLink id="mov2#mpkg3#opm55#uau1#oln431" name="OKFlow1224" to="mov2#mpkg3#opm55#seu13">
+        <LinkParameter id="mov2#mpkg3#opm55#uau1#oln431#par1821" name="Activity Instance Oids_oids [oid]" source="activityInstanceOids" target="mov2#mpkg3#opm55#seu13#su21#kcond8.activityInstanceOid"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm55#uau1#kln291" name="KOFlow37" to="mov2#mpkg3#opm55#kocu45" gr:bendpoints="34,109,-766,-1">
+        <LinkParameter id="mov2#mpkg3#opm55#uau1#kln291#par1889" name="Error al buscar los elementos que se puede detonar este usuario._msj" target="mov2#mpkg3#opm55#kocu45#ocp176" sourceValue="Error al buscar los elementos que se puede detonar este usuario."/>
+      </KOLink>
+    </UserActivitiesUnit>
+    <OKCollectorUnit id="mov2#mpkg3#opm55#okcu51" name="OK" gr:x="1055" gr:y="60"/>
+    <KOCollectorUnit id="mov2#mpkg3#opm55#kocu45" name="KO" gr:x="1055" gr:y="170">
+      <OutputCollectorParameter id="mov2#mpkg3#opm55#kocu45#ocp176" name="msj"/>
+    </KOCollectorUnit>
+    <StartProcessUnit gr:x="860" gr:y="70" id="mov2#mpkg3#opm55#spu6" name="StartProcessUnit6"/>
+  </OperationUnits>
+</OperationModule>

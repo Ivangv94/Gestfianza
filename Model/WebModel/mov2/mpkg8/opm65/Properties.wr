@@ -1,0 +1,82 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="110" gr:y="230" id="mov2#mpkg8#opm65" name="guardarDatosPersona">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg8#opm65#icu93" gr:x="15" gr:y="-20" linkOrder="mov2#mpkg8#opm65#icu93#ln705 mov2#mpkg8#opm65#icu93#ln706">
+      <OKLink id="mov2#mpkg8#opm65#icu93#oln689" name="OKFlow689" to="mov2#mpkg8#opm65#seu104" automaticCoupling="true"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm65#icu93#icp230" name="rfc"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm65#icu93#icp229" name="ocr"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm65#icu93#icp228" name="numEmision"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm65#icu93#icp227" name="nombre"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm65#icu93#icp226" name="FeNa"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm65#icu93#icp225" name="curp"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm65#icu93#icp224" name="claveElectoral"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm65#icu93#icp223" name="cic"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm65#icu93#icp222" name="ap2"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm65#icu93#icp221" name="ap1"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm65#icu93#icp220" name="anioReg"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm65#icu93#icp219" name="anioEmision"/>
+      <Link id="mov2#mpkg8#opm65#icu93#ln705" name="Flow705" to="mov2#mpkg8#opm65#mfu18" type="transport" validate="true" gr:bendpoints="157,-66,-458,-66;507,-67,-108,-67">
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln705#par2725" name="anioEmision_anioEmision" source="mov2#mpkg8#opm65#icu93#icp219" target="mov2#mpkg8#opm65#mfu18.ent52#att356"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln705#par2726" name="anioReg_anioReg" source="mov2#mpkg8#opm65#icu93#icp220" target="mov2#mpkg8#opm65#mfu18.ent52#att357"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln705#par2727" name="ap1_ap1" source="mov2#mpkg8#opm65#icu93#icp221" target="mov2#mpkg8#opm65#mfu18.ent52#att358"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln705#par2728" name="ap2_ap2" source="mov2#mpkg8#opm65#icu93#icp222" target="mov2#mpkg8#opm65#mfu18.ent52#att359"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln705#par2729" name="cic_cic" source="mov2#mpkg8#opm65#icu93#icp223" target="mov2#mpkg8#opm65#mfu18.ent52#att360"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln705#par2730" name="claveElectoral_claveElectoral" source="mov2#mpkg8#opm65#icu93#icp224" target="mov2#mpkg8#opm65#mfu18.ent52#att361"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln705#par2731" name="curp_curp" source="mov2#mpkg8#opm65#icu93#icp225" target="mov2#mpkg8#opm65#mfu18.ent52#att362"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln705#par2732" name="FeNa_FeNa" source="mov2#mpkg8#opm65#icu93#icp226" target="mov2#mpkg8#opm65#mfu18.ent52#att363"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln705#par2733" name="nombre_nombre" source="mov2#mpkg8#opm65#icu93#icp227" target="mov2#mpkg8#opm65#mfu18.ent52#att364"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln705#par2734" name="numEmision_numEmision" source="mov2#mpkg8#opm65#icu93#icp228" target="mov2#mpkg8#opm65#mfu18.ent52#att365"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln705#par2735" name="ocr_ocr" source="mov2#mpkg8#opm65#icu93#icp229" target="mov2#mpkg8#opm65#mfu18.ent52#att366"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln705#par2736" name="rfc_rfc" source="mov2#mpkg8#opm65#icu93#icp230" target="mov2#mpkg8#opm65#mfu18.ent52#att367"/>
+      </Link>
+      <Link id="mov2#mpkg8#opm65#icu93#ln706" name="Flow706" to="mov2#mpkg8#opm65#cru26" type="transport" validate="true" gr:bendpoints="177,124,-258,-1">
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln706#par2737" name="anioEmision_anioEmision" source="mov2#mpkg8#opm65#icu93#icp219" target="mov2#mpkg8#opm65#cru26.ent52#att356"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln706#par2738" name="anioReg_anioReg" source="mov2#mpkg8#opm65#icu93#icp220" target="mov2#mpkg8#opm65#cru26.ent52#att357"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln706#par2739" name="ap1_ap1" source="mov2#mpkg8#opm65#icu93#icp221" target="mov2#mpkg8#opm65#cru26.ent52#att358"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln706#par2740" name="ap2_ap2" source="mov2#mpkg8#opm65#icu93#icp222" target="mov2#mpkg8#opm65#cru26.ent52#att359"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln706#par2741" name="cic_cic" source="mov2#mpkg8#opm65#icu93#icp223" target="mov2#mpkg8#opm65#cru26.ent52#att360"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln706#par2742" name="claveElectoral_claveElectoral" source="mov2#mpkg8#opm65#icu93#icp224" target="mov2#mpkg8#opm65#cru26.ent52#att361"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln706#par2743" name="curp_curp" source="mov2#mpkg8#opm65#icu93#icp225" target="mov2#mpkg8#opm65#cru26.ent52#att362"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln706#par2744" name="FeNa_FeNa" source="mov2#mpkg8#opm65#icu93#icp226" target="mov2#mpkg8#opm65#cru26.ent52#att363"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln706#par2745" name="nombre_nombre" source="mov2#mpkg8#opm65#icu93#icp227" target="mov2#mpkg8#opm65#cru26.ent52#att364"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln706#par2746" name="numEmision_numEmision" source="mov2#mpkg8#opm65#icu93#icp228" target="mov2#mpkg8#opm65#cru26.ent52#att365"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln706#par2747" name="ocr_ocr" source="mov2#mpkg8#opm65#icu93#icp229" target="mov2#mpkg8#opm65#cru26.ent52#att366"/>
+        <LinkParameter id="mov2#mpkg8#opm65#icu93#ln706#par2748" name="rfc_rfc" source="mov2#mpkg8#opm65#icu93#icp230" target="mov2#mpkg8#opm65#cru26.ent52#att367"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="305" gr:y="55" id="mov2#mpkg8#opm65#seu104" name="verificarDatos" entity="ent52" linkOrder="mov2#mpkg8#opm65#seu104#ln704">
+      <OKLink id="mov2#mpkg8#opm65#seu104#oln690" name="OKFlow690" to="mov2#mpkg8#opm65#inn36">
+        <LinkParameter id="mov2#mpkg8#opm65#seu104#oln690#par2749" name="userOID_Input" source="ent52#att368Array" target="mov2#mpkg8#opm65#inn36.isnotnull"/>
+      </OKLink>
+      <Selector id="mov2#mpkg8#opm65#seu104#su200" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg8#opm65#seu104#su200#acond112" name="userOID" predicate="eq" booleanOperator="or" implied="false" attributes="ent52#att368"/>
+      </Selector>
+      <Link id="mov2#mpkg8#opm65#seu104#ln704" name="Flow704" to="mov2#mpkg8#opm65#mfu18" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="197,-50,-183,-50"/>
+      <KOLink id="mov2#mpkg8#opm65#seu104#kln317" name="KOFlow317" to="mov2#mpkg8#opm65#kocu52" automaticCoupling="true" gr:bendpoints="60,176,-580,36;431,172,-209,47"/>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="520" gr:y="70" id="mov2#mpkg8#opm65#inn36" name="&#191;Existe?">
+      <OKLink id="mov2#mpkg8#opm65#inn36#oln691" name="OKFlow691" to="mov2#mpkg8#opm65#mfu18" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg8#opm65#inn36#kln314" name="KOFlow314" to="mov2#mpkg8#opm65#cru26" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="510" gr:y="185" id="mov2#mpkg8#opm65#cru26" name="guadarDatos" entity="ent52">
+      <OKLink id="mov2#mpkg8#opm65#cru26#oln692" name="OKFlow692" to="mov2#mpkg8#opm65#okcu66" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg8#opm65#cru26#kln316" name="KOFlow316" to="mov2#mpkg8#opm65#kocu52" automaticCoupling="true"/>
+    </CreateUnit>
+    <ModifyUnit gr:x="680" gr:y="55" id="mov2#mpkg8#opm65#mfu18" name="ActualizarDatos" entity="ent52">
+      <Selector id="mov2#mpkg8#opm65#mfu18#su199" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg8#opm65#mfu18#su199#kcond103" name="KeyCondition103" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg8#opm65#mfu18#oln693" name="OKFlow693" to="mov2#mpkg8#opm65#okcu66" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg8#opm65#mfu18#kln315" name="KOFlow315" to="mov2#mpkg8#opm65#kocu52" automaticCoupling="true"/>
+    </ModifyUnit>
+    <OKCollectorUnit gr:x="890" gr:y="55" id="mov2#mpkg8#opm65#okcu66" name="OK"/>
+    <KOCollectorUnit gr:x="890" gr:y="185" id="mov2#mpkg8#opm65#kocu52" name="KO"/>
+    <GetUnit gr:x="315" gr:y="-50" id="mov2#mpkg8#opm65#gtu39" name="getUser" contextParameters="UserCtxParam" linkOrder="mov2#mpkg8#opm65#gtu39#ln703 mov2#mpkg8#opm65#gtu39#ln707">
+      <Link id="mov2#mpkg8#opm65#gtu39#ln703" name="Flow703" to="mov2#mpkg8#opm65#seu104" type="transport" validate="true">
+        <LinkParameter id="mov2#mpkg8#opm65#gtu39#ln703#par2724" name="UserCtxParam.oid_userOID" source="mov2#mpkg8#opm65#gtu39.UserCtxParam" target="mov2#mpkg8#opm65#seu104#su200#acond112"/>
+      </Link>
+      <Link id="mov2#mpkg8#opm65#gtu39#ln707" name="Flow707" to="mov2#mpkg8#opm65#cru26" type="transport" validate="true">
+        <LinkParameter id="mov2#mpkg8#opm65#gtu39#ln707#par2750" name="UserCtxParam.oid_userOID" source="mov2#mpkg8#opm65#gtu39.UserCtxParam" target="mov2#mpkg8#opm65#cru26.ent52#att368"/>
+      </Link>
+    </GetUnit>
+  </OperationUnits>
+</OperationModule>

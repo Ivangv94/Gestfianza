@@ -1,0 +1,30 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1540" gr:y="250" id="mov2#opm7" name="comprobarFedatario">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm7#icu12" gr:x="30" gr:y="60" linkOrder="mov2#opm7#icu12#ln276">
+      <InputCollectorParameter id="mov2#opm7#icu12#icp3" name="rfc"/>
+      <InputCollectorParameter id="mov2#opm7#icu12#icp2" name="curp"/>
+      <OKLink id="mov2#opm7#icu12#oln175" name="OKFlow175" to="mov2#opm7#inn5">
+        <LinkParameter id="mov2#opm7#icu12#oln175#par669" name="curp_Input" source="mov2#opm7#icu12#icp2" target="mov2#opm7#inn5.isnotnull"/>
+      </OKLink>
+      <Link id="mov2#opm7#icu12#ln276" name="Flow276" to="mov2#opm7#inn6" type="transport" validate="true" gr:bendpoints="119,-48,-336,-48;379,-49,-76,-49">
+        <LinkParameter id="mov2#opm7#icu12#ln276#par670" name="rfc_Input" source="mov2#opm7#icu12#icp3" target="mov2#opm7#inn6.isnotnull"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="720" gr:y="60" id="mov2#opm7#okcu18" name="OK"/>
+    <IsNotNullUnit gr:x="340" gr:y="70" id="mov2#opm7#inn5" name="&#191;Existe curp?">
+      <OKLink id="mov2#opm7#inn5#oln218" name="OKFlow218" to="mov2#opm7#inn6" automaticCoupling="true"/>
+      <KOLink id="mov2#opm7#inn5#kln114" name="KOFlow114" to="mov2#opm7#kocu15" gr:bendpoints="46,112,-409,7;323,115,-132,10">
+        <LinkParameter id="mov2#opm7#inn5#kln114#par672" name="No se introdujo el CURP del fedatario._msj" sourceValue="No se introdujo el CURP del fedatario." target="mov2#opm7#kocu15#ocp71"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <IsNotNullUnit gr:x="545" gr:y="70" id="mov2#opm7#inn6" name="&#191;Existe rfc?">
+      <OKLink id="mov2#opm7#inn6#oln219" name="OKFlow219" to="mov2#opm7#okcu18" automaticCoupling="true"/>
+      <KOLink id="mov2#opm7#inn6#kln113" name="KOFlow113" to="mov2#opm7#kocu15" gr:bendpoints="62,103,-193,-2">
+        <LinkParameter id="mov2#opm7#inn6#kln113#par671" name="No se introdujo el RFC del fedatario._msj" sourceValue="No se introdujo el RFC del fedatario." target="mov2#opm7#kocu15#ocp71"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <KOCollectorUnit gr:x="740" gr:y="165" id="mov2#opm7#kocu15" name="KO">
+      <OutputCollectorParameter id="mov2#opm7#kocu15#ocp71" name="msj"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,41 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="150" id="mov2#mpkg2#opm54" name="Fedatario o Notario">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg2#opm54#icu78" name="Input Collector" gr:x="30" gr:y="60">
+      <OKLink id="mov2#mpkg2#opm54#icu78#oln589" name="OKFlow589" to="mov2#mpkg2#opm54#seu100" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <GetUnit gr:x="295" gr:y="-60" id="mov2#mpkg2#opm54#gtu31" name="getUser" contextParameters="UserCtxParam" linkOrder="mov2#mpkg2#opm54#gtu31#ln493">
+      <Link id="mov2#mpkg2#opm54#gtu31#ln493" name="Flow493" to="mov2#mpkg2#opm54#seu100" type="transport" validate="true">
+        <LinkParameter id="mov2#mpkg2#opm54#gtu31#ln493#par2144" name="UserCtxParam.oid_KeyCondition97 [oid]" source="mov2#mpkg2#opm54#gtu31.UserCtxParam" target="mov2#mpkg2#opm54#seu100#su190#kcond97.userOID"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="295" gr:y="55" id="mov2#mpkg2#opm54#seu100" name="buscarPF" entity="ent39">
+      <Selector id="mov2#mpkg2#opm54#seu100#su190" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg2#opm54#seu100#su190#kcond97" name="KeyCondition97" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg2#opm54#seu100#oln590" name="OKFlow590" to="mov2#mpkg2#opm54#seu101" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg2#opm54#seu100#kln284" name="KOFlow284" to="mov2#mpkg2#opm54#kocu46" automaticCoupling="true" gr:bendpoints="36,99,-749,-1"/>
+    </SelectorUnit>
+    <SelectorUnit gr:x="470" gr:y="55" id="mov2#mpkg2#opm54#seu101" name="buscarDatosFedatario" entity="ent8">
+      <KOLink id="mov2#mpkg2#opm54#seu101#kln283" name="KOFlow283" to="mov2#mpkg2#opm54#kocu46" automaticCoupling="true" gr:bendpoints="79,99,-496,-1"/>
+      <OKLink id="mov2#mpkg2#opm54#seu101#oln592" name="OKFlow592" to="mov2#mpkg2#opm54#switch32">
+        <LinkParameter id="mov2#mpkg2#opm54#seu101#oln592#par2145" name="tipo_Switch" source="ent8#att47Array" target="mov2#mpkg2#opm54#switch32.switch"/>
+      </OKLink>
+      <Selector id="mov2#mpkg2#opm54#seu101#su191" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg2#opm54#seu101#su191#rcond110" name="Fedatario" predicate="in" implied="false" role="rel25#role50"/>
+      </Selector>
+    </SelectorUnit>
+    <OKCollectorUnit gr:x="1035" gr:y="-65" id="mov2#mpkg2#opm54#okcu52" name="Notario P&#250;blico"/>
+    <KOCollectorUnit gr:x="1035" gr:y="160" id="mov2#mpkg2#opm54#kocu46" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg2#opm54#kocu46#ocp154" name="msj"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit gr:x="1035" gr:y="0" id="mov2#mpkg2#opm54#okcu53" name="Corredor P&#250;blico"/>
+    <SwitchUnit gr:x="740" gr:y="70" id="mov2#mpkg2#opm54#switch32" name="Tipo Fedatario">
+      <Case value="Notario P&#250;blico"/>
+      <Case value="Corredor P&#250;blico"/>
+      <OKLink id="mov2#mpkg2#opm54#switch32#oln593" name="OKFlow593" to="mov2#mpkg2#opm54#okcu52" automaticCoupling="true" code="Notario P&#250;blico"/>
+      <OKLink id="mov2#mpkg2#opm54#switch32#oln594" name="OKFlow594" to="mov2#mpkg2#opm54#okcu53" automaticCoupling="true" code="Corredor P&#250;blico"/>
+      <OKLink id="mov2#mpkg2#opm54#switch32#oln595" name="OKFlow595" to="mov2#mpkg2#opm54#okcu54" automaticCoupling="true"/>
+    </SwitchUnit>
+    <OKCollectorUnit gr:x="1035" gr:y="60" id="mov2#mpkg2#opm54#okcu54" name="OK"/>
+  </OperationUnits>
+</OperationModule>

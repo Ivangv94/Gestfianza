@@ -1,0 +1,70 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym36#page120" name="Domicilio de los accionistas" localized="true" gr:x="839" gr:y="213">
+  <ContentUnits>
+    <IndexUnit id="mov1#hym36#page120#inu11" name="domicilioAccionistas" gr:x="0" gr:y="0" entity="ent39" displayAttributes="ent39#att272 ent39#att271 ent39#att270"/>
+    <IndexUnit id="mov1#hym36#page120#inu21" name="domicilioAccionistasPM" gr:x="195" gr:y="0" entity="ent38" displayAttributes="ent38#att255"/>
+    <EntryUnit id="mov1#hym36#page120#enu129" name="Buttons" gr:x="140" gr:y="110" linkOrder="mov1#hym36#page120#enu129#ln1092 mov1#hym36#page120#enu129#ln1093">
+      <Link id="mov1#hym36#page120#enu129#ln1092" name="Cancel" to="mov1#hym36#pu137" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-19,-208,301,57"/>
+      <Link id="mov1#hym36#page120#enu129#ln1093" name="Finish" to="mov1#hym36#pu135" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="4,-353,199,7"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym36#page120#inu11" layout:frameLayout="None">
+          <layout:Attribute attribute="ent39#att272"/>
+          <layout:Attribute attribute="ent39#att271"/>
+          <layout:Attribute attribute="ent39#att270"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym36#page120#inu21" layout:frameLayout="None">
+          <layout:Attribute attribute="ent38#att255"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym36#page120#enu129" layout:frameLayout="None">
+          <layout:Link link="mov1#hym36#page120#enu129#ln1092"/>
+          <layout:Link link="mov1#hym36#page120#enu129#ln1093"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+</Page>

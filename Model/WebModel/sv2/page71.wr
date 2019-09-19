@@ -1,0 +1,42 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page71" name="Logs" gr:x="1510" gr:y="190" localized="true">
+  <ContentUnits>
+    <EntryUnit id="sv2#page71#enu66" name="Logs" linkOrder="sv2#page71#enu66#ln96" gr:x="0" gr:y="0">
+      <Field id="sv2#page71#enu66#fld177" name="bpm.log" type="text" modifiable="false" preloaded="true"/>
+      <Field id="sv2#page71#enu66#fld178" name="rtx.log" type="text" modifiable="false" preloaded="true" hidden="false"/>
+      <Field id="sv2#page71#enu66#fld179" name="rtxerror.log" type="text" modifiable="false" preloaded="true"/>
+      <Field id="sv2#page71#enu66#fld180" name="wrstruts.log" type="text" modifiable="false" preloaded="true"/>
+      <Field id="sv2#page71#enu66#fld181" name="wrstrutserror.log" type="text" modifiable="false" preloaded="true"/>
+      <Field id="sv2#page71#enu66#fld182" name="server.log" type="text" modifiable="false" hidden="false" preloaded="true"/>
+      <Link id="sv2#page71#enu66#ln96" name="actualizar" to="sv2#seu67" type="normal" automaticCoupling="true" validate="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true" ajaxWaitingDialogMessage="Procesando ..."/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page71#enu66" layout:frameLayout="None">
+          <layout:Link link="sv2#page71#enu66#ln96" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Field field="sv2#page71#enu66#fld177"/>
+          <layout:Field field="sv2#page71#enu66#fld178"/>
+          <layout:Field field="sv2#page71#enu66#fld179"/>
+          <layout:Field field="sv2#page71#enu66#fld180"/>
+          <layout:Field field="sv2#page71#enu66#fld181"/>
+          <layout:Field field="sv2#page71#enu66#fld182"/>
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

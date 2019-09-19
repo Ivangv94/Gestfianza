@@ -1,0 +1,60 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm3" name="EAcciones" gr:x="-165" gr:y="480">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm3#icu104" gr:x="30" gr:y="60" linkOrder="mov2#opm3#icu104#ln813">
+      <OKLink id="mov2#opm3#icu104#oln732" name="OKFlow1371" to="mov2#opm3#qu3">
+        <LinkParameter id="mov2#opm3#icu104#oln732#par2371" name="oidPM_oidPM" source="mov2#opm3#icu104#icp238" target="mov2#opm3#qu3.mov2#opm3#qu3#qi3"/>
+        <LinkParameter id="mov2#opm3#icu104#oln732#par2372" name="F_tipoAccion" sourceValue="F" target="mov2#opm3#qu3.mov2#opm3#qu3#qi4"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm3#icu104#icp238" name="oidPM"/>
+      <Link id="mov2#opm3#icu104#ln813" name="Flow813" to="mov2#opm3#qu4" type="transport" validate="true">
+        <LinkParameter id="mov2#opm3#icu104#ln813#par2375" name="oidPM_oidPM" source="mov2#opm3#icu104#icp238" target="mov2#opm3#qu4.mov2#opm3#qu4#qi5"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#opm3#okcu70" name="OK Port118" gr:x="995" gr:y="60">
+      <OutputCollectorParameter id="mov2#opm3#okcu70#ocp185" name="EAccionesCF"/>
+      <OutputCollectorParameter id="mov2#opm3#okcu70#ocp186" name="EAccionesCV"/>
+      <OutputCollectorParameter id="mov2#opm3#okcu70#ocp187" name="valorAccion"/>
+      <OutputCollectorParameter id="mov2#opm3#okcu70#ocp188" name="oidPM"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov2#opm3#kocu56" name="KO Port99" gr:x="995" gr:y="160"/>
+    <SelectorUnit id="mov2#opm3#seu137" name="EAccionesCV" gr:x="665" gr:y="60" entity="ent60">
+      <Selector id="mov2#opm3#seu137#su247" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm3#seu137#su247#rcond134" name="pm" predicate="in" implied="false" role="rel35#role70"/>
+        <AttributesCondition id="mov2#opm3#seu137#su247#acond135" name="AttCondition216" predicate="eq" booleanOperator="or" implied="false" value="V" attributes="ent60#att391"/>
+      </Selector>
+      <KOLink id="mov2#opm3#seu137#kln330" name="KOFlow553" to="mov2#opm3#kocu56" automaticCoupling="true"/>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm3#seu138" name="EAccionesCF" gr:x="380" gr:y="60" entity="ent60">
+      <Selector id="mov2#opm3#seu138#su248" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm3#seu138#su248#rcond135" name="pm" predicate="in" implied="false" role="rel35#role70"/>
+        <AttributesCondition id="mov2#opm3#seu138#su248#acond136" name="AttCondition216" predicate="eq" booleanOperator="or" implied="false" value="F" attributes="ent60#att391"/>
+      </Selector>
+      <OKLink id="mov2#opm3#seu138#oln734" name="OKFlow1368" to="mov2#opm3#seu137">
+        <LinkParameter id="mov2#opm3#seu138#oln734#par2339" name="EstructuraAccionariaToPersonaMoral.oid_pm [oid]" source="rel35#role69_userOIDArray" target="mov2#opm3#seu137#su247#rcond134.userOID"/>
+      </OKLink>
+      <KOLink id="mov2#opm3#seu138#kln331" name="KOFlow552" to="mov2#opm3#kocu56" automaticCoupling="true" gr:bendpoints="152,77,-488,42"/>
+    </SelectorUnit>
+    <QueryUnit gr:x="410" gr:y="260" id="mov2#opm3#qu3" name="totalAccionesCF" mode="select" language="SQL" db="db2" linkOrder="mov2#opm3#qu3#ln814">
+      <QueryInput id="mov2#opm3#qu3#qi3" name="oidPM" required="true"/>
+      <QueryInput id="mov2#opm3#qu3#qi4" name="tipoAccion" required="true"/>
+      <QueryOutput id="mov2#opm3#qu3#qo3" name="sumaCF" type="integer"/>
+      <QueryText xml:space="preserve">select sum(TOTALACCIONES) FROM ESTRUCTURAACCIONARIA WHERE personamoral_oid = (:oidPM) AND tipoaccion = (:tipoAccion)</QueryText>
+      <OKLink id="mov2#opm3#qu3#oln750" name="OKFlow750" to="mov2#opm3#qu4">
+        <LinkParameter id="mov2#opm3#qu3#oln750#par2373" name="V_tipoAccion" sourceValue="V" target="mov2#opm3#qu4.mov2#opm3#qu4#qi6"/>
+      </OKLink>
+      <Link id="mov2#opm3#qu3#ln814" name="Flow814" to="mov2#opm3#okcu70" type="transport" validate="true">
+        <LinkParameter id="mov2#opm3#qu3#ln814#par2376" name="sumaCF_EAccionesCF" source="data[].sumaCF" target="mov2#opm3#okcu70#ocp185"/>
+      </Link>
+    </QueryUnit>
+    <QueryUnit gr:x="645" gr:y="270" id="mov2#opm3#qu4" name="totalAccionesCV" mode="select" language="SQL" db="db2" linkOrder="mov2#opm3#qu4#ln815">
+      <QueryText xml:space="preserve">select sum(TOTALACCIONES) FROM ESTRUCTURAACCIONARIA WHERE personamoral_oid = (:oidPM) AND tipoaccion = (:tipoAccion)</QueryText>
+      <QueryInput id="mov2#opm3#qu4#qi5" name="oidPM" required="true"/>
+      <QueryInput id="mov2#opm3#qu4#qi6" name="tipoAccion" required="true"/>
+      <QueryOutput id="mov2#opm3#qu4#qo4" name="sumaCV"/>
+      <OKLink id="mov2#opm3#qu4#oln752" name="OKFlow752" to="mov2#opm3#seu138" automaticCoupling="true"/>
+      <Link id="mov2#opm3#qu4#ln815" name="Flow815" to="mov2#opm3#okcu70" type="transport" validate="true">
+        <LinkParameter id="mov2#opm3#qu4#ln815#par2377" name="sumaCV_EAccionesCV" source="data[].sumaCV" target="mov2#opm3#okcu70#ocp186"/>
+      </Link>
+    </QueryUnit>
+  </OperationUnits>
+</OperationModule>

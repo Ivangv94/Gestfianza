@@ -1,0 +1,273 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-185" gr:y="1520" id="mov2#opm98" name="validaTotales">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm98#icu137" name="Input Collector" gr:x="-110" gr:y="55">
+      <OKLink id="mov2#opm98#icu137#oln9" name="OKFlow9" to="mov2#opm98#seu5" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <GetUnit gr:x="165" gr:y="-15" id="mov2#opm98#gtu67" name="Get67" contextParameters="UserCtxParam" linkOrder="mov2#opm98#gtu67#ln107">
+      <Link id="mov2#opm98#gtu67#ln107" name="Flow107" to="mov2#opm98#seu5" type="transport" validate="true">
+        <LinkParameter id="mov2#opm98#gtu67#ln107#par57" name="UserCtxParam.oid_AttCondition195" source="mov2#opm98#gtu67.UserCtxParam" target="mov2#opm98#seu5#su13#acond195"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="160" gr:y="90" id="mov2#opm98#seu5" name="buscaParametro" entity="ent68" linkOrder="mov2#opm98#seu5#ln592 mov2#opm98#seu5#ln926 mov2#opm98#seu5#ln1123 mov2#opm98#seu5#ln1213 mov2#opm98#seu5#ln1266 mov2#opm98#seu5#ln1337 mov2#opm98#seu5#ln1342 mov2#opm98#seu5#ln1450">
+      <Selector id="mov2#opm98#seu5#su13" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm98#seu5#su13#acond195" name="AttCondition195" predicate="eq" booleanOperator="or" implied="false" attributes="ent68#att440"/>
+      </Selector>
+      <OKLink id="mov2#opm98#seu5#oln248" name="OKFlow248" to="mov2#opm98#seu288" gr:bendpoints="101,-38,-114,77"/>
+      <Link id="mov2#opm98#seu5#ln592" name="Flow592" to="mov2#opm98#seu288" type="transport" validate="true">
+        <LinkParameter id="mov2#opm98#seu5#ln592#par684" name="oidPM_RoleCondition263 [oid]" source="ent68#att441Array" target="mov2#opm98#seu288#su478#rcond263.userOID"/>
+      </Link>
+      <Link id="mov2#opm98#seu5#ln926" name="Flow926" to="mov2#opm98#cru70" type="transport" validate="true" gr:bendpoints="152,52,-523,47;336,48,-339,43;488,46,-187,41">
+        <LinkParameter id="mov2#opm98#seu5#ln926#par1495" name="oidPM_oidPM" source="ent68#att441Array" target="mov2#opm98#cru70.ent72#att489"/>
+      </Link>
+      <Link id="mov2#opm98#seu5#ln1123" name="Flow1123" to="mov2#opm98#qu9" type="transport" validate="true" gr:bendpoints="159,82,-701,77;425,84,-435,79;649,80,-211,75">
+        <LinkParameter id="mov2#opm98#seu5#ln1123#par1498" name="oidPM_oidPM" source="ent68#att441Array" target="mov2#opm98#qu9.mov2#opm98#qu9#qi12"/>
+      </Link>
+      <Link id="mov2#opm98#seu5#ln1213" name="Flow1213" to="mov2#opm98#seu298" type="transport" validate="true" gr:bendpoints="91,-173,-1539,-103;677,-177,-743,-92;1245,-169,-175,-84;1485,-153,-145,-83">
+        <LinkParameter id="mov2#opm98#seu5#ln1213#par3753" name="oidPM_AttCondition223" source="ent68#att441Array" target="mov2#opm98#seu298#su484#acond223"/>
+      </Link>
+      <Link id="mov2#opm98#seu5#ln1266" name="Flow1266" to="mov2#opm98#seu299" type="transport" validate="true" gr:bendpoints="117,121,-1698,196;921,114,-894,189;1602,108,-213,183">
+        <LinkParameter id="mov2#opm98#seu5#ln1266#par3822" name="oidPM_AttCondition223" source="ent68#att441Array" target="mov2#opm98#seu299#su485#acond225"/>
+      </Link>
+      <Link id="mov2#opm98#seu5#ln1337" name="Flow1337" to="mov2#opm98#seu301" type="transport" validate="true" gr:bendpoints="56,-171,-554,-56;405,-169,-205,-54">
+        <LinkParameter id="mov2#opm98#seu5#ln1337#par4040" name="oidPM_RoleCondition307 [oid]" source="ent68#att441Array" target="mov2#opm98#seu301#su487#rcond307.userOID"/>
+      </Link>
+      <Link id="mov2#opm98#seu5#ln1342" name="Flow1342" to="mov2#opm98#qu8" type="transport" validate="true" gr:bendpoints="218,152,-1047,182;625,161,-640,191;1243,151,-22,181">
+        <LinkParameter id="mov2#opm98#seu5#ln1342#par4257" name="oidPM_oidPM" source="ent68#att441Array" target="mov2#opm98#qu8.mov2#opm98#qu8#qi11"/>
+      </Link>
+      <Link id="mov2#opm98#seu5#ln1450" name="Flow1450" to="mov2#opm98#seu307" type="transport" validate="true" gr:bendpoints="206,169,-1044,149;577,176,-673,156;1135,159,-115,139">
+        <LinkParameter id="mov2#opm98#seu5#ln1450#par4746" name="oidPM_AttCondition231" source="ent68#att441Array" target="mov2#opm98#seu307#su497#acond231"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="325" gr:y="-25" id="mov2#opm98#seu288" name="obtenerTotalFijo" entity="ent60">
+      <Selector id="mov2#opm98#seu288#su478" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm98#seu288#su478#acond201" name="AttCondition201" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att391" value="F"/>
+        <RelationshipRoleCondition id="mov2#opm98#seu288#su478#rcond263" name="RoleCondition263" predicate="in" implied="false" role="rel35#role70"/>
+      </Selector>
+      <OKLink id="mov2#opm98#seu288#oln751" name="OKFlow751" to="mov2#opm98#scu189">
+        <LinkParameter id="mov2#opm98#seu288#oln751#par3874" name="serieAccion_serieAccion" source="ent60#att395Array" target="mov2#opm98#scu189.serieAccion"/>
+        <LinkParameter id="mov2#opm98#seu288#oln751#par3963" name="totalAcciones_totalAcciones" source="ent60#att392Array" target="mov2#opm98#scu189.totalAcciones"/>
+        <LinkParameter id="mov2#opm98#seu288#oln751#par3987" name="valorAccion_valorAccion" source="ent60#att390Array" target="mov2#opm98#scu189.valorAccion"/>
+      </OKLink>
+    </SelectorUnit>
+    <QueryUnit gr:x="2025" gr:y="105" id="mov2#opm98#qu8" name="totalActualFijo" mode="select" language="SQL" db="db2">
+      <QueryText xml:space="preserve">SELECT CANTIDAD, SERIE FROM AUXILIARTOTAL WHERE OIDPM = (:oidPM) AND TIPOACCION = 'F'</QueryText>
+      <QueryInput id="mov2#opm98#qu8#qi11" name="oidPM" required="true"/>
+      <QueryOutput id="mov2#opm98#qu8#qo8" name="serie"/>
+      <QueryOutput id="mov2#opm98#qu8#qo10" name="cantidad"/>
+      <KOLink id="mov2#opm98#qu8#kln73" name="KOFlow73" to="mov2#opm98#kocu88">
+        <LinkParameter id="mov2#opm98#qu8#kln73#par4258" name="Error al obtener datos_mensaje" sourceValue="Error al obtener datos" target="mov2#opm98#kocu88#ocp268"/>
+      </KOLink>
+    </QueryUnit>
+    <SelectorUnit gr:x="985" gr:y="-20" id="mov2#opm98#seu293" name="buscaAcciones" entity="ent61">
+      <Selector id="mov2#opm98#seu293#su479" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm98#seu293#su479#rcond279" name="RoleCondition279" predicate="in" implied="false" role="rel33#role65"/>
+      </Selector>
+      <Link id="mov2#opm98#seu293#ln1472" name="OKFlow1236" to="mov2#opm98#lpu11" gr:bendpoints="151,-21,-169,-96;309,-19,-11,-94" type="transport">
+        <LinkParameter id="mov2#opm98#seu293#ln1472#par4830" name="oid_Input Array" source="ent61#att393Array" target="mov2#opm98#lpu11.array"/>
+        <LinkParameter id="mov2#opm98#seu293#ln1472#par4831" name="numAcciones_numeroAcciones" source="ent61#att394Array" target="mov2#opm98#lpu11#lsa27"/>
+      </Link>
+      <OKLink id="mov2#opm98#seu293#oln1457" name="OKFlow1457" to="mov2#opm98#scu222">
+        <LinkParameter id="mov2#opm98#seu293#oln1457#par4832" name="numAcciones_numeroAcciones" source="ent61#att394Array" target="mov2#opm98#scu222.numeroAcciones"/>
+      </OKLink>
+    </SelectorUnit>
+    <CreateUnit gr:x="1340" gr:y="245" id="mov2#opm98#cru70" name="insertaAcciones" entity="ent72">
+      <OKLink id="mov2#opm98#cru70#oln1302" name="OKFlow1302" to="mov2#opm98#lpu11" gr:bendpoints="-31,-62,-1,58" automaticCoupling="true"/>
+    </CreateUnit>
+    <QueryUnit gr:x="2310" gr:y="135" id="mov2#opm98#qu9" name="totalActualVariable" mode="select" language="SQL" db="db2">
+      <QueryText xml:space="preserve">SELECT SUM(VALORACCION) FROM ESTRUCTURAACIONARIA WHERE PERSONAMORAL_OID = (:oidPM) AND TIPOACCION = 'V'</QueryText>
+      <QueryInput id="mov2#opm98#qu9#qi12" name="oidPM" required="true"/>
+      <QueryOutput id="mov2#opm98#qu9#qo9" name="suma"/>
+      <OKLink id="mov2#opm98#qu9#oln1294" name="OKFlow1294" to="mov2#opm98#seu297" automaticCoupling="true"/>
+    </QueryUnit>
+    <SelectorUnit id="mov2#opm98#seu296" name="buscaAcciones" gr:x="2860" gr:y="30" entity="ent61">
+      <Selector id="mov2#opm98#seu296#su482" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm98#seu296#su482#rcond304" name="RoleCondition279" predicate="in" implied="false" role="rel33#role65"/>
+      </Selector>
+      <OKLink id="mov2#opm98#seu296#oln1290" name="OKFlow1236" to="mov2#opm98#cru79">
+        <LinkParameter id="mov2#opm98#seu296#oln1290#par2374" name="numAcciones_cantidad" source="ent61#att394Array" target="mov2#opm98#cru79.ent72#att491"/>
+        <LinkParameter id="mov2#opm98#seu296#oln1290#par2857" name="F_tipoCapital" target="mov2#opm98#cru79.ent72#att490" sourceValue="V"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm98#seu297" name="obtenerTotalVar" gr:x="2410" gr:y="15" entity="ent60">
+      <Selector id="mov2#opm98#seu297#su483" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm98#seu297#su483#acond222" name="AttCondition201" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att391" value="V"/>
+        <RelationshipRoleCondition id="mov2#opm98#seu297#su483#rcond305" name="RoleCondition263" predicate="in" implied="false" role="rel35#role70"/>
+      </Selector>
+      <OKLink id="mov2#opm98#seu297#oln1291" name="OKFlow751" to="mov2#opm98#lpu9">
+        <LinkParameter id="mov2#opm98#seu297#oln1291#par3419" name="oid_Input Array" source="ent60#att389Array" target="mov2#opm98#lpu9.array"/>
+      </OKLink>
+    </SelectorUnit>
+    <LoopUnit id="mov2#opm98#lpu9" name="guardaOidsEa" gr:x="2660" gr:y="45">
+      <OKLink id="mov2#opm98#lpu9#oln1292" name="OKFlow1189" to="mov2#opm98#seu296" code="next">
+        <LinkParameter id="mov2#opm98#lpu9#oln1292#par3426" name="Next Element_RoleCondition279 [oid]" source="next" target="mov2#opm98#seu296#su482#rcond304.ent60#att389"/>
+      </OKLink>
+      <OKLink id="mov2#opm98#lpu9#oln1295" name="OKFlow1295" to="mov2#opm98#seu298" automaticCoupling="true" gr:bendpoints="23,174,-397,124;217,181,-203,131;355,176,-65,126" code="end"/>
+    </LoopUnit>
+    <CreateUnit id="mov2#opm98#cru79" name="insertaAcciones" gr:x="2925" gr:y="160" entity="ent72">
+      <OKLink id="mov2#opm98#cru79#oln1293" name="OKFlow1265" to="mov2#opm98#lpu9" automaticCoupling="true"/>
+    </CreateUnit>
+    <ScriptUnit gr:x="3400" gr:y="170" id="mov2#opm98#scu182" name="comparaTotales"/>
+    <SelectorUnit gr:x="3080" gr:y="40" id="mov2#opm98#seu298" name="buscaAccionesFijo" entity="ent72">
+      <Selector id="mov2#opm98#seu298#su484" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm98#seu298#su484#acond223" name="AttCondition223" predicate="eq" booleanOperator="or" implied="false" attributes="ent72#att489"/>
+        <AttributesCondition id="mov2#opm98#seu298#su484#acond224" name="AttCondition224" predicate="eq" booleanOperator="or" implied="false" attributes="ent72#att490" value="F"/>
+      </Selector>
+      <OKLink id="mov2#opm98#seu298#oln1296" name="OKFlow1296" to="mov2#opm98#seu299"/>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm98#seu299" name="buscaAccionesVar" gr:x="3265" gr:y="35" entity="ent72">
+      <Selector id="mov2#opm98#seu299#su485" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm98#seu299#su485#acond225" name="AttCondition223" predicate="eq" booleanOperator="or" implied="false" attributes="ent72#att489"/>
+        <AttributesCondition id="mov2#opm98#seu299#su485#acond226" name="AttCondition224" predicate="eq" booleanOperator="or" implied="false" attributes="ent72#att490" value="F"/>
+      </Selector>
+      <OKLink id="mov2#opm98#seu299#oln1297" name="OKFlow1297" to="mov2#opm98#scu182" automaticCoupling="true"/>
+    </SelectorUnit>
+    <ScriptUnit gr:x="500" gr:y="125" id="mov2#opm98#scu189" name="calculaTotales" linkOrder="mov2#opm98#scu189#ln1451">
+      <ScriptUnitText xml:space="preserve">#input String[] serieAccion, Integer[] totalAcciones, Integer[] valorAccion
+#output serie, totalAcciones2, sumatoria
+
+def totalAcciones2 = new Integer[totalAcciones.size()]
+String [] serie
+serie = serieAccion
+
+int sumatoria = 0
+
+for(int i = 0; i&lt;valorAccion.size(); i++)
+{
+
+totalAcciones2[i] = totalAcciones[i] * valorAccion[i]
+
+sumatoria +=  totalAcciones2[i]
+}
+
+return["serie":serie, "totalAcciones2":totalAcciones2, "sumatoria":sumatoria]</ScriptUnitText>
+      <OKLink id="mov2#opm98#scu189#oln1298" name="OKFlow1298" to="mov2#opm98#lpu10">
+        <LinkParameter id="mov2#opm98#scu189#oln1298#par4007" name="serie_Input Array" source="result(serie)" target="mov2#opm98#lpu10.array"/>
+      </OKLink>
+      <Link id="mov2#opm98#scu189#ln1451" name="Flow1451" to="mov2#opm98#scu220" type="transport" validate="true" gr:bendpoints="173,131,-927,206;535,136,-565,211;958,134,-142,209">
+        <LinkParameter id="mov2#opm98#scu189#ln1451#par4750" name="sumatoria_totalFijo" source="result(sumatoria)" target="mov2#opm98#scu220.totalFijo"/>
+      </Link>
+    </ScriptUnit>
+    <SelectorUnit gr:x="760" gr:y="-20" id="mov2#opm98#seu301" name="buscaAccionesPorSerie" entity="ent60" linkOrder="mov2#opm98#seu301#ln1470">
+      <Selector id="mov2#opm98#seu301#su487" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm98#seu301#su487#acond228" name="AttCondition228" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att395"/>
+        <RelationshipRoleCondition id="mov2#opm98#seu301#su487#rcond307" name="RoleCondition307" predicate="in" implied="false" role="rel35#role70"/>
+      </Selector>
+      <OKLink id="mov2#opm98#seu301#oln1300" name="OKFlow1300" to="mov2#opm98#seu293">
+        <LinkParameter id="mov2#opm98#seu301#oln1300#par4246" name="oid_RoleCondition279 [oid]" source="ent60#att389Array" target="mov2#opm98#seu293#su479#rcond279.ent60#att389"/>
+        <LinkParameter id="mov2#opm98#seu301#oln1300#par4247" name="Next Element_PASSING" sourceLinkParameter="mov2#opm98#lpu10#oln1299#par4239" passing="true"/>
+        <LinkParameter id="mov2#opm98#seu301#oln1300#par4743" name="valorAccion_PASSING" source="ent60#att390Array" passing="true"/>
+      </OKLink>
+      <Link id="mov2#opm98#seu301#ln1470" name="Flow1470" to="mov2#opm98#scu222" type="transport" validate="true" gr:bendpoints="124,75,-291,0;285,66,-105,51">
+        <LinkParameter id="mov2#opm98#seu301#ln1470#par4833" name="serieAccion_serieAccion" source="ent60#att395Array" target="mov2#opm98#scu222.serieAccion"/>
+        <LinkParameter id="mov2#opm98#seu301#ln1470#par4834" name="valorAccion_valorAccion" source="ent60#att390Array" target="mov2#opm98#scu222.valorAccion"/>
+      </Link>
+    </SelectorUnit>
+    <LoopUnit gr:x="630" gr:y="35" id="mov2#opm98#lpu10" name="LoopSeries">
+      <OKLink id="mov2#opm98#lpu10#oln1299" name="OKFlow1299" to="mov2#opm98#seu301" code="next">
+        <LinkParameter id="mov2#opm98#lpu10#oln1299#par4038" name="Next Element_AttCondition228" source="next" target="mov2#opm98#seu301#su487#acond228"/>
+        <LinkParameter id="mov2#opm98#lpu10#oln1299#par4239" name="Next Element_PASSING" source="next" passing="true"/>
+      </OKLink>
+      <OKLink id="mov2#opm98#lpu10#oln1304" name="OKFlow1304" to="mov2#opm98#seu307" automaticCoupling="true" gr:bendpoints="155,228,-670,188;428,238,-397,198;757,228,-68,188" code="end"/>
+    </LoopUnit>
+    <LoopUnit gr:x="1310" gr:y="70" id="mov2#opm98#lpu11" name="guardaParticipacion">
+      <SecondaryArray id="mov2#opm98#lpu11#lsa27" name="numeroAcciones"/>
+      <OKLink id="mov2#opm98#lpu11#oln1301" name="OKFlow1301" to="mov2#opm98#cru70" code="next">
+        <LinkParameter id="mov2#opm98#lpu11#oln1301#par4201" name="Next Element (numeroAcciones)_cantidad" source="mov2#opm98#lpu11#lsa27" target="mov2#opm98#cru70.ent72#att491"/>
+        <LinkParameter id="mov2#opm98#lpu11#oln1301#par4234" name="F_tipoCapital" sourceValue="F" target="mov2#opm98#cru70.ent72#att490"/>
+        <LinkParameter id="mov2#opm98#lpu11#oln1301#par4256" name="Next Element (serie)_serie" source="mov2#opm98#lpu11#lsa29" target="mov2#opm98#cru70.ent72#att492"/>
+        <LinkParameter id="mov2#opm98#lpu11#oln1301#par4745" name="Next Element (valorAccion)_valorAccion" source="mov2#opm98#lpu11#lsa30" target="mov2#opm98#cru70.ent72#att493"/>
+      </OKLink>
+      <SecondaryArray id="mov2#opm98#lpu11#lsa29" name="serie"/>
+      <OKLink id="mov2#opm98#lpu11#oln1303" name="OKFlow1303" to="mov2#opm98#lpu10" automaticCoupling="true" code="end" gr:bendpoints="-186,34,399,74;-314,41,271,81;-457,26,128,66"/>
+      <SecondaryArray id="mov2#opm98#lpu11#lsa30" name="valorAccion"/>
+    </LoopUnit>
+    <OKCollectorUnit gr:x="3675" gr:y="0" id="mov2#opm98#okcu103" name="OK Port103"/>
+    <KOCollectorUnit gr:x="3675" gr:y="140" id="mov2#opm98#kocu88" name="KO Port88">
+      <OutputCollectorParameter id="mov2#opm98#kocu88#ocp268" name="mensaje"/>
+    </KOCollectorUnit>
+    <ScriptUnit gr:x="1715" gr:y="55" id="mov2#opm98#scu220" name="calculaTotalFijoActual">
+      <ScriptUnitText xml:space="preserve">#input Integer totalFijo, Integer[] totalAcciones, Integer[] valorAccion
+#output valido
+
+def totalAcciones2 = new Integer[totalAcciones.size()]
+
+boolean valido
+
+int sumatoria2 = 0
+
+for(int i = 0; i&lt;valorAccion.size(); i++)
+{
+
+totalAcciones2[i] = totalAcciones[i] * valorAccion[i]
+sumatoria2 += totalAcciones2[i]
+
+}
+
+if (sumatoria2 == totalFijo)
+{
+valido = true 
+}else if (sumatoria2 != totalFijo)
+{
+valido = false
+}
+
+
+
+return["valido":valido]</ScriptUnitText>
+      <OKLink id="mov2#opm98#scu220#oln1410" name="OKFlow1305" to="mov2#opm98#switch92">
+        <LinkParameter id="mov2#opm98#scu220#oln1410#par4751" name="valido_Switch" source="result(valido)" target="mov2#opm98#switch92.switch"/>
+      </OKLink>
+    </ScriptUnit>
+    <SelectorUnit gr:x="1555" gr:y="115" id="mov2#opm98#seu307" name="buscaAuxiliar" entity="ent72" linkOrder="mov2#opm98#seu307#ln1452">
+      <Selector id="mov2#opm98#seu307#su497" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm98#seu307#su497#acond231" name="AttCondition231" predicate="eq" booleanOperator="or" implied="false" attributes="ent72#att489"/>
+      </Selector>
+      <OKLink id="mov2#opm98#seu307#oln1409" name="OKFlow1409" to="mov2#opm98#scu220">
+        <LinkParameter id="mov2#opm98#seu307#oln1409#par4748" name="cantidad_totalAcciones" source="ent72#att491Array" target="mov2#opm98#scu220.totalAcciones"/>
+        <LinkParameter id="mov2#opm98#seu307#oln1409#par4749" name="valorAccion_valorAccion" source="ent72#att493Array" target="mov2#opm98#scu220.valorAccion"/>
+      </OKLink>
+      <Link id="mov2#opm98#seu307#ln1452" name="Flow1452" to="mov2#opm98#lpu7" type="transport" validate="true">
+        <LinkParameter id="mov2#opm98#seu307#ln1452#par4753" name="oid_Input Array" source="ent72#att488Array" target="mov2#opm98#lpu7.array"/>
+      </Link>
+    </SelectorUnit>
+    <SwitchUnit gr:x="2020" gr:y="50" id="mov2#opm98#switch92" name="valido">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov2#opm98#switch92#oln1411" name="OKFlow1411" to="mov2#opm98#okcu103" automaticCoupling="true" code="true"/>
+      <OKLink id="mov2#opm98#switch92#oln1412" name="OKFlow1412" to="mov2#opm98#lpu7" code="false"/>
+    </SwitchUnit>
+    <DeleteUnit gr:x="2565" gr:y="195" id="mov2#opm98#dlu19" name="borraAuxiliar" entity="ent72">
+      <Selector id="mov2#opm98#dlu19#su498" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm98#dlu19#su498#kcond215" name="KeyCondition215" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm98#dlu19#oln1414" name="OKFlow1414" to="mov2#opm98#lpu7" automaticCoupling="true" gr:bendpoints="-163,15,152,15"/>
+    </DeleteUnit>
+    <LoopUnit gr:x="2260" gr:y="210" id="mov2#opm98#lpu7" name="borraAux">
+      <OKLink id="mov2#opm98#lpu7#oln1413" name="OKFlow1413" to="mov2#opm98#dlu19" code="next">
+        <LinkParameter id="mov2#opm98#lpu7#oln1413#par4754" name="Next Element_KeyCondition215 [oid]" source="next" target="mov2#opm98#dlu19#su498#kcond215.ent72#att488"/>
+      </OKLink>
+      <OKLink id="mov2#opm98#lpu7#oln1415" name="OKFlow1415" to="mov2#opm98#kocu88" gr:bendpoints="231,56,-1254,116;717,55,-768,115;1263,42,-222,102" code="end">
+        <LinkParameter id="mov2#opm98#lpu7#oln1415#par4755" name="El total capturado no coincide con el total de la sociedad, favor de verificar la informaci&#243;n ingresada._mensaje" sourceValue="El total capturado no coincide con el total de la sociedad, favor de verificar la informaci&#243;n ingresada." target="mov2#opm98#kocu88#ocp268"/>
+      </OKLink>
+    </LoopUnit>
+    <ScriptUnit gr:x="1185" gr:y="15" id="mov2#opm98#scu222" name="creaArreglos">
+      <OKLink id="mov2#opm98#scu222#oln1458" name="OKFlow1458" to="mov2#opm98#lpu11">
+        <LinkParameter id="mov2#opm98#scu222#oln1458#par4835" name="seriesAccion_serie" source="result(seriesAccion)" target="mov2#opm98#lpu11#lsa29"/>
+        <LinkParameter id="mov2#opm98#scu222#oln1458#par4836" name="valoresAccion_valorAccion" source="result(valoresAccion)" target="mov2#opm98#lpu11#lsa30"/>
+      </OKLink>
+      <ScriptUnitText xml:space="preserve">#input Integer[] numeroAcciones, Integer valorAccion, String serieAccion
+#output valoresAccion, seriesAccion
+
+def seriesAccion = new String[numeroAcciones.size()];
+def valoresAccion = new Integer[numeroAcciones.size()];
+
+for(int i = 0; i &lt; numeroAcciones.size(); i++)
+{
+seriesAccion[i] = serieAccion
+valoresAccion[i] = valorAccion
+}
+
+return["valoresAccion":valoresAccion, "seriesAccion":seriesAccion]</ScriptUnitText>
+    </ScriptUnit>
+  </OperationUnits>
+</OperationModule>

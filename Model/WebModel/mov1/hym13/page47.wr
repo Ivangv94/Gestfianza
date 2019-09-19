@@ -1,0 +1,137 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym13#page47" name="Ingresa datos de la persona a verificar" localized="true" layout:pageLayout="gobmxStyle/Bootstrap" layout:fieldLayout="gobmxStyle/EntryUnit" gr:x="45" gr:y="690">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym13#page47#enu48" name="Form12" gr:x="0" gr:y="0">
+      <Field id="mov1#hym13#page47#enu48#fld92" name="nombres" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym13#page47#enu48#fld92#mnd17" name="Mandatory4"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym13#page47#enu48#fld93" name="ap1" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym13#page47#enu48#fld93#mnd18" name="Mandatory7" errorMessage="Campo obligatorio"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym13#page47#enu48#fld94" name="ap2" type="string" modifiable="true"/>
+      <Field id="mov1#hym13#page47#enu48#fld95" name="feNa" type="date" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym13#page47#enu48#fld95#mnd19" name="Mandatory9"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym13#page47#enu48#fld96" name="curp" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym13#page47#enu48#fld96#mnd20" name="Mandatory8"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym13#page47#enu48#fld98" name="pasaporte" type="string" modifiable="true" hidden="false">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym13#page47#enu48#fld98#mnd22" name="Mandatory10"/>
+        </VRules>
+      </Field>
+      <Link id="mov1#hym13#page47#enu48#ln164" name="Flow113" to="mov1#hym13#scu17" type="transport" validate="true" gr:bendpoints="123,-67,-292,-67;302,-65,-113,-65">
+        <LinkParameter id="mov1#hym13#page47#enu48#ln164#par882" name="cadena_cadena" source="mov1#hym13#page47#enu48#fld99" target="mov1#hym13#scu17.cadena"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln164#par883" name="ap1_PASSING" source="mov1#hym13#page47#enu48#fld93" passing="true"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln164#par884" name="ap2_PASSING" source="mov1#hym13#page47#enu48#fld94" passing="true"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln164#par885" name="curp_PASSING" source="mov1#hym13#page47#enu48#fld96" passing="true"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln164#par886" name="nombres_PASSING" source="mov1#hym13#page47#enu48#fld92" passing="true"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln164#par887" name="feNa_PASSING" source="mov1#hym13#page47#enu48#fld95" passing="true"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln164#par2297" name="rfc_PASSING" source="mov1#hym13#page47#enu48#fld211" passing="true"/>
+      </Link>
+      <Field id="mov1#hym13#page47#enu48#fld99" name="cadena" type="string" modifiable="false" preloaded="true" hidden="false">
+        <VRules/>
+      </Field>
+      <Link id="mov1#hym13#page47#enu48#ln165" name="Flow135" to="mov1#hym13#scu18" type="transport" validate="true" gr:bendpoints="115,-84,-670,-84;592,-80,-193,-80">
+        <LinkParameter id="mov1#hym13#page47#enu48#ln165#par888" name="cadena_cadena" source="mov1#hym13#page47#enu48#fld99" target="mov1#hym13#scu18.cadena"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln165#par892" name="pasaporte_PASSING" source="mov1#hym13#page47#enu48#fld98" passing="true"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln165#par894" name="ap1_ap1" source="mov1#hym13#page47#enu48#fld93" target="mov1#hym13#scu18.ap1"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln165#par897" name="ap2_ap2" source="mov1#hym13#page47#enu48#fld94" target="mov1#hym13#scu18.ap2"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln165#par929" name="curp_curp" source="mov1#hym13#page47#enu48#fld96" target="mov1#hym13#scu18.curp"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln165#par930" name="nombres_nombres" source="mov1#hym13#page47#enu48#fld92" target="mov1#hym13#scu18.nombres"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln165#par931" name="feNa_feNa" source="mov1#hym13#page47#enu48#fld95" target="mov1#hym13#scu18.feNa"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln165#par2296" name="rfc_PASSING" source="mov1#hym13#page47#enu48#fld211" passing="true"/>
+      </Link>
+      <Field id="mov1#hym13#page47#enu48#fld211" name="rfc" type="string" modifiable="true"/>
+      <Link id="mov1#hym13#page47#enu48#ln211" name="Flow211" to="mov1#hym13#pcu14" type="transport" validate="true">
+        <LinkParameter id="mov1#hym13#page47#enu48#ln211#par1532" name="ap1_ap1" source="mov1#hym13#page47#enu48#fld93" target="mov1#hym13#pcu14#pcp15"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln211#par1533" name="ap2_ap2" source="mov1#hym13#page47#enu48#fld94" target="mov1#hym13#pcu14#pcp16"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln211#par1534" name="curp_CURP" source="mov1#hym13#page47#enu48#fld96" target="mov1#hym13#pcu14#pcp19"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln211#par1535" name="feNa_fechaNac" source="mov1#hym13#page47#enu48#fld95" target="mov1#hym13#pcu14#pcp17"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln211#par1536" name="nombres_nombres" source="mov1#hym13#page47#enu48#fld92" target="mov1#hym13#pcu14#pcp14"/>
+        <LinkParameter id="mov1#hym13#page47#enu48#ln211#par1537" name="rfc_RFC" source="mov1#hym13#page47#enu48#fld211" target="mov1#hym13#pcu14#pcp18"/>
+      </Link>
+    </EntryUnit>
+    <EntryUnit id="mov1#hym13#page47#enu49" name="Buttons" linkOrder="mov1#hym13#page47#enu49#ln166 mov1#hym13#page47#enu49#ln655" gr:x="200" gr:y="0">
+      <Link id="mov1#hym13#page47#enu49#ln166" name="Cancelar" to="mov1#hym13#page21" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="mov1#hym13#page47#enu49#ln655" name="Flow655" to="mov1#hym13#scu17" automaticCoupling="true" type="normal" validate="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid" layout:frameLayout="None">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym13#page47#enu48" layout:fieldLayout="gobmxStyle/EntryUnitUpper">
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+          <layout:Field label="Nombres:" field="mov1#hym13#page47#enu48#fld92"/>
+          <layout:Field label="Primer apellido:" field="mov1#hym13#page47#enu48#fld93"/>
+          <layout:Field label="Segundo Apellido:" field="mov1#hym13#page47#enu48#fld94"/>
+          <layout:Field label="Fecha de Nacimiento:" field="mov1#hym13#page47#enu48#fld95" layout:fieldLayout="gobmxStyle/EntryUnit"/>
+          <layout:Field label="CURP:" field="mov1#hym13#page47#enu48#fld96" layout:fieldVisibilityConditionVariable="mov1#hym13#page47#var32"/>
+          <layout:Field label="N&#250;mero de pasaporte:" field="mov1#hym13#page47#enu48#fld98" layout:fieldVisibilityConditionVariable="mov1#hym13#page47#var30"/>
+          <layout:Field field="mov1#hym13#page47#enu48#fld99" styleClass="hidden"/>
+          <layout:Field field="mov1#hym13#page47#enu48#fld211" layout:fieldVisibilityConditionVariable="mov1#hym13#page47#var29"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell layout:cellLayout="Print Frame" colspan="8">
+        <layout:Unit unitId="mov1#hym13#page47#enu49" manualLinks="true" manualLinkOrder="mov1#hym13#page47#enu49#ln655 mov1#hym13#page47#enu49#ln166">
+          <layout:Link link="mov1#hym13#page47#enu49#ln655" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link label="Cancelar" link="mov1#hym13#page47#enu49#ln166" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="mov1#hym13#page47#var29" name="activaRFC" type="boolean" value="false"/>
+  <Variable id="mov1#hym13#page47#var30" name="activaPasaporte" type="boolean" value="false"/>
+  <layout:LayoutParameter name="show-page-title" value="true" type="page"/>
+  <Variable id="mov1#hym13#page47#var31" name="cadena" type="string"/>
+  <Variable id="mov1#hym13#page47#var32" name="activaCurp" type="boolean" value="false"/>
+</Page>

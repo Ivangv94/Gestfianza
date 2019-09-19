@@ -1,0 +1,33 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="120" gr:y="910" id="mov2#opm76" name="agregaAccionistaPM">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm76#icu115" gr:x="30" gr:y="60">
+      <OKLink id="mov2#opm76#icu115#oln917" name="OKFlow917" to="mov2#opm76#seu132">
+        <LinkParameter id="mov2#opm76#icu115#oln917#par2834" name="rfcPM_userName" source="mov2#opm76#icu115#icp318" target="mov2#opm76#seu132#su286#acond156"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm76#icu115#icp318" name="rfcPM"/>
+      <InputCollectorParameter id="mov2#opm76#icu115#icp320" name="Input Port Parameter320"/>
+      <InputCollectorParameter id="mov2#opm76#icu115#icp319" name="razonODenominacion"/>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="320" gr:y="60" id="mov2#opm76#seu132" name="buscaPM" entity="ent38">
+      <Selector id="mov2#opm76#seu132#su286" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm76#seu132#su286#acond156" name="userName" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+        <AttributesCondition id="mov2#opm76#seu132#su286#acond159" name="esAccionista" predicate="eq" booleanOperator="or" implied="false" attributes="ent38#att432" value="ACCIONISTA"/>
+      </Selector>
+      <OKLink id="mov2#opm76#seu132#oln918" name="OKFlow918" to="mov2#opm76#inn48">
+        <LinkParameter id="mov2#opm76#seu132#oln918#par2877" name="oid_Input" source="userOIDArray" target="mov2#opm76#inn48.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="480" gr:y="75" id="mov2#opm76#inn48" name="&#191;Es Accionista?">
+      <KOLink id="mov2#opm76#inn48#kln397" name="KOFlow397" to="mov2#opm76#cru55" automaticCoupling="true"/>
+      <OKLink id="mov2#opm76#inn48#oln919" name="OKFlow919" to="mov2#opm76#mfu31">
+        <LinkParameter id="mov2#opm76#inn48#oln919#par2878" name="Input Value_KeyCondition129 [oid]" source="inputValue" target="mov2#opm76#mfu31#su287#kcond129.userOID"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="650" gr:y="145" id="mov2#opm76#cru55" name="creaAccionistaPM" entity="ent38"/>
+    <ModifyUnit gr:x="655" gr:y="5" id="mov2#opm76#mfu31" name="actualizaPM" entity="ent38">
+      <Selector id="mov2#opm76#mfu31#su287" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm76#mfu31#su287#kcond129" name="KeyCondition129" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

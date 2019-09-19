@@ -1,0 +1,19 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym32" gr:x="1750" gr:y="250" name="Poder Notarial(personal) - Personal - Carga por fomulario" bpm:moduleType="activity" bpm:uuids="JG01H7LW_FYBDCX.JL40U3FO_L3DSCH" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym32#icu67" name="Input" gr:x="-385" gr:y="170">
+      <OKLink id="mov1#hym32#icu67#oln475" name="OKLink" automaticCoupling="true" to="mov1#hym32#page64"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym32#pu100" name="Complete Activity" mode="completeActivity" gr:x="800" gr:y="0"/>
+    <ProcessUnit id="mov1#hym32#pu101" name="Save Activity" mode="saveActivity" gr:x="800" gr:y="150"/>
+    <ProcessUnit id="mov1#hym32#pu102" name="Leave Activity" mode="leaveActivity" gr:x="800" gr:y="260"/>
+    <ActivityParametersUnit id="mov1#hym32#apu64" name="Set Parameters" gr:x="560" gr:y="100">
+      <OKLink id="mov1#hym32#apu64#oln476" name="OKLink" automaticCoupling="false" to="mov1#hym32#pu100" codeRef="mov1#hym32#page64#enu97#ln621"/>
+      <OKLink id="mov1#hym32#apu64#oln477" name="OKLink" automaticCoupling="false" to="mov1#hym32#pu101" codeRef="mov1#hym32#page64#enu97#ln622"/>
+      <ActivityParameter id="mov1#hym32#apu64#ap46" name="Decisiones.OID" bpm:uuid="JL46CRQE_SNKDXK"/>
+      <ActivityParameter id="mov1#hym32#apu64#ap48" name="Decisiones.InformacionValida" bpm:uuid="JL46CRQE_SNKDXK/JL4677YF_758"/>
+    </ActivityParametersUnit>
+    <ModuleInstanceUnit gr:x="465" gr:y="330" id="mov1#hym32#miu75" action="true" name="validarSociedad" moduleId="mov2#mpkg3#opm21"/>
+    <ModuleInstanceUnit gr:x="445" gr:y="480" id="mov1#hym32#miu79" action="true" name="validarPersona" moduleId="mov2#mpkg3#opm55"/>
+    <ModuleInstanceUnit gr:x="445" gr:y="565" id="mov1#hym32#miu80" action="true" name="validarPoderesSociedad" moduleId="mov2#mpkg3#opm13"/>
+  </OperationUnits>
+</HybridModule>

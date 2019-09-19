@@ -1,0 +1,220 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-175" gr:y="815" id="mov2#opm72" name="agregarFacultad">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm72#icu111" gr:x="30" gr:y="60" linkOrder="mov2#opm72#icu111#ln922 mov2#opm72#icu111#ln923 mov2#opm72#icu111#ln1056">
+      <InputCollectorParameter id="mov2#opm72#icu111#icp280" name="descPoderesEsp"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp279" name="descTitulosCredito"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp278" name="descActosDominio"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp277" name="descActosAdmin"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp276" name="descPyC"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp275" name="nombramiento"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp274" name="oidPF"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp272" name="facultadPoderesEsp"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp271" name="oidPoderesEsp"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp270" name="facultadTitulosCredito"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp269" name="oidTitulosCredito"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp268" name="facultadActosDominio"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp267" name="oidActosDominio"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp266" name="facultadActosAdmin"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp265" name="oidActosAdmin"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp264" name="facultadPyC"/>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp263" name="oidPyC"/>
+      <OKLink id="mov2#opm72#icu111#oln816" name="Flow873" to="mov2#opm72#scu95">
+        <LinkParameter id="mov2#opm72#icu111#oln816#par2592" name="oidPyC_oidPyC" source="mov2#opm72#icu111#icp263" target="mov2#opm72#scu95.oidPyC"/>
+      </OKLink>
+      <Link id="mov2#opm72#icu111#ln875" name="Flow875" to="mov2#opm72#cru38" type="transport" validate="true" gr:bendpoints="170,-163,-490,-93;311,-161,-349,-91;472,-163,-188,-93">
+        <LinkParameter id="mov2#opm72#icu111#ln875#par2604" name="descPyC_descripcion" source="mov2#opm72#icu111#icp276" target="mov2#opm72#cru38.ent64#att405"/>
+        <LinkParameter id="mov2#opm72#icu111#ln875#par2605" name="facultadPyC_facultad" source="mov2#opm72#icu111#icp264" target="mov2#opm72#cru38.ent64#att404"/>
+        <LinkParameter id="mov2#opm72#icu111#ln875#par2607" name="oidPyC_oidTipoFacultad" source="mov2#opm72#icu111#icp263" target="mov2#opm72#cru38.ent64#att414"/>
+        <LinkParameter id="mov2#opm72#icu111#ln875#par2608" name="oidPF_PersonaFisica.oid(AdministracionToPersonaFisica)" source="mov2#opm72#icu111#icp274" target="mov2#opm72#cru38.rel34#role68.userOID"/>
+        <LinkParameter id="mov2#opm72#icu111#ln875#par2904" name="oidPM_PersonaMoral.oid(AdministracionToPersonaMoral)" source="mov2#opm72#icu111#icp311" target="mov2#opm72#cru38.rel42#role83.userOID"/>
+      </Link>
+      <Link id="mov2#opm72#icu111#ln877" name="Flow877" to="mov2#opm72#scu96" type="transport" validate="true" gr:bendpoints="185,89,-475,-6;329,91,-331,-4">
+        <LinkParameter id="mov2#opm72#icu111#ln877#par2600" name="oidActosDominio_oidActosDominio" source="mov2#opm72#icu111#icp267" target="mov2#opm72#scu96.oidActosDominio"/>
+      </Link>
+      <Link id="mov2#opm72#icu111#ln878" name="Flow878" to="mov2#opm72#scu98" type="transport" validate="true" gr:bendpoints="174,148,-786,48;860,134,-100,34">
+        <LinkParameter id="mov2#opm72#icu111#ln878#par2601" name="oidTitulosCredito_oidTitulosCredito" source="mov2#opm72#icu111#icp269" target="mov2#opm72#scu98.oidTitulosCredito"/>
+      </Link>
+      <Link id="mov2#opm72#icu111#ln879" name="Flow879" to="mov2#opm72#scu97" type="transport" validate="true" gr:bendpoints="166,184,-1078,80;1136,172,-108,68">
+        <LinkParameter id="mov2#opm72#icu111#ln879#par2602" name="oidActosAdmin_oidActosAdmin" source="mov2#opm72#icu111#icp265" target="mov2#opm72#scu97.oidActosAdmin"/>
+      </Link>
+      <Link id="mov2#opm72#icu111#ln880" name="Flow880" to="mov2#opm72#scu99" type="transport" validate="true" gr:bendpoints="156,206,-1338,96;1388,190,-106,80">
+        <LinkParameter id="mov2#opm72#icu111#ln880#par2945" name="oidPoderesEsp_oidPoderesEsp" source="mov2#opm72#icu111#icp271" target="mov2#opm72#scu99.oidPoderesEsp"/>
+      </Link>
+      <Link id="mov2#opm72#icu111#ln881" name="Flow881" to="mov2#opm72#cru39" type="transport" validate="true" gr:bendpoints="216,-138,-788,-78;898,-140,-106,-80">
+        <LinkParameter id="mov2#opm72#icu111#ln881#par2610" name="descActosDominio_descripcion" source="mov2#opm72#icu111#icp278" target="mov2#opm72#cru39.ent64#att405"/>
+        <LinkParameter id="mov2#opm72#icu111#ln881#par2611" name="facultadActosDominio_facultad" source="mov2#opm72#icu111#icp268" target="mov2#opm72#cru39.ent64#att404"/>
+        <LinkParameter id="mov2#opm72#icu111#ln881#par2612" name="oidActosDominio_oidTipoFacultad" source="mov2#opm72#icu111#icp267" target="mov2#opm72#cru39.ent64#att414"/>
+        <LinkParameter id="mov2#opm72#icu111#ln881#par2613" name="oidPF_PersonaFisica.oid(AdministracionToPersonaFisica)" source="mov2#opm72#icu111#icp274" target="mov2#opm72#cru39.rel34#role68.userOID"/>
+        <LinkParameter id="mov2#opm72#icu111#ln881#par2905" name="oidPM_PersonaMoral.oid(AdministracionToPersonaMoral)" source="mov2#opm72#icu111#icp311" target="mov2#opm72#cru39.rel42#role83.userOID"/>
+      </Link>
+      <Link id="mov2#opm72#icu111#ln882" name="Flow882" to="mov2#opm72#cru40" type="transport" validate="true" gr:bendpoints="190,-152,-1064,-82;1204,-150,-50,-80">
+        <LinkParameter id="mov2#opm72#icu111#ln882#par2614" name="descTitulosCredito_descripcion" source="mov2#opm72#icu111#icp279" target="mov2#opm72#cru40.ent64#att405"/>
+        <LinkParameter id="mov2#opm72#icu111#ln882#par2615" name="facultadTitulosCredito_facultad" source="mov2#opm72#icu111#icp270" target="mov2#opm72#cru40.ent64#att404"/>
+        <LinkParameter id="mov2#opm72#icu111#ln882#par2616" name="oidTitulosCredito_oidTipoFacultad" source="mov2#opm72#icu111#icp269" target="mov2#opm72#cru40.ent64#att414"/>
+        <LinkParameter id="mov2#opm72#icu111#ln882#par2617" name="oidPF_PersonaFisica.oid(AdministracionToPersonaFisica)" source="mov2#opm72#icu111#icp274" target="mov2#opm72#cru40.rel34#role68.userOID"/>
+        <LinkParameter id="mov2#opm72#icu111#ln882#par2906" name="oidPM_PersonaMoral.oid(AdministracionToPersonaMoral)" source="mov2#opm72#icu111#icp311" target="mov2#opm72#cru40.rel42#role83.userOID"/>
+      </Link>
+      <Link id="mov2#opm72#icu111#ln883" name="Flow883" to="mov2#opm72#cru41" type="transport" validate="true" gr:bendpoints="110,-178,-1400,-108;1406,-182,-104,-112">
+        <LinkParameter id="mov2#opm72#icu111#ln883#par2618" name="descActosAdmin_descripcion" source="mov2#opm72#icu111#icp277" target="mov2#opm72#cru41.ent64#att405"/>
+        <LinkParameter id="mov2#opm72#icu111#ln883#par2619" name="facultadActosAdmin_facultad" source="mov2#opm72#icu111#icp266" target="mov2#opm72#cru41.ent64#att404"/>
+        <LinkParameter id="mov2#opm72#icu111#ln883#par2620" name="oidActosAdmin_oidTipoFacultad" source="mov2#opm72#icu111#icp265" target="mov2#opm72#cru41.ent64#att414"/>
+        <LinkParameter id="mov2#opm72#icu111#ln883#par2621" name="oidPF_PersonaFisica.oid(AdministracionToPersonaFisica)" source="mov2#opm72#icu111#icp274" target="mov2#opm72#cru41.rel34#role68.userOID"/>
+        <LinkParameter id="mov2#opm72#icu111#ln883#par2907" name="oidPM_PersonaMoral.oid(AdministracionToPersonaMoral)" source="mov2#opm72#icu111#icp311" target="mov2#opm72#cru41.rel42#role83.userOID"/>
+      </Link>
+      <Link id="mov2#opm72#icu111#ln884" name="Flow884" to="mov2#opm72#cru42" type="transport" validate="true" gr:bendpoints="142,236,-1568,306;1508,206,-202,276">
+        <LinkParameter id="mov2#opm72#icu111#ln884#par2622" name="descPoderesEsp_descripcion" source="mov2#opm72#icu111#icp280" target="mov2#opm72#cru42.ent64#att405"/>
+        <LinkParameter id="mov2#opm72#icu111#ln884#par2626" name="facultadPoderesEsp_facultad" source="mov2#opm72#icu111#icp272" target="mov2#opm72#cru42.ent64#att404"/>
+        <LinkParameter id="mov2#opm72#icu111#ln884#par2627" name="oidPoderesEsp_oidTipoFacultad" source="mov2#opm72#icu111#icp271" target="mov2#opm72#cru42.ent64#att414"/>
+        <LinkParameter id="mov2#opm72#icu111#ln884#par2656" name="oidPF_PersonaFisica.oid(AdministracionToPersonaFisica)" source="mov2#opm72#icu111#icp274" target="mov2#opm72#cru42.rel34#role68.userOID"/>
+        <LinkParameter id="mov2#opm72#icu111#ln884#par2908" name="oidPM_PersonaMoral.oid(AdministracionToPersonaMoral)" source="mov2#opm72#icu111#icp311" target="mov2#opm72#cru42.rel42#role83.userOID"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp311" name="oidPM"/>
+      <Link id="mov2#opm72#icu111#ln914" name="Flow914" to="mov2#opm72#okcu78" type="transport" validate="true" gr:bendpoints="117,276,-1947,296;1598,243,-466,263;2458,224,-216,268">
+        <LinkParameter id="mov2#opm72#icu111#ln914#par2914" name="oidPM_oidPM" source="mov2#opm72#icu111#icp311" target="mov2#opm72#okcu78#ocp210"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm72#icu111#icp313" name="tipoAdministracion"/>
+      <Link id="mov2#opm72#icu111#ln922" name="Flow922" to="mov2#opm72#scu122" type="transport" validate="true" gr:bendpoints="110,284,-1754,214;1713,277,-151,207">
+        <LinkParameter id="mov2#opm72#icu111#ln922#par2934" name="tipoAdministracion_tipoAdministracion" source="mov2#opm72#icu111#icp313" target="mov2#opm72#scu122.tipoAdministracion"/>
+      </Link>
+      <Link id="mov2#opm72#icu111#ln923" name="Flow923" to="mov2#opm72#seu134" type="transport" validate="true" gr:bendpoints="134,276,-2015,196;1277,265,-872,185;2093,256,-56,176">
+        <LinkParameter id="mov2#opm72#icu111#ln923#par2938" name="oidPM_RoleCondition166 [oid]" source="mov2#opm72#icu111#icp311" target="mov2#opm72#seu134#su279#rcond167.userOID"/>
+      </Link>
+      <Link id="mov2#opm72#icu111#ln1056" name="Flow1056" to="mov2#opm72#cru63" type="transport" validate="true" gr:bendpoints="487,-227,-1903,-227;1215,-227,-1175,-227;2058,-233,-332,-233">
+        <LinkParameter id="mov2#opm72#icu111#ln1056#par3280" name="nombramiento_Nombramiento" source="mov2#opm72#icu111#icp275" target="mov2#opm72#cru63.ent77#att479"/>
+        <LinkParameter id="mov2#opm72#icu111#ln1056#par3281" name="oidPF_PersonaFisica.oid(NombramientoOCargoToPersonaFisica)" source="mov2#opm72#icu111#icp274" target="mov2#opm72#cru63.rel62#role124.userOID"/>
+        <LinkParameter id="mov2#opm72#icu111#ln1056#par3282" name="FAD_Tipo" sourceValue="FAD" target="mov2#opm72#cru63.ent77#att481"/>
+        <LinkParameter id="mov2#opm72#icu111#ln1056#par3295" name="oidPM_PersonaMoral.oid(NombramientoOCargoToPersonaMoral)" source="mov2#opm72#icu111#icp311" target="mov2#opm72#cru63.rel63#role126.userOID"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="2895" gr:y="150" id="mov2#opm72#okcu78" name="OK">
+      <OutputCollectorParameter id="mov2#opm72#okcu78#ocp210" name="oidPM"/>
+      <OutputCollectorParameter id="mov2#opm72#okcu78#ocp211" name="mostrar"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="2895" gr:y="430" id="mov2#opm72#kocu63" name="KO">
+      <OutputCollectorParameter id="mov2#opm72#kocu63#ocp207" name="mensaje error"/>
+    </KOCollectorUnit>
+    <CreateUnit gr:x="775" gr:y="120" id="mov2#opm72#cru38" entity="ent64" name="insertaPyC">
+      <OKLink id="mov2#opm72#cru38#oln821" name="OKFlow821" to="mov2#opm72#scu96" automaticCoupling="true"/>
+      <KOLink id="mov2#opm72#cru38#kln372" name="KOFlow372" to="mov2#opm72#kocu63" gr:bendpoints="310,-98,-1094,-428;1252,-98,-152,-428">
+        <LinkParameter id="mov2#opm72#cru38#kln372#par2677" name="Error al insertar la facultad_mensaje error" sourceValue="Error al insertar la facultad pleitos y cobranzas" target="mov2#opm72#kocu63#ocp207"/>
+      </KOLink>
+    </CreateUnit>
+    <ScriptUnit gr:x="410" gr:y="200" id="mov2#opm72#scu95" name="PyC">
+      <ScriptUnitText xml:space="preserve">#input Integer oidPyC
+#output insertaPyC
+
+Boolean insertaPyC = false;
+
+if (oidPyC == null ){
+ insertaPyC = false;
+
+} else insertaPyC = true;
+
+return["insertaPyC":insertaPyC]
+
+
+
+
+</ScriptUnitText>      <OKLink id="mov2#opm72#scu95#oln819" name="Flow874" to="mov2#opm72#switch53">        <LinkParameter id="mov2#opm72#scu95#oln819#par2595" name="insertaActosAdmin_Switch" source="result(insertaPyC)" target="mov2#opm72#switch53.switch"/>      </OKLink>      <KOLink id="mov2#opm72#scu95#kln371" name="KOFlow371" to="mov2#opm72#kocu63" automaticCoupling="true" gr:bendpoints="-6,272,-1786,12"/>    </ScriptUnit>    <SwitchUnit gr:x="575" gr:y="195" id="mov2#opm72#switch53" name="PyC">      <OKLink id="mov2#opm72#switch53#oln817" name="OKFlow817" to="mov2#opm72#cru38" automaticCoupling="true" code="true"/>      <Case value="true"/>      <Case value="false"/>      <OKLink id="mov2#opm72#switch53#oln822" name="OKFlow822" to="mov2#opm72#scu96" automaticCoupling="true" code="false"/>    </SwitchUnit>    <ScriptUnit id="mov2#opm72#scu96" name="dominio" gr:x="785" gr:y="295">      <ScriptUnitText xml:space="preserve">#input Integer oidActosDominio
+#output insertaActosDominio
+
+Boolean insertaActosDominio = false;
+
+
+
+
+if (oidActosDominio == null ){
+ insertaActosDominio = false;
+
+} else insertaActosDominio = true;
+
+
+
+
+return["insertaActosDominio":insertaActosDominio]
+
+
+
+
+</ScriptUnitText>      <OKLink id="mov2#opm72#scu96#oln823" name="OKFlow823" to="mov2#opm72#switch54">        <LinkParameter id="mov2#opm72#scu96#oln823#par2597" name="insertaActosDominio_Switch" source="result(insertaActosDominio)" target="mov2#opm72#switch54.switch"/>      </OKLink>    </ScriptUnit>    <ScriptUnit id="mov2#opm72#scu97" name="admin" gr:x="1370" gr:y="305">      <ScriptUnitText xml:space="preserve">#input Integer oidActosAdmin
+#output insertaActosAdmin
+
+Boolean insertaActosAdmin = false;
+
+
+if (oidActosAdmin == null ){
+ insertaActosAdmin = false;
+
+} else insertaActosAdmin = true;
+
+
+
+return["insertaActosAdmin":insertaActosAdmin]
+
+
+
+
+</ScriptUnitText>      <OKLink id="mov2#opm72#scu97#oln831" name="OKFlow831" to="mov2#opm72#switch56">        <LinkParameter id="mov2#opm72#scu97#oln831#par2599" name="insertaActosAdmin_Switch" source="result(insertaActosAdmin)" target="mov2#opm72#switch56.switch"/>      </OKLink>    </ScriptUnit>    <ScriptUnit id="mov2#opm72#scu98" name="credito" gr:x="1085" gr:y="300">      <ScriptUnitText xml:space="preserve">#input Integer oidTitulosCredito
+#output insertaTitulosCredito
+
+
+Boolean insertaTitulosCredito = false;
+
+
+if (oidTitulosCredito == null ){
+ insertaTitulosCredito = false;
+
+} else insertaTitulosCredito = true;
+
+
+return["insertaTitulosCredito":insertaTitulosCredito]
+
+
+
+
+</ScriptUnitText>      <OKLink id="mov2#opm72#scu98#oln827" name="OKFlow827" to="mov2#opm72#switch55">        <LinkParameter id="mov2#opm72#scu98#oln827#par2598" name="insertaTitulosCredito_Switch" source="result(insertaTitulosCredito)" target="mov2#opm72#switch55.switch"/>      </OKLink>    </ScriptUnit>    <ScriptUnit id="mov2#opm72#scu99" name="especiales" gr:x="1630" gr:y="295">      <ScriptUnitText xml:space="preserve">#input Integer oidPoderesEsp
+#output insertaPoderesEsp
+
+
+Boolean insertaPoderesEsp = false;
+
+
+
+if (oidPoderesEsp == null ){
+ insertaPoderesEsp = false;
+
+} else insertaPoderesEsp = true;
+
+
+
+return["insertaPoderesEsp":insertaPoderesEsp]
+
+
+
+
+</ScriptUnitText>      <OKLink id="mov2#opm72#scu99#oln835" name="OKFlow835" to="mov2#opm72#switch57">        <LinkParameter id="mov2#opm72#scu99#oln835#par2603" name="insertaPoderesEsp_Switch" source="result(insertaPoderesEsp)" target="mov2#opm72#switch57.switch"/>      </OKLink>    </ScriptUnit>    <SwitchUnit gr:x="920" gr:y="290" id="mov2#opm72#switch54" name="dominio">      <Case value="true"/>      <Case value="false"/>      <OKLink id="mov2#opm72#switch54#oln824" name="Flow876" to="mov2#opm72#cru39" automaticCoupling="true" code="true"/>      <OKLink id="mov2#opm72#switch54#oln825" name="OKFlow825" to="mov2#opm72#scu98" automaticCoupling="true" code="false"/>    </SwitchUnit>    <CreateUnit gr:x="1105" gr:y="130" id="mov2#opm72#cru39" name="insertaDominio" entity="ent64">      <OKLink id="mov2#opm72#cru39#oln826" name="OKFlow826" to="mov2#opm72#scu98" automaticCoupling="true"/>      <KOLink id="mov2#opm72#cru39#kln373" name="KOFlow373" to="mov2#opm72#kocu63" gr:bendpoints="164,-80,-896,-400;880,-86,-180,-406">        <LinkParameter id="mov2#opm72#cru39#kln373#par2678" name="Error al insertar facultad de actos y dominios_mensaje error" sourceValue="Error al insertar facultad de actos y dominios" target="mov2#opm72#kocu63#ocp207"/>      </KOLink>    </CreateUnit>    <SwitchUnit gr:x="1235" gr:y="305" id="mov2#opm72#switch55" name="credito">      <Case value="true"/>      <Case value="false"/>      <OKLink id="mov2#opm72#switch55#oln828" name="OKFlow828" to="mov2#opm72#cru40" automaticCoupling="true" code="true"/>      <OKLink id="mov2#opm72#switch55#oln829" name="OKFlow829" to="mov2#opm72#scu97" automaticCoupling="true" code="false"/>    </SwitchUnit>    <CreateUnit gr:x="1355" gr:y="120" id="mov2#opm72#cru40" name="insertaCreditos" entity="ent64">      <OKLink id="mov2#opm72#cru40#oln830" name="OKFlow830" to="mov2#opm72#scu97" automaticCoupling="true"/>      <KOLink id="mov2#opm72#cru40#kln374" name="KOFlow374" to="mov2#opm72#kocu63" gr:bendpoints="158,-60,-652,-390;616,-62,-194,-392">        <LinkParameter id="mov2#opm72#cru40#kln374#par2679" name="Error al insertar facultad de titulos de credito_mensaje error" sourceValue="Error al insertar facultad de titulos de credito" target="mov2#opm72#kocu63#ocp207"/>      </KOLink>    </CreateUnit>    <SwitchUnit gr:x="1495" gr:y="300" id="mov2#opm72#switch56" name="admin">      <Case value="true"/>      <Case value="false"/>      <OKLink id="mov2#opm72#switch56#oln832" name="OKFlow832" to="mov2#opm72#cru41" automaticCoupling="true" code="true"/>      <OKLink id="mov2#opm72#switch56#oln833" name="OKFlow833" to="mov2#opm72#scu99" automaticCoupling="true" code="false"/>    </SwitchUnit>    <CreateUnit gr:x="1615" gr:y="120" id="mov2#opm72#cru41" name="insertaAdmin" entity="ent64">      <OKLink id="mov2#opm72#cru41#oln834" name="OKFlow834" to="mov2#opm72#scu99" automaticCoupling="true"/>      <KOLink id="mov2#opm72#cru41#kln375" name="KOFlow375" to="mov2#opm72#kocu63" gr:bendpoints="92,-52,-462,-382;334,-50,-220,-380">        <LinkParameter id="mov2#opm72#cru41#kln375#par2680" name="Error al insertar facultad de actos de administracion_mensaje error" sourceValue="Error al insertar facultad de actos de administracion" target="mov2#opm72#kocu63#ocp207"/>      </KOLink>    </CreateUnit>    <SwitchUnit gr:x="1805" gr:y="295" id="mov2#opm72#switch57" name="peciales">      <OKLink id="mov2#opm72#switch57#oln836" name="OKFlow836" to="mov2#opm72#cru42" automaticCoupling="true" code="true"/>      <Case value="true"/>      <Case value="false"/>      <OKLink id="mov2#opm72#switch57#oln838" name="OKFlow838" to="mov2#opm72#scu122" automaticCoupling="true" code="false"/>    </SwitchUnit>    <CreateUnit gr:x="1805" gr:y="120" id="mov2#opm72#cru42" name="insertaEspeciales" entity="ent64">      <OKLink id="mov2#opm72#cru42#oln837" name="OKFlow837" to="mov2#opm72#scu122" automaticCoupling="true"/>      <KOLink id="mov2#opm72#cru42#kln376" name="KOFlow376" to="mov2#opm72#kocu63" gr:bendpoints="579,28,-386,-292">        <LinkParameter id="mov2#opm72#cru42#kln376#par2681" name="Error al insertar facultad de poderes especiales_mensaje error" sourceValue="Error al insertar facultad de poderes especiales" target="mov2#opm72#kocu63#ocp207"/>      </KOLink>    </CreateUnit>    <ScriptUnit id="mov2#opm72#scu122" name="Script121" gr:x="1980" gr:y="285">      <ScriptUnitText xml:space="preserve">#input String tipoAdministracion
+#output resultado
+
+boolean resultado;
+
+if(tipoAdministracion == 'Unipersonal')
+{
+	resultado = true;
+}
+
+else resultado = false;
+
+return ["resultado":resultado]
+</ScriptUnitText>      <OKLink id="mov2#opm72#scu122#oln897" name="OKFlow895" to="mov2#opm72#switch66">        <LinkParameter id="mov2#opm72#scu122#oln897#par2932" name="resultado_Switch" source="result(resultado)" target="mov2#opm72#switch66.switch"/>      </OKLink>    </ScriptUnit>    <SelectorUnit id="mov2#opm72#seu134" name="Selector132" gr:x="2235" gr:y="280" entity="ent64">      <Selector id="mov2#opm72#seu134#su279" defaultPolicy="fill" booleanOperator="and">        <RelationshipRoleCondition id="mov2#opm72#seu134#su279#rcond167" name="RoleCondition166" predicate="in" implied="false" role="rel42#role84"/>      </Selector>      <OKLink id="mov2#opm72#seu134#oln898" name="Flow921" to="mov2#opm72#scu123" gr:bendpoints="132,38,-108,12">        <LinkParameter id="mov2#opm72#seu134#oln898#par2933" name="oid_tipoAdministracion" source="ent64#att402Array" target="mov2#opm72#scu123.tipoAdministracion"/>      </OKLink>    </SelectorUnit>    <ScriptUnit id="mov2#opm72#scu123" name="Script120" gr:x="2505" gr:y="320">      <ScriptUnitText xml:space="preserve">#input  tipoAdministracion
+#output mostrar
+
+Boolean mostrar;
+
+if (tipoAdministracion != null)
+{
+	mostrar = false;
+}
+else mostrar = true;
+
+return ["mostrar":mostrar]
+</ScriptUnitText>      <Link id="mov2#opm72#scu123#ln1055" name="OKFlow900" to="mov2#opm72#okcu78" type="transport">        <LinkParameter id="mov2#opm72#scu123#ln1055#par3279" name="mostrar_mostrar" source="result(mostrar)" target="mov2#opm72#okcu78#ocp211"/>      </Link>      <OKLink id="mov2#opm72#scu123#oln1003" name="OKFlow1003" to="mov2#opm72#cru63" automaticCoupling="true"/>    </ScriptUnit>    <SwitchUnit id="mov2#opm72#switch66" name="Switch65" gr:x="2120" gr:y="290">      <OKLink id="mov2#opm72#switch66#oln899" name="OKFlow896" to="mov2#opm72#seu134" code="true" automaticCoupling="true"/>      <OKLink id="mov2#opm72#switch66#oln996" name="OKFlow996" to="mov2#opm72#cru63" gr:bendpoints="148,-98,-526,22" automaticCoupling="true"/>      <Case value="true"/>      <Case value="false"/>    </SwitchUnit>    <CreateUnit gr:x="2490" gr:y="205" id="mov2#opm72#cru63" name="Create63" entity="ent77">      <OKLink id="mov2#opm72#cru63#oln1002" name="OKFlow1002" to="mov2#opm72#okcu78">        <LinkParameter id="mov2#opm72#cru63#oln1002#par3283" name="true_mostrar" sourceValue="true" target="mov2#opm72#okcu78#ocp211"/>      </OKLink>    </CreateUnit>  </OperationUnits></OperationModule>

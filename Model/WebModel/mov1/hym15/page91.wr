@@ -1,0 +1,80 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym15#page91" name="Resultado" gr:x="2630" gr:y="405">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym15#page91#enu115" name="Buttons" linkOrder="mov1#hym15#page91#enu115#ln658 mov1#hym15#page91#enu115#ln659" gr:x="165" gr:y="10">
+      <Link id="mov1#hym15#page91#enu115#ln658" name="Continuar" to="mov1#hym15#page89#enu111" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="mov1#hym15#page91#enu115#ln659" name="Flow143" to="mov1#hym15#ju5" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="146,-603,506,35"/>
+    </EntryUnit>
+    <NoOpContentUnit id="mov1#hym15#page91#gctu14" name="ViewComponent7" gr:x="0" gr:y="0"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid" layout:frameLayout="None">
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym15#page91#gctu14" layout:frameLayout="gobmxStyle/verificacionMensajeError"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell layout:cellLayout="Print Frame" colspan="8">
+        <layout:Unit unitId="mov1#hym15#page91#enu115" manualLinks="true" manualLinkOrder="mov1#hym15#page91#enu115#ln658 mov1#hym15#page91#enu115#ln659" layout:frameLayout="None">
+          <layout:Link label="Continuar" link="mov1#hym15#page91#enu115#ln658" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link label="Cancelar" link="mov1#hym15#page91#enu115#ln659" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+  <layout:LayoutParameter name="show-page-title" value="true" type="page"/>
+</Page>

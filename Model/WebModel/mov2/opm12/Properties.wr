@@ -1,0 +1,379 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm12" name="INE WS" gr:x="705" gr:y="475">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm12#icu19" gr:x="-305" gr:y="40" linkOrder="mov2#opm12#icu19#ln486 mov2#opm12#icu19#ln506 mov2#opm12#icu19#ln540">
+      <OKLink id="mov2#opm12#icu19#oln121" name="OKFlow70" to="mov2#opm12#scu14">
+        <LinkParameter id="mov2#opm12#icu19#oln121#par461" name="ap2_apm" source="mov2#opm12#icu19#icp34" target="mov2#opm12#scu14.apm"/>
+        <LinkParameter id="mov2#opm12#icu19#oln121#par462" name="ap1_app" source="mov2#opm12#icu19#icp35" target="mov2#opm12#scu14.app"/>
+        <LinkParameter id="mov2#opm12#icu19#oln121#par463" name="curp_cur" source="mov2#opm12#icu19#icp33" target="mov2#opm12#scu14.cur"/>
+        <LinkParameter id="mov2#opm12#icu19#oln121#par464" name="claveElector_cveElector" source="mov2#opm12#icu19#icp37" target="mov2#opm12#scu14.cveElector"/>
+        <LinkParameter id="mov2#opm12#icu19#oln121#par465" name="nombres_names" source="mov2#opm12#icu19#icp36" target="mov2#opm12#scu14.names"/>
+        <LinkParameter id="mov2#opm12#icu19#oln121#par1551" name="anioEmision_PASSING" source="mov2#opm12#icu19#icp38" passing="true"/>
+        <LinkParameter id="mov2#opm12#icu19#oln121#par1552" name="anioReg_PASSING" source="mov2#opm12#icu19#icp39" passing="true"/>
+        <LinkParameter id="mov2#opm12#icu19#oln121#par1553" name="cic_PASSING" source="mov2#opm12#icu19#icp40" passing="true"/>
+        <LinkParameter id="mov2#opm12#icu19#oln121#par1554" name="numEmision_PASSING" source="mov2#opm12#icu19#icp32" passing="true"/>
+        <LinkParameter id="mov2#opm12#icu19#oln121#par1555" name="ocr_PASSING" source="mov2#opm12#icu19#icp41" passing="true"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm12#icu19#icp32" name="numEmision"/>
+      <InputCollectorParameter id="mov2#opm12#icu19#icp33" name="curp"/>
+      <InputCollectorParameter id="mov2#opm12#icu19#icp34" name="ap2"/>
+      <InputCollectorParameter id="mov2#opm12#icu19#icp35" name="ap1"/>
+      <InputCollectorParameter id="mov2#opm12#icu19#icp36" name="nombres"/>
+      <InputCollectorParameter id="mov2#opm12#icu19#icp37" name="claveElector"/>
+      <InputCollectorParameter id="mov2#opm12#icu19#icp38" name="anioEmision"/>
+      <InputCollectorParameter id="mov2#opm12#icu19#icp39" name="anioReg"/>
+      <InputCollectorParameter id="mov2#opm12#icu19#icp40" name="cic"/>
+      <InputCollectorParameter id="mov2#opm12#icu19#icp41" name="ocr"/>
+      <Link id="mov2#opm12#icu19#ln486" name="Flow486" to="mov2#opm12#scu66" type="transport" validate="true" gr:bendpoints="142,-56,-503,-56;478,-58,-167,-58">
+        <LinkParameter id="mov2#opm12#icu19#ln486#par2119" name="anioEmision_anioEmision" source="mov2#opm12#icu19#icp38" target="mov2#opm12#scu66.anioEmision"/>
+        <LinkParameter id="mov2#opm12#icu19#ln486#par2120" name="anioReg_anioResgistro" source="mov2#opm12#icu19#icp39" target="mov2#opm12#scu66.anioResgistro"/>
+        <LinkParameter id="mov2#opm12#icu19#ln486#par2127" name="ap2_apellidoMaterno" source="mov2#opm12#icu19#icp34" target="mov2#opm12#scu66.apellidoMaterno"/>
+        <LinkParameter id="mov2#opm12#icu19#ln486#par2128" name="ap1_apellidoPaterno" source="mov2#opm12#icu19#icp35" target="mov2#opm12#scu66.apellidoPaterno"/>
+        <LinkParameter id="mov2#opm12#icu19#ln486#par2129" name="cic_cic" source="mov2#opm12#icu19#icp40" target="mov2#opm12#scu66.cic"/>
+        <LinkParameter id="mov2#opm12#icu19#ln486#par2130" name="claveElector_claveElector" source="mov2#opm12#icu19#icp37" target="mov2#opm12#scu66.claveElector"/>
+        <LinkParameter id="mov2#opm12#icu19#ln486#par2131" name="curp_curp" source="mov2#opm12#icu19#icp33" target="mov2#opm12#scu66.curp"/>
+        <LinkParameter id="mov2#opm12#icu19#ln486#par2132" name="nombres_nombre" source="mov2#opm12#icu19#icp36" target="mov2#opm12#scu66.nombre"/>
+        <LinkParameter id="mov2#opm12#icu19#ln486#par2133" name="numEmision_numeroEmision" source="mov2#opm12#icu19#icp32" target="mov2#opm12#scu66.numeroEmision"/>
+        <LinkParameter id="mov2#opm12#icu19#ln486#par2134" name="ocr_ocr" source="mov2#opm12#icu19#icp41" target="mov2#opm12#scu66.ocr"/>
+      </Link>
+      <Link id="mov2#opm12#icu19#ln506" name="Flow506" to="mov2#opm12#scu69" type="transport" validate="true" gr:bendpoints="307,-240,-493,0">
+        <LinkParameter id="mov2#opm12#icu19#ln506#par2208" name="anioEmision_anioEmision" source="mov2#opm12#icu19#icp38" target="mov2#opm12#scu69.anioEmision"/>
+        <LinkParameter id="mov2#opm12#icu19#ln506#par2209" name="anioReg_anioRegistro" source="mov2#opm12#icu19#icp39" target="mov2#opm12#scu69.anioRegistro"/>
+        <LinkParameter id="mov2#opm12#icu19#ln506#par2210" name="cic_cic" source="mov2#opm12#icu19#icp40" target="mov2#opm12#scu69.cic"/>
+        <LinkParameter id="mov2#opm12#icu19#ln506#par2211" name="claveElector_claveElector" source="mov2#opm12#icu19#icp37" target="mov2#opm12#scu69.claveElector"/>
+        <LinkParameter id="mov2#opm12#icu19#ln506#par2212" name="curp_curp" source="mov2#opm12#icu19#icp33" target="mov2#opm12#scu69.curp"/>
+        <LinkParameter id="mov2#opm12#icu19#ln506#par2213" name="ap2_materno" source="mov2#opm12#icu19#icp34" target="mov2#opm12#scu69.materno"/>
+        <LinkParameter id="mov2#opm12#icu19#ln506#par2214" name="nombres_nombre" source="mov2#opm12#icu19#icp36" target="mov2#opm12#scu69.nombre"/>
+        <LinkParameter id="mov2#opm12#icu19#ln506#par2215" name="numEmision_numeroEmision" source="mov2#opm12#icu19#icp32" target="mov2#opm12#scu69.numeroEmision"/>
+        <LinkParameter id="mov2#opm12#icu19#ln506#par2216" name="ocr_ocr" source="mov2#opm12#icu19#icp41" target="mov2#opm12#scu69.ocr"/>
+        <LinkParameter id="mov2#opm12#icu19#ln506#par2217" name="ap1_paterno" source="mov2#opm12#icu19#icp35" target="mov2#opm12#scu69.paterno"/>
+      </Link>
+      <Link id="mov2#opm12#icu19#ln508" name="Flow506" to="mov2#opm12#scu71" type="transport" validate="true" gr:bendpoints="307,-240,-493,0">
+        <LinkParameter id="mov2#opm12#icu19#ln508#par2245" name="anioEmision_anioEmision" source="mov2#opm12#icu19#icp38" target="mov2#opm12#scu71.anioEmision"/>
+        <LinkParameter id="mov2#opm12#icu19#ln508#par2246" name="anioReg_anioRegistro" source="mov2#opm12#icu19#icp39" target="mov2#opm12#scu71.anioRegistro"/>
+        <LinkParameter id="mov2#opm12#icu19#ln508#par2247" name="cic_cic" source="mov2#opm12#icu19#icp40" target="mov2#opm12#scu71.cic"/>
+        <LinkParameter id="mov2#opm12#icu19#ln508#par2248" name="claveElector_claveElector" source="mov2#opm12#icu19#icp37" target="mov2#opm12#scu71.claveElector"/>
+        <LinkParameter id="mov2#opm12#icu19#ln508#par2249" name="curp_curp" source="mov2#opm12#icu19#icp33" target="mov2#opm12#scu71.curp"/>
+        <LinkParameter id="mov2#opm12#icu19#ln508#par2250" name="ap2_materno" source="mov2#opm12#icu19#icp34" target="mov2#opm12#scu71.materno"/>
+        <LinkParameter id="mov2#opm12#icu19#ln508#par2251" name="nombres_nombre" source="mov2#opm12#icu19#icp36" target="mov2#opm12#scu71.nombre"/>
+        <LinkParameter id="mov2#opm12#icu19#ln508#par2252" name="numEmision_numeroEmision" source="mov2#opm12#icu19#icp32" target="mov2#opm12#scu71.numeroEmision"/>
+        <LinkParameter id="mov2#opm12#icu19#ln508#par2253" name="ocr_ocr" source="mov2#opm12#icu19#icp41" target="mov2#opm12#scu71.ocr"/>
+        <LinkParameter id="mov2#opm12#icu19#ln508#par2254" name="ap1_paterno" source="mov2#opm12#icu19#icp35" target="mov2#opm12#scu71.paterno"/>
+      </Link>
+      <Link id="mov2#opm12#icu19#ln540" name="Flow540" to="mov2#opm12#cru23" type="transport" validate="true">
+        <LinkParameter id="mov2#opm12#icu19#ln540#par2266" name="anioEmision_anioEmision" source="mov2#opm12#icu19#icp38" target="mov2#opm12#cru23.ent51#att330"/>
+        <LinkParameter id="mov2#opm12#icu19#ln540#par2267" name="anioReg_anioRegistro" source="mov2#opm12#icu19#icp39" target="mov2#opm12#cru23.ent51#att335"/>
+        <LinkParameter id="mov2#opm12#icu19#ln540#par2268" name="ap1_apellido1" source="mov2#opm12#icu19#icp35" target="mov2#opm12#cru23.ent51#att336"/>
+        <LinkParameter id="mov2#opm12#icu19#ln540#par2269" name="ap2_apellido2" source="mov2#opm12#icu19#icp34" target="mov2#opm12#cru23.ent51#att337"/>
+        <LinkParameter id="mov2#opm12#icu19#ln540#par2270" name="claveElector_claveElector" source="mov2#opm12#icu19#icp37" target="mov2#opm12#cru23.ent51#att338"/>
+        <LinkParameter id="mov2#opm12#icu19#ln540#par2271" name="curp_curp" source="mov2#opm12#icu19#icp33" target="mov2#opm12#cru23.ent51#att339"/>
+        <LinkParameter id="mov2#opm12#icu19#ln540#par2272" name="nombres_nombre" source="mov2#opm12#icu19#icp36" target="mov2#opm12#cru23.ent51#att340"/>
+        <LinkParameter id="mov2#opm12#icu19#ln540#par2273" name="numEmision_numeroEmision" source="mov2#opm12#icu19#icp32" target="mov2#opm12#cru23.ent51#att341"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#opm12#okcu8" name="OK" gr:x="1480" gr:y="110">
+      <OutputCollectorParameter id="mov2#opm12#okcu8#ocp32" name="identico"/>
+    </OKCollectorUnit>
+    <ScriptUnit id="mov2#opm12#scu13" name="resupestaINE" gr:x="1165" gr:y="115">
+      <ScriptUnitText xml:space="preserve">#input anioReg, anioEmision, curp, nombres, ap1, ap2, numEmision, claveElector
+#output identico
+boolean [] datosINE = new boolean[8]
+boolean identico = true
+
+if(numEmision == null)
+numEmision = true
+
+datosINE[0] = anioReg
+datosINE[1] = anioEmision
+datosINE[2] = curp
+datosINE[3] = nombres
+datosINE[4] = ap1
+datosINE[5] = ap2
+datosINE[6] = true
+datosINE[7] = claveElector
+
+for(boolean item : datosINE) {
+  if (item == false) identico = false
+}
+
+return["identico":identico]</ScriptUnitText>
+      <KOLink id="mov2#opm12#scu13#kln38" name="KOFlow26" to="mov2#opm12#kocu8" gr:bendpoints="50,102,-205,-13;126,102,-129,-13">
+        <LinkParameter id="mov2#opm12#scu13#kln38#par480" name="Error al consultar datos de la credencial de elector_mensaje" target="mov2#opm12#kocu8#ocp33" sourceValue="Error al consultar los datos de la credencial de elector"/>
+      </KOLink>
+      <Link id="mov2#opm12#scu13#ln633" name="OKFlow37" to="mov2#opm12#okcu8" type="transport">
+        <LinkParameter id="mov2#opm12#scu13#ln633#par2274" name="identico_identico" source="result(identico)" target="mov2#opm12#okcu8#ocp32"/>
+      </Link>
+      <OKLink id="mov2#opm12#scu13#oln591" name="OKFlow591" to="mov2#opm12#cru23">
+        <LinkParameter id="mov2#opm12#scu13#oln591#par2275" name="Activo_estatus" sourceValue="Activo" target="mov2#opm12#cru23.ent51#att352"/>
+        <LinkParameter id="mov2#opm12#scu13#oln591#par2276" name="INE_servicio" sourceValue="INE" target="mov2#opm12#cru23.ent51#att351"/>
+      </OKLink>
+    </ScriptUnit>
+    <KOCollectorUnit id="mov2#opm12#kocu8" name="KO" gr:x="1480" gr:y="250">
+      <OutputCollectorParameter id="mov2#opm12#kocu8#ocp33" name="mensaje"/>
+    </KOCollectorUnit>
+    <ScriptUnit id="mov2#opm12#scu14" name="Mayusculas" gr:x="-30" gr:y="115">
+      <ScriptUnitText xml:space="preserve">#input String cveElector,String names, String cur,String app,String apm
+#output claveElector, nombres, curp, ap1, ap2
+
+String claveElector = cveElector.toUpperCase()
+String nombres = names.toUpperCase()
+String curp = cur.toUpperCase()
+String ap1 = app.toUpperCase()
+String ap2 = apm.toUpperCase()
+
+
+return["claveElector":claveElector, "nombres":nombres, "curp": curp, "ap1":ap1, "ap2":ap2]
+
+</ScriptUnitText>      <KOLink id="mov2#opm12#scu14#kln53" name="KOFlow53" to="mov2#opm12#kocu8" gr:bendpoints="43,172,-1392,32;908,162,-192,42">        <LinkParameter id="mov2#opm12#scu14#kln53#par1550" name="Error al convertir Mayusculas._mensaje" sourceValue="Error al convertir Mayusculas." target="mov2#opm12#kocu8#ocp33"/>      </KOLink>      <OKLink id="mov2#opm12#scu14#oln385" name="OKFlow385" to="mov2#opm12#tmu22" automaticCoupling="true"/>      <Link id="mov2#opm12#scu14#ln488" name="OKFlow19" to="mov2#opm12#rru15" type="transport" gr:bendpoints="112,-91,-643,-1">        <LinkParameter id="mov2#opm12#scu14#ln488#par1834" name="ap1_validaDatos/apellidoPaterno" source="result(ap1)" target="mov2#opm12#rru15.validaDatos$apellidoPaterno"/>        <LinkParameter id="mov2#opm12#scu14#ln488#par1835" name="anioReg_PASSING_validaDatos/anioResgistro" sourceLinkParameter="mov2#opm12#icu19#oln121#par1552" target="mov2#opm12#rru15.validaDatos$anioResgistro"/>        <LinkParameter id="mov2#opm12#scu14#ln488#par1836" name="cic_PASSING_validaDatos/cic" sourceLinkParameter="mov2#opm12#icu19#oln121#par1553" target="mov2#opm12#rru15.validaDatos$cic"/>        <LinkParameter id="mov2#opm12#scu14#ln488#par1837" name="numEmision_PASSING_validaDatos/numeroEmision" sourceLinkParameter="mov2#opm12#icu19#oln121#par1554" target="mov2#opm12#rru15.validaDatos$numeroEmision"/>        <LinkParameter id="mov2#opm12#scu14#ln488#par1838" name="ocr_PASSING_validaDatos/ocr" sourceLinkParameter="mov2#opm12#icu19#oln121#par1555" target="mov2#opm12#rru15.validaDatos$ocr"/>        <LinkParameter id="mov2#opm12#scu14#ln488#par1839" name="nombres_validaDatos/nombre" source="result(nombres)" target="mov2#opm12#rru15.validaDatos$nombre"/>        <LinkParameter id="mov2#opm12#scu14#ln488#par1840" name="curp_validaDatos/curp" source="result(curp)" target="mov2#opm12#rru15.validaDatos$curp"/>        <LinkParameter id="mov2#opm12#scu14#ln488#par1841" name="anioEmision_PASSING_validaDatos/anioEmision" sourceLinkParameter="mov2#opm12#icu19#oln121#par1551" target="mov2#opm12#rru15.validaDatos$anioEmision"/>        <LinkParameter id="mov2#opm12#scu14#ln488#par1842" name="ap2_validaDatos/apellidoMaterno" source="result(ap2)" target="mov2#opm12#rru15.validaDatos$apellidoMaterno"/>        <LinkParameter id="mov2#opm12#scu14#ln488#par1843" name="claveElector_validaDatos/claveElector" source="result(claveElector)" target="mov2#opm12#rru15.validaDatos$claveElector"/>      </Link>      <Link id="mov2#opm12#scu14#ln489" name="OKFlow19" to="mov2#opm12#rru16" type="transport" gr:bendpoints="138,-198,-617,2">        <LinkParameter id="mov2#opm12#scu14#ln489#par1853" name="ap1_validaDatos/apellidoPaterno" source="result(ap1)" target="mov2#opm12#rru16.validaDatos$apellidoPaterno"/>        <LinkParameter id="mov2#opm12#scu14#ln489#par1854" name="anioReg_PASSING_validaDatos/anioResgistro" sourceLinkParameter="mov2#opm12#icu19#oln121#par1552" target="mov2#opm12#rru16.validaDatos$anioResgistro"/>        <LinkParameter id="mov2#opm12#scu14#ln489#par1855" name="cic_PASSING_validaDatos/cic" sourceLinkParameter="mov2#opm12#icu19#oln121#par1553" target="mov2#opm12#rru16.validaDatos$cic"/>        <LinkParameter id="mov2#opm12#scu14#ln489#par1856" name="numEmision_PASSING_validaDatos/numeroEmision" sourceLinkParameter="mov2#opm12#icu19#oln121#par1554" target="mov2#opm12#rru16.validaDatos$numeroEmision"/>        <LinkParameter id="mov2#opm12#scu14#ln489#par1857" name="ocr_PASSING_validaDatos/ocr" sourceLinkParameter="mov2#opm12#icu19#oln121#par1555" target="mov2#opm12#rru16.validaDatos$ocr"/>        <LinkParameter id="mov2#opm12#scu14#ln489#par1858" name="nombres_validaDatos/nombre" source="result(nombres)" target="mov2#opm12#rru16.validaDatos$nombre"/>        <LinkParameter id="mov2#opm12#scu14#ln489#par1859" name="curp_validaDatos/curp" source="result(curp)" target="mov2#opm12#rru16.validaDatos$curp"/>        <LinkParameter id="mov2#opm12#scu14#ln489#par1860" name="anioEmision_PASSING_validaDatos/anioEmision" sourceLinkParameter="mov2#opm12#icu19#oln121#par1551" target="mov2#opm12#rru16.validaDatos$anioEmision"/>        <LinkParameter id="mov2#opm12#scu14#ln489#par1861" name="ap2_validaDatos/apellidoMaterno" source="result(ap2)" target="mov2#opm12#rru16.validaDatos$apellidoMaterno"/>        <LinkParameter id="mov2#opm12#scu14#ln489#par1862" name="claveElector_validaDatos/claveElector" source="result(claveElector)" target="mov2#opm12#rru16.validaDatos$claveElector"/>      </Link>    </ScriptUnit>    <ModuleInstanceUnit gr:x="155" gr:y="110" id="mov2#opm12#miu45" action="true" moduleId="mov2#mpkg3#opm40">      <OKLink id="mov2#opm12#miu45#oln388" name="OKFlow386" to="mov2#opm12#scu71" codeRef="mov2#mpkg3#opm40#okcu47" gr:bendpoints="93,-141,-277,99"/>      <OKLink id="mov2#opm12#miu45#oln450" name="OKFlow386" to="mov2#opm12#scu71" codeRef="mov2#mpkg3#opm40#okcu46" gr:bendpoints="214,-69,-166,81"/>      <OKLink id="mov2#opm12#miu45#oln487" name="OKFlow487" to="mov2#opm12#scu71" gr:bendpoints="61,-178,-309,62" codeRef="mov2#mpkg3#opm40#okcu45"/>      <KOLink id="mov2#opm12#miu45#kln248" name="KOFlow248" to="mov2#opm12#kocu8" gr:bendpoints="80,165,-1140,25;682,150,-213,35">        <LinkParameter id="mov2#opm12#miu45#kln248#par1932" name="msj_mensaje" source="mov2#mpkg3#opm40#kocu36#ocp147" target="mov2#opm12#kocu8#ocp33"/>      </KOLink>      <OKLink id="mov2#opm12#miu45#oln526" name="OKFlow526" to="mov2#opm12#scu71" automaticCoupling="true" codeRef="mov2#mpkg3#opm40#okcu48"/>    </ModuleInstanceUnit>    <RequestResponseUnit id="mov2#opm12#rru15" name="consultaIneQA" gr:x="715" gr:y="15" soapVersion="1.2" inputType="none" webServiceProvider="wsp7" webServiceOperation="ValidaDatosIneWSPort/validaDatos">      <KOLink id="mov2#opm12#rru15#kln230" name="KOFlow25" to="mov2#opm12#miu64" gr:bendpoints="72,45,-223,-170;112,220,-173,0">        <LinkParameter id="mov2#opm12#rru15#kln230#par2108" name="error_exitoso" sourceValue="error" target="mov2#opm12#miu64.mov2#opm6#icu2#icp76"/>        <LinkParameter id="mov2#opm12#rru15#kln230#par2109" name="Request XML Document_request" source="requestXmlDocument" target="mov2#opm12#miu64.mov2#opm6#icu2#icp64"/>        <LinkParameter id="mov2#opm12#rru15#kln230#par2110" name="Response XML Document_response" source="responseXmlDocument" target="mov2#opm12#miu64.mov2#opm6#icu2#icp66"/>        <LinkParameter id="mov2#opm12#rru15#kln230#par2111" name="INE QA_servicio" sourceValue="INE QA" target="mov2#opm12#miu64.mov2#opm6#icu2#icp72"/>      </KOLink>      <Link id="mov2#opm12#rru15#ln255" name="OKFlow36" to="mov2#opm12#scu13" type="transport" gr:bendpoints="289,56,-126,-49">        <LinkParameter id="mov2#opm12#rru15#ln255#par1880" name="validaDatosResponse/resultadoValidacion/validacion/numeroEmision_numEmision" source="map(validaDatosResponse$resultadoValidacion$validacion$numeroEmision)" target="mov2#opm12#scu13.numEmision"/>        <LinkParameter id="mov2#opm12#rru15#ln255#par1881" name="validaDatosResponse/resultadoValidacion/validacion/anioRegistro_anioReg" source="map(validaDatosResponse$resultadoValidacion$validacion$anioRegistro)" target="mov2#opm12#scu13.anioReg"/>        <LinkParameter id="mov2#opm12#rru15#ln255#par1882" name="validaDatosResponse/resultadoValidacion/validacion/nombre_nombres" source="map(validaDatosResponse$resultadoValidacion$validacion$nombre)" target="mov2#opm12#scu13.nombres"/>        <LinkParameter id="mov2#opm12#rru15#ln255#par1883" name="validaDatosResponse/resultadoValidacion/validacion/claveElector_claveElector" source="map(validaDatosResponse$resultadoValidacion$validacion$claveElector)" target="mov2#opm12#scu13.claveElector"/>        <LinkParameter id="mov2#opm12#rru15#ln255#par1884" name="validaDatosResponse/resultadoValidacion/validacion/curp_curp" source="map(validaDatosResponse$resultadoValidacion$validacion$curp)" target="mov2#opm12#scu13.curp"/>        <LinkParameter id="mov2#opm12#rru15#ln255#par1885" name="validaDatosResponse/resultadoValidacion/validacion/apellidoPaterno_ap1" source="map(validaDatosResponse$resultadoValidacion$validacion$apellidoPaterno)" target="mov2#opm12#scu13.ap1"/>        <LinkParameter id="mov2#opm12#rru15#ln255#par1886" name="validaDatosResponse/resultadoValidacion/validacion/anioEmision_anioEmision" source="map(validaDatosResponse$resultadoValidacion$validacion$anioEmision)" target="mov2#opm12#scu13.anioEmision"/>        <LinkParameter id="mov2#opm12#rru15#ln255#par1887" name="validaDatosResponse/resultadoValidacion/validacion/apellidoMaterno_ap2" source="map(validaDatosResponse$resultadoValidacion$validacion$apellidoMaterno)" target="mov2#opm12#scu13.ap2"/>      </Link>      <OKLink id="mov2#opm12#rru15#oln525" name="OKFlow525" to="mov2#opm12#miu47">        <LinkParameter id="mov2#opm12#rru15#oln525#par1898" name="Request XML Document_request" source="requestXmlDocument" target="mov2#opm12#miu47.mov2#opm6#icu2#icp64"/>        <LinkParameter id="mov2#opm12#rru15#oln525#par1899" name="Response XML Document_response" source="responseXmlDocument" target="mov2#opm12#miu47.mov2#opm6#icu2#icp66"/>        <LinkParameter id="mov2#opm12#rru15#oln525#par1930" name="INE QA_servicio" sourceValue="INE QA" target="mov2#opm12#miu47.mov2#opm6#icu2#icp72"/>        <LinkParameter id="mov2#opm12#rru15#oln525#par2106" name="exitoso_exitoso" sourceValue="exitoso" target="mov2#opm12#miu47.mov2#opm6#icu2#icp76"/>      </OKLink>    </RequestResponseUnit>    <RequestResponseUnit id="mov2#opm12#rru16" name="consultaIneQA" gr:x="715" gr:y="-95" soapVersion="1.2" inputType="none" webServiceProvider="wsp7" webServiceOperation="ValidaDatosIneWSPort/validaDatos">      <KOLink id="mov2#opm12#rru16#kln231" name="KOFlow25" to="mov2#opm12#miu64" gr:bendpoints="64,61,-191,-249;132,312,-163,-8">        <LinkParameter id="mov2#opm12#rru16#kln231#par2101" name="error_exitoso" sourceValue="error" target="mov2#opm12#miu64.mov2#opm6#icu2#icp76"/>        <LinkParameter id="mov2#opm12#rru16#kln231#par2102" name="Request XML Document_request" source="requestXmlDocument" target="mov2#opm12#miu64.mov2#opm6#icu2#icp64"/>        <LinkParameter id="mov2#opm12#rru16#kln231#par2103" name="Response XML Document_response" source="responseXmlDocument" target="mov2#opm12#miu64.mov2#opm6#icu2#icp66"/>        <LinkParameter id="mov2#opm12#rru16#kln231#par2104" name="INE QA_servicio" sourceValue="INE QA" target="mov2#opm12#miu64.mov2#opm6#icu2#icp72"/>      </KOLink>      <Link id="mov2#opm12#rru16#ln254" name="OKFlow36" to="mov2#opm12#scu13" type="transport">        <LinkParameter id="mov2#opm12#rru16#ln254#par1872" name="validaDatosResponse/resultadoValidacion/validacion/anioRegistro_anioReg" source="map(validaDatosResponse$resultadoValidacion$validacion$anioRegistro)" target="mov2#opm12#scu13.anioReg"/>        <LinkParameter id="mov2#opm12#rru16#ln254#par1873" name="validaDatosResponse/resultadoValidacion/validacion/nombre_nombres" source="map(validaDatosResponse$resultadoValidacion$validacion$nombre)" target="mov2#opm12#scu13.nombres"/>        <LinkParameter id="mov2#opm12#rru16#ln254#par1874" name="validaDatosResponse/resultadoValidacion/validacion/anioEmision_anioEmision" source="map(validaDatosResponse$resultadoValidacion$validacion$anioEmision)" target="mov2#opm12#scu13.anioEmision"/>        <LinkParameter id="mov2#opm12#rru16#ln254#par1875" name="validaDatosResponse/resultadoValidacion/validacion/apellidoPaterno_ap1" source="map(validaDatosResponse$resultadoValidacion$validacion$apellidoPaterno)" target="mov2#opm12#scu13.ap1"/>        <LinkParameter id="mov2#opm12#rru16#ln254#par1876" name="validaDatosResponse/resultadoValidacion/validacion/curp_curp" source="map(validaDatosResponse$resultadoValidacion$validacion$curp)" target="mov2#opm12#scu13.curp"/>        <LinkParameter id="mov2#opm12#rru16#ln254#par1877" name="validaDatosResponse/resultadoValidacion/validacion/apellidoMaterno_ap2" source="map(validaDatosResponse$resultadoValidacion$validacion$apellidoMaterno)" target="mov2#opm12#scu13.ap2"/>        <LinkParameter id="mov2#opm12#rru16#ln254#par1878" name="validaDatosResponse/resultadoValidacion/validacion/claveElector_claveElector" source="map(validaDatosResponse$resultadoValidacion$validacion$claveElector)" target="mov2#opm12#scu13.claveElector"/>        <LinkParameter id="mov2#opm12#rru16#ln254#par1879" name="validaDatosResponse/resultadoValidacion/validacion/numeroEmision_numEmision" source="map(validaDatosResponse$resultadoValidacion$validacion$numeroEmision)" target="mov2#opm12#scu13.numEmision"/>      </Link>      <OKLink id="mov2#opm12#rru16#oln523" name="OKFlow523" to="mov2#opm12#miu47">        <LinkParameter id="mov2#opm12#rru16#oln523#par1896" name="Request XML Document_request" source="requestXmlDocument" target="mov2#opm12#miu47.mov2#opm6#icu2#icp64"/>        <LinkParameter id="mov2#opm12#rru16#oln523#par1897" name="Response XML Document_response" source="responseXmlDocument" target="mov2#opm12#miu47.mov2#opm6#icu2#icp66"/>        <LinkParameter id="mov2#opm12#rru16#oln523#par1929" name="INE QA_servicio" sourceValue="INE QA" target="mov2#opm12#miu47.mov2#opm6#icu2#icp72"/>        <LinkParameter id="mov2#opm12#rru16#oln523#par2105" name="exitoso_exitoso" sourceValue="exitoso" target="mov2#opm12#miu47.mov2#opm6#icu2#icp76"/>      </OKLink>    </RequestResponseUnit>    <ModuleInstanceUnit gr:x="935" gr:y="110" id="mov2#opm12#miu47" action="true" moduleId="mov2#opm6">      <OKLink id="mov2#opm12#miu47#oln524" name="OKFlow524" to="mov2#opm12#scu13" automaticCoupling="true"/>      <KOLink id="mov2#opm12#miu47#kln244" name="KOFlow244" to="mov2#opm12#kocu8" automaticCoupling="true" gr:bendpoints="146,105,-294,-15"/>    </ModuleInstanceUnit>    <ModuleInstanceUnit gr:x="980" gr:y="240" id="mov2#opm12#miu64" action="true" moduleId="mov2#opm6">      <OKLink id="mov2#opm12#miu64#oln547" name="OKFlow547" to="mov2#opm12#kocu8">        <LinkParameter id="mov2#opm12#miu64#oln547#par2100" name="Error al consultar los datos con el Instituto Nacional Electoral._mensaje" sourceValue="Error al consultar los datos con el Instituto Nacional Electoral." target="mov2#opm12#kocu8#ocp33"/>      </OKLink>    </ModuleInstanceUnit>    <ScriptUnit gr:x="720" gr:y="115" id="mov2#opm12#scu28" name="INEResponse">      <ScriptUnitText xml:space="preserve">#input xml, request
+#output anioEmision,anioRegistro,apellidoMaterno,apellidoPaterno,claveElector,curp,numeroEmision,reponse, request, nombre
+String cadena = xml
+//definiciones
+def anioEmision ="";def anioRegistro ="";def apellidoMaterno ="";def apellidoPaterno ="";def claveElector ="";def curp ="";def numeroEmision ="";def nombre ="";
+//indices
+def anioEmisionIni = cadena.indexOf("&lt;anioEmision&gt;"); def anioEmisionFin = cadena.indexOf("&lt;/anioEmision&gt;");def anioRegistroIni = cadena.indexOf("&lt;anioRegistro&gt;"); def anioRegistroFin = cadena.indexOf("&lt;/anioRegistro&gt;");def apellidoMaternoIni = cadena.indexOf("&lt;apellidoMaterno&gt;"); def apellidoMaternoFin = cadena.indexOf("&lt;/apellidoMaterno&gt;");def apellidoPaternoIni = cadena.indexOf("&lt;apellidoPaterno&gt;"); def apellidoPaternoFin = cadena.indexOf("&lt;/apellidoPaterno&gt;");def claveElectorIni = cadena.indexOf("&lt;claveElector&gt;"); def claveElectorFin = cadena.indexOf("&lt;/claveElector&gt;");def curpIni = cadena.indexOf("&lt;curp&gt;"); def curpFin = cadena.indexOf("&lt;/curp&gt;");def numeroEmisionIni = cadena.indexOf("&lt;numeroEmision&gt;"); def numeroEmisionFin = cadena.indexOf("&lt;/numeroEmision&gt;");def nombreIni = cadena.indexOf("&lt;nombre&gt;"); def nombreFin = cadena.indexOf("&lt;/nombre&gt;");
+//cadenas
+if (anioEmisionIni != -1 || anioEmisionFin != -1){ anioEmision = cadena.substring(anioEmisionIni + 13, anioEmisionFin); }else{ anioEmision = " "; }  ;if (anioRegistroIni != -1 || anioRegistroFin != -1){ anioRegistro = cadena.substring(anioRegistroIni + 14, anioRegistroFin); }else{ anioRegistro = " "; }  ;if (apellidoMaternoIni != -1 || apellidoMaternoFin != -1){ apellidoMaterno = cadena.substring(apellidoMaternoIni + 17, apellidoMaternoFin); }else{ apellidoMaterno = " "; }  ;if (apellidoPaternoIni != -1 || apellidoPaternoFin != -1){ apellidoPaterno = cadena.substring(apellidoPaternoIni + 17, apellidoPaternoFin); }else{ apellidoPaterno = " "; }  ;if (claveElectorIni != -1 || claveElectorFin != -1){ claveElector = cadena.substring(claveElectorIni + 14, claveElectorFin); }else{ claveElector = " "; }  ;if (curpIni != -1 || curpFin != -1){ curp = cadena.substring(curpIni + 6, curpFin); }else{ curp = " "; }  ;if (numeroEmisionIni != -1 || numeroEmisionFin != -1){ numeroEmision = cadena.substring(numeroEmisionIni + 15, numeroEmisionFin); }else{ numeroEmision = " "; }  ;if (nombreIni != -1 || nombreFin != -1){ nombre = cadena.substring(nombreIni + 8, nombreFin); }else{ nombre = " "; }  ;
+return["anioEmision":anioEmision,"anioRegistro":anioRegistro,"apellidoMaterno":apellidoMaterno,"apellidoPaterno":apellidoPaterno,"claveElector":claveElector,"curp":curp,"numeroEmision":numeroEmision,"response":xml,"request":xml,"nombre":nombre]
+</ScriptUnitText>      <Link id="mov2#opm12#scu28#ln343" name="OKFlow55" to="mov2#opm12#scu13" type="transport" gr:bendpoints="241,71,-204,71">        <LinkParameter id="mov2#opm12#scu28#ln343#par1891" name="anioRegistro_anioReg" source="result(anioRegistro)" target="mov2#opm12#scu13.anioReg"/>        <LinkParameter id="mov2#opm12#scu28#ln343#par1892" name="claveElector_claveElector" source="result(claveElector)" target="mov2#opm12#scu13.claveElector"/>        <LinkParameter id="mov2#opm12#scu28#ln343#par1893" name="numeroEmision_numEmision" source="result(numeroEmision)" target="mov2#opm12#scu13.numEmision"/>        <LinkParameter id="mov2#opm12#scu28#ln343#par1894" name="nombre_nombres" source="result(nombre)" target="mov2#opm12#scu13.nombres"/>        <LinkParameter id="mov2#opm12#scu28#ln343#par1895" name="curp_curp" source="result(curp)" target="mov2#opm12#scu13.curp"/>        <LinkParameter id="mov2#opm12#scu28#ln343#par1900" name="apellidoMaterno_ap2" source="result(apellidoMaterno)" target="mov2#opm12#scu13.ap2"/>        <LinkParameter id="mov2#opm12#scu28#ln343#par1901" name="apellidoPaterno_ap1" source="result(apellidoPaterno)" target="mov2#opm12#scu13.ap1"/>        <LinkParameter id="mov2#opm12#scu28#ln343#par1931" name="anioEmision_anioEmision" source="result(anioEmision)" target="mov2#opm12#scu13.anioEmision"/>      </Link>      <OKLink id="mov2#opm12#scu28#oln386" name="OKFlow386" to="mov2#opm12#miu47">        <LinkParameter id="mov2#opm12#scu28#oln386#par1942" name="exitoso_exitoso" sourceValue="exitoso" target="mov2#opm12#miu47.mov2#opm6#icu2#icp76"/>        <LinkParameter id="mov2#opm12#scu28#oln386#par1969" name="request_request" source="result(request)" target="mov2#opm12#miu47.mov2#opm6#icu2#icp64"/>        <LinkParameter id="mov2#opm12#scu28#oln386#par2047" name="reponse_response" source="result(reponse)" target="mov2#opm12#miu47.mov2#opm6#icu2#icp66"/>        <LinkParameter id="mov2#opm12#scu28#oln386#par2107" name="INE PROD_servicio" sourceValue="INE PROD" target="mov2#opm12#miu47.mov2#opm6#icu2#icp72"/>      </OKLink>      <KOLink id="mov2#opm12#scu28#kln278" name="KOFlow278" to="mov2#opm12#miu64" gr:bendpoints="69,141,-216,11">        <LinkParameter id="mov2#opm12#scu28#kln278#par2135" name="Error_exitoso" sourceValue="Error" target="mov2#opm12#miu64.mov2#opm6#icu2#icp76"/>        <LinkParameter id="mov2#opm12#scu28#kln278#par2136" name="request_request" source="result(request)" target="mov2#opm12#miu64.mov2#opm6#icu2#icp64"/>        <LinkParameter id="mov2#opm12#scu28#kln278#par2137" name="reponse_response" source="result(reponse)" target="mov2#opm12#miu64.mov2#opm6#icu2#icp66"/>        <LinkParameter id="mov2#opm12#scu28#kln278#par2138" name="INE PROD_servicio" sourceValue="INE PROD" target="mov2#opm12#miu64.mov2#opm6#icu2#icp72"/>        <LinkParameter id="mov2#opm12#scu28#kln278#par2139" name="https://esb.economia.gob.mx/serviciosOsb/ine/ineService_uri" sourceValue="https://esb.economia.gob.mx/serviciosOsb/ine/ineService" target="mov2#opm12#miu64.mov2#opm6#icu2#icp56"/>      </KOLink>    </ScriptUnit>    <ScriptUnit gr:x="560" gr:y="115" id="mov2#opm12#scu30" name="INERequest">      <ScriptUnitText xml:space="preserve">#input String dirtyXmlRequest, String endpointURL
+#output xmlRequest,xmlResponse
+import javax.xml.soap.SOAPConnectionFactory;
+import javax.xml.soap.SOAPConnection;
+import javax.xml.soap.SOAPMessage;
+import javax.xml.soap.MessageFactory;
+import javax.xml.soap.SOAPConstants;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+
+// Para probar en groovyConsole
+
+SOAPConnectionFactory soapConnectionFactory = SOAPConnectionFactory.newInstance();
+SOAPConnection soapConnection = soapConnectionFactory.createConnection();
+
+InputStream is = new ByteArrayInputStream(dirtyXmlRequest.getBytes());
+SOAPMessage soapMessage;
+SOAPMessage soapResponse;
+
+// Send SOAP Message to SOAP Server
+try {   
+    soapMessage = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL).createMessage(null, is);
+    soapResponse = soapConnection.call(soapMessage, endpointURL);
+    } catch (Exception e) {
+        throw new RuntimeException("El servicio de INE producci&#243;n", e.getCause());
+        }
+
+public String soapMessageToString(SOAPMessage message) 
+    {
+        String result = null;
+
+        if (message != null) 
+        {
+            ByteArrayOutputStream baos = null;
+            try 
+            {
+                baos = new ByteArrayOutputStream();
+                message.writeTo(baos); 
+                result = baos.toString();
+            } 
+            catch (Exception e) 
+            {
+            } 
+            finally 
+            {
+                if (baos != null) 
+                {
+                    try 
+                    {
+                        baos.close();
+                    } 
+                    catch (IOException ioe) 
+                    {
+                    }
+                }
+            }
+        }
+        return result;
+    }  
+
+//XML as a String:
+String xmlRequest = soapMessageToString(soapMessage);
+String xmlResponse = soapMessageToString(soapResponse);
+
+return["xmlRequest":xmlRequest,"xmlResponse":xmlResponse]</ScriptUnitText>
+      <OKLink id="mov2#opm12#scu30#oln573" name="OKFlow573" to="mov2#opm12#scu28">
+        <LinkParameter id="mov2#opm12#scu30#oln573#par2112" name="xmlResponse_xml" source="result(xmlResponse)" target="mov2#opm12#scu28.xml"/>
+        <LinkParameter id="mov2#opm12#scu30#oln573#par2113" name="xmlRequest_request" source="result(xmlRequest)" target="mov2#opm12#scu28.request"/>
+      </OKLink>
+      <KOLink id="mov2#opm12#scu30#kln297" name="KOFlow297" to="mov2#opm12#kocu8" automaticCoupling="true" gr:bendpoints="54,150,-791,10;537,151,-308,11"/>
+    </ScriptUnit>
+    <ScriptUnit gr:x="395" gr:y="115" id="mov2#opm12#scu66" name="armarRequest">
+      <OKLink id="mov2#opm12#scu66#oln569" name="OKFlow569" to="mov2#opm12#scu30">
+        <LinkParameter id="mov2#opm12#scu66#oln569#par2114" name="request_dirtyXmlRequest" source="result(request)" target="mov2#opm12#scu30.dirtyXmlRequest"/>
+        <LinkParameter id="mov2#opm12#scu66#oln569#par2115" name="https://esb.economia.gob.mx/serviciosOsb/ine/ineService?wsdl_endpointURL" sourceValue="https://esb.economia.gob.mx/serviciosOsb/ine/ineService" target="mov2#opm12#scu30.endpointURL"/>
+      </OKLink>
+      <ScriptUnitText xml:space="preserve">#input ocr,cic,numeroEmision,claveElector,nombre,apellidoPaterno,apellidoMaterno,anioEmision,anioResgistro,curp
+#output request
+
+String request = '''
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://servicios.mediador.ine.apps.economia.gob.mx/"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ser:validaDatos&gt;
+         &lt;!--Optional:--&gt;
+         &lt;ocr&gt;''' + ocr + '''&lt;/ocr&gt;
+         &lt;!--Optional:--&gt;
+         &lt;cic&gt;''' + cic + '''&lt;/cic&gt;
+         &lt;numeroEmision&gt;'''+ numeroEmision +'''&lt;/numeroEmision&gt;
+         &lt;claveElector&gt;''' + claveElector + '''&lt;/claveElector&gt;
+         &lt;nombre&gt;''' + nombre + '''&lt;/nombre&gt;
+         &lt;apellidoPaterno&gt;''' + apellidoPaterno + '''&lt;/apellidoPaterno&gt;
+         &lt;apellidoMaterno&gt;''' + apellidoMaterno + '''&lt;/apellidoMaterno&gt;
+         &lt;!--Optional:--&gt;
+         &lt;anioEmision&gt;''' + anioEmision + '''&lt;/anioEmision&gt;
+         &lt;!--Optional:--&gt;
+         &lt;anioResgistro&gt;''' + anioResgistro + '''&lt;/anioResgistro&gt;
+         &lt;!--Optional:--&gt;
+         &lt;curp&gt;''' + curp + '''&lt;/curp&gt;
+      &lt;/ser:validaDatos&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+'''
+return["request":request]</ScriptUnitText>
+      <KOLink id="mov2#opm12#scu66#kln296" name="KOFlow296" to="mov2#opm12#kocu8" gr:bendpoints="62,158,-943,18;689,159,-316,19">
+        <LinkParameter id="mov2#opm12#scu66#kln296#par2224" name="Error al armar el request del INE._mensaje" sourceValue="Error al armar el request del INE." target="mov2#opm12#kocu8#ocp33"/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit gr:x="570" gr:y="-125" id="mov2#opm12#scu69" name="ineQA">
+      <OKLink id="mov2#opm12#scu69#oln157" name="OKFlow157" to="mov2#opm12#scu13" gr:bendpoints="464,-20,-291,-240">
+        <LinkParameter id="mov2#opm12#scu69#oln157#par258" name="anioEmision_anioEmision" source="result(anioEmision)" target="mov2#opm12#scu13.anioEmision"/>
+        <LinkParameter id="mov2#opm12#scu69#oln157#par411" name="anioRegistro_anioReg" source="result(anioRegistro)" target="mov2#opm12#scu13.anioReg"/>
+        <LinkParameter id="mov2#opm12#scu69#oln157#par413" name="apellidoPaterno_ap1" source="result(apellidoPaterno)" target="mov2#opm12#scu13.ap1"/>
+        <LinkParameter id="mov2#opm12#scu69#oln157#par1599" name="apellidoMaterno_ap2" source="result(apellidoMaterno)" target="mov2#opm12#scu13.ap2"/>
+        <LinkParameter id="mov2#opm12#scu69#oln157#par1600" name="claveElector_claveElector" source="result(claveElector)" target="mov2#opm12#scu13.claveElector"/>
+        <LinkParameter id="mov2#opm12#scu69#oln157#par1604" name="curp_curp" source="result(curp)" target="mov2#opm12#scu13.curp"/>
+        <LinkParameter id="mov2#opm12#scu69#oln157#par2140" name="nombre_nombres" source="result(nombre)" target="mov2#opm12#scu13.nombres"/>
+        <LinkParameter id="mov2#opm12#scu69#oln157#par2207" name="numeroEmision_numEmision" source="result(numeroEmision)" target="mov2#opm12#scu13.numEmision"/>
+      </OKLink>
+      <ScriptUnitText xml:space="preserve">#input String ocr,String cic,String numeroEmision,String claveElector,String nombre,String paterno,String materno,String anioRegistro,String anioEmision,String curp
+#output anioEmision,anioRegistro,apellidoMaterno,apellidoPaterno,claveElector,curp,nombre,numeroEmision
+import mx.gob.economia.apps.ine.client.*
+import mx.gob.economia.apps.ine.client.excepciones.*
+import mx.gob.economia.apps.ine.client.listeners.*
+import mx.gob.economia.apps.ine.client.objetos.*
+import mx.gob.economia.apps.ine.client.servicioine.*
+import mx.gob.economia.apps.ine.client.servlets.*
+
+String ocr1 = ocr
+String cic1 = cic
+String numeroEmision1 =numeroEmision
+String claveElector1 =claveElector
+String nombre1 =nombre
+String paterno1 =paterno
+String materno1 =materno
+String anioRegistro1 =anioRegistro
+String anioEmision1 =anioEmision
+String curp1 =curp
+
+ClienteINE c=new ClienteINE("https://esb-qa.economia.gob.mx/serviciosOsb/ine/ineService?wsdl");
+ValidacionDatosWS res = c.validaInformacion(ocr1, cic1, numeroEmision1, claveElector1, nombre1, paterno1, materno1, anioEmision1, anioRegistro1, curp1);
+return["anioEmision":res.getValidacion().isAnioEmision(),"anioRegistro":res.getValidacion().isAnioRegistro(),"apellidoMaterno":res.getValidacion().isApellidoMaterno(),"apellidoPaterno":res.getValidacion().isApellidoPaterno(),"claveElector":res.getValidacion().isClaveElector(),"curp":res.getValidacion().isCurp(),"nombre":res.getValidacion().isNombre(),"numeroEmision":res.getValidacion().isNumeroEmision()]</ScriptUnitText>
+      <KOLink id="mov2#opm12#scu69#kln292" name="KOFlow292" to="mov2#opm12#cru23" gr:bendpoints="296,29,-299,-1">
+        <LinkParameter id="mov2#opm12#scu69#kln292#par2278" name="Fallido_estatus" sourceValue="Fallido" target="mov2#opm12#cru23.ent51#att352"/>
+        <LinkParameter id="mov2#opm12#scu69#kln292#par2279" name="INE PROD_servicio" sourceValue="INE QA" target="mov2#opm12#cru23.ent51#att351"/>
+      </KOLink>
+      <Link id="mov2#opm12#scu69#ln516" name="Flow516" to="mov2#opm12#cru23" type="transport" validate="true">
+        <LinkParameter id="mov2#opm12#scu69#ln516#par2258" name="anioEmision_vAnioEmision" source="result(anioEmision)" target="mov2#opm12#cru23.ent51#att343"/>
+        <LinkParameter id="mov2#opm12#scu69#ln516#par2259" name="anioRegistro_vAnioRegistro" source="result(anioRegistro)" target="mov2#opm12#cru23.ent51#att344"/>
+        <LinkParameter id="mov2#opm12#scu69#ln516#par2260" name="apellidoPaterno_vApellido1" source="result(apellidoPaterno)" target="mov2#opm12#cru23.ent51#att345"/>
+        <LinkParameter id="mov2#opm12#scu69#ln516#par2261" name="apellidoMaterno_vApellido2" source="result(apellidoMaterno)" target="mov2#opm12#cru23.ent51#att346"/>
+        <LinkParameter id="mov2#opm12#scu69#ln516#par2262" name="claveElector_vClaveElector" source="result(claveElector)" target="mov2#opm12#cru23.ent51#att347"/>
+        <LinkParameter id="mov2#opm12#scu69#ln516#par2263" name="curp_vCurp" source="result(curp)" target="mov2#opm12#cru23.ent51#att348"/>
+        <LinkParameter id="mov2#opm12#scu69#ln516#par2264" name="nombre_vNombre" source="result(nombre)" target="mov2#opm12#cru23.ent51#att349"/>
+        <LinkParameter id="mov2#opm12#scu69#ln516#par2265" name="numeroEmision_vNumeroEmision" source="result(numeroEmision)" target="mov2#opm12#cru23.ent51#att350"/>
+      </Link>
+    </ScriptUnit>
+    <ScriptUnit id="mov2#opm12#scu71" name="inePROD" gr:x="575" gr:y="-35" linkOrder="mov2#opm12#scu71#ln642">
+      <OKLink id="mov2#opm12#scu71#oln166" name="OKFlow157" to="mov2#opm12#scu13" gr:bendpoints="382,31,-223,-119">
+        <LinkParameter id="mov2#opm12#scu71#oln166#par2236" name="anioEmision_anioEmision" source="result(anioEmision)" target="mov2#opm12#scu13.anioEmision"/>
+        <LinkParameter id="mov2#opm12#scu71#oln166#par2237" name="anioRegistro_anioReg" source="result(anioRegistro)" target="mov2#opm12#scu13.anioReg"/>
+        <LinkParameter id="mov2#opm12#scu71#oln166#par2238" name="apellidoPaterno_ap1" source="result(apellidoPaterno)" target="mov2#opm12#scu13.ap1"/>
+        <LinkParameter id="mov2#opm12#scu71#oln166#par2239" name="apellidoMaterno_ap2" source="result(apellidoMaterno)" target="mov2#opm12#scu13.ap2"/>
+        <LinkParameter id="mov2#opm12#scu71#oln166#par2240" name="claveElector_claveElector" source="result(claveElector)" target="mov2#opm12#scu13.claveElector"/>
+        <LinkParameter id="mov2#opm12#scu71#oln166#par2241" name="curp_curp" source="result(curp)" target="mov2#opm12#scu13.curp"/>
+        <LinkParameter id="mov2#opm12#scu71#oln166#par2242" name="nombre_nombres" source="result(nombre)" target="mov2#opm12#scu13.nombres"/>
+        <LinkParameter id="mov2#opm12#scu71#oln166#par2243" name="numeroEmision_numEmision" source="result(numeroEmision)" target="mov2#opm12#scu13.numEmision"/>
+      </OKLink>
+      <ScriptUnitText xml:space="preserve">#input String ocr,String cic,String numeroEmision,String claveElector,String nombre,String paterno,String materno,String anioRegistro,String anioEmision,String curp
+#output anioEmision,anioRegistro,apellidoMaterno,apellidoPaterno,claveElector,curp,nombre,numeroEmision
+import mx.gob.economia.apps.ine.client.*
+import mx.gob.economia.apps.ine.client.excepciones.*
+import mx.gob.economia.apps.ine.client.listeners.*
+import mx.gob.economia.apps.ine.client.objetos.*
+import mx.gob.economia.apps.ine.client.servicioine.*
+import mx.gob.economia.apps.ine.client.servlets.*
+
+boolean anioEmision1 = false;
+boolean anioRegistro1= false;
+boolean apellidoMaterno1= false;
+boolean apellidoPaterno1= false;
+boolean claveElector1= false;
+boolean curp1= false;
+boolean nombre1= false;
+boolean numeroEmision1= false;
+
+ClienteINE c = new ClienteINE("https://esb.economia.gob.mx/serviciosOsb/ine/ineService?wsdl");
+
+ValidacionDatosWS res = c.validaInformacion(ocr, cic, numeroEmision, claveElector, nombre, paterno, materno, anioEmision, anioRegistro, curp);
+println(res.getSituacionRegistral())
+if (res.getSituacionRegistral()=="DATOS_NO_ENCONTRADOS")
+{
+    ValidacionDatosWS aux = c.validaInformacion(null, cic, numeroEmision, claveElector, nombre, paterno, materno, anioEmision, anioRegistro, curp);
+    println(aux.getSituacionRegistral())
+    if (aux.getSituacionRegistral()=="DATOS_NO_ENCONTRADOS")
+    {
+        ValidacionDatosWS ter = c.validaInformacion(ocr, null, numeroEmision, claveElector, nombre, paterno, materno, anioEmision, anioRegistro, curp);
+        println(ter.getSituacionRegistral())
+        if (ter.getSituacionRegistral()=="DATOS_NO_ENCONTRADOS")
+        {
+
+        }
+        else if (ter.getSituacionRegistral()=="VIGENTE")
+        {
+            anioEmision1 = ter.getValidacion().isAnioEmision()
+            anioRegistro1=ter.getValidacion().isAnioRegistro()
+            apellidoMaterno1=ter.getValidacion().isApellidoMaterno()
+            apellidoPaterno1=ter.getValidacion().isApellidoPaterno()
+            claveElector1=ter.getValidacion().isClaveElector()
+            curp1=ter.getValidacion().isCurp()
+            nombre1=ter.getValidacion().isNombre()
+        }
+
+    }
+    else if (aux.getSituacionRegistral()=="VIGENTE")
+    {
+        anioEmision1 = aux.getValidacion().isAnioEmision()
+        anioRegistro1=aux.getValidacion().isAnioRegistro()
+        apellidoMaterno1=aux.getValidacion().isApellidoMaterno()
+        apellidoPaterno1=aux.getValidacion().isApellidoPaterno()
+        claveElector1=aux.getValidacion().isClaveElector()
+        curp1=aux.getValidacion().isCurp()
+        nombre1=aux.getValidacion().isNombre()
+    }
+}
+else if (res.getSituacionRegistral()=="VIGENTE")
+{
+    anioEmision1 = res.getValidacion().isAnioEmision()
+    anioRegistro1=res.getValidacion().isAnioRegistro()
+    apellidoMaterno1=res.getValidacion().isApellidoMaterno()
+    apellidoPaterno1=res.getValidacion().isApellidoPaterno()
+    claveElector1=res.getValidacion().isClaveElector()
+    curp1=res.getValidacion().isCurp()
+    nombre1=res.getValidacion().isNombre()
+    numeroEmision1=res.getValidacion().isNumeroEmision()
+}
+else
+{
+    println("PUEBA")
+}
+return["anioEmision":anioEmision1,"anioRegistro":anioRegistro1,"apellidoMaterno":apellidoMaterno1,"apellidoPaterno":apellidoPaterno1,"claveElector":claveElector1,"curp":curp1,"nombre":nombre1,"numeroEmision":numeroEmision1]
+</ScriptUnitText>      <KOLink id="mov2#opm12#scu71#kln293" name="KOFlow292" to="mov2#opm12#kocu8">        <LinkParameter id="mov2#opm12#scu71#kln293#par4842" name="El servicio del INE no se encuentra disponible en este momento, intentelo mas tarde._mensaje" sourceValue="El servicio del INE no se encuentra disponible en este momento, intentelo mas tarde." target="mov2#opm12#kocu8#ocp33"/>      </KOLink>      <Link id="mov2#opm12#scu71#ln642" name="Flow642" to="mov2#opm12#cru23" type="transport" validate="true" gr:bendpoints="324,-21,-316,49">        <LinkParameter id="mov2#opm12#scu71#ln642#par291" name="anioEmision_vAnioEmision" source="result(anioEmision)" target="mov2#opm12#cru23.ent51#att343"/>        <LinkParameter id="mov2#opm12#scu71#ln642#par292" name="anioRegistro_vAnioRegistro" source="result(anioRegistro)" target="mov2#opm12#cru23.ent51#att344"/>        <LinkParameter id="mov2#opm12#scu71#ln642#par293" name="apellidoPaterno_vApellido1" source="result(apellidoPaterno)" target="mov2#opm12#cru23.ent51#att345"/>        <LinkParameter id="mov2#opm12#scu71#ln642#par294" name="apellidoMaterno_vApellido2" source="result(apellidoMaterno)" target="mov2#opm12#cru23.ent51#att346"/>        <LinkParameter id="mov2#opm12#scu71#ln642#par295" name="claveElector_vClaveElector" source="result(claveElector)" target="mov2#opm12#cru23.ent51#att347"/>        <LinkParameter id="mov2#opm12#scu71#ln642#par296" name="curp_vCurp" source="result(curp)" target="mov2#opm12#cru23.ent51#att348"/>        <LinkParameter id="mov2#opm12#scu71#ln642#par297" name="nombre_vNombre" source="result(nombre)" target="mov2#opm12#cru23.ent51#att349"/>        <LinkParameter id="mov2#opm12#scu71#ln642#par299" name="numeroEmision_vNumeroEmision" source="result(numeroEmision)" target="mov2#opm12#cru23.ent51#att350"/>      </Link>    </ScriptUnit>    <CreateUnit gr:x="1220" gr:y="-115" id="mov2#opm12#cru23" name="INEAUX" entity="ent51">      <OKLink id="mov2#opm12#cru23#oln597" name="OKFlow597" to="mov2#opm12#okcu8" automaticCoupling="true"/>      <KOLink id="mov2#opm12#cru23#kln294" name="KOFlow294" to="mov2#opm12#kocu8">        <LinkParameter id="mov2#opm12#cru23#kln294#par2277" name="Fallo al agregar a la tabla auxiliar._mensaje" sourceValue="Fallo al agregar a la tabla auxiliar." target="mov2#opm12#kocu8#ocp33"/>      </KOLink>    </CreateUnit>    <GetUnit gr:x="1405" gr:y="-130" id="mov2#opm12#gtu30" name="getUser" contextParameters="UserCtxParam" linkOrder="mov2#opm12#gtu30#ln635">      <Link id="mov2#opm12#gtu30#ln635" name="Flow635" to="mov2#opm12#cru23" type="transport" validate="true">        <LinkParameter id="mov2#opm12#gtu30#ln635#par2281" name="UserCtxParam.oid_userOID" source="mov2#opm12#gtu30.UserCtxParam" target="mov2#opm12#cru23.ent51#att355"/>      </Link>    </GetUnit>    <TimeUnit gr:x="90" gr:y="200" id="mov2#opm12#tmu22" name="obtenerTiempo" linkOrder="mov2#opm12#tmu22#ln636">      <OKLink id="mov2#opm12#tmu22#oln606" name="OKFlow606" to="mov2#opm12#miu45" automaticCoupling="true"/>      <Link id="mov2#opm12#tmu22#ln636" name="Flow636" to="mov2#opm12#cru23" type="transport" validate="true">        <LinkParameter id="mov2#opm12#tmu22#ln636#par2282" name="Current/Input Timestamp_timestamp" source="currentTimestamp" target="mov2#opm12#cru23.ent51#att354"/>      </Link>    </TimeUnit>  </OperationUnits></OperationModule>

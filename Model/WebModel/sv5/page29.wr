@@ -1,0 +1,279 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv5#page29" name="Home" landmark="true" gr:x="205" gr:y="155" localized="true">
+  <ContentUnits>
+    <GetUnit id="sv5#page29#gtu14" name="UserAndGroup" gr:x="205" gr:y="145" contextParameters="GroupCtxParam UserCtxParam">
+      <Link id="sv5#page29#gtu14#ln283" name="Link52" to="sv5#page29#pwu16" type="transport" automaticCoupling="true" validate="true"/>
+    </GetUnit>
+    <UserActivitiesUnit id="sv5#page29#uau3" name="Active" gr:x="395" gr:y="140" activityStatus="runnable" computationMode="execute">
+      <Link id="sv5#page29#uau3#ln284" name="Link18" to="sv5#page29#pwu15" type="transport" validate="true">
+        <LinkParameter id="sv5#page29#uau3#ln284#par642" name="Activities Oids_KeyCondition3 [oid]" source="activityInstanceOids" target="sv5#page29#pwu15#su78#kcond46.activityInstanceOid"/>
+      </Link>
+      <Link id="sv5#page29#uau3#ln289" name="Link99" to="sv5#page29#inu8" automaticCoupling="true" type="transport" validate="true"/>
+    </UserActivitiesUnit>
+    <IndexUnit id="sv5#page29#inu8" name="Start a New Process" linkOrder="sv5#page29#inu8#ln290" gr:x="360" gr:y="20" entity="ActivityType" displayAttributes="activityTypeName">
+      <SortAttribute attribute="activityTypeName" order="ascending"/>
+      <Selector id="sv5#page29#inu8#su77" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv5#page29#inu8#su77#kcond45" name="oids" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv5#page29#inu8#ln290" name="start" to="sv5#spu3" type="normal" automaticCoupling="true" validate="true"/>
+    </IndexUnit>
+    <PowerIndexUnit id="sv5#page29#pwu15" name="Work Items" linkOrder="sv5#page29#pwu15#ln301 sv5#page29#pwu15#ln300 sv5#page29#pwu15#ln302" gr:x="340" gr:y="250" sortable="true" checkable="false" entity="ActivityInstance" displayAttributes="activityInstanceProcessInstanceAttachmentCount activityInstanceProcessInstanceName activityInstanceName activityInstanceStatus activityInstanceReadyTimestamp" blockFactor="10" blockWindow="5" computationMode="execute">
+      <Selector id="sv5#page29#pwu15#su78" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv5#page29#pwu15#su78#kcond46" name="oids" predicate="in" implied="false"/>
+        <RelationshipRoleCondition id="sv5#page29#pwu15#su78#rcond39" name="activityType" predicate="in" implied="true" role="activityType2ActivityInstances"/>
+        <RelationshipRoleCondition id="sv5#page29#pwu15#su78#rcond41" name="process" predicate="in" implied="true" role="process2ProcessInstances.processInstance2ActivityInstances"/>
+        <AttributesCondition id="sv5#page29#pwu15#su78#acond41" name="status" predicate="eq" booleanOperator="or" implied="true" attributes="activityInstanceStatus"/>
+      </Selector>
+      <Link id="sv5#page29#pwu15#ln300" name="resume" to="sv5#rau3" type="normal" automaticCoupling="true" validate="true"/>
+      <SortAttribute attribute="activityInstanceReadyTimestamp" order="ascending"/>
+      <SortAttribute attribute="activityInstanceOid" order="ascending"/>
+      <SortAttribute attribute="activityInstanceProcessInstanceName" order="ascending"/>
+      <SortAttribute attribute="activityInstanceName" order="ascending"/>
+      <SortAttribute attribute="activityInstanceStatus" order="ascending"/>
+      <Link id="sv5#page29#pwu15#ln301" name="details" to="sv5#page29#dau12" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true"/>
+      <Link id="sv5#page29#pwu15#ln302" name="work on" to="sv5#rau3" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="123,30,-94,30"/>
+    </PowerIndexUnit>
+    <ProcessUnit id="sv5#page29#pu52" gr:x="115" gr:y="150" name="Processes" mode="info">
+      <Link id="sv5#page29#pu52#ln303" name="Link81" to="sv5#page29#pwu16" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv5#page29#pu52#ln304" name="Link109" to="sv5#page29#seu19" automaticCoupling="true" type="transport" validate="true"/>
+    </ProcessUnit>
+    <DataUnit id="sv5#page29#dau12" gr:x="175" gr:y="425" name="Work Item Details" entity="ActivityInstance" displayAttributes="activityInstanceProcessName activityInstanceName activityInstanceGroupName activityInstanceStatus activityInstanceReadyTimestamp activityInstanceActiveTimestamp activityInstanceLastTimestamp" linkOrder="sv5#page29#dau12#ln306">
+      <Selector id="sv5#page29#dau12#su79" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv5#page29#dau12#su79#kcond47" name="oid" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv5#page29#dau12#ln305" name="Link41" to="sv5#page29#pu53" type="transport" validate="true">
+        <LinkParameter id="sv5#page29#dau12#ln305#par643" name="processInstance.oid_Process Instance Oid" source="data.activityInstance2ProcessInstance_processInstanceOid" target="sv5#page29#pu53.processInstanceOid"/>
+      </Link>
+      <Link id="sv5#page29#dau12#ln306" name="diagram" to="sv5#page30#pdu6" type="normal" validate="true" newWindow="true">
+        <LinkParameter id="sv5#page29#dau12#ln306#par644" name="processInstance.oid_Process Instance Oid" source="data.activityInstance2ProcessInstance_processInstanceOid" target="sv5#page30#pdu6.processInstanceOid"/>
+      </Link>
+    </DataUnit>
+    <PowerIndexUnit id="sv5#page29#pwu16" entity="Notification" displayAttributes="notificationMessage notificationRead" sortable="false" checkable="false" name="Notifications" linkOrder="sv5#page29#pwu16#ln307 sv5#page29#pwu16#ln308 sv5#page29#pwu16#ln309" gr:x="60" gr:y="0" ajaxTooltipEnabled="false" blockFactor="5" computationMode="execute">
+      <SortAttribute attribute="notificationOid" order="ascending"/>
+      <Selector id="sv5#page29#pwu16#su80" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv5#page29#pwu16#su80#rcond42" role="user2Notifications" predicate="in" implied="false" name="user"/>
+        <RelationshipRoleCondition id="sv5#page29#pwu16#su80#rcond43" role="process2ProcessInstances.processInstance2ActivityInstances.activityInstance2Notifications" predicate="in" implied="false" name="managedProcesses"/>
+      </Selector>
+      <Link id="sv5#page29#pwu16#ln307" name="delete" to="sv5#dlu5" type="normal" automaticCoupling="true" validate="true" newWindow="false"/>
+      <Link id="sv5#page29#pwu16#ln308" name="read" to="sv5#mfu9" type="normal" validate="true">
+        <LinkParameter id="sv5#page29#pwu16#ln308#par645" name="oid_oids [oid]" source="data[].notificationOid" target="sv5#mfu9#su75#kcond44.notificationOid"/>
+        <LinkParameter id="sv5#page29#pwu16#ln308#par646" name="true_read" target="sv5#mfu9.notificationRead" sourceValue="true"/>
+      </Link>
+      <Link id="sv5#page29#pwu16#ln309" name="unread" to="sv5#mfu9" type="normal" validate="true" gr:bendpoints="-94,-83,-94,75">
+        <LinkParameter id="sv5#page29#pwu16#ln309#par647" name="oid_oids [oid]" source="data[].notificationOid" target="sv5#mfu9#su75#kcond44.notificationOid"/>
+        <LinkParameter id="sv5#page29#pwu16#ln309#par648" name="false_read" sourceValue="false" target="sv5#mfu9.notificationRead"/>
+      </Link>
+    </PowerIndexUnit>
+    <EntryUnit id="sv5#page29#enu26" gr:x="230" gr:y="285" name="Search" linkOrder="sv5#page29#enu26#ln310">
+      <SelectionField id="sv5#page29#enu26#sfld24" name="Process" type="string"/>
+      <SelectionField id="sv5#page29#enu26#sfld25" name="Status" type="string">
+        <Slot id="sv5#page29#enu26#sfld25#slot19" name="label" label="true" output="false" value="Ready|Active|Aborted"/>
+        <Slot id="sv5#page29#enu26#sfld25#slot20" name="output" label="false" output="true" value="ready|active|aborted"/>
+      </SelectionField>
+      <Link id="sv5#page29#enu26#ln310" name="Search" to="sv5#page29#pwu15" type="normal" validate="true">
+        <LinkParameter id="sv5#page29#enu26#ln310#par649" name="Process_process [oid]" source="sv5#page29#enu26#sfld24" target="sv5#page29#pwu15#su78#rcond41.processOid"/>
+        <LinkParameter id="sv5#page29#enu26#ln310#par650" name="Status_status" source="sv5#page29#enu26#sfld25" target="sv5#page29#pwu15#su78#acond41"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit id="sv5#page29#seu19" gr:x="115" gr:y="275" name="Processes" entity="Process">
+      <Selector id="sv5#page29#seu19#su81" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv5#page29#seu19#su81#kcond48" name="oids" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv5#page29#seu19#ln311" name="Link110" to="sv5#page29#enu26" type="transport" validate="true">
+        <LinkParameter id="sv5#page29#seu19#ln311#par651" name="name_Process [label]" source="processNameArray" target="sv5#page29#enu26#sfld24_label"/>
+        <LinkParameter id="sv5#page29#seu19#ln311#par675" name="oid_Process [output]" source="processOidArray" target="sv5#page29#enu26#sfld24_output"/>
+      </Link>
+    </SelectorUnit>
+    <ProcessUnit id="sv5#page29#pu53" gr:x="0" gr:y="435" name="Work Item Parameters" mode="parameters"/>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv5#page29#inu8" layout:frameLayout="None">
+          <layout:Attribute attribute="activityTypeName"/>
+          <layout:Link link="sv5#page29#inu8#ln290"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv5#page29#pwu16" layout:unitLayout="WRDefault/Highlight" styleClass="notification" layout:frameLayout="None">
+          <layout:Link link="sv5#page29#pwu16#ln307"/>
+          <layout:Link link="sv5#page29#pwu16#ln308" label="mark as read" styleClass="nowrap" layout:linkVisibilityConditionVariable="sv5#page29#var21" layout:linkVisibilityConditionNegated="true"/>
+          <layout:Link link="sv5#page29#pwu16#ln309" label="mark as unread" styleClass="nowrap" layout:linkVisibilityConditionVariable="sv5#page29#var21"/>
+          <layout:Link link="sv5#page29#pwu16First"/>
+          <layout:Link link="sv5#page29#pwu16Previous"/>
+          <layout:Link link="sv5#page29#pwu16Block"/>
+          <layout:Link link="sv5#page29#pwu16Next"/>
+          <layout:Link link="sv5#page29#pwu16Last"/>
+          <layout:LayoutParameter name="show-header" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-bullet" value="false" type="unit"/>
+          <layout:LayoutParameter name="use-alternate" value="true" type="unit"/>
+          <layout:Attribute attribute="notificationMessage" label="Notification"/>
+          <layout:Attribute attribute="notificationRead"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv5#page29#enu26">
+          <layout:Field field="sv5#page29#enu26#sfld24"/>
+          <layout:Field field="sv5#page29#enu26#sfld25"/>
+          <layout:Link link="sv5#page29#enu26#ln310"/>
+          <layout:LayoutParameter name="field-orientation" value="horizontal" type="unit"/>
+          <layout:LayoutParameter name="link-position" value="right" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv5#page29#pwu15">
+          <layout:Attribute attribute="activityInstanceProcessInstanceAttachmentCount" label="#" styleClass="attachment"/>
+          <layout:Attribute label="Process" attribute="activityInstanceProcessInstanceName"/>
+          <layout:Attribute label="Activity" attribute="activityInstanceName"/>
+          <layout:Attribute attribute="activityInstanceStatus" label="Status"/>
+          <layout:Attribute attribute="activityInstanceReadyTimestamp" layout:attributeLayout="WRDefault/Duration" label="Running for"/>
+          <layout:Link link="sv5#page29#pwu15#ln301"/>
+          <layout:Link link="sv5#page29#pwu15#ln300" styleClass="small" layout:linkVisibilityCondition="sv5#page29#cexpr14"/>
+          <layout:Link link="sv5#page29#pwu15#ln302" layout:linkVisibilityCondition="sv5#page29#cexpr15"/>
+          <layout:Link link="sv5#page29#pwu15activityInstanceReadyTimestamp"/>
+          <layout:Link link="sv5#page29#pwu15activityInstanceProcessInstanceName"/>
+          <layout:Link link="sv5#page29#pwu15activityInstanceName"/>
+          <layout:Link link="sv5#page29#pwu15activityInstanceStatus"/>
+          <layout:Link link="sv5#page29#pwu15First"/>
+          <layout:Link link="sv5#page29#pwu15Previous"/>
+          <layout:Link link="sv5#page29#pwu15Block"/>
+          <layout:Link link="sv5#page29#pwu15Next"/>
+          <layout:Link link="sv5#page29#pwu15Last"/>
+          <layout:LayoutParameter name="use-alternate" value="true" type="unit"/>
+          <layout:LayoutParameter name="link-position" value="on_row" type="unit"/>
+          <layout:LayoutParameter name="use-empty-unit-message" value="true" type="unit"/>
+          <layout:LayoutParameter name="empty-unit-message" value="NoWorkItemsFound" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8" layout:cellLayout="Print Frame" label="Work Item Details">
+        <layout:Grid containerType="grid" label="Work Item Details" layout:gridVisibilityCondition="sv5#page29#cexpr13">
+          <layout:Row>
+            <layout:Cell colspan="6">
+              <layout:Unit unitId="sv5#page29#dau12" layout:frameLayout="None">
+                <layout:Attribute attribute="activityInstanceProcessName"/>
+                <layout:Attribute attribute="activityInstanceName"/>
+                <layout:Attribute attribute="activityInstanceGroupName" label="role"/>
+                <layout:Attribute attribute="activityInstanceStatus"/>
+                <layout:Attribute attribute="activityInstanceReadyTimestamp" layout:attributeLayout="WRDefault/Duration"/>
+                <layout:Attribute attribute="activityInstanceActiveTimestamp" layout:attributeLayout="WRDefault/Duration"/>
+                <layout:Attribute attribute="activityInstanceLastTimestamp"/>
+                <layout:Link link="sv5#page29#dau12#ln306" label="History Diagram">
+                  <layout:LayoutParameter name="show" value="icon &amp; text" type="link"/>
+                </layout:Link>
+              </layout:Unit>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="6">
+              <layout:Unit unitId="sv5#page29#pu53" layout:frameLayout="None"/>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:CustomLocation name="Left">
+    <layout:Grid containerType="cell">
+      <layout:Row>
+        <layout:Cell>
+          <layout:Unit unitId="sv5#page29#inu8">
+            <layout:Attribute attribute="activityTypeName"/>
+            <layout:Link link="sv5#page29#inu8#ln290">
+              <layout:LayoutParameter name="link-style" value="button" type="link"/>
+            </layout:Link>
+            <layout:LayoutParameter name="show-header" value="false" type="frame"/>
+            <layout:LayoutParameter name="frame-type" value="Small" type="frame"/>
+            <layout:LayoutParameter name="show-header" value="false" type="unit"/>
+            <layout:LayoutParameter name="show-bullet" value="false" type="unit"/>
+            <layout:LayoutParameter name="use-alternate" value="false" type="unit"/>
+            <layout:LayoutParameter name="link-position" value="on_row" type="unit"/>
+          </layout:Unit>
+        </layout:Cell>
+      </layout:Row>
+    </layout:Grid>
+  </layout:CustomLocation>
+  <Variable id="sv5#page29#var20" name="workItem" unitId="sv5#page29#dau12" type="integer" parameter="data.activityInstanceOid"/>
+  <ConditionExpression id="sv5#page29#cexpr13" name="workItemSelected">
+    <TextValue xml:space="preserve">import com.webratio.rtx.core.BeanHelper
+return !BeanHelper.isNullOrEmptyString(BeanHelper.asString(workItem))</TextValue>
+  </ConditionExpression>
+  <Variable id="sv5#page29#var21" name="notificationRead" unitId="sv5#page29#pwu16" parameter="data[].notificationRead" type="boolean"/>
+  <Variable id="sv5#page29#var22" name="workItemStatus" unitId="sv5#page29#pwu15" parameter="data[].activityInstanceStatus"/>
+  <ConditionExpression id="sv5#page29#cexpr14" name="WorkItemActive">
+    <TextValue xml:space="preserve">workItemStatus == "active"</TextValue>
+  </ConditionExpression>
+  <ConditionExpression id="sv5#page29#cexpr15" name="WorkItemReady">
+    <TextValue xml:space="preserve">workItemStatus == "ready"</TextValue>
+  </ConditionExpression>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+</Page>

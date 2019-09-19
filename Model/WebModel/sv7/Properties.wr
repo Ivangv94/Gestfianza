@@ -1,0 +1,34 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv7" name="Control View" homePage="sv7#page49" landmarks="sv7#page49 sv7#page52 sv7#page51" protected="true" secure="false">
+  <OperationUnits>
+    <ResumeActivityUnit id="sv7#rau5" name="Resume Activity" gr:x="835" gr:y="485">
+      <KOLink id="sv7#rau5#kln19" name="KOLink4" to="sv7#page53#pu72">
+        <LinkParameter id="sv7#rau5#kln19#par108" name="Error Info_Error Info" source="errorInfo" target="sv7#page53#pu72.errorInfo"/>
+      </KOLink>
+    </ResumeActivityUnit>
+    <StartProcessUnit id="sv7#spu11" name="Start Process" gr:x="845" gr:y="230">
+      <KOLink id="sv7#spu11#kln28" name="KOLink3" to="sv7#page53#pu72">
+        <LinkParameter id="sv7#spu11#kln28#par119" name="Error Info_Error Info" source="errorInfo" target="sv7#page53#pu72.errorInfo"/>
+      </KOLink>
+    </StartProcessUnit>
+    <DeleteUnit id="sv7#dlu7" name="Remove Notification" gr:x="459" gr:y="42" entity="Notification">
+      <Selector id="sv7#dlu7#su38" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv7#dlu7#su38#kcond28" name="oids" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+    <ModifyUnit id="sv7#mfu2" gr:x="322" gr:y="41" name="Mark as Read" entity="Notification" bulk="false">
+      <Selector id="sv7#mfu2#su40" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv7#mfu2#su40#kcond29" name="oids" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+    <LogoutUnit id="sv7#lou7" name="Logout User" gr:x="1395" gr:y="245" siteView="sv1"/>
+    <ProcessUnit id="sv7#pu66" name="Rollback Activity" gr:x="640" gr:y="915" mode="rollback">
+      <KOLink id="sv7#pu66#kln29" name="KOLink9" to="sv7#page53#pu72">
+        <LinkParameter id="sv7#pu66#kln29#par120" name="Error Info_Error Info" source="errorInfo" target="sv7#page53#pu72.errorInfo"/>
+      </KOLink>
+      <OKLink id="sv7#pu66#oln53" name="OKLink42" to="sv7#page50#pdu8" gr:bendpoints="-133,-47,97,-47">
+        <LinkParameter id="sv7#pu66#oln53#par121" name="Process Instance Oid_PASSING_Process Instance Oid" sourceLinkParameter="sv7#page50#pdu8#ln191#par178" target="sv7#page50#pdu8.processInstanceOid"/>
+      </OKLink>
+    </ProcessUnit>
+  </OperationUnits>
+  <layout:LayoutParameter name="show-left-column" value="true" type="page"/>
+</SiteView>

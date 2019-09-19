@@ -1,0 +1,145 @@
+<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="930" id="wsv1#port4" name="inscribirPoder">
+  <OperationUnits>
+    <SolicitUnit id="wsv1#port4#slu4" name="inscripcionPoderesPM" invocationStyle="SOAP" requestMethod="POST" gr:x="0" gr:y="20">
+      <RequestBodyParameter id="wsv1#port4#slu4#slp5" name="DatosNotario" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp5#spf11" name="rfcNotario" minCard="1" maxCard="1" xsdType="{http://www.w3.org/2001/XMLSchema}string[SimpleType]"/>
+        <ComplexParameterFragment id="wsv1#port4#slu4#slp5#cpf1" name="Tramite" minCard="1" maxCard="1">
+          <Comment xml:space="preserve">Generado por el notario para su control.</Comment>
+          <SimpleParameterFragment id="wsv1#port4#slu4#slp5#cpf1#spf22" name="idTramite" minCard="1" maxCard="1"/>
+          <SimpleParameterFragment id="wsv1#port4#slu4#slp5#cpf1#spf31" name="numeroTramite" minCard="1" maxCard="1"/>
+        </ComplexParameterFragment>
+      </RequestBodyParameter>
+      <RequestBodyParameter id="wsv1#port4#slu4#slp6" name="DatosSociedad" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp6#spf12" name="expedienteElectronico" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp6#spf13" name="folioMercantil" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp6#spf14" name="rfcPM" minCard="1" maxCard="1"/>
+      </RequestBodyParameter>
+      <RequestBodyParameter id="wsv1#port4#slu4#slp7" name="InformacionPoder" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp7#spf15" name="fechaInstrumento" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp7#spf16" name="isEscritura" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp7#spf17" name="numeroInstrumento" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp7#spf18" name="volumen" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp7#spf19" name="libro" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp7#spf20" name="foja" minCard="1" maxCard="1"/>
+      </RequestBodyParameter>
+      <RequestBodyParameter id="wsv1#port4#slu4#slp8" name="Poderes" minCard="1" maxCard="1">
+        <ComplexParameterFragment id="wsv1#port4#slu4#slp8#cpf2" name="Otorgamientos" minCard="1" maxCard="1">
+          <ComplexParameterFragment id="wsv1#port4#slu4#slp8#cpf2#cpf3" name="PoderOtorgado" minCard="1" maxCard="1">
+            <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf2#cpf3#spf23" name="tieneRFC" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf2#cpf3#spf24" name="rfcPF" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf2#cpf3#spf25" name="curp" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf2#cpf3#spf26" name="cargo" minCard="1" maxCard="1">
+              <Comment xml:space="preserve">optional</Comment>
+            </SimpleParameterFragment>
+            <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf2#cpf3#spf27" name="fechaOtorgamiento" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf2#cpf3#spf28" name="fechaRevocacion" minCard="1" maxCard="1"/>
+            <ComplexParameterFragment id="wsv1#port4#slu4#slp8#cpf2#cpf3#cpf4" name="Facultades" minCard="1" maxCard="1">
+              <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf2#cpf3#cpf4#spf29" name="tipoFacultad" minCard="1" maxCard="1"/>
+              <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf2#cpf3#cpf4#spf30" name="comentarios" minCard="1" maxCard="1"/>
+            </ComplexParameterFragment>
+            <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf2#cpf3#spf36" name="consecutivo" minCard="1" maxCard="1"/>
+          </ComplexParameterFragment>
+        </ComplexParameterFragment>
+        <ComplexParameterFragment id="wsv1#port4#slu4#slp8#cpf6" name="OtrosActos" minCard="1" maxCard="1">
+          <ComplexParameterFragment id="wsv1#port4#slu4#slp8#cpf6#cpf7" name="Acto" minCard="1" maxCard="1">
+            <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf6#cpf7#spf37" name="consecutivo" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf6#cpf7#spf38" name="tipoActo" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf6#cpf7#spf39" name="isAntecedente" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf6#cpf7#spf40" name="isTotal" minCard="1" maxCard="1"/>
+            <ComplexParameterFragment id="wsv1#port4#slu4#slp8#cpf6#cpf7#cpf8" name="Facultades" minCard="1" maxCard="1">
+              <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf6#cpf7#cpf8#spf41" name="idRegistroFacultad" minCard="1" maxCard="1"/>
+              <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf6#cpf7#cpf8#spf42" name="tipoFacultad" minCard="1" maxCard="1"/>
+              <SimpleParameterFragment id="wsv1#port4#slu4#slp8#cpf6#cpf7#cpf8#spf43" name="fechaRevocacion" minCard="1" maxCard="1"/>
+            </ComplexParameterFragment>
+          </ComplexParameterFragment>
+        </ComplexParameterFragment>
+      </RequestBodyParameter>
+      <OKLink id="wsv1#port4#slu4#oln178" name="OKFlow178" to="wsv1#port4#rsu4">
+        <LinkParameter id="wsv1#port4#slu4#oln178#par1826" name="DatosNotario_inscripcionPoder" source="map(wsv1#port4#slu4#slp5_DatosNotario)" target="wsv1#port4#rsu4#rsp4.inscripcionPoder"/>
+        <LinkParameter id="wsv1#port4#slu4#oln178#par1827" name="El poder se inscribi&#243; correctamente._inscripcionPoder/mensaje" sourceValue="El poder se inscribi&#243; correctamente." target="wsv1#port4#rsu4#rsp4.inscripcionPoder$mensaje"/>
+        <LinkParameter id="wsv1#port4#slu4#oln178#par1828" name="1234567_inscripcionPoder/numeroProceso" sourceValue="1234567" target="wsv1#port4#rsu4#rsp4.inscripcionPoder$numeroProceso"/>
+        <LinkParameter id="wsv1#port4#slu4#oln178#par1829" name="1_inscripcionPoder/recepcionCorrecta" sourceValue="1" target="wsv1#port4#rsu4#rsp4.inscripcionPoder$recepcionCorrecta"/>
+      </OKLink>
+      <RequestBodyParameter id="wsv1#port4#slu4#slp9" name="InformacionSociedad" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp9#spf32" name="expedienteElectronico" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp9#spf33" name="folioMercantil" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp9#spf34" name="rfcPM" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu4#slp9#spf35" name="denominacionSocial" minCard="1" maxCard="1"/>
+      </RequestBodyParameter>
+    </SolicitUnit>
+    <ResponseUnit gr:x="300" gr:y="0" id="wsv1#port4#rsu4" name="inscripcionPoderesResponse" contentType="XML" statusCode="200">
+      <ResponseBodyParameter id="wsv1#port4#rsu4#rsp4" name="inscripcionPoder" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port4#rsu4#rsp4#spf44" name="numeroProceso" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#rsu4#rsp4#spf45" name="recepcionCorrecta" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#rsu4#rsp4#spf46" name="mensaje" minCard="1" maxCard="1"/>
+      </ResponseBodyParameter>
+    </ResponseUnit>
+    <SolicitUnit id="wsv1#port4#slu5" name="inscripcionPoderesPF" gr:x="5" gr:y="120" invocationStyle="SOAP" requestMethod="POST">
+      <RequestBodyParameter id="wsv1#port4#slu5#slp11" name="DatosNotario" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp11#spf47" name="rfcNotario" minCard="1" maxCard="1"/>
+        <ComplexParameterFragment id="wsv1#port4#slu5#slp11#cpf9" name="Tramite" minCard="1" maxCard="1">
+          <Comment xml:space="preserve">Generado por el notario para su control.</Comment>
+          <SimpleParameterFragment id="wsv1#port4#slu5#slp11#cpf9#spf48" name="idTramite" minCard="1" maxCard="1"/>
+          <SimpleParameterFragment id="wsv1#port4#slu5#slp11#cpf9#spf49" name="numeroTramite" minCard="1" maxCard="1"/>
+        </ComplexParameterFragment>
+      </RequestBodyParameter>
+      <RequestBodyParameter id="wsv1#port4#slu5#slp12" name="DatosSociedad" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp12#spf50" name="expedienteElectronico" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp12#spf51" name="folioMercantil" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp12#spf52" name="rfcPM" minCard="1" maxCard="1"/>
+      </RequestBodyParameter>
+      <RequestBodyParameter id="wsv1#port4#slu5#slp13" name="InformacionPoder" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp13#spf53" name="fechaInstrumento" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp13#spf54" name="isEscritura" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp13#spf55" name="numeroInstrumento" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp13#spf56" name="volumen" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp13#spf57" name="libro" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp13#spf58" name="foja" minCard="1" maxCard="1"/>
+      </RequestBodyParameter>
+      <RequestBodyParameter id="wsv1#port4#slu5#slp14" name="Poderes" minCard="1" maxCard="1">
+        <ComplexParameterFragment id="wsv1#port4#slu5#slp14#cpf10" name="Otorgamientos" minCard="1" maxCard="1">
+          <ComplexParameterFragment id="wsv1#port4#slu5#slp14#cpf10#cpf11" name="PoderOtorgado" minCard="1" maxCard="1">
+            <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf10#cpf11#spf59" name="tieneRFC" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf10#cpf11#spf60" name="rfcPF" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf10#cpf11#spf61" name="curp" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf10#cpf11#spf62" name="cargo" minCard="1" maxCard="1">
+              <Comment xml:space="preserve">optional</Comment>
+            </SimpleParameterFragment>
+            <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf10#cpf11#spf63" name="fechaOtorgamiento" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf10#cpf11#spf64" name="fechaRevocacion" minCard="1" maxCard="1"/>
+            <ComplexParameterFragment id="wsv1#port4#slu5#slp14#cpf10#cpf11#cpf12" name="Facultades" minCard="1" maxCard="1">
+              <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf10#cpf11#cpf12#spf65" name="tipoFacultad" minCard="1" maxCard="1"/>
+              <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf10#cpf11#cpf12#spf66" name="comentarios" minCard="1" maxCard="1"/>
+            </ComplexParameterFragment>
+            <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf10#cpf11#spf67" name="consecutivo" minCard="1" maxCard="1"/>
+          </ComplexParameterFragment>
+        </ComplexParameterFragment>
+        <ComplexParameterFragment id="wsv1#port4#slu5#slp14#cpf13" name="OtrosActos" minCard="1" maxCard="1">
+          <ComplexParameterFragment id="wsv1#port4#slu5#slp14#cpf13#cpf14" name="Acto" minCard="1" maxCard="1">
+            <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf13#cpf14#spf68" name="consecutivo" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf13#cpf14#spf69" name="tipoActo" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf13#cpf14#spf70" name="isAntecedente" minCard="1" maxCard="1"/>
+            <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf13#cpf14#spf71" name="isTotal" minCard="1" maxCard="1"/>
+            <ComplexParameterFragment id="wsv1#port4#slu5#slp14#cpf13#cpf14#cpf15" name="Facultades" minCard="1" maxCard="1">
+              <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf13#cpf14#cpf15#spf72" name="idRegistroFacultad" minCard="1" maxCard="1"/>
+              <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf13#cpf14#cpf15#spf73" name="tipoFacultad" minCard="1" maxCard="1"/>
+              <SimpleParameterFragment id="wsv1#port4#slu5#slp14#cpf13#cpf14#cpf15#spf74" name="fechaRevocacion" minCard="1" maxCard="1"/>
+            </ComplexParameterFragment>
+          </ComplexParameterFragment>
+        </ComplexParameterFragment>
+      </RequestBodyParameter>
+      <OKLink id="wsv1#port4#slu5#oln554" name="OKFlow178" to="wsv1#port4#rsu4">
+        <LinkParameter id="wsv1#port4#slu5#oln554#par1830" name="DatosNotario_inscripcionPoder" source="map(wsv1#port4#slu5#slp11_DatosNotario)" target="wsv1#port4#rsu4#rsp4.inscripcionPoder"/>
+        <LinkParameter id="wsv1#port4#slu5#oln554#par1831" name="El poder se inscribi&#243; correctamente._inscripcionPoder/mensaje" target="wsv1#port4#rsu4#rsp4.inscripcionPoder$mensaje" sourceValue="El poder se inscribi&#243; correctamente."/>
+        <LinkParameter id="wsv1#port4#slu5#oln554#par1832" name="1234567_inscripcionPoder/numeroProceso" target="wsv1#port4#rsu4#rsp4.inscripcionPoder$numeroProceso" sourceValue="1234567"/>
+        <LinkParameter id="wsv1#port4#slu5#oln554#par1833" name="1_inscripcionPoder/recepcionCorrecta" target="wsv1#port4#rsu4#rsp4.inscripcionPoder$recepcionCorrecta" sourceValue="1"/>
+      </OKLink>
+      <RequestBodyParameter id="wsv1#port4#slu5#slp15" name="InformacionSociedad" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp15#spf75" name="expedienteElectronico" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp15#spf76" name="folioMercantil" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp15#spf77" name="rfcPM" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port4#slu5#slp15#spf78" name="denominacionSocial" minCard="1" maxCard="1"/>
+      </RequestBodyParameter>
+    </SolicitUnit>
+  </OperationUnits>
+</Port>

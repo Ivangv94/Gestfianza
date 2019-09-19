@@ -1,0 +1,37 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="20" gr:y="75" id="mov2#mpkg6#opm20" name="fianza">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg6#opm20#icu21" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#mpkg6#opm20#icu21#icp45" name="oidPF"/>
+      <OKLink id="mov2#mpkg6#opm20#icu21#oln223" name="OKFlow223" to="mov2#mpkg6#opm20#seu71">
+        <LinkParameter id="mov2#mpkg6#opm20#icu21#oln223#par1756" name="oidPF_RoleCondition63 [oid]" source="mov2#mpkg6#opm20#icu21#icp45" target="mov2#mpkg6#opm20#seu71#su146#rcond63.userOID"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="330" gr:y="55" id="mov2#mpkg6#opm20#seu71" name="Notario" entity="ent8">
+      <Selector id="mov2#mpkg6#opm20#seu71#su146" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg6#opm20#seu71#su146#rcond63" name="RoleCondition63" predicate="in" implied="false" role="rel25#role50"/>
+      </Selector>
+      <OKLink id="mov2#mpkg6#opm20#seu71#oln226" name="OKFlow226" to="mov2#mpkg6#opm20#seu72">
+        <LinkParameter id="mov2#mpkg6#opm20#seu71#oln226#par1757" name="oid_oidNotario [oid]" source="ent8#att46Array" target="mov2#mpkg6#opm20#seu72#su147#rcond98.ent40#att273"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg6#opm20#seu71#kln117" name="KOFlow117" to="mov2#mpkg6#opm20#kocu12" gr:bendpoints="86,116,-569,46">
+        <LinkParameter id="mov2#mpkg6#opm20#seu71#kln117#par1758" name="Error al obtener los datos del Fedatario._msj" sourceValue="Error al obtener los datos del Fedatario." target="mov2#mpkg6#opm20#kocu12#ocp39"/>
+      </KOLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="580" gr:y="55" id="mov2#mpkg6#opm20#seu72" name="Fianza">
+      <Selector id="mov2#mpkg6#opm20#seu72#su147" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg6#opm20#seu72#su147#rcond98" name="oidNotario" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg6#opm20#seu72#oln227" name="OKFlow227" to="mov2#mpkg6#opm20#okcu12" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg6#opm20#seu72#kln118" name="KOFlow118" to="mov2#mpkg6#opm20#kocu12" gr:bendpoints="71,88,-319,18">
+        <LinkParameter id="mov2#mpkg6#opm20#seu72#kln118#par1759" name="Error al obtener los datos de la fianza._msj" sourceValue="Error al obtener los datos de la fianza." target="mov2#mpkg6#opm20#kocu12#ocp39"/>
+      </KOLink>
+    </SelectorUnit>
+    <KOCollectorUnit gr:x="950" gr:y="130" id="mov2#mpkg6#opm20#kocu12" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg6#opm20#kocu12#ocp39" name="msj"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit gr:x="950" gr:y="60" id="mov2#mpkg6#opm20#okcu12" name="OK">
+      <OutputCollectorParameter id="mov2#mpkg6#opm20#okcu12#ocp41" name="activa"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm20#okcu12#ocp40" name="vigencia"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,109 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym15#page92" name="Ingresa datos de la persona a verificar" localized="true" layout:pageLayout="gobmxStyle/Bootstrap" layout:fieldLayout="gobmxStyle/EntryUnit" gr:x="1445" gr:y="-210">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym15#page92#enu116" name="Form12" gr:x="0" gr:y="0">
+      <Field id="mov1#hym15#page92#enu116#fld229" name="nombres" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym15#page92#enu116#fld229#mnd55" name="Mandatory4"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym15#page92#enu116#fld230" name="ap1" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym15#page92#enu116#fld230#mnd56" name="Mandatory7" errorMessage="Campo obligatorio"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym15#page92#enu116#fld231" name="ap2" type="string" modifiable="true"/>
+      <Field id="mov1#hym15#page92#enu116#fld232" name="feNa" type="date" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym15#page92#enu116#fld232#mnd57" name="Mandatory9"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym15#page92#enu116#fld233" name="curp" type="string" modifiable="true">
+        <VRules/>
+      </Field>
+      <Field id="mov1#hym15#page92#enu116#fld235" name="cadena" type="string" modifiable="false" preloaded="true" hidden="false">
+        <VRules/>
+      </Field>
+      <Link id="mov1#hym15#page92#enu116#ln708" name="Flow708" to="mov1#hym15#miu92" type="transport" validate="true">
+        <LinkParameter id="mov1#hym15#page92#enu116#ln708#par2752" name="ap1_ap1" source="mov1#hym15#page92#enu116#fld230" target="mov1#hym15#miu92.mov2#mpkg8#opm65#icu93#icp221"/>
+        <LinkParameter id="mov1#hym15#page92#enu116#ln708#par2753" name="ap2_ap2" source="mov1#hym15#page92#enu116#fld231" target="mov1#hym15#miu92.mov2#mpkg8#opm65#icu93#icp222"/>
+        <LinkParameter id="mov1#hym15#page92#enu116#ln708#par2754" name="curp_curp" source="mov1#hym15#page92#enu116#fld233" target="mov1#hym15#miu92.mov2#mpkg8#opm65#icu93#icp225"/>
+        <LinkParameter id="mov1#hym15#page92#enu116#ln708#par2755" name="feNa_FeNa" source="mov1#hym15#page92#enu116#fld232" target="mov1#hym15#miu92.mov2#mpkg8#opm65#icu93#icp226"/>
+        <LinkParameter id="mov1#hym15#page92#enu116#ln708#par2756" name="nombres_nombre" source="mov1#hym15#page92#enu116#fld229" target="mov1#hym15#miu92.mov2#mpkg8#opm65#icu93#icp227"/>
+        <LinkParameter id="mov1#hym15#page92#enu116#ln708#par2757" name="rfc_rfc" source="mov1#hym15#page92#enu116#fld236" target="mov1#hym15#miu92.mov2#mpkg8#opm65#icu93#icp230"/>
+      </Link>
+    </EntryUnit>
+    <EntryUnit id="mov1#hym15#page92#enu117" name="Buttons" linkOrder="mov1#hym15#page92#enu117#ln695 mov1#hym15#page92#enu117#ln662" gr:x="200" gr:y="0">
+      <Link id="mov1#hym15#page92#enu117#ln662" name="Cancelar" to="mov1#hym15#ju5" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="mov1#hym15#page92#enu117#ln695" name="Flow695" to="mov1#hym15#miu92" type="normal" validate="true"/>
+    </EntryUnit>
+    <MultiMessageUnit id="mov1#hym15#page92#mssu29" name="Message5" gr:x="100" gr:y="85"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid" layout:frameLayout="None">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym15#page92#enu116" layout:fieldLayout="gobmxStyle/EntryUnitUpper">
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+          <layout:Field label="Nombres:" field="mov1#hym15#page92#enu116#fld229"/>
+          <layout:Field label="Primer apellido:" field="mov1#hym15#page92#enu116#fld230"/>
+          <layout:Field label="Segundo Apellido:" field="mov1#hym15#page92#enu116#fld231"/>
+          <layout:Field label="Fecha de Nacimiento:" field="mov1#hym15#page92#enu116#fld232" layout:fieldLayout="gobmxStyle/EntryUnit"/>
+          <layout:Field label="CURP:" field="mov1#hym15#page92#enu116#fld233"/>
+          <layout:Field field="mov1#hym15#page92#enu116#fld235" styleClass="hidden"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell layout:cellLayout="Print Frame" colspan="8">
+        <layout:Unit unitId="mov1#hym15#page92#enu117" manualLinks="true" manualLinkOrder="mov1#hym15#page92#enu117#ln695 mov1#hym15#page92#enu117#ln662">
+          <layout:Link link="mov1#hym15#page92#enu117#ln695" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link label="Cancelar" link="mov1#hym15#page92#enu117#ln662" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym15#page92#mssu29">
+          <layout:LayoutParameter name="messageType" value="danger" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-page-title" value="true" type="page"/>
+</Page>

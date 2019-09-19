@@ -1,0 +1,63 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-165" gr:y="550" id="mov2#opm66" name="Conteo">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm66#icu92" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm66#icu92#icp207" name="CURP"/>
+      <OKLink id="mov2#opm66#icu92#oln130" name="OKFlow130" to="mov2#opm66#cru28">
+        <LinkParameter id="mov2#opm66#icu92#oln130#par796" name="CURP_curpVerificado" source="mov2#opm66#icu92#icp207" target="mov2#opm66#cru28.ent56#att380"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm66#icu92#icp208" name="verINE"/>
+      <Link id="mov2#opm66#icu92#ln327" name="Flow327" to="mov2#opm66#okcu68" type="transport" validate="true" gr:bendpoints="174,-66,-376,-61;370,-54,-180,-64">
+        <LinkParameter id="mov2#opm66#icu92#ln327#par858" name="verINE_verINE" source="mov2#opm66#icu92#icp208" target="mov2#opm66#okcu68#ocp182"/>
+        <LinkParameter id="mov2#opm66#icu92#ln327#par866" name="RFC_RFC" source="mov2#opm66#icu92#icp210" target="mov2#opm66#okcu68#ocp183"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm66#icu92#icp210" name="RFC"/>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="320" gr:y="65" id="mov2#opm66#cru28" name="Conteo" entity="ent56">
+      <KOLink id="mov2#opm66#cru28#kln229" name="KOFlow229" to="mov2#opm66#kocu54">
+        <LinkParameter id="mov2#opm66#cru28#kln229#par853" name="error en la inserci&#243;n_error" sourceValue="error en la inserci&#243;n" target="mov2#opm66#kocu54#ocp181"/>
+      </KOLink>
+      <OKLink id="mov2#opm66#cru28#oln380" name="OKFlow380" to="mov2#opm66#seu106" automaticCoupling="true"/>
+    </CreateUnit>
+    <SelectorUnit gr:x="500" gr:y="65" id="mov2#opm66#seu106" name="ConteoSelect" entity="ent56" linkOrder="mov2#opm66#seu106#ln485">
+      <Selector id="mov2#opm66#seu106#su202" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm66#seu106#su202#kcond102" name="KeyCondition102" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm66#seu106#oln383" name="OKFlow383" to="mov2#opm66#seu107">
+        <LinkParameter id="mov2#opm66#seu106#oln383#par861" name="oidUser_KeyCondition104 [oid]" source="ent56#att381Array" target="mov2#opm66#seu107#su203#kcond104.userOID"/>
+      </OKLink>
+      <Link id="mov2#opm66#seu106#ln485" name="Flow485" to="mov2#opm66#mfu19" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
+    <GetUnit gr:x="320" gr:y="220" id="mov2#opm66#gtu43" name="Get43" contextParameters="UserCtxParam">
+      <Link id="mov2#opm66#gtu43#ln210" name="Flow210" to="mov2#opm66#cru28" type="transport" validate="true">
+        <LinkParameter id="mov2#opm66#gtu43#ln210#par811" name="UserCtxParam.oid_oidUser" source="mov2#opm66#gtu43.UserCtxParam" target="mov2#opm66#cru28.ent56#att381"/>
+      </Link>
+    </GetUnit>
+    <OKCollectorUnit gr:x="825" gr:y="70" id="mov2#opm66#okcu68" name="OK Port68">
+      <OutputCollectorParameter id="mov2#opm66#okcu68#ocp182" name="verINE"/>
+      <OutputCollectorParameter id="mov2#opm66#okcu68#ocp183" name="RFC"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="825" gr:y="180" id="mov2#opm66#kocu54" name="KO Port54">
+      <OutputCollectorParameter id="mov2#opm66#kocu54#ocp181" name="error"/>
+    </KOCollectorUnit>
+    <SelectorUnit gr:x="675" gr:y="75" id="mov2#opm66#seu107" name="User" entity="User">
+      <Selector id="mov2#opm66#seu107#su203" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm66#seu107#su203#kcond104" name="KeyCondition104" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm66#seu107#oln384" name="OKFlow384" to="mov2#opm66#tmu23">
+        <LinkParameter id="mov2#opm66#seu107#oln384#par871" name="userName_PASSING" source="userNameArray" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <ModifyUnit gr:x="625" gr:y="230" id="mov2#opm66#mfu19" name="Update19" entity="ent56">
+      <Selector id="mov2#opm66#mfu19#su204" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm66#mfu19#su204#kcond105" name="KeyCondition105" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm66#mfu19#oln488" name="OKFlow488" to="mov2#opm66#okcu68" automaticCoupling="true"/>
+    </ModifyUnit>
+    <TimeUnit gr:x="455" gr:y="225" id="mov2#opm66#tmu23" name="fechaValidacion">
+      <OKLink id="mov2#opm66#tmu23#oln559" name="OKFlow559" to="mov2#opm66#mfu19" gr:bendpoints="82,25,-73,5">
+        <LinkParameter id="mov2#opm66#tmu23#oln559#par872" name="Current/Input Timestamp_fechaVerificacion" source="currentTimestamp" target="mov2#opm66#mfu19.ent56#att382"/>
+        <LinkParameter id="mov2#opm66#tmu23#oln559#par874" name="userName_PASSING_username" sourceLinkParameter="mov2#opm66#seu107#oln384#par871" target="mov2#opm66#mfu19.ent56#att379"/>
+      </OKLink>
+    </TimeUnit>
+  </OperationUnits>
+</OperationModule>

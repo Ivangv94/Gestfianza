@@ -1,0 +1,28 @@
+<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="30" gr:y="1215" id="wsv1#port7" name="asignaNumeroExpediente">
+  <OperationUnits>
+    <SolicitUnit id="wsv1#port7#slu8" name="solicitaNumeroExpediente" invocationStyle="SOAP" requestMethod="POST" gr:x="0" gr:y="10">
+      <RequestBodyParameter id="wsv1#port7#slu8#slp17" name="datosExpediente" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port7#slu8#slp17#spf81" name="fechaConstitucion" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port7#slu8#slp17#spf82" name="denominacionOrazonSocial" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port7#slu8#slp17#spf83" name="rfcSociedad" minCard="1" maxCard="1"/>
+      </RequestBodyParameter>
+      <OKLink id="wsv1#port7#slu8#oln914" name="OKFlow914" to="wsv1#port7#miu104">
+        <LinkParameter id="wsv1#port7#slu8#oln914#par2513" name="datosExpediente/denominacionOraxzon_denominacionORazon" source="map(wsv1#port7#slu8#slp17_datosExpediente$denominacionOraxzon)" target="wsv1#port7#miu104.mov2#opm75#icu114#icp316"/>
+        <LinkParameter id="wsv1#port7#slu8#oln914#par2676" name="datosExpediente/fechaConstitucion_fechaConstitucion" source="map(wsv1#port7#slu8#slp17_datosExpediente$fechaConstitucion)" target="wsv1#port7#miu104.mov2#opm75#icu114#icp299"/>
+        <LinkParameter id="wsv1#port7#slu8#oln914#par2684" name="datosExpediente/rfcSociedad_rfcSociedad" source="map(wsv1#port7#slu8#slp17_datosExpediente$rfcSociedad)" target="wsv1#port7#miu104.mov2#opm75#icu114#icp317"/>
+      </OKLink>
+    </SolicitUnit>
+    <ModuleInstanceUnit gr:x="290" gr:y="0" id="wsv1#port7#miu104" action="true" moduleId="mov2#opm75">
+      <OKLink id="wsv1#port7#miu104#oln916" name="OKFlow916" to="wsv1#port7#rsu6">
+        <LinkParameter id="wsv1#port7#miu104#oln916#par2819" name="ms_EEE/mensajeResultado" source="mov2#opm75#okcu81#ocp212" target="wsv1#port7#rsu6#rsp3.EEE$mensajeResultado"/>
+        <LinkParameter id="wsv1#port7#miu104#oln916#par2820" name="numeroExpediente_EEE/numeroDeExpediente" source="mov2#opm75#okcu81#ocp213" target="wsv1#port7#rsu6#rsp3.EEE$numeroDeExpediente"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ResponseUnit gr:x="600" gr:y="0" id="wsv1#port7#rsu6" name="expedienteElectronico" contentType="XML" statusCode="200">
+      <ResponseBodyParameter id="wsv1#port7#rsu6#rsp3" name="EEE" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port7#rsu6#rsp3#spf84" name="numeroDeExpediente" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port7#rsu6#rsp3#spf89" name="mensajeResultado" minCard="1" maxCard="1"/>
+      </ResponseBodyParameter>
+    </ResponseUnit>
+  </OperationUnits>
+</Port>

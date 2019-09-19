@@ -1,0 +1,472 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="210" gr:y="0" id="mov2#mpkg9#opm117" name="pruebaCorreo30">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg9#opm117#icu157" name="Input Collector" gr:x="30" gr:y="60">
+      <OKLink id="mov2#mpkg9#opm117#icu157#oln1509" name="OKFlow1509" to="mov2#mpkg9#opm117#seu341" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="320" gr:y="25" id="mov2#mpkg9#opm117#seu341" name="Selector341" entity="ent87">
+      <Selector id="mov2#mpkg9#opm117#seu341#su536" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg9#opm117#seu341#su536#acond245" name="30" predicate="eq" booleanOperator="or" implied="false" value="30" attributes="ent87#att546"/>
+      </Selector>
+      <OKLink id="mov2#mpkg9#opm117#seu341#oln1511" name="OKFlow1511" to="mov2#mpkg9#opm117#lpu13">
+        <LinkParameter id="mov2#mpkg9#opm117#seu341#oln1511#par435" name="conteodias_PASSING" source="ent87#att546Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg9#opm117#seu341#oln1511#par4987" name="oidcontrolfianzas_Input Array" source="ent87#att524Array" target="mov2#mpkg9#opm117#lpu13.array"/>
+        <LinkParameter id="mov2#mpkg9#opm117#seu341#oln1511#par4988" name="conteodias_SecondaryArray32" source="ent87#att546Array" target="mov2#mpkg9#opm117#lpu13#lsa32"/>
+        <LinkParameter id="mov2#mpkg9#opm117#seu341#oln1511#par4990" name="fechatermino_SecondaryArray34" source="ent87#att527Array" target="mov2#mpkg9#opm117#lpu13#lsa34"/>
+        <LinkParameter id="mov2#mpkg9#opm117#seu341#oln1511#par4991" name="numeropoliza_SecondaryArray35" source="ent87#att525Array" target="mov2#mpkg9#opm117#lpu13#lsa35"/>
+      </OKLink>
+    </SelectorUnit>
+    <SwitchUnit gr:x="935" gr:y="65" id="mov2#mpkg9#opm117#switch98" name="Switch98">
+      <Case value="30"/>
+      <Case value="15"/>
+      <Case value="1"/>
+      <Case value="0"/>
+      <OKLink id="mov2#mpkg9#opm117#switch98#oln1522" name="OKFlow1522" to="mov2#mpkg9#opm117#scu227" automaticCoupling="true" code="15"/>
+      <OKLink id="mov2#mpkg9#opm117#switch98#oln1527" name="OKFlow1527" to="mov2#mpkg9#opm117#scu227" automaticCoupling="true" gr:bendpoints="67,15,-73,15" code="1"/>
+      <OKLink id="mov2#mpkg9#opm117#switch98#oln1528" name="OKFlow1528" to="mov2#mpkg9#opm117#scu227" automaticCoupling="true" gr:bendpoints="67,-15,-73,-15" code="30"/>
+      <OKLink id="mov2#mpkg9#opm117#switch98#oln1529" name="OKFlow1529" to="mov2#mpkg9#opm117#scu227" automaticCoupling="true" gr:bendpoints="67,30,-73,30" code="0"/>
+    </SwitchUnit>
+    <ScriptUnit id="mov2#mpkg9#opm117#scu227" name="Script140" gr:x="1125" gr:y="65">
+      <ScriptUnitText xml:space="preserve">#input String contDias, String numGarantia, Timestamp fechaVencimiento, String nombreCom, String estado, String tipoFed
+#output mensaje
+/*         Pruebas para groovy console
+
+String respuestaSAT = "2";
+*/
+String mensaje = "ERROR"
+switch(contDias)
+{
+    case "30":
+        mensaje='''&amp;lt;!DOCTYPE HTML&amp;gt;
+&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+    &amp;lt;/head&amp;gt;
+
+    &amp;lt;body&gt;
+            &amp;lt;header&amp;gt;
+            &amp;lt;/header&amp;gt;
+
+        &amp;lt;table width=&amp;quot;560&amp;quot; cellpadding=&amp;quot;27&amp;quot;&amp;gt;
+            &amp;lt;tr height=76&amp;gt;
+                &amp;lt;td style=&amp;quot;background:#393c3e;padding:.73pt 27px .73pt 20px;height:57.0pt&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://www.gob.mx/assets/gobmxlogo.svg&amp;quot; width=&amp;quot;126&amp;quot; height=&amp;quot;44&amp;quot; border=&amp;quot;0&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/SE_logo_2012.svg/1200px-SE_logo_2012.svg.png&amp;quot; width=&amp;quot;110&amp;quot; height=&amp;quot;48&amp;quot; border=&amp;quot;0&amp;quot; align=&amp;quot;right&amp;quot;&amp;gt;
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr height=400&amp;gt;
+                &amp;lt;td valign=&amp;quot;top&amp;quot;&amp;gt;
+                    &amp;lt;p marginwidth = &amp;quot;27px&amp;quot; align=&amp;quot;justify&amp;quot;&amp;gt;
+                        &amp;lt;font color=&amp;quot;#5A5A5A&amp;quot;  face=&amp;quot;Arial&amp;quot; size=&amp;quot;3.5&amp;quot;&amp;gt;
+                         &amp;lt;strong&gt;Estimado '''+ tipoFed + ''' ''' + nombreCom + ''': &amp;lt;/strong&gt;&amp;lt;br/&amp;gt;
+                          &amp;lt;br/&amp;gt;
+30 Por medio del presente le informamos que la vigencia de su garantia &amp;lt;strong&gt;''' + numGarantia + '''&amp;lt;/strong&gt;, que envi&#243; a esta Dependencia para acceder al Registro P&#250;blico de Comercio (RPC) y/o al Registro &#218;nico de Garant&#237;as Mobiliarias (RUG), a fin de garantizar los da&#241;os que pudieran ocasionar a los particulares y a la Secretar&#237;a de Econom&#237;a, con motivo de la indebida operaci&#243;n del Sistema Integral de Gesti&#243;n Registral (SIGER) y el uso de la informaci&#243;n del RPC, incluida la que corresponda al RUG, vence el &amp;lt;strong&gt;''' + fechaVencimiento + '''&amp;lt;/strong&gt;
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+
+En raz&#243;n de lo anterior, se solicita que por lo menos tres d&#237;as antes del vencimiento, env&#237;e la garant&#237;a actualizada al correo electr&#243;nico institucional soporte.rpc@economia.gob.mx, a efecto de realizar la validaci&#243;n del documento y con ello, evitar el bloqueo de su cuenta de acceso a los programas inform&#225;ticos mencionado en el parrafo que antecede.
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+
+Lo anterior, de conformidad con los art&#237;culos 30 bis y 30 bis, 1 del C&#243;digo de Comercio (CCom), 13 del Reglamento del Registro P&#250;blico de Comercio y el numeral 7 de los Lineamientos para la Operaci&#243;n del Registro P&#250;blico de Comercio.
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+
+&amp;lt;strong&gt;Este correo es informativo, favor no responder a esta direcci&#243;n de correo, ya que no se encuentra habilitada para recibir mensajes.&amp;lt;/strong&gt;
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+
+Sin otro particular, aprovecho para enviarle un cordial saludo.
+&amp;lt;br/&amp;gt;
+
+                        &amp;lt;/font&amp;gt;
+                    &amp;lt;/p&amp;gt;
+
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr  height=76&amp;gt;
+                &amp;lt;td width=&amp;quot;50%&amp;quot; style=&amp;quot;width:50.0%;background:#393c3e;padding:.73pt 27px .73pt 22px;height:57.0pt&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://www.gob.mx/assets/gobmxlogo.svg&amp;quot; width=&amp;quot;75&amp;quot; height=&amp;quot;32
+                    &amp;quot; border=&amp;quot;0&amp;quot;&amp;gt;
+                     
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+        &amp;lt;/table&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;'''
+        break
+        
+  case "15":
+        mensaje=mensaje='''&amp;lt;!DOCTYPE HTML&amp;gt;
+&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+    &amp;lt;/head&amp;gt;
+
+    &amp;lt;body&gt;
+            &amp;lt;header&amp;gt;
+            &amp;lt;/header&amp;gt;
+
+        &amp;lt;table width=&amp;quot;560&amp;quot; cellpadding=&amp;quot;27&amp;quot;&amp;gt;
+            &amp;lt;tr height=76&amp;gt;
+                &amp;lt;td style=&amp;quot;background:#393c3e;padding:.73pt 27px .73pt 20px;height:57.0pt&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://www.gob.mx/assets/gobmxlogo.svg&amp;quot; width=&amp;quot;126&amp;quot; height=&amp;quot;44&amp;quot; border=&amp;quot;0&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/SE_logo_2012.svg/1200px-SE_logo_2012.svg.png&amp;quot; width=&amp;quot;110&amp;quot; height=&amp;quot;48&amp;quot; border=&amp;quot;0&amp;quot; align=&amp;quot;right&amp;quot;&amp;gt;
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr height=400&amp;gt;
+                &amp;lt;td valign=&amp;quot;top&amp;quot;&amp;gt;
+                    &amp;lt;p marginwidth = &amp;quot;27px&amp;quot; align=&amp;quot;justify&amp;quot;&amp;gt;
+                        &amp;lt;font color=&amp;quot;#5A5A5A&amp;quot;  face=&amp;quot;Arial&amp;quot; size=&amp;quot;3.5&amp;quot;&amp;gt;
+                         &amp;lt;strong&gt;Estimado '''+ tipoFed + ''' ''' + nombreCom + ''': &amp;lt;/strong&gt;&amp;lt;br/&amp;gt;
+                           &amp;lt;br/&amp;gt;
+15 Por medio del presente le informamos que la vigencia de su garantia &amp;lt;strong&gt;''' + numGarantia + '''&amp;lt;/strong&gt;, que envi&#243; a esta Dependencia para acceder al Registro P&#250;blico de Comercio (RPC) y/o al Registro &#218;nico de Garant&#237;as Mobiliarias (RUG), a fin de garantizar los da&#241;os que pudieran ocasionar a los particulares y a la Secretar&#237;a de Econom&#237;a, con motivo de la indebida operaci&#243;n del Sistema Integral de Gesti&#243;n Registral (SIGER) y el uso de la informaci&#243;n del RPC, incluida la que corresponda al RUG, vence el &amp;lt;strong&gt;''' + fechaVencimiento + '''&amp;lt;/strong&gt;
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+
+En raz&#243;n de lo anterior, se solicita que por lo menos tres d&#237;as antes del vencimiento, env&#237;e la garant&#237;a actualizada al correo electr&#243;nico institucional soporte.rpc@economia.gob.mx, a efecto de realizar la validaci&#243;n del documento y con ello, evitar el bloqueo de su cuenta de acceso a los programas inform&#225;ticos mencionado en el parrafo que antecede.
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+
+Lo anterior, de conformidad con los art&#237;culos 30 bis y 30 bis, 1 del C&#243;digo de Comercio (CCom), 13 del Reglamento del Registro P&#250;blico de Comercio y el numeral 7 de los Lineamientos para la Operaci&#243;n del Registro P&#250;blico de Comercio.
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+
+&amp;lt;strong&gt;Este correo es informativo, favor no responder a esta direcci&#243;n de correo, ya que no se encuentra habilitada para recibir mensajes.&amp;lt;/strong&gt;
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+
+Sin otro particular, aprovecho para enviarle un cordial saludo.
+&amp;lt;br/&amp;gt;
+
+                        &amp;lt;/font&amp;gt;
+                    &amp;lt;/p&amp;gt;
+
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr  height=76&amp;gt;
+                &amp;lt;td width=&amp;quot;50%&amp;quot; style=&amp;quot;width:50.0%;background:#393c3e;padding:.73pt 27px .73pt 22px;height:57.0pt&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://www.gob.mx/assets/gobmxlogo.svg&amp;quot; width=&amp;quot;75&amp;quot; height=&amp;quot;32
+                    &amp;quot; border=&amp;quot;0&amp;quot;&amp;gt;
+                     
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+        &amp;lt;/table&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;'''
+        break
+        
+        
+   case "1":
+        mensaje=''''&amp;lt;!DOCTYPE HTML&amp;gt;
+&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+    &amp;lt;/head&amp;gt;
+
+    &amp;lt;body&gt;
+            &amp;lt;header&amp;gt;
+            &amp;lt;/header&amp;gt;
+
+        &amp;lt;table width=&amp;quot;560&amp;quot; cellpadding=&amp;quot;27&amp;quot;&amp;gt;
+            &amp;lt;tr height=76&amp;gt;
+                &amp;lt;td style=&amp;quot;background:#393c3e;padding:.73pt 27px .73pt 20px;height:57.0pt&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://www.gob.mx/assets/gobmxlogo.svg&amp;quot; width=&amp;quot;126&amp;quot; height=&amp;quot;44&amp;quot; border=&amp;quot;0&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/SE_logo_2012.svg/1200px-SE_logo_2012.svg.png&amp;quot; width=&amp;quot;110&amp;quot; height=&amp;quot;48&amp;quot; border=&amp;quot;0&amp;quot; align=&amp;quot;right&amp;quot;&amp;gt;
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr height=400&amp;gt;
+                &amp;lt;td valign=&amp;quot;top&amp;quot;&amp;gt;
+                    &amp;lt;p marginwidth = &amp;quot;27px&amp;quot; align=&amp;quot;justify&amp;quot;&amp;gt;
+                        &amp;lt;font color=&amp;quot;#5A5A5A&amp;quot;  face=&amp;quot;Arial&amp;quot; size=&amp;quot;3.5&amp;quot;&amp;gt;
+                         &amp;lt;strong&gt;Estimado '''+ tipoFed + ''' ''' + nombreCom + ''': &amp;lt;/strong&gt;&amp;lt;br/&amp;gt;
+                           &amp;lt;br/&amp;gt;
+1 Por medio del presente le informamos que la vigencia de su garantia &amp;lt;strong&gt;''' + numGarantia + '''&amp;lt;/strong&gt;, que envi&#243; a esta Dependencia para acceder al Registro P&#250;blico de Comercio (RPC) y/o al Registro &#218;nico de Garant&#237;as Mobiliarias (RUG), a fin de garantizar los da&#241;os que pudieran ocasionar a los particulares y a la Secretar&#237;a de Econom&#237;a, con motivo de la indebida operaci&#243;n del Sistema Integral de Gesti&#243;n Registral (SIGER) y el uso de la informaci&#243;n del RPC, incluida la que corresponda al RUG, vence el &amp;lt;strong&gt;''' + fechaVencimiento + '''&amp;lt;/strong&gt;
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+
+En raz&#243;n de lo anterior, se solicita que por lo menos tres d&#237;as antes del vencimiento, env&#237;e la garant&#237;a actualizada al correo electr&#243;nico institucional soporte.rpc@economia.gob.mx, a efecto de realizar la validaci&#243;n del documento y con ello, evitar el bloqueo de su cuenta de acceso a los programas inform&#225;ticos mencionado en el parrafo que antecede.
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+
+Lo anterior, de conformidad con los art&#237;culos 30 bis y 30 bis, 1 del C&#243;digo de Comercio (CCom), 13 del Reglamento del Registro P&#250;blico de Comercio y el numeral 7 de los Lineamientos para la Operaci&#243;n del Registro P&#250;blico de Comercio.
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+
+&amp;lt;strong&gt;Este correo es informativo, favor no responder a esta direcci&#243;n de correo, ya que no se encuentra habilitada para recibir mensajes.&amp;lt;/strong&gt;
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+
+Sin otro particular, aprovecho para enviarle un cordial saludo.
+&amp;lt;br/&amp;gt;
+
+                        &amp;lt;/font&amp;gt;
+                    &amp;lt;/p&amp;gt;
+
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr  height=76&amp;gt;
+                &amp;lt;td width=&amp;quot;50%&amp;quot; style=&amp;quot;width:50.0%;background:#393c3e;padding:.73pt 27px .73pt 22px;height:57.0pt&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://www.gob.mx/assets/gobmxlogo.svg&amp;quot; width=&amp;quot;75&amp;quot; height=&amp;quot;32
+                    &amp;quot; border=&amp;quot;0&amp;quot;&amp;gt;
+                     
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+        &amp;lt;/table&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;'''
+        break
+        
+    case "0":
+                mensaje='''&amp;lt;!DOCTYPE HTML&amp;gt;
+&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+    &amp;lt;/head&amp;gt;
+
+    &amp;lt;body&gt;
+            &amp;lt;header&amp;gt;
+            &amp;lt;/header&amp;gt;
+
+        &amp;lt;table width=&amp;quot;560&amp;quot; cellpadding=&amp;quot;27&amp;quot;&amp;gt;
+            &amp;lt;tr height=76&amp;gt;
+                &amp;lt;td style=&amp;quot;background:#393c3e;padding:.73pt 27px .73pt 20px;height:57.0pt&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://www.gob.mx/assets/gobmxlogo.svg&amp;quot; width=&amp;quot;126&amp;quot; height=&amp;quot;44&amp;quot; border=&amp;quot;0&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/SE_logo_2012.svg/1200px-SE_logo_2012.svg.png&amp;quot; width=&amp;quot;110&amp;quot; height=&amp;quot;48&amp;quot; border=&amp;quot;0&amp;quot; align=&amp;quot;right&amp;quot;&amp;gt;
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr height=400&amp;gt;
+                &amp;lt;td valign=&amp;quot;top&amp;quot;&amp;gt;
+                    &amp;lt;p marginwidth = &amp;quot;27px&amp;quot; align=&amp;quot;justify&amp;quot;&amp;gt;
+                        &amp;lt;font color=&amp;quot;#5A5A5A&amp;quot;  face=&amp;quot;Arial&amp;quot; size=&amp;quot;3.5&amp;quot;&amp;gt;
+                         &amp;lt;strong&gt;Estimado '''+ tipoFed + ''' ''' + nombreCom + ''': &amp;lt;/strong&gt;&amp;lt;br/&amp;gt;
+                           &amp;lt;br/&amp;gt;
+
+0 Por medio del presente le informamos que la vigencia de su garant&#237;a &amp;lt;strong&gt;''' + numGarantia + '''&amp;lt;/strong&gt;, que envi&#243; a esta Dependencia para acceder al Registro P&#250;blico de Comercio (RPC) y/o al Registro &#218;nico de Garant&#237;as Mobiliarias (RUG), a fin de garantizar los da&#241;os que pudieran ocasionar a los particulares y a la Secretar&#237;a de Econom&#237;a, con motivo de la indebida operaci&#243;n del Sistema Integral de Gesti&#243;n Registral (SIGER) y el uso de la informaci&#243;n del RPC, incluida la que corresponda al RUG, vence el &amp;lt;strong&gt;''' + fechaVencimiento + '''&amp;lt;/strong&gt;.
+&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;
+
+En raz&#243;n de lo anterior, se solicita que por lo menos tres d&#237;as antes del vencimiento, env&#237;e la garant&#237;a actualizada al correo electr&#243;nico institucional soporte.rpc@economia.gob.mx, a efecto de realizar la validaci&#243;n del documento y con ello, evitar el bloqueo de su cuenta de acceso a los programas inform&#225;ticos mencionado en el parrado que antecede.
+&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;
+
+Lo anterior, de conformidad con los art&#237;culos 30 bis y 30 bis, 1 del C&#243;digo de Comercio (CCom), 13 del Reglamento del Registro P&#250;blico de Comercio y el numeral 7 de los Lineamientos para la Operaci&#243;n del Registro P&#250;blico de Comercio.
+&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;
+
+&amp;lt;strong&gt;Este correo es informativo, favor no responder a esta direcci&#243;n de correo, ya que no se encuentra habilitada para recibir mensajes. &amp;lt;/strong&gt;
+&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;
+Sin otro particular, aprovecho para enviarle un cordial saludo.
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+                        &amp;lt;/font&amp;gt;
+                    &amp;lt;/p&amp;gt;
+
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr  height=76&amp;gt;
+                &amp;lt;td width=&amp;quot;50%&amp;quot; style=&amp;quot;width:50.0%;background:#393c3e;padding:.73pt 27px .73pt 22px;height:57.0pt&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://www.gob.mx/assets/gobmxlogo.svg&amp;quot; width=&amp;quot;75&amp;quot; height=&amp;quot;32
+                    &amp;quot; border=&amp;quot;0&amp;quot;&amp;gt;
+                     
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+        &amp;lt;/table&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;'''
+        break
+}
+return["mensaje":mensaje]</ScriptUnitText>
+      <OKLink id="mov2#mpkg9#opm117#scu227#oln1532" name="OKFlow1532" to="mov2#mpkg9#opm117#scu228">
+        <LinkParameter id="mov2#mpkg9#opm117#scu227#oln1532#par4976" name="Prueba_asunto" sourceValue="Prueba" target="mov2#mpkg9#opm117#scu228.asunto"/>
+        <LinkParameter id="mov2#mpkg9#opm117#scu227#oln1532#par4977" name="dgnm.ivan@economia.gob.mx_destinatario" sourceValue="dgnm.ivan@economia.gob.mx" target="mov2#mpkg9#opm117#scu228.destinatario"/>
+        <LinkParameter id="mov2#mpkg9#opm117#scu227#oln1532#par4978" name="dgnm.ivan@economia.gob.mx_destinatarioCC" sourceValue="dgnm.ivan@economia.gob.mx" target="mov2#mpkg9#opm117#scu228.destinatarioCC"/>
+        <LinkParameter id="mov2#mpkg9#opm117#scu227#oln1532#par4979" name="dgnm.ivan@economia.gob.mx_destinatarioCCO" sourceValue="dgnm.ivan@economia.gob.mx" target="mov2#mpkg9#opm117#scu228.destinatarioCCO"/>
+        <LinkParameter id="mov2#mpkg9#opm117#scu227#oln1532#par4980" name="1_emailType" sourceValue="1" target="mov2#mpkg9#opm117#scu228.emailType"/>
+        <LinkParameter id="mov2#mpkg9#opm117#scu227#oln1532#par4981" name="http://10.100.11.16:8170/MsMail/MailAttachServiceService_endpointURL" sourceValue="http://10.100.40.16:8170/MsMail/MailAttachServiceService" target="mov2#mpkg9#opm117#scu228.endpointURL"/>
+        <LinkParameter id="mov2#mpkg9#opm117#scu227#oln1532#par4982" name="49_idMailAccount" sourceValue="49" target="mov2#mpkg9#opm117#scu228.idMailAccount"/>
+        <LinkParameter id="mov2#mpkg9#opm117#scu227#oln1532#par4985" name="mensaje_mensaje" source="result(mensaje)" target="mov2#mpkg9#opm117#scu228.mensaje"/>
+        <LinkParameter id="mov2#mpkg9#opm117#scu227#oln1532#par4986" name="w2ZXGzpytHXUxcH_password" sourceValue="w2ZXGzpytHXUxcH" target="mov2#mpkg9#opm117#scu228.password"/>
+      </OKLink>
+    </ScriptUnit>
+    <ScriptUnit id="mov2#mpkg9#opm117#scu228" name="armaRequest" gr:x="1320" gr:y="75">
+      <ScriptUnitText xml:space="preserve">#input String destinatario, String asunto, String idMailAccount, String emailType, String password, String mensaje, String endpointURL, String destinatarioCC, String destinatarioCCO
+#output request, endpointURL
+
+/*String destinatario = "mgutierrezh1002@gmail.com"
+String asunto = "Hola"
+String idMailAccount = "49"
+String emailType = "1"
+String password = "w2ZXGzpytHXUxcH"
+String mensaje= '''&amp;lt;!DOCTYPE HTML&amp;gt;
+&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+    &amp;lt;/head&amp;gt;
+
+    &amp;lt;body&gt;
+            &amp;lt;header&amp;gt;
+            &amp;lt;/header&amp;gt;
+
+        &amp;lt;table width=&amp;quot;560&amp;quot; cellpadding=&amp;quot;27&amp;quot;&amp;gt;
+            &amp;lt;tr height=76&amp;gt;
+                &amp;lt;td style=&amp;quot;background:#393c3e;padding:.73pt 27px .73pt 20px;height:57.0pt&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://www.gob.mx/assets/gobmxlogo.svg&amp;quot; width=&amp;quot;126&amp;quot; height=&amp;quot;44&amp;quot; border=&amp;quot;0&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/SE_logo_2012.svg/1200px-SE_logo_2012.svg.png&amp;quot; width=&amp;quot;110&amp;quot; height=&amp;quot;48&amp;quot; border=&amp;quot;0&amp;quot; align=&amp;quot;right&amp;quot;&amp;gt;
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr height=400&amp;gt;
+                &amp;lt;td valign=&amp;quot;top&amp;quot;&amp;gt;
+                    &amp;lt;p marginwidth = &amp;quot;27px&amp;quot; align=&amp;quot;justify&amp;quot;&amp;gt;
+                        &amp;lt;font color=&amp;quot;#5A5A5A&amp;quot;  face=&amp;quot;Arial&amp;quot; size=&amp;quot;3.5&amp;quot;&amp;gt;
+                         &amp;lt;strong&gt;Estimado Representante Legal,&amp;lt;/strong&gt;&amp;lt;br/&amp;gt;
+                           &amp;lt;br/&amp;gt;
+De la verificaci&#243;n realizada por la autoridad fiscal, se informa que la persona moral no cumple con lo dispuesto en el art&#237;culo 249 Bis, fracciones IV, V y VII, de la Ley General de Sociedades Mercantiles, debiendo acudir al Servicio de Administraci&#243;n Tributaria para el caso de aclaraciones.
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+                        &amp;lt;/font&amp;gt;
+                    &amp;lt;/p&amp;gt;
+
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr  height=76&amp;gt;
+                &amp;lt;td width=&amp;quot;50%&amp;quot; style=&amp;quot;width:50.0%;background:#393c3e;padding:.73pt 27px .73pt 22px;height:57.0pt&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://www.gob.mx/assets/gobmxlogo.svg&amp;quot; width=&amp;quot;75&amp;quot; height=&amp;quot;32
+                    &amp;quot; border=&amp;quot;0&amp;quot;&amp;gt;
+                     
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+        &amp;lt;/table&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;'''
+
+
+*/
+String dirtyRequest = '''&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.mail.gob.se.mx/"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ser:sendMail-Attachment&gt;
+         &lt;!--Optional:--&gt;
+         &lt;mail id-tipo-correo="''' + emailType + '''" id-mail-account="''' + idMailAccount + '''" password-se="''' + password + '''" destinatario="''' + destinatario + '''" destinatario-cc="''' + destinatarioCC + '''" destinatario-cco="''' + destinatarioCCO + '''" asunto="''' + asunto + '''" mensaje="''' + mensaje + '''"&gt;
+         &lt;/mail&gt;
+      &lt;/ser:sendMail-Attachment&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;'''
+
+String request = dirtyRequest.replaceAll("null", "")
+
+
+return["request":request, "endpointURL":endpointURL]</ScriptUnitText>
+      <OKLink id="mov2#mpkg9#opm117#scu228#oln1530" name="OKFlow1227" to="mov2#mpkg9#opm117#scu229">
+        <LinkParameter id="mov2#mpkg9#opm117#scu228#oln1530#par4974" name="request_dirtyXmlRequest" source="result(request)" target="mov2#mpkg9#opm117#scu229.dirtyXmlRequest"/>
+        <LinkParameter id="mov2#mpkg9#opm117#scu228#oln1530#par4975" name="http://10.100.40.16:8170/MsMail/MailAttachServiceService?wsdl_endpointURL" source="result(endpointURL)" target="mov2#mpkg9#opm117#scu229.endpointURL"/>
+      </OKLink>
+    </ScriptUnit>
+    <ScriptUnit id="mov2#mpkg9#opm117#scu229" name="correo" gr:x="1480" gr:y="80">
+      <ScriptUnitText xml:space="preserve">#input String dirtyXmlRequest, String endpointURL
+#output xmlRequest,xmlResponse, endpointURL
+ 
+import javax.xml.soap.SOAPConnectionFactory;
+import javax.xml.soap.SOAPConnection;
+import javax.xml.soap.SOAPMessage;
+import javax.xml.soap.MessageFactory;
+import javax.xml.soap.SOAPConstants;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+
+// Para probar en groovyConsole
+
+
+
+
+SOAPConnectionFactory soapConnectionFactory = SOAPConnectionFactory.newInstance();
+SOAPConnection soapConnection = soapConnectionFactory.createConnection();
+
+InputStream is = new ByteArrayInputStream(dirtyXmlRequest.getBytes());
+SOAPMessage soapMessage;
+SOAPMessage soapResponse;
+
+// Send SOAP Message to SOAP Server
+try {   
+    soapMessage = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL).createMessage(null, is);
+    soapResponse = soapConnection.call(soapMessage, endpointURL);
+    } catch (Exception e) {
+        throw new RuntimeException("El servicio no responde", e.getCause());
+        }
+
+public String soapMessageToString(SOAPMessage message) 
+    {
+        String result = null;
+
+        if (message != null) 
+        {
+            ByteArrayOutputStream baos = null;
+            try 
+            {
+                baos = new ByteArrayOutputStream();
+                message.writeTo(baos); 
+                result = baos.toString();
+            } 
+            catch (Exception e) 
+            {
+            } 
+            finally 
+            {
+                if (baos != null) 
+                {
+                    try 
+                    {
+                        baos.close();
+                    } 
+                    catch (IOException ioe) 
+                    {
+                    }
+                }
+            }
+        }
+        return result;
+    }  
+
+//XML as a String:
+String xmlRequest = soapMessageToString(soapMessage);
+String xmlResponse = soapMessageToString(soapResponse);
+
+return["xmlRequest":xmlRequest,"xmlResponse":xmlResponse, "endpointURL":endpointURL]</ScriptUnitText>
+      <OKLink id="mov2#mpkg9#opm117#scu229#oln1533" name="OKFlow1533" to="mov2#mpkg9#opm117#lpu13" automaticCoupling="true" gr:bendpoints="-523,129,511,43"/>
+      <KOLink id="mov2#mpkg9#opm117#scu229#kln581" name="KOFlow581" to="mov2#mpkg9#opm117#kocu106" automaticCoupling="true"/>
+    </ScriptUnit>
+    <OKCollectorUnit gr:x="1645" gr:y="15" id="mov2#mpkg9#opm117#okcu124" name="OK Port124"/>
+    <KOCollectorUnit gr:x="1645" gr:y="150" id="mov2#mpkg9#opm117#kocu106" name="KO Port106"/>
+    <SelectorUnit gr:x="490" gr:y="30" id="mov2#mpkg9#opm117#seu358" name="Selector358" entity="ent96">
+      <Selector id="mov2#mpkg9#opm117#seu358#su550" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg9#opm117#seu358#su550#rcond314" name="fianza" predicate="in" implied="false" role="rel70#role139"/>
+      </Selector>
+      <Link id="mov2#mpkg9#opm117#seu358#ln1165" name="Flow1165" to="mov2#mpkg9#opm117#scu227" type="transport" validate="true" gr:bendpoints="63,-56,-572,-86;350,-56,-285,-86;482,-55,-153,-85;597,-58,-38,-88">
+        <LinkParameter id="mov2#mpkg9#opm117#seu358#ln1165#par4396" name="nombrecomfed_nombreCom" source="ent96#att497Array" target="mov2#mpkg9#opm117#scu227.nombreCom"/>
+      </Link>
+      <OKLink id="mov2#mpkg9#opm117#seu358#oln1544" name="Flow1564" to="mov2#mpkg9#opm117#seu362">
+        <LinkParameter id="mov2#mpkg9#opm117#seu358#oln1544#par5018" name="oidFedatario_RoleCondition322 [oidFedatario]" source="ent96#att564Array" target="mov2#mpkg9#opm117#seu362#su554#rcond322.ent96#att564"/>
+      </OKLink>
+    </SelectorUnit>
+    <LoopUnit gr:x="445" gr:y="165" id="mov2#mpkg9#opm117#lpu13" name="Loop13" linkOrder="mov2#mpkg9#opm117#lpu13#ln1555 mov2#mpkg9#opm117#lpu13#ln1558">
+      <SecondaryArray id="mov2#mpkg9#opm117#lpu13#lsa32" name="SecondaryArray32"/>
+      <SecondaryArray id="mov2#mpkg9#opm117#lpu13#lsa34" name="SecondaryArray34"/>
+      <SecondaryArray id="mov2#mpkg9#opm117#lpu13#lsa35" name="SecondaryArray35"/>
+      <OKLink id="mov2#mpkg9#opm117#lpu13#oln1541" name="OKFlow1541" to="mov2#mpkg9#opm117#seu358" code="next">
+        <LinkParameter id="mov2#mpkg9#opm117#lpu13#oln1541#par4992" name="Next Element_fianza [oidcontrolfianzas]" source="next" target="mov2#mpkg9#opm117#seu358#su550#rcond314.ent87#att524"/>
+        <LinkParameter id="mov2#mpkg9#opm117#lpu13#oln1541#par5017" name="conteodias_PASSING" sourceLinkParameter="mov2#mpkg9#opm117#seu341#oln1511#par435" passing="true"/>
+      </OKLink>
+      <Link id="mov2#mpkg9#opm117#lpu13#ln1555" name="Flow1555" to="mov2#mpkg9#opm117#scu227" type="transport" validate="true" gr:bendpoints="340,1,-350,101">
+        <LinkParameter id="mov2#mpkg9#opm117#lpu13#ln1555#par5011" name="Next Element (SecondaryArray32)_contDias" source="mov2#mpkg9#opm117#lpu13#lsa32" target="mov2#mpkg9#opm117#scu227.contDias"/>
+        <LinkParameter id="mov2#mpkg9#opm117#lpu13#ln1555#par5012" name="Next Element (SecondaryArray34)_fechaVencimiento" source="mov2#mpkg9#opm117#lpu13#lsa34" target="mov2#mpkg9#opm117#scu227.fechaVencimiento"/>
+        <LinkParameter id="mov2#mpkg9#opm117#lpu13#ln1555#par5013" name="Next Element (SecondaryArray35)_numGarantia" source="mov2#mpkg9#opm117#lpu13#lsa35" target="mov2#mpkg9#opm117#scu227.numGarantia"/>
+      </Link>
+      <Link id="mov2#mpkg9#opm117#lpu13#ln1558" name="Flow1558" to="mov2#mpkg9#opm117#switch98" type="transport" validate="true" gr:bendpoints="254,-21,-241,79">
+        <LinkParameter id="mov2#mpkg9#opm117#lpu13#ln1558#par5015" name="Next Element (SecondaryArray32)_Switch" source="mov2#mpkg9#opm117#lpu13#lsa32" target="mov2#mpkg9#opm117#switch98.switch"/>
+      </Link>
+      <OKLink id="mov2#mpkg9#opm117#lpu13#oln1542" name="OKFlow1542" to="mov2#mpkg9#opm117#okcu124" automaticCoupling="true" code="end" gr:bendpoints="-5,-191,-1279,-51;584,-194,-690,-54"/>
+    </LoopUnit>
+    <SelectorUnit gr:x="695" gr:y="30" id="mov2#mpkg9#opm117#seu362" name="Selector362" entity="ent75">
+      <Selector id="mov2#mpkg9#opm117#seu362#su554" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg9#opm117#seu362#su554#rcond322" name="RoleCondition322" predicate="in" implied="false" role="rel52#role103"/>
+      </Selector>
+      <Link id="mov2#mpkg9#opm117#seu362#ln1565" name="Flow1565" to="mov2#mpkg9#opm117#scu227" type="transport" validate="true" gr:bendpoints="211,-43,-185,-63">
+        <LinkParameter id="mov2#mpkg9#opm117#seu362#ln1565#par5016" name="nombreTipoFed_tipoFed" source="ent75#att286Array" target="mov2#mpkg9#opm117#scu227.tipoFed"/>
+      </Link>
+      <OKLink id="mov2#mpkg9#opm117#seu362#oln1545" name="OKFlow1545" to="mov2#mpkg9#opm117#switch98"/>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,56 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="0" id="mov2#mpkg6#opm19" name="fedatario">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg6#opm19#icu20" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#mpkg6#opm19#icu20#icp44" name="curp"/>
+      <InputCollectorParameter id="mov2#mpkg6#opm19#icu20#icp43" name="nombreCompleto"/>
+      <InputCollectorParameter id="mov2#mpkg6#opm19#icu20#icp42" name="rfc"/>
+      <OKLink id="mov2#mpkg6#opm19#icu20#oln214" name="OKFlow214" to="mov2#mpkg6#opm19#seu69">
+        <LinkParameter id="mov2#mpkg6#opm19#icu20#oln214#par1312" name="nombreCompleto_nombreCompleto" source="mov2#mpkg6#opm19#icu20#icp43" target="mov2#mpkg6#opm19#seu69#su144#acond96"/>
+        <LinkParameter id="mov2#mpkg6#opm19#icu20#oln214#par1313" name="rfc_rfc" source="mov2#mpkg6#opm19#icu20#icp42" target="mov2#mpkg6#opm19#seu69#su144#acond97"/>
+        <LinkParameter id="mov2#mpkg6#opm19#icu20#oln214#par1314" name="curp_username" source="mov2#mpkg6#opm19#icu20#icp44" target="mov2#mpkg6#opm19#seu69#su144#acond85"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="340" gr:y="60" id="mov2#mpkg6#opm19#seu69" name="PF" entity="ent39">
+      <Selector id="mov2#mpkg6#opm19#seu69#su144" defaultPolicy="fill" booleanOperator="or">
+        <AttributesCondition id="mov2#mpkg6#opm19#seu69#su144#acond85" name="username" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+        <AttributesCondition id="mov2#mpkg6#opm19#seu69#su144#acond96" name="nombreCompleto" predicate="eq" booleanOperator="or" implied="false" attributes="ent39#att269"/>
+        <AttributesCondition id="mov2#mpkg6#opm19#seu69#su144#acond97" name="rfc" predicate="eq" booleanOperator="or" implied="false" attributes="ent39#att268"/>
+      </Selector>
+      <OKLink id="mov2#mpkg6#opm19#seu69#oln215" name="OKFlow215" to="mov2#mpkg6#opm19#inn14">
+        <LinkParameter id="mov2#mpkg6#opm19#seu69#oln215#par1315" name="oid_Input" source="userOIDArray" target="mov2#mpkg6#opm19#inn14.isnotnull"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg6#opm19#seu69#kln115" name="KOFlow115" to="mov2#mpkg6#opm19#kocu11" gr:bendpoints="47,133,-588,8">
+        <LinkParameter id="mov2#mpkg6#opm19#seu69#kln115#par1316" name="Error al consultar el fedatario._msj" sourceValue="Error al consultar el fedatario." target="mov2#mpkg6#opm19#kocu11#ocp13"/>
+      </KOLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="560" gr:y="85" id="mov2#mpkg6#opm19#inn14" name="&#191;Existe?">
+      <KOLink id="mov2#mpkg6#opm19#inn14#kln116" name="KOFlow116" to="mov2#mpkg6#opm19#kocu11" gr:bendpoints="27,123,-433,-2">
+        <LinkParameter id="mov2#mpkg6#opm19#inn14#kln116#par1317" name="Los datos que introdujo no corresponden con el de alg&#250;n fedatario registrado en la base de datos._msj" sourceValue="Los datos que introdujo no corresponden con el de alg&#250;n fedatario registrado en la base de datos." target="mov2#mpkg6#opm19#kocu11#ocp13"/>
+      </KOLink>
+      <OKLink id="mov2#mpkg6#opm19#inn14#oln220" name="OKFlow220" to="mov2#mpkg6#opm19#seu70">
+        <LinkParameter id="mov2#mpkg6#opm19#inn14#oln220#par1319" name="Input Value_oidPF [oid]" source="inputValue" target="mov2#mpkg6#opm19#seu70#su145#rcond62.userOID"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <OKCollectorUnit gr:x="915" gr:y="40" id="mov2#mpkg6#opm19#okcu11" name="OK">
+      <OutputCollectorParameter id="mov2#mpkg6#opm19#okcu11#ocp37" name="municipioNotario"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm19#okcu11#ocp36" name="entidadNotario"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm19#okcu11#ocp35" name="numeroNotario"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm19#okcu11#ocp34" name="nombreCompleto"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm19#okcu11#ocp38" name="oidPF"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="915" gr:y="200" id="mov2#mpkg6#opm19#kocu11" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg6#opm19#kocu11#ocp13" name="msj"/>
+    </KOCollectorUnit>
+    <SelectorUnit gr:x="710" gr:y="70" id="mov2#mpkg6#opm19#seu70" name="notario" entity="ent8">
+      <OKLink id="mov2#mpkg6#opm19#seu70#oln221" name="OKFlow221" to="mov2#mpkg6#opm19#okcu11">
+        <LinkParameter id="mov2#mpkg6#opm19#seu70#oln221#par1329" name="entidad_entidadNotario" source="ent8#att48Array" target="mov2#mpkg6#opm19#okcu11#ocp36"/>
+        <LinkParameter id="mov2#mpkg6#opm19#seu70#oln221#par1330" name="municipio_municipioNotario" source="ent8#att58Array" target="mov2#mpkg6#opm19#okcu11#ocp37"/>
+        <LinkParameter id="mov2#mpkg6#opm19#seu70#oln221#par1754" name="numero_numeroNotario" source="ent8#att278Array" target="mov2#mpkg6#opm19#okcu11#ocp35"/>
+        <LinkParameter id="mov2#mpkg6#opm19#seu70#oln221#par1755" name="DatosNotarioToPersonaFisica.oid_oidPF" source="rel25#role49_userOIDArray" target="mov2#mpkg6#opm19#okcu11#ocp38"/>
+      </OKLink>
+      <Selector id="mov2#mpkg6#opm19#seu70#su145" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg6#opm19#seu70#su145#rcond62" name="oidPF" predicate="in" implied="false" role="rel25#role50"/>
+      </Selector>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

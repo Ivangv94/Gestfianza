@@ -1,0 +1,214 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#page132" name="Informaci&#243;n de Afianzadora" localized="false" layout:pageLayout="gobmxStyle/Empty" layout:frameLayout="None" gr:x="-3760" gr:y="1675">
+  <ContentUnits>
+    <SelectorUnit id="sv4#page132#seu330" name="Informaci&#243;n de Afianzadora" gr:x="0" gr:y="0" entity="ent83" distinctAttributes="rel65#role129.ent84#att519">
+      <Link id="sv4#page132#seu330#ln1500" name="Cambiar" to="sv4#page132#enu179" type="transport" validate="true">
+        <LinkParameter id="sv4#page132#seu330#ln1500#par4292" name="nombrefed_Nombre" source="ent83#att516Array" target="sv4#page132#enu179#fld511_slot"/>
+      </Link>
+      <Selector id="sv4#page132#seu330#su530" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#page132#seu330#su530#kcond233" name="KeyCondition233" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#page132#seu330#ln1502" name="Flow1368" to="sv4#mfu51" type="transport" validate="true">
+        <LinkParameter id="sv4#page132#seu330#ln1502#par4904" name="oidAfianzadora_KeyCondition234 [oidAfianzadora]" source="ent83#att515Array" target="sv4#mfu51#su529#kcond234.ent83#att515"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit id="sv4#page132#enu179" name="Informaci&#243;n de Afianz&#243;adora" linkOrder="sv4#page132#enu179#ln1506 sv4#page132#enu179#ln1507" gr:x="300" gr:y="70">
+      <Field id="sv4#page132#enu179#fld511" name="Nombre" type="string" modifiable="true" preloaded="true"/>
+      <Link id="sv4#page132#enu179#ln1506" name="Aplicar Cambios" to="sv4#mfu51" type="normal" validate="true">
+        <LinkParameter id="sv4#page132#enu179#ln1506#par4326" name="Estatus_EstatusAfianzadora.oidEstatusAfianzadora(AfianzadoraToEstatusafianzadora)" source="sv4#page132#enu179#sfld59" target="sv4#mfu51.rel65#role129.ent84#att518"/>
+        <LinkParameter id="sv4#page132#enu179#ln1506#par4327" name="Nombre_nombreAfianzadora" source="sv4#page132#enu179#fld511" target="sv4#mfu51.ent83#att516"/>
+      </Link>
+      <Link id="sv4#page132#enu179#ln1507" name="Cancelar" to="sv4#page133" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-30,-178,220,96"/>
+      <SelectionField id="sv4#page132#enu179#sfld59" type="string" name="Estatus"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell layout:cellLayout="Print Frame" colspan="12">
+        <layout:Grid label="Cambiar Fedatarios" containerType="grid">
+          <layout:Row>
+            <layout:Cell colspan="9">
+              <layout:Field unitId="sv4#page132#enu179" field="sv4#page132#enu179#fld511" mode="full">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="3"/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="9">
+              <layout:Field unitId="sv4#page132#enu179" field="sv4#page132#enu179#sfld59" mode="full">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="3"/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="4"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Link unitId="sv4#page132#enu179" link="sv4#page132#enu179#ln1507">
+                <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+              </layout:Link>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Link unitId="sv4#page132#enu179" link="sv4#page132#enu179#ln1506">
+                <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+              </layout:Link>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+</Page>

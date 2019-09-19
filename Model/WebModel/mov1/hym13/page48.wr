@@ -1,0 +1,91 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym13#page48" name="Datos de la persona a verificar" ajaxEnabled="false" gr:x="1800" gr:y="670">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym13#page48#enu50" name="Form8" gr:x="0" gr:y="0">
+      <Field id="mov1#hym13#page48#enu50#fld100" name="ap1" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym13#page48#enu50#fld101" name="ap2" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym13#page48#enu50#fld102" name="nombres" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym13#page48#enu50#fld103" name="curp" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym13#page48#enu50#fld104" name="rfc" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym13#page48#enu50#fld105" name="feNa" type="string" modifiable="false" preloaded="true"/>
+      <Link id="mov1#hym13#page48#enu50#ln168" name="Flow107" to="mov1#hym13#switch28" type="transport" validate="true">
+        <LinkParameter id="mov1#hym13#page48#enu50#ln168#par1408" name="identico_Switch" source="mov1#hym13#page48#enu50#fld112" target="mov1#hym13#switch28.switch"/>
+      </Link>
+      <Field id="mov1#hym13#page48#enu50#fld106" name="ocr" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym13#page48#enu50#fld107" name="cic" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym13#page48#enu50#fld108" name="claveElector" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym13#page48#enu50#fld109" name="numeroEmision" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym13#page48#enu50#fld110" name="anioReg" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym13#page48#enu50#fld111" name="anioEmision" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym13#page48#enu50#fld112" name="identico" type="string" modifiable="true" preloaded="true"/>
+    </EntryUnit>
+    <EntryUnit id="mov1#hym13#page48#enu51" name="Buttons" linkOrder="mov1#hym13#page48#enu51#ln170 mov1#hym13#page48#enu51#ln169" gr:x="105" gr:y="5">
+      <Link id="mov1#hym13#page48#enu51#ln169" name="Cancelar" to="mov1#hym13#page21" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-122,-722,1683,-117;-1164,-726,641,-121"/>
+      <Link id="mov1#hym13#page48#enu51#ln170" name="Continuar" to="mov1#hym13#switch28" type="normal" validate="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym13#page48#enu50" manualFields="true" manualFieldOrder="mov1#hym13#page48#enu50#fld102 mov1#hym13#page48#enu50#fld100 mov1#hym13#page48#enu50#fld101 mov1#hym13#page48#enu50#fld105 mov1#hym13#page48#enu50#fld103 mov1#hym13#page48#enu50#fld104 mov1#hym13#page48#enu50#fld106 mov1#hym13#page48#enu50#fld107 mov1#hym13#page48#enu50#fld108 mov1#hym13#page48#enu50#fld109 mov1#hym13#page48#enu50#fld110 mov1#hym13#page48#enu50#fld111 mov1#hym13#page48#enu50#fld112" layout:frameLayout="None">
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+          <layout:LayoutParameter name="label-width" value="8" type="unit"/>
+          <layout:Field label="Nombre (s):" field="mov1#hym13#page48#enu50#fld102"/>
+          <layout:Field label="Primer apellido:" field="mov1#hym13#page48#enu50#fld100"/>
+          <layout:Field label="Segundo apellido:" field="mov1#hym13#page48#enu50#fld101"/>
+          <layout:Field label="Fecha de nacimiento:" field="mov1#hym13#page48#enu50#fld105"/>
+          <layout:Field label="CURP:" field="mov1#hym13#page48#enu50#fld103"/>
+          <layout:Field label="RFC:" field="mov1#hym13#page48#enu50#fld104"/>
+          <layout:Field label="N&#250;mero vertical (OCR):" field="mov1#hym13#page48#enu50#fld106" layout:fieldVisibilityConditionVariable="mov1#hym13#page48#var33"/>
+          <layout:Field label="C&#243;digo de Identificaci&#243;n de la Credencial (CIC):" field="mov1#hym13#page48#enu50#fld107" layout:fieldVisibilityConditionVariable="mov1#hym13#page48#var34"/>
+          <layout:Field label="Clave de Elector:" field="mov1#hym13#page48#enu50#fld108" layout:fieldVisibilityConditionVariable="mov1#hym13#page48#var37"/>
+          <layout:Field label="N&#250;mero de Emisi&#243;n" field="mov1#hym13#page48#enu50#fld109" layout:fieldVisibilityConditionVariable="mov1#hym13#page48#var38"/>
+          <layout:Field label="A&#241;o de registro:" field="mov1#hym13#page48#enu50#fld110" layout:fieldVisibilityConditionVariable="mov1#hym13#page48#var35"/>
+          <layout:Field label="A&#241;o de emisi&#243;n:" field="mov1#hym13#page48#enu50#fld111" layout:fieldVisibilityConditionVariable="mov1#hym13#page48#var36"/>
+          <layout:Field field="mov1#hym13#page48#enu50#fld112" styleClass="hidden"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym13#page48#enu51" manualLinks="true" manualLinkOrder="mov1#hym13#page48#enu51#ln170 mov1#hym13#page48#enu51#ln169" layout:frameLayout="None">
+          <layout:Link label="Continuar" link="mov1#hym13#page48#enu51#ln170" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link label="Cancelar" link="mov1#hym13#page48#enu51#ln169" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="mov1#hym13#page48#var33" name="verOcr" type="boolean" value="false"/>
+  <Variable id="mov1#hym13#page48#var34" name="verCic" type="boolean" value="false"/>
+  <Variable id="mov1#hym13#page48#var35" name="verAnioReg" type="boolean" value="false"/>
+  <Variable id="mov1#hym13#page48#var36" name="verAnioEmision" type="boolean" value="false"/>
+  <Variable id="mov1#hym13#page48#var37" name="verClaveElector" type="boolean" value="false"/>
+  <Variable id="mov1#hym13#page48#var38" name="verNumeroEmision" type="boolean" value="false"/>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+  <layout:LayoutParameter name="show-page-title" value="true" type="page"/>
+</Page>

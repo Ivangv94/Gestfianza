@@ -1,0 +1,617 @@
+<SiteView xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="BP Administration" customURLName="BPAdmin" bpm:adminView="true" landmarks="sv2#page5" homePage="sv2#page5" secure="false">
+  <OperationUnits>
+    <ProcessUnit id="sv2#pu2" name="Synchronize MetaData" gr:x="474" gr:y="-10" mode="synchronizeMetadata" createTestUsers="true">
+      <KOLink id="sv2#pu2#kln2" name="KOLink1" to="sv2#page5#pu11">
+        <LinkParameter id="sv2#pu2#kln2#par5" name="Error Info_Error Info" source="errorInfo" target="sv2#page5#pu11.errorInfo"/>
+      </KOLink>
+      <OKLink id="sv2#pu2#oln2" name="OKLink1" to="sv2#page5" automaticCoupling="true"/>
+    </ProcessUnit>
+    <LogoutUnit id="sv2#lou1" name="Logout User" gr:x="1570" gr:y="785" siteView="sv1"/>
+    <ProcessUnit id="sv2#pu3" gr:x="220" gr:y="878" name="Cancel Process Instance" mode="cancelProcessInstance">
+      <KOLink id="sv2#pu3#kln3" name="KOLink7" to="sv2#page4#pu9">
+        <LinkParameter id="sv2#pu3#kln3#par6" name="Error Info_Error Info" source="errorInfo" target="sv2#page4#pu9.errorInfo"/>
+      </KOLink>
+      <OKLink id="sv2#pu3#oln3" name="OKLink21" to="sv2#page3" automaticCoupling="true"/>
+    </ProcessUnit>
+    <ProcessUnit id="sv2#pu4" name="Rollback Activity Instance" gr:x="-82" gr:y="721" mode="rollback">
+      <KOLink id="sv2#pu4#kln4" name="KOLink9" to="sv2#page4#pu9">
+        <LinkParameter id="sv2#pu4#kln4#par7" name="Error Info_Error Info" source="errorInfo" target="sv2#page4#pu9.errorInfo"/>
+      </KOLink>
+      <OKLink id="sv2#pu4#oln4" name="OKLink42" to="sv2#page7#pdu2" gr:bendpoints="-101,-77,-19,96">
+        <LinkParameter id="sv2#pu4#oln4#par8" name="Process Instance Oid_PASSING_Process Instance Oid" sourceLinkParameter="sv2#page7#pdu2#ln36#par45" target="sv2#page7#pdu2.processInstanceOid"/>
+      </OKLink>
+    </ProcessUnit>
+    <ProcessUnit id="sv2#pu5" gr:x="318" gr:y="-10" name="Delete Process" mode="deleteProcess">
+      <OKLink id="sv2#pu5#oln5" name="OKLink22" to="sv2#page5" automaticCoupling="true"/>
+      <KOLink id="sv2#pu5#kln5" name="KOLink10" to="sv2#page5#pu11">
+        <LinkParameter id="sv2#pu5#kln5#par9" name="Error Info_Error Info" source="errorInfo" target="sv2#page5#pu11.errorInfo"/>
+      </KOLink>
+    </ProcessUnit>
+    <ProcessUnit id="sv2#pu6" name="Delete Process Instance" gr:x="106" gr:y="738" mode="deleteProcess">
+      <KOLink id="sv2#pu6#kln6" name="KOLink11" to="sv2#page4#pu9">
+        <LinkParameter id="sv2#pu6#kln6#par10" name="Error Info_Error Info" source="errorInfo" target="sv2#page4#pu9.errorInfo"/>
+      </KOLink>
+      <OKLink id="sv2#pu6#oln6" name="OKLink23" to="sv2#page5" automaticCoupling="true"/>
+    </ProcessUnit>
+    <ProcessUnit id="sv2#pu7" gr:x="452" gr:y="880" name="Disconnect User and Group" mode="assignActivity">
+      <OKLink id="sv2#pu7#oln7" name="OKLink36" to="sv2#page3" automaticCoupling="true"/>
+    </ProcessUnit>
+    <ProcessUnit id="sv2#pu8" name="Change User and Group" gr:x="694" gr:y="672" mode="assignActivity">
+      <OKLink id="sv2#pu8#oln8" name="OKLink16" to="sv2#page3" automaticCoupling="true"/>
+      <UnitComputation unitId="sv2#page3#pwu1" mode="execute"/>
+      <KOLink id="sv2#pu8#kln7" name="KOLink12" to="sv2#page3" automaticCoupling="true" gr:bendpoints="-129,-34,203,-91"/>
+    </ProcessUnit>
+    <JumpUnit id="sv2#ju1" gr:x="1570" gr:y="915" name="Go to home" direction="forward" ignoreHistory="false" collectorUnit="sv1#pcu10"/>
+    <ModuleInstanceUnit id="sv2#miu35" gr:x="900" gr:y="545" action="true" moduleId="mov2#mpkg3#opm13">
+      <OKLink id="sv2#miu35#oln403" name="OKFlow200" to="sv2#miu36" ajaxOpenWindow="true" ajaxWindowWidth="600" ajaxWindowHeight="250" ajaxWindowClosable="true" ajaxWindowModal="true">
+        <LinkParameter id="sv2#miu35#oln403#par234" name="Se agrego al Fedatario correctamente._mensaje" target="sv2#miu36.mov2#hym10#icu29#icp89" sourceValue="Se agrego al Funcionario correctamente."/>
+      </OKLink>
+      <KOLink id="sv2#miu35#kln81" name="KOFlow81" to="sv2#page5#mssu16">
+        <LinkParameter id="sv2#miu35#kln81#par237" name="msj_Shown Messages" source="mov2#mpkg3#opm13#kocu4#ocp11" target="sv2#page5#mssu16.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="sv2#miu36" gr:x="1035" gr:y="655" action="false" moduleId="mov2#hym10">
+      <OKLink id="sv2#miu36#oln404" name="OKFlow404" to="sv2#page5" automaticCoupling="true"/>
+      <KOLink id="sv2#miu36#kln80" name="KOFlow80" to="sv2#page5#mssu16" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <SelectorUnit id="sv2#seu45" name="buscarTyC" gr:x="-385" gr:y="-215" entity="ent5">
+      <Selector id="sv2#seu45#su34" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#seu45#su34#acond17" name="descripcion" predicate="eq" booleanOperator="or" implied="false" value="TYC" attributes="ent5#att42"/>
+      </Selector>
+      <OKLink id="sv2#seu45#oln71" name="OKFlow1260" to="sv2#page9#enu62" gr:bendpoints="118,22,-122,7">
+        <LinkParameter id="sv2#seu45#oln71#par575" name="true_editar" targetVariable="sv2#page9#var10" sourceValue="true"/>
+        <LinkParameter id="sv2#seu45#oln71#par576" name="texto_TyC editable" source="ent5#att43Array" target="sv2#page9#enu62#fld170_slot"/>
+        <LinkParameter id="sv2#seu45#oln71#par577" name="texto_TYC visible" source="ent5#att43Array" target="sv2#page9#enu62#fld169_slot"/>
+      </OKLink>
+    </SelectorUnit>
+    <ModifyUnit id="sv2#mfu4" name="actualizar TyC" gr:x="180" gr:y="-210" entity="ent5">
+      <Selector id="sv2#mfu4#su138" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#mfu4#su138#acond84" name="Descripcion" predicate="eq" booleanOperator="or" implied="false" attributes="ent5#att42" value="TYC"/>
+      </Selector>
+      <OKLink id="sv2#mfu4#oln72" name="OKFlow1261" to="sv2#page9#seu50" gr:bendpoints="-206,98,194,23">
+        <LinkParameter id="sv2#mfu4#oln72#par578" name="false_editar" targetVariable="sv2#page9#var10" sourceValue="false"/>
+        <UnitComputation unitId="sv2#page9#seu50" mode="execute"/>
+        <UnitComputation unitId="sv2#page9#enu62" mode="execute"/>
+      </OKLink>
+    </ModifyUnit>
+    <ScriptUnit id="sv2#scu4" name="probarSOAP" gr:x="740" gr:y="-380">
+      <ScriptUnitText xml:space="preserve">#input String dirtyXmlRequest, String endpointURL
+#output xmlRequest,xmlResponse
+
+import javax.xml.soap.SOAPConnectionFactory;
+import javax.xml.soap.SOAPConnection;
+import javax.xml.soap.SOAPMessage;
+import javax.xml.soap.MessageFactory;
+import javax.xml.soap.SOAPConstants;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+
+// Para probar en groovyConsole
+
+SOAPConnectionFactory soapConnectionFactory = SOAPConnectionFactory.newInstance();
+SOAPConnection soapConnection = soapConnectionFactory.createConnection();
+
+InputStream is = new ByteArrayInputStream(dirtyXmlRequest.getBytes());
+SOAPMessage soapMessage;
+SOAPMessage soapResponse;
+
+// Send SOAP Message to SOAP Server
+try {   
+    soapMessage = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL).createMessage(null, is);
+    soapResponse = soapConnection.call(soapMessage, endpointURL);
+    } catch (Exception e) {
+        throw new RuntimeException("El servicio de firmado de: "+endpointURL +" no responde", e.getCause());
+        }
+
+public String soapMessageToString(SOAPMessage message) 
+    {
+        String result = null;
+
+        if (message != null) 
+        {
+            ByteArrayOutputStream baos = null;
+            try 
+            {
+                baos = new ByteArrayOutputStream();
+                message.writeTo(baos); 
+                result = baos.toString();
+            } 
+            catch (Exception e) 
+            {
+            } 
+            finally 
+            {
+                if (baos != null) 
+                {
+                    try 
+                    {
+                        baos.close();
+                    } 
+                    catch (IOException ioe) 
+                    {
+                    }
+                }
+            }
+        }
+        return result;
+    }  
+
+//XML as a String:
+String xmlRequest = soapMessageToString(soapMessage);
+String xmlResponse = soapMessageToString(soapResponse);
+
+return["xmlRequest":xmlRequest,"xmlResponse":xmlResponse]</ScriptUnitText>
+      <OKLink id="sv2#scu4#oln74" name="OKFlow846" to="sv2#page68#enu63" gr:bendpoints="-121,15,109,15">
+        <LinkParameter id="sv2#scu4#oln74#par600" name="xmlResponse_response" source="result(xmlResponse)" target="sv2#page68#enu63#fld173_slot"/>
+        <LinkParameter id="sv2#scu4#oln74#par601" name="xmlRequest_request" source="result(xmlRequest)" target="sv2#page68#enu63#fld172_slot"/>
+        <LinkParameter id="sv2#scu4#oln74#par602" name="uri_PASSING_uri" sourceLinkParameter="sv2#page68#enu63#ln75#par608" target="sv2#page68#enu63#fld171_slot"/>
+      </OKLink>
+      <KOLink id="sv2#scu4#kln89" name="KOFlow520" to="sv2#scu22">
+        <LinkParameter id="sv2#scu4#kln89#par603" name="uri_PASSING_endpointUrl" sourceLinkParameter="sv2#page68#enu63#ln75#par608" target="sv2#scu22.endpointUrl"/>
+        <LinkParameter id="sv2#scu4#kln89#par604" name="uri_PASSING" sourceLinkParameter="sv2#page68#enu63#ln75#par608" passing="true"/>
+        <LinkParameter id="sv2#scu4#kln89#par102" name="request_PASSING_request" sourceLinkParameter="sv2#page68#enu63#ln75#par62" target="sv2#scu22.request"/>
+        <LinkParameter id="sv2#scu4#kln89#par103" name="request_PASSING" sourceLinkParameter="sv2#page68#enu63#ln75#par62" passing="true"/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit id="sv2#scu22" name="probarREST" gr:x="740" gr:y="-260">
+      <ScriptUnitText xml:space="preserve">#input String endpointUrl, String request
+#output response
+import groovy.json.*
+import org.apache.http.client.methods.*
+import org.apache.http.entity.*
+import org.apache.http.impl.client.*
+/*        Pruebas para groovyConsole
+String endpointUrl ="http://10.100.40.5:3080/ServicioWebCatalogosSiger/webresources/estados"
+String request = null
+String dirtyResultado 
+*/
+// build HTTP POST
+if (request == null || request == "")
+{
+def dirtyProc = "curl -v -k " + endpointUrl
+dirtyResultado = "" + dirtyProc.execute().text
+}
+else
+{
+def post = new HttpPost(endpointUrl)
+post.addHeader("content-type", "application/json")
+
+post.setEntity(new StringEntity(request))
+
+def client = HttpClientBuilder.create().build()
+def response = client.execute(post)
+def bufferedReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()))
+dirtyResultado = bufferedReader.getText().toString()
+}
+
+return ["response":dirtyResultado]
+</ScriptUnitText>      <OKLink id="sv2#scu22#oln75" name="OKFlow391" to="sv2#page68#enu63">        <LinkParameter id="sv2#scu22#oln75#par609" name="response_response" source="result(response)" target="sv2#page68#enu63#fld173_slot"/>        <LinkParameter id="sv2#scu22#oln75#par610" name="uri_PASSING_uri" sourceLinkParameter="sv2#scu4#kln89#par604" target="sv2#page68#enu63#fld171_slot"/>        <LinkParameter id="sv2#scu22#oln75#par109" name="request_PASSING_request" sourceLinkParameter="sv2#scu4#kln89#par103" target="sv2#page68#enu63#fld172_slot"/>      </OKLink>    </ScriptUnit>    <CreateUnit id="sv2#cru4" name="Crear basurita" gr:x="1680" gr:y="-100" entity="ent6">      <OKLink id="sv2#cru4#oln76" name="OKFlow800" to="sv2#scu23">        <LinkParameter id="sv2#cru4#oln76#par663" name="docPdf_archivo" source="ent6#att39Array" target="sv2#scu23.archivo"/>      </OKLink>    </CreateUnit>    <ScriptUnit id="sv2#scu23" name="Copiar a Autodeploy" gr:x="1665" gr:y="65">      <ScriptUnitText xml:space="preserve">#input String archivo
+#output mensaje
+
+import org.apache.commons.io.*
+
+String rutaAbsoluta = rtx.getUploadDirectory();
+String ubicacionWar = rutaAbsoluta + archivo;
+String mensaje = "";
+
+//Mueve archivo entre carpetas
+File origen = new File(ubicacionWar);
+String dirtyDestino = rutaAbsoluta.replaceAll("archivodigital","autodeploy")
+File destino = new File(dirtyDestino);
+
+try {
+	System.gc()
+    FileUtils.copyFileToDirectory(origen, destino);
+    mensaje = "Archivo copiado, esperar en lo que se despliega";
+} catch (IOException e) {
+    e.printStackTrace();
+    mensaje = "Error, revisar el log";
+}
+
+return["mensaje":mensaje]</ScriptUnitText>
+      <OKLink id="sv2#scu23#oln158" name="OKFlow831" to="sv2#page70#mssu18">
+        <LinkParameter id="sv2#scu23#oln158#par664" name="mensaje_Shown Messages" source="result(mensaje)" target="sv2#page70#mssu18.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv2#scu23#kln106" name="KOFlow519" to="sv2#page70#mssu18" gr:bendpoints="-122,-74,103,96">
+        <LinkParameter id="sv2#scu23#kln106#par702" name="mensaje_Shown Messages" source="result(mensaje)" target="sv2#page70#mssu18.shownMessages"/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit id="sv2#scu32" name="leer" gr:x="1705" gr:y="190">
+      <ScriptUnitText xml:space="preserve">#input String ruta
+#output bpm, rtx, rtxError, server, wrstruts, wrstrutsError
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+//String ruta = "/usr/local/Cellar/wildfly-as/9.0.2.Final/libexec/standalone/log";
+
+String rtxFile = ruta + "logs/RTX.log"
+String bpmFile = ruta + "logs/BPM.log"
+String rtxerrorFile = ruta + "logs/RTXError.log"
+String  wrstrutsFile = ruta + "logs/WRStruts.log"
+String  wrstrutserrorFile = ruta + "logs/WRStrutsError.log"
+String  serverFile = ruta + "logs/server.log"
+
+String leerArchivo (String path)
+  throws IOException 
+{
+  byte[] encoded = Files.readAllBytes(Paths.get(path));
+  return new String(encoded);
+}
+
+String bpm = leerArchivo(bpmFile);
+String rtx = leerArchivo(rtxFile);
+String rtxError = leerArchivo(rtxerrorFile);
+String server = leerArchivo(serverFile);
+String wrstruts = leerArchivo(wrstrutsFile);
+String wrstrutsError = leerArchivo(wrstrutserrorFile);
+
+return ["bpm":bpm, "rtx":rtx, "rtxError":rtxError, "server":server, "wrstruts": wrstruts, "wrstrutsError":wrstrutsError]</ScriptUnitText>
+      <OKLink id="sv2#scu32#oln208" name="OKFlow366" to="sv2#page71#enu66">
+        <LinkParameter id="sv2#scu32#oln208#par742" name="bpm_bpm.log" source="result(bpm)" target="sv2#page71#enu66#fld177_slot"/>
+        <LinkParameter id="sv2#scu32#oln208#par745" name="rtx_rtx.log" source="result(rtx)" target="sv2#page71#enu66#fld178_slot"/>
+        <LinkParameter id="sv2#scu32#oln208#par746" name="rtxError_rtxerror.log" source="result(rtxError)" target="sv2#page71#enu66#fld179_slot"/>
+        <LinkParameter id="sv2#scu32#oln208#par747" name="server_server.log" source="result(server)" target="sv2#page71#enu66#fld182_slot"/>
+        <LinkParameter id="sv2#scu32#oln208#par750" name="wrstruts_wrstruts.log" source="result(wrstruts)" target="sv2#page71#enu66#fld180_slot"/>
+        <LinkParameter id="sv2#scu32#oln208#par751" name="wrstrutsError_wrstrutserror.log" source="result(wrstrutsError)" target="sv2#page71#enu66#fld181_slot"/>
+      </OKLink>
+    </ScriptUnit>
+    <SelectorUnit id="sv2#seu67" name="buscarRuta" gr:x="1650" gr:y="295" entity="ent2">
+      <Selector id="sv2#seu67#su140" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#seu67#su140#acond83" name="ruta" predicate="eq" booleanOperator="or" implied="false" value="ruta" attributes="ent2#att11"/>
+      </Selector>
+      <OKLink id="sv2#seu67#oln209" name="OKFlow271" to="sv2#scu32">
+        <LinkParameter id="sv2#seu67#oln209#par754" name="valor_ruta" source="ent2#att12Array" target="sv2#scu32.ruta"/>
+      </OKLink>
+    </SelectorUnit>
+    <ModifyUnit gr:x="1740" gr:y="525" id="sv2#mfu7" name="Actualizar Elemento" entity="ent2">
+      <Selector id="sv2#mfu7#su142" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mfu7#su142#kcond74" name="KeyCondition74" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#mfu7#oln210" name="OKFlow210" to="sv2#page5" automaticCoupling="true"/>
+      <KOLink id="sv2#mfu7#kln107" name="KOFlow107" to="sv2#page73#mssu21">
+        <LinkParameter id="sv2#mfu7#kln107#par785" name="Error al actualizar elemento_Shown Messages" sourceValue="Error al actualizar elemento" target="sv2#page73#mssu21.shownMessages"/>
+      </KOLink>
+    </ModifyUnit>
+    <CreateUnit gr:x="1620" gr:y="630" id="sv2#cru7" name="AgregarElemento" entity="ent2" skipBlankRecords="false">
+      <OKLink id="sv2#cru7#oln211" name="OKFlow211" to="sv2#page5" automaticCoupling="true"/>
+      <KOLink id="sv2#cru7#kln108" name="KOFlow108" to="sv2#page74#mssu22">
+        <LinkParameter id="sv2#cru7#kln108#par1019" name="Error al agregar el Elemento Administrable._Shown Messages" sourceValue="Error al agregar el Elemento Administrable." target="sv2#page74#mssu22.shownMessages"/>
+      </KOLink>
+    </CreateUnit>
+    <DeleteUnit gr:x="1210" gr:y="280" id="sv2#dlu8" name="Eliminar ElAD" entity="ent2">
+      <Selector id="sv2#dlu8#su143" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dlu8#su143#kcond75" name="KeyCondition75" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#dlu8#oln213" name="OKFlow213" to="sv2#page5" automaticCoupling="true"/>
+      <KOLink id="sv2#dlu8#kln110" name="KOFlow110" to="sv2#page5#mssu16">
+        <LinkParameter id="sv2#dlu8#kln110#par1263" name="No fue posible eliminar el elemento administrable._Shown Messages" sourceValue="No fue posible eliminar el elemento administrable." target="sv2#page5#mssu16.shownMessages"/>
+      </KOLink>
+    </DeleteUnit>
+    <ScriptUnit gr:x="-330" gr:y="75" id="sv2#scu26" name="unixShell" script="WEB-INF/descr/groovy/commandline.groovy">
+      <OKLink id="sv2#scu26#oln553" name="OKFlow553" to="sv2#page15#enu17" gr:bendpoints="111,4,-139,29">
+        <LinkParameter id="sv2#scu26#oln553#par2121" name="consola_respuesta" source="result(consola)" target="sv2#page15#enu17#fld190_slot"/>
+        <LinkParameter id="sv2#scu26#oln553#par2126" name="comando_comando" target="sv2#page15#enu17#fld191_slot" sourceLinkParameter="sv2#page15#enu17#ln428#par2286"/>
+      </OKLink>
+      <KOLink id="sv2#scu26#kln258" name="KOFlow258" to="sv2#page15#enu17" gr:bendpoints="107,-26,-143,-1">
+        <LinkParameter id="sv2#scu26#kln258#par2122" name="consola_respuesta" source="result(consola)" target="sv2#page15#enu17#fld190_slot"/>
+        <LinkParameter id="sv2#scu26#kln258#par2287" name="comando_PASSING_comando" sourceLinkParameter="sv2#page15#enu17#ln428#par2286" target="sv2#page15#enu17#fld191_slot"/>
+      </KOLink>
+    </ScriptUnit>
+    <ModuleInstanceUnit gr:x="390" gr:y="-375" id="sv2#miu78" action="true" moduleId="mov2#opm9">
+      <OKLink id="sv2#miu78#oln607" name="OKFlow607" to="sv2#page68#enu63" gr:bendpoints="-5,81,-25,-74">
+        <LinkParameter id="sv2#miu78#oln607#par2204" name="response_response" source="mov2#opm9#okcu3#ocp175" target="sv2#page68#enu63#fld173_slot"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ScriptUnit gr:x="765" gr:y="-190" id="sv2#scu70" name="INE">
+      <ScriptUnitText xml:space="preserve">#output anioEmision,anioRegistro,apellidoMaterno,apellidoPaterno,claveElector,curp,nombre,numeroEmision
+
+import mx.gob.economia.apps.ine.client.*
+import mx.gob.economia.apps.ine.client.excepciones.*
+import mx.gob.economia.apps.ine.client.listeners.*
+import mx.gob.economia.apps.ine.client.objetos.*
+import mx.gob.economia.apps.ine.client.servicioine.*
+import mx.gob.economia.apps.ine.client.servlets.*
+
+String ocr = "3213128925605"
+//String cic = "112766236"
+String cic = ""
+String numeroEmision = "5"
+String claveElector = "GVOLEL98072615H900"
+String nombre = "GUILLERMO IVAN"
+String paterno = "NU&#209;EZ"
+String materno = "SOLOLZANO"
+String anioEmision = "2000"
+String anioRegistro = "1998"
+String curp = "GUOE980726HMCVLL05"
+/*
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://servicios.mediador.ine.apps.economia.gob.mx/"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ser:validaDatos&gt;
+         &lt;!--Optional:--&gt;
+         &lt;ocr&gt;3213128925605&lt;/ocr&gt;
+         &lt;!--Optional:--&gt;
+         &lt;cic&gt;112766236&lt;/cic&gt;
+         &lt;numeroEmision&gt;5&lt;/numeroEmision&gt;
+         &lt;claveElector&gt;GVOLEL98072615H900&lt;/claveElector&gt;
+         &lt;nombre&gt;GUILLERMO IVAN&lt;/nombre&gt;
+         &lt;apellidoPaterno&gt;NU&#209;EZ&lt;/apellidoPaterno&gt;
+         &lt;apellidoMaterno&gt;SOLOLZANO&lt;/apellidoMaterno&gt;
+         &lt;!--Optional:--&gt;
+         &lt;anioEmision&gt;2000&lt;/anioEmision&gt;
+         &lt;!--Optional:--&gt;
+         &lt;anioResgistro&gt;1998&lt;/anioResgistro&gt;
+         &lt;!--Optional:--&gt;
+         &lt;curp&gt;GUOE980726HMCVLL05&lt;/curp&gt;
+      &lt;/ser:validaDatos&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+
+String ocr = "5071011815075"
+String cic = null
+String numeroEmision = "02"
+String claveElector = "DECO780126EDWQDA99"
+String nombre = "vicente"
+String paterno =null
+String materno = null
+String anioEmision = null
+String anioRegistro = null
+String curp = null
+String ocr = "5071011815075"
+String cic = null
+String numeroEmision = "02"
+String claveElector = "DECO780126EDWQDA99"
+String nombre = "vicente"
+String paterno =null
+String materno = null
+String anioEmision = null
+String anioRegistro = null
+String curp = null
+
+*/
+String uriINE = "https://esb-qa.economia.gob.mx/serviciosOsb/ine/ineService?wsdl"
+ClienteINE c=new ClienteINE(uriINE);
+ValidacionDatosWS res = c.validaInformacion(ocr, cic, numeroEmision, claveElector, nombre, paterno, materno, anioEmision, anioRegistro, curp);
+println("Situaci&#243;n Registral: "+res.getSituacionRegistral());
+return["anioEmision":res.getValidacion().isAnioEmision(),"anioRegistro":res.getValidacion().isAnioRegistro(),"apellidoMaterno":res.getValidacion().isApellidoMaterno(),"apellidoPaterno":res.getValidacion().isApellidoPaterno(),"claveElector":res.getValidacion().isClaveElector(),"curp":res.getValidacion().isCurp(),"nombre":res.getValidacion().isNombre(),"numeroEmision":res.getValidacion().isNumeroEmision()]
+</ScriptUnitText>      <OKLink id="sv2#scu70#oln160" name="OKFlow160" to="sv2#page68#enu63" gr:bendpoints="-122,-19,113,46">        <LinkParameter id="sv2#scu70#oln160#par2231" name="apellidoMaterno_request" source="result(apellidoMaterno)" target="sv2#page68#enu63#fld172_slot"/>        <LinkParameter id="sv2#scu70#oln160#par2232" name="numeroEmision_response" source="result(numeroEmision)" target="sv2#page68#enu63#fld173_slot"/>      </OKLink>    </ScriptUnit>    <ScriptUnit id="sv2#scu72" name="INEPROD" gr:x="790" gr:y="-101">      <ScriptUnitText xml:space="preserve">#output anioEmision,anioRegistro,apellidoMaterno,apellidoPaterno,claveElector,curp,nombre,numeroEmision
+import mx.gob.economia.apps.ine.client.*
+import mx.gob.economia.apps.ine.client.excepciones.*
+import mx.gob.economia.apps.ine.client.listeners.*
+import mx.gob.economia.apps.ine.client.objetos.*
+import mx.gob.economia.apps.ine.client.servicioine.*
+import mx.gob.economia.apps.ine.client.servlets.*
+
+String ocr = "0664093130951"
+String cic = "130352735"
+String numeroEmision = "1"
+String claveElector = "VRLZGS94090809H900"
+String nombre = "GUSTAVO ALBERTO"
+String paterno = "VARGAS"
+String materno = "LOZADA"
+String anioEmision = "2015"
+String anioRegistro = "2012"
+String curp = "VALG940908HDFRZS01"
+/*
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://servicios.mediador.ine.apps.economia.gob.mx/"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ser:validaDatos&gt;
+         &lt;!--Optional:--&gt;
+         &lt;ocr&gt;3213128925605&lt;/ocr&gt;
+         &lt;!--Optional:--&gt;
+         &lt;cic&gt;112766236&lt;/cic&gt;
+         &lt;numeroEmision&gt;5&lt;/numeroEmision&gt;
+         &lt;claveElector&gt;GVOLEL98072615H900&lt;/claveElector&gt;
+         &lt;nombre&gt;GUILLERMO IVAN&lt;/nombre&gt;
+         &lt;apellidoPaterno&gt;NU&#209;EZ&lt;/apellidoPaterno&gt;
+         &lt;apellidoMaterno&gt;SOLOLZANO&lt;/apellidoMaterno&gt;
+         &lt;!--Optional:--&gt;
+         &lt;anioEmision&gt;2000&lt;/anioEmision&gt;
+         &lt;!--Optional:--&gt;
+         &lt;anioResgistro&gt;1998&lt;/anioResgistro&gt;
+         &lt;!--Optional:--&gt;
+         &lt;curp&gt;GUOE980726HMCVLL05&lt;/curp&gt;
+      &lt;/ser:validaDatos&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+
+String ocr = "5071011815075"
+String cic = null
+String numeroEmision = "02"
+String claveElector = "DECO780126EDWQDA99"
+String nombre = "vicente"
+String paterno =null
+String materno = null
+String anioEmision = null
+String anioRegistro = null
+String curp = null
+String ocr = "5071011815075"
+String cic = null
+String numeroEmision = "02"
+String claveElector = "DECO780126EDWQDA99"
+String nombre = "vicente"
+String paterno =null
+String materno = null
+String anioEmision = null
+String anioRegistro = null
+String curp = null
+
+*/
+String uriINE = "https://esb.economia.gob.mx/serviciosOsb/ine/ineService?wsdl"
+ClienteINE c=new ClienteINE(uriINE);
+ValidacionDatosWS res = c.validaInformacion(ocr, cic, numeroEmision, claveElector, nombre, paterno, materno, anioEmision, anioRegistro, curp);
+println("Situaci&#243;n Registral: "+res.getSituacionRegistral());
+return["anioEmision":res.getValidacion().isAnioEmision(),"anioRegistro":res.getValidacion().isAnioRegistro(),"apellidoMaterno":res.getValidacion().isApellidoMaterno(),"apellidoPaterno":res.getValidacion().isApellidoPaterno(),"claveElector":res.getValidacion().isClaveElector(),"curp":res.getValidacion().isCurp(),"nombre":res.getValidacion().isNombre(),"numeroEmision":res.getValidacion().isNumeroEmision()]
+</ScriptUnitText>      <OKLink id="sv2#scu72#oln580" name="OKFlow160" to="sv2#page68#enu63" gr:bendpoints="-122,-19,113,46">        <LinkParameter id="sv2#scu72#oln580#par2255" name="apellidoMaterno_request" source="result(apellidoMaterno)" target="sv2#page68#enu63#fld172_slot"/>        <LinkParameter id="sv2#scu72#oln580#par2256" name="numeroEmision_response" source="result(numeroEmision)" target="sv2#page68#enu63#fld173_slot"/>      </OKLink>    </ScriptUnit>    <ScriptUnit id="sv2#scu74" name="listaArchivos" gr:x="-105" gr:y="245">      <ScriptUnitText xml:space="preserve">#input String ruta
+#output lineas
+
+                                      
+String lineas = "";                                     
+String [] commands = ["ls", "-al", ruta]
+Process process = new ProcessBuilder(commands).start(); // se crea el proceso
+
+// Se lee la salida
+InputStream is = process.getInputStream();
+InputStreamReader isr = new InputStreamReader(is);
+BufferedReader br = new BufferedReader(isr);
+
+String line;
+while ((line = br.readLine()) != null) {
+  lineas += "\n" + line;
+}
+
+// Esperamos que el proceso termine
+try {
+  int exitValue = process.waitFor();
+  System.out.println("\nC&#243;digo de salida: "+ exitValue);
+} catch (InterruptedException e) {
+  e.printStackTrace(System.err);
+}
+
+return["lineas":lineas]
+</ScriptUnitText>      <OKLink id="sv2#scu74#oln699" name="OKFlow1135" to="sv2#page16#enu11">        <LinkParameter id="sv2#scu74#oln699#par864" name="lineas_textoArchivo" source="result(lineas)" target="sv2#page16#enu11#fld155_slot"/>      </OKLink>      <KOLink id="sv2#scu74#kln307" name="KOFlow527" to="sv2#page16#mssu33" gr:bendpoints="-105,58,140,-42">        <LinkParameter id="sv2#scu74#kln307#par873" name="Error al listar archivos_Shown Messages" target="sv2#page16#mssu33.shownMessages" sourceValue="Error al listar archivos"/>      </KOLink>    </ScriptUnit>    <ScriptUnit id="sv2#scu79" name="leerArchivo" gr:x="-185" gr:y="170">      <ScriptUnitText xml:space="preserve">#input String ruta
+#output textoArchivo
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+String leerArchivo (String path)
+  throws IOException 
+{
+  byte[] encoded = Files.readAllBytes(Paths.get(path));
+  return new String(encoded);
+}
+
+String textoArchivo = leerArchivo(ruta);
+
+return ["textoArchivo":textoArchivo]</ScriptUnitText>
+      <OKLink id="sv2#scu79#oln701" name="OKFlow422" to="sv2#page16#enu11">
+        <LinkParameter id="sv2#scu79#oln701#par1488" name="rtx_rtxConfig" source="result(textoArchivo)" target="sv2#page16#enu11#fld155_slot"/>
+      </OKLink>
+      <KOLink id="sv2#scu79#kln308" name="KOFlow522" to="sv2#scu74">
+        <LinkParameter id="sv2#scu79#kln308#par1489" name="ruta_PASSING_ruta" sourceLinkParameter="sv2#page16#enu11#ln588#par1485" target="sv2#scu74.ruta"/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit id="sv2#scu81" name="ejecutar" gr:x="-220" gr:y="455">
+      <ScriptUnitText xml:space="preserve">#input String ruta, String comando
+#output p
+
+import java.io.*; 
+
+//String ruta = "/Applications/LibreOffice.app/Contents/MacOS/"
+//String comando = '''soffice --headless --accept="socket,host=127.0.0.1,port=8100;urp;" --nofirststartwizard --nodefault --nolockcheck --nologo --norestore --invisible &amp; &gt; /dev/null 2&gt;&amp;1'''
+String proceso = ruta + comando;
+Process p = Runtime.getRuntime().exec(proceso);
+
+return["p":p]</ScriptUnitText>
+      <OKLink id="sv2#scu81#oln705" name="OKFlow1136" to="sv2#page16#enu11" gr:bendpoints="-68,-45,47,65">
+        <LinkParameter id="sv2#scu81#oln705#par1490" name="p_textoArchivo" source="result(p)" target="sv2#page16#enu11#fld155_slot"/>
+      </OKLink>
+      <KOLink id="sv2#scu81#kln312" name="KOFlow525" to="sv2#page16#mssu33">
+        <LinkParameter id="sv2#scu81#kln312#par1491" name="Error al ejecutar_Shown Messages" target="sv2#page16#mssu33.shownMessages" sourceValue="Error al ejecutar"/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit id="sv2#scu82" name="guardarArchivo" gr:x="-40" gr:y="365">
+      <ScriptUnitText xml:space="preserve">#input String rutaArchivo,String textoArchivo
+#output rutaArchivo
+
+new File(rutaArchivo).write(textoArchivo)
+
+return["rutaArchivo":rutaArchivo]</ScriptUnitText>
+      <OKLink id="sv2#scu82#oln706" name="OKFlow472" to="sv2#page16#enu11" ajaxOpenWindow="false" gr:bendpoints="-130,89,160,19">
+        <LinkParameter id="sv2#scu82#oln706#par1492" name="rtx_rtxConfig" target="sv2#page16#enu11#fld155_slot" sourceValue="$$NULL$$"/>
+      </OKLink>
+      <KOLink id="sv2#scu82#kln318" name="KOFlow526" to="sv2#page16#mssu33">
+        <LinkParameter id="sv2#scu82#kln318#par1493" name="Error al guardar_Shown Messages" target="sv2#page16#mssu33.shownMessages" sourceValue="Error al guardar"/>
+      </KOLink>
+    </ScriptUnit>
+    <ExcelUnit id="sv2#exu2" name="Cargar Archivo" gr:x="1215" gr:y="-115" mode="read" format="xls" sourceType="blob" cellInfoOrder="sv2#exu2#ci28 sv2#exu2#ci17 sv2#exu2#ci24 sv2#exu2#ci19 sv2#exu2#ci23 sv2#exu2#ci26 sv2#exu2#ci9 sv2#exu2#ci4" linkOrder="sv2#exu2#ln595">
+      <CellInfo id="sv2#exu2#ci4" name="DSCURP" type="string" preserveCellStyle="false" autoSizeColumn="true" column="K" rows="2:"/>
+      <CellInfo id="sv2#exu2#ci9" name="DSRFC" type="string" preserveCellStyle="false" autoSizeColumn="true" column="L" rows="2:"/>
+      <CellInfo id="sv2#exu2#ci17" name="TIPOFEDATARIO" type="string" preserveCellStyle="false" autoSizeColumn="true" column="B" rows="2:"/>
+      <CellInfo id="sv2#exu2#ci19" name="DSESTADO" type="string" preserveCellStyle="false" autoSizeColumn="true" rows="2:" column="G"/>
+      <CellInfo id="sv2#exu2#ci23" name="DSMUNICIPIO" type="string" preserveCellStyle="false" autoSizeColumn="true" rows="2:" column="H"/>
+      <CellInfo id="sv2#exu2#ci24" name="CRNUMERO" type="integer" preserveCellStyle="false" autoSizeColumn="true" column="F" rows="2:"/>
+      <CellInfo id="sv2#exu2#ci26" name="ESTATUSFEDATARIO" type="string" preserveCellStyle="false" autoSizeColumn="true" column="I" rows="2:"/>
+      <CellInfo id="sv2#exu2#ci28" name="LLFEDATARIO" type="integer" preserveCellStyle="false" autoSizeColumn="true" column="A" rows="2:"/>
+      <OKLink id="sv2#exu2#oln716" name="OKFlow716" to="sv2#lpu4" automaticCoupling="true"/>
+      <Link id="sv2#exu2#ln595" name="Flow595" to="sv2#lpu4" type="transport" validate="true" gr:bendpoints="83,-33,-67,57">
+        <LinkParameter id="sv2#exu2#ln595#par1505" name="CRNUMERO_CRNUMERO" source="sv2#exu2#ci24Array" target="sv2#lpu4#lsa14"/>
+        <LinkParameter id="sv2#exu2#ln595#par1507" name="DSESTADO_DSESTADO" source="sv2#exu2#ci19Array" target="sv2#lpu4#lsa16"/>
+        <LinkParameter id="sv2#exu2#ln595#par1508" name="DSMUNICIPIO_DSMUNICIPIO" source="sv2#exu2#ci23Array" target="sv2#lpu4#lsa17"/>
+        <LinkParameter id="sv2#exu2#ln595#par1509" name="DSRFC_DSRFC" source="sv2#exu2#ci9Array" target="sv2#lpu4#lsa19"/>
+        <LinkParameter id="sv2#exu2#ln595#par1510" name="ESTATUSFEDATARIO_ESTATUSFEDATARIO" source="sv2#exu2#ci26Array" target="sv2#lpu4#lsa18"/>
+        <LinkParameter id="sv2#exu2#ln595#par1511" name="DSCURP_Input Array" source="sv2#exu2#ci4Array" target="sv2#lpu4.array"/>
+        <LinkParameter id="sv2#exu2#ln595#par1512" name="LLFEDATARIO_LLFEDATARIO" source="sv2#exu2#ci28Array" target="sv2#lpu4#lsa4"/>
+        <LinkParameter id="sv2#exu2#ln595#par1513" name="TIPOFEDATARIO_TIPOFEDATARIO" source="sv2#exu2#ci17Array" target="sv2#lpu4#lsa5"/>
+      </Link>
+      <KOLink id="sv2#exu2#kln323" name="KOFlow323" to="sv2#page19#mssu34">
+        <LinkParameter id="sv2#exu2#kln323#par1727" name="Error en el archivo_Shown Messages" sourceValue="Error en el archivo" target="sv2#page19#mssu34.shownMessages"/>
+      </KOLink>
+    </ExcelUnit>
+    <ModuleInstanceUnit gr:x="1530" gr:y="-280" id="sv2#miu84" action="true" moduleId="mov2#opm2">
+      <KOLink id="sv2#miu84#kln322" name="KOFlow322" to="sv2#page19#mssu34" gr:bendpoints="-236,252,329,12;-387,261,178,21">
+        <LinkParameter id="sv2#miu84#kln322#par1726" name="Error al agregar_Shown Messages" sourceValue="Error al agregar" target="sv2#page19#mssu34.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv2#miu84#oln720" name="OKFlow720" to="sv2#lpu4" automaticCoupling="true" gr:bendpoints="-156,-1,69,-71"/>
+    </ModuleInstanceUnit>
+    <LoopUnit gr:x="1365" gr:y="-205" id="sv2#lpu4" name="LoopFedatarios">
+      <OKLink id="sv2#lpu4#oln717" name="OKFlow717" to="sv2#miu84" automaticCoupling="true" code="next"/>
+      <SecondaryArray id="sv2#lpu4#lsa4" name="LLFEDATARIO"/>
+      <SecondaryArray id="sv2#lpu4#lsa5" name="TIPOFEDATARIO"/>
+      <SecondaryArray id="sv2#lpu4#lsa14" name="CRNUMERO"/>
+      <SecondaryArray id="sv2#lpu4#lsa16" name="DSESTADO"/>
+      <SecondaryArray id="sv2#lpu4#lsa17" name="DSMUNICIPIO"/>
+      <SecondaryArray id="sv2#lpu4#lsa18" name="ESTATUSFEDATARIO"/>
+      <SecondaryArray id="sv2#lpu4#lsa19" name="DSRFC"/>
+      <Link id="sv2#lpu4#ln599" name="Flow599" to="sv2#miu84" type="transport" validate="true" gr:bendpoints="89,-13,-136,57">
+        <LinkParameter id="sv2#lpu4#ln599#par1544" name="Next Element (CRNUMERO)_CRNUMERO" source="sv2#lpu4#lsa14" target="sv2#miu84.mov2#opm2#icu3#icp232"/>
+        <LinkParameter id="sv2#lpu4#ln599#par1545" name="Next Element (DSCURP)_DSCURP" source="next" target="sv2#miu84.mov2#opm2#icu3#icp237"/>
+        <LinkParameter id="sv2#lpu4#ln599#par1546" name="Next Element (DSESTADO)_DSESTADO" source="sv2#lpu4#lsa16" target="sv2#miu84.mov2#opm2#icu3#icp233"/>
+        <LinkParameter id="sv2#lpu4#ln599#par1560" name="Next Element (DSMUNICIPIO)_DSMUNICIPIO" source="sv2#lpu4#lsa17" target="sv2#miu84.mov2#opm2#icu3#icp234"/>
+        <LinkParameter id="sv2#lpu4#ln599#par1721" name="Next Element (DSRFC)_DSRFC" source="sv2#lpu4#lsa19" target="sv2#miu84.mov2#opm2#icu3#icp236"/>
+        <LinkParameter id="sv2#lpu4#ln599#par1722" name="Next Element (ESTATUSFEDATARIO)_ESTATUSFEDATARIO" source="sv2#lpu4#lsa18" target="sv2#miu84.mov2#opm2#icu3#icp235"/>
+        <LinkParameter id="sv2#lpu4#ln599#par1723" name="Next Element (LLFEDATARIO)_LLFEDATARIO" source="sv2#lpu4#lsa4" target="sv2#miu84.mov2#opm2#icu3#icp218"/>
+        <LinkParameter id="sv2#lpu4#ln599#par1724" name="Next Element (TIPOFEDATARIO)_TIPOFEDATARIO" source="sv2#lpu4#lsa5" target="sv2#miu84.mov2#opm2#icu3#icp231"/>
+      </Link>
+      <OKLink id="sv2#lpu4#oln718" name="OKFlow718" to="sv2#page19#mssu34" code="end" gr:bendpoints="-196,-1,134,-151">
+        <LinkParameter id="sv2#lpu4#oln718#par1725" name="Se agregaron exitosamente los FEDATARIOS_Shown Messages" sourceValue="Se agregaron exitosamente los FEDATARIOS" target="sv2#page19#mssu34.shownMessages"/>
+      </OKLink>
+    </LoopUnit>
+    <ExcelUnit gr:x="1380" gr:y="-380" id="sv2#exu5" name="cargar archivo" mode="read" format="xls" sourceType="blob" linkOrder="sv2#exu5#ln999">
+      <CellInfo id="sv2#exu5#ci20" name="idTipoSociedad" type="string" preserveCellStyle="false" autoSizeColumn="true" column="A" rows="1:"/>
+      <CellInfo id="sv2#exu5#ci21" name="Tipo Sociedad" type="string" preserveCellStyle="false" autoSizeColumn="true" column="B" rows="2:"/>
+      <OKLink id="sv2#exu5#oln951" name="OKFlow951" to="sv2#lpu6" automaticCoupling="true"/>
+      <Link id="sv2#exu5#ln999" name="Flow999" to="sv2#lpu6" type="transport" validate="true" gr:bendpoints="99,-2,-111,33">
+        <LinkParameter id="sv2#exu5#ln999#par3097" name="idTipoSociedad_Input Array" source="sv2#exu5#ci20Array" target="sv2#lpu6.array"/>
+        <LinkParameter id="sv2#exu5#ln999#par3098" name="Tipo Sociedad_TipoSociedad" source="sv2#exu5#ci21Array" target="sv2#lpu6#lsa28"/>
+      </Link>
+      <KOLink id="sv2#exu5#kln412" name="KOFlow412" to="sv2#page65#mssu43">
+        <LinkParameter id="sv2#exu5#kln412#par3103" name="Error en el excel_Shown Messages" sourceValue="Error en el excel" target="sv2#page65#mssu43.shownMessages"/>
+      </KOLink>
+    </ExcelUnit>
+    <LoopUnit gr:x="1580" gr:y="-415" id="sv2#lpu6" name="LoopTipoSociedad" linkOrder="sv2#lpu6#ln1000">
+      <SecondaryArray id="sv2#lpu6#lsa28" name="TipoSociedad"/>
+      <OKLink id="sv2#lpu6#oln952" name="OKFlow952" to="sv2#cru59" automaticCoupling="true" code="next"/>
+      <Link id="sv2#lpu6#ln1000" name="Flow1000" to="sv2#cru59" type="transport" validate="true" gr:bendpoints="114,15,-111,15">
+        <LinkParameter id="sv2#lpu6#ln1000#par3099" name="Next Element (TipoSociedad)_tipoSociedad" source="sv2#lpu6#lsa28" target="sv2#cru59.ent63#att399"/>
+        <LinkParameter id="sv2#lpu6#ln1000#par3100" name="Next Element_oid" source="next" target="sv2#cru59.ent63#att398"/>
+      </Link>
+      <OKLink id="sv2#lpu6#oln954" name="OKFlow954" to="sv2#page65#mssu43" gr:bendpoints="-190,103,270,8" code="end">
+        <LinkParameter id="sv2#lpu6#oln954#par3101" name="Sociedades agregadas con exito_Shown Messages" sourceValue="Sociedades agregadas con exito" target="sv2#page65#mssu43.shownMessages"/>
+      </OKLink>
+    </LoopUnit>
+    <CreateUnit gr:x="1810" gr:y="-425" id="sv2#cru59" name="Create59" entity="ent63">
+      <OKLink id="sv2#cru59#oln953" name="OKFlow953" to="sv2#lpu6" automaticCoupling="true" gr:bendpoints="-111,-42,114,-42"/>
+      <KOLink id="sv2#cru59#kln411" name="KOFlow411" to="sv2#page65#mssu43" gr:bendpoints="-129,60,556,-35">
+        <LinkParameter id="sv2#cru59#kln411#par3102" name="Error al agregar las sociedades_Shown Messages" sourceValue="Error al agregar las sociedades" target="sv2#page65#mssu43.shownMessages"/>
+      </KOLink>
+    </CreateUnit>
+  </OperationUnits>
+</SiteView>

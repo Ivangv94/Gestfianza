@@ -1,0 +1,268 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym31" gr:x="165" gr:y="450" name="Constituir Sociedad Mercantil - Personal Fedatario - Capturar Informaci&#243;n de la sociedad." bpm:moduleType="activity" bpm:uuids="JKBD85VG_LSUK7T.JNXF1VHF_SPB834" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym31#icu65" name="Input" gr:x="-940" gr:y="90">
+      <OKLink id="mov1#hym31#icu65#oln459" name="OKLink" automaticCoupling="true" to="mov1#hym31#seu233"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym31#pu129" name="Complete Activity" mode="completeActivity" gr:x="800" gr:y="0"/>
+    <ProcessUnit id="mov1#hym31#pu130" name="Save Activity" mode="saveActivity" gr:x="800" gr:y="150"/>
+    <ProcessUnit id="mov1#hym31#pu131" name="Leave Activity" mode="leaveActivity" gr:x="800" gr:y="260"/>
+    <ActivityParametersUnit id="mov1#hym31#apu44" name="Set Parameters" gr:x="560" gr:y="100">
+      <OKLink id="mov1#hym31#apu44#oln466" name="OKLink" automaticCoupling="false" to="mov1#hym31#pu129"/>
+      <OKLink id="mov1#hym31#apu44#oln467" name="OKLink" automaticCoupling="false" to="mov1#hym31#pu130" codeRef="mov1#hym31#page111#enu148#ln766"/>
+    </ActivityParametersUnit>
+    <SelectorUnit id="mov1#hym31#seu232" name="catalogoTipoSociedad" gr:x="0" gr:y="325" entity="ent63" linkOrder="mov1#hym31#seu232#ln1244">
+      <Link id="mov1#hym31#seu232#ln1244" name="Flow1244" to="mov1#hym31#page111#enu163" type="transport" validate="true">
+        <LinkParameter id="mov1#hym31#seu232#ln1244#par3912" name="tipoSociedad_tipoSociedad [label]" source="ent63#att399Array" target="mov1#hym31#page111#enu163#sfld77_label"/>
+        <LinkParameter id="mov1#hym31#seu232#ln1244#par3913" name="tipoSociedad_tipoSociedad [output]" source="ent63#att399Array" target="mov1#hym31#page111#enu163#sfld77_output"/>
+      </Link>
+      <OKLink id="mov1#hym31#seu232#oln1199" name="OKFlow1199" to="mov1#hym31#page111#enu163" automaticCoupling="true" gr:bendpoints="68,-58,-37,67"/>
+    </SelectorUnit>
+    <SelectorUnit id="mov1#hym31#seu233" name="usr" gr:x="-670" gr:y="85" entity="ent39">
+      <OKLink id="mov1#hym31#seu233#oln1196" name="OKFlow24" to="mov1#hym31#seu252">
+        <LinkParameter id="mov1#hym31#seu233#oln1196#par3929" name="oid_oidPersonal" source="userOIDArray" target="mov1#hym31#seu252#su433#acond200"/>
+      </OKLink>
+      <Selector id="mov1#hym31#seu233#su430" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym31#seu233#su430#acond198" name="USROID" predicate="eq" booleanOperator="or" implied="false" attributes="userOID"/>
+      </Selector>
+    </SelectorUnit>
+    <ScriptUnit id="mov1#hym31#scu164" name="tipoFedatario" gr:x="-185" gr:y="295" linkOrder="mov1#hym31#scu164#ln1245">
+      <ScriptUnitText xml:space="preserve">#input String tipoFed
+#output tipoInstrumento
+
+String limpio = tipoFed.replaceAll("p&#250;blico","");
+String limpio2 = limpio.replaceAll("publico","");
+String limpio3 = limpio2.replaceAll("Publico","");
+String limpio4 = limpio3.replaceAll("P&#250;blico","");
+String tipoFedatario = limpio4.replaceAll(" ","");
+String tipoInstrumento;
+
+
+if(tipoFedatario == "Corredor")
+{
+	tipoInstrumento = "Poliza"
+}
+
+else if (tipoFedatario == "Notario")
+{
+	tipoInstrumento = "Escritura"
+}
+
+
+return ["tipoInstrumento":tipoInstrumento]</ScriptUnitText>
+      <OKLink id="mov1#hym31#scu164#oln1197" name="OKFlow967" to="mov1#hym31#seu232" automaticCoupling="true"/>
+      <Link id="mov1#hym31#scu164#ln1245" name="Flow1245" to="mov1#hym31#page111#enu163" type="transport" validate="true">
+        <LinkParameter id="mov1#hym31#scu164#ln1245#par3911" name="tipoInstrumento_tipoInstrumento" source="result(tipoInstrumento)" target="mov1#hym31#page111#enu163#fld466_slot"/>
+      </Link>
+    </ScriptUnit>
+    <SelectorUnit id="mov1#hym31#seu235" name="datosNotario" gr:x="-365" gr:y="85" entity="ent8">
+      <Selector id="mov1#hym31#seu235#su431" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym31#seu235#su431#rcond262" name="PersonaFisicaToDatosNotario" predicate="in" implied="false" role="rel25#role50"/>
+      </Selector>
+      <Link id="mov1#hym31#seu235#ln1241" name="Flow1011" to="mov1#hym31#scu164" type="transport" validate="true" gr:bendpoints="-54,196,-79,-139">
+        <LinkParameter id="mov1#hym31#seu235#ln1241#par3903" name="tipo_tipoFed" source="ent8#att47Array" target="mov1#hym31#scu164.tipoFed"/>
+      </Link>
+      <OKLink id="mov1#hym31#seu235#oln1198" name="OKFlow1179" to="mov1#hym31#seu253"/>
+      <Link id="mov1#hym31#seu235#ln1242" name="Flow1242" to="mov1#hym31#page111#enu163" type="transport" validate="true" gr:bendpoints="133,72,-327,-3">
+        <LinkParameter id="mov1#hym31#seu235#ln1242#par3904" name="entidad_estado" source="ent8#att48Array" target="mov1#hym31#page111#enu163#fld458_slot"/>
+        <LinkParameter id="mov1#hym31#seu235#ln1242#par3905" name="municipio_municipio" source="ent8#att58Array" target="mov1#hym31#page111#enu163#fld459_slot"/>
+        <LinkParameter id="mov1#hym31#seu235#ln1242#par3906" name="numero_numero" source="ent8#att278Array" target="mov1#hym31#page111#enu163#fld451_slot"/>
+      </Link>
+    </SelectorUnit>
+    <ScriptUnit id="mov1#hym31#scu165" name="quienAutoriza" gr:x="395" gr:y="80">
+      <ScriptUnitText xml:space="preserve">#input String autorizacionOpermiso
+#output mostrarSE, mostrarSRE
+
+Boolean mostrarSE = false;
+Boolean mostrarSRE = false;
+
+if(autorizacionOpermiso == "Secretar&#237;a de Relaciones Exteriores"){
+	mostrarSE = false;
+	mostrarSRE = true;
+}else{
+	mostrarSE = true;
+	mostrarSRE = false;
+}
+
+return["mostrarSE":mostrarSE,"mostrarSRE":mostrarSRE]</ScriptUnitText>
+      <OKLink id="mov1#hym31#scu165#oln1200" name="OKFlow1200" to="mov1#hym31#page111#enu163" gr:bendpoints="-123,67,157,-28" ajaxOpenWindow="false">
+        <LinkParameter id="mov1#hym31#scu165#oln1200#par3915" name="mostrarSE_autorizaSE" source="result(mostrarSE)" targetVariable="mov1#hym31#page111#var118"/>
+        <LinkParameter id="mov1#hym31#scu165#oln1200#par3916" name="mostrarSRE_autorizaSRE" source="result(mostrarSRE)" targetVariable="mov1#hym31#page111#var117"/>
+      </OKLink>
+    </ScriptUnit>
+    <ModuleInstanceUnit id="mov1#hym31#miu149" gr:x="230" gr:y="355" action="true" moduleId="mov2#opm79" linkOrder="mov1#hym31#miu149#ln1252">
+      <OKLink id="mov1#hym31#miu149#oln1202" name="OKFlow1202" to="mov1#hym31#seu236" automaticCoupling="true"/>
+      <Link id="mov1#hym31#miu149#ln1252" name="Flow1252" to="mov1#hym31#page122#enu164" type="transport" validate="true" gr:bendpoints="229,72,-196,-113">
+        <LinkParameter id="mov1#hym31#miu149#ln1252#par3927" name="OK Port84.oidPM_denominacion" source="mov2#opm79#okcu84#ocp219" target="mov1#hym31#page122#enu164#fld476_slot"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <ScriptUnit id="mov1#hym31#scu166" name="obtenerMunicipio" gr:x="510" gr:y="515">
+      <ScriptUnitText xml:space="preserve">#input String numeroEstado, String ambiente
+#output dsMunicipio, llmunicipio, numeroEstado, numeroMunicipio, 
+
+//String numeroEstado ="9"
+//String numeroOficina ="39"
+//String ambiente = "desarrollo"
+String endpointUrl = "http://10.100.40.5:3080/ServicioWebCatalogosSiger/webresources/municipios/"
+if (ambiente.equals("local")) 
+{
+    endpointUrl = "http://10.100.40.5:3080/ServicioWebCatalogosSiger/webresources/municipios/"
+} 
+    else if (ambiente.equals("desarrollo")) 
+{
+    endpointUrl = "http://10.100.40.5:3080/ServicioWebCatalogosSiger/webresources/municipios/"
+} 
+    else if (ambiente.equals("qa")) 
+{
+    endpointUrl = "http://172.18.53.139:3580/ServicioWebCatalogosSiger/webresources/municipios/"
+} 
+else if (ambiente.equals("prod")) 
+{
+   endpointUrl = "http://10.100.11.16:3580/ServicioWebCatalogosSiger/webresources/municipios/"
+} 
+
+else 
+{
+   endpointUrl = "http://10.100.11.16:3580/ServicioWebCatalogosSiger/webresources/municipios/"
+}
+
+def dirtyProc = "curl " + endpointUrl + numeroEstado 
+
+String proc = dirtyProc.execute().text
+
+String estados = proc.replaceAll("\\{", "");
+String estados2 = estados.replaceAll("\\}", "");
+String estados3 = estados2.replaceAll("\"", "");
+String estados4 = estados3.replaceAll("dsMunicipio:", "");
+String estados5 = estados4.replaceAll("llestado:", "");
+String estados6 = estados5.replaceAll("llmunicipio:", "");
+String estados7 = estados6.replaceAll("\\[", "");
+String estados8 = estados7.replaceAll("\\]", "");
+String[] cadena = estados8.split(",");
+String[] dsMunicipio = new String[cadena.size()/3]
+String[] llestado = new String[cadena.size()/3]
+String[] idMunicipio = new String[cadena.size()/3]
+String[] llmunicipio = new String[cadena.size()/3]
+// dsMunicipio
+int j=0;
+for (int i=0; i&lt;dsMunicipio.size(); i++)
+{
+    llmunicipio[i]=cadena[j]
+    dsMunicipio[i]=cadena[j]
+    j+=3
+}
+// llmunicipio
+int x=2;
+for (int i=0; i&lt;llmunicipio.size(); i++)
+{
+    llmunicipio[i]=cadena[x]
+    x+=3
+}
+
+
+return["dsMunicipio":dsMunicipio,"llmunicipio":llmunicipio,"numeroEstado":numeroEstado]</ScriptUnitText>
+      <OKLink id="mov1#hym31#scu166#oln1204" name="OKFlow1204" to="mov1#hym31#page122#enu164" gr:bendpoints="92,28,-108,-2">
+        <LinkParameter id="mov1#hym31#scu166#oln1204#par3922" name="dsMunicipio_municipio [label]" source="result(dsMunicipio)" target="mov1#hym31#page122#enu164#sfld82_label"/>
+        <LinkParameter id="mov1#hym31#scu166#oln1204#par3923" name="llmunicipio_municipio [output]" source="result(llmunicipio)" target="mov1#hym31#page122#enu164#sfld82_output"/>
+      </OKLink>
+    </ScriptUnit>
+    <ScriptUnit id="mov1#hym31#scu167" name="obtenerEstados" gr:x="355" gr:y="515" linkOrder="mov1#hym31#scu167#ln1248">
+      <ScriptUnitText xml:space="preserve">#input String ambiente
+#output nombreEstado, numeroEstado, ambiente
+String endpointUrl = "http://10.100.40.5:3080/ServicioWebCatalogosSiger/webresources/estados"
+if (ambiente.equals("local")) 
+{
+    endpointUrl = "http://10.100.40.5:3080/ServicioWebCatalogosSiger/webresources/estados"
+} 
+    else if (ambiente.equals("desarrollo")) 
+{
+    endpointUrl = "http://10.100.40.5:3080/ServicioWebCatalogosSiger/webresources/estados"
+} 
+    else if (ambiente.equals("qa")) 
+{
+    endpointUrl = "http://172.18.53.139:3580/ServicioWebCatalogosSiger/webresources/estados"
+} 
+	else if (ambiente.equals("prod")) 
+{
+    endpointUrl = "http://10.100.11.16:3580/ServicioWebCatalogosSiger/webresources/estados/"
+} 
+	
+else 
+{
+    endpointUrl = "http://10.100.11.16:3580/ServicioWebCatalogosSiger/webresources/estados/"
+}
+
+
+def dirtyProc = "curl " + endpointUrl
+
+String proc = "" + dirtyProc.execute().text
+
+String estados = proc.replaceAll("\\{", "");
+String estados2 = estados.replaceAll("\\}", "");
+String estados3 = estados2.replaceAll("\"", "");
+String estados4 = estados3.replaceAll("dsestado:", "");
+String estados5 = estados4.replaceAll("llestado:", "");
+String estados6 = estados5.replaceAll("\\[", "");
+String estados7 = estados6.replaceAll("\\]", "");
+String[] dsestado = estados7.split(",");
+String[] nombreEstado = new String[dsestado.size()/2]
+String[] numeroEstado = new String[dsestado.size()/2]
+
+int j=0;
+for (int i=0; i&lt;nombreEstado.size(); i++)
+{nombreEstado[i]=dsestado[j]
+j+=2
+}
+int x=1;
+for (int i=0; i&lt;numeroEstado.size(); i++)
+{numeroEstado[i]=dsestado[x]
+x+=2
+}
+
+return["nombreEstado":nombreEstado,"numeroEstado":numeroEstado, "ambiente":ambiente]</ScriptUnitText>
+      <OKLink id="mov1#hym31#scu167#oln1203" name="OKFlow1203" to="mov1#hym31#page122#enu164" gr:bendpoints="29,51,-331,21;245,53,-115,23">
+        <LinkParameter id="mov1#hym31#scu167#oln1203#par3918" name="ambiente_ambiente" source="result(ambiente)" target="mov1#hym31#page122#enu164#fld477_slot"/>
+        <LinkParameter id="mov1#hym31#scu167#oln1203#par3919" name="nombreEstado_estado [label]" source="result(nombreEstado)" target="mov1#hym31#page122#enu164#sfld81_label"/>
+        <LinkParameter id="mov1#hym31#scu167#oln1203#par3920" name="numeroEstado_estado [output]" source="result(numeroEstado)" target="mov1#hym31#page122#enu164#sfld81_output"/>
+      </OKLink>
+      <Link id="mov1#hym31#scu167#ln1248" name="Flow1248" to="mov1#hym31#page122#apu77" type="transport" validate="true" gr:bendpoints="29,79,-441,124;473,83,3,128">
+        <LinkParameter id="mov1#hym31#scu167#ln1248#par3924" name="ambiente_PASSING" source="result(ambiente)" passing="true"/>
+      </Link>
+    </ScriptUnit>
+    <SelectorUnit id="mov1#hym31#seu236" name="Selector116" gr:x="140" gr:y="510" entity="ent2">
+      <Selector id="mov1#hym31#seu236#su432" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym31#seu236#su432#acond199" name="AttCondition122" predicate="eq" booleanOperator="or" implied="false" attributes="ent2#att11" value="ambiente"/>
+      </Selector>
+      <OKLink id="mov1#hym31#seu236#oln1201" name="OKFlow1170" to="mov1#hym31#scu167">
+        <LinkParameter id="mov1#hym31#seu236#oln1201#par3917" name="valor_ambiente" source="ent2#att12Array" target="mov1#hym31#scu167.ambiente"/>
+      </OKLink>
+    </SelectorUnit>
+    <GetUnit gr:x="-690" gr:y="-30" id="mov1#hym31#gtu59" name="Get59" contextParameters="UserCtxParam" linkOrder="mov1#hym31#gtu59#ln1253">
+      <Link id="mov1#hym31#gtu59#ln1253" name="Flow1253" to="mov1#hym31#seu233" type="transport" validate="true">
+        <LinkParameter id="mov1#hym31#gtu59#ln1253#par3928" name="UserCtxParam.oid_USROID" source="mov1#hym31#gtu59.UserCtxParam" target="mov1#hym31#seu233#su430#acond198"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="-510" gr:y="85" id="mov1#hym31#seu252" name="Selector252" entity="ent71" linkOrder="mov1#hym31#seu252#ln1255">
+      <Selector id="mov1#hym31#seu252#su433" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym31#seu252#su433#acond200" name="oidPersonal" predicate="eq" booleanOperator="or" implied="false" attributes="ent71#att469"/>
+      </Selector>
+      <OKLink id="mov1#hym31#seu252#oln1205" name="OKFlow1205" to="mov1#hym31#seu235">
+        <LinkParameter id="mov1#hym31#seu252#oln1205#par3937" name="PersonalFedatarioToDatosFedatario.oid_PersonaFisicaToDatosNotario [oid]" source="rel48#role95_ent8#att46Array" target="mov1#hym31#seu235#su431#rcond262.userOID"/>
+      </OKLink>
+      <Link id="mov1#hym31#seu252#ln1255" name="Flow1255" to="mov1#hym31#seu253" type="transport" validate="true" gr:bendpoints="73,-69,-297,-69;173,-71,-197,-71;272,-67,-98,-67">
+        <LinkParameter id="mov1#hym31#seu252#ln1255#par3938" name="PersonalFedatarioToDatosFedatario.oid_KeyCondition193 [oid]" source="rel48#role95_ent8#att46Array" target="mov1#hym31#seu253#su434#kcond193.userOID"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="-165" gr:y="85" id="mov1#hym31#seu253" name="Selector253" entity="ent39">
+      <Selector id="mov1#hym31#seu253#su434" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym31#seu253#su434#kcond193" name="KeyCondition193" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym31#seu253#oln1206" name="OKFlow1206" to="mov1#hym31#scu164" automaticCoupling="true"/>
+      <Link id="mov1#hym31#seu253#ln1254" name="Flow1254" to="mov1#hym31#page111#enu163" type="transport" validate="true">
+        <LinkParameter id="mov1#hym31#seu253#ln1254#par3930" name="nombre_nom" source="ent39#att272Array" target="mov1#hym31#page111#enu163#fld450_slot"/>
+        <LinkParameter id="mov1#hym31#seu253#ln1254#par3931" name="apellido1_primerApellido" source="ent39#att271Array" target="mov1#hym31#page111#enu163#fld456_slot"/>
+        <LinkParameter id="mov1#hym31#seu253#ln1254#par3932" name="RFC_rfc" source="ent39#att268Array" target="mov1#hym31#page111#enu163#fld454_slot"/>
+        <LinkParameter id="mov1#hym31#seu253#ln1254#par3933" name="apellido2_segundoApellido" source="ent39#att270Array" target="mov1#hym31#page111#enu163#fld457_slot"/>
+      </Link>
+    </SelectorUnit>
+  </OperationUnits>
+</HybridModule>

@@ -1,0 +1,116 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="5" gr:y="115" id="mov2#mpkg8#opm59" name="verificarCadena">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg8#opm59#icu85" gr:x="-325" gr:y="-135" linkOrder="mov2#mpkg8#opm59#icu85#ln699 mov2#mpkg8#opm59#icu85#ln700">
+      <InputCollectorParameter id="mov2#mpkg8#opm59#icu85#icp200" name="cadena"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm59#icu85#icp201" name="moduloCompletado"/>
+      <OKLink id="mov2#mpkg8#opm59#icu85#oln651" name="OKFlow651" to="mov2#mpkg8#opm59#seu15" automaticCoupling="true"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm59#icu85#icp202" name="proceso"/>
+      <Link id="mov2#mpkg8#opm59#icu85#ln699" name="Flow699" to="mov2#mpkg8#opm59#cru24" type="transport" validate="true" gr:bendpoints="160,-68,-425,-68;456,-70,-129,-70">
+        <LinkParameter id="mov2#mpkg8#opm59#icu85#ln699#par2699" name="cadena_cadena" source="mov2#mpkg8#opm59#icu85#icp200" target="mov2#mpkg8#opm59#cru24.ent53#att331"/>
+        <LinkParameter id="mov2#mpkg8#opm59#icu85#ln699#par2700" name="cadena_cadenaOriginal" source="mov2#mpkg8#opm59#icu85#icp200" target="mov2#mpkg8#opm59#cru24.ent53#att342"/>
+        <LinkParameter id="mov2#mpkg8#opm59#icu85#ln699#par2701" name="proceso_proceso" source="mov2#mpkg8#opm59#icu85#icp202" target="mov2#mpkg8#opm59#cru24.ent53#att334"/>
+      </Link>
+      <Link id="mov2#mpkg8#opm59#icu85#ln700" name="Flow700" to="mov2#mpkg8#opm59#miu5" type="transport" validate="true" gr:bendpoints="145,173,-270,-2">
+        <LinkParameter id="mov2#mpkg8#opm59#icu85#ln700#par2703" name="moduloCompletado_elementoCompleto" source="mov2#mpkg8#opm59#icu85#icp201" target="mov2#mpkg8#opm59#miu5.mov2#mpkg8#opm60#icu88#icp199"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="1130" gr:y="-50" id="mov2#mpkg8#opm59#okcu59" name="OK formularioCURPRFC"/>
+    <OKCollectorUnit gr:x="1130" gr:y="265" id="mov2#mpkg8#opm59#okcu60" name="OK INE"/>
+    <ModuleInstanceUnit gr:x="125" gr:y="60" id="mov2#mpkg8#opm59#miu5" action="true" name="manejo tabla" moduleId="mov2#mpkg8#opm60">
+      <OKLink id="mov2#mpkg8#opm59#miu5#oln662" name="OKFlow662" to="mov2#mpkg8#opm59#scu77">
+        <LinkParameter id="mov2#mpkg8#opm59#miu5#oln662#par2609" name="cadena_cadena" source="mov2#mpkg8#opm60#okcu63#ocp153" target="mov2#mpkg8#opm59#scu77.cadena"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <OKCollectorUnit gr:x="1130" gr:y="155" id="mov2#mpkg8#opm59#okcu61" name="OK Efirma"/>
+    <SwitchUnit gr:x="790" gr:y="65" id="mov2#mpkg8#opm59#switch45" name="formulario">
+      <OKLink id="mov2#mpkg8#opm59#switch45#oln639" name="OKFlow639" to="mov2#mpkg8#opm59#switch46" code="true">
+        <LinkParameter id="mov2#mpkg8#opm59#switch45#oln639#par2585" name="verRFC_PASSING_Switch" sourceLinkParameter="mov2#mpkg8#opm59#scu77#oln685#par2710" target="mov2#mpkg8#opm59#switch46.switch"/>
+      </OKLink>
+      <OKLink id="mov2#mpkg8#opm59#switch45#oln642" name="OKFlow642" to="mov2#mpkg8#opm59#switch47" code="false">
+        <LinkParameter id="mov2#mpkg8#opm59#switch45#oln642#par2587" name="verFirma_PASSING_Switch" sourceLinkParameter="mov2#mpkg8#opm59#scu77#oln685#par2708" target="mov2#mpkg8#opm59#switch47.switch"/>
+        <LinkParameter id="mov2#mpkg8#opm59#switch45#oln642#par2588" name="verINE_PASSING" sourceLinkParameter="mov2#mpkg8#opm59#scu77#oln685#par2711" passing="true"/>
+      </OKLink>
+      <Case value="true"/>
+      <Case value="false"/>
+    </SwitchUnit>
+    <SwitchUnit gr:x="800" gr:y="-100" id="mov2#mpkg8#opm59#switch46" name="rfc">
+      <OKLink id="mov2#mpkg8#opm59#switch46#oln640" name="OKFlow640" to="mov2#mpkg8#opm59#okcu62" automaticCoupling="true" code="true"/>
+      <OKLink id="mov2#mpkg8#opm59#switch46#oln641" name="OKFlow641" to="mov2#mpkg8#opm59#okcu59" automaticCoupling="true" code="false"/>
+      <Case value="true"/>
+      <Case value="false"/>
+    </SwitchUnit>
+    <OKCollectorUnit id="mov2#mpkg8#opm59#okcu62" name="OK formularioRFC" gr:x="1130" gr:y="-120"/>
+    <SwitchUnit gr:x="800" gr:y="165" id="mov2#mpkg8#opm59#switch47" name="efirma">
+      <OKLink id="mov2#mpkg8#opm59#switch47#oln643" name="OKFlow643" to="mov2#mpkg8#opm59#okcu61" automaticCoupling="true" code="true"/>
+      <OKLink id="mov2#mpkg8#opm59#switch47#oln644" name="OKFlow644" to="mov2#mpkg8#opm59#switch48" code="false">
+        <LinkParameter id="mov2#mpkg8#opm59#switch47#oln644#par2589" name="verINE_PASSING_Switch" sourceLinkParameter="mov2#mpkg8#opm59#switch45#oln642#par2588" target="mov2#mpkg8#opm59#switch48.switch"/>
+      </OKLink>
+      <Case value="true"/>
+      <Case value="false"/>
+    </SwitchUnit>
+    <SwitchUnit gr:x="800" gr:y="275" id="mov2#mpkg8#opm59#switch48" name="INE">
+      <OKLink id="mov2#mpkg8#opm59#switch48#oln645" name="OKFlow645" to="mov2#mpkg8#opm59#okcu60" automaticCoupling="true" code="true"/>
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov2#mpkg8#opm59#switch48#oln663" name="OKFlow663" to="mov2#mpkg8#opm59#okcu64" automaticCoupling="true" code="false"/>
+    </SwitchUnit>
+    <CreateUnit gr:x="320" gr:y="-120" id="mov2#mpkg8#opm59#cru24" name="agregarCadena" entity="ent53">
+      <OKLink id="mov2#mpkg8#opm59#cru24#oln684" name="OKFlow684" to="mov2#mpkg8#opm59#scu77" gr:bendpoints="169,-1,-1,-176">
+        <LinkParameter id="mov2#mpkg8#opm59#cru24#oln684#par2720" name="cadena_cadena" source="ent53#att331Array" target="mov2#mpkg8#opm59#scu77.cadena"/>
+      </OKLink>
+    </CreateUnit>
+    <GetUnit gr:x="170" gr:y="-260" id="mov2#mpkg8#opm59#gtu37" name="getUser" contextParameters="UserCtxParam" linkOrder="mov2#mpkg8#opm59#gtu37#ln676 mov2#mpkg8#opm59#gtu37#ln677">
+      <Link id="mov2#mpkg8#opm59#gtu37#ln676" name="Flow676" to="mov2#mpkg8#opm59#cru24" type="transport" validate="true">
+        <LinkParameter id="mov2#mpkg8#opm59#gtu37#ln676#par2577" name="UserCtxParam.oid_userOID" source="mov2#mpkg8#opm59#gtu37.UserCtxParam" target="mov2#mpkg8#opm59#cru24.ent53#att353"/>
+      </Link>
+      <Link id="mov2#mpkg8#opm59#gtu37#ln677" name="Flow677" to="mov2#mpkg8#opm59#seu15" type="transport" validate="true">
+        <LinkParameter id="mov2#mpkg8#opm59#gtu37#ln677#par2579" name="UserCtxParam.oid_userOID" source="mov2#mpkg8#opm59#gtu37.UserCtxParam" target="mov2#mpkg8#opm59#seu15#su196#acond24"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="-25" gr:y="-125" id="mov2#mpkg8#opm59#seu15" name="verificarCadena" entity="ent53">
+      <Selector id="mov2#mpkg8#opm59#seu15#su196" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg8#opm59#seu15#su196#acond24" name="userOID" predicate="eq" booleanOperator="or" implied="false" attributes="ent53#att353"/>
+      </Selector>
+      <OKLink id="mov2#mpkg8#opm59#seu15#oln653" name="OKFlow653" to="mov2#mpkg8#opm59#inn33">
+        <LinkParameter id="mov2#mpkg8#opm59#seu15#oln653#par2702" name="cadenaOriginal_Input" source="ent53#att342Array" target="mov2#mpkg8#opm59#inn33.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="175" gr:y="-110" id="mov2#mpkg8#opm59#inn33" name="&#191;Existe?" emptyStringAsNull="true">
+      <KOLink id="mov2#mpkg8#opm59#inn33#kln304" name="KOFlow304" to="mov2#mpkg8#opm59#cru24" automaticCoupling="true"/>
+      <OKLink id="mov2#mpkg8#opm59#inn33#oln654" name="OKFlow654" to="mov2#mpkg8#opm59#miu5"/>
+    </IsNotNullUnit>
+    <ScriptUnit id="mov2#mpkg8#opm59#scu77" name="revisaCadena" gr:x="500" gr:y="65">
+      <ScriptUnitText xml:space="preserve">#input cadena
+#output verRFC, verFirma, verINE, verCurp
+boolean verRFC = false
+boolean verFormulario = false
+boolean verINE = false
+boolean verCurp = false
+boolean verFirma = false
+/*
+if (cadena.indexOf('CURP') != -1 || cadena.indexOf('RFC') != -1)
+    verFormulario = true
+*/
+if (cadena.indexOf('CURP') != -1)
+    verCurp = true   
+if (cadena.indexOf('RFC') != -1)
+    verRFC = true   
+//efirma
+if (cadena.indexOf('FIRMA') != -1)
+    verFirma = true   
+if (cadena.indexOf('Credencial de Elector') != -1)
+    verINE = true   
+return["verRFC":verRFC, "verFirma":verFirma, "verINE":verINE, "verCurp":verCurp]</ScriptUnitText>
+      <OKLink id="mov2#mpkg8#opm59#scu77#oln685" name="OKFlow655" to="mov2#mpkg8#opm59#switch45">
+        <LinkParameter id="mov2#mpkg8#opm59#scu77#oln685#par2708" name="verFirma_PASSING" source="result(verFirma)" passing="true"/>
+        <LinkParameter id="mov2#mpkg8#opm59#scu77#oln685#par2709" name="verPasaporte_PASSING" source="result(verPasaporte)" passing="true"/>
+        <LinkParameter id="mov2#mpkg8#opm59#scu77#oln685#par2710" name="verRFC_PASSING" source="result(verRFC)" passing="true"/>
+        <LinkParameter id="mov2#mpkg8#opm59#scu77#oln685#par2711" name="verINE_PASSING" source="result(verINE)" passing="true"/>
+        <LinkParameter id="mov2#mpkg8#opm59#scu77#oln685#par2712" name="verCurp_Switch" source="result(verCurp)" target="mov2#mpkg8#opm59#switch45.switch"/>
+      </OKLink>
+    </ScriptUnit>
+    <OKCollectorUnit gr:x="1140" gr:y="410" id="mov2#mpkg8#opm59#okcu64" name="OK Resultado">
+      <OutputCollectorParameter id="mov2#mpkg8#opm59#okcu64#ocp178" name="resultado"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

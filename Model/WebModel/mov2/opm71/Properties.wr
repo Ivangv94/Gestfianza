@@ -1,0 +1,76 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="40" gr:y="830" id="mov2#opm71" name="poderesAdminictracion">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm71#icu110" name="Input Collector" gr:x="30" gr:y="60">
+      <OKLink id="mov2#opm71#icu110#oln805" name="OKFlow805" to="mov2#opm71#seu151" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="310" gr:y="60" id="mov2#opm71#seu151" name="PyC" entity="ent58" linkOrder="mov2#opm71#seu151#ln865">
+      <Selector id="mov2#opm71#seu151#su268" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm71#seu151#su268#acond152" name="facultad" predicate="eq" booleanOperator="or" implied="false" attributes="ent58#att386" value="Poder general para pleitos y cobranzas"/>
+      </Selector>
+      <OKLink id="mov2#opm71#seu151#oln806" name="OKFlow806" to="mov2#opm71#seu152" automaticCoupling="true"/>
+      <KOLink id="mov2#opm71#seu151#kln366" name="KOFlow366" to="mov2#opm71#kocu62" automaticCoupling="true" gr:bendpoints="-3,206,-1378,-4"/>
+      <Link id="mov2#opm71#seu151#ln865" name="Flow865" to="mov2#opm71#okcu77" type="transport" validate="true" gr:bendpoints="79,-71,-1301,-96;673,-72,-707,-97;1172,-70,-208,-95">
+        <LinkParameter id="mov2#opm71#seu151#ln865#par2532" name="oid_oidPyC" source="ent58#att385Array" target="mov2#opm71#okcu77#ocp196"/>
+        <LinkParameter id="mov2#opm71#seu151#ln865#par2533" name="descripcion_PyC" source="ent58#att386Array" target="mov2#opm71#okcu77#ocp195"/>
+      </Link>
+    </SelectorUnit>
+    <OKCollectorUnit gr:x="1685" gr:y="25" id="mov2#opm71#okcu77" name="OK">
+      <OutputCollectorParameter id="mov2#opm71#okcu77#ocp204" name="oidEspeciales"/>
+      <OutputCollectorParameter id="mov2#opm71#okcu77#ocp203" name="especiales"/>
+      <OutputCollectorParameter id="mov2#opm71#okcu77#ocp202" name="oidTitulosCredito"/>
+      <OutputCollectorParameter id="mov2#opm71#okcu77#ocp201" name="titulosCredito"/>
+      <OutputCollectorParameter id="mov2#opm71#okcu77#ocp200" name="oidActosDominio"/>
+      <OutputCollectorParameter id="mov2#opm71#okcu77#ocp199" name="actosDominio"/>
+      <OutputCollectorParameter id="mov2#opm71#okcu77#ocp198" name="oidActosAdmin"/>
+      <OutputCollectorParameter id="mov2#opm71#okcu77#ocp197" name="actosAdmin"/>
+      <OutputCollectorParameter id="mov2#opm71#okcu77#ocp196" name="oidPyC"/>
+      <OutputCollectorParameter id="mov2#opm71#okcu77#ocp195" name="PyC"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1685" gr:y="275" id="mov2#opm71#kocu62" name="KO">
+      <OutputCollectorParameter id="mov2#opm71#kocu62#ocp205" name="errores"/>
+    </KOCollectorUnit>
+    <SelectorUnit gr:x="570" gr:y="60" id="mov2#opm71#seu152" name="actosAdministracion" entity="ent58" linkOrder="mov2#opm71#seu152#ln866">
+      <Selector id="mov2#opm71#seu152#su269" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm71#seu152#su269#acond153" name="facultad" predicate="eq" booleanOperator="or" implied="false" attributes="ent58#att386" value="Poder general para actos de administraci&#243;n"/>
+      </Selector>
+      <OKLink id="mov2#opm71#seu152#oln807" name="OKFlow807" to="mov2#opm71#seu153" automaticCoupling="true"/>
+      <KOLink id="mov2#opm71#seu152#kln367" name="KOFlow367" to="mov2#opm71#kocu62" automaticCoupling="true" gr:bendpoints="-2,145,-1117,-65"/>
+      <Link id="mov2#opm71#seu152#ln866" name="Flow866" to="mov2#opm71#okcu77" type="transport" validate="true" gr:bendpoints="221,-95,-899,-120;566,-95,-554,-120;902,-97,-218,-122">
+        <LinkParameter id="mov2#opm71#seu152#ln866#par2534" name="descripcion_actosAdmin" source="ent58#att386Array" target="mov2#opm71#okcu77#ocp197"/>
+        <LinkParameter id="mov2#opm71#seu152#ln866#par2536" name="oid_oidActosAdmin" source="ent58#att385Array" target="mov2#opm71#okcu77#ocp198"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="845" gr:y="65" id="mov2#opm71#seu153" name="actosDominio" entity="ent58" linkOrder="mov2#opm71#seu153#ln867">
+      <Selector id="mov2#opm71#seu153#su270" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm71#seu153#su270#acond154" name="facultad" predicate="eq" booleanOperator="or" implied="false" value="Poder general para actos de dominio" attributes="ent58#att386"/>
+      </Selector>
+      <OKLink id="mov2#opm71#seu153#oln808" name="OKFlow808" to="mov2#opm71#seu154" automaticCoupling="true"/>
+      <KOLink id="mov2#opm71#seu153#kln368" name="KOFlow368" to="mov2#opm71#kocu62" automaticCoupling="true" gr:bendpoints="-28,109,-873,-96"/>
+      <Link id="mov2#opm71#seu153#ln867" name="Flow867" to="mov2#opm71#okcu77" type="transport" validate="true" gr:bendpoints="197,-89,-653,-109;415,-88,-435,-108;599,-88,-251,-108">
+        <LinkParameter id="mov2#opm71#seu153#ln867#par2537" name="descripcion_actosDominio" source="ent58#att386Array" target="mov2#opm71#okcu77#ocp199"/>
+        <LinkParameter id="mov2#opm71#seu153#ln867#par2538" name="oid_oidActosDominio" source="ent58#att385Array" target="mov2#opm71#okcu77#ocp200"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="1140" gr:y="65" id="mov2#opm71#seu154" name="titulosCredito" entity="ent58" linkOrder="mov2#opm71#seu154#ln868">
+      <Selector id="mov2#opm71#seu154#su271" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm71#seu154#su271#acond155" name="facultad" predicate="eq" booleanOperator="or" implied="false" attributes="ent58#att386" value="Poder general para otorgar o suscribir t&#237;tulos de cr&#233;dito"/>
+      </Selector>
+      <OKLink id="mov2#opm71#seu154#oln809" name="OKFlow809" to="mov2#opm71#seu155" automaticCoupling="true"/>
+      <KOLink id="mov2#opm71#seu154#kln369" name="KOFlow369" to="mov2#opm71#kocu62" automaticCoupling="true" gr:bendpoints="-63,101,-608,-104"/>
+      <Link id="mov2#opm71#seu154#ln868" name="Flow868" to="mov2#opm71#okcu77" type="transport" validate="true" gr:bendpoints="34,91,-516,71;264,100,-286,80;394,102,-156,82">
+        <LinkParameter id="mov2#opm71#seu154#ln868#par2539" name="oid_oidTitulosCredito" source="ent58#att385Array" target="mov2#opm71#okcu77#ocp202"/>
+        <LinkParameter id="mov2#opm71#seu154#ln868#par2540" name="descripcion_titulosCredito" source="ent58#att386Array" target="mov2#opm71#okcu77#ocp201"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="1425" gr:y="70" id="mov2#opm71#seu155" name="especiales" entity="ent58">
+      <Selector id="mov2#opm71#seu155#su272" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm71#seu155#su272#acond157" name="facultad" predicate="eq" booleanOperator="or" implied="false" value="Poderes especiales" attributes="ent58#att386"/>
+      </Selector>
+      <OKLink id="mov2#opm71#seu155#oln810" name="OKFlow810" to="mov2#opm71#okcu77">
+        <LinkParameter id="mov2#opm71#seu155#oln810#par2541" name="descripcion_especiales" source="ent58#att386Array" target="mov2#opm71#okcu77#ocp203"/>
+        <LinkParameter id="mov2#opm71#seu155#oln810#par2542" name="oid_oidEspeciales" source="ent58#att385Array" target="mov2#opm71#okcu77#ocp204"/>
+      </OKLink>
+      <KOLink id="mov2#opm71#seu155#kln370" name="KOFlow370" to="mov2#opm71#kocu62" automaticCoupling="true"/>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

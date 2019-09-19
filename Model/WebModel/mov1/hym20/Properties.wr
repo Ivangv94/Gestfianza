@@ -1,0 +1,69 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym20" gr:x="160" gr:y="320" name="Constituir Sociedad Mercantil - Fedatario - Bandeja Fedatario" bpm:moduleType="activity" bpm:uuids="JKBD85VG_LSUK7T.JO4M9OUQ_2GR5MR" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym20#icu6" name="Input" gr:x="-505" gr:y="80">
+      <OKLink id="mov1#hym20#icu6#oln35" name="OKLink" automaticCoupling="true" to="mov1#hym20#seu289"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym20#pu79" name="Complete Activity" mode="completeActivity" gr:x="805" gr:y="50"/>
+    <ProcessUnit id="mov1#hym20#pu80" name="Save Activity" mode="saveActivity" gr:x="800" gr:y="150"/>
+    <ProcessUnit id="mov1#hym20#pu81" name="Leave Activity" mode="leaveActivity" gr:x="800" gr:y="260"/>
+    <ActivityParametersUnit id="mov1#hym20#apu12" name="Set Parameters" gr:x="600" gr:y="200">
+      <OKLink id="mov1#hym20#apu12#oln36" name="OKLink" automaticCoupling="false" to="mov1#hym20#pu79" codeRef="mov1#hym20#page104#enu141#ln744"/>
+      <OKLink id="mov1#hym20#apu12#oln37" name="OKLink" automaticCoupling="false" to="mov1#hym20#pu80" codeRef="mov1#hym20#page104#enu141#ln745"/>
+    </ActivityParametersUnit>
+    <GetUnit gr:x="-245" gr:y="0" id="mov1#hym20#gtu65" name="Get65" contextParameters="UserCtxParam" linkOrder="mov1#hym20#gtu65#ln1336">
+      <Link id="mov1#hym20#gtu65#ln1336" name="Flow1336" to="mov1#hym20#seu289" type="transport" validate="true">
+        <LinkParameter id="mov1#hym20#gtu65#ln1336#par4183" name="UserCtxParam.oid_KeyCondition208 [oid]" source="mov1#hym20#gtu65.UserCtxParam" target="mov1#hym20#seu289#su474#kcond208.userOID"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="-190" gr:y="110" id="mov1#hym20#seu289" name="bucscaFedatario" entity="ent39">
+      <Selector id="mov1#hym20#seu289#su474" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym20#seu289#su474#kcond208" name="KeyCondition208" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym20#seu289#oln1307" name="OKFlow1307" to="mov1#hym20#seu304">
+        <LinkParameter id="mov1#hym20#seu289#oln1307#par4262" name="userName_AttCondition229" source="userNameArray" target="mov1#hym20#seu304#su489#acond229"/>
+      </OKLink>
+    </SelectorUnit>
+    <ModuleInstanceUnit gr:x="35" gr:y="405" id="mov1#hym20#miu152" action="true" moduleId="mov2#opm96" linkOrder="mov1#hym20#miu152#ln1364">
+      <Link id="mov1#hym20#miu152#ln1364" name="Flow1364" to="mov1#hym20#page104#enu162" type="transport" validate="true">
+        <LinkParameter id="mov1#hym20#miu152#ln1364#par4243" name="OK Port102.xmlAFirmar_xmlAfirmar" source="mov2#opm96#okcu102#ocp74" target="mov1#hym20#page104#enu162#fld167_slot"/>
+        <LinkParameter id="mov1#hym20#miu152#ln1364#par4244" name="OK Port102.xmlOriginal_xmlOriginal" source="mov2#opm96#okcu102#ocp266" target="mov1#hym20#page104#enu162#fld424_slot"/>
+      </Link>
+      <OKLink id="mov1#hym20#miu152#oln1209" name="OKFlow1209" to="mov1#hym20#miu169" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Firmar con e.firma" ajaxWindowWidth="500" ajaxWindowHeight="300" ajaxWindowResizable="true" ajaxWindowClosable="true" ajaxWindowMinimizable="true" ajaxWindowModal="true">
+        <LinkParameter id="mov1#hym20#miu152#oln1209#par4788" name="ambiente_ambiente" source="mov2#opm96#okcu102#ocp337" target="mov1#hym20#miu169.mov2#mpkg4#hym4#icu138#icp399"/>
+        <LinkParameter id="mov1#hym20#miu152#oln1209#par4789" name="folioEEE_folio" source="mov2#opm96#okcu102#ocp334" target="mov1#hym20#miu169.mov2#mpkg4#hym4#icu138#icp397"/>
+        <LinkParameter id="mov1#hym20#miu152#oln1209#par4790" name="oidDoc_oidDoc" source="mov2#opm96#okcu102#ocp338" target="mov1#hym20#miu169.mov2#mpkg4#hym4#icu138#icp466"/>
+        <LinkParameter id="mov1#hym20#miu152#oln1209#par4791" name="proceso_proceso" source="mov2#opm96#okcu102#ocp336" target="mov1#hym20#miu169.mov2#mpkg4#hym4#icu138#icp398"/>
+        <LinkParameter id="mov1#hym20#miu152#oln1209#par4792" name="curpFirmante_rfcOcurp" source="mov2#opm96#okcu102#ocp335" target="mov1#hym20#miu169.mov2#mpkg4#hym4#icu138#icp396"/>
+        <LinkParameter id="mov1#hym20#miu152#oln1209#par4793" name="xmlAFirmar_xmlAFirmar" source="mov2#opm96#okcu102#ocp74" target="mov1#hym20#miu169.mov2#mpkg4#hym4#icu138#icp463"/>
+        <LinkParameter id="mov1#hym20#miu152#oln1209#par4794" name="xmlOriginal_xmlOriginal" source="mov2#opm96#okcu102#ocp266" target="mov1#hym20#miu169.mov2#mpkg4#hym4#icu138#icp395"/>
+        <LinkParameter id="mov1#hym20#miu152#oln1209#par4795" name="&lt;/documento-digital-firmado-con-e-firma&gt;_ultimoNodo" sourceValue="&lt;/documento-digital-firmado-con-e-firma&gt;" target="mov1#hym20#miu169.mov2#mpkg4#hym4#icu138#icp394"/>
+      </OKLink>
+      <KOLink id="mov1#hym20#miu152#kln306" name="KOFlow306" to="mov1#hym20#page104#mssu56" gr:bendpoints="-146,-51,-146,229;-125,-258,-125,22">
+        <LinkParameter id="mov1#hym20#miu152#kln306#par4242" name="Error al generar XML_Shown Messages" sourceValue="Error al generar XML" target="mov1#hym20#page104#mssu56.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <SelectorUnit gr:x="-180" gr:y="360" id="mov1#hym20#seu303" name="buscaPM" entity="ent38">
+      <Selector id="mov1#hym20#seu303#su488" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym20#seu303#su488#kcond189" name="KeyCondition189" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym20#seu303#oln1435" name="OKFlow1309" to="mov1#hym20#page104#inu23" automaticCoupling="true"/>
+    </SelectorUnit>
+    <SelectorUnit gr:x="-180" gr:y="225" id="mov1#hym20#seu304" name="Selector304" entity="ent3">
+      <Selector id="mov1#hym20#seu304#su489" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym20#seu304#su489#acond229" name="AttCondition229" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att27"/>
+      </Selector>
+      <OKLink id="mov1#hym20#seu304#oln1308" name="OKFlow1308" to="mov1#hym20#seu303">
+        <LinkParameter id="mov1#hym20#seu304#oln1308#par4263" name="oidPM_KeyCondition189 [oid]" source="ent3#att487Array" target="mov1#hym20#seu303#su488#kcond189.userOID"/>
+      </OKLink>
+    </SelectorUnit>
+    <StartProcessUnit gr:x="550" gr:y="75" id="mov1#hym20#spu9" name="StartProcessUnit9"/>
+    <ModuleInstanceUnit gr:x="395" gr:y="395" id="mov1#hym20#miu169" action="false" moduleId="mov2#mpkg4#hym4">
+      <OKLink id="mov1#hym20#miu169#oln1436" name="OKFlow1436" to="mov1#hym20#page104#enu162" gr:bendpoints="13,-214,198,6">
+        <LinkParameter id="mov1#hym20#miu169#oln1436#par4796" name="url_xmlFirmado" source="mov2#mpkg4#hym4#okcu104#ocp270" target="mov1#hym20#page104#enu162#fld437_slot"/>
+      </OKLink>
+      <KOLink id="mov1#hym20#miu169#kln571" name="KOFlow571" to="mov1#hym20#page104#mssu56">
+        <LinkParameter id="mov1#hym20#miu169#kln571#par4797" name="Error al firmar Documento_Shown Messages" sourceValue="Error al firmar Documento" target="mov1#hym20#page104#mssu56.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</HybridModule>

@@ -1,0 +1,94 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="10" gr:y="110" id="mov2#mpkg3#opm21" name="agregarFedatario">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg3#opm21#icu22" gr:x="-270" gr:y="40">
+      <InputCollectorParameter id="mov2#mpkg3#opm21#icu22#icp48" name="numero"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm21#icu22#icp47" name="municipio"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm21#icu22#icp46" name="entidad"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm21#icu22#icp50" name="oidUser"/>
+      <Link id="mov2#mpkg3#opm21#icu22#ln435" name="Flow435" to="mov2#mpkg3#opm21#cru8" type="transport" validate="true" gr:bendpoints="134,-60,-871,-70;1171,-69,-134,-69">
+        <LinkParameter id="mov2#mpkg3#opm21#icu22#ln435#par1764" name="entidad_entidad" source="mov2#mpkg3#opm21#icu22#icp46" target="mov2#mpkg3#opm21#cru8.ent8#att48"/>
+        <LinkParameter id="mov2#mpkg3#opm21#icu22#ln435#par1765" name="municipio_municipio" source="mov2#mpkg3#opm21#icu22#icp47" target="mov2#mpkg3#opm21#cru8.ent8#att58"/>
+        <LinkParameter id="mov2#mpkg3#opm21#icu22#ln435#par1766" name="numero_numero" source="mov2#mpkg3#opm21#icu22#icp48" target="mov2#mpkg3#opm21#cru8.ent8#att278"/>
+        <LinkParameter id="mov2#mpkg3#opm21#icu22#ln435#par260" name="tipoFedatario_tipo" source="mov2#mpkg3#opm21#icu22#icp49" target="mov2#mpkg3#opm21#cru8.ent8#att47"/>
+        <LinkParameter id="mov2#mpkg3#opm21#icu22#ln435#par1970" name="estatusFedatario_estatus" source="mov2#mpkg3#opm21#icu22#icp177" target="mov2#mpkg3#opm21#cru8.ent8#att281"/>
+      </Link>
+      <Link id="mov2#mpkg3#opm21#icu22#ln340" name="OKFlow228" to="mov2#mpkg3#opm21#seu73" type="transport" gr:bendpoints="208,-45,-322,-45;453,-45,-77,-45">
+        <LinkParameter id="mov2#mpkg3#opm21#icu22#ln340#par164" name="oidUser_KeyCondition88 [oid]" source="mov2#mpkg3#opm21#icu22#icp50" target="mov2#mpkg3#opm21#seu73#su164#kcond88.userOID"/>
+      </Link>
+      <OKLink id="mov2#mpkg3#opm21#icu22#oln100" name="OKFlow100" to="mov2#mpkg3#opm21#inn22">
+        <LinkParameter id="mov2#mpkg3#opm21#icu22#oln100#par482" name="tipoFedatario_Input" source="mov2#mpkg3#opm21#icu22#icp49" target="mov2#mpkg3#opm21#inn22.isnotnull"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#mpkg3#opm21#icu22#icp49" name="tipoFedatario"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm21#icu22#icp177" name="estatusFedatario"/>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="330" gr:y="70" id="mov2#mpkg3#opm21#seu73" name="consultaPF" entity="ent39" linkOrder="mov2#mpkg3#opm21#seu73#ln436">
+      <Selector id="mov2#mpkg3#opm21#seu73#su164" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg3#opm21#seu73#su164#kcond88" name="KeyCondition88" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg3#opm21#seu73#oln229" name="OKFlow229" to="mov2#mpkg3#opm21#inn15">
+        <LinkParameter id="mov2#mpkg3#opm21#seu73#oln229#par1760" name="userName_Input" source="userNameArray" target="mov2#mpkg3#opm21#inn15.isnotnull"/>
+        <LinkParameter id="mov2#mpkg3#opm21#seu73#oln229#par1761" name="nombreCompleto_PASSING" source="ent39#att269Array" passing="true"/>
+      </OKLink>
+      <Link id="mov2#mpkg3#opm21#seu73#ln436" name="Flow436" to="mov2#mpkg3#opm21#cru8" type="transport" validate="true" gr:bendpoints="71,-54,-699,-64;629,-51,-141,-61">
+        <LinkParameter id="mov2#mpkg3#opm21#seu73#ln436#par1769" name="oid_PersonaFisica.oid(DatosNotarioToPersonaFisica)" source="userOIDArray" target="mov2#mpkg3#opm21#cru8.rel25#role49.userOID"/>
+      </Link>
+      <KOLink id="mov2#mpkg3#opm21#seu73#kln219" name="KOFlow219" to="mov2#mpkg3#opm21#kocu13" gr:bendpoints="66,236,-1034,76">
+        <LinkParameter id="mov2#mpkg3#opm21#seu73#kln219#par1770" name="Error al consultar los datos del notario._msj" sourceValue="Error al consultar los datos del notario." target="mov2#mpkg3#opm21#kocu13#ocp42"/>
+      </KOLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="500" gr:y="85" id="mov2#mpkg3#opm21#inn15" name="&#191;Existe?">
+      <OKLink id="mov2#mpkg3#opm21#inn15#oln230" name="OKFlow230" to="mov2#mpkg3#opm21#seu74">
+        <LinkParameter id="mov2#mpkg3#opm21#inn15#oln230#par1825" name="Input Value_personafisica [oid]" source="inputValue" target="mov2#mpkg3#opm21#seu74#su165#rcond104.userOID"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm21#inn15#kln218" name="KOFlow218" to="mov2#mpkg3#opm21#kocu13" gr:bendpoints="76,212,-859,52">
+        <LinkParameter id="mov2#mpkg3#opm21#inn15#kln218#par1771" name="La persona a la que se quiere cargar los datos no existe._msj" sourceValue="La persona a la que se quiere cargar los datos no existe." target="mov2#mpkg3#opm21#kocu13#ocp42"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <SelectorUnit gr:x="660" gr:y="70" id="mov2#mpkg3#opm21#seu74" name="consultaDatosNotarios" entity="ent8">
+      <Selector id="mov2#mpkg3#opm21#seu74#su165" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg3#opm21#seu74#su165#rcond104" name="personafisica" predicate="in" implied="false" role="rel25#role50"/>
+      </Selector>
+      <OKLink id="mov2#mpkg3#opm21#seu74#oln234" name="OKFlow234" to="mov2#mpkg3#opm21#inn16">
+        <LinkParameter id="mov2#mpkg3#opm21#seu74#oln234#par1763" name="municipio_Input" source="ent8#att58Array" target="mov2#mpkg3#opm21#inn16.isnotnull"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm21#seu74#kln122" name="KOFlow122" to="mov2#mpkg3#opm21#kocu13" gr:bendpoints="99,190,-636,30">
+        <LinkParameter id="mov2#mpkg3#opm21#seu74#kln122#par1772" name="Error al consultar los datos del notario._msj" sourceValue="Error al consultar los datos del notario." target="mov2#mpkg3#opm21#kocu13#ocp42"/>
+      </KOLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="915" gr:y="85" id="mov2#mpkg3#opm21#inn16" name="&#191;Existe?">
+      <OKLink id="mov2#mpkg3#opm21#inn16#oln237" name="KOFlow120" to="mov2#mpkg3#opm21#kocu13" gr:bendpoints="123,170,-397,10">
+        <LinkParameter id="mov2#mpkg3#opm21#inn16#oln237#par1773" name="Ese notario ya cuenta con sus datos en la base de datos._msj" sourceValue="Ese notario ya cuenta con sus datos en la base de datos." target="mov2#mpkg3#opm21#kocu13#ocp42"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm21#inn16#kln220" name="KOFlow220" to="mov2#mpkg3#opm21#cru8"/>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="1070" gr:y="75" id="mov2#mpkg3#opm21#cru8" name="insertarDatosNotario" entity="ent8">
+      <OKLink id="mov2#mpkg3#opm21#cru8#oln236" name="OKFlow236" to="mov2#mpkg3#opm21#okcu13">
+        <LinkParameter id="mov2#mpkg3#opm21#cru8#oln236#par1870" name="oid_oid_datosNotario" source="ent8#att46Array" target="mov2#mpkg3#opm21#okcu13#ocp43"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm21#cru8#kln119" name="KOFlow119" to="mov2#mpkg3#opm21#kocu13" gr:bendpoints="80,159,-250,-1">
+        <LinkParameter id="mov2#mpkg3#opm21#cru8#kln119#par1774" name="Error al insertar los datos del notario._msj" sourceValue="Error al insertar los datos del notario." target="mov2#mpkg3#opm21#kocu13#ocp42"/>
+      </KOLink>
+    </CreateUnit>
+    <OKCollectorUnit gr:x="1365" gr:y="75" id="mov2#mpkg3#opm21#okcu13" name="OK">
+      <OutputCollectorParameter id="mov2#mpkg3#opm21#okcu13#ocp43" name="oid_datosNotario"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1365" gr:y="235" id="mov2#mpkg3#opm21#kocu13" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg3#opm21#kocu13#ocp42" name="msj"/>
+    </KOCollectorUnit>
+    <IsNotNullUnit gr:x="25" gr:y="85" id="mov2#mpkg3#opm21#inn22" name="&#191;ExisteTipo?" emptyStringAsNull="true">
+      <OKLink id="mov2#mpkg3#opm21#inn22#oln52" name="OKFlow52" to="mov2#mpkg3#opm21#switch2">
+        <LinkParameter id="mov2#mpkg3#opm21#inn22#oln52#par53" name="Input Value_Switch" source="inputValue" target="mov2#mpkg3#opm21#switch2.switch"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm21#inn22#kln109" name="KOFlow109" to="mov2#mpkg3#opm21#kocu13" gr:bendpoints="69,276,-1331,116">
+        <LinkParameter id="mov2#mpkg3#opm21#inn22#kln109#par259" name="No se ingreso el tipo de fedatario, favor de seleccionarlo._msj" sourceValue="No se ingreso el tipo de fedatario, favor de seleccionarlo." target="mov2#mpkg3#opm21#kocu13#ocp42"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <SwitchUnit gr:x="185" gr:y="85" id="mov2#mpkg3#opm21#switch2" name="tipoValido">
+      <OKLink id="mov2#mpkg3#opm21#switch2#oln124" name="OKFlow124" to="mov2#mpkg3#opm21#seu73" automaticCoupling="true" code="Notario P&#250;blico"/>
+      <Case value="Notario P&#250;blico"/>
+      <Case value="Corredor P&#250;blico"/>
+      <OKLink id="mov2#mpkg3#opm21#switch2#oln212" name="OKFlow212" to="mov2#mpkg3#opm21#seu73" automaticCoupling="true" gr:bendpoints="72,15,-73,15" code="Corredor P&#250;blico"/>
+      <OKLink id="mov2#mpkg3#opm21#switch2#oln228" name="OKFlow228" to="mov2#mpkg3#opm21#seu73" automaticCoupling="true" gr:bendpoints="72,-15,-73,-15"/>
+    </SwitchUnit>
+  </OperationUnits>
+</OperationModule>

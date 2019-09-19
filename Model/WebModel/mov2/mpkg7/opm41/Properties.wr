@@ -1,0 +1,54 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg7#opm41" name="RevisarPM" gr:x="225" gr:y="105">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg7#opm41#icu28" gr:x="-265" gr:y="60">
+      <OKLink id="mov2#mpkg7#opm41#icu28#oln504" name="OKFlow220" to="mov2#mpkg7#opm41#inn29">
+        <LinkParameter id="mov2#mpkg7#opm41#icu28#oln504#par688" name="curp_Input" source="mov2#mpkg7#opm41#icu28#icp67" target="mov2#mpkg7#opm41#inn29.isnotnull"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#mpkg7#opm41#icu28#icp67" name="rfc"/>
+      <Link id="mov2#mpkg7#opm41#icu28#ln201" name="Flow200" to="mov2#mpkg7#opm41#cru10" type="transport" validate="true" gr:bendpoints="185,169,-395,-1">
+        <LinkParameter id="mov2#mpkg7#opm41#icu28#ln201#par712" name="curp_userName" source="mov2#mpkg7#opm41#icu28#icp67" target="mov2#mpkg7#opm41#cru10.userName"/>
+        <LinkParameter id="mov2#mpkg7#opm41#icu28#ln201#par729" name="razonSocial_razonSocial" source="mov2#mpkg7#opm41#icu28#icp68" target="mov2#mpkg7#opm41#cru10.ent38#att255"/>
+      </Link>
+      <InputCollectorParameter id="mov2#mpkg7#opm41#icu28#icp68" name="razonSocial"/>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#mpkg7#opm41#seu90" name="buscarPM" gr:x="210" gr:y="55" entity="ent38">
+      <Selector id="mov2#mpkg7#opm41#seu90#su178" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg7#opm41#seu90#su178#acond104" name="curp" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <OKLink id="mov2#mpkg7#opm41#seu90#oln505" name="OKFlow221" to="mov2#mpkg7#opm41#inn28">
+        <LinkParameter id="mov2#mpkg7#opm41#seu90#oln505#par713" name="oid_Input" source="userOIDArray" target="mov2#mpkg7#opm41#inn28.isnotnull"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg7#opm41#seu90#kln235" name="KOFlow116" to="mov2#mpkg7#opm41#kocu20" gr:bendpoints="1,251,-879,66;758,253,-122,68">
+        <LinkParameter id="mov2#mpkg7#opm41#seu90#kln235#par714" name="Error al validar si el usuario ya existe._msj" target="mov2#mpkg7#opm41#kocu20#ocp55" sourceValue="Error al validar si el usuario ya existe."/>
+      </KOLink>
+    </SelectorUnit>
+    <IsNotNullUnit id="mov2#mpkg7#opm41#inn28" name="&#191;Existe?" gr:x="385" gr:y="70">
+      <OKLink id="mov2#mpkg7#opm41#inn28#oln506" name="OKFlow503" to="mov2#mpkg7#opm41#okcu19">
+        <LinkParameter id="mov2#mpkg7#opm41#inn28#oln506#par1937" name="Input Value_oidPM" source="inputValue" target="mov2#mpkg7#opm41#okcu19#ocp56"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg7#opm41#inn28#kln238" name="KOFlow132" to="mov2#mpkg7#opm41#cru10" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <CreateUnit id="mov2#mpkg7#opm41#cru10" name="crearPF" gr:x="380" gr:y="230" entity="ent38">
+      <OKLink id="mov2#mpkg7#opm41#cru10#oln507" name="OKFlow230" to="mov2#mpkg7#opm41#okcu19" gr:bendpoints="68,-69,-432,101;349,-69,-151,101">
+        <LinkParameter id="mov2#mpkg7#opm41#cru10#oln507#par1938" name="oid_oidPM" source="userOIDArray" target="mov2#mpkg7#opm41#okcu19#ocp56"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg7#opm41#cru10#kln239" name="KOFlow120" to="mov2#mpkg7#opm41#kocu20">
+        <LinkParameter id="mov2#mpkg7#opm41#cru10#kln239#par715" name="Error al crear al usuario como fedatario._msj" target="mov2#mpkg7#opm41#kocu20#ocp55" sourceValue="Error al crear al usuario como fedatario."/>
+      </KOLink>
+    </CreateUnit>
+    <KOCollectorUnit id="mov2#mpkg7#opm41#kocu20" name="KO" gr:x="1025" gr:y="230">
+      <OutputCollectorParameter id="mov2#mpkg7#opm41#kocu20#ocp55" name="msj"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit id="mov2#mpkg7#opm41#okcu19" name="OK" gr:x="1025" gr:y="60">
+      <OutputCollectorParameter id="mov2#mpkg7#opm41#okcu19#ocp56" name="oidPM"/>
+    </OKCollectorUnit>
+    <IsNotNullUnit id="mov2#mpkg7#opm41#inn29" name="&#191;Existe?" gr:x="45" gr:y="70" emptyStringAsNull="true">
+      <OKLink id="mov2#mpkg7#opm41#inn29#oln508" name="OKFlow433" to="mov2#mpkg7#opm41#seu90">
+        <LinkParameter id="mov2#mpkg7#opm41#inn29#oln508#par716" name="Input Value_curp" source="inputValue" target="mov2#mpkg7#opm41#seu90#su178#acond104"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg7#opm41#inn29#kln240" name="KOFlow88" to="mov2#mpkg7#opm41#kocu20" gr:bendpoints="-3,256,-1053,86;948,251,-102,81">
+        <LinkParameter id="mov2#mpkg7#opm41#inn29#kln240#par717" name="No se cuenta con Usuario a ingresar._msj" target="mov2#mpkg7#opm41#kocu20#ocp55" sourceValue="No se cuenta con Usuario a ingresar."/>
+      </KOLink>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

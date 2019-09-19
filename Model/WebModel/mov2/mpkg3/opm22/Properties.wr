@@ -1,0 +1,74 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="10" gr:y="160" id="mov2#mpkg3#opm22" name="agregarGarantia">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg3#opm22#icu23" gr:x="20" gr:y="10">
+      <InputCollectorParameter id="mov2#mpkg3#opm22#icu23#icp52" name="oid_datosNotario"/>
+      <OKLink id="mov2#mpkg3#opm22#icu23#oln238" name="OKFlow238" to="mov2#mpkg3#opm22#seu80">
+        <LinkParameter id="mov2#mpkg3#opm22#icu23#oln238#par1775" name="oid_datosNotario_KeyCondition89 [oid]" source="mov2#mpkg3#opm22#icu23#icp52" target="mov2#mpkg3#opm22#seu80#su166#kcond89.ent8#att46"/>
+      </OKLink>
+      <Link id="mov2#mpkg3#opm22#icu23#ln437" name="Flow437" to="mov2#mpkg3#opm22#cru9" type="transport" validate="true" gr:bendpoints="174,-70,-911,-70;964,-70,-121,-70">
+        <LinkParameter id="mov2#mpkg3#opm22#icu23#ln437#par1781" name="oid_datosNotario_DatosNotario.oid(FianzaToDatosNotario)" source="mov2#mpkg3#opm22#icu23#icp52" target="mov2#mpkg3#opm22#cru9.rel26#role51.ent8#att46"/>
+        <LinkParameter id="mov2#mpkg3#opm22#icu23#ln437#par246" name="activa_activa" source="mov2#mpkg3#opm22#icu23#icp80" target="mov2#mpkg3#opm22#cru9.ent40#att294"/>
+        <LinkParameter id="mov2#mpkg3#opm22#icu23#ln437#par253" name="esAdicional_esAdicional" source="mov2#mpkg3#opm22#icu23#icp79" target="mov2#mpkg3#opm22#cru9.ent40#att288"/>
+        <LinkParameter id="mov2#mpkg3#opm22#icu23#ln437#par392" name="fechaOtorgamiento_fechaOrotgamiento" source="mov2#mpkg3#opm22#icu23#icp70" target="mov2#mpkg3#opm22#cru9.ent40#att285"/>
+        <LinkParameter id="mov2#mpkg3#opm22#icu23#ln437#par398" name="fechaTermino_fechaTermino" source="mov2#mpkg3#opm22#icu23#icp77" target="mov2#mpkg3#opm22#cru9.ent40#att286"/>
+        <LinkParameter id="mov2#mpkg3#opm22#icu23#ln437#par405" name="monto_monto" source="mov2#mpkg3#opm22#icu23#icp78" target="mov2#mpkg3#opm22#cru9.ent40#att287"/>
+        <LinkParameter id="mov2#mpkg3#opm22#icu23#ln437#par471" name="tipo_tipo" source="mov2#mpkg3#opm22#icu23#icp69" target="mov2#mpkg3#opm22#cru9.ent40#att284"/>
+        <LinkParameter id="mov2#mpkg3#opm22#icu23#ln437#par472" name="vigencia_vigencia" source="mov2#mpkg3#opm22#icu23#icp81" target="mov2#mpkg3#opm22#cru9.ent40#att295"/>
+      </Link>
+      <InputCollectorParameter id="mov2#mpkg3#opm22#icu23#icp81" name="vigencia"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm22#icu23#icp80" name="activa"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm22#icu23#icp79" name="esAdicional"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm22#icu23#icp78" name="monto"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm22#icu23#icp77" name="fechaTermino"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm22#icu23#icp70" name="fechaOtorgamiento"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm22#icu23#icp69" name="tipo"/>
+    </InputCollectorUnit>
+    <IsNotNullUnit gr:x="575" gr:y="70" id="mov2#mpkg3#opm22#inn17" name="&#191;Existe?" emptyStringAsNull="true">
+      <OKLink id="mov2#mpkg3#opm22#inn17#oln240" name="OKFlow240" to="mov2#mpkg3#opm22#seu81">
+        <LinkParameter id="mov2#mpkg3#opm22#inn17#oln240#par1779" name="oid_PASSING_datosNotario [oid]" sourceLinkParameter="mov2#mpkg3#opm22#seu80#oln239#par1777" target="mov2#mpkg3#opm22#seu81#su167#rcond99.ent40#att273"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm22#inn17#kln232" name="KOFlow232" to="mov2#mpkg3#opm22#kocu14" gr:bendpoints="46,118,-809,18">
+        <LinkParameter id="mov2#mpkg3#opm22#inn17#kln232#par1813" name="El fedatario al que se quiere ingresar la fianza no existe._msj" sourceValue="El fedatario al que se quiere ingresar la fianza no existe." target="mov2#mpkg3#opm22#kocu14#ocp44"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <SelectorUnit gr:x="330" gr:y="55" id="mov2#mpkg3#opm22#seu80" name="revisarDatosFedatario" entity="ent8">
+      <Selector id="mov2#mpkg3#opm22#seu80#su166" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg3#opm22#seu80#su166#kcond89" name="KeyCondition89" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg3#opm22#seu80#oln239" name="OKFlow239" to="mov2#mpkg3#opm22#inn17">
+        <LinkParameter id="mov2#mpkg3#opm22#seu80#oln239#par1776" name="nombreCompleto_Input" source="ent8#att46Array" target="mov2#mpkg3#opm22#inn17.isnotnull"/>
+        <LinkParameter id="mov2#mpkg3#opm22#seu80#oln239#par1777" name="oid_PASSING" source="ent8#att46Array" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm22#seu80#kln120" name="KOFlow120" to="mov2#mpkg3#opm22#kocu14" gr:bendpoints="73,136,-992,36">
+        <LinkParameter id="mov2#mpkg3#opm22#seu80#kln120#par484" name="Error al revisar los datos del Fedatario P&#250;blico._msj" sourceValue="Error al revisar los datos del Fedatario P&#250;blico." target="mov2#mpkg3#opm22#kocu14#ocp44"/>
+      </KOLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="745" gr:y="55" id="mov2#mpkg3#opm22#seu81" name="revisarFianza">
+      <Selector id="mov2#mpkg3#opm22#seu81#su167" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg3#opm22#seu81#su167#rcond99" name="datosNotario" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg3#opm22#seu81#oln370" name="OKFlow370" to="mov2#mpkg3#opm22#inn21">
+        <LinkParameter id="mov2#mpkg3#opm22#seu81#oln370#par1867" name="fechaOrotgamiento_Input" source="ent40#att285Array" target="mov2#mpkg3#opm22#inn21.isnotnull"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm22#seu81#kln233" name="KOFlow233" to="mov2#mpkg3#opm22#kocu14" gr:bendpoints="77,104,-558,4">
+        <LinkParameter id="mov2#mpkg3#opm22#seu81#kln233#par1814" name="Error al revisar las garant&#237;as actuales._msj" sourceValue="Error al revisar las garant&#237;as actuales." target="mov2#mpkg3#opm22#kocu14#ocp44"/>
+      </KOLink>
+    </SelectorUnit>
+    <KOCollectorUnit gr:x="1360" gr:y="160" id="mov2#mpkg3#opm22#kocu14" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg3#opm22#kocu14#ocp44" name="msj"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit gr:x="1360" gr:y="60" id="mov2#mpkg3#opm22#okcu14" name="OK"/>
+    <IsNotNullUnit gr:x="1005" gr:y="70" id="mov2#mpkg3#opm22#inn21" name="&#191;Existe?">
+      <OKLink id="mov2#mpkg3#opm22#inn21#oln241" name="OKFlow241" to="mov2#mpkg3#opm22#kocu14" gr:bendpoints="27,89,-398,-11">
+        <LinkParameter id="mov2#mpkg3#opm22#inn21#oln241#par1780" name="Este fedatrio cuenta con finanza_msj" sourceValue="El fedatario p&#250;blico seleccionado ya cuenta con garant&#237;a." target="mov2#mpkg3#opm22#kocu14#ocp44"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm22#inn21#kln221" name="KOFlow221" to="mov2#mpkg3#opm22#cru9" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="1180" gr:y="60" id="mov2#mpkg3#opm22#cru9" name="crearFianza">
+      <OKLink id="mov2#mpkg3#opm22#cru9#oln371" name="OKFlow371" to="mov2#mpkg3#opm22#okcu14" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg3#opm22#cru9#kln234" name="KOFlow234" to="mov2#mpkg3#opm22#kocu14" gr:bendpoints="45,92,-195,-8">
+        <LinkParameter id="mov2#mpkg3#opm22#cru9#kln234#par483" name="Error al agregar la garant&#237;a del fedatario p&#250;blico seleccionado._msj" sourceValue="Error al agregar la garant&#237;a del fedatario p&#250;blico seleccionado." target="mov2#mpkg3#opm22#kocu14#ocp44"/>
+      </KOLink>
+    </CreateUnit>
+  </OperationUnits>
+</OperationModule>

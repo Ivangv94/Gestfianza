@@ -1,0 +1,46 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-180" gr:y="1250" id="mov2#opm91" name="filtroRevocados">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm91#icu130" gr:x="-10" gr:y="60" linkOrder="mov2#opm91#icu130#ln1119">
+      <InputCollectorParameter id="mov2#opm91#icu130#icp382" name="oidPM"/>
+      <OKLink id="mov2#opm91#icu130#oln1058" name="OKFlow1058" to="mov2#opm91#miu132">
+        <LinkParameter id="mov2#opm91#icu130#oln1058#par3455" name="oidPM_oidPM" source="mov2#opm91#icu130#icp382" target="mov2#opm91#miu132.mov2#opm88#icu127#icp378"/>
+      </OKLink>
+      <Link id="mov2#opm91#icu130#ln1119" name="Flow1119" to="mov2#opm91#okcu96" type="transport" validate="true" gr:bendpoints="182,53,-1238,58;711,58,-709,63;1221,59,-199,64">
+        <LinkParameter id="mov2#opm91#icu130#ln1119#par3461" name="oidPM_oidPM" source="mov2#opm91#icu130#icp382" target="mov2#opm91#okcu96#ocp254"/>
+      </Link>
+    </InputCollectorUnit>
+    <ModuleInstanceUnit gr:x="275" gr:y="65" id="mov2#opm91#miu132" action="true" moduleId="mov2#opm88" linkOrder="mov2#opm91#miu132#ln1118">
+      <OKLink id="mov2#opm91#miu132#oln1059" name="OKFlow1059" to="mov2#opm91#miu133">
+        <LinkParameter id="mov2#opm91#miu132#oln1059#par3456" name="oidPM_oidPM" source="mov2#opm88#okcu93#ocp246" target="mov2#opm91#miu133.mov2#opm89#icu128#icp380"/>
+      </OKLink>
+      <Link id="mov2#opm91#miu132#ln1118" name="Flow1118" to="mov2#opm91#okcu96" type="transport" validate="true" gr:bendpoints="294,-119,-796,-114;553,-120,-537,-115;968,-119,-122,-114">
+        <LinkParameter id="mov2#opm91#miu132#ln1118#par3460" name="OK Port86.oidPF_oidAdmin" source="mov2#opm88#okcu93#ocp244" target="mov2#opm91#okcu96#ocp251"/>
+      </Link>
+      <KOLink id="mov2#opm91#miu132#kln451" name="KOFlow451" to="mov2#opm91#kocu81" automaticCoupling="true" gr:bendpoints="69,152,-1021,47;986,155,-104,50"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="615" gr:y="65" id="mov2#opm91#miu133" action="true" moduleId="mov2#opm89" linkOrder="mov2#opm91#miu133#ln1117">
+      <OKLink id="mov2#opm91#miu133#oln1060" name="OKFlow1060" to="mov2#opm91#miu134">
+        <LinkParameter id="mov2#opm91#miu133#oln1060#par3457" name="oidPM_oidPM" source="mov2#opm89#okcu94#ocp248" target="mov2#opm91#miu134.mov2#opm90#icu129#icp381"/>
+      </OKLink>
+      <Link id="mov2#opm91#miu133#ln1117" name="Flow1117" to="mov2#opm91#okcu96" type="transport" validate="true" gr:bendpoints="214,-71,-536,-66;546,-71,-204,-66">
+        <LinkParameter id="mov2#opm91#miu133#ln1117#par3459" name="OK Port86.oidPF_oidNom" source="mov2#opm89#okcu94#ocp247" target="mov2#opm91#okcu96#ocp252"/>
+      </Link>
+      <KOLink id="mov2#opm91#miu133#kln450" name="KOFlow450" to="mov2#opm91#kocu81" automaticCoupling="true" gr:bendpoints="-5,127,-755,22;620,132,-130,27"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="950" gr:y="65" id="mov2#opm91#miu134" action="true" moduleId="mov2#opm90">
+      <OKLink id="mov2#opm91#miu134#oln1061" name="OKFlow1061" to="mov2#opm91#okcu96">
+        <LinkParameter id="mov2#opm91#miu134#oln1061#par3458" name="oidPF_oidApo" source="mov2#opm90#okcu95#ocp249" target="mov2#opm91#okcu96#ocp253"/>
+      </OKLink>
+      <KOLink id="mov2#opm91#miu134#kln449" name="KOFlow449" to="mov2#opm91#kocu81" automaticCoupling="true" gr:bendpoints="2,101,-423,-4"/>
+    </ModuleInstanceUnit>
+    <OKCollectorUnit gr:x="1410" gr:y="40" id="mov2#opm91#okcu96" name="OK Port96">
+      <OutputCollectorParameter id="mov2#opm91#okcu96#ocp254" name="oidPM"/>
+      <OutputCollectorParameter id="mov2#opm91#okcu96#ocp253" name="oidApo"/>
+      <OutputCollectorParameter id="mov2#opm91#okcu96#ocp252" name="oidNom"/>
+      <OutputCollectorParameter id="mov2#opm91#okcu96#ocp251" name="oidAdmin"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1410" gr:y="165" id="mov2#opm91#kocu81" name="KO Port81">
+      <OutputCollectorParameter id="mov2#opm91#kocu81#ocp255" name="errores"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

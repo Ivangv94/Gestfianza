@@ -1,0 +1,7 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1335" gr:y="190" id="mov2#opm18" name="DependenciaPersonal">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm18#icu57" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm18#icu57#icp17" name="username"/>
+    </InputCollectorUnit>
+  </OperationUnits>
+</OperationModule>

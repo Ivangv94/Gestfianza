@@ -1,0 +1,102 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym27" gr:x="1765" gr:y="65" name="Poder Notarial - Fedatario - Poder por persona moral o representaci&#243;n" bpm:moduleType="activity" bpm:uuids="JG01H7LW_FYBDCX.JL40OQU1_U2CDI2" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym27#icu62" name="Input" gr:x="-820" gr:y="125">
+      <OKLink id="mov1#hym27#icu62#oln460" name="OKLink" automaticCoupling="true" to="mov1#hym27#page61"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym27#pu85" name="Complete Activity" mode="completeActivity" gr:x="1030" gr:y="25"/>
+    <ProcessUnit id="mov1#hym27#pu86" name="Save Activity" mode="saveActivity" gr:x="1065" gr:y="140"/>
+    <ProcessUnit id="mov1#hym27#pu87" name="Leave Activity" mode="leaveActivity" gr:x="1030" gr:y="285"/>
+    <SelectorUnit gr:x="60" gr:y="575" id="mov1#hym27#seu114" name="PersonaFisica" entity="ent39" linkOrder="mov1#hym27#seu114#ln63">
+      <Selector id="mov1#hym27#seu114#su222" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym27#seu114#su222#acond125" name="pfOID" predicate="eq" booleanOperator="or" implied="false" attributes="userOID"/>
+      </Selector>
+      <OKLink id="mov1#hym27#seu114#oln26" name="OKFlow26" to="mov1#hym27#seu115" automaticCoupling="true"/>
+      <Link id="mov1#hym27#seu114#ln63" name="Flow63" to="mov1#hym27#page59#enu128" type="transport" validate="true">
+        <LinkParameter id="mov1#hym27#seu114#ln63#par95" name="nombre_nombre" source="ent39#att272Array" target="mov1#hym27#page59#enu128#fld126_slot"/>
+        <LinkParameter id="mov1#hym27#seu114#ln63#par96" name="apellido1_primerApellido" source="ent39#att271Array" target="mov1#hym27#page59#enu128#fld149_slot"/>
+        <LinkParameter id="mov1#hym27#seu114#ln63#par224" name="apellido2_segundoApellido" source="ent39#att270Array" target="mov1#hym27#page59#enu128#fld150_slot"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit gr:x="-75" gr:y="665" id="mov1#hym27#gtu47" name="Get47" contextParameters="UserCtxParam" linkOrder="mov1#hym27#gtu47#ln62">
+      <Link id="mov1#hym27#gtu47#ln62" name="Flow62" to="mov1#hym27#seu114" type="transport" validate="true">
+        <LinkParameter id="mov1#hym27#gtu47#ln62#par94" name="UserCtxParam.oid_pfOID" source="mov1#hym27#gtu47.UserCtxParam" target="mov1#hym27#seu114#su222#acond125"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="220" gr:y="580" id="mov1#hym27#seu115" name="DatosNotario" entity="ent8" linkOrder="mov1#hym27#seu115#ln68">
+      <Selector id="mov1#hym27#seu115#su223" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym27#seu115#su223#rcond126" name="PersonaFisicaToDatosNotario" predicate="in" implied="false" role="rel25#role50"/>
+      </Selector>
+      <OKLink id="mov1#hym27#seu115#oln103" name="OKFlow103" to="mov1#hym27#page59" automaticCoupling="true"/>
+      <Link id="mov1#hym27#seu115#ln68" name="Flow68" to="mov1#hym27#page59#enu128" type="transport" validate="true">
+        <LinkParameter id="mov1#hym27#seu115#ln68#par225" name="entidad_estado" source="ent8#att48Array" target="mov1#hym27#page59#enu128#fld151_slot"/>
+        <LinkParameter id="mov1#hym27#seu115#ln68#par226" name="municipio_municipio" source="ent8#att58Array" target="mov1#hym27#page59#enu128#fld152_slot"/>
+        <LinkParameter id="mov1#hym27#seu115#ln68#par227" name="numero_numero" source="ent8#att278Array" target="mov1#hym27#page59#enu128#fld127_slot"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="mov1#hym27#seu164" name="Selector162" gr:x="-480" gr:y="410" entity="User" linkOrder="mov1#hym27#seu164#ln39">
+      <Selector id="mov1#hym27#seu164#su298" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym27#seu164#su298#acond169" name="AttCondition167" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <Link id="mov1#hym27#seu164#ln987" name="Flow978" to="mov1#hym27#page59#enu128" type="transport" validate="true">
+        <LinkParameter id="mov1#hym27#seu164#ln987#par3075" name="oid_denominacion" source="userOIDArray" target="mov1#hym27#page59#enu128#fld383_slot"/>
+      </Link>
+      <OKLink id="mov1#hym27#seu164#oln944" name="OKFlow944" to="mov1#hym27#seu119" automaticCoupling="true" gr:bendpoints="104,-24,-96,51"/>
+      <Link id="mov1#hym27#seu164#ln39" name="Flow39" to="mov1#hym27#seu119" type="transport" validate="true">
+        <LinkParameter id="mov1#hym27#seu164#ln39#par613" name="oid_KeyCondition127 [oid]" source="userOIDArray" target="mov1#hym27#seu119#su267#kcond127.userOID"/>
+      </Link>
+    </SelectorUnit>
+    <SwitchUnit gr:x="-580" gr:y="315" id="mov1#hym27#switch72" name="Switch72">
+      <Case value="Persona Moral"/>
+      <Case value="Persona F&#237;sica"/>
+      <OKLink id="mov1#hym27#switch72#oln682" name="OKFlow682" to="mov1#hym27#seu164" automaticCoupling="true" code="Persona Moral"/>
+    </SwitchUnit>
+    <SelectorUnit gr:x="-340" gr:y="330" id="mov1#hym27#seu119" name="Selector119" entity="ent38" linkOrder="mov1#hym27#seu119#ln1034">
+      <Selector id="mov1#hym27#seu119#su267" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym27#seu119#su267#kcond127" name="KeyCondition127" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym27#seu119#oln698" name="OKFlow698" to="mov1#hym27#seu121" automaticCoupling="true"/>
+      <Link id="mov1#hym27#seu119#ln604" name="Flow604" to="mov1#hym27#miu110" type="transport" validate="true">
+        <LinkParameter id="mov1#hym27#seu119#ln604#par862" name="oid_oidPM" source="userOIDArray" target="mov1#hym27#miu110.mov2#opm81#icu120#icp349"/>
+      </Link>
+      <Link id="mov1#hym27#seu119#ln979" name="Flow979" to="mov1#hym27#page59#enu128" type="transport" validate="true">
+        <LinkParameter id="mov1#hym27#seu119#ln979#par2950" name="razonSocial_sociedadDenominacion" source="ent38#att255Array" target="mov1#hym27#page59#enu128#fld226_slot"/>
+        <LinkParameter id="mov1#hym27#seu119#ln979#par3015" name="oid_iodPM" source="userOIDArray" target="mov1#hym27#page59#enu128#fld128_slot"/>
+      </Link>
+      <Link id="mov1#hym27#seu119#ln1034" name="Flow1034" to="mov1#hym27#miu123" type="transport" validate="true">
+        <LinkParameter id="mov1#hym27#seu119#ln1034#par3114" name="oid_oidPM" source="userOIDArray" target="mov1#hym27#miu123.mov2#opm85#icu124#icp372"/>
+      </Link>
+    </SelectorUnit>
+    <ModuleInstanceUnit gr:x="-380" gr:y="640" id="mov1#hym27#miu110" action="true" moduleId="mov2#opm81" linkOrder="mov1#hym27#miu110#ln345">
+      <Link id="mov1#hym27#miu110#ln345" name="Flow345" to="mov1#hym27#page59#hinu7" type="transport" validate="true">
+        <LinkParameter id="mov1#hym27#miu110#ln345#par710" name="OK Port86.oidPF_iodPF [oid] [Hierarchy4]" source="mov2#opm81#okcu86#ocp221" target="mov1#hym27#page59#hinu7#su296#kcond132.userOID"/>
+        <LinkParameter id="mov1#hym27#miu110#ln345#par741" name="OK Port86.oidPM_RoleCondition187 [oid] [Level3]" source="mov2#opm81#okcu86#ocp229" target="mov1#hym27#page59#hinu7#hiulvl8#su273#rcond160.userOID"/>
+        <LinkParameter id="mov1#hym27#miu110#ln345#par749" name="OK Port86.oidPF_RoleCondition189 [oid] [Level6]" source="mov2#opm81#okcu86#ocp221" target="mov1#hym27#page59#hinu7#hiulvl9#su297#rcond162.userOID"/>
+        <LinkParameter id="mov1#hym27#miu110#ln345#par752" name="OK Port86.oidPM_RoleCondition194 [oid] [Level6]" source="mov2#opm81#okcu86#ocp229" target="mov1#hym27#page59#hinu7#hiulvl9#su297#rcond168.userOID"/>
+      </Link>
+      <OKLink id="mov1#hym27#miu110#oln796" name="OKFlow796" to="mov1#hym27#seu114" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <SelectorUnit gr:x="-190" gr:y="65" id="mov1#hym27#seu121" name="Selector121" entity="ent76" linkOrder="mov1#hym27#seu121#ln586">
+      <Selector id="mov1#hym27#seu121#su301" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym27#seu121#su301#rcond169" name="RoleCondition169" role="rel59#role118" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#hym27#seu121#ln586" name="Flow586" to="mov1#hym27#page59#enu128" type="transport" validate="true" gr:bendpoints="87,174,-203,-36">
+        <LinkParameter id="mov1#hym27#seu121#ln586#par753" name="deFecha_instrumentoFecha" source="ent76#att475Array" target="mov1#hym27#page59#enu128#fld87_slot"/>
+        <LinkParameter id="mov1#hym27#seu121#ln586#par759" name="libro_instrumentoLibro" source="ent76#att472Array" target="mov1#hym27#page59#enu128#fld90_slot"/>
+        <LinkParameter id="mov1#hym27#seu121#ln586#par813" name="numeroInstrumento_instrumentoNumero" source="ent76#att476Array" target="mov1#hym27#page59#enu128#fld34_slot"/>
+        <LinkParameter id="mov1#hym27#seu121#ln586#par814" name="volumen_instrumentoVolumen" source="ent76#att471Array" target="mov1#hym27#page59#enu128#fld86_slot"/>
+      </Link>
+      <OKLink id="mov1#hym27#seu121#oln841" name="OKFlow841" to="mov1#hym27#miu123" automaticCoupling="true"/>
+    </SelectorUnit>
+    <ActivityParametersUnit gr:x="680" gr:y="585" id="mov1#hym27#apu78" name="get">
+      <ActivityParameter id="mov1#hym27#apu78#ap38" name="denominacion" bpm:uuid="JPSPZB22_K74AKU"/>
+    </ActivityParametersUnit>
+    <ActivityParametersUnit id="mov1#hym27#apu82" name="Set Parameters" gr:x="810" gr:y="120">
+      <ActivityParameter id="mov1#hym27#apu82#ap42" name="denominacion.OID" bpm:uuid="JPSPZB22_K74AKU"/>
+      <OKLink id="mov1#hym27#apu82#oln959" name="OKLink" to="mov1#hym27#pu85" automaticCoupling="false" codeRef="mov1#hym27#page59#enu88#ln596"/>
+      <OKLink id="mov1#hym27#apu82#oln960" name="OKLink" to="mov1#hym27#pu86" automaticCoupling="false" codeRef="mov1#hym27#page59#enu88#ln597"/>
+    </ActivityParametersUnit>
+    <ModuleInstanceUnit gr:x="-255" gr:y="470" id="mov1#hym27#miu123" action="true" moduleId="mov2#opm85">
+      <OKLink id="mov1#hym27#miu123#oln982" name="OKFlow982" to="mov1#hym27#miu110" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</HybridModule>

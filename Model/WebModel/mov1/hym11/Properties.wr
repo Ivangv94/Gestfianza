@@ -1,0 +1,95 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym11" gr:x="2740" gr:y="35" name="Modulo de Funcionario - Funcionario SE - Agregar Fedatario" bpm:moduleType="activity" bpm:uuids="JKBD85VG_LSUK7T.JKK1A42E_AEZS67" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym11#icu31" name="Input" gr:x="-755" gr:y="70">
+      <OKLink id="mov1#hym11#icu31#oln222" name="OKLink" automaticCoupling="true" to="mov1#hym11#page34"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym11#pu57" name="Complete Activity" mode="completeActivity" gr:x="800" gr:y="0"/>
+    <ProcessUnit id="mov1#hym11#pu58" name="Save Activity" mode="saveActivity" gr:x="800" gr:y="150"/>
+    <ProcessUnit id="mov1#hym11#pu59" name="Leave Activity" mode="leaveActivity" gr:x="800" gr:y="260"/>
+    <ActivityParametersUnit id="mov1#hym11#apu4" name="Set Parameters" gr:x="560" gr:y="100">
+      <OKLink id="mov1#hym11#apu4#oln224" name="OKLink" automaticCoupling="false" to="mov1#hym11#pu57"/>
+      <OKLink id="mov1#hym11#apu4#oln225" name="OKLink" automaticCoupling="false" to="mov1#hym11#pu58" codeRef="mov1#hym11#page34#enu29#ln338"/>
+      <OKLink id="mov1#hym11#apu4#oln417" name="OKFlow417" to="mov1#hym11#pu57" automaticCoupling="true" gr:bendpoints="124,-33,-121,62"/>
+    </ActivityParametersUnit>
+    <ModuleInstanceUnit gr:x="-335" gr:y="380" id="mov1#hym11#miu22" action="true" moduleId="mov2#mpkg3#opm46">
+      <OKLink id="mov1#hym11#miu22#oln233" name="OKFlow233" to="mov1#hym11#miu23" ajaxOpenWindow="true" ajaxWindowModal="true" ajaxWindowWidth="600" ajaxWindowHeight="250" ajaxWindowClosable="true" gr:bendpoints="122,44,-613,44;603,43,-132,43">
+        <LinkParameter id="mov1#hym11#miu22#oln233#par324" name="Se agrego al Fedatario correctamente._mensaje" sourceValue="Se agrego al Fedatario correctamente." target="mov1#hym11#miu23.mov2#hym10#icu29#icp89"/>
+      </OKLink>
+      <KOLink id="mov1#hym11#miu22#kln125" name="KOFlow125" to="mov1#hym11#page34#mssu11" gr:bendpoints="110,55,-430,175;888,54,348,174;885,-57,345,63;756,-97,216,23;622,-104,82,16">
+        <LinkParameter id="mov1#hym11#miu22#kln125#par739" name="msj_Shown Messages" source="mov2#mpkg3#opm46#kocu39#ocp73" target="mov1#hym11#page34#mssu11.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="380" gr:y="365" id="mov1#hym11#miu23" action="false" moduleId="mov2#hym10">
+      <OKLink id="mov1#hym11#miu23#oln232" name="Finish11" to="mov1#hym11#page34" automaticCoupling="true" gr:bendpoints="94,-5,559,275;125,-6,590,274;123,-51,588,229;42,-78,507,202;-76,-83,389,197"/>
+      <KOLink id="mov1#hym11#miu23#kln124" name="KOFlow124" to="mov1#hym11#page34#mssu11" automaticCoupling="true" gr:bendpoints="131,1,306,121;128,-59,303,61;44,-85,219,35;-109,-96,66,24"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="-65" gr:y="365" id="mov1#hym11#miu24" action="true" moduleId="mov2#mpkg3#opm14">
+      <OKLink id="mov1#hym11#miu24#oln252" name="OKFlow252" to="mov1#hym11#miu23" ajaxOpenWindow="true" ajaxWindowWidth="600" ajaxWindowHeight="250" ajaxWindowModal="true" ajaxWindowClosable="true">
+        <LinkParameter id="mov1#hym11#miu24#oln252#par761" name="Se agrego al Fedatario correctamente._mensaje" sourceValue="Se agrego al Fedatario correctamente." target="mov1#hym11#miu23.mov2#hym10#icu29#icp89"/>
+      </OKLink>
+      <KOLink id="mov1#hym11#miu24#kln140" name="KOFlow140" to="mov1#hym11#page34#mssu11">
+        <LinkParameter id="mov1#hym11#miu24#kln140#par762" name="msj_Shown Messages" source="mov2#mpkg3#opm14#kocu9#ocp12" target="mov1#hym11#page34#mssu11.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ExcelUnit gr:x="-505" gr:y="130" id="mov1#hym11#exu3" name="Cargar Archivo" mode="read" format="xls" sourceType="blob">
+      <OKLink id="mov1#hym11#exu3#oln412" name="OKFlow412" to="mov1#hym11#lpu2">
+        <LinkParameter id="mov1#hym11#exu3#oln412#par359" name="curp_Input Array" source="mov1#hym11#exu3#ci5Array" target="mov1#hym11#lpu2.array"/>
+        <LinkParameter id="mov1#hym11#exu3#oln412#par450" name="rfc_rfc" source="mov1#hym11#exu3#ci6Array" target="mov1#hym11#lpu2#lsa1"/>
+        <LinkParameter id="mov1#hym11#exu3#oln412#par1846" name="entidadFedatario_entidadFedatario" source="mov1#hym11#exu3#ci10Array" target="mov1#hym11#lpu2#lsa6"/>
+        <LinkParameter id="mov1#hym11#exu3#oln412#par1847" name="fechaOtorgamientoGarantia_fechaOtorgamientoGarantia" source="mov1#hym11#exu3#ci11Array" target="mov1#hym11#lpu2#lsa7"/>
+        <LinkParameter id="mov1#hym11#exu3#oln412#par1848" name="fechaTerminoGarantia_fechaTerminoGarantia" source="mov1#hym11#exu3#ci12Array" target="mov1#hym11#lpu2#lsa8"/>
+        <LinkParameter id="mov1#hym11#exu3#oln412#par1849" name="montoGarantia_montoGarantia" source="mov1#hym11#exu3#ci13Array" target="mov1#hym11#lpu2#lsa9"/>
+        <LinkParameter id="mov1#hym11#exu3#oln412#par1850" name="municipioFedatario_municipioFedatario" source="mov1#hym11#exu3#ci14Array" target="mov1#hym11#lpu2#lsa10"/>
+        <LinkParameter id="mov1#hym11#exu3#oln412#par1851" name="numeroFedatario_numeroFedatario" source="mov1#hym11#exu3#ci15Array" target="mov1#hym11#lpu2#lsa11"/>
+        <LinkParameter id="mov1#hym11#exu3#oln412#par1852" name="tipoFedatario_tipoFedatario" source="mov1#hym11#exu3#ci3Array" target="mov1#hym11#lpu2#lsa12"/>
+        <LinkParameter id="mov1#hym11#exu3#oln412#par1906" name="tipoGarantia_tipoGarantia" source="mov1#hym11#exu3#ci16Array" target="mov1#hym11#lpu2#lsa13"/>
+        <LinkParameter id="mov1#hym11#exu3#oln412#par2009" name="estatusFedatario_estatusFedatario" source="mov1#hym11#exu3#ci18Array" target="mov1#hym11#lpu2#lsa15"/>
+      </OKLink>
+      <CellInfo id="mov1#hym11#exu3#ci5" name="curp" type="string" preserveCellStyle="false" autoSizeColumn="true" column="J" rows="2:"/>
+      <CellInfo id="mov1#hym11#exu3#ci6" name="rfc" type="string" preserveCellStyle="false" autoSizeColumn="true" column="K" rows="2:"/>
+      <CellInfo id="mov1#hym11#exu3#ci3" name="tipoFedatario" type="string" preserveCellStyle="false" autoSizeColumn="true" column="A" rows="2:"/>
+      <CellInfo id="mov1#hym11#exu3#ci10" name="entidadFedatario" type="string" preserveCellStyle="false" autoSizeColumn="true" rows="2:" column="F"/>
+      <CellInfo id="mov1#hym11#exu3#ci11" name="fechaOtorgamientoGarantia" type="string" preserveCellStyle="false" autoSizeColumn="true" column="Z" rows="2:"/>
+      <CellInfo id="mov1#hym11#exu3#ci12" name="fechaTerminoGarantia" type="string" preserveCellStyle="false" autoSizeColumn="true" column="AB" rows="2:"/>
+      <CellInfo id="mov1#hym11#exu3#ci13" name="montoGarantia" type="string" preserveCellStyle="false" autoSizeColumn="true" column="AA" rows="2:"/>
+      <CellInfo id="mov1#hym11#exu3#ci14" name="municipioFedatario" type="string" preserveCellStyle="false" autoSizeColumn="true" rows="2:" column="G"/>
+      <CellInfo id="mov1#hym11#exu3#ci15" name="numeroFedatario" type="string" preserveCellStyle="false" autoSizeColumn="true" column="E" rows="2:"/>
+      <CellInfo id="mov1#hym11#exu3#ci16" name="tipoGarantia" type="string" preserveCellStyle="false" autoSizeColumn="true" column="Y" rows="2:"/>
+      <CellInfo id="mov1#hym11#exu3#ci18" name="estatusFedatario" type="string" preserveCellStyle="false" autoSizeColumn="true" column="L" rows="2:"/>
+      <KOLink id="mov1#hym11#exu3#kln265" name="KOFlow265" to="mov1#hym11#page34#mssu11" gr:bendpoints="86,42,-659,-78;309,45,-436,-75;378,112,-367,-8">
+        <LinkParameter id="mov1#hym11#exu3#kln265#par2027" name="Error al cargar el Excel._Shown Messages" sourceValue="Error al cargar el Excel." target="mov1#hym11#page34#mssu11.shownMessages"/>
+      </KOLink>
+    </ExcelUnit>
+    <LoopUnit gr:x="-490" gr:y="230" id="mov1#hym11#lpu2" name="Iteraciones">
+      <OKLink id="mov1#hym11#lpu2#oln413" name="OKFlow413" to="mov1#hym11#miu69" code="next">
+        <LinkParameter id="mov1#hym11#lpu2#oln413#par362" name="Next Element_curp" source="next" target="mov1#hym11#miu69.mov2#mpkg3#opm46#icu50#icp83"/>
+        <LinkParameter id="mov1#hym11#lpu2#oln413#par363" name="Fedatario_rol" sourceValue="Fedatario" target="mov1#hym11#miu69.mov2#mpkg3#opm46#icu50#icp84"/>
+        <LinkParameter id="mov1#hym11#lpu2#oln413#par451" name="Next Element (rfc)_rfc" source="mov1#hym11#lpu2#lsa1" target="mov1#hym11#miu69.mov2#mpkg3#opm46#icu50#icp82"/>
+        <LinkParameter id="mov1#hym11#lpu2#oln413#par1943" name="Next Element (entidadFedatario)_entidadFedatario" source="mov1#hym11#lpu2#lsa6" target="mov1#hym11#miu69.mov2#mpkg3#opm46#icu50#icp85"/>
+        <LinkParameter id="mov1#hym11#lpu2#oln413#par1944" name="Next Element (fechaOtorgamientoGarantia)_fechaOtorgamientoGarantia" source="mov1#hym11#lpu2#lsa7" target="mov1#hym11#miu69.mov2#mpkg3#opm46#icu50#icp92"/>
+        <LinkParameter id="mov1#hym11#lpu2#oln413#par1947" name="Next Element (fechaTerminoGarantia)_fechaTerminoGarantia" source="mov1#hym11#lpu2#lsa8" target="mov1#hym11#miu69.mov2#mpkg3#opm46#icu50#icp93"/>
+        <LinkParameter id="mov1#hym11#lpu2#oln413#par1948" name="Next Element (montoGarantia)_montoGarantia" source="mov1#hym11#lpu2#lsa9" target="mov1#hym11#miu69.mov2#mpkg3#opm46#icu50#icp173"/>
+        <LinkParameter id="mov1#hym11#lpu2#oln413#par1949" name="Next Element (municipioFedatario)_municipioFedatario" source="mov1#hym11#lpu2#lsa10" target="mov1#hym11#miu69.mov2#mpkg3#opm46#icu50#icp86"/>
+        <LinkParameter id="mov1#hym11#lpu2#oln413#par1950" name="Next Element (numeroFedatario)_numeroFedatario" source="mov1#hym11#lpu2#lsa11" target="mov1#hym11#miu69.mov2#mpkg3#opm46#icu50#icp87"/>
+        <LinkParameter id="mov1#hym11#lpu2#oln413#par1951" name="Next Element (tipoFedatario)_tipoFedatario" source="mov1#hym11#lpu2#lsa12" target="mov1#hym11#miu69.mov2#mpkg3#opm46#icu50#icp88"/>
+        <LinkParameter id="mov1#hym11#lpu2#oln413#par1957" name="Next Element (tipoGarantia)_tipoGarantia" source="mov1#hym11#lpu2#lsa13" target="mov1#hym11#miu69.mov2#mpkg3#opm46#icu50#icp174"/>
+        <LinkParameter id="mov1#hym11#lpu2#oln413#par2000" name="Next Element (estatusFedatario)_estatusFedatario" source="mov1#hym11#lpu2#lsa15" target="mov1#hym11#miu69.mov2#mpkg3#opm46#icu50#icp176"/>
+      </OKLink>
+      <OKLink id="mov1#hym11#lpu2#oln415" name="OKFlow415" to="mov1#hym11#page34#mssu11" automaticCoupling="true" gr:bendpoints="59,40,-686,20;534,42,-211,22" code="end"/>
+      <SecondaryArray id="mov1#hym11#lpu2#lsa1" name="rfc"/>
+      <SecondaryArray id="mov1#hym11#lpu2#lsa6" name="entidadFedatario"/>
+      <SecondaryArray id="mov1#hym11#lpu2#lsa7" name="fechaOtorgamientoGarantia"/>
+      <SecondaryArray id="mov1#hym11#lpu2#lsa8" name="fechaTerminoGarantia"/>
+      <SecondaryArray id="mov1#hym11#lpu2#lsa9" name="montoGarantia"/>
+      <SecondaryArray id="mov1#hym11#lpu2#lsa10" name="municipioFedatario"/>
+      <SecondaryArray id="mov1#hym11#lpu2#lsa11" name="numeroFedatario"/>
+      <SecondaryArray id="mov1#hym11#lpu2#lsa12" name="tipoFedatario"/>
+      <SecondaryArray id="mov1#hym11#lpu2#lsa13" name="tipoGarantia"/>
+      <SecondaryArray id="mov1#hym11#lpu2#lsa15" name="estatusFedatario"/>
+    </LoopUnit>
+    <ModuleInstanceUnit gr:x="-545" gr:y="380" id="mov1#hym11#miu69" moduleId="mov2#mpkg3#opm46">
+      <OKLink id="mov1#hym11#miu69#oln535" name="OKFlow535" to="mov1#hym11#lpu2" automaticCoupling="true" gr:bendpoints="-41,-78,-41,77"/>
+      <KOLink id="mov1#hym11#miu69#kln266" name="KOFlow266" to="mov1#hym11#lpu2" automaticCoupling="true" gr:bendpoints="15,-81,15,74"/>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</HybridModule>

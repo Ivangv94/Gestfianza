@@ -1,0 +1,46 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="5" gr:y="55" id="mov2#mpkg7#opm37" name="consultarMandato">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg7#opm37#icu25" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#mpkg7#opm37#icu25#icp55" name="oidPF"/>
+      <InputCollectorParameter id="mov2#mpkg7#opm37#icu25#icp54" name="oidPM"/>
+      <OKLink id="mov2#mpkg7#opm37#icu25#oln491" name="OKFlow491" to="mov2#mpkg7#opm37#seu85">
+        <LinkParameter id="mov2#mpkg7#opm37#icu25#oln491#par151" name="oidPF_PF [oid]" source="mov2#mpkg7#opm37#icu25#icp54" target="mov2#mpkg7#opm37#seu85#su168#rcond103.userOID"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="335" gr:y="55" id="mov2#mpkg7#opm37#seu85" name="consultarMandato" entity="ent37" linkOrder="mov2#mpkg7#opm37#seu85#ln126">
+      <Selector id="mov2#mpkg7#opm37#seu85#su168" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg7#opm37#seu85#su168#rcond103" name="PM" predicate="in" implied="false" role="rel24#role47"/>
+      </Selector>
+      <OKLink id="mov2#mpkg7#opm37#seu85#oln492" name="OKFlow492" to="mov2#mpkg7#opm37#seu86">
+        <LinkParameter id="mov2#mpkg7#opm37#seu85#oln492#par163" name="Apoderado.oid_KeyCondition53 [oid]" source="rel23#role45_userOIDArray" target="mov2#mpkg7#opm37#seu86#su169#kcond53.userOID"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg7#opm37#seu85#kln93" name="KOFlow93" to="mov2#mpkg7#opm37#kocu17" automaticCoupling="true" gr:bendpoints="80,142,-460,-3"/>
+      <Link id="mov2#mpkg7#opm37#seu85#ln126" name="Flow126" to="mov2#mpkg7#opm37#okcu16" type="transport" validate="true" gr:bendpoints="110,-65,-435,-65;388,-64,-157,-64">
+        <LinkParameter id="mov2#mpkg7#opm37#seu85#ln126#par172" name="fechaCaducidad_fechaCaducidad" source="ent37#att246Array" target="mov2#mpkg7#opm37#okcu16#ocp48"/>
+        <LinkParameter id="mov2#mpkg7#opm37#seu85#ln126#par179" name="fechaInicio_fechaInicio" source="ent37#att247Array" target="mov2#mpkg7#opm37#okcu16#ocp49"/>
+        <LinkParameter id="mov2#mpkg7#opm37#seu85#ln126#par180" name="uripdf_uriPDF" source="ent37#att248Array" target="mov2#mpkg7#opm37#okcu16#ocp50"/>
+        <LinkParameter id="mov2#mpkg7#opm37#seu85#ln126#par184" name="urixml_uriXML" source="ent37#att249Array" target="mov2#mpkg7#opm37#okcu16#ocp51"/>
+      </Link>
+    </SelectorUnit>
+    <KOCollectorUnit gr:x="965" gr:y="205" id="mov2#mpkg7#opm37#kocu17" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg7#opm37#kocu17#ocp52" name="msj"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit gr:x="965" gr:y="45" id="mov2#mpkg7#opm37#okcu16" name="OK">
+      <OutputCollectorParameter id="mov2#mpkg7#opm37#okcu16#ocp51" name="uriXML"/>
+      <OutputCollectorParameter id="mov2#mpkg7#opm37#okcu16#ocp50" name="uriPDF"/>
+      <OutputCollectorParameter id="mov2#mpkg7#opm37#okcu16#ocp49" name="fechaInicio"/>
+      <OutputCollectorParameter id="mov2#mpkg7#opm37#okcu16#ocp48" name="fechaCaducidad"/>
+    </OKCollectorUnit>
+    <SelectorUnit gr:x="560" gr:y="55" id="mov2#mpkg7#opm37#seu86" name="consultarPF" entity="ent39">
+      <Selector id="mov2#mpkg7#opm37#seu86#su169" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg7#opm37#seu86#su169#kcond53" name="KeyCondition53" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg7#opm37#seu86#oln493" name="OKFlow493" to="mov2#mpkg7#opm37#scu25" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg7#opm37#seu86#kln95" name="KOFlow95" to="mov2#mpkg7#opm37#kocu17" automaticCoupling="true"/>
+    </SelectorUnit>
+    <ScriptUnit gr:x="715" gr:y="70" id="mov2#mpkg7#opm37#scu25" name="&#191;mismaPF?">
+      <OKLink id="mov2#mpkg7#opm37#scu25#oln494" name="OKFlow494" to="mov2#mpkg7#opm37#okcu16" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg7#opm37#scu25#kln94" name="KOFlow94" to="mov2#mpkg7#opm37#kocu17" automaticCoupling="true"/>
+    </ScriptUnit>
+  </OperationUnits>
+</OperationModule>

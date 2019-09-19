@@ -1,0 +1,217 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="755" gr:y="335" id="mov1#hym5#page57" name="domicilio de la sociedad" localized="true">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="150" id="mov1#hym5#page57#enu64" name="domicilioSociedad" fieldOrder="mov1#hym5#page57#enu64#fld317 mov1#hym5#page57#enu64#sfld50 mov1#hym5#page57#enu64#sfld52 mov1#hym5#page57#enu64#fld320 mov1#hym5#page57#enu64#fld321 mov1#hym5#page57#enu64#fld322 mov1#hym5#page57#enu64#fld323 mov1#hym5#page57#enu64#fld324 mov1#hym5#page57#enu64#fld325 mov1#hym5#page57#enu64#fld326 mov1#hym5#page57#enu64#fld327 mov1#hym5#page57#enu64#fld367" linkOrder="mov1#hym5#page57#enu64#ln1236">
+      <Field id="mov1#hym5#page57#enu64#fld317" name="codigoPostal" type="string" modifiable="true"/>
+      <Field id="mov1#hym5#page57#enu64#fld326" name="numInterior" type="string" modifiable="true"/>
+      <Field id="mov1#hym5#page57#enu64#fld325" name="numExterior" type="string" modifiable="true"/>
+      <Field id="mov1#hym5#page57#enu64#fld324" name="yCalle" type="string" modifiable="true"/>
+      <Field id="mov1#hym5#page57#enu64#fld323" name="entreCalle" type="string" modifiable="true"/>
+      <Field id="mov1#hym5#page57#enu64#fld322" name="calle" type="string" modifiable="true"/>
+      <Field id="mov1#hym5#page57#enu64#fld321" name="colonia" type="string" modifiable="true"/>
+      <Field id="mov1#hym5#page57#enu64#fld320" name="localidad" type="string" modifiable="true"/>
+      <Field id="mov1#hym5#page57#enu64#fld327" name="denominacion" type="string" modifiable="false" preloaded="true"/>
+      <Link id="mov1#hym5#page57#enu64#ln852" name="Flow852" to="mov1#hym5#apu8" type="transport" validate="true" gr:bendpoints="-161,-70,64,135">
+        <LinkParameter id="mov1#hym5#page57#enu64#ln852#par2499" name="denominacion_denominacion" source="mov1#hym5#page57#enu64#fld327" target="mov1#hym5#apu8#ap6"/>
+      </Link>
+      <SelectionField id="mov1#hym5#page57#enu64#sfld50" type="string" name="estado" ajaxEventEnabled="true" ajaxEventLink="mov1#hym5#page57#enu64#ln1236">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym5#page57#enu64#sfld50#mnd10" name="required"/>
+        </VRules>
+      </SelectionField>
+      <Field id="mov1#hym5#page57#enu64#fld367" name="ambiente" type="string" modifiable="false" preloaded="true"/>
+      <SelectionField id="mov1#hym5#page57#enu64#sfld52" type="string" name="municipio">
+        <VRules/>
+      </SelectionField>
+      <Link id="mov1#hym5#page57#enu64#ln1236" name="obtenerMunicipio" to="mov1#hym5#scu150" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true" ajaxWaitingDialogMessage="Procesando...">
+        <LinkParameter id="mov1#hym5#page57#enu64#ln1236#par3841" name="estado_numeroEstado" source="mov1#hym5#page57#enu64#sfld50" target="mov1#hym5#scu150.numeroEstado"/>
+      </Link>
+    </EntryUnit>
+    <EntryUnit gr:x="40" gr:y="75" id="mov1#hym5#page57#enu84" name="Buttons" linkOrder="mov1#hym5#page57#enu84#ln833 mov1#hym5#page57#enu84#ln853">
+      <Link id="mov1#hym5#page57#enu84#ln833" name="Finish" to="mov1#hym5#apu8" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-178,-26,-28,218" ajaxEnabled="true" ajaxOpenWaitingDialog="true" ajaxWaitingDialogMessage="Procesando..."/>
+      <Link id="mov1#hym5#page57#enu84#ln853" name="Cancel" to="mov1#hym5#pu31" automaticCoupling="true" type="normal" validate="true"/>
+    </EntryUnit>
+    <ActivityParametersUnit gr:x="150" gr:y="75" id="mov1#hym5#page57#apu55">
+      <Link id="mov1#hym5#page57#apu55#ln1235" name="Flow1235" to="mov1#hym5#scu150" type="transport" validate="true" gr:bendpoints="28,82,38,-123">
+        <LinkParameter id="mov1#hym5#page57#apu55#ln1235#par3840" name="ambiente_PASSING_ambiente" sourceLinkParameter="mov1#hym5#scu149#ln1234#par3839" target="mov1#hym5#scu150.ambiente"/>
+      </Link>
+    </ActivityParametersUnit>
+    <MultiMessageUnit gr:x="135" gr:y="0" id="mov1#hym5#page57#mssu5" name="Message5"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12" layout:cellLayout="Print Frame" layout:frameLayout="None">
+        <layout:Grid containerType="grid" label="domicilioSociedad">
+          <layout:Row>
+            <layout:Cell colspan="12">
+              <layout:Field unitId="mov1#hym5#page57#enu64" mode="full" field="mov1#hym5#page57#enu64#fld367" layout:fieldVisibilityConditionVariable="mov1#hym5#page57#var96"/>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12">
+              <layout:Field unitId="mov1#hym5#page57#enu64" mode="full" field="mov1#hym5#page57#enu64#fld327" layout:fieldVisibilityConditionVariable="mov1#hym5#page57#var53">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym5#page57#enu64" mode="full" field="mov1#hym5#page57#enu64#fld317">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym5#page57#enu64" mode="full" field="mov1#hym5#page57#enu64#sfld50">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym5#page57#enu64" mode="full" field="mov1#hym5#page57#enu64#sfld52">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym5#page57#enu64" mode="full" field="mov1#hym5#page57#enu64#fld320">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym5#page57#enu64" mode="full" field="mov1#hym5#page57#enu64#fld321">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym5#page57#enu64" mode="full" field="mov1#hym5#page57#enu64#fld322">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym5#page57#enu64" mode="full" field="mov1#hym5#page57#enu64#fld323">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="mov1#hym5#page57#enu64" mode="full" field="mov1#hym5#page57#enu64#fld324">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="2">
+              <layout:Field unitId="mov1#hym5#page57#enu64" mode="full" field="mov1#hym5#page57#enu64#fld325">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell colspan="2">
+              <layout:Field unitId="mov1#hym5#page57#enu64" mode="full" field="mov1#hym5#page57#enu64#fld326">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym5#page57#enu84" layout:frameLayout="None">
+          <layout:Link link="mov1#hym5#page57#enu84#ln833" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link link="mov1#hym5#page57#enu84#ln853" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym5#page57#mssu5"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+  <Variable id="mov1#hym5#page57#var53" name="ocultarDenominacion" type="boolean" value="false"/>
+  <Variable id="mov1#hym5#page57#var96" name="ocultarAmbiente" type="boolean" value="false"/>
+</Page>

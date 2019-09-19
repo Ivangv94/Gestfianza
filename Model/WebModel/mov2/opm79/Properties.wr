@@ -1,0 +1,190 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="905" gr:y="785" id="mov2#opm79" name="agregarPMaConstituir">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm79#icu118" gr:x="-115" gr:y="55" linkOrder="mov2#opm79#icu118#ln1487">
+      <InputCollectorParameter id="mov2#opm79#icu118#icp344" name="objetoSocial"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp343" name="deFecha"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp342" name="conDuracion"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp341" name="libro"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp340" name="volumen"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp339" name="numeroInstrumento"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp338" name="tipoInstruemento"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp337" name="modalidadCapitalVariable"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp336" name="tipoSociedad"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp335" name="denominacionMUA"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp334" name="fechaAutorizacion"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp333" name="CUD"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp332" name="quienAutoriza"/>
+      <OKLink id="mov2#opm79#icu118#oln956" name="OKFlow956" to="mov2#opm79#seu166">
+        <LinkParameter id="mov2#opm79#icu118#oln956#par3106" name="denominacionMUA_denominacion" source="mov2#opm79#icu118#icp335" target="mov2#opm79#seu166#su299#acond170"/>
+      </OKLink>
+      <Link id="mov2#opm79#icu118#ln1004" name="Flow1004" to="mov2#opm79#cru60" type="transport" validate="true" gr:bendpoints="201,71,-599,56;673,69,-127,54">
+        <LinkParameter id="mov2#opm79#icu118#ln1004#par3108" name="denominacionMUA_denominacionMUA" source="mov2#opm79#icu118#icp335" target="mov2#opm79#cru60.ent38#att463"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1004#par3115" name="CUDoNumExpediente_CUDoNumExpediente" source="mov2#opm79#icu118#icp333" target="mov2#opm79#cru60.ent38#att461"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1004#par3116" name="denominacionMUA_fechaAutorizacionMUA" source="mov2#opm79#icu118#icp334" target="mov2#opm79#cru60.ent38#att459"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1004#par3117" name="tipoSociedad_tipoSociedad" source="mov2#opm79#icu118#icp336" target="mov2#opm79#cru60.ent38#att460"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1004#par3123" name="objetoSocial_objetoSocial" source="mov2#opm79#icu118#icp344" target="mov2#opm79#cru60.ent38#att462"/>
+      </Link>
+      <Link id="mov2#opm79#icu118#ln1005" name="Flow1005" to="mov2#opm79#scu133" type="transport" validate="true" gr:bendpoints="212,-79,-418,-84;438,-82,-192,-87">
+        <LinkParameter id="mov2#opm79#icu118#ln1005#par3109" name="denominacionMUA_denominacionMUA" source="mov2#opm79#icu118#icp335" target="mov2#opm79#scu133.denominacionMUA"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1005#par3110" name="tipoSociedad_tipoSociedad" source="mov2#opm79#icu118#icp336" target="mov2#opm79#scu133.tipoSociedad"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1005#par3118" name="modalidadCapitalVariable_modalidadCapital" source="mov2#opm79#icu118#icp337" target="mov2#opm79#scu133.modalidadCapital"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1005#par3119" name="quienAutoriza_quienAutorizaInput" source="mov2#opm79#icu118#icp332" target="mov2#opm79#scu133.quienAutorizaInput"/>
+      </Link>
+      <Link id="mov2#opm79#icu118#ln1007" name="Flow1007" to="mov2#opm79#cru61" type="transport" validate="true" gr:bendpoints="236,-126,-744,-141;839,-127,-141,-142">
+        <LinkParameter id="mov2#opm79#icu118#ln1007#par3124" name="conDuracion_conDuracion" source="mov2#opm79#icu118#icp342" target="mov2#opm79#cru61.ent76#att474"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1007#par3125" name="deFecha_deFecha" source="mov2#opm79#icu118#icp343" target="mov2#opm79#cru61.ent76#att475"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1007#par3126" name="libro_libro" source="mov2#opm79#icu118#icp341" target="mov2#opm79#cru61.ent76#att472"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1007#par3127" name="numeroInstrumento_numeroInstrumento" source="mov2#opm79#icu118#icp339" target="mov2#opm79#cru61.ent76#att476"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1007#par3128" name="tipoInstruemento_tipoinstrumento" source="mov2#opm79#icu118#icp338" target="mov2#opm79#cru61.ent76#att473"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1007#par3129" name="volumen_volumen" source="mov2#opm79#icu118#icp340" target="mov2#opm79#cru61.ent76#att471"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp345" name="numeroExpediente"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp346" name="fechaAutorizacionSRE"/>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp347" name="denominacionMUAsre"/>
+      <Link id="mov2#opm79#icu118#ln1015" name="Flow1015" to="mov2#opm79#seu166" type="transport" validate="true" gr:bendpoints="178,19,-97,39">
+        <LinkParameter id="mov2#opm79#icu118#ln1015#par3158" name="denominacionMUAsre_denominacion" source="mov2#opm79#icu118#icp347" target="mov2#opm79#seu166#su299#acond170"/>
+      </Link>
+      <Link id="mov2#opm79#icu118#ln1016" name="Flow1016" to="mov2#opm79#scu133" type="transport" validate="true" gr:bendpoints="187,-102,-443,-87;450,-105,-180,-90">
+        <LinkParameter id="mov2#opm79#icu118#ln1016#par3159" name="denominacionMUAsre_denominacionMUA" source="mov2#opm79#icu118#icp347" target="mov2#opm79#scu133.denominacionMUA"/>
+      </Link>
+      <Link id="mov2#opm79#icu118#ln1017" name="Flow1017" to="mov2#opm79#cru60" type="transport" validate="true" gr:bendpoints="194,79,-606,84;633,81,-167,86">
+        <LinkParameter id="mov2#opm79#icu118#ln1017#par3160" name="numeroExpediente_CUDoNumExpediente" source="mov2#opm79#icu118#icp345" target="mov2#opm79#cru60.ent38#att461"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1017#par3161" name="denominacionMUAsre_denominacionMUA" source="mov2#opm79#icu118#icp347" target="mov2#opm79#cru60.ent38#att463"/>
+        <LinkParameter id="mov2#opm79#icu118#ln1017#par3162" name="fechaAutorizacionSRE_fechaAutorizacionMUA" source="mov2#opm79#icu118#icp346" target="mov2#opm79#cru60.ent38#att459"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm79#icu118#icp475" name="origenSociedad"/>
+      <Link id="mov2#opm79#icu118#ln1487" name="Flow1487" to="mov2#opm79#cru74" type="transport" validate="true" gr:bendpoints="215,-175,-1155,-165;1239,-173,-131,-163">
+        <LinkParameter id="mov2#opm79#icu118#ln1487#par4871" name="origenSociedad_origenSociedad" source="mov2#opm79#icu118#icp475" target="mov2#opm79#cru74.ent68#att494"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="1460" gr:y="75" id="mov2#opm79#okcu84" name="OK Port84">
+      <OutputCollectorParameter id="mov2#opm79#okcu84#ocp217" name="MensajeExito"/>
+      <OutputCollectorParameter id="mov2#opm79#okcu84#ocp219" name="oidPM"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1460" gr:y="290" id="mov2#opm79#kocu69" name="KO Port69">
+      <OutputCollectorParameter id="mov2#opm79#kocu69#ocp218" name="mensaje"/>
+    </KOCollectorUnit>
+    <SelectorUnit gr:x="240" gr:y="145" id="mov2#opm79#seu166" name="Selector166" entity="ent38">
+      <Selector id="mov2#opm79#seu166#su299" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm79#seu166#su299#acond170" name="denominacion" predicate="eq" booleanOperator="or" implied="false" attributes="ent38#att463"/>
+      </Selector>
+      <OKLink id="mov2#opm79#seu166#oln957" name="OKFlow957" to="mov2#opm79#inn52">
+        <LinkParameter id="mov2#opm79#seu166#oln957#par3107" name="oid_Input" source="userOIDArray" target="mov2#opm79#inn52.isnotnull"/>
+      </OKLink>
+      <KOLink id="mov2#opm79#seu166#kln414" name="KOFlow414" to="mov2#opm79#kocu69" gr:bendpoints="-1,105,-951,0">
+        <LinkParameter id="mov2#opm79#seu166#kln414#par3131" name="Error en la consulta _mensaje" sourceValue="Error en la consulta " target="mov2#opm79#kocu69#ocp218"/>
+      </KOLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="445" gr:y="160" id="mov2#opm79#inn52" name="&#191;Existe?">
+      <KOLink id="mov2#opm79#inn52#kln413" name="KOFlow413" to="mov2#opm79#scu133" automaticCoupling="true"/>
+      <OKLink id="mov2#opm79#inn52#oln963" name="OKFlow963" to="mov2#opm79#okcu84" gr:bendpoints="165,-83,-780,-8">
+        <LinkParameter id="mov2#opm79#inn52#oln963#par3130" name="La Persona Moral ya est&#225; inscrita_MensajeExito" sourceValue="La Persona Moral ya est&#225; inscrita" target="mov2#opm79#okcu84#ocp217"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="780" gr:y="165" id="mov2#opm79#cru60" name="insertarPM" entity="ent38">
+      <OKLink id="mov2#opm79#cru60#oln962" name="OKFlow962" to="mov2#opm79#cru61"/>
+      <KOLink id="mov2#opm79#cru60#kln416" name="KOFlow416" to="mov2#opm79#kocu69" gr:bendpoints="13,68,-412,-22">
+        <LinkParameter id="mov2#opm79#cru60#kln416#par3133" name="Error al insertar la Persona Moral_mensaje" sourceValue="Error al insertar la Persona Moral" target="mov2#opm79#kocu69#ocp218"/>
+      </KOLink>
+      <Link id="mov2#opm79#cru60#ln1009" name="Flow1009" to="mov2#opm79#mfu35" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="78,-64,-317,-74;305,-63,-90,-73"/>
+    </CreateUnit>
+    <ScriptUnit gr:x="580" gr:y="165" id="mov2#opm79#scu133" name="armarDenominacion">
+      <ScriptUnitText xml:space="preserve">#input String denominacionMUA, String tipoSociedad, String quienAutorizaInput, String modalidadCapital
+#output denominacionCompleta, quienAutorizaOutput, tipoCapital
+
+
+String quienAutorizaOutput
+
+String denominacionCompleta;
+
+String tipoCapital;
+
+
+if(quienAutorizaInput == "Secretar&#237;a de Econom&#237;a" &amp;&amp; modalidadCapital == "SI")
+
+{
+
+    denominacionCompleta = denominacionMUA + " " + tipoSociedad + " DE CV";
+
+    tipoCapital = "V";
+    
+    quienAutorizaOutput = "SE"
+}
+
+
+
+else if (quienAutorizaInput == "Secretar&#237;a de Econom&#237;a" &amp;&amp; modalidadCapital == "NO")
+
+{    
+
+    denominacionCompleta = denominacionMUA +" "+ tipoSociedad 
+
+    tipoCapital = "F";
+    
+     quienAutorizaOutput = "SE"
+
+} else if(quienAutorizaInput == "Secretar&#237;a de Relaciones Exteriores" &amp;&amp; modalidadCapital == "SI")
+
+{
+
+    denominacionCompleta = denominacionMUA + " " + tipoSociedad + " DE CV";
+
+    tipoCapital = "V";
+    
+    quienAutorizaOutput = "SRE"
+} else if (quienAutorizaInput == "Secretar&#237;a de Relaciones Exteriores" &amp;&amp; modalidadCapital == "NO")
+
+{    
+
+    denominacionCompleta = denominacionMUA + " " + tipoSociedad 
+
+    tipoCapital = "F";
+    
+     quienAutorizaOutput = "SRE"
+
+}
+
+
+
+return ["denominacionCompleta":denominacionCompleta, "quienAutorizaOutput":quienAutorizaOutput, "tipoCapital":tipoCapital]</ScriptUnitText>
+      <OKLink id="mov2#opm79#scu133#oln961" name="OKFlow961" to="mov2#opm79#cru60">
+        <LinkParameter id="mov2#opm79#scu133#oln961#par3120" name="quienAutorizaOutput_quienAutoriza" source="result(quienAutorizaOutput)" target="mov2#opm79#cru60.ent38#att477"/>
+        <LinkParameter id="mov2#opm79#scu133#oln961#par3121" name="denominacionCompleta_razonSocial" source="result(denominacionCompleta)" target="mov2#opm79#cru60.ent38#att255"/>
+        <LinkParameter id="mov2#opm79#scu133#oln961#par3122" name="tipoCapital_tipoCapital" source="result(tipoCapital)" target="mov2#opm79#cru60.ent38#att425"/>
+      </OKLink>
+      <KOLink id="mov2#opm79#scu133#kln415" name="KOFlow415" to="mov2#opm79#kocu69" gr:bendpoints="-1,83,-596,-17">
+        <LinkParameter id="mov2#opm79#scu133#kln415#par3132" name="Error al armar la denominaci&#243;n_mensaje" sourceValue="Error al armar la denominaci&#243;n" target="mov2#opm79#kocu69#ocp218"/>
+      </KOLink>
+    </ScriptUnit>
+    <CreateUnit gr:x="930" gr:y="165" id="mov2#opm79#cru61" name="insertarInstrumento" entity="ent76">
+      <OKLink id="mov2#opm79#cru61#oln964" name="OKFlow964" to="mov2#opm79#mfu35">
+        <LinkParameter id="mov2#opm79#cru61#oln964#par3136" name="oid_instrumentos.oid(PersonaMoralToinstrumentos)" source="ent76#att470Array" target="mov2#opm79#mfu35.rel59#role118.ent76#att470"/>
+      </OKLink>
+      <KOLink id="mov2#opm79#cru61#kln417" name="KOFlow417" to="mov2#opm79#kocu69" gr:bendpoints="59,70,-566,-55">
+        <LinkParameter id="mov2#opm79#cru61#kln417#par3134" name="Error al insertar los instrumentos_mensaje" sourceValue="Error al insertar los instrumentos" target="mov2#opm79#kocu69#ocp218"/>
+      </KOLink>
+    </CreateUnit>
+    <ModifyUnit gr:x="1175" gr:y="170" id="mov2#opm79#mfu35" name="Update35" entity="ent38">
+      <Selector id="mov2#opm79#mfu35#su300" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm79#mfu35#su300#kcond131" name="KeyCondition131" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov2#opm79#mfu35#kln418" name="KOFlow418" to="mov2#opm79#kocu69" gr:bendpoints="-38,60,-448,-55">
+        <LinkParameter id="mov2#opm79#mfu35#kln418#par3138" name="Error al actualizar la Persona Moral_mensaje" sourceValue="Error al actualizar la Persona Moral" target="mov2#opm79#kocu69#ocp218"/>
+      </KOLink>
+      <Link id="mov2#opm79#mfu35#ln1257" name="OKFlow965" to="mov2#opm79#okcu84" type="transport" gr:bendpoints="72,-96,-278,4">
+        <LinkParameter id="mov2#opm79#mfu35#ln1257#par3939" name="oid_oidPM" source="userOIDArray" target="mov2#opm79#okcu84#ocp219"/>
+      </Link>
+      <OKLink id="mov2#opm79#mfu35#oln1207" name="OKFlow1207" to="mov2#opm79#cru74">
+        <LinkParameter id="mov2#opm79#mfu35#oln1207#par3940" name="oid_oidPM" source="userOIDArray" target="mov2#opm79#cru74.ent68#att441"/>
+      </OKLink>
+    </ModifyUnit>
+    <CreateUnit gr:x="1340" gr:y="175" id="mov2#opm79#cru74" name="creaParametro" entity="ent68">
+      <OKLink id="mov2#opm79#cru74#oln1208" name="OKFlow1208" to="mov2#opm79#okcu84" automaticCoupling="true"/>
+    </CreateUnit>
+    <GetUnit gr:x="1350" gr:y="350" id="mov2#opm79#gtu60" name="Get60" contextParameters="UserCtxParam" linkOrder="mov2#opm79#gtu60#ln1258">
+      <Link id="mov2#opm79#gtu60#ln1258" name="Flow1258" to="mov2#opm79#cru74" type="transport" validate="true">
+        <LinkParameter id="mov2#opm79#gtu60#ln1258#par3941" name="UserCtxParam.oid_oidFedatario" source="mov2#opm79#gtu60.UserCtxParam" target="mov2#opm79#cru74.ent68#att440"/>
+      </Link>
+    </GetUnit>
+  </OperationUnits>
+</OperationModule>

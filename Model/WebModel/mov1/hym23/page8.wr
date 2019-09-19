@@ -1,0 +1,218 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym23#page8" name="Agregar Personal" gr:x="-65" gr:y="-80" localized="true">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym23#page8#enu68" name="Buttons" gr:x="615" gr:y="10" linkOrder="mov1#hym23#page8#enu68#ln49 mov1#hym23#page8#enu68#ln51 mov1#hym23#page8#enu68#ln50">
+      <Link id="mov1#hym23#page8#enu68#ln49" name="Finish1" type="normal" validate="true" automaticCoupling="false" to="mov1#hym23#apu46"/>
+      <Link id="mov1#hym23#page8#enu68#ln50" name="Save and Work Later" type="normal" validate="false" automaticCoupling="false" to="mov1#hym23#apu46" gr:bendpoints="96,24,-124,24"/>
+      <Link id="mov1#hym23#page8#enu68#ln51" name="Cancel" type="normal" validate="false" automaticCoupling="false" to="mov1#hym23#pu14"/>
+    </EntryUnit>
+    <IndexUnit id="mov1#hym23#page8#inu2" name="mostrarPersonal" gr:x="385" gr:y="245" entity="ent39" linkOrder="mov1#hym23#page8#inu2#ln56" displayAttributes="userName ent39#att268 ent39#att269">
+      <Selector id="mov1#hym23#page8#inu2#su18" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym23#page8#inu2#su18#rcond7" name="funcionario" predicate="in" implied="false" role="User2Group.DefaultGroup2User"/>
+      </Selector>
+      <Link id="mov1#hym23#page8#inu2#ln56" name="Flow56" to="mov1#hym23#miu43" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true" ajaxWaitingDialogMessage="Procesando...">
+        <LinkParameter id="mov1#hym23#page8#inu2#ln56#par379" name="userName_curp" source="data[].userName" target="mov1#hym23#miu43.mov2#mpkg3#opm14#icu33#icp13"/>
+        <LinkParameter id="mov1#hym23#page8#inu2#ln56#par380" name="Personal del fedatario_rol" sourceValue="Personal del fedatario" target="mov1#hym23#miu43.mov2#mpkg3#opm14#icu33#icp14"/>
+      </Link>
+    </IndexUnit>
+    <EntryUnit id="mov1#hym23#page8#enu71" name="tituloCargaPersonalExcel" gr:x="0" gr:y="115">
+      <Field id="mov1#hym23#page8#enu71#fld119" name="titulo" type="string" modifiable="false" contentType="text/html" preloaded="true">
+        <Slot id="mov1#hym23#page8#enu71#fld119#slot38" name="titulo" label="true" output="true" value="&lt;h2&gt;Carga de personal por archivo&lt;/h2&gt;&lt;hr class=&quot;red&quot;&gt;"/>
+      </Field>
+    </EntryUnit>
+    <SelectorUnit id="mov1#hym23#page8#seu41" name="obtenerIDPersonal" gr:x="370" gr:y="105" entity="Group">
+      <Selector id="mov1#hym23#page8#seu41#su19" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym23#page8#seu41#su19#acond15" name="Personal del fedatario" predicate="eq" booleanOperator="or" implied="false" attributes="groupName" value="Personal Fedatario"/>
+      </Selector>
+      <Link id="mov1#hym23#page8#seu41#ln53" name="Flow344" to="mov1#hym23#page8#inu2" type="transport" validate="true">
+        <LinkParameter id="mov1#hym23#page8#seu41#ln53#par374" name="oid_funcionario [oid]" source="groupOIDArray" target="mov1#hym23#page8#inu2#su18#rcond7.userOID"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit id="mov1#hym23#page8#enu72" name="file" gr:x="55" gr:y="210" linkOrder="mov1#hym23#page8#enu72#ln55">
+      <Field id="mov1#hym23#page8#enu72#fld120" name="file" type="blob" modifiable="true">
+        <VRules>
+          <RegularExpressionValidationRule id="mov1#hym23#page8#enu72#fld120#regex2" name="archivoExcel" regex="^.*\.(xlsx|XLSX|xlsx|XLS)$" errorMessage="Favor de introduccir un archivo .xls o .xlsx"/>
+        </VRules>
+      </Field>
+      <Link id="mov1#hym23#page8#enu72#ln55" name="cargaArchivo" to="mov1#hym23#exu4" type="normal" validate="true" ajaxEnabled="false" ajaxOpenWaitingDialog="false">
+        <LinkParameter id="mov1#hym23#page8#enu72#ln55#par377" name="file_BLOB" source="mov1#hym23#page8#enu72#fld120" target="mov1#hym23#exu4.blob"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit id="mov1#hym23#page8#mssu17" name="Error" gr:x="95" gr:y="315"/>
+    <EntryUnit id="mov1#hym23#page8#enu73" name="agregarPersonalFedatario" gr:x="165" gr:y="245" linkOrder="mov1#hym23#page8#enu73#ln57">
+      <Field id="mov1#hym23#page8#enu73#fld121" name="curp" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym23#page8#enu73#fld121#mnd25" name="Mandatory3" errorMessage="Este campo es obligatorio."/>
+          <RegularExpressionValidationRule id="mov1#hym23#page8#enu73#fld121#regex1" name="REGEX CURP" regex="[A-Z][A,E,I,O,U,X][A-Z]{2}[0-9]{2}[0-1][0-9][0-3][0-9][M,H][A-Z]{2}[B,C,D,F,G,H,J,K,L,M,N,&#209;,P,Q,R,S,T,V,W,X,Y,Z]{3}[0-9,A-Z][0-9]"/>
+        </VRules>
+      </Field>
+      <Link id="mov1#hym23#page8#enu73#ln57" name="AgregarPersonal" to="mov1#hym23#miu42" type="normal" validate="true">
+        <LinkParameter id="mov1#hym23#page8#enu73#ln57#par387" name="curp_curp" source="mov1#hym23#page8#enu73#fld121" target="mov1#hym23#miu42.mov2#mpkg3#opm13#icu32#icp11"/>
+        <LinkParameter id="mov1#hym23#page8#enu73#ln57#par407" name="Personal del fedatario_rol" sourceValue="Personal Fedatario" target="mov1#hym23#miu42.mov2#mpkg3#opm13#icu32#icp12"/>
+        <LinkParameter id="mov1#hym23#page8#enu73#ln57#par467" name="rfc_rfc" source="mov1#hym23#page8#enu73#fld125" target="mov1#hym23#miu42.mov2#mpkg3#opm13#icu32#icp18"/>
+      </Link>
+      <Field id="mov1#hym23#page8#enu73#fld125" name="rfc" type="string" modifiable="true"/>
+    </EntryUnit>
+    <EntryUnit id="mov1#hym23#page8#enu74" name="tituloListaDePersonal" gr:x="360" gr:y="0">
+      <Field id="mov1#hym23#page8#enu74#fld122" name="titulo" type="string" modifiable="false" contentType="text/html" preloaded="true">
+        <Slot id="mov1#hym23#page8#enu74#fld122#slot39" name="titulo" label="true" output="true" value="&lt;h2&gt;Lista de Personal&lt;/h2&gt;&lt;hr class=&quot;red&quot;&gt;"/>
+      </Field>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid" layout:frameLayout="None">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym23#page8#mssu17" layout:frameLayout="None">
+          <layout:LayoutParameter name="messageType" value="danger" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym23#page8#enu73" layout:frameLayout="None">
+          <layout:Link link="mov1#hym23#page8#enu73#ln57" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Field field="mov1#hym23#page8#enu73#fld121">
+            <layout:LayoutParameter name="label-position" value="top" type="field"/>
+            <layout:LayoutParameter name="label-width" value="6" type="field"/>
+          </layout:Field>
+          <layout:Field field="mov1#hym23#page8#enu73#fld125"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym23#page8#enu74" layout:frameLayout="None">
+          <layout:Field field="mov1#hym23#page8#enu74#fld122" layout:fieldLayout="WRDefault/FieldValue"/>
+          <layout:LayoutParameter name="button-group" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-label" value="false" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym23#page8#inu2" layout:frameLayout="None">
+          <layout:Link link="mov1#hym23#page8#inu2#ln56"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="ent39#att268"/>
+          <layout:Attribute attribute="ent39#att269"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym23#page8#enu71" layout:frameLayout="None">
+          <layout:Field field="mov1#hym23#page8#enu71#fld119" layout:fieldLayout="WRDefault/FieldValue"/>
+          <layout:LayoutParameter name="button-group" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-label" value="false" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym23#page8#enu72" layout:frameLayout="None">
+          <layout:Field field="mov1#hym23#page8#enu72#fld120">
+            <layout:LayoutParameter name="label-position" value="top" type="field"/>
+            <layout:LayoutParameter name="label-width" value="3" type="field"/>
+          </layout:Field>
+          <layout:Link link="mov1#hym23#page8#enu72#ln55" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8" label="Buttons" layout:cellLayout="Print Frame">
+        <layout:Unit unitId="mov1#hym23#page8#enu68" layout:frameLayout="None" manualLinks="true" manualLinkOrder="mov1#hym23#page8#enu68#ln49 mov1#hym23#page8#enu68#ln51" styleClass="&lt;hr&gt;">
+          <layout:Link link="mov1#hym23#page8#enu68#ln49" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+            <layout:LayoutParameter name="confirmation" value="false" type="link"/>
+            <layout:LayoutParameter name="confirm-message" value="Confirm Finish" type="link"/>
+          </layout:Link>
+          <layout:Link link="mov1#hym23#page8#enu68#ln51" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+  <layout:LayoutParameter name="auto-refresh" value="true" type="page"/>
+</Page>

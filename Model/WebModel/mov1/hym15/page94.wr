@@ -1,0 +1,111 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym15#page94" name="Ingresar e.firma de la persona a verificar" layout:pageLayout="gobmxStyle/loginEfirmaCancel" ajaxEnabled="false" gr:x="1580" gr:y="835">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym15#page94#enu120" name="Ingresa e.firma de la persona a verificar" linkOrder="mov1#hym15#page94#enu120#ln667 mov1#hym15#page94#enu120#ln668" gr:x="0" gr:y="0">
+      <Field id="mov1#hym15#page94#enu120#fld244" name="fileCer" type="blob" modifiable="true"/>
+      <Field id="mov1#hym15#page94#enu120#fld245" name="fileKey" type="blob" modifiable="true"/>
+      <Field id="mov1#hym15#page94#enu120#fld246" name="pwdPrivateKey" type="password" modifiable="true"/>
+      <Field id="mov1#hym15#page94#enu120#fld247" name="rfcEmisor" type="string" modifiable="false"/>
+      <Field id="mov1#hym15#page94#enu120#fld248" name="base64" type="string" modifiable="false"/>
+      <Field id="mov1#hym15#page94#enu120#fld249" name="curpEmisor" type="string" modifiable="false"/>
+      <Field id="mov1#hym15#page94#enu120#fld250" name="emailEmisor" type="string" modifiable="false"/>
+      <Field id="mov1#hym15#page94#enu120#fld251" name="nombreEmisor" type="string" modifiable="false"/>
+      <Field id="mov1#hym15#page94#enu120#fld252" name="serialEmisor" type="string" modifiable="false"/>
+      <Field id="mov1#hym15#page94#enu120#fld253" name="tipoPersona" type="string" modifiable="false"/>
+      <Field id="mov1#hym15#page94#enu120#fld254" name="Username" type="string" modifiable="false"/>
+      <Field id="mov1#hym15#page94#enu120#fld255" name="x509" type="string" modifiable="false"/>
+      <Link id="mov1#hym15#page94#enu120#ln667" name="Continuar" to="mov1#hym15#switch34" type="normal" validate="true" ajaxEnabled="false" ajaxOpenWaitingDialog="false" ajaxWaitingDialogMessage="Procesando ...">
+        <LinkParameter id="mov1#hym15#page94#enu120#ln667#par2535" name="tipoPersona_Switch" source="mov1#hym15#page94#enu120#fld253" target="mov1#hym15#switch34.switch"/>
+      </Link>
+      <Link id="mov1#hym15#page94#enu120#ln668" name="Cancelar" to="mov1#hym15#ju5" type="normal" automaticCoupling="true" validate="false"/>
+      <Field id="mov1#hym15#page94#enu120#fld256" name="ocr" type="string" modifiable="false" preloaded="true" hidden="false"/>
+      <Field id="mov1#hym15#page94#enu120#fld257" name="cic" type="string" modifiable="false" preloaded="true" hidden="false"/>
+      <Field id="mov1#hym15#page94#enu120#fld258" name="anioEmision" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym15#page94#enu120#fld259" name="anioReg" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym15#page94#enu120#fld260" name="claveElector" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym15#page94#enu120#fld261" name="verINE" type="string" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym15#page94#enu120#fld262" name="numEmision" type="string" modifiable="false" preloaded="true"/>
+    </EntryUnit>
+    <MultiMessageUnit id="mov1#hym15#page94#mssu23" name="Message3" gr:x="145" gr:y="95">
+      <Link id="mov1#hym15#page94#mssu23#ln669" name="Flow108" to="mov1#hym15#page94#enu120" type="transport" validate="true"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid" layout:frameLayout="None">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym15#page94#mssu23">
+          <layout:LayoutParameter name="messageType" value="danger" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym15#page94#enu120" layout:frameLayout="None">
+          <layout:LayoutParameter name="label-width" value="5" type="unit"/>
+          <layout:Link label="Continuar" link="mov1#hym15#page94#enu120#ln667" styleClass="autenticar pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link label="Cancelar" link="mov1#hym15#page94#enu120#ln668" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+          <layout:Field label="Certificado (cer):" field="mov1#hym15#page94#enu120#fld244" styleClass="btn-file fileCer"/>
+          <layout:Field label="Clave privada (key):" field="mov1#hym15#page94#enu120#fld245" styleClass="btn-file fileKey"/>
+          <layout:Field label="Contrase&#241;a de clave privada:" field="mov1#hym15#page94#enu120#fld246" styleClass="pwdPrivateKey"/>
+          <layout:Field label="RFC:" field="mov1#hym15#page94#enu120#fld247" styleClass="rfcEmisor"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld248" styleClass="base64 hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld249" styleClass="curpEmisor hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld250" styleClass="emailEmisor hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld251" styleClass="nombreEmisor hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld252" styleClass="serialEmisor hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld253" styleClass="tipoPersona hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld254" styleClass="Username hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld255" styleClass="x509 hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld256" styleClass="hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld257" styleClass="hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld258" styleClass="hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld259" styleClass="hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld260" styleClass="hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld261" styleClass="hidden"/>
+          <layout:Field field="mov1#hym15#page94#enu120#fld262" styleClass="hidden"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+  <layout:LayoutParameter name="show-page-title" value="true" type="page"/>
+</Page>

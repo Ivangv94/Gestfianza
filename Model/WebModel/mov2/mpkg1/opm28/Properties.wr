@@ -1,0 +1,150 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg1#opm28" name="insertarQRPDF" gr:x="295" gr:y="50">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg1#opm28#icu38" gr:x="0" gr:y="65">
+      <InputCollectorParameter id="mov2#mpkg1#opm28#icu38#icp107" name="name"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm28#icu38#icp108" name="docPdf"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm28#icu38#icp109" name="QRCode Text"/>
+      <Link id="mov2#mpkg1#opm28#icu38#ln350" name="Flow453" to="mov2#mpkg1#opm28#qrcu2" type="transport" validate="true" gr:bendpoints="149,-53,-311,-53;373,-53,-87,-53">
+        <LinkParameter id="mov2#mpkg1#opm28#icu38#ln350#par826" name="OK adelante.url_QRCode Text" source="mov2#mpkg1#opm28#icu38#icp109" target="mov2#mpkg1#opm28#qrcu2.text"/>
+      </Link>
+      <OKLink id="mov2#mpkg1#opm28#icu38#oln273" name="OKFlow286" to="mov2#mpkg1#opm28#scu40">
+        <LinkParameter id="mov2#mpkg1#opm28#icu38#oln273#par827" name="name_name" source="mov2#mpkg1#opm28#icu38#icp107" target="mov2#mpkg1#opm28#scu40.name"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#opm28#icu38#ln351" name="Flow463" to="mov2#mpkg1#opm28#cru14" type="transport" validate="true" gr:bendpoints="146,59,-539,59;574,59,-111,59">
+        <LinkParameter id="mov2#mpkg1#opm28#icu38#ln351#par828" name="docPdf_archivo" source="mov2#mpkg1#opm28#icu38#icp108" target="mov2#mpkg1#opm28#cru14.ent4#att34"/>
+      </Link>
+    </InputCollectorUnit>
+    <KOCollectorUnit id="mov2#mpkg1#opm28#kocu24" name="KO error" gr:x="1480" gr:y="230">
+      <OutputCollectorParameter id="mov2#mpkg1#opm28#kocu24#ocp85" name="mensaje"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit id="mov2#mpkg1#opm28#okcu30" name="OK adelante" gr:x="1480" gr:y="5">
+      <OutputCollectorParameter id="mov2#mpkg1#opm28#okcu30#ocp86" name="QRCode Text"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm28#okcu30#ocp87" name="docPdf"/>
+    </OKCollectorUnit>
+    <CreateUnit id="mov2#mpkg1#opm28#cru14" name="crearArchivosBuffer" gr:x="700" gr:y="80" entity="ent4">
+      <OKLink id="mov2#mpkg1#opm28#cru14#oln274" name="OKFlow302" to="mov2#mpkg1#opm28#scu39">
+        <LinkParameter id="mov2#mpkg1#opm28#cru14#oln274#par829" name="docPdf_docRtf" source="ent4#att34Array" target="mov2#mpkg1#opm28#scu39.docRtf"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#opm28#cru14#ln352" name="Flow466" to="mov2#mpkg1#opm28#scu41" type="transport" validate="true" gr:bendpoints="101,-52,-234,-57;267,-54,-83,-54">
+        <LinkParameter id="mov2#mpkg1#opm28#cru14#ln352#par830" name="qr_qr" source="ent4#att34Array" target="mov2#mpkg1#opm28#scu41.qr"/>
+      </Link>
+      <KOLink id="mov2#mpkg1#opm28#cru14#kln147" name="KOFlow59" to="mov2#mpkg1#opm28#kocu24" gr:bendpoints="239,147,-586,-3">
+        <LinkParameter id="mov2#mpkg1#opm28#cru14#kln147#par831" name="Ocurri&#243; un error antes de la conversi&#243;n a PDF, intenta nuevamente por favor . . ._mensaje" target="mov2#mpkg1#opm28#kocu24#ocp85" sourceValue="Ocurri&#243; un error antes de la conversi&#243;n a PDF, intenta nuevamente por favor . . ."/>
+      </KOLink>
+    </CreateUnit>
+    <ScriptUnit id="mov2#mpkg1#opm28#scu39" name="convertirApdf" gr:x="915" gr:y="90" script="WEB-INF/descr/groovy/convertirApdf.groovy">
+      <KOLink id="mov2#mpkg1#opm28#scu39#kln148" name="KOFlow57" to="mov2#mpkg1#opm28#kocu24" gr:bendpoints="263,126,-367,-24;466,125,-164,-25">
+        <LinkParameter id="mov2#mpkg1#opm28#scu39#kln148#par832" name="Ha ocurrido un error, intenta nuevamente . . ._Shown Messages" target="mov2#mpkg1#opm28#kocu24#ocp85" sourceValue="Ha ocurrido un error durante la conversi&#243;n a PDF, por favor intenta nuevamente . . ."/>
+      </KOLink>
+      <Link id="mov2#mpkg1#opm28#scu39#ln353" name="OKFlow297" to="mov2#mpkg1#opm28#scu41" type="transport">
+        <LinkParameter id="mov2#mpkg1#opm28#scu39#ln353#par833" name="rutaArchivoPdf_rutaArchivoPdf" source="result(rutaArchivoPdf)" target="mov2#mpkg1#opm28#scu41.rutaArchivoPdf"/>
+      </Link>
+      <OKLink id="mov2#mpkg1#opm28#scu39#oln275" name="OKFlow23" to="mov2#mpkg1#opm28#okcu30">
+        <LinkParameter id="mov2#mpkg1#opm28#scu39#oln275#par834" name="rutaArchivoPdf_docPdf" source="result(rutaArchivoPdf)" target="mov2#mpkg1#opm28#okcu30#ocp87"/>
+      </OKLink>
+    </ScriptUnit>
+    <CreateUnit id="mov2#mpkg1#opm28#cru15" name="crearArchivoBuffer" gr:x="1220" gr:y="80" entity="ent4">
+      <OKLink id="mov2#mpkg1#opm28#cru15#oln276" name="OKFlow304" to="mov2#mpkg1#opm28#okcu30" gr:bendpoints="118,-1,-172,79">
+        <LinkParameter id="mov2#mpkg1#opm28#cru15#oln276#par835" name="docPdf_docPdf" source="ent4#att34Array" target="mov2#mpkg1#opm28#okcu30#ocp87"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg1#opm28#cru15#kln149" name="KOFlow57" to="mov2#mpkg1#opm28#kocu24" gr:bendpoints="72,78,-228,-72;154,77,-146,-73">
+        <LinkParameter id="mov2#mpkg1#opm28#cru15#kln149#par836" name="Ocurri&#243; un error en la parte final del firmado, intenta nuevamente por favor . . ._mensaje" target="mov2#mpkg1#opm28#kocu24#ocp85" sourceValue="Ocurri&#243; un error en la parte final del firmado, intenta nuevamente por favor . . ."/>
+      </KOLink>
+    </CreateUnit>
+    <ScriptUnit id="mov2#mpkg1#opm28#scu40" name="Prepare Output Name" gr:x="295" gr:y="90" script="WEB-INF/descr/groovy/prepareOutputName.groovy">
+      <ScriptUnitText xml:space="preserve">#input String name
+#output nombreDoc,nombreImg,nombreDocPdf
+
+nombreDoc = name + ".rtf";
+nombreImg = name + ".png";
+nombreDocPdf = name + ".pdf"; 
+
+return["nombreDoc":nombreDoc,"nombreImg":nombreImg,"nombreDocPdf":nombreDocPdf]</ScriptUnitText>
+      <OKLink id="mov2#mpkg1#opm28#scu40#oln277" name="OKFlow300" to="mov2#mpkg1#opm28#qrcu2">
+        <LinkParameter id="mov2#mpkg1#opm28#scu40#oln277#par837" name="nombreImg_QRCode Image Name" source="result(nombreImg)" target="mov2#mpkg1#opm28#qrcu2.imageName"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#opm28#scu40#ln354" name="Flow464" to="mov2#mpkg1#opm28#cru14" type="transport" validate="true" gr:bendpoints="92,-73,-338,-73;295,-73,-135,-73">
+        <LinkParameter id="mov2#mpkg1#opm28#scu40#ln354#par838" name="nombreImg_imagen" source="result(nombreImg)" target="mov2#mpkg1#opm28#cru14.ent4#att35"/>
+        <LinkParameter id="mov2#mpkg1#opm28#scu40#ln354#par839" name="nombreDoc_archivo [file name]" source="result(nombreDoc)" target="mov2#mpkg1#opm28#cru14.ent4#att34_name"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm28#scu40#ln355" name="Flow467" to="mov2#mpkg1#opm28#cru15" type="transport" validate="true" gr:bendpoints="91,-108,-834,-108;831,-108,-94,-108">
+        <LinkParameter id="mov2#mpkg1#opm28#scu40#ln355#par840" name="nombreDocPdf_archivo [file name]" source="result(nombreDocPdf)" target="mov2#mpkg1#opm28#cru15.ent4#att34_name"/>
+      </Link>
+      <KOLink id="mov2#mpkg1#opm28#scu40#kln150" name="KOFlow73" to="mov2#mpkg1#opm28#kocu24" gr:bendpoints="240,202,-985,52;1076,201,-149,51">
+        <LinkParameter id="mov2#mpkg1#opm28#scu40#kln150#par841" name="Ocurri&#243; un error en la etapa de inicio de creaci&#243;n del PDF, por favor intenta nuevamente . . ._mensaje" target="mov2#mpkg1#opm28#kocu24#ocp85" sourceValue="Ocurri&#243; un error en la etapa de inicio de creaci&#243;n del PDF, por favor intenta nuevamente . . ."/>
+      </KOLink>
+    </ScriptUnit>
+    <QRCodeUnit id="mov2#mpkg1#opm28#qrcu2" name="crearQRdeLaUrl" gr:x="520" gr:y="90">
+      <OKLink id="mov2#mpkg1#opm28#qrcu2#oln278" name="OKFlow301" to="mov2#mpkg1#opm28#cru14">
+        <LinkParameter id="mov2#mpkg1#opm28#qrcu2#oln278#par842" name="QRCode BLOB_imagen" source="qrCode" target="mov2#mpkg1#opm28#cru14.ent4#att35"/>
+        <LinkParameter id="mov2#mpkg1#opm28#qrcu2#oln278#par843" name="QRCode Text_imagen [file name]" source="text" target="mov2#mpkg1#opm28#cru14.ent4#att35_name"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#opm28#qrcu2#ln356" name="Flow458" to="mov2#mpkg1#opm28#okcu30" type="transport" validate="true" gr:bendpoints="160,-73,-860,2">
+        <LinkParameter id="mov2#mpkg1#opm28#qrcu2#ln356#par844" name="QRCode Text_xml" source="text" target="mov2#mpkg1#opm28#okcu30#ocp86"/>
+      </Link>
+      <KOLink id="mov2#mpkg1#opm28#qrcu2#kln151" name="KOFlow70" to="mov2#mpkg1#opm28#kocu24" gr:bendpoints="182,169,-838,19;855,175,-165,25">
+        <LinkParameter id="mov2#mpkg1#opm28#qrcu2#kln151#par845" name="Ocurri&#243; un error en la creaci&#243;n del QR Code, por favor intenta nuevamente . . ._mensaje" target="mov2#mpkg1#opm28#kocu24#ocp85" sourceValue="Ocurri&#243; un error en la creaci&#243;n del QR Code, por favor intenta nuevamente . . ."/>
+      </KOLink>
+    </QRCodeUnit>
+    <ScriptUnit id="mov2#mpkg1#opm28#scu41" name="InsertQR" gr:x="1085" gr:y="90" script="WEB-INF/descr/groovy/insertarQR.groovy">
+      <ScriptUnitText xml:space="preserve">#input String rutaArchivoPdf,String qr
+#output filefinal
+
+import java.io.FileOutputStream;
+
+import java.io.IOException;
+import com.lowagie.text.Image;
+import com.lowagie.text.pdf.BaseFont;
+import com.lowagie.text.pdf.PdfContentByte;
+import com.lowagie.text.pdf.PdfReader;
+import com.lowagie.text.pdf.PdfStamper;
+
+import org.apache.commons.lang.StringUtils;
+ import com.webratio.rtx.RTXBLOBData;
+ import com.webratio.rtx.blob.BLOBData;
+ import com.webratio.rtx.RTXBLOBService;
+ import org.apache.commons.httpclient.HttpClient;
+ import org.apache.commons.httpclient.cookie.CookiePolicy;
+ import org.apache.commons.httpclient.methods.GetMethod;
+ import org.apache.commons.io.FileUtils;
+ import org.apache.commons.io.FilenameUtils;
+ import org.apache.commons.io.IOUtils;
+ import com.webratio.rtx.blob.ExternalBLOBData
+ import com.webratio.rtx.blob.ByteArrayBLOBData
+ import java.text.DateFormat
+ import java.text.Format
+ import java.text.SimpleDateFormat;
+
+String uploadDir=rtx.getUploadDirectory();
+
+/// Aqui empieza el script para agregar la imagen.
+String nombreOutputFile=rutaArchivoPdf.replaceAll(".pdf","ConQR.pdf");
+
+PdfReader reader = new PdfReader(rutaArchivoPdf);
+PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(nombreOutputFile));
+Image img = Image.getInstance(uploadDir+qr);
+img.setAbsolutePosition(275, 95);
+BaseFont bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.WINANSI, BaseFont.NOT_EMBEDDED);
+PdfContentByte under, over;
+stamper.setRotateContents(false);
+int ultimaPagina = reader.getNumberOfPages()
+over = stamper.getOverContent(ultimaPagina);
+over.addImage(img);
+stamper.close();
+
+java.io.File filefinal = new java.io.File(nombreOutputFile);
+RTXBLOBData blobFile = new ExternalBLOBData(nombreOutputFile, filefinal, rtx);
+
+File fichero = new File(rutaArchivoPdf);
+fichero.delete();
+
+return ["filefinal": blobFile];</ScriptUnitText>
+      <OKLink id="mov2#mpkg1#opm28#scu41#oln279" name="OKFlow303" to="mov2#mpkg1#opm28#cru15">
+        <LinkParameter id="mov2#mpkg1#opm28#scu41#oln279#par846" name="filefinal_archivo" source="result(filefinal)" target="mov2#mpkg1#opm28#cru15.ent4#att34"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg1#opm28#scu41#kln152" name="KOFlow56" to="mov2#mpkg1#opm28#kocu24" gr:bendpoints="140,103,-325,-47;323,105,-152,-45">
+        <LinkParameter id="mov2#mpkg1#opm28#scu41#kln152#par847" name="Ocurri&#243; un error en la inserci&#243;n del QR, intenta nuevamente por favor . . ._mensaje" target="mov2#mpkg1#opm28#kocu24#ocp85" sourceValue="Ocurri&#243; un error en la inserci&#243;n del QR, intenta nuevamente por favor . . ."/>
+      </KOLink>
+    </ScriptUnit>
+  </OperationUnits>
+</OperationModule>

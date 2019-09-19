@@ -1,0 +1,42 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1380" gr:y="260" id="mov2#opm6" name="Bitacora">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm6#icu2" gr:x="0" gr:y="60">
+      <InputCollectorParameter id="mov2#opm6#icu2#icp66" name="response"/>
+      <InputCollectorParameter id="mov2#opm6#icu2#icp64" name="request"/>
+      <InputCollectorParameter id="mov2#opm6#icu2#icp56" name="uri"/>
+      <OKLink id="mov2#opm6#icu2#oln496" name="OKFlow496" to="mov2#opm6#tmu3">
+        <LinkParameter id="mov2#opm6#icu2#oln496#par399" name="processinstace_oid_PASSING" source="mov2#opm6#icu2#icp71" passing="true"/>
+        <LinkParameter id="mov2#opm6#icu2#oln496#par400" name="request_PASSING" source="mov2#opm6#icu2#icp64" passing="true"/>
+        <LinkParameter id="mov2#opm6#icu2#oln496#par401" name="response_PASSING" source="mov2#opm6#icu2#icp66" passing="true"/>
+        <LinkParameter id="mov2#opm6#icu2#oln496#par412" name="uri_PASSING" source="mov2#opm6#icu2#icp56" passing="true"/>
+        <LinkParameter id="mov2#opm6#icu2#oln496#par1920" name="servicio_PASSING" source="mov2#opm6#icu2#icp72" passing="true"/>
+        <LinkParameter id="mov2#opm6#icu2#oln496#par2020" name="exitoso_PASSING" source="mov2#opm6#icu2#icp76" passing="true"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm6#icu2#icp71" name="processinstace_oid"/>
+      <InputCollectorParameter id="mov2#opm6#icu2#icp72" name="servicio"/>
+      <InputCollectorParameter id="mov2#opm6#icu2#icp76" name="exitoso"/>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="495" gr:y="95" id="mov2#opm6#cru12" name="guardarBitacora" entity="ent44">
+      <OKLink id="mov2#opm6#cru12#oln498" name="OKFlow498" to="mov2#opm6#okcu23" automaticCoupling="true"/>
+      <KOLink id="mov2#opm6#cru12#kln96" name="KOFlow96" to="mov2#opm6#okcu23" automaticCoupling="true" gr:bendpoints="97,85,-153,0"/>
+    </CreateUnit>
+    <OKCollectorUnit gr:x="695" gr:y="95" id="mov2#opm6#okcu23" name="OK"/>
+    <KOCollectorUnit gr:x="695" gr:y="180" id="mov2#opm6#kocu35" name="KO"/>
+    <TimeUnit gr:x="305" gr:y="105" id="mov2#opm6#tmu3" name="sacarTimeStamp">
+      <OKLink id="mov2#opm6#tmu3#oln518" name="OKFlow518" to="mov2#opm6#cru12">
+        <LinkParameter id="mov2#opm6#tmu3#oln518#par598" name="processinstace_oid_PASSING_processinstance_oid" sourceLinkParameter="mov2#opm6#icu2#oln496#par399" target="mov2#opm6#cru12.ent44#att276"/>
+        <LinkParameter id="mov2#opm6#tmu3#oln518#par687" name="request_PASSING_request" sourceLinkParameter="mov2#opm6#icu2#oln496#par400" target="mov2#opm6#cru12.ent44#att291"/>
+        <LinkParameter id="mov2#opm6#tmu3#oln518#par711" name="response_PASSING_response" sourceLinkParameter="mov2#opm6#icu2#oln496#par401" target="mov2#opm6#cru12.ent44#att292"/>
+        <LinkParameter id="mov2#opm6#tmu3#oln518#par1266" name="Current/Input Timestamp_timestamp" source="currentTimestamp" target="mov2#opm6#cru12.ent44#att275"/>
+        <LinkParameter id="mov2#opm6#tmu3#oln518#par1267" name="uri_PASSING_uri" sourceLinkParameter="mov2#opm6#icu2#oln496#par412" target="mov2#opm6#cru12.ent44#att290"/>
+        <LinkParameter id="mov2#opm6#tmu3#oln518#par1921" name="servicio_PASSING_servicio" sourceLinkParameter="mov2#opm6#icu2#oln496#par1920" target="mov2#opm6#cru12.ent44#att277"/>
+        <LinkParameter id="mov2#opm6#tmu3#oln518#par2021" name="exitoso_PASSING_exitoso" sourceLinkParameter="mov2#opm6#icu2#oln496#par2020" target="mov2#opm6#cru12.ent44#att282"/>
+      </OKLink>
+    </TimeUnit>
+    <GetUnit gr:x="510" gr:y="-15" id="mov2#opm6#gtu13" name="getUser" contextParameters="UserCtxParam">
+      <Link id="mov2#opm6#gtu13#ln197" name="Flow197" to="mov2#opm6#cru12" type="transport" validate="true">
+        <LinkParameter id="mov2#opm6#gtu13#ln197#par416" name="UserCtxParam.oid_oidUser" source="mov2#opm6#gtu13.UserCtxParam" target="mov2#opm6#cru12.ent44#att293"/>
+      </Link>
+    </GetUnit>
+  </OperationUnits>
+</OperationModule>

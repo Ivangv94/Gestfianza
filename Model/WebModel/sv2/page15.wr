@@ -1,0 +1,41 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-125" gr:y="15" id="sv2#page15" name="Linea de Comando" localized="true" customURLName="unixshell">
+  <ContentUnits>
+    <EntryUnit id="sv2#page15#enu17" name="Linea de comandos" gr:x="0" gr:y="0" linkOrder="sv2#page15#enu17#ln428">
+      <Field id="sv2#page15#enu17#fld190" name="respuesta" type="text" modifiable="false" preloaded="true"/>
+      <Field id="sv2#page15#enu17#fld191" name="comando" type="string" modifiable="true" preloaded="true"/>
+      <Link id="sv2#page15#enu17#ln428" name="Flow428" to="sv2#scu26" type="normal" validate="true">
+        <LinkParameter id="sv2#page15#enu17#ln428#par2123" name="comando_comando" source="sv2#page15#enu17#fld191" target="sv2#scu26.comando"/>
+        <LinkParameter id="sv2#page15#enu17#ln428#par2286" name="comando_PASSING" source="sv2#page15#enu17#fld191" passing="true"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv2#page15#enu17" manualFields="true" manualFieldOrder="sv2#page15#enu17#fld191 sv2#page15#enu17#fld190" layout:frameLayout="None">
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+          <layout:Field field="sv2#page15#enu17#fld191">
+            <layout:LayoutParameter name="label-position" value="top" type="field"/>
+          </layout:Field>
+          <layout:Field field="sv2#page15#enu17#fld190">
+            <layout:LayoutParameter name="label-position" value="top" type="field"/>
+          </layout:Field>
+          <layout:Link link="sv2#page15#enu17#ln428" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,101 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym15#page93" name="Datos de la persona a verificar con INE tipo D y E" localized="true" layout:frameLayout="None" layout:fieldLayout="gobmxStyle/EntryUnitUpper" gr:x="285" gr:y="965">
+  <ContentUnits>
+    <NoOpContentUnit id="mov1#hym15#page93#gctu15" name="ViewComponent6" gr:x="75" gr:y="70"/>
+    <EntryUnit id="mov1#hym15#page93#enu119" name="Datos de la persona a verificar con INE" gr:x="0" gr:y="0" linkOrder="mov1#hym15#page93#enu119#ln681">
+      <Field id="mov1#hym15#page93#enu119#fld238" name="CodigoIdentificacion" type="integer" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym15#page93#enu119#fld238#mnd60" name="Mandatory16"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym15#page93#enu119#fld239" name="claveElector" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym15#page93#enu119#fld239#mnd61" name="Mandatory15"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym15#page93#enu119#fld240" name="anioEmision" type="integer" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym15#page93#enu119#fld240#mnd62" name="Mandatory5"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym15#page93#enu119#fld241" name="anioReg" type="integer" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym15#page93#enu119#fld241#mnd63" name="Mandatory6"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym15#page93#enu119#fld242" name="numeroEmision" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="mov1#hym15#page93#enu119#fld242#mnd64" name="Mandatory50"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#hym15#page93#enu119#fld243" name="OCR" type="string" modifiable="true"/>
+      <Link id="mov1#hym15#page93#enu119#ln681" name="Flow679" to="mov1#hym15#miu94" type="normal" validate="true">
+        <LinkParameter id="mov1#hym15#page93#enu119#ln681#par2765" name="anioEmision_anioEmision" source="mov1#hym15#page93#enu119#fld240" target="mov1#hym15#miu94.mov2#mpkg8#opm65#icu93#icp219"/>
+        <LinkParameter id="mov1#hym15#page93#enu119#ln681#par2766" name="anioReg_anioReg" source="mov1#hym15#page93#enu119#fld241" target="mov1#hym15#miu94.mov2#mpkg8#opm65#icu93#icp220"/>
+        <LinkParameter id="mov1#hym15#page93#enu119#ln681#par2767" name="CodigoIdentificacion_cic" source="mov1#hym15#page93#enu119#fld238" target="mov1#hym15#miu94.mov2#mpkg8#opm65#icu93#icp223"/>
+        <LinkParameter id="mov1#hym15#page93#enu119#ln681#par2768" name="claveElector_claveElectoral" source="mov1#hym15#page93#enu119#fld239" target="mov1#hym15#miu94.mov2#mpkg8#opm65#icu93#icp224"/>
+        <LinkParameter id="mov1#hym15#page93#enu119#ln681#par2769" name="OCR_ocr" source="mov1#hym15#page93#enu119#fld243" target="mov1#hym15#miu94.mov2#mpkg8#opm65#icu93#icp229"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym15#page93#gctu15" layout:unitLayout="gobmxStyle/identidadINEDE"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell layout:cellLayout="Print Frame" colspan="8">
+        <layout:Unit unitId="mov1#hym15#page93#enu119">
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+          <layout:Field label="C&#243;digo de identificaci&#243;n" field="mov1#hym15#page93#enu119#fld238"/>
+          <layout:Field label="Clave de Elector" field="mov1#hym15#page93#enu119#fld239"/>
+          <layout:Field label="A&#241;o de emisi&#243;n" field="mov1#hym15#page93#enu119#fld240"/>
+          <layout:Field label="A&#241;o de registro" field="mov1#hym15#page93#enu119#fld241"/>
+          <layout:Field field="mov1#hym15#page93#enu119#fld242"/>
+          <layout:Field field="mov1#hym15#page93#enu119#fld243"/>
+          <layout:Link link="mov1#hym15#page93#enu119#ln681" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+  <layout:LayoutParameter name="show-page-title" value="true" type="page"/>
+</Page>

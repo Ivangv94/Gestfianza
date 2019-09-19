@@ -1,0 +1,41 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="745" gr:y="690" id="mov2#opm70" name="agegarAdministracion">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm70#icu109" gr:x="-55" gr:y="25" linkOrder="mov2#opm70#icu109#ln854">
+      <InputCollectorParameter id="mov2#opm70#icu109#icp258" name="oidPM"/>
+      <OKLink id="mov2#opm70#icu109#oln798" name="OKFlow798" to="mov2#opm70#qu5">
+        <LinkParameter id="mov2#opm70#icu109#oln798#par2500" name="oidPM_oidpm" source="mov2#opm70#icu109#icp258" target="mov2#opm70#qu5.mov2#opm70#qu5#qi7"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm70#icu109#icp259" name="nombramiento"/>
+      <InputCollectorParameter id="mov2#opm70#icu109#icp262" name="tipo"/>
+      <InputCollectorParameter id="mov2#opm70#icu109#icp261" name="facultad"/>
+      <InputCollectorParameter id="mov2#opm70#icu109#icp260" name="descripcionFacultad"/>
+      <Link id="mov2#opm70#icu109#ln854" name="Flow854" to="mov2#opm70#cru37" type="transport" validate="true" gr:bendpoints="254,-68,-176,-68">
+        <LinkParameter id="mov2#opm70#icu109#ln854#par2502" name="descripcionFacultad_descripcion" source="mov2#opm70#icu109#icp260" target="mov2#opm70#cru37.ent64#att405"/>
+        <LinkParameter id="mov2#opm70#icu109#ln854#par2503" name="facultad_facultad" source="mov2#opm70#icu109#icp261" target="mov2#opm70#cru37.ent64#att404"/>
+        <LinkParameter id="mov2#opm70#icu109#ln854#par2504" name="nombramiento_nombramiento" source="mov2#opm70#icu109#icp259" target="mov2#opm70#cru37.ent64#att406"/>
+        <LinkParameter id="mov2#opm70#icu109#ln854#par2505" name="tipo_tipo" source="mov2#opm70#icu109#icp262" target="mov2#opm70#cru37.ent64#att403"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="685" gr:y="30" id="mov2#opm70#okcu76" name="OK"/>
+    <KOCollectorUnit gr:x="685" gr:y="110" id="mov2#opm70#kocu61" name="KO">
+      <OutputCollectorParameter id="mov2#opm70#kocu61#ocp193" name="mensaje"/>
+    </KOCollectorUnit>
+    <QueryUnit gr:x="300" gr:y="70" id="mov2#opm70#qu5" name="Query5" mode="select" language="SQL" db="db2">
+      <QueryText xml:space="preserve">SELECT PERSONAFISICA_OID FROM PERSONAFISICA_PERSONAMORAL WHERE PERSONAMORAL_OID = (:oidpm) AND PERSONAFISICA_OID = (SELECT MAX(PERSONAFISICA_OID) FROM PERSONAFISICA_PERSONAMORAL WHERE PERSONAMORAL_OID = (:oidpm))</QueryText>
+      <QueryInput id="mov2#opm70#qu5#qi7" name="oidpm" required="true" type="integer"/>
+      <QueryOutput id="mov2#opm70#qu5#qo5" name="oidpf" type="integer"/>
+      <OKLink id="mov2#opm70#qu5#oln799" name="OKFlow799" to="mov2#opm70#cru37">
+        <LinkParameter id="mov2#opm70#qu5#oln799#par2501" name="oidpf_PersonaFisica.oid(AdministracionToPersonaFisica)" source="data[].oidpf" target="mov2#opm70#cru37.rel34#role68.userOID"/>
+      </OKLink>
+      <KOLink id="mov2#opm70#qu5#kln365" name="KOFlow365" to="mov2#opm70#kocu61" gr:bendpoints="40,74,-420,24">
+        <LinkParameter id="mov2#opm70#qu5#kln365#par2524" name="Error en el Query de Base de Datos_mensaje" sourceValue="Error en el Query de Base de Datos" target="mov2#opm70#kocu61#ocp193"/>
+      </KOLink>
+    </QueryUnit>
+    <CreateUnit gr:x="455" gr:y="60" id="mov2#opm70#cru37" name="Create37" entity="ent64">
+      <OKLink id="mov2#opm70#cru37#oln800" name="OKFlow800" to="mov2#opm70#okcu76" automaticCoupling="true"/>
+      <KOLink id="mov2#opm70#cru37#kln362" name="KOFlow362" to="mov2#opm70#kocu61">
+        <LinkParameter id="mov2#opm70#cru37#kln362#par2506" name="Error al agregar la persona en la tabla Administracion_mensaje" sourceValue="Error al agregar la persona en la tabla Administracion" target="mov2#opm70#kocu61#ocp193"/>
+      </KOLink>
+    </CreateUnit>
+  </OperationUnits>
+</OperationModule>

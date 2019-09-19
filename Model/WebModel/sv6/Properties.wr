@@ -1,0 +1,111 @@
+<SiteView xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6" name="Fedatario" landmarks="sv6#page36 sv6#page39 sv6#page38 sv6#pcu9" protected="true" bpm:uuids="JIQ9818K_IRFW3S.JIQ9818K_61Q JKBD85VG_LSUK7T.JKBD85VH_4M JKBD85VG_LSUK7T.JKU81D92_1P3LRO JG01H7LW_FYBDCX.JKO7P51L_HVTB89 JG01H7LW_FYBDCX.JL40UND8_Y3GF0H JG01H7LW_FYBDCX.JLXVZQV6_2NWZ9U JIQ9818K_IRFW3S.JMAT1YBD_PYE9P8" secure="false" homePage="sv6#pcu9">
+  <OperationUnits>
+    <ResumeActivityUnit id="sv6#rau4" name="Resume Activity" gr:x="835" gr:y="485">
+      <KOLink id="sv6#rau4#kln226" name="KOLink4" to="sv6#page40#pu65">
+        <LinkParameter id="sv6#rau4#kln226#par1352" name="Error Info_Error Info" source="errorInfo" target="sv6#page40#pu65.errorInfo"/>
+      </KOLink>
+    </ResumeActivityUnit>
+    <StartProcessUnit id="sv6#spu7" name="Start Process" gr:x="845" gr:y="230">
+      <KOLink id="sv6#spu7#kln227" name="KOLink3" to="sv6#page40#pu65">
+        <LinkParameter id="sv6#spu7#kln227#par1353" name="Error Info_Error Info" source="errorInfo" target="sv6#page40#pu65.errorInfo"/>
+      </KOLink>
+    </StartProcessUnit>
+    <DeleteUnit id="sv6#dlu6" name="Remove Notification" gr:x="459" gr:y="42" entity="Notification">
+      <Selector id="sv6#dlu6#su148" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv6#dlu6#su148#kcond76" name="oids" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+    <ModifyUnit id="sv6#mfu17" gr:x="322" gr:y="41" name="Mark as Read" entity="Notification" bulk="false">
+      <Selector id="sv6#mfu17#su149" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv6#mfu17#su149#kcond77" name="oids" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+    <LogoutUnit id="sv6#lou6" name="Logout User" gr:x="1395" gr:y="245" siteView="sv1"/>
+    <ProcessUnit id="sv6#pu60" name="Rollback Activity" gr:x="600" gr:y="906" mode="rollback">
+      <KOLink id="sv6#pu60#kln228" name="KOLink9" to="sv6#page40#pu65">
+        <LinkParameter id="sv6#pu60#kln228#par1354" name="Error Info_Error Info" source="errorInfo" target="sv6#page40#pu65.errorInfo"/>
+      </KOLink>
+      <OKLink id="sv6#pu60#oln416" name="OKLink42" to="sv6#page37#pdu7" gr:bendpoints="-133,-47,97,-47">
+        <LinkParameter id="sv6#pu60#oln416#par1355" name="Process Instance Oid_PASSING_Process Instance Oid" sourceLinkParameter="sv6#page37#pdu7#ln456#par1368" target="sv6#page37#pdu7.processInstanceOid"/>
+      </OKLink>
+    </ProcessUnit>
+    <ParameterCollectorUnit id="sv6#pcu6" name="Poderes" customURLName="poderes" gr:x="1175" gr:y="50">
+      <OKLink id="sv6#pcu6#oln583" name="OKFlow583" to="sv6#miu68">
+        <LinkParameter id="sv6#pcu6#oln583#par1823" name="Inscribir Poder Notarial_nombreActividad" sourceValue="Inscribir Poder Notarial" target="sv6#miu68.mov2#mpkg3#opm53#icu77#icp192"/>
+      </OKLink>
+    </ParameterCollectorUnit>
+    <ParameterCollectorUnit id="sv6#pcu7" name="Constitucion" customURLName="constitucion" gr:x="1165" gr:y="-100">
+      <OKLink id="sv6#pcu7#oln582" name="OKFlow582" to="sv6#miu68">
+        <LinkParameter id="sv6#pcu7#oln582#par1824" name="Constituir Sociedad Mercantil_nombreActividad" sourceValue="Constituir Sociedad Mercantil" target="sv6#miu68.mov2#mpkg3#opm53#icu77#icp192"/>
+      </OKLink>
+    </ParameterCollectorUnit>
+    <ParameterCollectorUnit id="sv6#pcu8" name="VerificacionIdentidad" customURLName="verificacion-identidad" gr:x="1140" gr:y="-25">
+      <OKLink id="sv6#pcu8#oln173" name="OKFlow1198" to="sv6#miu68">
+        <LinkParameter id="sv6#pcu8#oln173#par1819" name="Verificar identidad_nombreActividad" sourceValue="Verificar identidad" target="sv6#miu68.mov2#mpkg3#opm53#icu77#icp192"/>
+      </OKLink>
+    </ParameterCollectorUnit>
+    <ParameterCollectorUnit id="sv6#pcu3" name="agregarPersonal" customURLName="agregarPersonal" gr:x="1155" gr:y="125">
+      <OKLink id="sv6#pcu3#oln584" name="OKFlow584" to="sv6#miu68">
+        <LinkParameter id="sv6#pcu3#oln584#par1822" name="Agregar Personal_nombreActividad" sourceValue="Agregar Personal" target="sv6#miu68.mov2#mpkg3#opm53#icu77#icp192"/>
+      </OKLink>
+    </ParameterCollectorUnit>
+    <ParameterCollectorUnit gr:x="-135" gr:y="-100" id="sv6#pcu9" name="TyC" landmark="true">
+      <OKLink id="sv6#pcu9#oln64" name="OKFlow64" to="sv6#seu44" automaticCoupling="true"/>
+    </ParameterCollectorUnit>
+    <IsNotNullUnit id="sv6#inn20" name="&#191;Existe?" gr:x="-135" gr:y="290" emptyStringAsNull="true">
+      <OKLink id="sv6#inn20#oln451" name="OKFlow451" to="sv6#miu76" automaticCoupling="true"/>
+      <KOLink id="sv6#inn20#kln213" name="KOFlow213" to="sv6#miu76" gr:bendpoints="6,100,91,-95"/>
+    </IsNotNullUnit>
+    <SelectorUnit id="sv6#seu61" name="Buscar folio" gr:x="-155" gr:y="135" maxResults="1" entity="ent3">
+      <Selector id="sv6#seu61#su104" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv6#seu61#su104#acond61" name="folioContainsCURP" predicate="contains" booleanOperator="or" implied="false" attributes="ent3#att30"/>
+        <AttributesCondition id="sv6#seu61#su104#acond62" name="containsSiglasTYC" predicate="contains" booleanOperator="or" implied="false" value="TYC" attributes="ent3#att30"/>
+        <AttributesCondition id="sv6#seu61#su104#acond66" name="selloNotNull" predicate="notNull" booleanOperator="or" implied="false" attributes="ent3#att21"/>
+      </Selector>
+      <OKLink id="sv6#seu61#oln449" name="OKFlow625" to="sv6#inn20">
+        <LinkParameter id="sv6#seu61#oln449#par522" name="cadena_Input" source="ent3#att25Array" target="sv6#inn20.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <ModuleInstanceUnit gr:x="15" gr:y="280" id="sv6#miu54" action="false" moduleId="mov2#mpkg2#hym24">
+      <OKLink id="sv6#miu54#oln452" name="OKFlow452" to="sv6#miu76" automaticCoupling="true"/>
+      <KOLink id="sv6#miu54#kln214" name="KOFlow214" to="sv6#lou2" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <LogoutUnit gr:x="120" gr:y="515" id="sv6#lou2" name="Salir" siteView="sv1"/>
+    <SelectorUnit gr:x="-140" gr:y="10" id="sv6#seu44" name="PF" entity="ent39">
+      <OKLink id="sv6#seu44#oln56" name="OKFlow450" to="sv6#seu61">
+        <LinkParameter id="sv6#seu44#oln56#par520" name="RFC_folioContainsRFC" source="userNameArray" target="sv6#seu61#su104#acond61"/>
+      </OKLink>
+      <Selector id="sv6#seu44#su22" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv6#seu44#su22#kcond72" name="KeyCondition72" predicate="in" implied="false"/>
+      </Selector>
+    </SelectorUnit>
+    <GetUnit gr:x="5" gr:y="20" id="sv6#gtu2" name="getUser" contextParameters="UserCtxParam" linkOrder="sv6#gtu2#ln64">
+      <Link id="sv6#gtu2#ln64" name="Flow64" to="sv6#seu44" type="transport" validate="true">
+        <LinkParameter id="sv6#gtu2#ln64#par519" name="UserCtxParam.oid_KeyCondition72 [oid]" source="sv6#gtu2.UserCtxParam" target="sv6#seu44#su22#kcond72.userOID"/>
+      </Link>
+    </GetUnit>
+    <ParameterCollectorUnit gr:x="95" gr:y="-100" id="sv6#pcu13" name="logout" customURLName="logout">
+      <OKLink id="sv6#pcu13#oln181" name="OKFlow181" to="sv6#page78" automaticCoupling="true"/>
+    </ParameterCollectorUnit>
+    <ModuleInstanceUnit gr:x="800" gr:y="10" id="sv6#miu68" action="true" moduleId="mov2#mpkg3#opm53">
+      <OKLink id="sv6#miu68#oln585" name="OKFlow585" to="sv6#spu7">
+        <LinkParameter id="sv6#miu68#oln585#par1888" name="oid_Start Activity Type Oid" source="mov2#mpkg3#opm53#okcu50#ocp152" target="sv6#spu7.startActivityTypeOid"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="-290" gr:y="480" id="sv6#miu76" action="true" moduleId="mov2#mpkg2#opm54">
+      <OKLink id="sv6#miu76#oln596" name="OKFlow596" to="sv6#page75" automaticCoupling="true" codeRef="mov2#mpkg2#opm54#okcu52"/>
+      <OKLink id="sv6#miu76#oln93" name="OKFlow93" to="sv6#page77" automaticCoupling="true" codeRef="mov2#mpkg2#opm54#okcu53"/>
+    </ModuleInstanceUnit>
+    <ParameterCollectorUnit gr:x="960" gr:y="-115" id="sv6#pcu12" name="WSPODERPRUEBA" customURLName="PRUEBA">
+      <OKLink id="sv6#pcu12#oln581" name="OKFlow581" to="sv6#miu68">
+        <LinkParameter id="sv6#pcu12#oln581#par2141" name="Inscribir poder_nombreActividad" sourceValue="Inscribir poder" target="sv6#miu68.mov2#mpkg3#opm53#icu77#icp192"/>
+      </OKLink>
+    </ParameterCollectorUnit>
+    <ParameterCollectorUnit gr:x="755" gr:y="-105" id="sv6#pcu19" name="Bandeja Fedatario" customURLName="Bandeja">
+      <OKLink id="sv6#pcu19#oln1281" name="OKFlow1281" to="sv6#miu68">
+        <LinkParameter id="sv6#pcu19#oln1281#par4202" name="Bandeja Fedatario_nombreActividad" sourceValue="Bandeja" target="sv6#miu68.mov2#mpkg3#opm53#icu77#icp192"/>
+      </OKLink>
+    </ParameterCollectorUnit>
+  </OperationUnits>
+  <layout:LayoutParameter name="show-left-column" value="true" type="page"/>
+</SiteView>

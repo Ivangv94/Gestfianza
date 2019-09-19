@@ -1,0 +1,39 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm58" name="inscribirPoderPrueba1" gr:x="705" gr:y="540">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm58#icu84" gr:x="-210" gr:y="60">
+      <OKLink id="mov2#opm58#icu84#oln616" name="OKFlow616" to="mov2#opm58#seu17" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#opm58#okcu58" name="OK" gr:x="880" gr:y="60"/>
+    <KOCollectorUnit gr:x="880" gr:y="210" id="mov2#opm58#kocu49" name="KO"/>
+    <ModuleInstanceUnit gr:x="535" gr:y="65" id="mov2#opm58#miu82" action="true" moduleId="mov2#mpkg3#opm55">
+      <OKLink id="mov2#opm58#miu82#oln611" name="OKFlow611" to="mov2#opm58#okcu58" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <SelectorUnit gr:x="60" gr:y="55" id="mov2#opm58#seu17" name="pfActual" entity="ent39">
+      <Selector id="mov2#opm58#seu17#su44" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm58#seu17#su44#kcond26" name="KeyCondition26" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm58#seu17#oln617" name="OKFlow617" to="mov2#opm58#seu42">
+        <LinkParameter id="mov2#opm58#seu17#oln617#par2219" name="RFC_rfc" source="ent39#att268Array" target="mov2#opm58#seu42#su45#acond108"/>
+      </OKLink>
+    </SelectorUnit>
+    <GetUnit gr:x="60" gr:y="-35" id="mov2#opm58#gtu33" name="getUSer" contextParameters="UserCtxParam">
+      <Link id="mov2#opm58#gtu33#ln509" name="Flow509" to="mov2#opm58#seu17" type="transport" validate="true">
+        <LinkParameter id="mov2#opm58#gtu33#ln509#par2218" name="UserCtxParam.oid_KeyCondition26 [oid]" source="mov2#opm58#gtu33.UserCtxParam" target="mov2#opm58#seu17#su44#kcond26.userOID"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="205" gr:y="55" id="mov2#opm58#seu42" name="prueba" entity="ent46">
+      <Selector id="mov2#opm58#seu42#su45" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm58#seu42#su45#acond108" name="rfc" predicate="eq" booleanOperator="or" implied="false" attributes="ent46#att301"/>
+      </Selector>
+      <OKLink id="mov2#opm58#seu42#oln618" name="OKFlow618" to="mov2#opm58#inn37">
+        <LinkParameter id="mov2#opm58#seu42#oln618#par2220" name="rfcFedatario_Input" source="ent46#att301Array" target="mov2#opm58#inn37.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="375" gr:y="70" id="mov2#opm58#inn37" name="&#191;Existe?">
+      <OKLink id="mov2#opm58#inn37#oln619" name="OKFlow619" to="mov2#opm58#miu82">
+        <LinkParameter id="mov2#opm58#inn37#oln619#par2223" name="Inscribir poder_nombreActividad" sourceValue="Inscribir poder" target="mov2#opm58#miu82.mov2#mpkg3#opm55#icu83#icp195"/>
+      </OKLink>
+      <KOLink id="mov2#opm58#inn37#kln295" name="KOFlow295" to="mov2#opm58#kocu49" automaticCoupling="true"/>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

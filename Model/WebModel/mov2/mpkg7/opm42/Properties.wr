@@ -1,0 +1,15 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="5" gr:y="110" id="mov2#mpkg7#opm42" name="generarPDF">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg7#opm42#icu30" gr:x="30" gr:y="60">
+      <OKLink id="mov2#mpkg7#opm42#icu30#oln512" name="OKFlow512" to="mov2#mpkg7#opm42#okcu21">
+        <LinkParameter id="mov2#mpkg7#opm42#icu30#oln512#par1164" name="https://edocumentos.economica/eee/PRUEBARUTA.pdf _uriPDF" sourceValue="https://edocumentos.economica/eee/PRUEBARUTA.pdf " target="mov2#mpkg7#opm42#okcu21#ocp59"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="585" gr:y="60" id="mov2#mpkg7#opm42#okcu21" name="OK">
+      <OutputCollectorParameter id="mov2#mpkg7#opm42#okcu21#ocp59" name="uriPDF"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="585" gr:y="150" id="mov2#mpkg7#opm42#kocu33" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg7#opm42#kocu33#ocp58" name="msj"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

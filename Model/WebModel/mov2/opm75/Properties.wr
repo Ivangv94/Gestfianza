@@ -1,0 +1,188 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-180" gr:y="885" id="mov2#opm75" name="asignaNumeroExpediente">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm75#icu114" gr:x="30" gr:y="60" linkOrder="mov2#opm75#icu114#ln901 mov2#opm75#icu114#ln920 mov2#opm75#icu114#ln616 mov2#opm75#icu114#ln938">
+      <InputCollectorParameter id="mov2#opm75#icu114#icp299" name="fechaConstitucion"/>
+      <InputCollectorParameter id="mov2#opm75#icu114#icp317" name="rfcSociedad"/>
+      <InputCollectorParameter id="mov2#opm75#icu114#icp316" name="denominacionORazon"/>
+      <OKLink id="mov2#opm75#icu114#oln781" name="OKFlow781" to="mov2#opm75#seu117">
+        <LinkParameter id="mov2#opm75#icu114#oln781#par231" name="rfcSociedad_rfc" source="mov2#opm75#icu114#icp317" target="mov2#opm75#seu117#su238#acond144"/>
+      </OKLink>
+      <Link id="mov2#opm75#icu114#ln901" name="Flow901" to="mov2#opm75#cru52" type="transport" validate="true" gr:bendpoints="160,45,-330,-30">
+        <LinkParameter id="mov2#opm75#icu114#ln901#par744" name="denominacionORazon_razonSocial" source="mov2#opm75#icu114#icp316" target="mov2#opm75#cru52.ent38#att255"/>
+        <LinkParameter id="mov2#opm75#icu114#ln901#par748" name="rfcSociedad_userName" source="mov2#opm75#icu114#icp317" target="mov2#opm75#cru52.userName"/>
+      </Link>
+      <Link id="mov2#opm75#icu114#ln920" name="Flow920" to="mov2#opm75#cru54" type="transport" validate="true" gr:bendpoints="191,-52,-1184,-67;721,-42,-654,-57;1279,-30,-96,-45">
+        <LinkParameter id="mov2#opm75#icu114#ln920#par2425" name="fechaConstitucion_fechaConstitucion" source="mov2#opm75#icu114#icp299" target="mov2#opm75#cru54.ent73#att454"/>
+      </Link>
+      <Link id="mov2#opm75#icu114#ln616" name="Flow616" to="mov2#opm75#scu121" type="transport" validate="true" gr:bendpoints="320,120,-890,110;633,131,-577,121;1001,124,-209,114">
+        <LinkParameter id="mov2#opm75#icu114#ln616#par2342" name="fechaConstitucion_fechaConst" source="mov2#opm75#icu114#icp299" target="mov2#opm75#scu121.fechaConst"/>
+      </Link>
+      <Link id="mov2#opm75#icu114#ln938" name="Flow938" to="mov2#opm75#scu125" type="transport" validate="true">
+        <LinkParameter id="mov2#opm75#icu114#ln938#par2467" name="fechaConstitucion_fechaConst" source="mov2#opm75#icu114#icp299" target="mov2#opm75#scu125.fechaConst"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="355" gr:y="70" id="mov2#opm75#seu117" name="buscaPM" entity="ent38">
+      <Selector id="mov2#opm75#seu117#su238" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm75#seu117#su238#acond144" name="rfc" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <OKLink id="mov2#opm75#seu117#oln840" name="OKFlow840" to="mov2#opm75#inn43">
+        <LinkParameter id="mov2#opm75#seu117#oln840#par740" name="oid_Input" source="userOIDArray" target="mov2#opm75#inn43.isnotnull"/>
+      </OKLink>
+      <Link id="mov2#opm75#seu117#ln916" name="Flow916" to="mov2#opm75#cru53" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="98,-32,-697,-42;385,-31,-410,-41;695,-28,-100,-38"/>
+      <Link id="mov2#opm75#seu117#ln921" name="Flow921" to="mov2#opm75#cru54" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="194,-57,-941,-72;542,-59,-593,-74;1038,-51,-97,-66"/>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="505" gr:y="90" id="mov2#opm75#inn43" name="&#191;existe?">
+      <KOLink id="mov2#opm75#inn43#kln393" name="KOFlow393" to="mov2#opm75#cru52" automaticCoupling="true"/>
+      <OKLink id="mov2#opm75#inn43#oln890" name="OKFlow890" to="mov2#opm75#seu120">
+        <LinkParameter id="mov2#opm75#inn43#oln890#par2464" name="Input Value_RoleCondition132 [oid]" source="inputValue" target="mov2#opm75#seu120#su278#rcond132.userOID"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="625" gr:y="180" id="mov2#opm75#cru52" name="creaPM" entity="ent38">
+      <OKLink id="mov2#opm75#cru52#oln889" name="OKFlow889" to="mov2#opm75#scu125" automaticCoupling="true"/>
+      <Link id="mov2#opm75#cru52#ln915" name="Flow915" to="mov2#opm75#cru53" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="302,-1,-243,64;452,0,-93,65"/>
+      <Link id="mov2#opm75#cru52#ln929" name="Flow929" to="mov2#opm75#cru54" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="437,1,-448,61;787,1,-98,61"/>
+    </CreateUnit>
+    <QueryUnit gr:x="1020" gr:y="105" id="mov2#opm75#qu6" name="buscaConsecutivoActual" mode="select" language="SQL" db="db2" outputsOrder="mov2#opm75#qu6#qo6">
+      <QueryText xml:space="preserve">SELECT MAX(CONSECUTIVO) FROM NUMEROCONSECUTIVO WHERE ANIO = (:anio);</QueryText>
+      <QueryOutput id="mov2#opm75#qu6#qo6" name="resultado"/>
+      <OKLink id="mov2#opm75#qu6#oln893" name="OKFlow893" to="mov2#opm75#scu120">
+        <LinkParameter id="mov2#opm75#qu6#oln893#par2470" name="resultado_consecutivoInput" source="data[].resultado" target="mov2#opm75#scu120.consecutivoInput"/>
+      </OKLink>
+      <QueryInput id="mov2#opm75#qu6#qi8" name="anio" required="true" type="string"/>
+    </QueryUnit>
+    <ScriptUnit gr:x="1255" gr:y="105" id="mov2#opm75#scu120" name="creaConsecutivo" linkOrder="mov2#opm75#scu120#ln919">
+      <ScriptUnitText xml:space="preserve">#input String consecutivoInput
+#output consecutivoFinal, creaConsecutivo 
+
+//String consecutivoInput = '';
+String consecutivoFinal
+String creaConsecutiv
+
+if (consecutivoInput == null){
+
+Integer consecutivoSiguiente = 1;
+
+creaConsecutivo = consecutivoSiguiente.toString();
+
+String consecutivo = '00000'
+
+consecutivoFinal = new StringBuilder(consecutivo).append(consecutivoSiguiente).toString();
+
+
+}else if(consecutivoInput != null){
+
+
+Integer consecutivoSiguiente = Integer.parseInt(consecutivoInput) +1;
+//Integer consecutivoSiguiente = consecutivoInput +1;
+
+ creaConsecutivo = consecutivoSiguiente.toString();
+
+
+if (consecutivoSiguiente &lt;= 9 &amp;&amp; consecutivoSiguiente &lt; 10)
+{ String consecutivo = '00000'
+  
+  consecutivoFinal = new StringBuilder(consecutivo).append(consecutivoSiguiente).toString();
+
+  
+  }else if(consecutivoSiguiente &gt;= 10 &amp;&amp; consecutivoSiguiente &lt;= 99)
+  { String consecutivo = '0000'
+   consecutivoFinal = new StringBuilder(consecutivo).append(consecutivoSiguiente).toString();
+  }else if(consecutivoSiguiente &gt;= 100 &amp;&amp; consecutivoSiguiente &lt;= 999)
+  {String consecutivo = '000'
+  
+  consecutivoFinal = new StringBuilder(consecutivo).append(consecutivoSiguiente).toString();
+  }else if (consecutivoSiguiente &gt;= 1000 &amp;&amp; consecutivoSiguiente &lt;= 9999)
+  {String consecutivo = '00'
+  
+  consecutivoFinal = new StringBuilder(consecutivo).append(consecutivoSiguiente).toString();
+  
+  }else if(consecutivoSiguiente &gt;= 10000 &amp;&amp; consecutivoSiguiente &lt;= 99999)
+  {String consecutivo = '0'
+   consecutivoFinal = new StringBuilder(consecutivo).append(consecutivoSiguiente).toString();
+  }
+   
+}
+
+//println(consecutivoFinal)
+//println(creaConsecutivo)
+
+
+return ["consecutivoFinal":consecutivoFinal, "creaConsecutivo":creaConsecutivo]
+</ScriptUnitText>      <OKLink id="mov2#opm75#scu120#oln894" name="OKFlow894" to="mov2#opm75#cru53">        <LinkParameter id="mov2#opm75#scu120#oln894#par2337" name="creaConsecutivo_consecutivo" source="result(creaConsecutivo)" target="mov2#opm75#cru53.ent74#att457"/>      </OKLink>      <Link id="mov2#opm75#scu120#ln919" name="Flow919" to="mov2#opm75#scu121" type="transport" validate="true" gr:bendpoints="60,53,-285,53;170,56,-175,56;287,53,-58,53">        <LinkParameter id="mov2#opm75#scu120#ln919#par2341" name="consecutivoFinal_consecutivo" source="result(consecutivoFinal)" target="mov2#opm75#scu121.consecutivo"/>      </Link>    </ScriptUnit>    <CreateUnit gr:x="1420" gr:y="95" id="mov2#opm75#cru53" name="insertaConsecutivo" entity="ent74" linkOrder="mov2#opm75#cru53#ln936 mov2#opm75#cru53#ln937">      <OKLink id="mov2#opm75#cru53#oln895" name="OKFlow895" to="mov2#opm75#scu121" automaticCoupling="true"/>      <Link id="mov2#opm75#cru53#ln936" name="Flow936" to="mov2#opm75#mfu30" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="158,69,-507,69;332,69,-333,69;548,68,-117,68"/>      <Link id="mov2#opm75#cru53#ln937" name="Flow937" to="mov2#opm75#cru54" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="110,45,-225,40;175,46,-160,41;232,46,-103,41"/>    </CreateUnit>    <ScriptUnit gr:x="1605" gr:y="105" id="mov2#opm75#scu121" name="creaExpediente">      <ScriptUnitText xml:space="preserve">#input String consecutivo, String fechaConst
+#output expediente, anio, consecutivo 
+
+String categoria = "01";
+String [] fechaConstitucion = fechaConst.split('/')
+String dia = fechaConstitucion[2];
+String mes = fechaConstitucion[1];
+String anio = fechaConstitucion[0];
+String expediente = anio + mes + dia + categoria + consecutivo
+ 
+return ["expediente":expediente, "anio":anio, "consecutivo":consecutivo]</ScriptUnitText>
+      <OKLink id="mov2#opm75#scu121#oln896" name="OKFlow896" to="mov2#opm75#cru54">
+        <LinkParameter id="mov2#opm75#scu121#oln896#par2357" name="anio_anioConstitucion" source="result(anio)" target="mov2#opm75#cru54.ent73#att455"/>
+        <LinkParameter id="mov2#opm75#scu121#oln896#par2395" name="expediente_expedienteElectronico" source="result(expediente)" target="mov2#opm75#cru54.ent73#att452"/>
+        <LinkParameter id="mov2#opm75#scu121#oln896#par2417" name="consecutivo_numeroConsecutivo" source="result(consecutivo)" target="mov2#opm75#cru54.ent73#att453"/>
+      </OKLink>
+    </ScriptUnit>
+    <CreateUnit gr:x="1765" gr:y="100" id="mov2#opm75#cru54" name="insertExpediente " entity="ent73" linkOrder="mov2#opm75#cru54#ln940">
+      <OKLink id="mov2#opm75#cru54#oln887" name="OKFlow887" to="mov2#opm75#mfu30">
+        <LinkParameter id="mov2#opm75#cru54#oln887#par2455" name="oid_expedienteElectronico.oid(numeroConsecutivoToexpedienteElectronico)" source="ent73#att451Array" target="mov2#opm75#mfu30.rel56#role112.ent73#att451"/>
+      </OKLink>
+      <Link id="mov2#opm75#cru54#ln940" name="Flow940" to="mov2#opm75#okcu81" type="transport" validate="true" gr:bendpoints="130,-75,-475,-40;247,-75,-358,-40;415,-73,-190,-38">
+        <LinkParameter id="mov2#opm75#cru54#ln940#par2813" name="expedienteElectronico_numeroExpediente" source="ent73#att452Array" target="mov2#opm75#okcu81#ocp213"/>
+      </Link>
+    </CreateUnit>
+    <OKCollectorUnit gr:x="2315" gr:y="65" id="mov2#opm75#okcu81" name="OK Port81">
+      <OutputCollectorParameter id="mov2#opm75#okcu81#ocp212" name="ms"/>
+      <OutputCollectorParameter id="mov2#opm75#okcu81#ocp213" name="numeroExpediente"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="2315" gr:y="175" id="mov2#opm75#kocu66" name="KO Port66">
+      <OutputCollectorParameter id="mov2#opm75#kocu66#ocp214" name="ms"/>
+    </KOCollectorUnit>
+    <ModifyUnit gr:x="2095" gr:y="90" id="mov2#opm75#mfu30" name="actualizaConsecutivo" entity="ent74">
+      <Selector id="mov2#opm75#mfu30#su246" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm75#mfu30#su246#kcond128" name="KeyCondition128" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm75#mfu30#oln906" name="OKFlow906" to="mov2#opm75#okcu81">
+        <LinkParameter id="mov2#opm75#mfu30#oln906#par2814" name="OK_ms" sourceValue="OK" target="mov2#opm75#okcu81#ocp212"/>
+      </OKLink>
+      <KOLink id="mov2#opm75#mfu30#kln394" name="KOFlow394" to="mov2#opm75#kocu66">
+        <LinkParameter id="mov2#opm75#mfu30#kln394#par2815" name="Error al crear Expediente_ms" sourceValue="Error al crear Expediente" target="mov2#opm75#kocu66#ocp214"/>
+      </KOLink>
+    </ModifyUnit>
+    <SelectorUnit gr:x="650" gr:y="85" id="mov2#opm75#seu120" name="tieneNumeroExp" entity="ent73">
+      <Selector id="mov2#opm75#seu120#su278" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm75#seu120#su278#rcond132" name="RoleCondition132" predicate="in" implied="false" role="rel54#role107"/>
+      </Selector>
+      <OKLink id="mov2#opm75#seu120#oln888" name="OKFlow888" to="mov2#opm75#inn47">
+        <LinkParameter id="mov2#opm75#seu120#oln888#par2465" name="oid_Input" source="ent73#att451Array" target="mov2#opm75#inn47.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="865" gr:y="115" id="mov2#opm75#inn47" name="cuentaConExp">
+      <OKLink id="mov2#opm75#inn47#oln904" name="OKFlow904" to="mov2#opm75#okcu81" gr:bendpoints="204,-94,-1296,-54;718,-92,-782,-52;1356,-92,-144,-52">
+        <LinkParameter id="mov2#opm75#inn47#oln904#par2466" name="La persona moral ya cuenta con numero de expediente_ms" sourceValue="La persona moral ya cuenta con numero de expediente" target="mov2#opm75#okcu81#ocp212"/>
+      </OKLink>
+      <KOLink id="mov2#opm75#inn47#kln395" name="KOFlow395" to="mov2#opm75#scu125" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <ScriptUnit gr:x="1060" gr:y="255" id="mov2#opm75#scu125" name="verificaAnio" linkOrder="mov2#opm75#scu125#ln939">
+      <ScriptUnitText xml:space="preserve">#input String fechaConst
+#output anio
+
+
+String [] fechaConstitucion = fechaConst.split('/')
+String dia = fechaConstitucion[2];
+String mes = fechaConstitucion[1];
+String anio = fechaConstitucion[0];
+
+ 
+return ["anio":anio]</ScriptUnitText>
+      <OKLink id="mov2#opm75#scu125#oln905" name="OKFlow905" to="mov2#opm75#qu6">
+        <LinkParameter id="mov2#opm75#scu125#oln905#par2468" name="anio_anio" source="result(anio)" target="mov2#opm75#qu6.mov2#opm75#qu6#qi8"/>
+      </OKLink>
+      <Link id="mov2#opm75#scu125#ln939" name="Flow939" to="mov2#opm75#cru53" type="transport" validate="true">
+        <LinkParameter id="mov2#opm75#scu125#ln939#par2471" name="anio_anio" source="result(anio)" target="mov2#opm75#cru53.ent74#att458"/>
+      </Link>
+    </ScriptUnit>
+  </OperationUnits>
+</OperationModule>

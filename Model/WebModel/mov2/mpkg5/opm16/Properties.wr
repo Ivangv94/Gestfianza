@@ -1,0 +1,7 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="50" id="mov2#mpkg5#opm16" name="IDC">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg5#opm16#icu55" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#mpkg5#opm16#icu55#icp16" name="rfc"/>
+    </InputCollectorUnit>
+  </OperationUnits>
+</OperationModule>

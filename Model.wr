@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?webml version="7.2.0.4"?>
+
+<WebProject xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" outputPath="${webapps_loc}/${project_name}" gr:showUnitContent="true" gr:showTooltip="true" httpPort="8080" httpsPort="8443" enableProjectDependencies="true" jobGroupName="WEBRATIO" wrTempNewProject="true" bpm:bpmBased="true">
+  <ServiceDataProviders>
+    <WebServiceProvider id="wsp1" name="seCorreoDes" uri="http://10.100.40.76:5080/MsMail/MailAttachServiceService?wsdl"/>
+    <WebServiceProvider id="wsp2" name="seCorreoQa" uri="http://10.100.40.71:5080/MsMail/MailAttachServiceService?wsdl"/>
+    <WebServiceProvider id="wsp3" name="seCorreoProd" uri="http://10.100.40.71:5080/MsMail/MailAttachServiceService?wsdl"/>
+    <WebServiceProvider id="wsp4" name="triaraCorreoDes" uri="http://10.100.40.71:5080/MsMail/MailAttachServiceService?wsdl"/>
+    <WebServiceProvider id="wsp5" name="triaraCorreoQa" uri="http://10.100.40.71:5080/MsMail/MailAttachServiceService?wsdl"/>
+    <WebServiceProvider id="wsp6" name="triaraCorreoProd" uri="http://10.100.40.71:5080/MsMail/MailAttachServiceService?wsdl"/>
+    <WebServiceProvider id="wsp7" name="ineQAProvider" uri="https://esb-qa.economia.gob.mx/serviciosOsb/ine/ineService?wsdl"/>
+    <WebServiceProvider id="wsp8" name="renapoDesProvider" uri="http://10.100.40.71:3080/MsCurp/ConsultaCurpService?wsdl"/>
+    <WebServiceProvider id="wsp9" name="satEconomiaProvider" uri="http://172.18.53.137:8001/servicios-economia-sat-sas-web/ws/IdCInternoService/?wsdl"/>
+    <WebServiceProvider id="wsp10" name="satProdProvider" uri="http://10.100.20.239:11001/EconomiaServiceBusSASProject/SATIdCInternoProxyService?wsdl"/>
+    <XsdProvider id="xsdp1" name="ineQA">
+      <XsdResource id="xsdp1#xsdr1" name="ineQAResource" uri="https://esb-qa.economia.gob.mx/serviciosOsb/ine/ineService?wsdl" resourceType="embeddedWsdlSchema"/>
+    </XsdProvider>
+    <XsdProvider id="xsdp2" name="renapoDes">
+      <XsdResource id="xsdp2#xsdr2" name="renapoDesResource" uri="http://10.100.40.71:3080/MsCurp/ConsultaCurpService?wsdl" resourceType="embeddedWsdlSchema"/>
+    </XsdProvider>
+    <XsdProvider id="xsdp3" name="satProd">
+      <XsdResource id="xsdp3#xsdr3" name="satProdResource" uri="http://10.100.20.239:11001/EconomiaServiceBusSASProject/SATIdCInternoProxyService?wsdl" resourceType="embeddedWsdlSchema"/>
+    </XsdProvider>
+    <WebServiceProvider id="wsp11" name="inePRODProvider" uri="https://esb-qa.economia.gob.mx/serviciosOsb/ine/ineService?wsdl"/>
+    <WebServiceProvider id="wsp12" name="renapoPRODProvider" uri="http://10.100.40.71:3080/MsCurp/ConsultaCurpService?wsdl"/>
+    <WebServiceProvider id="wsp13" name="renapoQAProvider" uri="http://10.100.11.71:3080/MsCurp/ConsultaCurpService?wsdl"/>
+    <WebServiceProvider id="wsp14" name="IDCWebService" uri="http://10.100.20.239:11001/EconomiaServiceBusSASProject/SATIdCInternoProxyService?wsdl"/>
+  </ServiceDataProviders>
+  <ReferencedProject name="com.webratio.units.bpm" natureId="com.webratio.ide.units.wrunitsnature"/>
+  <ReferencedProject name="constitucionDeSociedadesMercantiles" natureId="com.webratio.bpm.businessmodelingnature"/>
+  <BPMResources>
+    <BPMResource id="bpmr1" name="constitucionDeSociedadesMercantiles" uuid="JKBD85VG_LSUK7T" path="/constitucionDeSociedadesMercantiles/Processes/constitucionDeSociedadesMercantiles.bpm"/>
+    <BPMResource id="bpmr2" name="poderes" uuid="JG01H7LW_FYBDCX" path="/constitucionDeSociedadesMercantiles/Processes/poderes.bpm"/>
+    <BPMResource id="bpmr3" name="verificacionDeIdentidad" uuid="JIQ9818K_IRFW3S" path="/constitucionDeSociedadesMercantiles/Processes/verificacionDeIdentidad.bpm"/>
+  </BPMResources>
+  <ReferencedProject name="StoreComponents" natureId="com.webratio.ide.units.wrunitsnature"/>
+  <BundleKey name="Procesando..."/>
+  <ReferencedProject name="gobmxStyle" natureId="com.webratio.ide.styles.wrstylenature"/>
+</WebProject>

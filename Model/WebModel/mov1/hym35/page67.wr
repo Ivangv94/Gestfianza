@@ -1,0 +1,39 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym35#page67" name="Descargar Poder" gr:x="10" gr:y="-5" localized="true" layout:frameLayout="None">
+  <ContentUnits>
+    <ActivityParametersUnit id="mov1#hym35#page67#apu71" name="Get Parameters" gr:x="0" gr:y="0"/>
+    <EntryUnit id="mov1#hym35#page67#enu100" name="Buttons" gr:x="260" gr:y="165">
+      <Link id="mov1#hym35#page67#enu100#ln630" name="Finish" type="normal" validate="true" automaticCoupling="false" to="mov1#hym35#apu70"/>
+      <Link id="mov1#hym35#page67#enu100#ln631" name="Save and Work Later" type="normal" validate="false" automaticCoupling="false" to="mov1#hym35#apu70" gr:bendpoints="164,-32,-64,96"/>
+      <Link id="mov1#hym35#page67#enu100#ln632" name="Cancel" type="normal" validate="false" automaticCoupling="false" to="mov1#hym35#pu111"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8" label="Buttons" layout:cellLayout="Print Frame">
+        <layout:Unit unitId="mov1#hym35#page67#enu100" layout:frameLayout="None" manualLinks="true" manualLinkOrder="mov1#hym35#page67#enu100#ln630 mov1#hym35#page67#enu100#ln632">
+          <layout:Link link="mov1#hym35#page67#enu100#ln630" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+            <layout:LayoutParameter name="confirmation" value="false" type="link"/>
+            <layout:LayoutParameter name="confirm-message" value="Confirm Finish" type="link"/>
+          </layout:Link>
+          <layout:Link link="mov1#hym35#page67#enu100#ln632" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+  <layout:LayoutParameter name="auto-refresh" value="true" type="page"/>
+</Page>

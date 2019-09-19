@@ -1,0 +1,27 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym34" gr:x="3455" gr:y="10" name="Poder Notarial(personal) - Fedatario - Bandeja Fedatario" bpm:moduleType="activity" bpm:uuids="JG01H7LW_FYBDCX.JL40V8ZD_6FALRC" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym34#icu69" name="Input" gr:x="-350" gr:y="85">
+      <OKLink id="mov1#hym34#icu69#oln481" name="OKLink" automaticCoupling="true" to="mov1#hym34#seu290"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym34#pu106" name="Complete Activity" mode="completeActivity" gr:x="800" gr:y="0"/>
+    <ProcessUnit id="mov1#hym34#pu107" name="Save Activity" mode="saveActivity" gr:x="800" gr:y="150"/>
+    <ProcessUnit id="mov1#hym34#pu108" name="Leave Activity" mode="leaveActivity" gr:x="800" gr:y="260"/>
+    <ActivityParametersUnit id="mov1#hym34#apu68" name="Set Parameters" gr:x="560" gr:y="100">
+      <OKLink id="mov1#hym34#apu68#oln482" name="OKLink" automaticCoupling="false" to="mov1#hym34#pu106" codeRef="mov1#hym34#page66#enu99#ln627"/>
+      <OKLink id="mov1#hym34#apu68#oln483" name="OKLink" automaticCoupling="false" to="mov1#hym34#pu107" codeRef="mov1#hym34#page66#enu99#ln628"/>
+    </ActivityParametersUnit>
+    <GetUnit gr:x="-50" gr:y="0" id="mov1#hym34#gtu66" name="Get66" contextParameters="UserCtxParam">
+      <Link id="mov1#hym34#gtu66#ln1339" name="Flow1339" to="mov1#hym34#seu290" type="transport" validate="true">
+        <LinkParameter id="mov1#hym34#gtu66#ln1339#par4194" name="UserCtxParam.oid_KeyCondition210 [oid]" source="mov1#hym34#gtu66.UserCtxParam" target="mov1#hym34#seu290#su476#kcond210.userOID"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="-60" gr:y="95" id="mov1#hym34#seu290" name="buscaFedatario" entity="ent39">
+      <OKLink id="mov1#hym34#seu290#oln1275" name="OKFlow1275" to="mov1#hym34#page66#dau24">
+        <LinkParameter id="mov1#hym34#seu290#oln1275#par4195" name="userName_usernameFedatario" source="userNameArray" target="mov1#hym34#page66#dau24#su475#acond218"/>
+      </OKLink>
+      <Selector id="mov1#hym34#seu290#su476" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym34#seu290#su476#kcond210" name="KeyCondition210" predicate="in" implied="false"/>
+      </Selector>
+    </SelectorUnit>
+  </OperationUnits>
+</HybridModule>

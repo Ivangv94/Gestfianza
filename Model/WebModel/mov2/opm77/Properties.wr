@@ -1,0 +1,194 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm77" name="agregarAccionistaPM" gr:x="-180" gr:y="945">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm77#icu116" gr:x="30" gr:y="80">
+      <InputCollectorParameter id="mov2#opm77#icu116#icp322" name="rfcPM"/>
+      <InputCollectorParameter id="mov2#opm77#icu116#icp323" name="inputAccionesCF"/>
+      <InputCollectorParameter id="mov2#opm77#icu116#icp324" name="inputAccionesCV"/>
+      <Link id="mov2#opm77#icu116#ln945" name="Flow1309" to="mov2#opm77#cru57" type="transport" validate="true" gr:bendpoints="214,-106,-1131,-181;702,-109,-643,-184;1253,-111,-92,-186">
+        <LinkParameter id="mov2#opm77#icu116#ln945#par2888" name="inputAccionesCF_numAcciones" source="mov2#opm77#icu116#icp323" target="mov2#opm77#cru57.ent61#att394"/>
+      </Link>
+      <Link id="mov2#opm77#icu116#ln946" name="Flow1321" to="mov2#opm77#cru58" type="transport" validate="true" gr:bendpoints="406,-135,-1369,-180;1093,-141,-682,-186;1456,-138,-319,-183">
+        <LinkParameter id="mov2#opm77#icu116#ln946#par2889" name="inputAccionesCV_numAcciones" source="mov2#opm77#icu116#icp324" target="mov2#opm77#cru58.ent61#att394"/>
+      </Link>
+      <Link id="mov2#opm77#icu116#ln948" name="Flow1328" to="mov2#opm77#mfu33" type="transport" validate="true" gr:bendpoints="383,199,-1072,14;829,245,-606,60;1161,241,-274,56">
+        <LinkParameter id="mov2#opm77#icu116#ln948#par2915" name="inputAccionesCF_numAcciones" source="mov2#opm77#icu116#icp323" target="mov2#opm77#mfu33.ent61#att394"/>
+      </Link>
+      <Link id="mov2#opm77#icu116#ln949" name="Flow1331" to="mov2#opm77#mfu34" type="transport" validate="true" gr:bendpoints="549,268,-1471,28;900,280,-1120,40;1516,274,-504,34">
+        <LinkParameter id="mov2#opm77#icu116#ln949#par2916" name="inputAccionesCV_numAcciones" source="mov2#opm77#icu116#icp324" target="mov2#opm77#mfu34.ent61#att394"/>
+      </Link>
+      <Link id="mov2#opm77#icu116#ln950" name="Flow845" to="mov2#opm77#cru56" type="transport" validate="true" gr:bendpoints="150,-112,-315,8">
+        <LinkParameter id="mov2#opm77#icu116#ln950#par3038" name="razonODenominacion_razonSocial" source="mov2#opm77#icu116#icp328" target="mov2#opm77#cru56.ent38#att255"/>
+        <LinkParameter id="mov2#opm77#icu116#ln950#par3039" name="ACCIONISTA_tipoPM" sourceValue="ACCIONISTA" target="mov2#opm77#cru56.ent38#att432"/>
+        <LinkParameter id="mov2#opm77#icu116#ln950#par3040" name="rfcPM_userName" source="mov2#opm77#icu116#icp322" target="mov2#opm77#cru56.userName"/>
+      </Link>
+      <Link id="mov2#opm77#icu116#ln951" name="Flow846" to="mov2#opm77#seu158" type="transport" validate="true" gr:bendpoints="498,114,-827,99;1007,102,-318,87">
+        <LinkParameter id="mov2#opm77#icu116#ln951#par2921" name="oidPM_PMoid [oid]" source="mov2#opm77#icu116#icp329" target="mov2#opm77#seu158#su289#rcond159.userOID"/>
+        <LinkParameter id="mov2#opm77#icu116#ln951#par2923" name="seriesCF_serieCF" source="mov2#opm77#icu116#icp327" target="mov2#opm77#seu158#su289#acond162"/>
+      </Link>
+      <Link id="mov2#opm77#icu116#ln952" name="Flow847" to="mov2#opm77#seu159" type="transport" validate="true" gr:bendpoints="205,93,-995,113;947,121,-913,101">
+        <LinkParameter id="mov2#opm77#icu116#ln952#par2924" name="oidPM_PMoid [oid]" source="mov2#opm77#icu116#icp329" target="mov2#opm77#seu159#su290#rcond161.userOID"/>
+        <LinkParameter id="mov2#opm77#icu116#ln952#par2927" name="seriesCV_seriesCV" source="mov2#opm77#icu116#icp326" target="mov2#opm77#seu159#su290#acond164"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm77#icu116#icp326" name="seriesCV"/>
+      <InputCollectorParameter id="mov2#opm77#icu116#icp327" name="seriesCF"/>
+      <OKLink id="mov2#opm77#icu116#oln939" name="OKFlow939" to="mov2#opm77#seu150">
+        <LinkParameter id="mov2#opm77#icu116#oln939#par3035" name="rfcPM_userName" source="mov2#opm77#icu116#icp322" target="mov2#opm77#seu150#su288#acond160"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm77#icu116#icp328" name="razonODenominacion"/>
+      <InputCollectorParameter id="mov2#opm77#icu116#icp329" name="oidPM"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#opm77#okcu82" name="OK Port112" gr:x="2125" gr:y="5">
+      <OutputCollectorParameter id="mov2#opm77#okcu82#ocp215" name="AccionesOID"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov2#opm77#kocu67" name="KO Port96" gr:x="2125" gr:y="325">
+      <OutputCollectorParameter id="mov2#opm77#kocu67#ocp216" name="mensaje"/>
+    </KOCollectorUnit>
+    <CreateUnit id="mov2#opm77#cru56" name="actualizaPM" gr:x="590" gr:y="10" entity="ent38">
+      <OKLink id="mov2#opm77#cru56#oln922" name="OKFlow1279" to="mov2#opm77#seu158">
+        <LinkParameter id="mov2#opm77#cru56#oln922#par3013" name="F_tipoAccion" target="mov2#opm77#seu158#su289#acond161" sourceValue="F"/>
+      </OKLink>
+      <Link id="mov2#opm77#cru56#ln955" name="Flow1308" to="mov2#opm77#cru57" type="transport" validate="true" gr:bendpoints="85,-75,-205,-85;238,-81,-87,-66">
+        <LinkParameter id="mov2#opm77#cru56#ln955#par3041" name="oid_PersonaMoral.oid(AccionesToPersonaMoral)" source="userOIDArray" target="mov2#opm77#cru57.rel36#role71.userOID"/>
+      </Link>
+      <Link id="mov2#opm77#cru56#ln956" name="Flow1320" to="mov2#opm77#cru58" type="transport" validate="true" gr:bendpoints="240,-147,-480,-147;356,-145,-364,-145;563,-146,-157,-146">
+        <LinkParameter id="mov2#opm77#cru56#ln956#par3044" name="oid_PersonaMoral.oid(AccionesToPersonaMoral)" source="userOIDArray" target="mov2#opm77#cru58.rel36#role71.userOID"/>
+      </Link>
+      <Link id="mov2#opm77#cru56#ln957" name="Flow1326" to="mov2#opm77#seu160" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="267,-154,-93,-164"/>
+      <KOLink id="mov2#opm77#cru56#kln399" name="KOFlow576" to="mov2#opm77#kocu67" gr:bendpoints="328,211,-1087,-4">
+        <LinkParameter id="mov2#opm77#cru56#kln399#par3014" name="Error al registrar usuario_mensaje" target="mov2#opm77#kocu67#ocp216" sourceValue="Error al registrar accionista"/>
+      </KOLink>
+    </CreateUnit>
+    <SelectorUnit id="mov2#opm77#seu150" name="buscaPM" gr:x="340" gr:y="125" entity="ent38" linkOrder="mov2#opm77#seu150#ln969">
+      <Selector id="mov2#opm77#seu150#su288" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm77#seu150#su288#acond160" name="userName" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+        <AttributesCondition id="mov2#opm77#seu150#su288#acond166" name="esAccionista" predicate="eq" booleanOperator="or" implied="false" attributes="ent38#att432" value="ACCIONISTA"/>
+      </Selector>
+      <OKLink id="mov2#opm77#seu150#oln926" name="OKFlow1276" to="mov2#opm77#inn49">
+        <LinkParameter id="mov2#opm77#seu150#oln926#par3018" name="userName_Input" source="userOIDArray" target="mov2#opm77#inn49.isnotnull"/>
+      </OKLink>
+      <Link id="mov2#opm77#seu150#ln969" name="Flow969" to="mov2#opm77#mfu32" type="transport" validate="true" gr:bendpoints="83,129,-162,-1">
+        <LinkParameter id="mov2#opm77#seu150#ln969#par3037" name="oid_KeyCondition130 [oid]" source="userOIDArray" target="mov2#opm77#mfu32#su291#kcond130.userOID"/>
+      </Link>
+    </SelectorUnit>
+    <IsNotNullUnit id="mov2#opm77#inn49" name="&#191;Existe?" gr:x="490" gr:y="135">
+      <KOLink id="mov2#opm77#inn49#kln401" name="OKFlow1275" to="mov2#opm77#cru56" automaticCoupling="true"/>
+      <OKLink id="mov2#opm77#inn49#oln927" name="OKFlow1282" to="mov2#opm77#mfu32" gr:bendpoints="74,-50,-71,85">
+        <LinkParameter id="mov2#opm77#inn49#oln927#par3036" name="Input Value_KeyCondition130 [oid]" source="inputValue" target="mov2#opm77#mfu32#su291#kcond130.userOID"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <SelectorUnit id="mov2#opm77#seu158" name="EAoidCF" gr:x="740" gr:y="105" entity="ent60">
+      <Selector id="mov2#opm77#seu158#su289" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm77#seu158#su289#rcond159" name="PMoid" predicate="in" implied="false" role="rel35#role70"/>
+        <AttributesCondition id="mov2#opm77#seu158#su289#acond161" name="tipoAccion" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att391"/>
+        <AttributesCondition id="mov2#opm77#seu158#su289#acond162" name="serieCF" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att389"/>
+      </Selector>
+      <Link id="mov2#opm77#seu158#ln958" name="Flow1312" to="mov2#opm77#cru57" type="transport" automaticCoupling="true" gr:bendpoints="216,-160,-194,-30"/>
+      <OKLink id="mov2#opm77#seu158#oln928" name="OKFlow1312" to="mov2#opm77#seu160" automaticCoupling="true"/>
+      <Link id="mov2#opm77#seu158#ln959" name="Flow1316" to="mov2#opm77#mfu33" type="transport" validate="true" gr:bendpoints="106,125,-304,-20" automaticCoupling="true"/>
+    </SelectorUnit>
+    <CreateUnit id="mov2#opm77#cru57" name="AccionesCF" gr:x="1185" gr:y="-15" entity="ent61">
+      <OKLink id="mov2#opm77#cru57#oln929" name="OKFlow1281" to="mov2#opm77#seu159">
+        <LinkParameter id="mov2#opm77#cru57#oln929#par3019" name="V_tipoAccion" target="mov2#opm77#seu159#su290#acond163" sourceValue="V"/>
+      </OKLink>
+      <Link id="mov2#opm77#cru57#ln960" name="Flow1349" to="mov2#opm77#seu161" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="301,-9,-149,-149"/>
+      <KOLink id="mov2#opm77#cru57#kln402" name="KOFlow578" to="mov2#opm77#kocu67" gr:bendpoints="29,314,-801,-26">
+        <LinkParameter id="mov2#opm77#cru57#kln402#par3020" name="Error al registrar numero de acciones_mensaje" target="mov2#opm77#kocu67#ocp216" sourceValue="Error al registrar numero de acciones"/>
+      </KOLink>
+    </CreateUnit>
+    <SelectorUnit id="mov2#opm77#seu159" name="EAoidCV" gr:x="1275" gr:y="95" entity="ent60">
+      <Selector id="mov2#opm77#seu159#su290" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm77#seu159#su290#rcond161" name="PMoid" predicate="in" implied="false" role="rel35#role70"/>
+        <AttributesCondition id="mov2#opm77#seu159#su290#acond163" name="tipoAccion" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att391"/>
+        <AttributesCondition id="mov2#opm77#seu159#su290#acond164" name="seriesCV" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att389"/>
+      </Selector>
+      <Link id="mov2#opm77#seu159#ln961" name="OKFlow1288" to="mov2#opm77#cru58" type="transport" automaticCoupling="true" gr:bendpoints="165,-165,-115,-155"/>
+      <OKLink id="mov2#opm77#seu159#oln930" name="OKFlow1323" to="mov2#opm77#seu161" automaticCoupling="true"/>
+      <Link id="mov2#opm77#seu159#ln962" name="Flow1350" to="mov2#opm77#mfu34" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="184,114,-281,-46"/>
+    </SelectorUnit>
+    <CreateUnit id="mov2#opm77#cru58" name="AccionesCV" gr:x="1735" gr:y="-10" entity="ent61">
+      <OKLink id="mov2#opm77#cru58#oln931" name="OKFlow1295" to="mov2#opm77#okcu82">
+        <LinkParameter id="mov2#opm77#cru58#oln931#par3021" name="oid_AccionesOID" source="ent61#att393Array" target="mov2#opm77#okcu82#ocp215"/>
+      </OKLink>
+      <KOLink id="mov2#opm77#cru58#kln403" name="KOFlow595" to="mov2#opm77#kocu67">
+        <LinkParameter id="mov2#opm77#cru58#kln403#par3022" name="Error al registrar numero de acciones_mensaje" target="mov2#opm77#kocu67#ocp216" sourceValue="Error al registrar numero de acciones"/>
+      </KOLink>
+    </CreateUnit>
+    <ModifyUnit id="mov2#opm77#mfu32" name="creaAccionistaPM" gr:x="575" gr:y="260" entity="ent38">
+      <Selector id="mov2#opm77#mfu32#su291" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm77#mfu32#su291#kcond130" name="KeyCondition130" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov2#opm77#mfu32#ln963" name="Flow1327" to="mov2#opm77#mfu33" type="transport" validate="true">
+        <LinkParameter id="mov2#opm77#mfu32#ln963#par3023" name="oid_PF [oid]" source="userOIDArray" target="mov2#opm77#mfu33#su292#rcond164.userOID"/>
+        <LinkParameter id="mov2#opm77#mfu32#ln963#par3047" name="oid_PersonaMoral.oid(AccionesToPersonaMoral)" source="userOIDArray" target="mov2#opm77#mfu33.rel36#role71.userOID"/>
+      </Link>
+      <Link id="mov2#opm77#mfu32#ln964" name="Flow1330" to="mov2#opm77#mfu34" type="transport" validate="true" gr:bendpoints="-7,92,-802,87;656,95,-139,90">
+        <LinkParameter id="mov2#opm77#mfu32#ln964#par3025" name="oid_PF [oid]" source="userOIDArray" target="mov2#opm77#mfu34#su293#rcond166.userOID"/>
+        <LinkParameter id="mov2#opm77#mfu32#ln964#par3048" name="oid_PersonaMoral.oid(AccionesToPersonaMoral)" source="userOIDArray" target="mov2#opm77#mfu34.rel36#role71.userOID"/>
+      </Link>
+      <OKLink id="mov2#opm77#mfu32#oln932" name="OKFlow1314" to="mov2#opm77#seu158" gr:bendpoints="152,-16,-53,119">
+        <LinkParameter id="mov2#opm77#mfu32#oln932#par3027" name="F_tipoAccion" target="mov2#opm77#seu158#su289#acond161" sourceValue="F"/>
+      </OKLink>
+      <Link id="mov2#opm77#mfu32#ln965" name="Flow1329" to="mov2#opm77#seu160" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="252,23,-118,148"/>
+      <Link id="mov2#opm77#mfu32#ln966" name="Flow1348" to="mov2#opm77#seu161" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="753,62,-282,197"/>
+      <Link id="mov2#opm77#mfu32#ln967" name="Flow1351" to="mov2#opm77#cru57" type="transport" validate="true" gr:bendpoints="417,-59,-168,216">
+        <LinkParameter id="mov2#opm77#mfu32#ln967#par3042" name="oid_PersonaMoral.oid(AccionesToPersonaMoral)" source="userOIDArray" target="mov2#opm77#cru57.rel36#role71.userOID"/>
+      </Link>
+      <Link id="mov2#opm77#mfu32#ln968" name="Flow1352" to="mov2#opm77#cru58" type="transport" validate="true" gr:bendpoints="853,22,-387,277;1114,-57,-126,198">
+        <LinkParameter id="mov2#opm77#mfu32#ln968#par3043" name="oid_PersonaMoral.oid(AccionesToPersonaMoral)" source="userOIDArray" target="mov2#opm77#cru58.rel36#role71.userOID"/>
+      </Link>
+      <KOLink id="mov2#opm77#mfu32#kln404" name="KOFlow577" to="mov2#opm77#kocu67" gr:bendpoints="261,56,-1164,-24">
+        <LinkParameter id="mov2#opm77#mfu32#kln404#par3028" name="Error al actualizar datos del accionista_mensaje" target="mov2#opm77#kocu67#ocp216" sourceValue="Error al actualizar datos del accionista"/>
+      </KOLink>
+    </ModifyUnit>
+    <ModifyUnit id="mov2#opm77#mfu33" name="AccionesCF" gr:x="1060" gr:y="220" entity="ent61">
+      <Selector id="mov2#opm77#mfu33#su292" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm77#mfu33#su292#rcond163" name="EA" predicate="in" implied="false" role="rel33#role65"/>
+        <RelationshipRoleCondition id="mov2#opm77#mfu33#su292#rcond164" name="PF" predicate="in" implied="false" role="rel37#role74"/>
+      </Selector>
+      <OKLink id="mov2#opm77#mfu33#oln933" name="OKFlow1317" to="mov2#opm77#seu159">
+        <LinkParameter id="mov2#opm77#mfu33#oln933#par3029" name="V_tipoAccion" target="mov2#opm77#seu159#su290#acond163" sourceValue="V"/>
+      </OKLink>
+      <KOLink id="mov2#opm77#mfu33#kln405" name="KOFlow596" to="mov2#opm77#kocu67" gr:bendpoints="414,72,-511,-23">
+        <LinkParameter id="mov2#opm77#mfu33#kln405#par3030" name="Error al actualizar numero de acciones_mensaje" target="mov2#opm77#kocu67#ocp216" sourceValue="Error al actualizar numero de acciones"/>
+      </KOLink>
+    </ModifyUnit>
+    <ModifyUnit id="mov2#opm77#mfu34" name="AccionesCV" gr:x="1725" gr:y="250" entity="ent61">
+      <Selector id="mov2#opm77#mfu34#su293" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm77#mfu34#su293#rcond165" name="EA" predicate="in" implied="false" role="rel33#role65"/>
+        <RelationshipRoleCondition id="mov2#opm77#mfu34#su293#rcond166" name="PF" predicate="in" implied="false" role="rel37#role74"/>
+      </Selector>
+      <OKLink id="mov2#opm77#mfu34#oln934" name="OKFlow1286" to="mov2#opm77#okcu82">
+        <LinkParameter id="mov2#opm77#mfu34#oln934#par3031" name="oid_AccionesOID" source="ent61#att393Array" target="mov2#opm77#okcu82#ocp215"/>
+      </OKLink>
+      <KOLink id="mov2#opm77#mfu34#kln406" name="KOFlow597" to="mov2#opm77#kocu67">
+        <LinkParameter id="mov2#opm77#mfu34#kln406#par3032" name="Error al actualizarr numero de acciones_mensaje" target="mov2#opm77#kocu67#ocp216" sourceValue="Error al actualizarr numero de acciones"/>
+      </KOLink>
+    </ModifyUnit>
+    <IsNotNullUnit id="mov2#opm77#inn50" name="&#191;Existe?" gr:x="1170" gr:y="125">
+      <KOLink id="mov2#opm77#inn50#kln407" name="KOFlow542" to="mov2#opm77#cru57" automaticCoupling="true"/>
+      <OKLink id="mov2#opm77#inn50#oln935" name="OKFlow1313" to="mov2#opm77#mfu33" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <IsNotNullUnit id="mov2#opm77#inn51" name="&#191;Existe?" gr:x="1770" gr:y="135">
+      <KOLink id="mov2#opm77#inn51#kln408" name="KOFlow543" to="mov2#opm77#cru58" automaticCoupling="true"/>
+      <OKLink id="mov2#opm77#inn51#oln936" name="OKFlow1325" to="mov2#opm77#mfu34" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <SelectorUnit id="mov2#opm77#seu160" name="AccionesCF" gr:x="945" gr:y="90" entity="ent61">
+      <Selector id="mov2#opm77#seu160#su294" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm77#seu160#su294#rcond170" name="ea" predicate="in" implied="false" role="rel33#role65"/>
+        <RelationshipRoleCondition id="mov2#opm77#seu160#su294#rcond171" name="pf" predicate="in" implied="false" role="rel37#role74"/>
+      </Selector>
+      <OKLink id="mov2#opm77#seu160#oln937" name="OKFlow1321" to="mov2#opm77#inn50">
+        <LinkParameter id="mov2#opm77#seu160#oln937#par3033" name="oid_Input" source="ent61#att393Array" target="mov2#opm77#inn50.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm77#seu161" name="AccionesCF" gr:x="1500" gr:y="100" entity="ent61">
+      <Selector id="mov2#opm77#seu161#su295" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm77#seu161#su295#rcond172" name="ea" predicate="in" implied="false" role="rel33#role65"/>
+        <RelationshipRoleCondition id="mov2#opm77#seu161#su295#rcond173" name="pf" predicate="in" implied="false" role="rel37#role74"/>
+      </Selector>
+      <OKLink id="mov2#opm77#seu161#oln938" name="OKFlow1324" to="mov2#opm77#inn51">
+        <LinkParameter id="mov2#opm77#seu161#oln938#par3034" name="oid_Input" source="ent61#att393Array" target="mov2#opm77#inn51.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,177 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg9#opm116" name="enviarCorreo" gr:x="0" gr:y="150">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg9#opm116#icu156" gr:x="-40" gr:y="205">
+      <InputCollectorParameter id="mov2#mpkg9#opm116#icu156#icp488" name="asunto"/>
+      <InputCollectorParameter id="mov2#mpkg9#opm116#icu156#icp489" name="mensaje"/>
+      <InputCollectorParameter id="mov2#mpkg9#opm116#icu156#icp490" name="destinatario-cc"/>
+      <InputCollectorParameter id="mov2#mpkg9#opm116#icu156#icp491" name="destinatario"/>
+      <InputCollectorParameter id="mov2#mpkg9#opm116#icu156#icp492" name="destinatario-cco"/>
+      <InputCollectorParameter id="mov2#mpkg9#opm116#icu156#icp493" name="html"/>
+      <Link id="mov2#mpkg9#opm116#icu156#ln1549" name="Flow892" to="mov2#mpkg9#opm116#scu224" type="transport" validate="true" gr:bendpoints="221,-11,-84,-6">
+        <LinkParameter id="mov2#mpkg9#opm116#icu156#ln1549#par5000" name="asunto_asunto" source="mov2#mpkg9#opm116#icu156#icp488" target="mov2#mpkg9#opm116#scu224.asunto"/>
+        <LinkParameter id="mov2#mpkg9#opm116#icu156#ln1549#par5001" name="destinatario_destinatario" source="mov2#mpkg9#opm116#icu156#icp491" target="mov2#mpkg9#opm116#scu224.destinatario"/>
+        <LinkParameter id="mov2#mpkg9#opm116#icu156#ln1549#par5002" name="destinatario-cc_destinatarioCC" source="mov2#mpkg9#opm116#icu156#icp490" target="mov2#mpkg9#opm116#scu224.destinatarioCC"/>
+        <LinkParameter id="mov2#mpkg9#opm116#icu156#ln1549#par5003" name="destinatario-cco_destinatarioCCO" source="mov2#mpkg9#opm116#icu156#icp492" target="mov2#mpkg9#opm116#scu224.destinatarioCCO"/>
+        <LinkParameter id="mov2#mpkg9#opm116#icu156#ln1549#par5004" name="1_emailType" sourceValue="1" target="mov2#mpkg9#opm116#scu224.emailType"/>
+        <LinkParameter id="mov2#mpkg9#opm116#icu156#ln1549#par5005" name="mensaje_mensaje" source="mov2#mpkg9#opm116#icu156#icp489" target="mov2#mpkg9#opm116#scu224.mensaje"/>
+        <LinkParameter id="mov2#mpkg9#opm116#icu156#ln1549#par5006" name="http://10.100.11.16:8170/MsMail/MailAttachServiceService_endpointURL" sourceValue="http://10.100.11.16:8170/MsMail/MailAttachServiceService" target="mov2#mpkg9#opm116#scu224.endpointURL"/>
+        <LinkParameter id="mov2#mpkg9#opm116#icu156#ln1549#par5007" name="49_idMailAccount" sourceValue="49" target="mov2#mpkg9#opm116#scu224.idMailAccount"/>
+        <LinkParameter id="mov2#mpkg9#opm116#icu156#ln1549#par5008" name="w2ZXGzpytHXUxcH_password" sourceValue="w2ZXGzpytHXUxcH" target="mov2#mpkg9#opm116#scu224.password"/>
+      </Link>
+      <OKLink id="mov2#mpkg9#opm116#icu156#oln1535" name="OKFlow1535" to="mov2#mpkg9#opm116#scu224" automaticCoupling="true" gr:bendpoints="178,-68,-127,-78"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#mpkg9#opm116#okcu122" name="OK" gr:x="950" gr:y="165"/>
+    <KOCollectorUnit id="mov2#mpkg9#opm116#kocu103" name="KO" gr:x="950" gr:y="360">
+      <OutputCollectorParameter id="mov2#mpkg9#opm116#kocu103#ocp362" name="msj"/>
+    </KOCollectorUnit>
+    <ScriptUnit id="mov2#mpkg9#opm116#scu224" name="armaRequest" gr:x="330" gr:y="260">
+      <ScriptUnitText xml:space="preserve">#input String destinatario, String asunto, String idMailAccount, String emailType, String password, String mensaje, String endpointURL, String destinatarioCC, String destinatarioCCO
+#output request, endpointURL
+
+/*String destinatario = "mgutierrezh1002@gmail.com"
+String asunto = "Hola"
+String idMailAccount = "49"
+String emailType = "1"
+String password = "w2ZXGzpytHXUxcH"
+String mensaje= '''&amp;lt;!DOCTYPE HTML&amp;gt;
+&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+    &amp;lt;/head&amp;gt;
+
+    &amp;lt;body&gt;
+            &amp;lt;header&amp;gt;
+            &amp;lt;/header&amp;gt;
+
+        &amp;lt;table width=&amp;quot;560&amp;quot; cellpadding=&amp;quot;27&amp;quot;&amp;gt;
+            &amp;lt;tr height=76&amp;gt;
+                &amp;lt;td style=&amp;quot;background:#393c3e;padding:.73pt 27px .73pt 20px;height:57.0pt&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://www.gob.mx/assets/gobmxlogo.svg&amp;quot; width=&amp;quot;126&amp;quot; height=&amp;quot;44&amp;quot; border=&amp;quot;0&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/SE_logo_2012.svg/1200px-SE_logo_2012.svg.png&amp;quot; width=&amp;quot;110&amp;quot; height=&amp;quot;48&amp;quot; border=&amp;quot;0&amp;quot; align=&amp;quot;right&amp;quot;&amp;gt;
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr height=400&amp;gt;
+                &amp;lt;td valign=&amp;quot;top&amp;quot;&amp;gt;
+                    &amp;lt;p marginwidth = &amp;quot;27px&amp;quot; align=&amp;quot;justify&amp;quot;&amp;gt;
+                        &amp;lt;font color=&amp;quot;#5A5A5A&amp;quot;  face=&amp;quot;Arial&amp;quot; size=&amp;quot;3.5&amp;quot;&amp;gt;
+                         &amp;lt;strong&gt;Estimado Representante Legal,&amp;lt;/strong&gt;&amp;lt;br/&amp;gt;
+                           &amp;lt;br/&amp;gt;
+De la verificaci&#243;n realizada por la autoridad fiscal, se informa que la persona moral no cumple con lo dispuesto en el art&#237;culo 249 Bis, fracciones IV, V y VII, de la Ley General de Sociedades Mercantiles, debiendo acudir al Servicio de Administraci&#243;n Tributaria para el caso de aclaraciones.
+&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+                        &amp;lt;/font&amp;gt;
+                    &amp;lt;/p&amp;gt;
+
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr  height=76&amp;gt;
+                &amp;lt;td width=&amp;quot;50%&amp;quot; style=&amp;quot;width:50.0%;background:#393c3e;padding:.73pt 27px .73pt 22px;height:57.0pt&amp;quot;&amp;gt;
+                    &amp;lt;img src=&amp;quot;https://www.gob.mx/assets/gobmxlogo.svg&amp;quot; width=&amp;quot;75&amp;quot; height=&amp;quot;32
+                    &amp;quot; border=&amp;quot;0&amp;quot;&amp;gt;
+                     
+                &amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+        &amp;lt;/table&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;'''
+
+
+*/
+String dirtyRequest = '''&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.mail.gob.se.mx/"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ser:sendMail-Attachment&gt;
+         &lt;!--Optional:--&gt;
+         &lt;mail id-tipo-correo="''' + emailType + '''" id-mail-account="''' + idMailAccount + '''" password-se="''' + password + '''" destinatario="''' + destinatario + '''" destinatario-cc="''' + destinatarioCC + '''" destinatario-cco="''' + destinatarioCCO + '''" asunto="''' + asunto + '''" mensaje="''' + mensaje + '''"&gt;
+         &lt;/mail&gt;
+      &lt;/ser:sendMail-Attachment&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;'''
+
+String request = dirtyRequest.replaceAll("null", "")
+
+
+return["request":request, "endpointURL":endpointURL]</ScriptUnitText>
+      <OKLink id="mov2#mpkg9#opm116#scu224#oln1531" name="OKFlow1227" to="mov2#mpkg9#opm116#scu226">
+        <LinkParameter id="mov2#mpkg9#opm116#scu224#oln1531#par4983" name="request_dirtyXmlRequest" source="result(request)" target="mov2#mpkg9#opm116#scu226.dirtyXmlRequest"/>
+        <LinkParameter id="mov2#mpkg9#opm116#scu224#oln1531#par4984" name="http://10.100.40.16:8170/MsMail/MailAttachServiceService?wsdl_endpointURL" source="result(endpointURL)" target="mov2#mpkg9#opm116#scu226.endpointURL"/>
+      </OKLink>
+    </ScriptUnit>
+    <ScriptUnit id="mov2#mpkg9#opm116#scu226" name="correo" gr:x="525" gr:y="255">
+      <KOLink id="mov2#mpkg9#opm116#scu226#kln583" name="KOFlow530" to="mov2#mpkg9#opm116#kocu103" gr:bendpoints="147,102,-398,-28">
+        <LinkParameter id="mov2#mpkg9#opm116#scu226#kln583#par4989" name="Error al enviar correo de notificaci&#243;n a los accionistas._msj" target="mov2#mpkg9#opm116#kocu103#ocp362" sourceValue="Error al enviar correo de notificaci&#243;n a los accionistas."/>
+      </KOLink>
+      <ScriptUnitText xml:space="preserve">#input String dirtyXmlRequest, String endpointURL
+#output xmlRequest,xmlResponse, endpointURL
+ 
+import javax.xml.soap.SOAPConnectionFactory;
+import javax.xml.soap.SOAPConnection;
+import javax.xml.soap.SOAPMessage;
+import javax.xml.soap.MessageFactory;
+import javax.xml.soap.SOAPConstants;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+
+// Para probar en groovyConsole
+
+
+
+
+SOAPConnectionFactory soapConnectionFactory = SOAPConnectionFactory.newInstance();
+SOAPConnection soapConnection = soapConnectionFactory.createConnection();
+
+InputStream is = new ByteArrayInputStream(dirtyXmlRequest.getBytes());
+SOAPMessage soapMessage;
+SOAPMessage soapResponse;
+
+// Send SOAP Message to SOAP Server
+try {   
+    soapMessage = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL).createMessage(null, is);
+    soapResponse = soapConnection.call(soapMessage, endpointURL);
+    } catch (Exception e) {
+        throw new RuntimeException("El servicio no responde", e.getCause());
+        }
+
+public String soapMessageToString(SOAPMessage message) 
+    {
+        String result = null;
+
+        if (message != null) 
+        {
+            ByteArrayOutputStream baos = null;
+            try 
+            {
+                baos = new ByteArrayOutputStream();
+                message.writeTo(baos); 
+                result = baos.toString();
+            } 
+            catch (Exception e) 
+            {
+            } 
+            finally 
+            {
+                if (baos != null) 
+                {
+                    try 
+                    {
+                        baos.close();
+                    } 
+                    catch (IOException ioe) 
+                    {
+                    }
+                }
+            }
+        }
+        return result;
+    }  
+
+//XML as a String:
+String xmlRequest = soapMessageToString(soapMessage);
+String xmlResponse = soapMessageToString(soapResponse);
+
+return["xmlRequest":xmlRequest,"xmlResponse":xmlResponse, "endpointURL":endpointURL]</ScriptUnitText>
+      <OKLink id="mov2#mpkg9#opm116#scu226#oln1536" name="OKFlow1536" to="mov2#mpkg9#opm116#okcu122" automaticCoupling="true"/>
+    </ScriptUnit>
+  </OperationUnits>
+</OperationModule>

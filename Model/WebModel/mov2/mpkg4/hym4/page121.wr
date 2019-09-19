@@ -1,0 +1,110 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov2#mpkg4#hym4#page121" name="Firmar con e.firma" secure="false" localized="true" ignoreMasterPage="true" layout:style="gobmxStyle" layout:pageLayout="gobmxStyle/Empty" layout:linkLayout="gobmxStyle/Default" gr:x="345" gr:y="-70">
+  <ContentUnits>
+    <EntryUnit id="mov2#mpkg4#hym4#page121#enu168" name="Firmar con e.firma" linkOrder="mov2#mpkg4#hym4#page121#enu168#ln1375" gr:x="0" gr:y="80">
+      <Field id="mov2#mpkg4#hym4#page121#enu168#fld425" name="PasswordEfirma:" type="password" modifiable="true" preloaded="false">
+        <VRules>
+          <MandatoryValidationRule id="mov2#mpkg4#hym4#page121#enu168#fld425#mnd11" name="NotNull"/>
+        </VRules>
+      </Field>
+      <Field id="mov2#mpkg4#hym4#page121#enu168#fld426" name="ArchivoCER" type="blob" modifiable="true" preloaded="false">
+        <VRules>
+          <MandatoryValidationRule id="mov2#mpkg4#hym4#page121#enu168#fld426#mnd15" name="NotNull"/>
+          <RegularExpressionValidationRule id="mov2#mpkg4#hym4#page121#enu168#fld426#regex3" name="extensionCER" errorMessage="Solamente se aceptan archivos con extensi&#243;n .cer &#243; .CER" regex="^.*\.(cer|CER)$"/>
+        </VRules>
+      </Field>
+      <Field id="mov2#mpkg4#hym4#page121#enu168#fld427" name="ArchivoKEY" type="blob" modifiable="true" preloaded="false">
+        <VRules>
+          <MandatoryValidationRule id="mov2#mpkg4#hym4#page121#enu168#fld427#mnd23" name="NotNull"/>
+          <RegularExpressionValidationRule id="mov2#mpkg4#hym4#page121#enu168#fld427#regex6" name="extensionKEY" errorMessage="Solamente se aceptan archivos con extensi&#243;n .key &#243; .KEY" regex="^.*\.(key|KEY)$"/>
+        </VRules>
+      </Field>
+      <Field id="mov2#mpkg4#hym4#page121#enu168#fld428" name="xmlOriginal" type="text" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="mov2#mpkg4#hym4#page121#enu168#fld429" name="curpOrfcFirmante" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="mov2#mpkg4#hym4#page121#enu168#fld430" name="folio" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="mov2#mpkg4#hym4#page121#enu168#fld431" name="rfcOcurp" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Link id="mov2#mpkg4#hym4#page121#enu168#ln1375" name="Firmar con e.firma" to="mov2#mpkg4#hym4#miu154" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="mov2#mpkg4#hym4#page121#enu168#ln1375#par4665" name="ambiente_ambiente" source="mov2#mpkg4#hym4#page121#enu168#fld433" target="mov2#mpkg4#hym4#miu154.mov2#mpkg4#opm101#icu141#icp410"/>
+        <LinkParameter id="mov2#mpkg4#hym4#page121#enu168#ln1375#par4666" name="xmlOriginal_cadenaOriginal" source="mov2#mpkg4#hym4#page121#enu168#fld428" target="mov2#mpkg4#hym4#miu154.mov2#mpkg4#opm101#icu141#icp409"/>
+        <LinkParameter id="mov2#mpkg4#hym4#page121#enu168#ln1375#par4667" name="ArchivoCER_CER" source="mov2#mpkg4#hym4#page121#enu168#fld426" target="mov2#mpkg4#hym4#miu154.mov2#mpkg4#opm101#icu141#icp408"/>
+        <LinkParameter id="mov2#mpkg4#hym4#page121#enu168#ln1375#par4668" name="PasswordEfirma:_contrasenia" source="mov2#mpkg4#hym4#page121#enu168#fld425" target="mov2#mpkg4#hym4#miu154.mov2#mpkg4#opm101#icu141#icp407"/>
+        <LinkParameter id="mov2#mpkg4#hym4#page121#enu168#ln1375#par4669" name="rfcOcurp_CURPoRFCdelFirmante" source="mov2#mpkg4#hym4#page121#enu168#fld431" target="mov2#mpkg4#hym4#miu154.mov2#mpkg4#opm101#icu141#icp406"/>
+        <LinkParameter id="mov2#mpkg4#hym4#page121#enu168#ln1375#par4670" name="folio_folio" source="mov2#mpkg4#hym4#page121#enu168#fld430" target="mov2#mpkg4#hym4#miu154.mov2#mpkg4#opm101#icu141#icp405"/>
+        <LinkParameter id="mov2#mpkg4#hym4#page121#enu168#ln1375#par4671" name="ArchivoKEY_KEY" source="mov2#mpkg4#hym4#page121#enu168#fld427" target="mov2#mpkg4#hym4#miu154.mov2#mpkg4#opm101#icu141#icp404"/>
+        <LinkParameter id="mov2#mpkg4#hym4#page121#enu168#ln1375#par4672" name="proceso_proceso" source="mov2#mpkg4#hym4#page121#enu168#fld435" target="mov2#mpkg4#hym4#miu154.mov2#mpkg4#opm101#icu141#icp411"/>
+        <LinkParameter id="mov2#mpkg4#hym4#page121#enu168#ln1375#par4673" name="ultimoNodo_ultimoNodo" source="mov2#mpkg4#hym4#page121#enu168#fld432" target="mov2#mpkg4#hym4#miu154.mov2#mpkg4#opm101#icu141#icp403"/>
+        <LinkParameter id="mov2#mpkg4#hym4#page121#enu168#ln1375#par4760" name="oidDoc_PASSING_oidDoc" sourceLinkParameter="mov2#mpkg4#hym4#icu138#ln1370#par4759" target="mov2#mpkg4#hym4#miu154.mov2#mpkg4#opm101#icu141#icp467"/>
+      </Link>
+      <Field id="mov2#mpkg4#hym4#page121#enu168#fld432" name="ultimoNodo" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="mov2#mpkg4#hym4#page121#enu168#fld433" name="ambiente" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="mov2#mpkg4#hym4#page121#enu168#fld434" name="xmlAfirmar" type="blob" modifiable="false" preloaded="true" hidden="false"/>
+      <Field id="mov2#mpkg4#hym4#page121#enu168#fld435" name="proceso" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Link id="mov2#mpkg4#hym4#page121#enu168#ln1376" name="Flow289" to="mov2#mpkg4#hym4#okcu104" type="transport" validate="true" gr:bendpoints="118,-49,-717,-49;664,-50,-171,-50">
+        <LinkParameter id="mov2#mpkg4#hym4#page121#enu168#ln1376#par4296" name="xmlAfirmar_doc" source="mov2#mpkg4#hym4#page121#enu168#fld434" target="mov2#mpkg4#hym4#okcu104#ocp273"/>
+        <LinkParameter id="mov2#mpkg4#hym4#page121#enu168#ln1376#par4297" name="folio_nombreArchivo" source="mov2#mpkg4#hym4#page121#enu168#fld430" target="mov2#mpkg4#hym4#okcu104#ocp269"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit id="mov2#mpkg4#hym4#page121#mssu57" name="mensajeDeError" gr:x="245" gr:y="235"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid" layout:frameLayout="None">
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov2#mpkg4#hym4#page121#mssu57" layout:unitVisibilityConditionVariable="mov2#mpkg4#hym4#page121#var130">
+          <layout:LayoutParameter name="messageType" value="danger" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov2#mpkg4#hym4#page121#enu168" manualFields="true" manualFieldOrder="mov2#mpkg4#hym4#page121#enu168#fld426 mov2#mpkg4#hym4#page121#enu168#fld427 mov2#mpkg4#hym4#page121#enu168#fld425">
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+          <layout:LayoutParameter name="mandatory-fields" value="true" type="unit"/>
+          <layout:LayoutParameter name="show-title" value="false" type="frame"/>
+          <layout:LayoutParameter name="panel-type" value="warning" type="frame"/>
+          <layout:Link link="mov2#mpkg4#hym4#page121#enu168#ln1375" styleClass="pull-right firmar">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Field field="mov2#mpkg4#hym4#page121#enu168#fld426" styleClass="btn-file fileCer"/>
+          <layout:Field field="mov2#mpkg4#hym4#page121#enu168#fld427" styleClass="btn-file fileKey"/>
+          <layout:Field field="mov2#mpkg4#hym4#page121#enu168#fld425" styleClass="pwdPrivateKey"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="mov2#mpkg4#hym4#page121#var130" name="mensajeErrorEncendido" type="boolean" value="0"/>
+</Page>

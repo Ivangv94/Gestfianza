@@ -1,0 +1,215 @@
+<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="wsv1#port2" name="poderes" gr:x="0" gr:y="0">
+  <OperationUnits>
+    <SolicitUnit id="wsv1#port2#slu1" name="validarPoder" gr:x="0" gr:y="20" invocationStyle="SOAP" requestMethod="POST">
+      <RequestBodyParameter id="wsv1#port2#slu1#slp1" name="otorgante" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port2#slu1#slp1#spf1" name="rfcOcurp" minCard="1" maxCard="1"/>
+      </RequestBodyParameter>
+      <RequestBodyParameter id="wsv1#port2#slu1#slp2" name="apoderado" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port2#slu1#slp2#spf2" name="curp" minCard="1" maxCard="1"/>
+      </RequestBodyParameter>
+      <OKLink id="wsv1#port2#slu1#oln182" name="OKFlow54" to="wsv1#port2#seu20">
+        <LinkParameter id="wsv1#port2#slu1#oln182#par1605" name="otorgante/rfcOcurp_curp" source="map(wsv1#port2#slu1#slp1_otorgante$rfcOcurp)" target="wsv1#port2#seu20#su47#acond27"/>
+      </OKLink>
+      <Link id="wsv1#port2#slu1#ln173" name="Flow219" to="wsv1#port2#seu21" type="transport" validate="true" gr:bendpoints="92,-62,-498,-62;450,-64,-140,-64">
+        <LinkParameter id="wsv1#port2#slu1#ln173#par1606" name="apoderado/curp_curp" source="map(wsv1#port2#slu1#slp2_apoderado$curp)" target="wsv1#port2#seu21#su49#acond28"/>
+      </Link>
+      <Link id="wsv1#port2#slu1#ln174" name="Flow223" to="wsv1#port2#seu29" type="transport" validate="true" gr:bendpoints="387,198,-787,12">
+        <LinkParameter id="wsv1#port2#slu1#ln174#par1607" name="otorgante/rfcOcurp_rfc" source="map(wsv1#port2#slu1#slp1_otorgante$rfcOcurp)" target="wsv1#port2#seu29#su51#acond40"/>
+      </Link>
+      <Link id="wsv1#port2#slu1#ln175" name="Flow224" to="wsv1#port2#seu30" type="transport" validate="true" gr:bendpoints="137,63,-1507,-123;1584,80,-60,-106">
+        <LinkParameter id="wsv1#port2#slu1#ln175#par1608" name="apoderado/curp_curp" source="map(wsv1#port2#slu1#slp2_apoderado$curp)" target="wsv1#port2#seu30#su52#acond42"/>
+      </Link>
+      <KOLink id="wsv1#port2#slu1#kln54" name="KOFlow23" to="wsv1#port2#eru1" automaticCoupling="true" gr:bendpoints="2,399,-1142,-7"/>
+    </SolicitUnit>
+    <SelectorUnit id="wsv1#port2#seu20" name="buscarOtorgantePF" gr:x="180" gr:y="5" entity="User">
+      <Selector id="wsv1#port2#seu20#su47" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="wsv1#port2#seu20#su47#acond27" name="curp" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <OKLink id="wsv1#port2#seu20#oln186" name="OKFlow56" to="wsv1#port2#inn3">
+        <LinkParameter id="wsv1#port2#seu20#oln186#par1609" name="oid_Input" source="userOIDArray" target="wsv1#port2#inn3.isnotnull"/>
+        <LinkParameter id="wsv1#port2#seu20#oln186#par1610" name="userName_PASSING" source="userNameArray" passing="true"/>
+      </OKLink>
+      <Link id="wsv1#port2#seu20#ln176" name="Flow220" to="wsv1#port2#seu22" type="transport" validate="true" gr:bendpoints="119,-69,-637,-69;600,-70,-156,-70">
+        <LinkParameter id="wsv1#port2#seu20#ln176#par1611" name="oid_otorgante [oid]" source="userOIDArray" target="wsv1#port2#seu22#su50#rcond79.userOID"/>
+      </Link>
+      <KOLink id="wsv1#port2#seu20#kln55" name="KOFlow24" to="wsv1#port2#eru1" automaticCoupling="true" gr:bendpoints="7,393,-933,-13"/>
+    </SelectorUnit>
+    <IsNotNullUnit id="wsv1#port2#inn3" name="&#191;Existe?" gr:x="405" gr:y="20">
+      <KOLink id="wsv1#port2#inn3#kln56" name="KOFlow17" to="wsv1#port2#seu29" gr:bendpoints="-1,187,-781,1">
+        <LinkParameter id="wsv1#port2#inn3#kln56#par1612" name="userName_PASSING_rfc" sourceLinkParameter="wsv1#port2#seu20#oln186#par1610" target="wsv1#port2#seu29#su51#acond40"/>
+      </KOLink>
+      <OKLink id="wsv1#port2#inn3#oln187" name="OKFlow57" to="wsv1#port2#seu21" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <ResponseUnit id="wsv1#port2#rsu1" name="validarPoderResponse" gr:x="2050" gr:y="10" contentType="XML" statusCode="200">
+      <ResponseBodyParameter id="wsv1#port2#rsu1#rsp1" name="respuesta" minCard="1" maxCard="1">
+        <SimpleParameterFragment id="wsv1#port2#rsu1#rsp1#spf3" name="estatus" minCard="1" maxCard="1"/>
+        <SimpleParameterFragment id="wsv1#port2#rsu1#rsp1#spf4" name="mensaje" minCard="1" maxCard="1"/>
+      </ResponseBodyParameter>
+    </ResponseUnit>
+    <SelectorUnit id="wsv1#port2#seu21" name="buscarApoderadoPF" gr:x="565" gr:y="5" entity="User">
+      <Selector id="wsv1#port2#seu21#su49" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="wsv1#port2#seu21#su49#acond28" name="curp" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <OKLink id="wsv1#port2#seu21#oln188" name="OKFlow58" to="wsv1#port2#inn4">
+        <LinkParameter id="wsv1#port2#seu21#oln188#par1613" name="oid_Input" source="userOIDArray" target="wsv1#port2#inn4.isnotnull"/>
+      </OKLink>
+      <Link id="wsv1#port2#seu21#ln177" name="Flow221" to="wsv1#port2#seu22" type="transport" validate="true" gr:bendpoints="124,-47,-246,-47;253,-49,-117,-49">
+        <LinkParameter id="wsv1#port2#seu21#ln177#par1614" name="oid_apoderado [oid]" source="userOIDArray" target="wsv1#port2#seu22#su50#rcond80.userOID"/>
+      </Link>
+      <KOLink id="wsv1#port2#seu21#kln57" name="KOFlow25" to="wsv1#port2#eru1" automaticCoupling="true"/>
+    </SelectorUnit>
+    <IsNotNullUnit id="wsv1#port2#inn4" name="&#191;Existe?" gr:x="795" gr:y="20">
+      <KOLink id="wsv1#port2#inn4#kln58" name="KOFlow18" to="wsv1#port2#rsu1" gr:bendpoints="52,63,-1244,63;1012,73,-284,73">
+        <LinkParameter id="wsv1#port2#inn4#kln58#par1615" name="0_respuesta/estatus" target="wsv1#port2#rsu1#rsp1.respuesta$estatus" sourceValue="0"/>
+        <LinkParameter id="wsv1#port2#inn4#kln58#par1616" name="El otorgante existe, pero el apoderado no existe en esta base de datos._respuesta/mensaje" target="wsv1#port2#rsu1#rsp1.respuesta$mensaje" sourceValue="El otorgante existe, pero el apoderado no existe en esta base de datos."/>
+      </KOLink>
+      <OKLink id="wsv1#port2#inn4#oln189" name="OKFlow65" to="wsv1#port2#seu22" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <IsNotNullUnit id="wsv1#port2#inn7" name="&#191;Existe relacion de poder?" gr:x="1130" gr:y="20">
+      <OKLink id="wsv1#port2#inn7#oln190" name="OKFlow61" to="wsv1#port2#tmu7" automaticCoupling="true"/>
+      <KOLink id="wsv1#port2#inn7#kln59" name="KOFlow19" to="wsv1#port2#seu29" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <SelectorUnit id="wsv1#port2#seu22" name="buscarPoder" gr:x="960" gr:y="0" entity="ent37">
+      <Selector id="wsv1#port2#seu22#su50" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="wsv1#port2#seu22#su50#rcond79" name="otorgante" predicate="in" implied="false" role="rel19#role37"/>
+        <RelationshipRoleCondition id="wsv1#port2#seu22#su50#rcond80" name="apoderado" predicate="in" implied="false" role="rel23#role46"/>
+      </Selector>
+      <OKLink id="wsv1#port2#seu22#oln191" name="OKFlow60" to="wsv1#port2#inn7">
+        <LinkParameter id="wsv1#port2#seu22#oln191#par1617" name="oid_Input" source="ent37#att245Array" target="wsv1#port2#inn7.isnotnull"/>
+      </OKLink>
+      <Link id="wsv1#port2#seu22#ln178" name="Flow222" to="wsv1#port2#scu20" type="transport" validate="true" gr:bendpoints="88,-45,-512,-45;498,-50,-102,-50">
+        <LinkParameter id="wsv1#port2#seu22#ln178#par1618" name="fechaCaducidad_fechaCaducidad" source="ent37#att246Array" target="wsv1#port2#scu20.fechaCaducidad"/>
+      </Link>
+      <KOLink id="wsv1#port2#seu22#kln60" name="KOFlow26" to="wsv1#port2#eru1" automaticCoupling="true"/>
+    </SelectorUnit>
+    <TimeUnit id="wsv1#port2#tmu7" name="hoy" gr:x="1400" gr:y="20">
+      <OKLink id="wsv1#port2#tmu7#oln192" name="OKFlow59" to="wsv1#port2#scu20">
+        <LinkParameter id="wsv1#port2#tmu7#oln192#par1619" name="Current/Input Timestamp_hoy" source="currentTimestamp" target="wsv1#port2#scu20.hoy"/>
+      </OKLink>
+      <KOLink id="wsv1#port2#tmu7#kln61" name="KOFlow27" to="wsv1#port2#eru1" automaticCoupling="true"/>
+    </TimeUnit>
+    <ScriptUnit id="wsv1#port2#scu20" name="comparaFechas" gr:x="1550" gr:y="20">
+      <ScriptUnitText xml:space="preserve">#input hoy, fechaCaducidad
+#output ruteo
+
+if (hoy&lt;=fechaCaducidad)
+{
+	ruteo=1;
+}
+else
+{
+	ruteo=0;	
+}
+return ["ruteo":ruteo]</ScriptUnitText>
+      <OKLink id="wsv1#port2#scu20#oln193" name="OKFlow62" to="wsv1#port2#switch35">
+        <LinkParameter id="wsv1#port2#scu20#oln193#par1620" name="ruteo_Switch" source="result(ruteo)" target="wsv1#port2#switch35.switch"/>
+      </OKLink>
+      <KOLink id="wsv1#port2#scu20#kln62" name="KOFlow29" to="wsv1#port2#eru1" automaticCoupling="true" gr:bendpoints="-168,104,218,-300;-232,193,154,-211"/>
+    </ScriptUnit>
+    <SwitchUnit id="wsv1#port2#switch35" name="ruteo" gr:x="1735" gr:y="20">
+      <Case value="1"/>
+      <OKLink id="wsv1#port2#switch35#oln194" name="OKFlow63" to="wsv1#port2#rsu1" code="1" gr:bendpoints="157,-28,-203,-28">
+        <LinkParameter id="wsv1#port2#switch35#oln194#par1621" name="1_respuesta/estatus" target="wsv1#port2#rsu1#rsp1.respuesta$estatus" sourceValue="1"/>
+        <LinkParameter id="wsv1#port2#switch35#oln194#par1622" name="La persona cuenta con poder vigente._respuesta/mensaje" target="wsv1#port2#rsu1#rsp1.respuesta$mensaje" sourceValue="La persona cuenta con poder vigente."/>
+      </OKLink>
+      <OKLink id="wsv1#port2#switch35#oln195" name="OKFlow64" to="wsv1#port2#rsu1" gr:bendpoints="157,27,-203,27">
+        <LinkParameter id="wsv1#port2#switch35#oln195#par1623" name="0_respuesta/estatus" target="wsv1#port2#rsu1#rsp1.respuesta$estatus" sourceValue="0"/>
+        <LinkParameter id="wsv1#port2#switch35#oln195#par1624" name="El poder no es vigente._respuesta/mensaje" target="wsv1#port2#rsu1#rsp1.respuesta$mensaje" sourceValue="El poder no es vigente."/>
+      </OKLink>
+    </SwitchUnit>
+    <SelectorUnit id="wsv1#port2#seu29" name="buscarOtorgantePM" gr:x="1150" gr:y="190" entity="User">
+      <Selector id="wsv1#port2#seu29#su51" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="wsv1#port2#seu29#su51#acond40" name="rfc" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <OKLink id="wsv1#port2#seu29#oln196" name="OKFlow55" to="wsv1#port2#inn8">
+        <LinkParameter id="wsv1#port2#seu29#oln196#par1625" name="oid_Input" source="userOIDArray" target="wsv1#port2#inn8.isnotnull"/>
+      </OKLink>
+      <Link id="wsv1#port2#seu29#ln179" name="Flow226" to="wsv1#port2#seu31" type="transport" validate="true" gr:bendpoints="143,-62,-717,-62;709,-62,-151,-62">
+        <LinkParameter id="wsv1#port2#seu29#ln179#par1626" name="oid_otorgante [oid]" source="userOIDArray" target="wsv1#port2#seu31#su71#rcond81.userOID"/>
+      </Link>
+      <KOLink id="wsv1#port2#seu29#kln63" name="KOFlow28" to="wsv1#port2#eru1" automaticCoupling="true"/>
+    </SelectorUnit>
+    <IsNotNullUnit id="wsv1#port2#inn8" name="&#191;Existe?" gr:x="1430" gr:y="205">
+      <KOLink id="wsv1#port2#inn8#kln64" name="KOFlow20" to="wsv1#port2#rsu1" gr:bendpoints="105,-73,-555,113;405,-75,-255,111">
+        <LinkParameter id="wsv1#port2#inn8#kln64#par1627" name="0_respuesta/estatus" target="wsv1#port2#rsu1#rsp1.respuesta$estatus" sourceValue="0"/>
+        <LinkParameter id="wsv1#port2#inn8#kln64#par1628" name="Ese otorgante no existe en esta base de datos._respuesta/mensaje" target="wsv1#port2#rsu1#rsp1.respuesta$mensaje" sourceValue="Ese otorgante no existe en esta base de datos."/>
+      </KOLink>
+      <OKLink id="wsv1#port2#inn8#oln197" name="OKFlow66" to="wsv1#port2#seu30" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <SelectorUnit id="wsv1#port2#seu30" name="buscarApoderado" gr:x="1625" gr:y="190" entity="User">
+      <Selector id="wsv1#port2#seu30#su52" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="wsv1#port2#seu30#su52#acond42" name="curp" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <OKLink id="wsv1#port2#seu30#oln198" name="OKFlow67" to="wsv1#port2#inn9">
+        <LinkParameter id="wsv1#port2#seu30#oln198#par1629" name="oid_Input" source="userOIDArray" target="wsv1#port2#inn9.isnotnull"/>
+      </OKLink>
+      <Link id="wsv1#port2#seu30#ln180" name="Flow227" to="wsv1#port2#seu31" type="transport" validate="true" gr:bendpoints="102,-41,-364,-41;306,-40,-160,-40">
+        <LinkParameter id="wsv1#port2#seu30#ln180#par1630" name="oid_apoderado [oid]" source="userOIDArray" target="wsv1#port2#seu31#su71#rcond82.userOID"/>
+      </Link>
+      <KOLink id="wsv1#port2#seu30#kln67" name="KOFlow30" to="wsv1#port2#eru1" automaticCoupling="true" gr:bendpoints="-1,216,499,-4"/>
+    </SelectorUnit>
+    <IsNotNullUnit id="wsv1#port2#inn9" name="&#191;existe?" gr:x="1845" gr:y="205">
+      <KOLink id="wsv1#port2#inn9#kln68" name="KOFlow21" to="wsv1#port2#rsu1">
+        <LinkParameter id="wsv1#port2#inn9#kln68#par1631" name="0_respuesta/estatus" target="wsv1#port2#rsu1#rsp1.respuesta$estatus" sourceValue="0"/>
+        <LinkParameter id="wsv1#port2#inn9#kln68#par1632" name="Si existe el otorgante pero no coincide el apoderado._respuesta/mensaje" target="wsv1#port2#rsu1#rsp1.respuesta$mensaje" sourceValue="Si existe el otorgante pero no coincide el apoderado."/>
+      </KOLink>
+      <OKLink id="wsv1#port2#inn9#oln199" name="OKFlow68" to="wsv1#port2#seu31" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <SelectorUnit id="wsv1#port2#seu31" name="buscarMandato" gr:x="2015" gr:y="185" entity="ent37">
+      <Selector id="wsv1#port2#seu31#su71" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="wsv1#port2#seu31#su71#rcond81" name="otorgante" predicate="in" implied="false" role="rel19#role37"/>
+        <RelationshipRoleCondition id="wsv1#port2#seu31#su71#rcond82" name="apoderado" predicate="in" implied="false" role="rel20#role39.rel24#role47"/>
+      </Selector>
+      <OKLink id="wsv1#port2#seu31#oln201" name="OKFlow69" to="wsv1#port2#inn10">
+        <LinkParameter id="wsv1#port2#seu31#oln201#par1633" name="oid_Input" source="ent37#att245Array" target="wsv1#port2#inn10.isnotnull"/>
+      </OKLink>
+      <Link id="wsv1#port2#seu31#ln181" name="Flow222" to="wsv1#port2#scu21" type="transport" validate="true" gr:bendpoints="102,-51,-414,-51;412,-50,-104,-50">
+        <LinkParameter id="wsv1#port2#seu31#ln181#par1634" name="fechaCaducidad_fechaCaducidad" source="ent37#att246Array" target="wsv1#port2#scu21.fechaCaducidad"/>
+      </Link>
+      <KOLink id="wsv1#port2#seu31#kln69" name="KOFlow31" to="wsv1#port2#eru1" automaticCoupling="true" gr:bendpoints="-2,222,888,2"/>
+    </SelectorUnit>
+    <IsNotNullUnit id="wsv1#port2#inn10" name="&#191;existe?" gr:x="2235" gr:y="205">
+      <KOLink id="wsv1#port2#inn10#kln70" name="KOFlow22" to="wsv1#port2#rsu1">
+        <LinkParameter id="wsv1#port2#inn10#kln70#par1635" name="0_respuesta/estatus" target="wsv1#port2#rsu1#rsp1.respuesta$estatus" sourceValue="0"/>
+        <LinkParameter id="wsv1#port2#inn10#kln70#par1636" name="La persona f&#237;sica no tiene el poder de representaci&#243;n._respuesta/mensaje" target="wsv1#port2#rsu1#rsp1.respuesta$mensaje" sourceValue="La persona f&#237;sica no tiene el poder de representaci&#243;n."/>
+      </KOLink>
+      <OKLink id="wsv1#port2#inn10#oln202" name="OKFlow74" to="wsv1#port2#tmu8" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <TimeUnit id="wsv1#port2#tmu8" name="hoy" gr:x="2390" gr:y="205">
+      <OKLink id="wsv1#port2#tmu8#oln203" name="OKFlow59" to="wsv1#port2#scu21">
+        <LinkParameter id="wsv1#port2#tmu8#oln203#par1637" name="Current/Input Timestamp_hoy" source="currentTimestamp" target="wsv1#port2#scu21.hoy"/>
+      </OKLink>
+      <KOLink id="wsv1#port2#tmu8#kln71" name="KOFlow33" to="wsv1#port2#eru1" automaticCoupling="true" gr:bendpoints="-6,232,1224,12"/>
+    </TimeUnit>
+    <SwitchUnit id="wsv1#port2#switch36" name="ruteo" gr:x="2565" gr:y="20">
+      <Case value="1"/>
+      <OKLink id="wsv1#port2#switch36#oln204" name="OKFlow63" to="wsv1#port2#rsu1" code="1" gr:bendpoints="-214,-30,256,-30">
+        <LinkParameter id="wsv1#port2#switch36#oln204#par1638" name="1_respuesta/estatus" target="wsv1#port2#rsu1#rsp1.respuesta$estatus" sourceValue="1"/>
+        <LinkParameter id="wsv1#port2#switch36#oln204#par1639" name="La persona cuenta con poder vigente._respuesta/mensaje" target="wsv1#port2#rsu1#rsp1.respuesta$mensaje" sourceValue="La persona cuenta con poder vigente."/>
+      </OKLink>
+      <OKLink id="wsv1#port2#switch36#oln205" name="OKFlow64" to="wsv1#port2#rsu1" gr:bendpoints="-215,43,255,43">
+        <LinkParameter id="wsv1#port2#switch36#oln205#par1640" name="0_respuesta/estatus" target="wsv1#port2#rsu1#rsp1.respuesta$estatus" sourceValue="0"/>
+        <LinkParameter id="wsv1#port2#switch36#oln205#par1641" name="El poder no es vigente._respuesta/mensaje" target="wsv1#port2#rsu1#rsp1.respuesta$mensaje" sourceValue="El poder no es vigente."/>
+      </OKLink>
+    </SwitchUnit>
+    <ScriptUnit id="wsv1#port2#scu21" name="comparaFechas" gr:x="2540" gr:y="205">
+      <ScriptUnitText xml:space="preserve">#input hoy, fechaCaducidad
+#output ruteo
+
+if (hoy&lt;=fechaCaducidad)
+{
+	ruteo=1;
+}
+else
+{
+	ruteo=0;	
+}
+return ["ruteo":ruteo]</ScriptUnitText>
+      <OKLink id="wsv1#port2#scu21#oln206" name="OKFlow62" to="wsv1#port2#switch36">
+        <LinkParameter id="wsv1#port2#scu21#oln206#par1642" name="ruteo_Switch" source="result(ruteo)" target="wsv1#port2#switch36.switch"/>
+      </OKLink>
+      <KOLink id="wsv1#port2#scu21#kln72" name="KOFlow32" to="wsv1#port2#eru1" automaticCoupling="true" gr:bendpoints="-3,242,1403,22"/>
+    </ScriptUnit>
+    <ErrorResponseUnit id="wsv1#port2#eru1" name="Error Response1" gr:x="1150" gr:y="415" contentType="XML" statusCode="500"/>
+  </OperationUnits>
+</Port>

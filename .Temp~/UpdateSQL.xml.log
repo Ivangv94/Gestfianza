@@ -1,0 +1,26 @@
+[25 jul 2019 13:32:00] DEBUG Executing SQL script
+[25 jul 2019 13:32:00] INFO ================================================================================
+[25 jul 2019 13:32:00] INFO onError= 'stop'
+[25 jul 2019 13:32:00] INFO autoCommit= 'false'
+[25 jul 2019 13:32:00] INFO username= 'EXPEDIENTE'
+[25 jul 2019 13:32:00] INFO outputPath= '/home/tecnologo/wr7/WebRatio/workspace/constitucionWeb2/.Temp~/UpdateSQL.xml'
+[25 jul 2019 13:32:00] INFO outputLogPath= '/home/tecnologo/wr7/WebRatio/workspace/constitucionWeb2/.Temp~/UpdateSQL.xml.log'
+[25 jul 2019 13:32:00] INFO encoding= ''
+[25 jul 2019 13:32:00] INFO driverClass= 'oracle.jdbc.driver.OracleDriver'
+[25 jul 2019 13:32:00] INFO sqlScript= '/home/tecnologo/wr7/WebRatio/workspace/constitucionWeb2/.Temp~/UpdateSQL.sql'
+[25 jul 2019 13:32:00] INFO eventSocketPort= '39868'
+[25 jul 2019 13:32:00] INFO statementSeparator= ';'
+[25 jul 2019 13:32:00] INFO derby.system.home= '/home/tecnologo/wr7/WebRatio/workspace/.metadata/.plugins/com.webratio.commons.db/derby'
+[25 jul 2019 13:32:00] INFO password= 'Md2208G'
+[25 jul 2019 13:32:00] INFO url= 'jdbc:oracle:thin:@172.18.53.173:1521:orades01'
+[25 jul 2019 13:32:00] INFO ================================================================================
+[25 jul 2019 13:32:00] INFO Connecting to the Database...
+[25 jul 2019 13:32:01] INFO Database connection estabilished
+[25 jul 2019 13:32:01] INFO transaction isolation: 2
+[25 jul 2019 13:32:01] DEBUG ================================================================================
+[25 jul 2019 13:32:01] DEBUG Executing SQL script file: /home/tecnologo/wr7/WebRatio/workspace/constitucionWeb2/.Temp~/UpdateSQL.sql
+[25 jul 2019 13:32:01] DEBUG Executing statement:  alter table "EXPEDIENTE"."CTRLFIA"   add constraint FK_CTRLFIA_AFIANZADORA foreign key ("OIDAFIANZADORA") references "EXPEDIENTE"."AFIANZADORA" ("OIDAFIANZADORA")
+[25 jul 2019 13:32:02] DEBUG ================================================================================
+[25 jul 2019 13:32:02] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[25 jul 2019 13:32:02] INFO Database connection closed
+[25 jul 2019 13:32:02] DEBUG Total time: 1954 milliseconds

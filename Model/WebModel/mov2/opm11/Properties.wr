@@ -1,0 +1,101 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm11" name="Comparacion E-firma" gr:x="1155" gr:y="250">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm11#icu18" gr:x="15" gr:y="65">
+      <InputCollectorParameter id="mov2#opm11#icu18#icp29" name="curp"/>
+      <InputCollectorParameter id="mov2#opm11#icu18#icp30" name="rfc"/>
+      <InputCollectorParameter id="mov2#opm11#icu18#icp31" name="nombreEmisor"/>
+      <OKLink id="mov2#opm11#icu18#oln117" name="OKFlow51" to="mov2#opm11#miu7">
+        <LinkParameter id="mov2#opm11#icu18#oln117#par1548" name="curp_curp" source="mov2#opm11#icu18#icp29" target="mov2#opm11#miu7.mov2#opm5#icu10#icp1"/>
+        <LinkParameter id="mov2#opm11#icu18#oln117#par1561" name="rfc_PASSING" source="mov2#opm11#icu18#icp30" passing="true"/>
+      </OKLink>
+      <Link id="mov2#opm11#icu18#ln141" name="Flow147" to="mov2#opm11#scu12" type="transport" validate="true" gr:bendpoints="165,-51,-660,-61;750,-46,-75,-56">
+        <LinkParameter id="mov2#opm11#icu18#ln141#par436" name="nombreEmisor_nombreEmisor" source="mov2#opm11#icu18#icp31" target="mov2#opm11#scu12.nombreEmisor"/>
+        <LinkParameter id="mov2#opm11#icu18#ln141#par437" name="rfc_rfc" source="mov2#opm11#icu18#icp30" target="mov2#opm11#scu12.rfc"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#opm11#okcu7" name="OK" gr:x="1255" gr:y="30">
+      <OutputCollectorParameter id="mov2#opm11#okcu7#ocp24" name="identico"/>
+      <OutputCollectorParameter id="mov2#opm11#okcu7#ocp25" name="curp"/>
+      <OutputCollectorParameter id="mov2#opm11#okcu7#ocp26" name="rfc"/>
+      <OutputCollectorParameter id="mov2#opm11#okcu7#ocp27" name="nombres"/>
+      <OutputCollectorParameter id="mov2#opm11#okcu7#ocp28" name="ap2"/>
+      <OutputCollectorParameter id="mov2#opm11#okcu7#ocp29" name="ap1"/>
+      <OutputCollectorParameter id="mov2#opm11#okcu7#ocp30" name="feNa"/>
+    </OKCollectorUnit>
+    <ScriptUnit id="mov2#opm11#scu12" name="Script9" gr:x="925" gr:y="90">
+      <ScriptUnitText xml:space="preserve">#input rDia,rMes,rAnio,rNombres,rAp1,rAp2,rCurp,sDia,sMes,sAnio,sNombres,sAp1,sAp2,sCurp,nombreEmisor,rfc
+#output feNa,nombres,ap1,ap2,curp,identico,rfc
+
+boolean identico = false
+String renapo, sat
+String feNa1, nombres1, ap, am, curp1, rfc1
+renapo = rDia + rMes + rAnio + rNombres + rAp1 + rAp2 + rCurp
+sat = sDia + sMes + sAnio + sNombres + sAp1 + sAp2 + sCurp
+nombreCompleto = rNombres + " " + rAp1 + " " + rAp2
+if (nombreCompleto.equals(nombreEmisor))
+{
+	if (renapo.equals(sat))
+	{
+		feNa1 = rDia + "/" + rMes + "/" + rAnio
+		nombres1 = rNombres
+		ap = rAp1
+		am = rAp2
+		curp1 = rCurp
+		rfc1 = rfc
+		identico = true
+	}
+}
+
+return["feNa":feNa1,"nombres":nombres1,"ap1":ap,"ap2":am,"curp":curp1,"identico":identico,"rfc":rfc1]</ScriptUnitText>
+      <OKLink id="mov2#opm11#scu12#oln118" name="OKFlow52" to="mov2#opm11#okcu7">
+        <LinkParameter id="mov2#opm11#scu12#oln118#par438" name="identico_identico" source="result(identico)" target="mov2#opm11#okcu7#ocp24"/>
+        <LinkParameter id="mov2#opm11#scu12#oln118#par439" name="ap1_ap1" source="result(ap1)" target="mov2#opm11#okcu7#ocp29"/>
+        <LinkParameter id="mov2#opm11#scu12#oln118#par440" name="ap2_ap2" source="result(ap2)" target="mov2#opm11#okcu7#ocp28"/>
+        <LinkParameter id="mov2#opm11#scu12#oln118#par441" name="curp_curp" source="result(curp)" target="mov2#opm11#okcu7#ocp25"/>
+        <LinkParameter id="mov2#opm11#scu12#oln118#par442" name="feNa_feNa" source="result(feNa)" target="mov2#opm11#okcu7#ocp30"/>
+        <LinkParameter id="mov2#opm11#scu12#oln118#par443" name="nombres_nombres" source="result(nombres)" target="mov2#opm11#okcu7#ocp27"/>
+        <LinkParameter id="mov2#opm11#scu12#oln118#par444" name="rfc_rfc" source="result(rfc)" target="mov2#opm11#okcu7#ocp26"/>
+      </OKLink>
+      <KOLink id="mov2#opm11#scu12#kln48" name="KOFlow48" to="mov2#opm11#kocu7" automaticCoupling="true" gr:bendpoints="37,129,-363,-16;262,130,-138,-15"/>
+    </ScriptUnit>
+    <ModuleInstanceUnit id="mov2#opm11#miu7" gr:x="330" gr:y="85" action="true" moduleId="mov2#opm5">
+      <OKLink id="mov2#opm11#miu7#oln119" name="OKFlow36" to="mov2#opm11#miu8">
+        <LinkParameter id="mov2#opm11#miu7#oln119#par1562" name="rfc_PASSING_rfc" sourceLinkParameter="mov2#opm11#icu18#oln117#par1561" target="mov2#opm11#miu8.mov2#opm9#icu16#icp20"/>
+        <LinkParameter id="mov2#opm11#miu7#oln119#par1563" name="rAnio_PASSING" source="mov2#opm5#okcu1#ocp8" passing="true"/>
+        <LinkParameter id="mov2#opm11#miu7#oln119#par1564" name="rAp1_PASSING" source="mov2#opm5#okcu1#ocp4" passing="true"/>
+        <LinkParameter id="mov2#opm11#miu7#oln119#par1565" name="rAp2_PASSING" source="mov2#opm5#okcu1#ocp5" passing="true"/>
+        <LinkParameter id="mov2#opm11#miu7#oln119#par1566" name="rCurp_PASSING" source="mov2#opm5#okcu1#ocp9" passing="true"/>
+        <LinkParameter id="mov2#opm11#miu7#oln119#par1567" name="rDia_PASSING" source="mov2#opm5#okcu1#ocp6" passing="true"/>
+        <LinkParameter id="mov2#opm11#miu7#oln119#par1568" name="rMes_PASSING" source="mov2#opm5#okcu1#ocp7" passing="true"/>
+        <LinkParameter id="mov2#opm11#miu7#oln119#par1569" name="rNombres_PASSING" source="mov2#opm5#okcu1#ocp1" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#opm11#miu7#kln35" name="KOFlow15" to="mov2#opm11#kocu7" gr:bendpoints="81,166,-844,16;769,167,-156,17">
+        <LinkParameter id="mov2#opm11#miu7#kln35#par452" name="Error al consultar CURP_mensaje" target="mov2#opm11#kocu7#ocp31" sourceValue="Error al consultar CURP"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="mov2#opm11#miu8" gr:x="645" gr:y="85" action="true" moduleId="mov2#opm9">
+      <KOLink id="mov2#opm11#miu8#kln36" name="KOFlow16" to="mov2#opm11#kocu7" gr:bendpoints="91,151,-534,1">
+        <LinkParameter id="mov2#opm11#miu8#kln36#par453" name="Error al consultar RFC_mensaje" target="mov2#opm11#kocu7#ocp31" sourceValue="Error al consultar RFC"/>
+      </KOLink>
+      <OKLink id="mov2#opm11#miu8#oln120" name="Flow142" to="mov2#opm11#scu12">
+        <LinkParameter id="mov2#opm11#miu8#oln120#par454" name="OK Port2.apellido1_sAp1" source="mov2#opm9#okcu3#ocp18" target="mov2#opm11#scu12.sAp1"/>
+        <LinkParameter id="mov2#opm11#miu8#oln120#par455" name="OK Port2.mes_sMes" source="mov2#opm9#okcu3#ocp15" target="mov2#opm11#scu12.sMes"/>
+        <LinkParameter id="mov2#opm11#miu8#oln120#par456" name="OK Port2.curp_sCurp" source="mov2#opm9#okcu3#ocp20" target="mov2#opm11#scu12.sCurp"/>
+        <LinkParameter id="mov2#opm11#miu8#oln120#par457" name="OK Port2.anio_sAnio" source="mov2#opm9#okcu3#ocp16" target="mov2#opm11#scu12.sAnio"/>
+        <LinkParameter id="mov2#opm11#miu8#oln120#par458" name="OK Port2.dia_sDia" source="mov2#opm9#okcu3#ocp14" target="mov2#opm11#scu12.sDia"/>
+        <LinkParameter id="mov2#opm11#miu8#oln120#par459" name="OK Port2.apellido2_sAp2" source="mov2#opm9#okcu3#ocp19" target="mov2#opm11#scu12.sAp2"/>
+        <LinkParameter id="mov2#opm11#miu8#oln120#par460" name="OK Port2.nombres_sNombres" source="mov2#opm9#okcu3#ocp17" target="mov2#opm11#scu12.sNombres"/>
+        <LinkParameter id="mov2#opm11#miu8#oln120#par1570" name="rAnio_PASSING_rAnio" sourceLinkParameter="mov2#opm11#miu7#oln119#par1563" target="mov2#opm11#scu12.rAnio"/>
+        <LinkParameter id="mov2#opm11#miu8#oln120#par1571" name="rAp1_PASSING_rAp1" sourceLinkParameter="mov2#opm11#miu7#oln119#par1564" target="mov2#opm11#scu12.rAp1"/>
+        <LinkParameter id="mov2#opm11#miu8#oln120#par1572" name="rAp2_PASSING_rAp2" sourceLinkParameter="mov2#opm11#miu7#oln119#par1565" target="mov2#opm11#scu12.rAp2"/>
+        <LinkParameter id="mov2#opm11#miu8#oln120#par1573" name="rCurp_PASSING_rCurp" sourceLinkParameter="mov2#opm11#miu7#oln119#par1566" target="mov2#opm11#scu12.rCurp"/>
+        <LinkParameter id="mov2#opm11#miu8#oln120#par1574" name="rDia_PASSING_rDia" sourceLinkParameter="mov2#opm11#miu7#oln119#par1567" target="mov2#opm11#scu12.rDia"/>
+        <LinkParameter id="mov2#opm11#miu8#oln120#par1575" name="rMes_PASSING_rMes" sourceLinkParameter="mov2#opm11#miu7#oln119#par1568" target="mov2#opm11#scu12.rMes"/>
+        <LinkParameter id="mov2#opm11#miu8#oln120#par1576" name="rNombres_PASSING_rNombres" sourceLinkParameter="mov2#opm11#miu7#oln119#par1569" target="mov2#opm11#scu12.rNombres"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <KOCollectorUnit id="mov2#opm11#kocu7" name="KO" gr:x="1255" gr:y="230">
+      <OutputCollectorParameter id="mov2#opm11#kocu7#ocp31" name="mensaje"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

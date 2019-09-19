@@ -1,0 +1,153 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg1#opm29" name="Almacenar en archivo" gr:x="0" gr:y="5">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg1#opm29#icu39" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp110" name="ultimoNodo"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp111" name="serieCERT"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp112" name="selloDigital"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp113" name="nombreSujetox509"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp114" name="nombreFirmante"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp115" name="nombreEmisorCERT"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp116" name="modulus"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp117" name="hasCadenaOriginal"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp118" name="folio"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp119" name="fechaInscripcion"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp120" name="fechaCaducidad"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp121" name="CURPoRFCfirmante"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp122" name="certificadoX509"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp123" name="cadenaOriginal"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp124" name="ambiente"/>
+      <OKLink id="mov2#mpkg1#opm29#icu39#oln280" name="OKFlow736" to="mov2#mpkg1#opm29#seu48">
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#oln280#par848" name="folio_folio" source="mov2#mpkg1#opm29#icu39#icp118" target="mov2#mpkg1#opm29#seu48#su111#acond65"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#opm29#icu39#ln357" name="Flow7038" to="mov2#mpkg1#opm29#cru16" type="transport" validate="true" gr:bendpoints="234,-70,-366,-70;529,-69,-71,-69">
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln357#par849" name="folio_documento_firmado" source="mov2#mpkg1#opm29#icu39#icp118" target="mov2#mpkg1#opm29#cru16.ent3#att19"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln357#par850" name="folio_documento_firmado [file name]" source="mov2#mpkg1#opm29#icu39#icp118" target="mov2#mpkg1#opm29#cru16.ent3#att19_name"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln357#par851" name="folio_folio" source="mov2#mpkg1#opm29#icu39#icp118" target="mov2#mpkg1#opm29#cru16.ent3#att30"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm29#icu39#ln358" name="Flow7041" to="mov2#mpkg1#opm29#mfu11" type="transport" validate="true" gr:bendpoints="218,134,-217,-1">
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln358#par852" name="folio_documento_firmado [file name]" source="mov2#mpkg1#opm29#icu39#icp118" target="mov2#mpkg1#opm29#mfu11.ent3#att19_name"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm29#icu39#ln359" name="Flow7115" to="mov2#mpkg1#opm29#miu30" type="transport" validate="true" gr:bendpoints="98,35,-797,-100;240,250,-655,115;791,252,-104,117">
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1238" name="ambiente_ambiente" source="mov2#mpkg1#opm29#icu39#icp124" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp150"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1239" name="cadenaOriginal_cadenaOriginal" source="mov2#mpkg1#opm29#icu39#icp123" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp148"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1240" name="fechaCaducidad_caducidad" source="mov2#mpkg1#opm29#icu39#icp120" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp147"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1241" name="certificadoX509_certificadoX509" source="mov2#mpkg1#opm29#icu39#icp122" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp146"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1242" name="CURPoRFCfirmante_curpOrfcFirmante" source="mov2#mpkg1#opm29#icu39#icp121" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp145"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1243" name="fechaCaducidad_fechaCaducidad" source="mov2#mpkg1#opm29#icu39#icp120" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp144"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1244" name="fechaInscripcion_fechaInscripcion" source="mov2#mpkg1#opm29#icu39#icp119" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp143"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1245" name="folio_folio" source="mov2#mpkg1#opm29#icu39#icp118" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp142"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1246" name="hasCadenaOriginal_hashCadena" source="mov2#mpkg1#opm29#icu39#icp117" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp141"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1247" name="fechaInscripcion_inscripcion" source="mov2#mpkg1#opm29#icu39#icp119" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp140"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1248" name="modulus_modulus" source="mov2#mpkg1#opm29#icu39#icp116" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp139"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1249" name="nombreEmisorCERT_nombreEmisorCert" source="mov2#mpkg1#opm29#icu39#icp115" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp138"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1250" name="nombreFirmante_nombreOrazonSocialFirmante" source="mov2#mpkg1#opm29#icu39#icp114" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp137"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1251" name="nombreSujetox509_nombreSujetoX509" source="mov2#mpkg1#opm29#icu39#icp113" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp136"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1252" name="proceso_proceso" source="mov2#mpkg1#opm29#icu39#icp125" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp151"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1253" name="selloDigital_selloDigital" source="mov2#mpkg1#opm29#icu39#icp112" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp134"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1254" name="serieCERT_serieCert" source="mov2#mpkg1#opm29#icu39#icp111" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp133"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln359#par1255" name="ultimoNodo_ultimoNodo" source="mov2#mpkg1#opm29#icu39#icp110" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp132"/>
+      </Link>
+      <InputCollectorParameter id="mov2#mpkg1#opm29#icu39#icp125" name="proceso"/>
+      <Link id="mov2#mpkg1#opm29#icu39#ln360" name="Flow7132" to="mov2#mpkg1#opm29#miu29" type="transport" validate="true" gr:bendpoints="127,-37,-768,-37;255,-102,-640,-102;716,-101,-179,-101">
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1220" name="ambiente_ambiente" source="mov2#mpkg1#opm29#icu39#icp124" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp150"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1221" name="cadenaOriginal_cadenaOriginal" source="mov2#mpkg1#opm29#icu39#icp123" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp148"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1222" name="fechaCaducidad_caducidad" source="mov2#mpkg1#opm29#icu39#icp120" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp147"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1223" name="certificadoX509_certificadoX509" source="mov2#mpkg1#opm29#icu39#icp122" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp146"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1224" name="CURPoRFCfirmante_curpOrfcFirmante" source="mov2#mpkg1#opm29#icu39#icp121" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp145"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1225" name="fechaCaducidad_fechaCaducidad" source="mov2#mpkg1#opm29#icu39#icp120" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp144"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1226" name="fechaInscripcion_fechaInscripcion" source="mov2#mpkg1#opm29#icu39#icp119" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp143"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1227" name="folio_folio" source="mov2#mpkg1#opm29#icu39#icp118" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp142"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1228" name="hasCadenaOriginal_hashCadena" source="mov2#mpkg1#opm29#icu39#icp117" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp141"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1229" name="fechaInscripcion_inscripcion" source="mov2#mpkg1#opm29#icu39#icp119" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp140"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1230" name="modulus_modulus" source="mov2#mpkg1#opm29#icu39#icp116" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp139"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1231" name="nombreEmisorCERT_nombreEmisorCert" source="mov2#mpkg1#opm29#icu39#icp115" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp138"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1232" name="nombreFirmante_nombreOrazonSocialFirmante" source="mov2#mpkg1#opm29#icu39#icp114" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp137"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1233" name="nombreSujetox509_nombreSujetoX509" source="mov2#mpkg1#opm29#icu39#icp113" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp136"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1234" name="proceso_proceso" source="mov2#mpkg1#opm29#icu39#icp125" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp151"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1235" name="selloDigital_selloDigital" source="mov2#mpkg1#opm29#icu39#icp112" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp134"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1236" name="serieCERT_serieCert" source="mov2#mpkg1#opm29#icu39#icp111" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp133"/>
+        <LinkParameter id="mov2#mpkg1#opm29#icu39#ln360#par1237" name="ultimoNodo_ultimoNodo" source="mov2#mpkg1#opm29#icu39#icp110" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp132"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#mpkg1#opm29#seu48" name="Buscar folio" gr:x="360" gr:y="170" maxResults="1" entity="ent3">
+      <Selector id="mov2#mpkg1#opm29#seu48#su111" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg1#opm29#seu48#su111#acond65" name="folio" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att30"/>
+      </Selector>
+      <OKLink id="mov2#mpkg1#opm29#seu48#oln281" name="OKFlow747" to="mov2#mpkg1#opm29#inn11">
+        <LinkParameter id="mov2#mpkg1#opm29#seu48#oln281#par889" name="oid_Input" source="ent3#att13Array" target="mov2#mpkg1#opm29#inn11.isnotnull"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg1#opm29#seu48#kln153" name="KOFlow94" to="mov2#mpkg1#opm29#kocu25" gr:bendpoints="-2,306,-1137,166;934,306,-191,166">
+        <LinkParameter id="mov2#mpkg1#opm29#seu48#kln153#par890" name="No se ha encontrado el folio_Error" target="mov2#mpkg1#opm29#kocu25#ocp92" sourceValue="No se ha encontrado el folio"/>
+      </KOLink>
+    </SelectorUnit>
+    <IsNotNullUnit id="mov2#mpkg1#opm29#inn11" name="&#191;existe folio?" gr:x="535" gr:y="185">
+      <KOLink id="mov2#mpkg1#opm29#inn11#kln154" name="KOFlow61" to="mov2#mpkg1#opm29#cru16" automaticCoupling="true"/>
+      <OKLink id="mov2#mpkg1#opm29#inn11#oln282" name="OKFlow787" to="mov2#mpkg1#opm29#mfu11">
+        <LinkParameter id="mov2#mpkg1#opm29#inn11#oln282#par891" name="Input Value_KeyCondition57 [oid]" source="inputValue" target="mov2#mpkg1#opm29#mfu11#su112#kcond60.ent3#att13"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#opm29#inn11#ln361" name="Flow7118" to="mov2#mpkg1#opm29#miu30" type="transport" validate="true" gr:bendpoints="104,58,-356,-77;306,61,-154,-74">
+        <LinkParameter id="mov2#mpkg1#opm29#inn11#ln361#par1260" name="Input Value_oidDelArchivo" source="inputValue" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp135"/>
+      </Link>
+    </IsNotNullUnit>
+    <CreateUnit id="mov2#mpkg1#opm29#cru16" name="Crear cadena" gr:x="700" gr:y="175" entity="ent3">
+      <OKLink id="mov2#mpkg1#opm29#cru16#oln283" name="OKFlow857" to="mov2#mpkg1#opm29#miu29">
+        <LinkParameter id="mov2#mpkg1#opm29#cru16#oln283#par1256" name="documento_firmado_archivo" source="ent3#att19Array" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp149"/>
+        <LinkParameter id="mov2#mpkg1#opm29#cru16#oln283#par1257" name="oid_oidDelArchivo" source="ent3#att13Array" target="mov2#mpkg1#opm29#miu29.mov2#mpkg1#opm30#icu41#icp135"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg1#opm29#cru16#kln155" name="KOFlow92" to="mov2#mpkg1#opm29#kocu25" gr:bendpoints="74,42,-716,-98;82,280,-708,140;561,277,-229,137;646,174,-144,34">
+        <LinkParameter id="mov2#mpkg1#opm29#cru16#kln155#par895" name="No se ha podifo crear la cadena_Error" target="mov2#mpkg1#opm29#kocu25#ocp92" sourceValue="No se ha podifo crear la cadena"/>
+      </KOLink>
+    </CreateUnit>
+    <ModifyUnit id="mov2#mpkg1#opm29#mfu11" name="Actualizar folio" gr:x="530" gr:y="305" entity="ent3">
+      <Selector id="mov2#mpkg1#opm29#mfu11#su112" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg1#opm29#mfu11#su112#kcond60" name="KeyCondition57" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg1#opm29#mfu11#oln284" name="OKFlow788" to="mov2#mpkg1#opm29#seu49" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg1#opm29#mfu11#kln156" name="KOFlow93" to="mov2#mpkg1#opm29#kocu25" gr:bendpoints="-2,163,-952,163;755,167,-205,157;832,59,-128,49">
+        <LinkParameter id="mov2#mpkg1#opm29#mfu11#kln156#par896" name="No se ha podido actualizar el folio_Error" target="mov2#mpkg1#opm29#kocu25#ocp92" sourceValue="No se ha podido actualizar el folio"/>
+      </KOLink>
+    </ModifyUnit>
+    <SelectorUnit id="mov2#mpkg1#opm29#seu49" name="Buscar folio" gr:x="710" gr:y="305" entity="ent3">
+      <Selector id="mov2#mpkg1#opm29#seu49#su113" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg1#opm29#seu49#su113#kcond61" name="iod" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg1#opm29#seu49#oln285" name="OKFlow859" to="mov2#mpkg1#opm29#miu30">
+        <LinkParameter id="mov2#mpkg1#opm29#seu49#oln285#par1258" name="documento_firmado_archivo" source="ent3#att19Array" target="mov2#mpkg1#opm29#miu30.mov2#mpkg1#opm30#icu41#icp149"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg1#opm29#seu49#kln157" name="KOFlow91" to="mov2#mpkg1#opm29#kocu25" gr:bendpoints="3,159,-787,149;573,155,-217,145;652,51,-138,41">
+        <LinkParameter id="mov2#mpkg1#opm29#seu49#kln157#par898" name="No se encontro el folio_Error" target="mov2#mpkg1#opm29#kocu25#ocp92" sourceValue="No se encontro el folio"/>
+      </KOLink>
+    </SelectorUnit>
+    <ModuleInstanceUnit id="mov2#mpkg1#opm29#miu29" gr:x="915" gr:y="180" action="true" moduleId="mov2#mpkg1#opm30">
+      <KOLink id="mov2#mpkg1#opm29#miu29#kln158" name="KOFlow90" to="mov2#mpkg1#opm29#kocu25" gr:bendpoints="141,41,-354,-99;152,121,-343,-19;364,125,-131,-15">
+        <LinkParameter id="mov2#mpkg1#opm29#miu29#kln158#par899" name="Output Port Parameter89_Error" source="mov2#mpkg1#opm30#kocu26#ocp102" target="mov2#mpkg1#opm29#kocu25#ocp92"/>
+      </KOLink>
+      <OKLink id="mov2#mpkg1#opm29#miu29#oln286" name="OKFlow105" to="mov2#mpkg1#opm29#okcu31">
+        <LinkParameter id="mov2#mpkg1#opm29#miu29#oln286#par900" name="blobXMLfirmado_blobXMLfimado" source="mov2#mpkg1#opm30#okcu33#ocp101" target="mov2#mpkg1#opm29#okcu31#ocp91"/>
+        <LinkParameter id="mov2#mpkg1#opm29#miu29#oln286#par901" name="folio_folio" source="mov2#mpkg1#opm30#okcu33#ocp100" target="mov2#mpkg1#opm29#okcu31#ocp90"/>
+        <LinkParameter id="mov2#mpkg1#opm29#miu29#oln286#par902" name="selloDigital_selloDigital" source="mov2#mpkg1#opm30#okcu33#ocp99" target="mov2#mpkg1#opm29#okcu31#ocp89"/>
+        <LinkParameter id="mov2#mpkg1#opm29#miu29#oln286#par903" name="uri_uri" source="mov2#mpkg1#opm30#okcu33#ocp98" target="mov2#mpkg1#opm29#okcu31#ocp88"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="mov2#mpkg1#opm29#miu30" gr:x="915" gr:y="315" action="true" moduleId="mov2#mpkg1#opm30">
+      <OKLink id="mov2#mpkg1#opm29#miu30#oln287" name="OKFlow861" to="mov2#mpkg1#opm29#okcu31" gr:bendpoints="146,-33,-344,102;159,-120,-331,15;353,-122,-137,13">
+        <LinkParameter id="mov2#mpkg1#opm29#miu30#oln287#par904" name="blobXMLfirmado_blobXMLfimado" source="mov2#mpkg1#opm30#okcu33#ocp101" target="mov2#mpkg1#opm29#okcu31#ocp91"/>
+        <LinkParameter id="mov2#mpkg1#opm29#miu30#oln287#par905" name="folio_folio" source="mov2#mpkg1#opm30#okcu33#ocp100" target="mov2#mpkg1#opm29#okcu31#ocp90"/>
+        <LinkParameter id="mov2#mpkg1#opm29#miu30#oln287#par906" name="selloDigital_selloDigital" source="mov2#mpkg1#opm30#okcu33#ocp99" target="mov2#mpkg1#opm29#okcu31#ocp89"/>
+        <LinkParameter id="mov2#mpkg1#opm29#miu30#oln287#par907" name="uri_uri" source="mov2#mpkg1#opm30#okcu33#ocp98" target="mov2#mpkg1#opm29#okcu31#ocp88"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg1#opm29#miu30#kln159" name="KOFlow89" to="mov2#mpkg1#opm29#kocu25">
+        <LinkParameter id="mov2#mpkg1#opm29#miu30#kln159#par908" name="Error_Error" source="mov2#mpkg1#opm30#kocu26#ocp102" target="mov2#mpkg1#opm29#kocu25#ocp92"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <OKCollectorUnit id="mov2#mpkg1#opm29#okcu31" name="OK Port17" gr:x="1430" gr:y="160">
+      <OutputCollectorParameter id="mov2#mpkg1#opm29#okcu31#ocp88" name="uri"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm29#okcu31#ocp89" name="selloDigital"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm29#okcu31#ocp90" name="folio"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm29#okcu31#ocp91" name="blobXMLfimado"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov2#mpkg1#opm29#kocu25" name="Error" gr:x="1430" gr:y="310">
+      <OutputCollectorParameter id="mov2#mpkg1#opm29#kocu25#ocp92" name="Error"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

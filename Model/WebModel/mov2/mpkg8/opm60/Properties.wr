@@ -1,0 +1,58 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="215" gr:y="15" id="mov2#mpkg8#opm60" name="manejo tabla">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg8#opm60#icu88" gr:x="10" gr:y="60">
+      <InputCollectorParameter id="mov2#mpkg8#opm60#icu88#icp199" name="elementoCompleto"/>
+      <OKLink id="mov2#mpkg8#opm60#icu88#oln646" name="OKFlow646" to="mov2#mpkg8#opm60#seu12">
+        <LinkParameter id="mov2#mpkg8#opm60#icu88#oln646#par2704" name="elementoCompleto_PASSING" source="mov2#mpkg8#opm60#icu88#icp199" passing="true"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="290" gr:y="55" id="mov2#mpkg8#opm60#seu12" name="revisarCadena" entity="ent53" linkOrder="mov2#mpkg8#opm60#seu12#ln675">
+      <Selector id="mov2#mpkg8#opm60#seu12#su194" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg8#opm60#seu12#su194#acond16" name="userOID" predicate="eq" booleanOperator="or" implied="false" attributes="ent53#att353"/>
+      </Selector>
+      <OKLink id="mov2#mpkg8#opm60#seu12#oln647" name="OKFlow647" to="mov2#mpkg8#opm60#scu76">
+        <LinkParameter id="mov2#mpkg8#opm60#seu12#oln647#par2705" name="cadena_cadena" source="ent53#att331Array" target="mov2#mpkg8#opm60#scu76.cadena"/>
+        <LinkParameter id="mov2#mpkg8#opm60#seu12#oln647#par2706" name="elementoCompleto_PASSING_elementoCompleto" sourceLinkParameter="mov2#mpkg8#opm60#icu88#oln646#par2704" target="mov2#mpkg8#opm60#scu76.elementoCompleto"/>
+      </OKLink>
+      <Link id="mov2#mpkg8#opm60#seu12#ln675" name="Flow675" to="mov2#mpkg8#opm60#mfu16" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="74,-77,-211,-62;247,-72,-108,-72"/>
+      <KOLink id="mov2#mpkg8#opm60#seu12#kln302" name="KOFlow302" to="mov2#mpkg8#opm60#kocu50" gr:bendpoints="61,122,-579,-3">
+        <LinkParameter id="mov2#mpkg8#opm60#seu12#kln302#par2573" name="Error al obtener la cadena del proceso de verificacion._msj" sourceValue="Error al obtener la cadena del proceso de verificacion." target="mov2#mpkg8#opm60#kocu50#ocp177"/>
+      </KOLink>
+    </SelectorUnit>
+    <GetUnit gr:x="310" gr:y="-50" id="mov2#mpkg8#opm60#gtu36" name="getUser" contextParameters="UserCtxParam">
+      <Link id="mov2#mpkg8#opm60#gtu36#ln674" name="Flow674" to="mov2#mpkg8#opm60#seu12" type="transport" validate="true">
+        <LinkParameter id="mov2#mpkg8#opm60#gtu36#ln674#par2572" name="UserCtxParam.oid_userOID" source="mov2#mpkg8#opm60#gtu36.UserCtxParam" target="mov2#mpkg8#opm60#seu12#su194#acond16"/>
+      </Link>
+    </GetUnit>
+    <ScriptUnit gr:x="470" gr:y="70" id="mov2#mpkg8#opm60#scu76" name="manejarCadena">
+      <OKLink id="mov2#mpkg8#opm60#scu76#oln648" name="OKFlow648" to="mov2#mpkg8#opm60#mfu16">
+        <LinkParameter id="mov2#mpkg8#opm60#scu76#oln648#par2707" name="cadena_cadena" source="result(cadena)" target="mov2#mpkg8#opm60#mfu16.ent53#att331"/>
+        <LinkParameter id="mov2#mpkg8#opm60#scu76#oln648#par2721" name="cadena_PASSING" source="result(cadena)" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg8#opm60#scu76#kln303" name="KOFlow303" to="mov2#mpkg8#opm60#kocu50" gr:bendpoints="66,122,-409,-3">
+        <LinkParameter id="mov2#mpkg8#opm60#scu76#kln303#par2575" name="Error al manejar la cadena del proceso de verificacion._msj" sourceValue="Error al manejar la cadena del proceso de verificacion." target="mov2#mpkg8#opm60#kocu50#ocp177"/>
+      </KOLink>
+      <ScriptUnitText xml:space="preserve">#input elementoCompleto, String cadena
+#output cadena
+cadena = cadena.replace(elementoCompleto,"");
+return["cadena":cadena]</ScriptUnitText>
+    </ScriptUnit>
+    <ModifyUnit gr:x="645" gr:y="55" id="mov2#mpkg8#opm60#mfu16" name="actualizarCadena" entity="ent53">
+      <Selector id="mov2#mpkg8#opm60#mfu16#su195" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg8#opm60#mfu16#su195#kcond101" name="KeyCondition101" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg8#opm60#mfu16#oln649" name="OKFlow649" to="mov2#mpkg8#opm60#okcu63">
+        <LinkParameter id="mov2#mpkg8#opm60#mfu16#oln649#par2722" name="cadena_PASSING_cadena" sourceLinkParameter="mov2#mpkg8#opm60#scu76#oln648#par2721" target="mov2#mpkg8#opm60#okcu63#ocp153"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg8#opm60#mfu16#kln301" name="KOFlow301" to="mov2#mpkg8#opm60#kocu50" gr:bendpoints="79,123,-206,-2">
+        <LinkParameter id="mov2#mpkg8#opm60#mfu16#kln301#par2574" name="Error al actualizar la cadena del proceso de verificacion._msj" sourceValue="Error al actualizar la cadena del proceso de verificacion." target="mov2#mpkg8#opm60#kocu50#ocp177"/>
+      </KOLink>
+    </ModifyUnit>
+    <OKCollectorUnit gr:x="885" gr:y="60" id="mov2#mpkg8#opm60#okcu63" name="OK">
+      <OutputCollectorParameter id="mov2#mpkg8#opm60#okcu63#ocp153" name="cadena"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="885" gr:y="185" id="mov2#mpkg8#opm60#kocu50" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg8#opm60#kocu50#ocp177" name="msj"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

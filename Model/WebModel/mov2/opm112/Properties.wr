@@ -1,0 +1,47 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-185" gr:y="1720" id="mov2#opm112" name="filtraSeries">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm112#icu152" gr:x="30" gr:y="60" linkOrder="mov2#opm112#icu152#ln1482 mov2#opm112#icu152#ln1486">
+      <InputCollectorParameter id="mov2#opm112#icu152#icp474" name="oidPm"/>
+      <OKLink id="mov2#opm112#icu152#oln1470" name="OKFlow1470" to="mov2#opm112#seu326">
+        <LinkParameter id="mov2#opm112#icu152#oln1470#par4856" name="oidPm_PMtoEA [oid]" source="mov2#opm112#icu152#icp474" target="mov2#opm112#seu326#su522#rcond318.userOID"/>
+      </OKLink>
+      <Link id="mov2#opm112#icu152#ln1482" name="Flow1482" to="mov2#opm112#seu327" type="transport" validate="true" gr:bendpoints="138,-55,-342,-75;253,-55,-227,-75;356,-55,-124,-75">
+        <LinkParameter id="mov2#opm112#icu152#ln1482#par4857" name="oidPm_RoleCondition130 [oid]" source="mov2#opm112#icu152#icp474" target="mov2#opm112#seu327#su523#rcond319.userOID"/>
+      </Link>
+      <Link id="mov2#opm112#icu152#ln1486" name="Flow1486" to="mov2#opm112#okcu119" type="transport" validate="true" gr:bendpoints="213,-87,-577,-92;386,-87,-404,-92;586,-89,-204,-94">
+        <LinkParameter id="mov2#opm112#icu152#ln1486#par4868" name="oidPm_oidPm" source="mov2#opm112#icu152#icp474" target="mov2#opm112#okcu119#ocp350"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#opm112#seu326" name="PMF" gr:x="295" gr:y="70" entity="ent60" linkOrder="mov2#opm112#seu326#ln1483">
+      <Selector id="mov2#opm112#seu326#su522" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm112#seu326#su522#rcond318" name="PMtoEA" predicate="in" implied="false" role="rel35#role70"/>
+        <AttributesCondition id="mov2#opm112#seu326#su522#acond246" name="CF" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att391" value="F"/>
+      </Selector>
+      <OKLink id="mov2#opm112#seu326#oln1471" name="OKFlow1471" to="mov2#opm112#seu327" automaticCoupling="true"/>
+      <KOLink id="mov2#opm112#seu326#kln579" name="KOFlow579" to="mov2#opm112#kocu102" automaticCoupling="true" gr:bendpoints="56,109,-494,9"/>
+      <Link id="mov2#opm112#seu326#ln1483" name="Flow1483" to="mov2#opm112#okcu119" type="transport" validate="true" gr:bendpoints="135,80,-415,95;256,82,-294,97;359,81,-191,96">
+        <LinkParameter id="mov2#opm112#seu326#ln1483#par4860" name="oid_oidFijo" source="ent60#att389Array" target="mov2#opm112#okcu119#ocp347"/>
+        <LinkParameter id="mov2#opm112#seu326#ln1483#par4861" name="serieAccion_seriesFijo" source="ent60#att395Array" target="mov2#opm112#okcu119#ocp345"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm112#seu327" name="PMV" gr:x="535" gr:y="70" entity="ent60">
+      <Selector id="mov2#opm112#seu327#su523" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm112#seu327#su523#rcond319" name="RoleCondition130" predicate="in" implied="false" role="rel35#role70"/>
+        <AttributesCondition id="mov2#opm112#seu327#su523#acond247" name="tipoAccion" predicate="eq" booleanOperator="or" implied="false" value="V" attributes="ent60#att391"/>
+      </Selector>
+      <OKLink id="mov2#opm112#seu327#oln1472" name="OKFlow1472" to="mov2#opm112#okcu119">
+        <LinkParameter id="mov2#opm112#seu327#oln1472#par4858" name="oid_oidVariable" source="ent60#att389Array" target="mov2#opm112#okcu119#ocp348"/>
+        <LinkParameter id="mov2#opm112#seu327#oln1472#par4859" name="serieAccion_seriesVariable" source="ent60#att395Array" target="mov2#opm112#okcu119#ocp346"/>
+      </OKLink>
+      <KOLink id="mov2#opm112#seu327#kln578" name="KOFlow578" to="mov2#opm112#kocu102" automaticCoupling="true"/>
+    </SelectorUnit>
+    <KOCollectorUnit gr:x="820" gr:y="180" id="mov2#opm112#kocu102" name="KO Port102"/>
+    <OKCollectorUnit gr:x="820" gr:y="50" id="mov2#opm112#okcu119" name="OK Port119">
+      <OutputCollectorParameter id="mov2#opm112#okcu119#ocp345" name="seriesFijo"/>
+      <OutputCollectorParameter id="mov2#opm112#okcu119#ocp348" name="oidVariable"/>
+      <OutputCollectorParameter id="mov2#opm112#okcu119#ocp347" name="oidFijo"/>
+      <OutputCollectorParameter id="mov2#opm112#okcu119#ocp346" name="seriesVariable"/>
+      <OutputCollectorParameter id="mov2#opm112#okcu119#ocp350" name="oidPm"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

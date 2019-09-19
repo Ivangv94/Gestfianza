@@ -1,0 +1,33 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-2330" gr:y="885" id="sv4#page138" name="Page 138">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv4#page138#enu184" name="Form184" linkOrder="sv4#page138#enu184#ln1550" ajaxEnableExpandedLinks="true">
+      <SelectionField id="sv4#page138#enu184#sfld105" name="Estado" type="string" ajaxEventEnabled="true" ajaxEventLink="sv4#page138#enu184#ln1550"/>
+      <SelectionField id="sv4#page138#enu184#sfld106" name="Municipio" type="string" ajaxEventEnabled="true" ajaxEventLink="sv4#page138#enu184#ln1550"/>
+      <Link id="sv4#page138#enu184#ln1550" name="Flow1550" to="sv4#seu355" type="normal" validate="true" ajaxEnabled="true">
+        <LinkParameter id="sv4#page138#enu184#ln1550#par4957" name="Estado_RoleCondition309 [oidEstado]" source="sv4#page138#enu184#sfld105" target="sv4#seu355#su542#rcond309.ent97#att579"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page138#enu184">
+          <layout:Field field="sv4#page138#enu184#sfld105"/>
+          <layout:Field field="sv4#page138#enu184#sfld106"/>
+          <layout:Link link="sv4#page138#enu184#ln1550"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

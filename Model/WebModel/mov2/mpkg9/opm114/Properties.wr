@@ -1,0 +1,151 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="50" id="mov2#mpkg9#opm114" name="conteoDias">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg9#opm114#icu154" name="Input Collector" gr:x="20" gr:y="125">
+      <OKLink id="mov2#mpkg9#opm114#icu154#oln1498" name="OKFlow1498" to="mov2#mpkg9#opm114#seu344" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="285" gr:y="110" id="mov2#mpkg9#opm114#seu344" name="Selector344" entity="ent87">
+      <Selector id="mov2#mpkg9#opm114#seu344#su535" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg9#opm114#seu344#su535#acond242" name="AttCondition242" predicate="notNull" booleanOperator="or" implied="false" attributes="ent87#att526"/>
+        <AttributesCondition id="mov2#mpkg9#opm114#seu344#su535#acond244" name="AttCondition244" predicate="notNull" booleanOperator="or" implied="false" attributes="ent87#att527"/>
+      </Selector>
+      <OKLink id="mov2#mpkg9#opm114#seu344#oln1499" name="OKFlow1499" to="mov2#mpkg9#opm114#lpu12">
+        <LinkParameter id="mov2#mpkg9#opm114#seu344#oln1499#par4314" name="oidCtrlFia_Input Array" source="ent87#att524Array" target="mov2#mpkg9#opm114#lpu12.array"/>
+        <LinkParameter id="mov2#mpkg9#opm114#seu344#oln1499#par4918" name="fechaTerm_SecondaryArray31" source="ent87#att527Array" target="mov2#mpkg9#opm114#lpu12#lsa31"/>
+        <LinkParameter id="mov2#mpkg9#opm114#seu344#oln1499#par4923" name="oidFedatario_SecondaryArray33" source="rel70#role139_ent96#att564Array" target="mov2#mpkg9#opm114#lpu12#lsa33"/>
+      </OKLink>
+    </SelectorUnit>
+    <LoopUnit gr:x="510" gr:y="135" id="mov2#mpkg9#opm114#lpu12" name="Loop12">
+      <OKLink id="mov2#mpkg9#opm114#lpu12#oln1500" name="OKFlow1500" to="mov2#mpkg9#opm114#seu357" code="next">
+        <LinkParameter id="mov2#mpkg9#opm114#lpu12#oln1500#par5009" name="Next Element_KeyCondition238 [oidcontrolfianzas]" source="next" target="mov2#mpkg9#opm114#seu357#su549#kcond238.ent87#att524"/>
+      </OKLink>
+      <SecondaryArray id="mov2#mpkg9#opm114#lpu12#lsa31" name="fechatermino"/>
+      <SecondaryArray id="mov2#mpkg9#opm114#lpu12#lsa33" name="SecondaryArray33"/>
+      <Link id="mov2#mpkg9#opm114#lpu12#ln1492" name="Flow1492" to="mov2#mpkg9#opm114#seu348" type="transport" validate="true" gr:bendpoints="110,-58,-140,-63">
+        <LinkParameter id="mov2#mpkg9#opm114#lpu12#ln1492#par4924" name="Next Element (SecondaryArray33)_KeyCondition229 [oidFedatario]" source="mov2#mpkg9#opm114#lpu12#lsa33" target="mov2#mpkg9#opm114#seu348#su539#kcond229.ent96#att564"/>
+      </Link>
+      <Link id="mov2#mpkg9#opm114#lpu12#ln1510" name="Flow1494" to="mov2#mpkg9#opm114#seu352" type="transport" validate="true" gr:bendpoints="133,77,-177,72">
+        <LinkParameter id="mov2#mpkg9#opm114#lpu12#ln1510#par4925" name="Next Element_KeyCondition230 [oidcontrolfianzas]" source="next" target="mov2#mpkg9#opm114#seu352#su540#kcond230.ent87#att524"/>
+      </Link>
+      <OKLink id="mov2#mpkg9#opm114#lpu12#oln1517" name="OKFlow1517" to="mov2#mpkg9#opm114#okcu120" gr:bendpoints="228,-98,-732,-148;371,-72,-454,-77" code="end"/>
+    </LoopUnit>
+    <ScriptUnit gr:x="795" gr:y="150" id="mov2#mpkg9#opm114#scu136" name="Script136" linkOrder="mov2#mpkg9#opm114#scu136#ln1542 mov2#mpkg9#opm114#scu136#ln1539">
+      <ScriptUnitText xml:space="preserve">#input fechaTermino
+#output dias, switch
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.sql.Timestamp;
+
+public class test {
+	
+	public static void main (String[] args) throws ParseException {
+	String switch
+	Date fechaActual = new Date();
+	// println(new Timestamp(fechaActual.getTime()));
+	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	
+	Date fechaInicio=dateFormat.parse();
+	Date fechaTermino=dateFormat.parse();
+	
+	int dias=(int) (((fechaFinal.getTime()-fechaActual.getTime())/86400000)+1);
+	}
+        if (dias&lt;=30){
+        switch ="30"
+        } else
+        if (dias&lt;=15){
+        switch ="15"
+        } else
+        if (dias&lt;=1){
+        switch ="1"
+        } else
+        if (dias&lt;=0){
+        switch ="0"
+        } 
+        
+}
+ return ["dias":dias, "switch":switch]</ScriptUnitText>
+      <OKLink id="mov2#mpkg9#opm114#scu136#oln1508" name="OKFlow1508" to="mov2#mpkg9#opm114#seu348" automaticCoupling="true"/>
+      <Link id="mov2#mpkg9#opm114#scu136#ln1542" name="Flow1542" to="mov2#mpkg9#opm114#cru90" type="transport" validate="true" gr:bendpoints="254,-52,-276,-62">
+        <LinkParameter id="mov2#mpkg9#opm114#scu136#ln1542#par4930" name="dias_conteoDias" source="result(dias)" target="mov2#mpkg9#opm114#cru90.ent89#att540"/>
+      </Link>
+      <Link id="mov2#mpkg9#opm114#scu136#ln1539" name="Flow1539" to="mov2#mpkg9#opm114#okcu120" type="transport" validate="true" gr:bendpoints="217,135,-618,125;385,136,-450,126">
+        <LinkParameter id="mov2#mpkg9#opm114#scu136#ln1539#par4910" name="dias_scriptFecha" source="result(dias)" target="mov2#mpkg9#opm114#okcu120#ocp360"/>
+        <LinkParameter id="mov2#mpkg9#opm114#scu136#ln1539#par4911" name="switch_Switch" source="result(switch)" target="mov2#mpkg9#opm114#okcu120#ocp361"/>
+      </Link>
+    </ScriptUnit>
+    <OKCollectorUnit gr:x="1525" gr:y="85" id="mov2#mpkg9#opm114#okcu120" name="OK Port120">
+      <OutputCollectorParameter id="mov2#mpkg9#opm114#okcu120#ocp351" name="nombre"/>
+      <OutputCollectorParameter id="mov2#mpkg9#opm114#okcu120#ocp352" name="pellidopat"/>
+      <OutputCollectorParameter id="mov2#mpkg9#opm114#okcu120#ocp353" name="pellidomat"/>
+      <OutputCollectorParameter id="mov2#mpkg9#opm114#okcu120#ocp354" name="conteodias"/>
+      <OutputCollectorParameter id="mov2#mpkg9#opm114#okcu120#ocp355" name="fechatermino"/>
+      <OutputCollectorParameter id="mov2#mpkg9#opm114#okcu120#ocp356" name="monto"/>
+      <OutputCollectorParameter id="mov2#mpkg9#opm114#okcu120#ocp357" name="estado"/>
+      <OutputCollectorParameter id="mov2#mpkg9#opm114#okcu120#ocp358" name="municipio"/>
+      <OutputCollectorParameter id="mov2#mpkg9#opm114#okcu120#ocp359" name="numGarantia"/>
+      <OutputCollectorParameter id="mov2#mpkg9#opm114#okcu120#ocp360" name="scriptFecha"/>
+      <OutputCollectorParameter id="mov2#mpkg9#opm114#okcu120#ocp361" name="Switch"/>
+      <OutputCollectorParameter id="mov2#mpkg9#opm114#okcu120#ocp365" name="correo"/>
+      <OutputCollectorParameter id="mov2#mpkg9#opm114#okcu120#ocp366" name="asunto"/>
+    </OKCollectorUnit>
+    <SelectorUnit gr:x="935" gr:y="130" id="mov2#mpkg9#opm114#seu348" name="Selector348" entity="ent96" linkOrder="mov2#mpkg9#opm114#seu348#ln1543 mov2#mpkg9#opm114#seu348#ln1554">
+      <Selector id="mov2#mpkg9#opm114#seu348#su539" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg9#opm114#seu348#su539#kcond229" name="KeyCondition229" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg9#opm114#seu348#oln1514" name="OKFlow1514" to="mov2#mpkg9#opm114#seu352"/>
+      <Link id="mov2#mpkg9#opm114#seu348#ln1543" name="Flow1543" to="mov2#mpkg9#opm114#cru90" type="transport" validate="true" gr:bendpoints="206,71,-189,66"/>
+      <Link id="mov2#mpkg9#opm114#seu348#ln1554" name="Flow1554" to="mov2#mpkg9#opm114#okcu120" type="transport" validate="true" gr:bendpoints="110,-98,-570,-128;165,-98,-515,-128;300,-98,-380,-128;437,-98,-243,-128">
+        <LinkParameter id="mov2#mpkg9#opm114#seu348#ln1554#par4993" name="correoFed_correo" source="ent96#att570Array" target="mov2#mpkg9#opm114#okcu120#ocp365"/>
+      </Link>
+    </SelectorUnit>
+    <CreateUnit gr:x="1375" gr:y="140" id="mov2#mpkg9#opm114#cru90" name="Create90" entity="ent89" linkOrder="mov2#mpkg9#opm114#cru90#ln1546">
+      <OKLink id="mov2#mpkg9#opm114#cru90#oln1516" name="OKFlow1516" to="mov2#mpkg9#opm114#lpu12" automaticCoupling="true" gr:bendpoints="-336,66,309,76"/>
+      <Link id="mov2#mpkg9#opm114#cru90#ln1546" name="Flow1546" to="mov2#mpkg9#opm114#okcu120" type="transport" validate="true">
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4932" name="conteoDias_PASSING" source="ent89#att540Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4933" name="estado_PASSING" source="ent89#att545Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4934" name="fechaTermino_PASSING" source="ent89#att538Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4935" name="montoFianza_PASSING" source="ent89#att539Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4936" name="municipio_PASSING" source="ent89#att544Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4937" name="nombrefed_PASSING" source="ent89#att541Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4938" name="numeropoliza_PASSING" source="ent89#att537Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4939" name="primapellido_PASSING" source="ent89#att542Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4940" name="segunapellido_PASSING" source="ent89#att543Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4941" name="oidcontrolfianzas_PASSING" source="ent89#att536Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4921" name="conteoDias_conteodias" source="ent89#att540Array" target="mov2#mpkg9#opm114#okcu120#ocp354"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4922" name="estado_estado" source="ent89#att545Array" target="mov2#mpkg9#opm114#okcu120#ocp357"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4942" name="fechaTermino_fechatermino" source="ent89#att538Array" target="mov2#mpkg9#opm114#okcu120#ocp355"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4943" name="montoFianza_monto" source="ent89#att539Array" target="mov2#mpkg9#opm114#okcu120#ocp356"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4944" name="municipio_municipio" source="ent89#att544Array" target="mov2#mpkg9#opm114#okcu120#ocp358"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4945" name="nombrefed_nombre" source="ent89#att541Array" target="mov2#mpkg9#opm114#okcu120#ocp351"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4946" name="segunapellido_pellidomat" source="ent89#att543Array" target="mov2#mpkg9#opm114#okcu120#ocp353"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4947" name="primapellido_pellidopat" source="ent89#att542Array" target="mov2#mpkg9#opm114#okcu120#ocp352"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4334" name="numeropoliza_numGarantia" source="ent89#att537Array" target="mov2#mpkg9#opm114#okcu120#ocp359"/>
+        <LinkParameter id="mov2#mpkg9#opm114#cru90#ln1546#par4994" name="Texto Preventivo de Vencimiento_asunto" sourceValue="Texto Preventivo de Vencimiento" target="mov2#mpkg9#opm114#okcu120#ocp366"/>
+      </Link>
+    </CreateUnit>
+    <SelectorUnit gr:x="1145" gr:y="135" id="mov2#mpkg9#opm114#seu352" name="Selector352" entity="ent87" distinctAttributes="rel70#role139.ent96#att565 rel70#role139.ent96#att566 rel70#role139.ent96#att567 rel71#role141.ent78#att288 rel68#role135.ent97#att580">
+      <Selector id="mov2#mpkg9#opm114#seu352#su540" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg9#opm114#seu352#su540#kcond230" name="KeyCondition230" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg9#opm114#seu352#oln1515" name="OKFlow1515" to="mov2#mpkg9#opm114#cru90">
+        <LinkParameter id="mov2#mpkg9#opm114#seu352#oln1515#par4926" name="fechatermino_fechaTermino" source="ent87#att527Array" target="mov2#mpkg9#opm114#cru90.ent89#att538"/>
+        <LinkParameter id="mov2#mpkg9#opm114#seu352#oln1515#par4927" name="montofianza_montoFianza" source="ent87#att528Array" target="mov2#mpkg9#opm114#cru90.ent89#att539"/>
+        <LinkParameter id="mov2#mpkg9#opm114#seu352#oln1515#par4928" name="numeropoliza_numeropoliza" source="ent87#att525Array" target="mov2#mpkg9#opm114#cru90.ent89#att537"/>
+        <LinkParameter id="mov2#mpkg9#opm114#seu352#oln1515#par4929" name="oidcontrolfianzas_oidcontrolfianzas" source="ent87#att524Array" target="mov2#mpkg9#opm114#cru90.ent89#att536"/>
+        <LinkParameter id="mov2#mpkg9#opm114#seu352#oln1515#par4317" name="ControlfianzasToEstados.nombreEstado_estado" source="rel68#role135$ent97#att580Array" target="mov2#mpkg9#opm114#cru90.ent89#att545"/>
+        <LinkParameter id="mov2#mpkg9#opm114#seu352#oln1515#par4916" name="ControlfianzasToMunicipios.oidMunicipio_municipio" source="rel71#role141_ent78#att287Array" target="mov2#mpkg9#opm114#cru90.ent89#att544"/>
+        <LinkParameter id="mov2#mpkg9#opm114#seu352#oln1515#par4917" name="ControlfianzasToFedatarios.nombreFed_nombrefed" source="rel70#role139$ent96#att565Array" target="mov2#mpkg9#opm114#cru90.ent89#att541"/>
+        <LinkParameter id="mov2#mpkg9#opm114#seu352#oln1515#par4920" name="ControlfianzasToFedatarios.primApellido_primapellido" source="rel70#role139$ent96#att566Array" target="mov2#mpkg9#opm114#cru90.ent89#att542"/>
+        <LinkParameter id="mov2#mpkg9#opm114#seu352#oln1515#par4931" name="ControlfianzasToFedatarios.segunApellido_segunapellido" source="rel70#role139$ent96#att567Array" target="mov2#mpkg9#opm114#cru90.ent89#att543"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="625" gr:y="280" id="mov2#mpkg9#opm114#seu357" name="Selector357" entity="ent87">
+      <Selector id="mov2#mpkg9#opm114#seu357#su549" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg9#opm114#seu357#su549#kcond238" name="KeyCondition238" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg9#opm114#seu357#oln1538" name="OKFlow1538" to="mov2#mpkg9#opm114#scu136">
+        <LinkParameter id="mov2#mpkg9#opm114#seu357#oln1538#par5010" name="fechatermino_fechaTermino" source="ent87#att527Array" target="mov2#mpkg9#opm114#scu136.fechaTermino"/>
+      </OKLink>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

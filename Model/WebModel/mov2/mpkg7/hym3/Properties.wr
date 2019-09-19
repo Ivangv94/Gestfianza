@@ -1,0 +1,21 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="215" gr:y="160" id="mov2#mpkg7#hym3" name="agregarMandato">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="-60" gr:y="90" id="mov2#mpkg7#hym3#icu58">
+      <InputCollectorParameter id="mov2#mpkg7#hym3#icu58#icp178" name="rfcPM"/>
+      <InputCollectorParameter id="mov2#mpkg7#hym3#icu58#icp187" name="proceso"/>
+      <Link id="mov2#mpkg7#hym3#icu58#ln654" name="OKFlow559" to="mov2#mpkg7#hym3#page76#enu20" type="transport" gr:bendpoints="128,-52,-157,-42;195,-45,-70,-45">
+        <LinkParameter id="mov2#mpkg7#hym3#icu58#ln654#par347" name="rfcPM_PASSING" source="mov2#mpkg7#hym3#icu58#icp178" passing="true"/>
+        <LinkParameter id="mov2#mpkg7#hym3#icu58#ln654#par348" name="proceso_PASSING" source="mov2#mpkg7#hym3#icu58#icp187" passing="true"/>
+      </Link>
+      <OKLink id="mov2#mpkg7#hym3#icu58#oln108" name="OKFlow108" to="mov2#mpkg7#hym3#page76" automaticCoupling="true" ajaxOpenWindow="true" ajaxWindowDraggable="true" ajaxWindowModal="true" ajaxWindowClosable="true" ajaxWindowShowEffect="Element.show" ajaxWindowWidth="850" ajaxWindowHeight="850"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="725" gr:y="90" id="mov2#mpkg7#hym3#okcu43" name="OK"/>
+    <KOCollectorUnit gr:x="725" gr:y="250" id="mov2#mpkg7#hym3#kocu41" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg7#hym3#kocu41#ocp75" name="msj"/>
+    </KOCollectorUnit>
+    <ModuleInstanceUnit gr:x="310" gr:y="320" id="mov2#mpkg7#hym3#miu73" action="true" moduleId="mov2#mpkg7#opm47">
+      <OKLink id="mov2#mpkg7#hym3#miu73#oln560" name="OKFlow560" to="mov2#mpkg7#hym3#okcu43" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg7#hym3#miu73#kln269" name="KOFlow269" to="mov2#mpkg7#hym3#kocu41" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</HybridModule>

@@ -1,0 +1,157 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym6" gr:x="750" gr:y="170" name="Constituir Sociedad Mercantil - Fedatario - Participaci&#243;n de cada socio o accionista" bpm:moduleType="activity" bpm:uuids="JKBD85VG_LSUK7T.JKBDNYNI_7ZAI5A" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym6#icu9" name="Input" gr:x="-525" gr:y="90">
+      <OKLink id="mov1#hym6#icu9#oln48" name="OKLink" to="mov1#hym6#apu6" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym6#pu36" name="Complete Activity" mode="completeActivity" gr:x="1400" gr:y="-5"/>
+    <ProcessUnit id="mov1#hym6#pu37" name="Save Activity" mode="saveActivity" gr:x="1310" gr:y="80"/>
+    <ProcessUnit id="mov1#hym6#pu38" name="Leave Activity" mode="leaveActivity" gr:x="1165" gr:y="90"/>
+    <ActivityParametersUnit id="mov1#hym6#apu18" name="Set Parameters" gr:x="1130" gr:y="10">
+      <OKLink id="mov1#hym6#apu18#oln49" name="OKLink" automaticCoupling="false" to="mov1#hym6#pu36" codeRef="mov1#hym6#miu170#oln1443"/>
+      <OKLink id="mov1#hym6#apu18#oln50" name="OKLink" automaticCoupling="false" to="mov1#hym6#pu37" codeRef="mov1#hym6#page18#enu13#ln116"/>
+      <ActivityParameter id="mov1#hym6#apu18#ap15" name="denominacion" bpm:uuid="JO7UDIJ0_2IK787"/>
+    </ActivityParametersUnit>
+    <SelectorUnit gr:x="-330" gr:y="200" id="mov1#hym6#seu131" name="PMF" entity="ent60" linkOrder="mov1#hym6#seu131#ln800">
+      <Selector id="mov1#hym6#seu131#su242" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym6#seu131#su242#rcond129" name="PMtoEA" predicate="in" implied="false" role="rel35#role70"/>
+        <AttributesCondition id="mov1#hym6#seu131#su242#acond131" name="CF" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att391" value="F"/>
+      </Selector>
+      <OKLink id="mov1#hym6#seu131#oln724" name="OKFlow724" to="mov1#hym6#seu133" automaticCoupling="true"/>
+      <Link id="mov1#hym6#seu131#ln800" name="Flow800" to="mov1#hym6#page18#enu131" type="transport" validate="true">
+        <LinkParameter id="mov1#hym6#seu131#ln800#par2476" name="serieAccion_serieCapitalFijo [label]" source="ent60#att395Array" target="mov1#hym6#page18#enu131#sfld60_label"/>
+        <LinkParameter id="mov1#hym6#seu131#ln800#par2489" name="oid_serieCapitalFijo [output]" source="ent60#att389Array" target="mov1#hym6#page18#enu131#sfld60_output"/>
+      </Link>
+    </SelectorUnit>
+    <ActivityParametersUnit id="mov1#hym6#apu6" name="Get Parameters" gr:x="-275" gr:y="85">
+      <ActivityParameter id="mov1#hym6#apu6#ap3" name="denominacion" enumerated="false" bpm:uuid="JO7UDIJ0_2IK787"/>
+      <Link id="mov1#hym6#apu6#ln618" name="Flow614" to="mov1#hym6#page18#enu131" type="transport" validate="true">
+        <LinkParameter id="mov1#hym6#apu6#ln618#par2098" name="denominacion_oid" source="mov1#hym6#apu6#ap3" target="mov1#hym6#page18#enu131#fld88_slot"/>
+      </Link>
+      <Link id="mov1#hym6#apu6#ln619" name="Flow615" to="mov1#hym6#seu131" type="transport" validate="true">
+        <LinkParameter id="mov1#hym6#apu6#ln619#par2099" name="denominacion_PMtoEA [oid]" source="mov1#hym6#apu6#ap3" target="mov1#hym6#seu131#su242#rcond129.userOID"/>
+      </Link>
+      <OKLink id="mov1#hym6#apu6#oln726" name="OKFlow726" to="mov1#hym6#seu131" automaticCoupling="true" gr:bendpoints="64,92,-101,-88"/>
+      <Link id="mov1#hym6#apu6#ln624" name="Flow624" to="mov1#hym6#seu133" type="transport" validate="true" gr:bendpoints="77,78,107,-177;71,163,101,-92">
+        <LinkParameter id="mov1#hym6#apu6#ln624#par2294" name="denominacion_RoleCondition130 [oid]" source="mov1#hym6#apu6#ap3" target="mov1#hym6#seu133#su244#rcond130.userOID"/>
+      </Link>
+      <Link id="mov1#hym6#apu6#ln888" name="Flow888" to="mov1#hym6#seu157" type="transport" validate="true">
+        <LinkParameter id="mov1#hym6#apu6#ln888#par2692" name="denominacion_KeyCondition124 [oid]" source="mov1#hym6#apu6#ap3" target="mov1#hym6#seu157#su275#kcond124.userOID"/>
+      </Link>
+    </ActivityParametersUnit>
+    <SelectorUnit gr:x="-330" gr:y="325" id="mov1#hym6#seu133" name="PMV" entity="ent60" linkOrder="mov1#hym6#seu133#ln801">
+      <Selector id="mov1#hym6#seu133#su244" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym6#seu133#su244#rcond130" name="RoleCondition130" predicate="in" implied="false" role="rel35#role70"/>
+        <AttributesCondition id="mov1#hym6#seu133#su244#acond132" name="tipoAccion" predicate="eq" booleanOperator="or" implied="false" value="V" attributes="ent60#att391"/>
+      </Selector>
+      <OKLink id="mov1#hym6#seu133#oln727" name="OKFlow727" to="mov1#hym6#seu157" automaticCoupling="true"/>
+      <Link id="mov1#hym6#seu133#ln801" name="Flow801" to="mov1#hym6#page18#enu131" type="transport" validate="true" gr:bendpoints="184,-51,-131,174;232,-151,-83,74">
+        <LinkParameter id="mov1#hym6#seu133#ln801#par2477" name="serieAccion_serieCapitalVariable [label]" source="ent60#att395Array" target="mov1#hym6#page18#enu131#sfld61_label"/>
+        <LinkParameter id="mov1#hym6#seu133#ln801#par2490" name="oid_serieCapitalVariable [output]" source="ent60#att389Array" target="mov1#hym6#page18#enu131#sfld61_output"/>
+      </Link>
+    </SelectorUnit>
+    <ScriptUnit id="mov1#hym6#scu73" name="uppercase" gr:x="475" gr:y="185">
+      <ScriptUnitText xml:space="preserve">#input rfc, curp
+#output rfc, curp
+String rfcUp = rfc.toUpperCase()
+String curpUp = curp.toUpperCase()
+return["rfc":rfcUp, "curp":curpUp]
+
+</ScriptUnitText>      <OKLink id="mov1#hym6#scu73#oln735" name="OKFlow735" to="mov1#hym6#miu102">        <LinkParameter id="mov1#hym6#scu73#oln735#par2478" name="curp_curp" source="result(curp)" target="mov1#hym6#miu102.mov2#opm67#icu106#icp245"/>        <LinkParameter id="mov1#hym6#scu73#oln735#par2479" name="rfc_rfc" source="result(rfc)" target="mov1#hym6#miu102.mov2#opm67#icu106#icp246"/>      </OKLink>      <KOLink id="mov1#hym6#scu73#kln332" name="KOFlow332" to="mov1#hym6#page18#mssu36" gr:bendpoints="-162,-4,3,216">        <LinkParameter id="mov1#hym6#scu73#kln332#par2340" name="Error al obtener Acciones de la persona moral._Shown Messages" sourceValue="Error al convertir a Mayusculas" target="mov1#hym6#page18#mssu36.shownMessages"/>      </KOLink>    </ScriptUnit>    <ModuleInstanceUnit gr:x="490" gr:y="550" id="mov1#hym6#miu97" action="true" moduleId="mov2#opm3"/>    <ModuleInstanceUnit gr:x="190" gr:y="545" id="mov1#hym6#miu98" action="true" moduleId="mov2#opm4"/>    <ModuleInstanceUnit gr:x="625" gr:y="185" id="mov1#hym6#miu102" action="true" moduleId="mov2#opm67">      <KOLink id="mov1#hym6#miu102#kln361" name="KOFlow361" to="mov1#hym6#page18#mssu36" gr:bendpoints="-242,102,258,82">        <LinkParameter id="mov1#hym6#miu102#kln361#par2487" name="mensaje_Shown Messages" source="mov2#opm67#kocu58#ocp191" target="mov1#hym6#page18#mssu36.shownMessages"/>      </KOLink>      <OKLink id="mov1#hym6#miu102#oln979" name="OKFlow979" to="mov1#hym6#page18#hinu3">        <LinkParameter id="mov1#hym6#miu102#oln979#par3237" name="AccionesOID_ACCTOEA [oid] [Acciones]" source="mov2#opm67#okcu73#ocp190" target="mov1#hym6#page18#hinu3#hiulvl2#su306#rcond179.ent60#att389"/>      </OKLink>    </ModuleInstanceUnit>    <ScriptUnit id="mov1#hym6#scu89" name="botonDatosRecibo" gr:x="625" gr:y="280">      <ScriptUnitText xml:space="preserve">#input String tipoAccionista
+#output mostrarPM, mostrarPF
+
+Boolean mostrarPM = false;
+Boolean mostrarPF = false;
+
+if(tipoAccionista == "Persona Moral"){
+	mostrarPM = true;
+	mostrarPF = false;
+}else{
+	mostrarPM = false;
+	mostrarPF = true;
+}
+
+return["mostrarPM":mostrarPM,"mostrarPF":mostrarPF]</ScriptUnitText>
+      <OKLink id="mov1#hym6#scu89#oln803" name="OKFlow803" to="mov1#hym6#page18#enu131" gr:bendpoints="-222,-67,223,98">
+        <LinkParameter id="mov1#hym6#scu89#oln803#par2526" name="mostrarPF_PF" source="result(mostrarPF)" targetVariable="mov1#hym6#page18#var58"/>
+        <LinkParameter id="mov1#hym6#scu89#oln803#par2527" name="mostrarPM_PM" source="result(mostrarPM)" targetVariable="mov1#hym6#page18#var57"/>
+      </OKLink>
+    </ScriptUnit>
+    <SelectorUnit gr:x="130" gr:y="390" id="mov1#hym6#seu157" name="Selector157" entity="ent38">
+      <Selector id="mov1#hym6#seu157#su275" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym6#seu157#su275#kcond124" name="KeyCondition124" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym6#seu157#oln843" name="OKFlow843" to="mov1#hym6#scu101">
+        <LinkParameter id="mov1#hym6#seu157#oln843#par2693" name="tipoCapital_tipoCapital" source="ent38#att425Array" target="mov1#hym6#scu101.tipoCapital"/>
+      </OKLink>
+    </SelectorUnit>
+    <ScriptUnit gr:x="300" gr:y="410" id="mov1#hym6#scu101" name="Script101">
+      <ScriptUnitText xml:space="preserve">#input String tipoCapital
+#output mostrar
+
+boolean mostrar;
+
+if (tipoCapital == 'V')
+{
+	mostrar = true;
+} 
+
+else mostrar = false;
+
+return ["mostrar":mostrar]</ScriptUnitText>
+      <OKLink id="mov1#hym6#scu101#oln844" name="OKFlow844" to="mov1#hym6#page18">
+        <LinkParameter id="mov1#hym6#scu101#oln844#par2694" name="mostrar_modalidadCapital" source="result(mostrar)" targetVariable="mov1#hym6#page18#var66"/>
+      </OKLink>
+    </ScriptUnit>
+    <SwitchUnit gr:x="490" gr:y="470" id="mov1#hym6#switch68" name="Switch68">
+      <Case value="Persona Moral"/>
+      <Case value="Persona F&#237;sica"/>
+      <OKLink id="mov1#hym6#switch68#oln940" name="OKFlow940" to="mov1#hym6#miu171" automaticCoupling="true" code="Persona F&#237;sica"/>
+      <OKLink id="mov1#hym6#switch68#oln941" name="OKFlow941" to="mov1#hym6#miu111" automaticCoupling="true" code="Persona Moral"/>
+    </SwitchUnit>
+    <ModuleInstanceUnit gr:x="675" gr:y="490" id="mov1#hym6#miu111" action="true" moduleId="mov2#opm77">
+      <OKLink id="mov1#hym6#miu111#oln942" name="OKFlow942" to="mov1#hym6#page18#mssu36">
+        <LinkParameter id="mov1#hym6#miu111#oln942#par3059" name="Accionista agregado con &#233;xito_Shown Messages" sourceValue="Accionista agregado con &#233;xito" target="mov1#hym6#page18#mssu36.shownMessages"/>
+      </OKLink>
+      <KOLink id="mov1#hym6#miu111#kln409" name="KOFlow409" to="mov1#hym6#page18#mssu36" gr:bendpoints="-321,-82,229,83">
+        <LinkParameter id="mov1#hym6#miu111#kln409#par3060" name="mensaje_Shown Messages" source="mov2#opm77#kocu67#ocp216" target="mov1#hym6#page18#mssu36.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="565" gr:y="10" id="mov1#hym6#miu153" action="true" moduleId="mov2#opm98">
+      <OKLink id="mov1#hym6#miu153#oln1306" name="OKFlow1306" to="mov1#hym6#miu170" automaticCoupling="true"/>
+      <KOLink id="mov1#hym6#miu153#kln75" name="KOFlow75" to="mov1#hym6#page18#mssu36">
+        <LinkParameter id="mov1#hym6#miu153#kln75#par4843" name="mensaje_Shown Messages" source="mov2#opm98#kocu88#ocp268" target="mov1#hym6#page18#mssu36.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="790" gr:y="10" id="mov1#hym6#miu170" action="true" moduleId="mov2#opm109">
+      <OKLink id="mov1#hym6#miu170#oln1443" name="OKFlow1443" to="mov1#hym6#apu18" automaticCoupling="true"/>
+      <KOLink id="mov1#hym6#miu170#kln572" name="KOFlow572" to="mov1#hym6#page18#mssu36" gr:bendpoints="-164,105,521,-90;-425,110,260,-85">
+        <LinkParameter id="mov1#hym6#miu170#kln572#par4844" name="mensajeError_Shown Messages" source="mov2#opm109#kocu99#ocp341" target="mov1#hym6#page18#mssu36.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="475" gr:y="365" id="mov1#hym6#miu171" action="true" moduleId="mov2#opm110">
+      <OKLink id="mov1#hym6#miu171#oln1449" name="OKFlow1449" to="mov1#hym6#scu73" automaticCoupling="true"/>
+      <KOLink id="mov1#hym6#miu171#kln574" name="KOFlow574" to="mov1#hym6#page18#mssu36">
+        <LinkParameter id="mov1#hym6#miu171#kln574#par4811" name="mensajeError_Shown Messages" source="mov2#opm110#kocu100#ocp342" target="mov1#hym6#page18#mssu36.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="-30" gr:y="495" id="mov1#hym6#miu172" action="true" moduleId="mov2#opm111">
+      <Link id="mov1#hym6#miu172#ln1481" name="OKFlow1468" to="mov1#hym6#page18#hinu3" gr:bendpoints="21,-110,6,135" type="transport">
+        <LinkParameter id="mov1#hym6#miu172#ln1481#par4855" name="acciones_ACCTOEA [oid] [Acciones]" source="mov2#opm111#okcu118#ocp344" target="mov1#hym6#page18#hinu3#hiulvl2#su306#rcond179.ent60#att389"/>
+      </Link>
+      <OKLink id="mov1#hym6#miu172#oln1473" name="OKFlow1473" to="mov1#hym6#miu174">
+        <LinkParameter id="mov1#hym6#miu172#oln1473#par4863" name="oidPm_oidPm" source="mov2#opm111#okcu118#ocp349" target="mov1#hym6#miu174.mov2#opm112#icu152#icp474"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="-260" gr:y="500" id="mov1#hym6#miu174" action="true" moduleId="mov2#opm112" linkOrder="mov1#hym6#miu174#ln1485">
+      <OKLink id="mov1#hym6#miu174#oln1474" name="OKFlow1474" to="mov1#hym6#page18#hinu3">
+        <LinkParameter id="mov1#hym6#miu174#oln1474#par4869" name="oidPm_RoleCondition158 [oid] [List35]" source="mov2#opm112#okcu119#ocp350" target="mov1#hym6#page18#hinu3#su266#rcond158.userOID"/>
+      </OKLink>
+      <Link id="mov1#hym6#miu174#ln1485" name="Flow1485" to="mov1#hym6#page18#enu131" type="transport" validate="true">
+        <LinkParameter id="mov1#hym6#miu174#ln1485#par4864" name="OK Port119.seriesFijo_serieCapitalFijo [label]" source="mov2#opm112#okcu119#ocp345" target="mov1#hym6#page18#enu131#sfld60_label"/>
+        <LinkParameter id="mov1#hym6#miu174#ln1485#par4865" name="OK Port119.oidFijo_serieCapitalFijo [output]" source="mov2#opm112#okcu119#ocp347" target="mov1#hym6#page18#enu131#sfld60_output"/>
+        <LinkParameter id="mov1#hym6#miu174#ln1485#par4866" name="OK Port119.seriesVariable_serieCapitalVariable [label]" source="mov2#opm112#okcu119#ocp346" target="mov1#hym6#page18#enu131#sfld61_label"/>
+        <LinkParameter id="mov1#hym6#miu174#ln1485#par4867" name="OK Port119.oidVariable_serieCapitalVariable [output]" source="mov2#opm112#okcu119#ocp348" target="mov1#hym6#page18#enu131#sfld61_output"/>
+      </Link>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</HybridModule>

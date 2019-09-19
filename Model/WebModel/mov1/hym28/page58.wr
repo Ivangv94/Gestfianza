@@ -1,0 +1,257 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="850" gr:y="-295" id="mov1#hym28#page58" name="Revocar Poder" localized="true">
+  <ContentUnits>
+    <EntryUnit gr:x="560" gr:y="210" id="mov1#hym28#page58#enu87" name="Buttons" linkOrder="mov1#hym28#page58#enu87#ln991 mov1#hym28#page58#enu87#ln992">
+      <Link id="mov1#hym28#page58#enu87#ln991" name="Finish" to="mov1#hym28#apu56" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="mov1#hym28#page58#enu87#ln992" name="Cancel" to="mov1#hym28#pu90" automaticCoupling="true" type="normal" validate="true"/>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="125" gr:y="80" id="mov1#hym28#page58#mssu42" name="Message42"/>
+    <EntryUnit gr:x="0" gr:y="80" id="mov1#hym28#page58#enu132" name="Revocacion">
+      <SelectionField id="mov1#hym28#page58#enu132#sfld84" name="modificacionRevocacionORenuncia" type="string"/>
+      <Field id="mov1#hym28#page58#enu132#fld224" name="Field224" type="string" modifiable="false" preloaded="true"/>
+      <Link id="mov1#hym28#page58#enu132#ln1125" name="Flow1125" to="mov1#hym28#cru67" type="transport" validate="true">
+        <LinkParameter id="mov1#hym28#page58#enu132#ln1125#par3472" name="Field224_PersonaMoral.oid(RevocacionesToPersonaMoral)" source="mov1#hym28#page58#enu132#fld224" target="mov1#hym28#cru67.rel44#role88.userOID"/>
+      </Link>
+    </EntryUnit>
+    <HierarchicalIndexUnit id="mov1#hym28#page58#hinu14" name="Nombramientos" gr:x="270" gr:y="150" sortable="false" entity="ent39" levelOrder="mov1#hym28#page58#hinu14#hiulvl20 mov1#hym28#page58#hinu14#hiulvl21" displayAttributes="userName ent39#att268 ent39#att272 ent39#att271 ent39#att270" blockWindow="10" linkOrder="mov1#hym28#page58#hinu14#ln1124 mov1#hym28#page58#hinu14#ln1126 mov1#hym28#page58#hinu14#ln1127">
+      <HierarchicalIndexLevel id="mov1#hym28#page58#hinu14#hiulvl20" name="Level3" entity="ent65" displayAttributes="ent65#att408 ent65#att409" role="rel38#role76">
+        <Selector id="mov1#hym28#page58#hinu14#hiulvl20#su348" defaultPolicy="fill" booleanOperator="and">
+          <RelationshipRoleCondition id="mov1#hym28#page58#hinu14#hiulvl20#su348#rcond210" name="RoleCondition190" predicate="in" implied="false" role="rel40#role80"/>
+          <AttributesCondition id="mov1#hym28#page58#hinu14#hiulvl20#su348#acond182" name="AttCondition182" predicate="null" booleanOperator="or" implied="false" attributes="ent65#att434"/>
+        </Selector>
+      </HierarchicalIndexLevel>
+      <Selector id="mov1#hym28#page58#hinu14#su349" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym28#page58#hinu14#su349#kcond160" name="KeyCondition138" predicate="in" implied="false"/>
+      </Selector>
+      <HierarchicalIndexLevel id="mov1#hym28#page58#hinu14#hiulvl21" name="Level7" entity="ent77" role="rel62#role123" displayAttributes="ent77#att480">
+        <Selector id="mov1#hym28#page58#hinu14#hiulvl21#su350" defaultPolicy="fill" booleanOperator="and">
+          <RelationshipRoleCondition id="mov1#hym28#page58#hinu14#hiulvl21#su350#rcond211" name="RoleCondition191" predicate="in" implied="false" role="rel62#role123"/>
+          <RelationshipRoleCondition id="mov1#hym28#page58#hinu14#hiulvl21#su350#rcond212" name="RoleCondition195" predicate="in" implied="false" role="rel63#role125"/>
+          <AttributesCondition id="mov1#hym28#page58#hinu14#hiulvl21#su350#acond183" name="AttCondition183" predicate="null" booleanOperator="or" implied="false" attributes="ent77#att445"/>
+        </Selector>
+      </HierarchicalIndexLevel>
+      <Link id="mov1#hym28#page58#hinu14#ln1124" name="revocacionTotal" to="mov1#hym28#seu192" type="normal" validate="true" automaticCoupling="true"/>
+      <Link id="mov1#hym28#page58#hinu14#ln1126" name="revocarFacultadNom" to="mov1#hym28#seu193" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="mov1#hym28#page58#hinu14#ln1127" name="revocarCargo" to="mov1#hym28#seu194" automaticCoupling="true" type="normal" validate="true"/>
+    </HierarchicalIndexUnit>
+    <HierarchicalIndexUnit id="mov1#hym28#page58#hinu15" name="Administracion" gr:x="270" gr:y="5" sortable="false" entity="ent39" levelOrder="mov1#hym28#page58#hinu15#hiulvl22 mov1#hym28#page58#hinu15#hiulvl23" displayAttributes="userName ent39#att268 ent39#att272 ent39#att271 ent39#att270" blockWindow="10">
+      <HierarchicalIndexLevel id="mov1#hym28#page58#hinu15#hiulvl22" name="Level3" entity="ent64" displayAttributes="ent64#att404 ent64#att405" role="rel34#role67">
+        <Selector id="mov1#hym28#page58#hinu15#hiulvl22#su351" defaultPolicy="fill" booleanOperator="and">
+          <RelationshipRoleCondition id="mov1#hym28#page58#hinu15#hiulvl22#su351#rcond213" name="RoleCondition187" predicate="in" implied="false" role="rel42#role84"/>
+        </Selector>
+      </HierarchicalIndexLevel>
+      <Selector id="mov1#hym28#page58#hinu15#su352" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym28#page58#hinu15#su352#kcond161" name="iodPF" predicate="in" implied="false"/>
+      </Selector>
+      <HierarchicalIndexLevel id="mov1#hym28#page58#hinu15#hiulvl23" name="Level6" entity="ent77" role="rel62#role123" displayAttributes="ent77#att479">
+        <Selector id="mov1#hym28#page58#hinu15#hiulvl23#su353" defaultPolicy="fill" booleanOperator="and">
+          <RelationshipRoleCondition id="mov1#hym28#page58#hinu15#hiulvl23#su353#rcond214" name="RoleCondition189" predicate="in" implied="false" role="rel62#role123"/>
+          <RelationshipRoleCondition id="mov1#hym28#page58#hinu15#hiulvl23#su353#rcond215" name="RoleCondition194" predicate="in" implied="false" role="rel63#role125"/>
+        </Selector>
+      </HierarchicalIndexLevel>
+    </HierarchicalIndexUnit>
+    <HierarchicalIndexUnit id="mov1#hym28#page58#hinu16" name="Apoderados" gr:x="405" gr:y="10" sortable="false" entity="ent39" levelOrder="mov1#hym28#page58#hinu16#hiulvl24" displayAttributes="userName ent39#att268 ent39#att272 ent39#att271 ent39#att270" blockWindow="10">
+      <HierarchicalIndexLevel id="mov1#hym28#page58#hinu16#hiulvl24" name="Level3" entity="ent66" role="rel39#role78" displayAttributes="ent66#att412 ent66#att413">
+        <Selector id="mov1#hym28#page58#hinu16#hiulvl24#su354" defaultPolicy="fill" booleanOperator="and">
+          <RelationshipRoleCondition id="mov1#hym28#page58#hinu16#hiulvl24#su354#rcond216" name="RoleCondition192" predicate="in" implied="false" role="rel41#role82"/>
+          <RelationshipRoleCondition id="mov1#hym28#page58#hinu16#hiulvl24#su354#rcond217" name="RoleCondition200" predicate="in" implied="false" role="rel39#role78"/>
+        </Selector>
+      </HierarchicalIndexLevel>
+      <Selector id="mov1#hym28#page58#hinu16#su355" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym28#page58#hinu16#su355#kcond162" name="KeyCondition140" predicate="in" implied="false"/>
+      </Selector>
+    </HierarchicalIndexUnit>
+    <NoOpContentUnit id="mov1#hym28#page58#gctu23" name="tituloTablaAmin" gr:x="550" gr:y="0"/>
+    <NoOpContentUnit id="mov1#hym28#page58#gctu24" name="tituloTablaApoderados" gr:x="555" gr:y="140"/>
+    <NoOpContentUnit id="mov1#hym28#page58#gctu25" name="tituloTablaNombramientos" gr:x="550" gr:y="75"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym28#page58#mssu42"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym28#page58#enu132" layout:frameLayout="None">
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+          <layout:Field field="mov1#hym28#page58#enu132#fld224" layout:fieldVisibilityConditionVariable="mov1#hym28#page58#var93"/>
+          <layout:Field field="mov1#hym28#page58#enu132#sfld84">
+            <layout:LayoutParameter name="label-position" value="top" type="field"/>
+          </layout:Field>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym28#page58#gctu24" layout:frameLayout="gobmxStyle/tituloApoderados"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym28#page58#hinu15">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="ent39#att268"/>
+          <layout:Attribute attribute="ent39#att272"/>
+          <layout:Attribute attribute="ent39#att271"/>
+          <layout:Attribute attribute="ent39#att270"/>
+          <layout:Attribute attribute="ent64#att404"/>
+          <layout:Attribute attribute="ent64#att405"/>
+          <layout:Attribute attribute="ent77#att479"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym28#page58#gctu25" layout:frameLayout="gobmxStyle/tituloNombramientos"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym28#page58#hinu14">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="ent39#att268"/>
+          <layout:Attribute attribute="ent39#att272"/>
+          <layout:Attribute attribute="ent39#att271"/>
+          <layout:Attribute attribute="ent39#att270"/>
+          <layout:Attribute attribute="ent65#att408"/>
+          <layout:Attribute attribute="ent65#att409"/>
+          <layout:Attribute attribute="ent77#att480"/>
+          <layout:Link link="mov1#hym28#page58#hinu14#ln1124"/>
+          <layout:Link link="mov1#hym28#page58#hinu14#ln1126"/>
+          <layout:Link link="mov1#hym28#page58#hinu14#ln1127"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym28#page58#gctu23" layout:frameLayout="gobmxStyle/tituloAdmin"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym28#page58#hinu16">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="ent39#att268"/>
+          <layout:Attribute attribute="ent39#att272"/>
+          <layout:Attribute attribute="ent39#att271"/>
+          <layout:Attribute attribute="ent39#att270"/>
+          <layout:Attribute attribute="ent66#att412"/>
+          <layout:Attribute attribute="ent66#att413"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym28#page58#enu87" layout:frameLayout="None">
+          <layout:Link link="mov1#hym28#page58#enu87#ln991" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link link="mov1#hym28#page58#enu87#ln992" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+  <Variable id="mov1#hym28#page58#var93" name="ocultaOID" type="boolean" value="false"/>
+</Page>

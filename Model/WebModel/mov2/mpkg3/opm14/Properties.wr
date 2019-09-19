@@ -1,0 +1,57 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg3#opm14" name="revocarRol" gr:x="170" gr:y="50">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg3#opm14#icu33" gr:x="-300" gr:y="65">
+      <InputCollectorParameter id="mov2#mpkg3#opm14#icu33#icp13" name="curp"/>
+      <OKLink id="mov2#mpkg3#opm14#icu33#oln249" name="OKFlow240" to="mov2#mpkg3#opm14#seu9">
+        <LinkParameter id="mov2#mpkg3#opm14#icu33#oln249#par80" name="curp_PASSING" source="mov2#mpkg3#opm14#icu33#icp13" passing="true"/>
+        <LinkParameter id="mov2#mpkg3#opm14#icu33#oln249#par233" name="rol_Rol" source="mov2#mpkg3#opm14#icu33#icp14" target="mov2#mpkg3#opm14#seu9#su17#acond14"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#mpkg3#opm14#icu33#icp14" name="rol"/>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#mpkg3#opm14#seu8" name="buscarPF" gr:x="210" gr:y="55" entity="ent39">
+      <Selector id="mov2#mpkg3#opm14#seu8#su14" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg3#opm14#seu8#su14#acond13" name="curp" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+        <RelationshipRoleCondition id="mov2#mpkg3#opm14#seu8#su14#rcond6" name="rol" predicate="in" implied="false" role="User2Group.DefaultGroup2User"/>
+      </Selector>
+      <OKLink id="mov2#mpkg3#opm14#seu8#oln250" name="OKFlow221" to="mov2#mpkg3#opm14#inn18">
+        <LinkParameter id="mov2#mpkg3#opm14#seu8#oln250#par81" name="oid_Input" source="userOIDArray" target="mov2#mpkg3#opm14#inn18.isnotnull"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm14#seu8#kln77" name="KOFlow116" to="mov2#mpkg3#opm14#kocu9" gr:bendpoints="40,177,-840,12;747,181,-133,16">
+        <LinkParameter id="mov2#mpkg3#opm14#seu8#kln77#par82" name="Error al validar si el usuario ya existe._msj" target="mov2#mpkg3#opm14#kocu9#ocp12" sourceValue="Error al con al consultar el estus de la persona a la cual quitar el rol de Fedatario."/>
+      </KOLink>
+      <Link id="mov2#mpkg3#opm14#seu8#ln44" name="Flow285" to="mov2#mpkg3#opm14#dcnu1" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="97,-56,-528,-56;494,-54,-131,-54"/>
+    </SelectorUnit>
+    <IsNotNullUnit id="mov2#mpkg3#opm14#inn18" name="&#191;Existe?" gr:x="395" gr:y="75">
+      <OKLink id="mov2#mpkg3#opm14#inn18#oln251" name="OKFlow242" to="mov2#mpkg3#opm14#dcnu1" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg3#opm14#inn18#kln78" name="KOFlow128" to="mov2#mpkg3#opm14#kocu9" gr:bendpoints="38,162,-662,-3">
+        <LinkParameter id="mov2#mpkg3#opm14#inn18#kln78#par83" name="Ese usuario no cuenta con el rol de Fedatario._msj" target="mov2#mpkg3#opm14#kocu9#ocp12" sourceValue="Ese usuario no cuenta con el rol de Fedatario."/>
+      </KOLink>
+    </IsNotNullUnit>
+    <KOCollectorUnit id="mov2#mpkg3#opm14#kocu9" name="KO" gr:x="1025" gr:y="230">
+      <OutputCollectorParameter id="mov2#mpkg3#opm14#kocu9#ocp12" name="msj"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit id="mov2#mpkg3#opm14#okcu9" name="OK" gr:x="1025" gr:y="60"/>
+    <DisconnectUnit id="mov2#mpkg3#opm14#dcnu1" name="quitarRolFedatario" gr:x="575" gr:y="55" relationship="Group2User">
+      <SourceSelector id="mov2#mpkg3#opm14#dcnu1#su15" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg3#opm14#dcnu1#su15#kcond6" name="KeyCondition51" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov2#mpkg3#opm14#dcnu1#su16" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg3#opm14#dcnu1#su16#kcond7" name="KeyCondition52" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov2#mpkg3#opm14#dcnu1#oln401" name="OKFlow243" to="mov2#mpkg3#opm14#okcu9" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg3#opm14#dcnu1#kln79" name="KOFlow129" to="mov2#mpkg3#opm14#kocu9" gr:bendpoints="56,149,-434,-16;366,152,-124,-13">
+        <LinkParameter id="mov2#mpkg3#opm14#dcnu1#kln79#par84" name="Error al quitar el rol de fedatario_msj" target="mov2#mpkg3#opm14#kocu9#ocp12" sourceValue="Error al quitar el rol de fedatario"/>
+      </KOLink>
+    </DisconnectUnit>
+    <SelectorUnit id="mov2#mpkg3#opm14#seu9" name="buscarRolF" gr:x="-5" gr:y="60" entity="Group">
+      <Selector id="mov2#mpkg3#opm14#seu9#su17" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg3#opm14#seu9#su17#acond14" name="Rol" predicate="eq" booleanOperator="or" implied="false" attributes="groupName"/>
+      </Selector>
+      <OKLink id="mov2#mpkg3#opm14#seu9#oln402" name="OKFlow241" to="mov2#mpkg3#opm14#seu8">
+        <LinkParameter id="mov2#mpkg3#opm14#seu9#oln402#par85" name="curp_PASSING_curp" sourceLinkParameter="mov2#mpkg3#opm14#icu33#oln249#par80" target="mov2#mpkg3#opm14#seu8#su14#acond13"/>
+        <LinkParameter id="mov2#mpkg3#opm14#seu9#oln402#par232" name="oid_rol [oid]" source="groupOIDArray" target="mov2#mpkg3#opm14#seu8#su14#rcond6.userOID"/>
+      </OKLink>
+      <Link id="mov2#mpkg3#opm14#seu9#ln45" name="Flow287" to="mov2#mpkg3#opm14#dcnu1" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="147,-64,-683,-64;705,-63,-125,-63"/>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,164 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm4" name="validarAcciones" gr:x="-170" gr:y="690">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm4#icu105" gr:x="30" gr:y="60" linkOrder="mov2#opm4#icu105#ln809">
+      <InputCollectorParameter id="mov2#opm4#icu105#icp239" name="EAccionesCF"/>
+      <InputCollectorParameter id="mov2#opm4#icu105#icp240" name="EAccionesCV"/>
+      <Link id="mov2#opm4#icu105#ln802" name="Flow1341" to="mov2#opm4#scu83" type="transport" validate="true" gr:bendpoints="208,161,-777,131;648,171,-337,141">
+        <LinkParameter id="mov2#opm4#icu105#ln802#par2343" name="EAccionesCF_EAccionesCF" source="mov2#opm4#icu105#icp239" target="mov2#opm4#scu83.EAccionesCF"/>
+        <LinkParameter id="mov2#opm4#icu105#ln802#par2344" name="EAccionesCV_EAccionesCV" source="mov2#opm4#icu105#icp240" target="mov2#opm4#scu83.EAccionesCV"/>
+        <LinkParameter id="mov2#opm4#icu105#ln802#par2345" name="inputAccionesCF_inputAccionesCF" source="mov2#opm4#icu105#icp242" target="mov2#opm4#scu83.inputAccionesCF"/>
+        <LinkParameter id="mov2#opm4#icu105#ln802#par2346" name="inputAccionesCV_inputAccionesCV" source="mov2#opm4#icu105#icp241" target="mov2#opm4#scu83.inputAccionesCV"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm4#icu105#icp241" name="inputAccionesCV"/>
+      <InputCollectorParameter id="mov2#opm4#icu105#icp242" name="inputAccionesCF"/>
+      <InputCollectorParameter id="mov2#opm4#icu105#icp243" name="validacion"/>
+      <Link id="mov2#opm4#icu105#ln803" name="OKFlow1296" to="mov2#opm4#scu84" type="transport" gr:bendpoints="181,-158,-139,-158">
+        <LinkParameter id="mov2#opm4#icu105#ln803#par2347" name="inputAccionesCF_inputAccionesCF" source="mov2#opm4#icu105#icp242" target="mov2#opm4#scu84.inputAccionesCF"/>
+        <LinkParameter id="mov2#opm4#icu105#ln803#par2348" name="inputAccionesCV_inputAccionesCV" source="mov2#opm4#icu105#icp241" target="mov2#opm4#scu84.inputAccionesCV"/>
+      </Link>
+      <OKLink id="mov2#opm4#icu105#oln736" name="OKFlow1342" to="mov2#opm4#switch41">
+        <LinkParameter id="mov2#opm4#icu105#oln736#par2349" name="validacion_Switch" source="mov2#opm4#icu105#icp243" target="mov2#opm4#switch41.switch"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm4#icu105#icp244" name="oidPM"/>
+      <Link id="mov2#opm4#icu105#ln809" name="Flow809" to="mov2#opm4#seu140" type="transport" validate="true" gr:bendpoints="270,-159,-240,-159">
+        <LinkParameter id="mov2#opm4#icu105#ln809#par2367" name="oidPM_PMoid [oid]" source="mov2#opm4#icu105#icp244" target="mov2#opm4#seu140#su250#rcond137.userOID"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#opm4#okcu71" name="tabla completa" gr:x="1585" gr:y="-10"/>
+    <QueryUnit id="mov2#opm4#qu1" name="accionesCF" gr:x="785" gr:y="110" mode="select" language="SQL">
+      <QueryText xml:space="preserve">select sum(NUMACCIONES) FROM ACCIONES WHERE estructuraaccionaria_oid = (:eaOID)</QueryText>
+      <QueryInput id="mov2#opm4#qu1#qi1" name="eaOID" required="true" type="integer"/>
+      <QueryOutput id="mov2#opm4#qu1#qo1" name="totalAccionesCF" type="integer"/>
+      <OKLink id="mov2#opm4#qu1#oln737" name="OKFlow1298" to="mov2#opm4#seu139">
+        <LinkParameter id="mov2#opm4#qu1#oln737#par2350" name="V_tipoAccion" target="mov2#opm4#seu139#su249#acond137" sourceValue="V"/>
+      </OKLink>
+      <Link id="mov2#opm4#qu1#ln804" name="Flow1339" to="mov2#opm4#scu83" type="transport" validate="true" gr:bendpoints="242,-140,-313,-150">
+        <LinkParameter id="mov2#opm4#qu1#ln804#par2351" name="QueryOutput1_totalAccionesCF" source="mov2#opm4#qu1#qo1" target="mov2#opm4#scu83.totalAccionesCF"/>
+      </Link>
+      <KOLink id="mov2#opm4#qu1#kln333" name="KOFlow546" to="mov2#opm4#kocu57" gr:bendpoints="98,203,-847,38">
+        <LinkParameter id="mov2#opm4#qu1#kln333#par2352" name="Error al obtener sumatoria de acciones_mensaje" target="mov2#opm4#kocu57#ocp189" sourceValue="Error al obtener sumatoria de acciones"/>
+      </KOLink>
+    </QueryUnit>
+    <SelectorUnit id="mov2#opm4#seu139" name="EAoidCV" gr:x="950" gr:y="90" entity="ent60">
+      <Selector id="mov2#opm4#seu139#su249" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm4#seu139#su249#rcond136" name="PMoid" predicate="in" implied="false" role="rel35#role70"/>
+        <AttributesCondition id="mov2#opm4#seu139#su249#acond137" name="tipoAccion" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att391"/>
+      </Selector>
+      <OKLink id="mov2#opm4#seu139#oln738" name="OKFlow1299" to="mov2#opm4#qu2">
+        <LinkParameter id="mov2#opm4#seu139#oln738#par2353" name="oid_eaOID" source="ent60#att389Array" target="mov2#opm4#qu2.mov2#opm4#qu2#qi2"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm4#seu140" name="EAoidCF" gr:x="570" gr:y="85" entity="ent60" linkOrder="mov2#opm4#seu140#ln811">
+      <Selector id="mov2#opm4#seu140#su250" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm4#seu140#su250#rcond137" name="PMoid" predicate="in" implied="false" role="rel35#role70"/>
+        <AttributesCondition id="mov2#opm4#seu140#su250#acond138" name="tipoAccion" predicate="eq" booleanOperator="or" implied="false" attributes="ent60#att391"/>
+      </Selector>
+      <OKLink id="mov2#opm4#seu140#oln739" name="OKFlow1297" to="mov2#opm4#qu1">
+        <LinkParameter id="mov2#opm4#seu140#oln739#par2354" name="oid_eaOID" source="ent60#att389Array" target="mov2#opm4#qu1.mov2#opm4#qu1#qi1"/>
+      </OKLink>
+      <Link id="mov2#opm4#seu140#ln811" name="Flow811" to="mov2#opm4#seu139" type="transport" validate="true" gr:bendpoints="190,-122,-190,-127">
+        <LinkParameter id="mov2#opm4#seu140#ln811#par2368" name="EstructuraAccionariaToPersonaMoral.oid_PMoid [oid]" source="rel35#role69_userOIDArray" target="mov2#opm4#seu139#su249#rcond136.userOID"/>
+        <LinkParameter id="mov2#opm4#seu140#ln811#par2369" name="tipoAccion_tipoAccion" source="ent60#att391Array" target="mov2#opm4#seu139#su249#acond137"/>
+      </Link>
+    </SelectorUnit>
+    <QueryUnit id="mov2#opm4#qu2" name="accionesCV" gr:x="1165" gr:y="120" mode="select" language="SQL">
+      <QueryText xml:space="preserve">select sum(NUMACCIONES) FROM ACCIONES WHERE estructuraaccionaria_oid = (:eaOID)</QueryText>
+      <QueryInput id="mov2#opm4#qu2#qi2" name="eaOID" required="true" type="integer"/>
+      <QueryOutput id="mov2#opm4#qu2#qo2" name="totalAccionesCV" type="integer"/>
+      <Link id="mov2#opm4#qu2#ln805" name="Flow1340" to="mov2#opm4#scu83" type="transport" validate="true" gr:bendpoints="70,-148,-95,-148">
+        <LinkParameter id="mov2#opm4#qu2#ln805#par2355" name="totalAcciones_totalAccionesCV" source="mov2#opm4#qu2#qo2" target="mov2#opm4#scu83.totalAccionesCV"/>
+      </Link>
+      <OKLink id="mov2#opm4#qu2#oln740" name="OKFlow1303" to="mov2#opm4#scu83" automaticCoupling="true"/>
+      <KOLink id="mov2#opm4#qu2#kln334" name="KOFlow547" to="mov2#opm4#kocu57" gr:bendpoints="-19,126,-584,-29">
+        <LinkParameter id="mov2#opm4#qu2#kln334#par2356" name="Error al obtener sumatoria de acciones_mensaje" target="mov2#opm4#kocu57#ocp189" sourceValue="Error al obtener sumatoria de acciones"/>
+      </KOLink>
+    </QueryUnit>
+    <ScriptUnit id="mov2#opm4#scu83" name="validarTotalAcciones" gr:x="1295" gr:y="120">
+      <ScriptUnitText xml:space="preserve">#input int totalAccionesCF, int totalAccionesCV, int EAccionesCF, int EAccionesCV, int inputAccionesCF, int inputAccionesCV
+#output valido
+
+
+if (totalAccionesCF == null)
+totalAccionesCF = 0
+
+if (totalAccionesCV == null)
+totalAccionesCV = 0
+
+int sumaAccionesCF = totalAccionesCF + inputAccionesCF
+int sumaAccionesCV = totalAccionesCV + inputAccionesCV
+
+
+boolean valido = false
+
+
+if (sumaAccionesCF == EAccionesCF &amp;&amp; sumaAccionesCV == EAccionesCV)
+{
+	valido = true
+}
+else
+{
+	if (sumaAccionesCF &gt; EAccionesCF || sumaAccionesCV &gt; EAccionesCV)
+		{
+			valido = null;
+		}
+}
+
+return["valido":valido]</ScriptUnitText>
+      <OKLink id="mov2#opm4#scu83#oln741" name="OKFlow1304" to="mov2#opm4#switch39">
+        <LinkParameter id="mov2#opm4#scu83#oln741#par2359" name="valido_Switch" source="result(valido)" target="mov2#opm4#switch39.switch"/>
+      </OKLink>
+      <KOLink id="mov2#opm4#scu83#kln335" name="KOFlow598" to="mov2#opm4#kocu57">
+        <LinkParameter id="mov2#opm4#scu83#kln335#par2360" name="Error al obtener numero de acciones_mensaje" target="mov2#opm4#kocu57#ocp189" sourceValue="Error al obtener numero de acciones"/>
+      </KOLink>
+    </ScriptUnit>
+    <SwitchUnit id="mov2#opm4#switch39" name="&#191;valido?" gr:x="1480" gr:y="115">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov2#opm4#switch39#oln742" name="OKFlow1300" to="mov2#opm4#okcu71" code="true" automaticCoupling="true"/>
+      <OKLink id="mov2#opm4#switch39#oln743" name="OKFlow1301" to="mov2#opm4#okcu72" code="false" automaticCoupling="true"/>
+      <OKLink id="mov2#opm4#switch39#oln744" name="OKFlow1302" to="mov2#opm4#kocu57">
+        <LinkParameter id="mov2#opm4#switch39#oln744#par2361" name="La suma de acciones supera los valores de la estructura accionaria_mensaje" target="mov2#opm4#kocu57#ocp189" sourceValue="La suma de acciones supera los valores de la estructura accionaria"/>
+      </OKLink>
+    </SwitchUnit>
+    <KOCollectorUnit id="mov2#opm4#kocu57" name="rebasa valores de estructura accionaria" gr:x="1585" gr:y="265">
+      <OutputCollectorParameter id="mov2#opm4#kocu57#ocp189" name="mensaje"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit id="mov2#opm4#okcu72" name="falta agregar accionistas" gr:x="1585" gr:y="120"/>
+    <ScriptUnit id="mov2#opm4#scu84" name="entradaAcciones" gr:x="415" gr:y="105">
+      <ScriptUnitText xml:space="preserve">#input Integer inputAccionesCF, Integer inputAccionesCV
+#output valido
+
+boolean valido = false
+
+if((inputAccionesCF+inputAccionesCV) &gt;= 1 &amp;&amp; inputAccionesCF &gt;= 0 &amp;&amp; inputAccionesCV &gt;= 0)
+valido = true
+
+else valido = false
+
+return["valido":valido]</ScriptUnitText>
+      <OKLink id="mov2#opm4#scu84#oln745" name="OKFlow1306" to="mov2#opm4#switch40">
+        <LinkParameter id="mov2#opm4#scu84#oln745#par2362" name="valido_Switch" source="result(valido)" target="mov2#opm4#switch40.switch"/>
+      </OKLink>
+      <KOLink id="mov2#opm4#scu84#kln336" name="KOFlow538" to="mov2#opm4#kocu57" gr:bendpoints="-8,199,-1418,14">
+        <LinkParameter id="mov2#opm4#scu84#kln336#par2363" name="El n&#250;mero de acciones emitidas no es v&#225;lido_mensaje" target="mov2#opm4#kocu57#ocp189" sourceValue="El n&#250;mero de acciones emitidas no es v&#225;lido"/>
+      </KOLink>
+    </ScriptUnit>
+    <SwitchUnit id="mov2#opm4#switch40" name="valido?" gr:x="525" gr:y="-20">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov2#opm4#switch40#oln746" name="OKFlow1307" to="mov2#opm4#seu140" code="true">
+        <LinkParameter id="mov2#opm4#switch40#oln746#par2364" name="F_tipoAccion" target="mov2#opm4#seu140#su250#acond138" sourceValue="F"/>
+      </OKLink>
+      <OKLink id="mov2#opm4#switch40#oln747" name="OKFlow1308" to="mov2#opm4#kocu57" code="false" gr:bendpoints="-7,257,-1292,-8">
+        <LinkParameter id="mov2#opm4#switch40#oln747#par2365" name="El n&#250;mero de acciones emitidas no es v&#225;lido_mensaje" target="mov2#opm4#kocu57#ocp189" sourceValue="El n&#250;mero de acciones emitidas no es v&#225;lido"/>
+      </OKLink>
+    </SwitchUnit>
+    <SwitchUnit id="mov2#opm4#switch41" name="validar?" gr:x="290" gr:y="105">
+      <Case value="1"/>
+      <OKLink id="mov2#opm4#switch41#oln748" name="OKFlow1343" to="mov2#opm4#scu84" code="1" automaticCoupling="true"/>
+      <OKLink id="mov2#opm4#switch41#oln749" name="OKFlow1344" to="mov2#opm4#seu140" gr:bendpoints="166,81,-164,81">
+        <LinkParameter id="mov2#opm4#switch41#oln749#par2366" name="F_tipoAccion" target="mov2#opm4#seu140#su250#acond138" sourceValue="F"/>
+      </OKLink>
+    </SwitchUnit>
+  </OperationUnits>
+</OperationModule>

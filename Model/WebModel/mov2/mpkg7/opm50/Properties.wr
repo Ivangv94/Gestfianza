@@ -1,0 +1,46 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="350" gr:y="280" id="mov2#mpkg7#opm50" name="obtenerPoderes">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg7#opm50#icu74" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#mpkg7#opm50#icu74#icp190" name="rfc"/>
+      <OKLink id="mov2#mpkg7#opm50#icu74#oln566" name="OKFlow566" to="mov2#mpkg7#opm50#seu95" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="305" gr:y="60" id="mov2#mpkg7#opm50#seu95" name="obtenerDatosPM" entity="ent38" linkOrder="mov2#mpkg7#opm50#seu95#ln482">
+      <OKLink id="mov2#mpkg7#opm50#seu95#oln567" name="OKFlow567" to="mov2#mpkg7#opm50#inn31">
+        <LinkParameter id="mov2#mpkg7#opm50#seu95#oln567#par1941" name="oid_Input" source="userOIDArray" target="mov2#mpkg7#opm50#inn31.isnotnull"/>
+      </OKLink>
+      <Link id="mov2#mpkg7#opm50#seu95#ln482" name="Flow482" to="mov2#mpkg7#opm50#seu96" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="83,-58,-282,-58;253,-58,-112,-58"/>
+      <KOLink id="mov2#mpkg7#opm50#seu95#kln277" name="KOFlow277" to="mov2#mpkg7#opm50#kocu43" automaticCoupling="true" gr:bendpoints="42,143,-1088,-7"/>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="490" gr:y="70" id="mov2#mpkg7#opm50#inn31" name="&#191;Existe?">
+      <OKLink id="mov2#mpkg7#opm50#inn31#oln568" name="OKFlow568" to="mov2#mpkg7#opm50#seu96" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg7#opm50#inn31#kln276" name="KOFlow276" to="mov2#mpkg7#opm50#kocu43" automaticCoupling="true" gr:bendpoints="39,143,-931,-7"/>
+    </IsNotNullUnit>
+    <SelectorUnit gr:x="670" gr:y="55" id="mov2#mpkg7#opm50#seu96" name="BuscarMandatos" entity="ent37" linkOrder="mov2#mpkg7#opm50#seu96#ln484">
+      <Selector id="mov2#mpkg7#opm50#seu96#su185" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg7#opm50#seu96#su185#rcond107" name="pm" predicate="in" implied="false" role="rel24#role47"/>
+      </Selector>
+      <OKLink id="mov2#mpkg7#opm50#seu96#oln571" name="OKFlow571" to="mov2#mpkg7#opm50#inn32">
+        <LinkParameter id="mov2#mpkg7#opm50#seu96#oln571#par47" name="oid_Input" source="ent37#att245Array" target="mov2#mpkg7#opm50#inn32.isnotnull"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg7#opm50#seu96#kln274" name="KOFlow274" to="mov2#mpkg7#opm50#kocu43" automaticCoupling="true" gr:bendpoints="48,127,-717,7"/>
+      <Link id="mov2#mpkg7#opm50#seu96#ln484" name="Flow484" to="mov2#mpkg7#opm50#seu97" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="86,-48,-269,-48;279,-49,-76,-49"/>
+    </SelectorUnit>
+    <SelectorUnit gr:x="1045" gr:y="55" id="mov2#mpkg7#opm50#seu97" name="buscarPF" entity="ent39">
+      <OKLink id="mov2#mpkg7#opm50#seu97#oln570" name="OKFlow570" to="mov2#mpkg7#opm50#okcu44" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg7#opm50#seu97#kln260" name="KOFlow260" to="mov2#mpkg7#opm50#kocu43" automaticCoupling="true" gr:bendpoints="34,121,-376,1"/>
+      <Selector id="mov2#mpkg7#opm50#seu97#su186" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg7#opm50#seu97#su186#rcond108" name="Apodera" predicate="in" implied="false" role="rel23#role45"/>
+      </Selector>
+    </SelectorUnit>
+    <OKCollectorUnit gr:x="1390" gr:y="60" id="mov2#mpkg7#opm50#okcu44" name="OK">
+      <OutputCollectorParameter id="mov2#mpkg7#opm50#okcu44#ocp150" name="rfcPoder"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1390" gr:y="180" id="mov2#mpkg7#opm50#kocu43" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg7#opm50#kocu43#ocp149" name="msj"/>
+    </KOCollectorUnit>
+    <IsNotNullUnit gr:x="885" gr:y="70" id="mov2#mpkg7#opm50#inn32" name="&#191;Existe?">
+      <OKLink id="mov2#mpkg7#opm50#inn32#oln572" name="OKFlow572" to="mov2#mpkg7#opm50#seu97" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg7#opm50#inn32#kln83" name="KOFlow83" to="mov2#mpkg7#opm50#kocu43" automaticCoupling="true" gr:bendpoints="28,123,-547,3"/>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

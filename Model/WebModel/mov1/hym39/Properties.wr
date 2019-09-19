@@ -1,0 +1,15 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym39" gr:x="1765" gr:y="160" name="Poder Notarial - Fedatario - Poderes firmados" bpm:moduleType="activity" bpm:uuids="JG01H7LW_FYBDCX.JO4NE5QM_9V9BEM" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym39#icu100" name="Input" gr:x="-275" gr:y="85">
+      <OKLink id="mov1#hym39#icu100#oln633" name="OKLink" automaticCoupling="true" to="mov1#hym39#page116"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym39#pu144" name="Complete Activity" mode="completeActivity" gr:x="800" gr:y="0"/>
+    <ProcessUnit id="mov1#hym39#pu145" name="Save Activity" mode="saveActivity" gr:x="800" gr:y="150"/>
+    <ProcessUnit id="mov1#hym39#pu146" name="Leave Activity" mode="leaveActivity" gr:x="800" gr:y="260"/>
+    <ActivityParametersUnit id="mov1#hym39#apu61" name="Set Parameters" gr:x="560" gr:y="100">
+      <OKLink id="mov1#hym39#apu61#oln634" name="OKLink" automaticCoupling="false" to="mov1#hym39#pu144" codeRef="mov1#hym39#page116#enu153#ln780"/>
+      <OKLink id="mov1#hym39#apu61#oln637" name="OKLink" automaticCoupling="false" to="mov1#hym39#pu145" codeRef="mov1#hym39#page116#enu153#ln781"/>
+      <ActivityParameter id="mov1#hym39#apu61#ap28" name="denominacion.OID" bpm:uuid="JPSPZB22_K74AKU"/>
+    </ActivityParametersUnit>
+  </OperationUnits>
+</HybridModule>

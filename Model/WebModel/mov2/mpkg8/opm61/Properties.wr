@@ -1,0 +1,220 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="290" gr:y="165" id="mov2#mpkg8#opm61" name="verificarDatos">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg8#opm61#icu89" gr:x="-215" gr:y="15" linkOrder="mov2#mpkg8#opm61#icu89#ln716">
+      <InputCollectorParameter id="mov2#mpkg8#opm61#icu89#icp209" name="FeNa"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm61#icu89#icp206" name="rfc"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm61#icu89#icp205" name="nombres"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm61#icu89#icp204" name="ap2"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm61#icu89#icp203" name="ap1"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm61#icu89#icp211" name="curp"/>
+      <Link id="mov2#mpkg8#opm61#icu89#ln688" name="Flow688" to="mov2#mpkg8#opm61#scu80" type="transport" validate="true" gr:bendpoints="229,-90,-1281,-90;1352,-85,-158,-85">
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln688#par2629" name="ap1_ap1" source="mov2#mpkg8#opm61#icu89#icp203" target="mov2#mpkg8#opm61#scu80.ap1"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln688#par2630" name="ap2_ap2" source="mov2#mpkg8#opm61#icu89#icp204" target="mov2#mpkg8#opm61#scu80.ap2"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln688#par2631" name="curp_curp" source="mov2#mpkg8#opm61#icu89#icp211" target="mov2#mpkg8#opm61#scu80.curp"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln688#par2632" name="FeNa_feNa" source="mov2#mpkg8#opm61#icu89#icp209" target="mov2#mpkg8#opm61#scu80.feNa"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln688#par2633" name="nombres_nombres" source="mov2#mpkg8#opm61#icu89#icp205" target="mov2#mpkg8#opm61#scu80.nombres"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln688#par2634" name="rfc_rfc" source="mov2#mpkg8#opm61#icu89#icp206" target="mov2#mpkg8#opm61#scu80.rfc"/>
+      </Link>
+      <InputCollectorParameter id="mov2#mpkg8#opm61#icu89#icp217" name="ocr"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm61#icu89#icp216" name="numEmision"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm61#icu89#icp215" name="claveElector"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm61#icu89#icp214" name="cic"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm61#icu89#icp213" name="anioReg"/>
+      <InputCollectorParameter id="mov2#mpkg8#opm61#icu89#icp212" name="anioEmision"/>
+      <Link id="mov2#mpkg8#opm61#icu89#ln692" name="Flow692" to="mov2#mpkg8#opm61#miu90" type="transport" validate="true" gr:bendpoints="209,84,-1071,84;1088,86,-192,86">
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln692#par2646" name="anioEmision_anioEmision" source="mov2#mpkg8#opm61#icu89#icp212" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp38"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln692#par2647" name="anioReg_anioReg" source="mov2#mpkg8#opm61#icu89#icp213" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp39"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln692#par2648" name="ap1_ap1" source="mov2#mpkg8#opm61#icu89#icp203" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp35"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln692#par2649" name="ap2_ap2" source="mov2#mpkg8#opm61#icu89#icp204" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp34"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln692#par2650" name="cic_cic" source="mov2#mpkg8#opm61#icu89#icp214" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp40"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln692#par2651" name="claveElector_claveElector" source="mov2#mpkg8#opm61#icu89#icp215" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp37"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln692#par2652" name="curp_curp" source="mov2#mpkg8#opm61#icu89#icp211" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp33"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln692#par2653" name="nombres_nombres" source="mov2#mpkg8#opm61#icu89#icp205" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp36"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln692#par2654" name="numEmision_numEmision" source="mov2#mpkg8#opm61#icu89#icp216" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp32"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln692#par2655" name="ocr_ocr" source="mov2#mpkg8#opm61#icu89#icp217" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp41"/>
+      </Link>
+      <OKLink id="mov2#mpkg8#opm61#icu89#oln687" name="OKFlow687" to="mov2#mpkg8#opm61#seu103">
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#oln687#par2714" name="curp_PASSING" source="mov2#mpkg8#opm61#icu89#icp211" passing="true"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#oln687#par2715" name="rfc_PASSING" source="mov2#mpkg8#opm61#icu89#icp206" passing="true"/>
+      </OKLink>
+      <Link id="mov2#mpkg8#opm61#icu89#ln716" name="Flow716" to="mov2#mpkg8#opm61#miu90" type="transport" validate="true" gr:bendpoints="317,-77,-1223,-77;1389,-65,-151,-65">
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln716#par2794" name="anioEmision_anioEmision" source="mov2#mpkg8#opm61#icu89#icp212" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp38"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln716#par2795" name="anioReg_anioReg" source="mov2#mpkg8#opm61#icu89#icp213" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp39"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln716#par2796" name="ap1_ap1" source="mov2#mpkg8#opm61#icu89#icp203" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp35"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln716#par2797" name="ap2_ap2" source="mov2#mpkg8#opm61#icu89#icp204" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp34"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln716#par2798" name="cic_cic" source="mov2#mpkg8#opm61#icu89#icp214" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp40"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln716#par2799" name="claveElector_claveElector" source="mov2#mpkg8#opm61#icu89#icp215" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp37"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln716#par2800" name="curp_curp" source="mov2#mpkg8#opm61#icu89#icp211" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp33"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln716#par2801" name="nombres_nombres" source="mov2#mpkg8#opm61#icu89#icp205" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp36"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln716#par2802" name="numEmision_numEmision" source="mov2#mpkg8#opm61#icu89#icp216" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp32"/>
+        <LinkParameter id="mov2#mpkg8#opm61#icu89#ln716#par2803" name="ocr_ocr" source="mov2#mpkg8#opm61#icu89#icp217" target="mov2#mpkg8#opm61#miu90.mov2#opm12#icu19#icp41"/>
+      </Link>
+    </InputCollectorUnit>
+    <SwitchUnit id="mov2#mpkg8#opm61#switch50" name="INE" gr:x="1175" gr:y="105">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov2#mpkg8#opm61#switch50#oln670" name="OKFlow670" to="mov2#mpkg8#opm61#miu90" automaticCoupling="true" code="true"/>
+      <OKLink id="mov2#mpkg8#opm61#switch50#oln704" name="OKFlow704" to="mov2#mpkg8#opm61#scu80" automaticCoupling="true" gr:bendpoints="249,68,-196,58" code="false"/>
+    </SwitchUnit>
+    <SwitchUnit id="mov2#mpkg8#opm61#switch52" name="rfc" gr:x="790" gr:y="105">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov2#mpkg8#opm61#switch52#oln669" name="OKFlow669" to="mov2#mpkg8#opm61#miu88" code="true"/>
+      <OKLink id="mov2#mpkg8#opm61#switch52#oln703" name="OKFlow703" to="mov2#mpkg8#opm61#switch50" automaticCoupling="true" gr:bendpoints="163,71,-222,71" code="false"/>
+    </SwitchUnit>
+    <ScriptUnit id="mov2#mpkg8#opm61#scu78" name="revisaCadena" gr:x="325" gr:y="105" linkOrder="mov2#mpkg8#opm61#scu78#ln690">
+      <ScriptUnitText xml:space="preserve">#input String cadena
+#output verRFC, verFirma, verINE, verCurp
+boolean verRFC = false
+boolean verINE = false
+boolean verCurp = false
+boolean verFirma = false
+
+if (cadena.indexOf('CURP') != -1)
+    verCurp = true   
+if (cadena.indexOf('RFC') != -1)
+    verCurp = true   
+//efirma
+if (cadena.indexOf('FIRMA') != -1)
+    verFirma = true   
+if (cadena.indexOf('Credencial de Elector') != -1)
+    verINE = true   
+return["verRFC":verRFC, "verFirma":verFirma, "verINE":verINE, "verCurp":verCurp]</ScriptUnitText>
+      <OKLink id="mov2#mpkg8#opm61#scu78#oln671" name="OKFlow671" to="mov2#mpkg8#opm61#miu89">
+        <LinkParameter id="mov2#mpkg8#opm61#scu78#oln671#par2624" name="verRFC_PASSING" source="result(verRFC)" passing="true"/>
+        <LinkParameter id="mov2#mpkg8#opm61#scu78#oln671#par2719" name="curp_PASSING_curp" sourceLinkParameter="mov2#mpkg8#opm61#seu103#oln686#par2717" target="mov2#mpkg8#opm61#miu89.mov2#opm5#icu10#icp1"/>
+      </OKLink>
+      <Link id="mov2#mpkg8#opm61#scu78#ln685" name="Flow685" to="mov2#mpkg8#opm61#switch50" type="transport" validate="true" gr:bendpoints="98,-65,-697,-65;697,-65,-98,-65">
+        <LinkParameter id="mov2#mpkg8#opm61#scu78#ln685#par2623" name="verINE_Switch" source="result(verINE)" target="mov2#mpkg8#opm61#switch50.switch"/>
+      </Link>
+      <Link id="mov2#mpkg8#opm61#scu78#ln690" name="Flow690" to="mov2#mpkg8#opm61#scu80" type="transport" validate="true" gr:bendpoints="95,-75,-1145,-75;1061,-74,-179,-74">
+        <LinkParameter id="mov2#mpkg8#opm61#scu78#ln690#par2642" name="verCurp_verCURP" source="result(verCurp)" target="mov2#mpkg8#opm61#scu80.verCURP"/>
+        <LinkParameter id="mov2#mpkg8#opm61#scu78#ln690#par2643" name="verRFC_verRFC" source="result(verRFC)" target="mov2#mpkg8#opm61#scu80.verRFC"/>
+      </Link>
+    </ScriptUnit>
+    <ModuleInstanceUnit gr:x="900" gr:y="100" id="mov2#mpkg8#opm61#miu88" action="true" moduleId="mov2#opm9">
+      <OKLink id="mov2#mpkg8#opm61#miu88#oln678" name="OKFlow678" to="mov2#mpkg8#opm61#switch50" automaticCoupling="true"/>
+      <Link id="mov2#mpkg8#opm61#miu88#ln689" name="Flow689" to="mov2#mpkg8#opm61#scu80" type="transport" validate="true" gr:bendpoints="117,-55,-493,-55;454,-57,-156,-57" codeRef="mov2#opm9#okcu3">
+        <LinkParameter id="mov2#mpkg8#opm61#miu88#ln689#par2635" name="sAnio_sAnio" source="mov2#opm9#okcu3#ocp16" target="mov2#mpkg8#opm61#scu80.sAnio"/>
+        <LinkParameter id="mov2#mpkg8#opm61#miu88#ln689#par2636" name="sAp1_sAp1" source="mov2#opm9#okcu3#ocp18" target="mov2#mpkg8#opm61#scu80.sAp1"/>
+        <LinkParameter id="mov2#mpkg8#opm61#miu88#ln689#par2637" name="sAp2_sAp2" source="mov2#opm9#okcu3#ocp19" target="mov2#mpkg8#opm61#scu80.sAp2"/>
+        <LinkParameter id="mov2#mpkg8#opm61#miu88#ln689#par2638" name="sCurp_sCurp" source="mov2#opm9#okcu3#ocp20" target="mov2#mpkg8#opm61#scu80.sCurp"/>
+        <LinkParameter id="mov2#mpkg8#opm61#miu88#ln689#par2639" name="sDia_sDia" source="mov2#opm9#okcu3#ocp14" target="mov2#mpkg8#opm61#scu80.sDia"/>
+        <LinkParameter id="mov2#mpkg8#opm61#miu88#ln689#par2640" name="sMes_sMes" source="mov2#opm9#okcu3#ocp15" target="mov2#mpkg8#opm61#scu80.sMes"/>
+        <LinkParameter id="mov2#mpkg8#opm61#miu88#ln689#par2641" name="sNombres_sNombres" source="mov2#opm9#okcu3#ocp17" target="mov2#mpkg8#opm61#scu80.sNombres"/>
+      </Link>
+      <KOLink id="mov2#mpkg8#opm61#miu88#kln309" name="KOFlow309" to="mov2#mpkg8#opm61#switch50" automaticCoupling="true" gr:bendpoints="119,15,-61,15"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="495" gr:y="100" id="mov2#mpkg8#opm61#miu89" action="true" moduleId="mov2#opm5">
+      <OKLink id="mov2#mpkg8#opm61#miu89#oln674" name="OKFlow674" to="mov2#mpkg8#opm61#switch52">
+        <LinkParameter id="mov2#mpkg8#opm61#miu89#oln674#par2625" name="verRFC_PASSING_Switch" sourceLinkParameter="mov2#mpkg8#opm61#scu78#oln671#par2624" target="mov2#mpkg8#opm61#switch52.switch"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg8#opm61#miu89#kln311" name="KOFlow311" to="mov2#mpkg8#opm61#switch52" gr:bendpoints="132,15,-88,15">
+        <LinkParameter id="mov2#mpkg8#opm61#miu89#kln311#par2645" name="verRFC_PASSING_Switch" sourceLinkParameter="mov2#mpkg8#opm61#scu78#oln671#par2624" target="mov2#mpkg8#opm61#switch52.switch"/>
+      </KOLink>
+      <Link id="mov2#mpkg8#opm61#miu89#ln691" name="Flow691" to="mov2#mpkg8#opm61#scu80" type="transport" validate="true" gr:bendpoints="137,-82,-888,-82;849,-79,-176,-79" codeRef="mov2#opm5#okcu1">
+        <LinkParameter id="mov2#mpkg8#opm61#miu89#ln691#par2804" name="rAnio_rAnio" source="mov2#opm5#okcu1#ocp8" target="mov2#mpkg8#opm61#scu80.rAnio"/>
+        <LinkParameter id="mov2#mpkg8#opm61#miu89#ln691#par2805" name="rAp1_rAp1" source="mov2#opm5#okcu1#ocp4" target="mov2#mpkg8#opm61#scu80.rAp1"/>
+        <LinkParameter id="mov2#mpkg8#opm61#miu89#ln691#par2806" name="rAp2_rAp2" source="mov2#opm5#okcu1#ocp5" target="mov2#mpkg8#opm61#scu80.rAp2"/>
+        <LinkParameter id="mov2#mpkg8#opm61#miu89#ln691#par2807" name="rCurp_rCurp" source="mov2#opm5#okcu1#ocp9" target="mov2#mpkg8#opm61#scu80.rCurp"/>
+        <LinkParameter id="mov2#mpkg8#opm61#miu89#ln691#par2808" name="rDia_rDia" source="mov2#opm5#okcu1#ocp6" target="mov2#mpkg8#opm61#scu80.rDia"/>
+        <LinkParameter id="mov2#mpkg8#opm61#miu89#ln691#par2809" name="rMes_rMes" source="mov2#opm5#okcu1#ocp7" target="mov2#mpkg8#opm61#scu80.rMes"/>
+        <LinkParameter id="mov2#mpkg8#opm61#miu89#ln691#par2810" name="rNombres_rNombres" source="mov2#opm5#okcu1#ocp1" target="mov2#mpkg8#opm61#scu80.rNombres"/>
+        <LinkParameter id="mov2#mpkg8#opm61#miu89#ln691#par2811" name="verRFC_PASSING_verRFC" sourceLinkParameter="mov2#mpkg8#opm61#scu78#oln671#par2624" target="mov2#mpkg8#opm61#scu80.verRFC"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="1360" gr:y="100" id="mov2#mpkg8#opm61#miu90" action="true" moduleId="mov2#opm12">
+      <OKLink id="mov2#mpkg8#opm61#miu90#oln675" name="OKFlow675" to="mov2#mpkg8#opm61#scu80">
+        <LinkParameter id="mov2#mpkg8#opm61#miu90#oln675#par2628" name="identico_identicoINE" source="mov2#opm12#okcu8#ocp32" target="mov2#mpkg8#opm61#scu80.identicoINE"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg8#opm61#miu90#kln310" name="KOFlow310" to="mov2#mpkg8#opm61#scu80" gr:bendpoints="117,15,-103,15">
+        <LinkParameter id="mov2#mpkg8#opm61#miu90#kln310#par2644" name="false_identicoINE" sourceValue="false" target="mov2#mpkg8#opm61#scu80.identicoINE"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <KOCollectorUnit gr:x="1835" gr:y="300" id="mov2#mpkg8#opm61#kocu51" name="KO"/>
+    <ScriptUnit id="mov2#mpkg8#opm61#scu80" name="compararDatos" gr:x="1605" gr:y="105">
+      <ScriptUnitText xml:space="preserve">#input String rDia,String rMes,String rAnio,String rNombres,String rAp1,String rAp2,String rCurp,String sDia,String sMes,String sAnio,String sNombres,String sAp1,String sAp2,String sCurp,String rfc,String feNa,String nombres,String ap1,String ap2,String curp, verRFC, verCURP, identicoINE
+#output identico
+/*
+boolean identicoINE = true
+boolean verCURP = true
+boolean verRFC = false
+
+String rDia = "12"
+String rMes = "05"
+String rAnio = "1995"
+String rNombres = "AXEL"
+String rAp1 = "RUBIO"
+String rAp2 = "FRANCISCO"
+String rCurp = "RUFA950512"
+String sDia = "12"
+String sMes = "05"
+String sAnio = "1995"
+String sNombres = "AXEL"
+String sAp1 = "RUBIO"
+String sAp2 = "FRANCISCO"
+String sCurp = "RUFA950512"
+String rfc = "RUFA950512HB5"
+String feNa = "12-05-1995"
+String nombres = "AXEL"
+String ap1 = "RUBIO"
+String ap2 = "FRANCISCO"
+String curp = "RUFA950512"
+*/
+boolean identico = false
+String renapo, sat , usuario
+String [] fechaNac = feNa.split('-')
+String dia = fechaNac[0];
+String mes = fechaNac[1];
+String anio = fechaNac[2];
+
+if (ap2 == "") ap2 = rAp2
+renapo = rDia + rMes + rAnio + rNombres + rAp1 + rAp2 + rCurp
+sat = sDia + sMes + sAnio + sNombres + sAp1 + sAp2 + sCurp
+usuario = (dia + mes + anio + nombres + ap1 + ap2 + curp).toUpperCase()
+
+
+if (verCURP == true &amp;&amp; verRFC == true){
+    if (renapo.equals(sat) &amp;&amp; renapo.equals(usuario))
+    {
+        identico = true
+    }
+}
+else if (verCURP == true &amp;&amp; verRFC == false)
+{
+    if (renapo.equals(usuario))
+    {
+        identico = true
+    }
+}
+
+if(identicoINE == false)
+{
+    identico = false
+}
+
+return["identico":identico]</ScriptUnitText>
+      <OKLink id="mov2#mpkg8#opm61#scu80#oln679" name="OKFlow679" to="mov2#mpkg8#opm61#okcu65">
+        <LinkParameter id="mov2#mpkg8#opm61#scu80#oln679#par2661" name="identico_identico" source="result(identico)" target="mov2#mpkg8#opm61#okcu65#ocp179"/>
+      </OKLink>
+    </ScriptUnit>
+    <OKCollectorUnit gr:x="1835" gr:y="95" id="mov2#mpkg8#opm61#okcu65" name="OK">
+      <OutputCollectorParameter id="mov2#mpkg8#opm61#okcu65#ocp179" name="identico"/>
+    </OKCollectorUnit>
+    <GetUnit gr:x="110" gr:y="-45" id="mov2#mpkg8#opm61#gtu38" name="getUser" contextParameters="UserCtxParam" linkOrder="mov2#mpkg8#opm61#gtu38#ln702">
+      <Link id="mov2#mpkg8#opm61#gtu38#ln702" name="Flow702" to="mov2#mpkg8#opm61#seu103" type="transport" validate="true">
+        <LinkParameter id="mov2#mpkg8#opm61#gtu38#ln702#par2723" name="UserCtxParam.oid_userOID" source="mov2#mpkg8#opm61#gtu38.UserCtxParam" target="mov2#mpkg8#opm61#seu103#su198#acond107"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="120" gr:y="90" id="mov2#mpkg8#opm61#seu103" name="obtenerCadena" entity="ent53">
+      <Selector id="mov2#mpkg8#opm61#seu103#su198" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg8#opm61#seu103#su198#acond107" name="userOID" predicate="eq" booleanOperator="or" implied="false" attributes="ent53#att353"/>
+      </Selector>
+      <OKLink id="mov2#mpkg8#opm61#seu103#oln686" name="OKFlow686" to="mov2#mpkg8#opm61#scu78">
+        <LinkParameter id="mov2#mpkg8#opm61#seu103#oln686#par2716" name="cadenaOriginal_cadena" source="ent53#att342Array" target="mov2#mpkg8#opm61#scu78.cadena"/>
+        <LinkParameter id="mov2#mpkg8#opm61#seu103#oln686#par2717" name="curp_PASSING" sourceLinkParameter="mov2#mpkg8#opm61#icu89#oln687#par2714" passing="true"/>
+        <LinkParameter id="mov2#mpkg8#opm61#seu103#oln686#par2718" name="rfc_PASSING" sourceLinkParameter="mov2#mpkg8#opm61#icu89#oln687#par2715" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

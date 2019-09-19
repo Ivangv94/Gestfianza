@@ -1,0 +1,132 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#page27" name="Ingresa tus credenciales de acceso" secure="false" layout:pageLayout="gobmxStyle/LoginEfirma" gr:x="690" gr:y="55" ignoreMasterPage="true" customURLName="sso">
+  <ContentUnits>
+    <EntryUnit id="sv1#page27#enu23" name="Login" linkOrder="sv1#page27#enu23#ln275" gr:x="135" gr:y="95" fieldOrder="sv1#page27#enu23#fld30 sv1#page27#enu23#fld31 sv1#page27#enu23#fld32 sv1#page27#enu23#fld33 sv1#page27#enu23#fld36 sv1#page27#enu23#fld40 sv1#page27#enu23#fld41 sv1#page27#enu23#fld42 sv1#page27#enu23#fld43 sv1#page27#enu23#fld44 sv1#page27#enu23#fld45 sv1#page27#enu23#fld46">
+      <Field id="sv1#page27#enu23#fld30" name="Username:" type="string" modifiable="true" preloaded="false">
+        <VRules>
+          <MandatoryValidationRule id="sv1#page27#enu23#fld30#mnd2" name="NotNull"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#page27#enu23#fld31" name="Password:" type="string" modifiable="true" preloaded="false"/>
+      <Field id="sv1#page27#enu23#fld32" name="fileCer" type="blob" modifiable="true"/>
+      <Field id="sv1#page27#enu23#fld33" name="x509" type="string" modifiable="false"/>
+      <Field id="sv1#page27#enu23#fld36" name="tipoPersona" type="string" modifiable="false"/>
+      <Field id="sv1#page27#enu23#fld40" name="emailEmisor" type="string" modifiable="false"/>
+      <Field id="sv1#page27#enu23#fld41" name="pwdPrivateKey" type="password" modifiable="true"/>
+      <Field id="sv1#page27#enu23#fld42" name="rfcEmisor" type="string" modifiable="false"/>
+      <Field id="sv1#page27#enu23#fld43" name="fileKey" type="blob" modifiable="true"/>
+      <Field id="sv1#page27#enu23#fld44" name="curpEmisor" type="string" modifiable="false"/>
+      <Field id="sv1#page27#enu23#fld45" name="nombreEmisor" type="string" modifiable="false"/>
+      <Field id="sv1#page27#enu23#fld46" name="base64" type="string" modifiable="false"/>
+      <Link id="sv1#page27#enu23#ln275" name="Flow109" to="sv1#miu13" type="normal" validate="true">
+        <LinkParameter id="sv1#page27#enu23#ln275#par1181" name="base64_base64" source="sv1#page27#enu23#fld46" target="sv1#miu13.mov2#mpkg2#opm33#icu44#icp165"/>
+        <LinkParameter id="sv1#page27#enu23#ln275#par1182" name="curpEmisor_curpEmisor" source="sv1#page27#enu23#fld44" target="sv1#miu13.mov2#mpkg2#opm33#icu44#icp164"/>
+        <LinkParameter id="sv1#page27#enu23#ln275#par1183" name="emailEmisor_emailEmisor" source="sv1#page27#enu23#fld40" target="sv1#miu13.mov2#mpkg2#opm33#icu44#icp158"/>
+        <LinkParameter id="sv1#page27#enu23#ln275#par1184" name="nombreEmisor_nombreEmisor" source="sv1#page27#enu23#fld45" target="sv1#miu13.mov2#mpkg2#opm33#icu44#icp166"/>
+        <LinkParameter id="sv1#page27#enu23#ln275#par1185" name="rfcEmisor_rfcEmisor" source="sv1#page27#enu23#fld42" target="sv1#miu13.mov2#mpkg2#opm33#icu44#icp163"/>
+        <LinkParameter id="sv1#page27#enu23#ln275#par1186" name="Password:_serialEmisor" source="sv1#page27#enu23#fld31" target="sv1#miu13.mov2#mpkg2#opm33#icu44#icp160"/>
+        <LinkParameter id="sv1#page27#enu23#ln275#par1187" name="tipoPersona_tipoPersona" source="sv1#page27#enu23#fld36" target="sv1#miu13.mov2#mpkg2#opm33#icu44#icp159"/>
+        <LinkParameter id="sv1#page27#enu23#ln275#par1188" name="Username:_Username" source="sv1#page27#enu23#fld30" target="sv1#miu13.mov2#mpkg2#opm33#icu44#icp161"/>
+        <LinkParameter id="sv1#page27#enu23#ln275#par1189" name="x509_x509" source="sv1#page27#enu23#fld33" target="sv1#miu13.mov2#mpkg2#opm33#icu44#icp162"/>
+      </Link>
+    </EntryUnit>
+    <ProcessUnit id="sv1#page27#pu50" name="Warning" gr:x="5" gr:y="0" mode="verifyMetadata"/>
+    <MultiMessageUnit id="sv1#page27#mssu6" name="Instructions" gr:x="0" gr:y="95">
+      <Message xml:space="preserve">Instructions</Message>
+    </MultiMessageUnit>
+    <MultiMessageUnit id="sv1#page27#mssu7" name="Warning" gr:x="135" gr:y="5">
+      <Message xml:space="preserve">Warning</Message>
+    </MultiMessageUnit>
+    <MultiMessageUnit id="sv1#page27#mssu8" name="Message7" gr:x="235" gr:y="5"/>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv1#page27#mssu8">
+          <layout:LayoutParameter name="messageType" value="danger" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8" width="20%" height="100">
+        <layout:Unit unitId="sv1#page27#mssu7" layout:unitVisibilityCondition="sv1#page27#cexpr12">
+          <layout:LayoutParameter name="messageType" value="danger" type="unit"/>
+          <layout:LayoutParameter name="message-localized" value="true" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv1#page27#enu23" manualFields="true" manualFieldOrder="sv1#page27#enu23#fld32 sv1#page27#enu23#fld43 sv1#page27#enu23#fld41 sv1#page27#enu23#fld42 sv1#page27#enu23#fld30 sv1#page27#enu23#fld31 sv1#page27#enu23#fld33 sv1#page27#enu23#fld36 sv1#page27#enu23#fld40 sv1#page27#enu23#fld44 sv1#page27#enu23#fld45 sv1#page27#enu23#fld46" layout:frameLayout="None">
+          <layout:LayoutParameter name="label-width" value="5" type="unit"/>
+          <layout:Link label="Ingresar" link="sv1#page27#enu23#ln275" styleClass="autenticar pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Field label="Certificado (cer):" field="sv1#page27#enu23#fld32" styleClass="btn-file fileCer"/>
+          <layout:Field label="Clave privada (key):" field="sv1#page27#enu23#fld43" styleClass="btn-file fileKey"/>
+          <layout:Field label="Contrase&#241;a de clave privada:" field="sv1#page27#enu23#fld41" styleClass="pwdPrivateKey"/>
+          <layout:Field label="RFC:" field="sv1#page27#enu23#fld42" styleClass="rfcEmisor"/>
+          <layout:Field field="sv1#page27#enu23#fld30" styleClass="Username hidden"/>
+          <layout:Field field="sv1#page27#enu23#fld31" styleClass="serialEmisor hidden"/>
+          <layout:Field field="sv1#page27#enu23#fld33" styleClass="x509 hidden"/>
+          <layout:Field field="sv1#page27#enu23#fld36" styleClass="tipoPersona hidden"/>
+          <layout:Field field="sv1#page27#enu23#fld40" styleClass="emailEmisor hidden"/>
+          <layout:Field field="sv1#page27#enu23#fld44" styleClass="curpEmisor hidden"/>
+          <layout:Field field="sv1#page27#enu23#fld45" styleClass="nombreEmisor hidden"/>
+          <layout:Field field="sv1#page27#enu23#fld46" styleClass="base64 hidden"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <ConditionExpression id="sv1#page27#cexpr12" name="MetadataNotUpdated">
+    <TextValue xml:space="preserve">import com.webratio.rtx.core.BeanHelper
+return !"updated".equals(BeanHelper.asString(MetadataStatus))</TextValue>
+  </ConditionExpression>
+  <Variable id="sv1#page27#var18" name="MetadataStatus" type="string" unitId="sv1#page27#pu50" parameter="status"/>
+</Page>

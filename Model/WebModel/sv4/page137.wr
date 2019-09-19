@@ -1,0 +1,251 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#page137" name="Control de Fianza" localized="true" layout:pageLayout="gobmxStyle/landingFianzas" layout:frameLayout="None" gr:x="-1755" gr:y="85">
+  <ContentUnits>
+    <EntryUnit id="sv4#page137#enu182" name="Control de Fianza" linkOrder="sv4#page137#enu182#ln1516 sv4#page137#enu182#ln1517 sv4#page137#enu182#ln1494" gr:showAllParts="true" gr:x="170" gr:y="0">
+      <Field id="sv4#page137#enu182#fld528" name="Nombre o RFC" type="string" modifiable="true" preloaded="false"/>
+      <Link id="sv4#page137#enu182#ln1516" name="Buscar" to="sv4#scu138" type="normal" validate="true">
+        <LinkParameter id="sv4#page137#enu182#ln1516#par4508" name="Buscar_buscar" source="sv4#page137#enu182#fld528" target="sv4#scu138.buscar"/>
+      </Link>
+      <Link id="sv4#page137#enu182#ln1517" name="Agregar" to="sv4#page134#enu176" type="normal" automaticCoupling="true" validate="true" ajaxOpenWindow="false" ajaxWindowUseTitle="true" ajaxWindowTitle="Nueva Asignaci&#243;n" ajaxWindowWidth="1000" ajaxWindowHeight="600" ajaxWindowClosable="true" ajaxWindowModal="true"/>
+      <Link id="sv4#page137#enu182#ln1494" name="Proximos a Vencer" to="sv4#qu11" automaticCoupling="true" type="normal" validate="true"/>
+    </EntryUnit>
+    <EntryUnit id="sv4#page137#enu183" name="Fedatario" linkOrder="sv4#page137#enu183#ln1519 sv4#page137#enu183#ln1520" ajaxEnableExpandedLinks="true" gr:x="290" gr:y="140" entity="ent96">
+      <Field id="sv4#page137#enu183#fld529" name="Nombre" ajaxEventEnabled="false" type="string" modifiable="false" preloaded="true"/>
+      <Link id="sv4#page137#enu183#ln1518" name="Ver" to="sv4#page137#pwu40" type="transport" validate="true">
+        <LinkParameter id="sv4#page137#enu183#ln1518#par4756" name="Key [oidFedatario]_busca [oidFedatario]" target="sv4#page137#pwu40#su532#rcond308.ent96#att564" sourceLinkParameter="sv4#page135#pwu37#ln1514#par4744"/>
+      </Link>
+      <Link id="sv4#page137#enu183#ln1519" to="sv4#page129#seu340" type="normal" validate="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Informaci&#243;n del Fedatario" ajaxWindowWidth="1000" ajaxWindowHeight="600" ajaxWindowClosable="true" ajaxWindowMaximizable="false" ajaxWindowModal="true" name="Informaci&#243;n del Fedatario">
+        <LinkParameter id="sv4#page137#enu183#ln1519#par4906" name="oidFedatario_PASSING_Busca [oidFedatario]" sourceLinkParameter="sv4#page135#pwu37#ln1514#par4744" target="sv4#page129#seu340#su527#kcond227.ent96#att564"/>
+      </Link>
+      <Link id="sv4#page137#enu183#ln1520" name="Regresar" to="sv4#page137" type="normal" validate="true">
+        <LinkParameter id="sv4#page137#enu183#ln1520#par4728" name="true_Mostrar" targetVariable="sv4#page137#var131" sourceValue="true"/>
+        <LinkParameter id="sv4#page137#enu183#ln1520#par4732" name="false_Ocultar" targetVariable="sv4#page137#var132" sourceValue="false"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit id="sv4#page137#pwu40" name="Lista de Control de Fianza" gr:x="0" gr:y="110" sortable="true" checkable="false" useCountQuery="false" blockFactor="15" entity="ent87" displayAttributes="ent87#att525 ent87#att526 ent87#att527 ent87#att528 rel53#role105.ent80#att498 rel73#role145.ent86#att523">
+      <Selector id="sv4#page137#pwu40#su532" defaultPolicy="fill" booleanOperator="or">
+        <RelationshipRoleCondition id="sv4#page137#pwu40#su532#rcond308" name="busca" predicate="in" implied="false" role="rel70#role140"/>
+      </Selector>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell layout:cellLayout="Print Frame" colspan="12">
+        <layout:Grid label="Control de Fianza" containerType="grid">
+          <layout:Row>
+            <layout:Cell colspan="6">
+              <layout:Field unitId="sv4#page137#enu182" field="sv4#page137#enu182#fld528" mode="full" layout:fieldVisibilityConditionVariable="sv4#page137#var131">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="6"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="3"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="3">
+              <layout:Link unitId="sv4#page137#enu182" link="sv4#page137#enu182#ln1516" layout:linkVisibilityConditionVariable="sv4#page137#var131">
+                <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+              </layout:Link>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="3">
+              <layout:Link unitId="sv4#page137#enu182" link="sv4#page137#enu182#ln1517" layout:linkVisibilityConditionVariable="sv4#page137#var131">
+                <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+              </layout:Link>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="3">
+              <layout:Link unitId="sv4#page137#enu182" link="sv4#page137#enu182#ln1494" layout:linkVisibilityConditionVariable="sv4#page137#var131">
+                <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+              </layout:Link>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell layout:cellLayout="Print Frame" colspan="12">
+        <layout:Grid label="Fedatario" containerType="grid">
+          <layout:Row>
+            <layout:Cell colspan="5">
+              <layout:Field unitId="sv4#page137#enu183" field="sv4#page137#enu183#fld529" mode="full" layout:fieldLayout="WRDefault/FieldValue" layout:fieldVisibilityConditionVariable="sv4#page137#var132"/>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="3">
+              <layout:Link unitId="sv4#page137#enu183" link="sv4#page137#enu183#ln1519" layout:linkVisibilityConditionVariable="sv4#page137#var132">
+                <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+              </layout:Link>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="3">
+              <layout:Link unitId="sv4#page137#enu183" link="sv4#page137#enu183#ln1520" layout:linkVisibilityConditionVariable="sv4#page137#var132">
+                <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+              </layout:Link>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page137#pwu40" layout:frameLayout="None" layout:unitVisibilityConditionVariable="sv4#page137#var132">
+          <layout:LayoutParameter name="show-header" value="true" type="unit"/>
+          <layout:LayoutParameter name="scrolling-position" value="bottom" type="unit"/>
+          <layout:LayoutParameter name="scrolling-alignment" value="center" type="unit"/>
+          <layout:Link link="sv4#page137#pwu40First"/>
+          <layout:Link link="sv4#page137#pwu40Previous"/>
+          <layout:Link link="sv4#page137#pwu40Block"/>
+          <layout:Link link="sv4#page137#pwu40Next"/>
+          <layout:Link link="sv4#page137#pwu40Last"/>
+          <layout:Attribute attribute="ent87#att525"/>
+          <layout:Attribute attribute="ent87#att526"/>
+          <layout:Attribute attribute="ent87#att527"/>
+          <layout:Attribute attribute="ent87#att528"/>
+          <layout:Attribute attribute="rel53#role105.ent80#att498"/>
+          <layout:Attribute attribute="rel73#role145.ent86#att523"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv4#page137#var131" name="Mostrar" type="boolean" value="true"/>
+  <Variable id="sv4#page137#var132" name="Ocultar" type="boolean" value="false"/>
+</Page>

@@ -1,0 +1,30 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg3#opm35" name="red" gr:x="175" gr:y="0">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg3#opm35#icu46" gr:x="30" gr:y="60">
+      <OKLink id="mov2#mpkg3#opm35#icu46#oln365" name="OKFlow74" to="mov2#mpkg3#opm35#seu57" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#mpkg3#opm35#seu57" name="red" gr:x="305" gr:y="55" entity="ent2">
+      <Selector id="mov2#mpkg3#opm35#seu57#su124" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg3#opm35#seu57#su124#acond71" name="red" predicate="eq" booleanOperator="or" implied="false" attributes="ent2#att11" value="red"/>
+      </Selector>
+      <OKLink id="mov2#mpkg3#opm35#seu57#oln366" name="OKFlow75" to="mov2#mpkg3#opm35#switch21">
+        <LinkParameter id="mov2#mpkg3#opm35#seu57#oln366#par1310" name="valor_Switch" source="ent2#att12Array" target="mov2#mpkg3#opm35#switch21.switch"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm35#seu57#kln206" name="KOFlow19" to="mov2#mpkg3#opm35#kocu31" gr:bendpoints="169,89,-296,-1">
+        <LinkParameter id="mov2#mpkg3#opm35#seu57#kln206#par1311" name="Error al obtener la variable de ambiente red._msj" target="mov2#mpkg3#opm35#kocu31#ocp142" sourceValue="Error al obtener la variable de ambiente red."/>
+      </KOLink>
+    </SelectorUnit>
+    <SwitchUnit id="mov2#mpkg3#opm35#switch21" name="ruteo red" gr:x="535" gr:y="70">
+      <Case value="se"/>
+      <Case value="triara"/>
+      <OKLink id="mov2#mpkg3#opm35#switch21#oln367" name="OKFlow76" to="mov2#mpkg3#opm35#okcu39" code="se" automaticCoupling="true" gr:bendpoints="77,-41,-188,-1"/>
+      <OKLink id="mov2#mpkg3#opm35#switch21#oln368" name="OKFlow77" to="mov2#mpkg3#opm35#okcu40" code="triara" automaticCoupling="true" gr:bendpoints="65,27,-200,2"/>
+      <OKLink id="mov2#mpkg3#opm35#switch21#oln369" name="OKFlow176" to="mov2#mpkg3#opm35#okcu39" automaticCoupling="true" gr:bendpoints="53,-15,-212,25;81,-30,-184,10;139,-29,-126,11"/>
+    </SwitchUnit>
+    <OKCollectorUnit id="mov2#mpkg3#opm35#okcu39" name="se" gr:x="730" gr:y="20"/>
+    <OKCollectorUnit id="mov2#mpkg3#opm35#okcu40" name="triara" gr:x="730" gr:y="85"/>
+    <KOCollectorUnit id="mov2#mpkg3#opm35#kocu31" name="KO" gr:x="730" gr:y="150">
+      <OutputCollectorParameter id="mov2#mpkg3#opm35#kocu31#ocp142" name="msj"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

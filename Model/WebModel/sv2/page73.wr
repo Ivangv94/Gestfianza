@@ -1,0 +1,57 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1765" gr:y="395" id="sv2#page73" name="Editar Elementos Administrable" localized="true">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv2#page73#enu101" name="Elemento" linkOrder="sv2#page73#enu101#ln288">
+      <Field id="sv2#page73#enu101#fld185" name="nombre" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv2#page73#enu101#fld186" name="valor" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv2#page73#enu101#fld187" name="oid" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Link id="sv2#page73#enu101#ln288" name="Editar" to="sv2#mfu7" type="normal" validate="true">
+        <LinkParameter id="sv2#page73#enu101#ln288#par779" name="nombre_elemento administrable" source="sv2#page73#enu101#fld185" target="sv2#mfu7.ent2#att11"/>
+        <LinkParameter id="sv2#page73#enu101#ln288#par782" name="oid_KeyCondition74 [oid]" source="sv2#page73#enu101#fld187" target="sv2#mfu7#su142#kcond74.ent2#att10"/>
+        <LinkParameter id="sv2#page73#enu101#ln288#par784" name="valor_valor" source="sv2#page73#enu101#fld186" target="sv2#mfu7.ent2#att12"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="175" gr:y="10" id="sv2#page73#mssu21" name="Error"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv2#page73#mssu21">
+          <layout:LayoutParameter name="panel-type" value="danger" type="frame"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv2#page73#enu101" layout:frameLayout="None">
+          <layout:Field field="sv2#page73#enu101#fld185"/>
+          <layout:Field field="sv2#page73#enu101#fld186"/>
+          <layout:Link link="sv2#page73#enu101#ln288" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

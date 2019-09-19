@@ -1,0 +1,66 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym15#page87" name="Resultado" gr:x="2645" gr:y="170">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym15#page87#enu108" name="Buttons" linkOrder="mov1#hym15#page87#enu108#ln644 mov1#hym15#page87#enu108#ln645" gr:x="140" gr:y="10">
+      <Link id="mov1#hym15#page87#enu108#ln644" name="Continuar" to="mov1#hym15#page89#enu111" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="mov1#hym15#page87#enu108#ln645" name="Flow143" to="mov1#hym15#ju5" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="117,-342,469,58"/>
+    </EntryUnit>
+    <NoOpContentUnit id="mov1#hym15#page87#gctu12" name="ViewComponent7" gr:x="0" gr:y="75"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid" layout:frameLayout="None">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym15#page87#gctu12" layout:frameLayout="gobmxStyle/verificacionMensajeExitoso"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell layout:cellLayout="Print Frame" colspan="8">
+        <layout:Unit unitId="mov1#hym15#page87#enu108" manualLinks="true" manualLinkOrder="mov1#hym15#page87#enu108#ln644 mov1#hym15#page87#enu108#ln645" layout:frameLayout="None">
+          <layout:Link label="Continuar" link="mov1#hym15#page87#enu108#ln644" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link label="Cancelar" link="mov1#hym15#page87#enu108#ln645" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+  <layout:LayoutParameter name="show-page-title" value="true" type="page"/>
+</Page>

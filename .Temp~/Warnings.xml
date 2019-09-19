@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Warnings> 
+  <Warning xpath="/WebProject/DataModel" rootXPath="/WebProject/DataModel" error="true" label="DataModel" key="DUPLICATED_CLASS_NAME"> 
+    <Message>The entity name 'Poder' is duplicated, therefore producing colliding Java classes</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.FixClassNameResolutionGenerator" entityIds="ent42 ent55">Rename the elements to avoid class name duplication</Resolution> 
+  </Warning>  
+  <Warning xpath="/WebProject/DataModel" rootXPath="/WebProject/DataModel" error="true" label="DataModel" key="DUPLICATED_CLASS_NAME"> 
+    <Message>The entity name 'parametros' is duplicated, therefore producing colliding Java classes</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.FixClassNameResolutionGenerator" entityIds="ent82 ent62">Rename the elements to avoid class name duplication</Resolution> 
+  </Warning>
+  <Warning xpath="id('ent44#att293')" rootXPath="/WebProject/DataModel" error="false" label="oidUser" key="INCOMPATIBLE_TYPE_WARNING"> 
+    <Message>The expected type of the attribute 'oidUser' is 'string', but found 'integer' for the database type 'VARCHAR2'</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.ChangeAttributeResolutionGenerator" attribute="type" value="string">Set attribute type to 'string'</Resolution> 
+  </Warning>
+  <Warning xpath="id('ent44#att275')" rootXPath="/WebProject/DataModel" error="false" label="timestamp" key="INCOMPATIBLE_TYPE_WARNING"> 
+    <Message>The expected type of the attribute 'timestamp' is 'string', but found 'timestamp' for the database type 'VARCHAR2'</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.ChangeAttributeResolutionGenerator" attribute="type" value="string">Set attribute type to 'string'</Resolution> 
+  </Warning>
+  <Warning xpath="id('ent51#att350')" rootXPath="/WebProject/DataModel" error="false" label="vNumeroEmision"> 
+    <Message>The boolean attribute 'vNumeroEmision' requires custom true/false values</Message> 
+  </Warning>
+  <Warning xpath="id('ent51#att349')" rootXPath="/WebProject/DataModel" error="false" label="vNombre"> 
+    <Message>The boolean attribute 'vNombre' requires custom true/false values</Message> 
+  </Warning>
+  <Warning xpath="id('ent51#att348')" rootXPath="/WebProject/DataModel" error="false" label="vCurp"> 
+    <Message>The boolean attribute 'vCurp' requires custom true/false values</Message> 
+  </Warning>
+  <Warning xpath="id('ent51#att347')" rootXPath="/WebProject/DataModel" error="false" label="vClaveElector"> 
+    <Message>The boolean attribute 'vClaveElector' requires custom true/false values</Message> 
+  </Warning>
+  <Warning xpath="id('ent51#att346')" rootXPath="/WebProject/DataModel" error="false" label="vApellido2"> 
+    <Message>The boolean attribute 'vApellido2' requires custom true/false values</Message> 
+  </Warning>
+  <Warning xpath="id('ent51#att345')" rootXPath="/WebProject/DataModel" error="false" label="vApellido1"> 
+    <Message>The boolean attribute 'vApellido1' requires custom true/false values</Message> 
+  </Warning>
+  <Warning xpath="id('ent51#att344')" rootXPath="/WebProject/DataModel" error="false" label="vAnioRegistro"> 
+    <Message>The boolean attribute 'vAnioRegistro' requires custom true/false values</Message> 
+  </Warning>
+  <Warning xpath="id('ent51#att343')" rootXPath="/WebProject/DataModel" error="false" label="vAnioEmision"> 
+    <Message>The boolean attribute 'vAnioEmision' requires custom true/false values</Message> 
+  </Warning> 
+</Warnings>

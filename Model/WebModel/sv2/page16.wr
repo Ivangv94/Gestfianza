@@ -1,0 +1,68 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page16" name="Modificar archivo" gr:x="-395" gr:y="225">
+  <ContentUnits>
+    <EntryUnit id="sv2#page16#enu11" name="Contenido del archivo" linkOrder="sv2#page16#enu11#ln587 sv2#page16#enu11#ln588 sv2#page16#enu11#ln589" gr:x="0" gr:y="85">
+      <Field id="sv2#page16#enu11#fld155" name="textoArchivo" type="text" modifiable="true" preloaded="true"/>
+      <Link id="sv2#page16#enu11#ln587" name="Guardar" to="sv2#scu82" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true" ajaxWaitingDialogMessage="Procesando ..." gr:bendpoints="148,-71,-142,-1">
+        <LinkParameter id="sv2#page16#enu11#ln587#par1482" name="ruta_rutaArchivo" source="sv2#page16#enu11#fld156" target="sv2#scu82.rutaArchivo"/>
+        <LinkParameter id="sv2#page16#enu11#ln587#par1483" name="textoArchivo_textoArchivo" source="sv2#page16#enu11#fld155" target="sv2#scu82.textoArchivo"/>
+      </Link>
+      <Field id="sv2#page16#enu11#fld156" name="ruta" type="string" modifiable="true" preloaded="false"/>
+      <Link id="sv2#page16#enu11#ln588" name="leerArchivo" to="sv2#scu79" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true" ajaxWaitingDialogMessage="Procesando ..." gr:bendpoints="37,-103,-8,107">
+        <LinkParameter id="sv2#page16#enu11#ln588#par1484" name="ruta_ruta" source="sv2#page16#enu11#fld156" target="sv2#scu79.ruta"/>
+        <LinkParameter id="sv2#page16#enu11#ln588#par1485" name="ruta_PASSING" source="sv2#page16#enu11#fld156" passing="true"/>
+      </Link>
+      <Link id="sv2#page16#enu11#ln589" name="Ejecutar" to="sv2#scu81" type="normal" validate="true">
+        <LinkParameter id="sv2#page16#enu11#ln589#par1486" name="textoArchivo_comando" source="sv2#page16#enu11#fld155" target="sv2#scu81.comando"/>
+        <LinkParameter id="sv2#page16#enu11#ln589#par1487" name="ruta_ruta" source="sv2#page16#enu11#fld156" target="sv2#scu81.ruta"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit id="sv2#page16#mssu33" name="Message48" gr:x="0" gr:y="0"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page16#enu11" manualFields="true" manualFieldOrder="sv2#page16#enu11#fld156 sv2#page16#enu11#fld155" layout:frameLayout="None">
+          <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+          <layout:Field field="sv2#page16#enu11#fld156"/>
+          <layout:Field field="sv2#page16#enu11#fld155"/>
+          <layout:Link link="sv2#page16#enu11#ln587" styleClass="guardar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv2#page16#enu11#ln588" styleClass="continuar">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv2#page16#enu11#ln589" styleClass="continuar">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page16#mssu33"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

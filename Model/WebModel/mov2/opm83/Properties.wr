@@ -1,0 +1,47 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm83" name="filtroPfApoderados" gr:x="95" gr:y="1095">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm83#icu122" gr:x="30" gr:y="60" linkOrder="mov2#opm83#icu122#ln1059 mov2#opm83#icu122#ln1062">
+      <InputCollectorParameter id="mov2#opm83#icu122#icp353" name="oidPM"/>
+      <OKLink id="mov2#opm83#icu122#oln990" name="OKFlow981" to="mov2#opm83#seu179">
+        <LinkParameter id="mov2#opm83#icu122#oln990#par3254" name="oidPM_KeyCondition136 [oid]" source="mov2#opm83#icu122#icp353" target="mov2#opm83#seu179#su313#kcond139.userOID"/>
+      </OKLink>
+      <Link id="mov2#opm83#icu122#ln1059" name="Flow1059" to="mov2#opm83#okcu88" type="transport" validate="true" gr:bendpoints="177,-66,-463,-46;300,-72,-340,-52;649,-55,-161,-65">
+        <LinkParameter id="mov2#opm83#icu122#ln1059#par3292" name="oidPM_oidPM" source="mov2#opm83#icu122#icp353" target="mov2#opm83#okcu88#ocp231"/>
+      </Link>
+      <Link id="mov2#opm83#icu122#ln1062" name="Flow1062" to="mov2#opm83#seu184" type="transport" validate="true" gr:bendpoints="179,105,-401,90;567,109,-13,104">
+        <LinkParameter id="mov2#opm83#icu122#ln1062#par3304" name="oidPM_RoleCondition199 [oid]" source="mov2#opm83#icu122#icp353" target="mov2#opm83#seu184#su328#rcond199.userOID"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#opm83#seu179" name="PM" gr:x="320" gr:y="55" entity="ent38">
+      <Selector id="mov2#opm83#seu179#su313" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm83#seu179#su313#kcond139" name="KeyCondition136" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm83#seu179#oln991" name="OKFlow982" to="mov2#opm83#seu180" automaticCoupling="true"/>
+      <KOLink id="mov2#opm83#seu179#kln425" name="KOFlow422" to="mov2#opm83#kocu73" automaticCoupling="true" gr:bendpoints="-1,68,-416,3"/>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm83#seu180" name="PF" gr:x="480" gr:y="55" entity="ent39">
+      <Selector id="mov2#opm83#seu180#su314" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm83#seu180#su314#rcond184" name="RoleCondition182" predicate="in" implied="false" role="rel20#role40"/>
+        <AttributesCondition id="mov2#opm83#seu180#su314#acond175" name="AttCondition172" predicate="eq" booleanOperator="or" implied="false" attributes="ent39#att428" value="FAP"/>
+      </Selector>
+      <OKLink id="mov2#opm83#seu180#oln992" name="OKFlow983" to="mov2#opm83#seu184">
+        <LinkParameter id="mov2#opm83#seu180#oln992#par3303" name="oid_RoleCondition198 [oid]" source="userOIDArray" target="mov2#opm83#seu184#su328#rcond198.userOID"/>
+      </OKLink>
+      <KOLink id="mov2#opm83#seu180#kln426" name="KOFlow421" to="mov2#opm83#kocu73" automaticCoupling="true" gr:bendpoints="120,89,-290,-1"/>
+    </SelectorUnit>
+    <KOCollectorUnit id="mov2#opm83#kocu73" name="KO Port71" gr:x="840" gr:y="155"/>
+    <OKCollectorUnit id="mov2#opm83#okcu88" name="OK Port86" gr:x="840" gr:y="70">
+      <OutputCollectorParameter id="mov2#opm83#okcu88#ocp226" name="oidPF"/>
+      <OutputCollectorParameter id="mov2#opm83#okcu88#ocp231" name="oidPM"/>
+    </OKCollectorUnit>
+    <SelectorUnit gr:x="650" gr:y="55" id="mov2#opm83#seu184" name="Selector184" entity="ent66">
+      <Selector id="mov2#opm83#seu184#su328" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm83#seu184#su328#rcond198" name="RoleCondition198" predicate="in" implied="false" role="rel39#role78"/>
+        <RelationshipRoleCondition id="mov2#opm83#seu184#su328#rcond199" name="RoleCondition199" predicate="in" implied="false" role="rel41#role82"/>
+      </Selector>
+      <OKLink id="mov2#opm83#seu184#oln1006" name="OKFlow1006" to="mov2#opm83#okcu88">
+        <LinkParameter id="mov2#opm83#seu184#oln1006#par3305" name="ApoderadosToPersonaFisica.oid_oidPF" source="rel39#role77_userOIDArray" target="mov2#opm83#okcu88#ocp226"/>
+      </OKLink>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

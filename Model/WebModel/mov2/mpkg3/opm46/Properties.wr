@@ -1,0 +1,68 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="200" gr:y="200" id="mov2#mpkg3#opm46" name="nuevoFedatario">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="-70" gr:y="-120" id="mov2#mpkg3#opm46#icu50">
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp82" name="rfc"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp83" name="curp"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp84" name="rol"/>
+      <OKLink id="mov2#mpkg3#opm46#icu50#oln342" to="mov2#mpkg3#opm46#miu71" name="OKFlow413">
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#oln342#par475" source="mov2#mpkg3#opm46#icu50#icp82" name="Next Element (rfc)_rfc" target="mov2#mpkg3#opm46#miu71.mov2#mpkg3#opm13#icu32#icp18"/>
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#oln342#par474" name="Fedatario_rol" target="mov2#mpkg3#opm46#miu71.mov2#mpkg3#opm13#icu32#icp12" source="mov2#mpkg3#opm46#icu50#icp84"/>
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#oln342#par473" source="mov2#mpkg3#opm46#icu50#icp83" name="Next Element_curp" target="mov2#mpkg3#opm46#miu71.mov2#mpkg3#opm13#icu32#icp11"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp175" name="vigenciaGarantia"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp174" name="tipoGarantia"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp173" name="montoGarantia"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp93" name="fechaTerminoGarantia"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp92" name="fechaOtorgamientoGarantia"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp91" name="adicionalGarantia"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp90" name="activaGarantia"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp88" name="tipoFedatario"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp87" name="numeroFedatario"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp86" name="municipioFedatario"/>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp85" name="entidadFedatario"/>
+      <Link id="mov2#mpkg3#opm46#icu50#ln269" name="Flow269" to="mov2#mpkg3#opm46#miu70" type="transport" validate="true" gr:bendpoints="190,126,-140,-4">
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#ln269#par1088" name="entidadFedatario_entidad" source="mov2#mpkg3#opm46#icu50#icp85" target="mov2#mpkg3#opm46#miu70.mov2#mpkg3#opm21#icu22#icp46"/>
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#ln269#par1273" name="municipioFedatario_municipio" source="mov2#mpkg3#opm46#icu50#icp86" target="mov2#mpkg3#opm46#miu70.mov2#mpkg3#opm21#icu22#icp47"/>
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#ln269#par1275" name="numeroFedatario_numero" source="mov2#mpkg3#opm46#icu50#icp87" target="mov2#mpkg3#opm46#miu70.mov2#mpkg3#opm21#icu22#icp48"/>
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#ln269#par1285" name="tipoFedatario_tipoFedatario" source="mov2#mpkg3#opm46#icu50#icp88" target="mov2#mpkg3#opm46#miu70.mov2#mpkg3#opm21#icu22#icp49"/>
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#ln269#par1971" name="estatusFedatario_estatusFedatario" source="mov2#mpkg3#opm46#icu50#icp176" target="mov2#mpkg3#opm46#miu70.mov2#mpkg3#opm21#icu22#icp177"/>
+      </Link>
+      <Link id="mov2#mpkg3#opm46#icu50#ln270" name="Flow270" to="mov2#mpkg3#opm46#miu72" type="transport" validate="true" gr:bendpoints="182,253,-148,-2">
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#ln270#par1286" name="activaGarantia_activa" source="mov2#mpkg3#opm46#icu50#icp90" target="mov2#mpkg3#opm46#miu72.mov2#mpkg3#opm22#icu23#icp80"/>
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#ln270#par1287" name="adicionalGarantia_esAdicional" source="mov2#mpkg3#opm46#icu50#icp91" target="mov2#mpkg3#opm46#miu72.mov2#mpkg3#opm22#icu23#icp79"/>
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#ln270#par1577" name="fechaOtorgamientoGarantia_fechaOtorgamiento" source="mov2#mpkg3#opm46#icu50#icp92" target="mov2#mpkg3#opm46#miu72.mov2#mpkg3#opm22#icu23#icp70"/>
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#ln270#par1578" name="fechaTerminoGarantia_fechaTermino" source="mov2#mpkg3#opm46#icu50#icp93" target="mov2#mpkg3#opm46#miu72.mov2#mpkg3#opm22#icu23#icp77"/>
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#ln270#par1579" name="montoGarantia_monto" source="mov2#mpkg3#opm46#icu50#icp173" target="mov2#mpkg3#opm46#miu72.mov2#mpkg3#opm22#icu23#icp78"/>
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#ln270#par1580" name="tipoGarantia_tipo" source="mov2#mpkg3#opm46#icu50#icp174" target="mov2#mpkg3#opm46#miu72.mov2#mpkg3#opm22#icu23#icp69"/>
+        <LinkParameter id="mov2#mpkg3#opm46#icu50#ln270#par1581" name="vigenciaGarantia_vigencia" source="mov2#mpkg3#opm46#icu50#icp175" target="mov2#mpkg3#opm46#miu72.mov2#mpkg3#opm22#icu23#icp81"/>
+      </Link>
+      <InputCollectorParameter id="mov2#mpkg3#opm46#icu50#icp176" name="estatusFedatario"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="720" gr:y="0" id="mov2#mpkg3#opm46#okcu41" name="OK"/>
+    <KOCollectorUnit gr:x="720" gr:y="300" id="mov2#mpkg3#opm46#kocu39" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg3#opm46#kocu39#ocp73" name="msj"/>
+    </KOCollectorUnit>
+    <ModuleInstanceUnit id="mov2#mpkg3#opm46#miu70" gr:x="300" gr:y="130" action="true" moduleId="mov2#mpkg3#opm21">
+      <OKLink id="mov2#mpkg3#opm46#miu70#oln387" name="OKFlow122" to="mov2#mpkg3#opm46#miu72">
+        <LinkParameter id="mov2#mpkg3#opm46#miu70#oln387#par787" name="oid_datosNotario_oid_datosNotario" source="mov2#mpkg3#opm21#okcu13#ocp43" target="mov2#mpkg3#opm46#miu72.mov2#mpkg3#opm22#icu23#icp52"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm46#miu70#kln263" name="KOFlow263" to="mov2#mpkg3#opm46#kocu39">
+        <LinkParameter id="mov2#mpkg3#opm46#miu70#kln263#par1788" name="msj_msj" source="mov2#mpkg3#opm21#kocu13#ocp42" target="mov2#mpkg3#opm46#kocu39#ocp73"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="mov2#mpkg3#opm46#miu71" gr:x="320" gr:y="0" action="true" moduleId="mov2#mpkg3#opm13">
+      <OKLink id="mov2#mpkg3#opm46#miu71#oln389" name="OKFlow33" to="mov2#mpkg3#opm46#miu70">
+        <LinkParameter id="mov2#mpkg3#opm46#miu71#oln389#par778" name="oid_user_oidUser" source="mov2#mpkg3#opm13#okcu2#ocp74" target="mov2#mpkg3#opm46#miu70.mov2#mpkg3#opm21#icu22#icp50"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm46#miu71#kln262" to="mov2#mpkg3#opm46#kocu39" name="KOFlow83">
+        <LinkParameter id="mov2#mpkg3#opm46#miu71#kln262#par479" source="mov2#mpkg3#opm13#kocu4#ocp11" name="msj_Shown Messages" target="mov2#mpkg3#opm46#kocu39#ocp73"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="mov2#mpkg3#opm46#miu72" gr:x="300" gr:y="255" action="true" moduleId="mov2#mpkg3#opm22">
+      <OKLink id="mov2#mpkg3#opm46#miu72#oln414" to="mov2#mpkg3#opm46#okcu41" name="OKFlow414"/>
+      <KOLink id="mov2#mpkg3#opm46#miu72#kln264" name="KOFlow264" to="mov2#mpkg3#opm46#kocu39">
+        <LinkParameter id="mov2#mpkg3#opm46#miu72#kln264#par1789" name="msj_msj" source="mov2#mpkg3#opm22#kocu14#ocp44" target="mov2#mpkg3#opm46#kocu39#ocp73"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</OperationModule>

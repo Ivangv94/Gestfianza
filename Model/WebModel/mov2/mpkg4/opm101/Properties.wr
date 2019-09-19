@@ -1,0 +1,93 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg4#opm101" name="Protocolo de firmadoXML" gr:x="295" gr:y="195">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg4#opm101#icu141" gr:x="35" gr:y="45">
+      <InputCollectorParameter id="mov2#mpkg4#opm101#icu141#icp403" name="ultimoNodo"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm101#icu141#icp404" name="KEY"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm101#icu141#icp405" name="folio"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm101#icu141#icp406" name="CURPoRFCdelFirmante"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm101#icu141#icp407" name="contrasenia"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm101#icu141#icp408" name="CER"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm101#icu141#icp409" name="cadenaOriginal"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm101#icu141#icp410" name="ambiente"/>
+      <OKLink id="mov2#mpkg4#opm101#icu141#oln1326" name="OKFlow862" to="mov2#mpkg4#opm101#miu156">
+        <LinkParameter id="mov2#mpkg4#opm101#icu141#oln1326#par4657" name="cadenaOriginal_cadenaOriginal" source="mov2#mpkg4#opm101#icu141#icp409" target="mov2#mpkg4#opm101#miu156.mov2#mpkg4#opm105#icu145#icp455"/>
+        <LinkParameter id="mov2#mpkg4#opm101#icu141#oln1326#par4658" name="CER_cer" source="mov2#mpkg4#opm101#icu141#icp408" target="mov2#mpkg4#opm101#miu156.mov2#mpkg4#opm105#icu145#icp451"/>
+        <LinkParameter id="mov2#mpkg4#opm101#icu141#oln1326#par4659" name="contrasenia_contrasenia" source="mov2#mpkg4#opm101#icu141#icp407" target="mov2#mpkg4#opm101#miu156.mov2#mpkg4#opm105#icu145#icp452"/>
+        <LinkParameter id="mov2#mpkg4#opm101#icu141#oln1326#par4660" name="CURPoRFCdelFirmante_CURPoRFCdelFirmante" source="mov2#mpkg4#opm101#icu141#icp406" target="mov2#mpkg4#opm101#miu156.mov2#mpkg4#opm105#icu145#icp454"/>
+        <LinkParameter id="mov2#mpkg4#opm101#icu141#oln1326#par4661" name="KEY_key" source="mov2#mpkg4#opm101#icu141#icp404" target="mov2#mpkg4#opm101#miu156.mov2#mpkg4#opm105#icu145#icp453"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#mpkg4#opm101#icu141#icp411" name="proceso"/>
+      <Link id="mov2#mpkg4#opm101#icu141#ln1377" name="Flow7133" to="mov2#mpkg4#opm101#miu157" type="transport" validate="true" gr:bendpoints="203,-72,-422,-72;426,-72,-199,-72">
+        <LinkParameter id="mov2#mpkg4#opm101#icu141#ln1377#par4674" name="ambiente_ambiente" source="mov2#mpkg4#opm101#icu141#icp410" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp429"/>
+        <LinkParameter id="mov2#mpkg4#opm101#icu141#ln1377#par4675" name="cadenaOriginal_cadenaOriginal" source="mov2#mpkg4#opm101#icu141#icp409" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp428"/>
+        <LinkParameter id="mov2#mpkg4#opm101#icu141#ln1377#par4676" name="folio_folio" source="mov2#mpkg4#opm101#icu141#icp405" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp423"/>
+        <LinkParameter id="mov2#mpkg4#opm101#icu141#ln1377#par4677" name="proceso_proceso" source="mov2#mpkg4#opm101#icu141#icp411" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp430"/>
+        <LinkParameter id="mov2#mpkg4#opm101#icu141#ln1377#par4678" name="ultimoNodo_ultimoNodo" source="mov2#mpkg4#opm101#icu141#icp403" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp415"/>
+        <LinkParameter id="mov2#mpkg4#opm101#icu141#ln1377#par4739" name="oidDoc_oidDoc" source="mov2#mpkg4#opm101#icu141#icp467" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp465"/>
+      </Link>
+      <Link id="mov2#mpkg4#opm101#icu141#ln1378" name="Flow7134" to="mov2#mpkg4#opm101#miu158" type="transport" validate="true" gr:bendpoints="287,132,-383,2"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm101#icu141#icp467" name="oidDoc"/>
+    </InputCollectorUnit>
+    <ModuleInstanceUnit id="mov2#mpkg4#opm101#miu156" gr:x="360" gr:y="115" action="true" moduleId="mov2#mpkg4#opm105">
+      <OKLink id="mov2#mpkg4#opm101#miu156#oln1327" name="OKFlow863" to="mov2#mpkg4#opm101#miu157" codeRef="mov2#mpkg4#opm105#okcu111">
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1327#par4679" name="certificadoX509_certificadoX509" source="mov2#mpkg4#opm105#okcu111#ocp306" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp427"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1327#par4680" name="fechaCaducidad_fechaCaducidad" source="mov2#mpkg4#opm105#okcu111#ocp296" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp425"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1327#par4681" name="fechaInscripcion_fechaInscripcion" source="mov2#mpkg4#opm105#okcu111#ocp305" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp424"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1327#par4682" name="modulus_modulus" source="mov2#mpkg4#opm105#okcu111#ocp303" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp421"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1327#par4683" name="nombreEmisorCERT_nombreEmisorCERT" source="mov2#mpkg4#opm105#okcu111#ocp301" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp420"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1327#par4684" name="nombreSujetoX509_nombreSujetox509" source="mov2#mpkg4#opm105#okcu111#ocp300" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp418"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1327#par4685" name="selloDigital_selloDigital" source="mov2#mpkg4#opm105#okcu111#ocp299" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp417"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1327#par4686" name="serieCERT_serieCERT" source="mov2#mpkg4#opm105#okcu111#ocp298" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp416"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1327#par4687" name="hashCadenaOriginal_hasCadenaOriginal" source="mov2#mpkg4#opm105#okcu111#ocp304" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp422"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1327#par4688" name="nombreEmisorCERT_nombreFirmante" source="mov2#mpkg4#opm105#okcu111#ocp302" target="mov2#mpkg4#opm101#miu157.mov2#mpkg4#opm103#icu143#icp419"/>
+      </OKLink>
+      <OKLink id="mov2#mpkg4#opm101#miu156#oln1328" name="OKFlow865" to="mov2#mpkg4#opm101#miu158" codeRef="mov2#mpkg4#opm105#okcu112" gr:bendpoints="99,9,-286,-121;220,10,-165,-120;247,50,-138,-80;379,51,-6,-79">
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1328#par4340" name="certificadoX509_certificadoX509" source="mov2#mpkg1#opm31#okcu35#ocp125" target="mov2#mpkg4#opm101#miu158.mov2#mpkg1#opm29#icu39#icp122"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1328#par4341" name="RFCfirmante_CURPoRFCfirmante" source="mov2#mpkg1#opm31#okcu35#ocp116" target="mov2#mpkg4#opm101#miu158.mov2#mpkg1#opm29#icu39#icp121"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1328#par4342" name="fechaCaducidad_fechaCaducidad" source="mov2#mpkg1#opm31#okcu35#ocp115" target="mov2#mpkg4#opm101#miu158.mov2#mpkg1#opm29#icu39#icp120"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1328#par4343" name="fechaInscripcion_fechaInscripcion" source="mov2#mpkg1#opm31#okcu35#ocp124" target="mov2#mpkg4#opm101#miu158.mov2#mpkg1#opm29#icu39#icp119"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1328#par4344" name="hashCadenaOriginal_hasCadenaOriginal" source="mov2#mpkg1#opm31#okcu35#ocp123" target="mov2#mpkg4#opm101#miu158.mov2#mpkg1#opm29#icu39#icp117"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1328#par4345" name="modulus_modulus" source="mov2#mpkg1#opm31#okcu35#ocp122" target="mov2#mpkg4#opm101#miu158.mov2#mpkg1#opm29#icu39#icp116"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1328#par4346" name="nombreEmisorCERT_nombreEmisorCERT" source="mov2#mpkg1#opm31#okcu35#ocp120" target="mov2#mpkg4#opm101#miu158.mov2#mpkg1#opm29#icu39#icp115"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1328#par4347" name="razonSocial_nombreFirmante" source="mov2#mpkg1#opm31#okcu35#ocp121" target="mov2#mpkg4#opm101#miu158.mov2#mpkg1#opm29#icu39#icp114"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1328#par4348" name="nombreSujetoX509_nombreSujetox509" source="mov2#mpkg1#opm31#okcu35#ocp119" target="mov2#mpkg4#opm101#miu158.mov2#mpkg1#opm29#icu39#icp113"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1328#par4349" name="selloDigital_selloDigital" source="mov2#mpkg1#opm31#okcu35#ocp118" target="mov2#mpkg4#opm101#miu158.mov2#mpkg1#opm29#icu39#icp112"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#oln1328#par4350" name="serieCERT_serieCERT" source="mov2#mpkg1#opm31#okcu35#ocp117" target="mov2#mpkg4#opm101#miu158.mov2#mpkg1#opm29#icu39#icp111"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg4#opm101#miu156#kln509" name="KOFlow97" to="mov2#mpkg4#opm101#kocu91" gr:bendpoints="104,79,-621,-91;470,72,-260,-58;520,110,-210,-20;612,120,-118,-10">
+        <LinkParameter id="mov2#mpkg4#opm101#miu156#kln509#par4351" name="Error_Error" source="mov2#mpkg1#opm31#kocu27#ocp114" target="mov2#mpkg4#opm101#kocu91#ocp282"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="mov2#mpkg4#opm101#miu157" gr:x="695" gr:y="115" action="true" moduleId="mov2#mpkg4#opm103">
+      <OKLink id="mov2#mpkg4#opm101#miu157#oln1329" name="OKFlow864" to="mov2#mpkg4#opm101#okcu107">
+        <LinkParameter id="mov2#mpkg4#opm101#miu157#oln1329#par4352" name="blobXMLfimado_blobXMLfirmado" source="mov2#mpkg4#opm103#okcu109#ocp289" target="mov2#mpkg4#opm101#okcu107#ocp281"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu157#oln1329#par4353" name="folio_folio" source="mov2#mpkg4#opm103#okcu109#ocp288" target="mov2#mpkg4#opm101#okcu107#ocp280"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu157#oln1329#par4354" name="selloDigital_selloDigital" source="mov2#mpkg4#opm103#okcu109#ocp287" target="mov2#mpkg4#opm101#okcu107#ocp279"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu157#oln1329#par4355" name="uri_uriVerificacion" source="mov2#mpkg4#opm103#okcu109#ocp286" target="mov2#mpkg4#opm101#okcu107#ocp278"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg4#opm101#miu157#kln510" name="KOFlow96" to="mov2#mpkg4#opm101#kocu91">
+        <LinkParameter id="mov2#mpkg4#opm101#miu157#kln510#par4356" name="Error_Error" source="mov2#mpkg1#opm29#kocu25#ocp92" target="mov2#mpkg4#opm101#kocu91#ocp282"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <OKCollectorUnit id="mov2#mpkg4#opm101#okcu107" name="OK" gr:x="1070" gr:y="95">
+      <OutputCollectorParameter id="mov2#mpkg4#opm101#okcu107#ocp278" name="uriVerificacion"/>
+      <OutputCollectorParameter id="mov2#mpkg4#opm101#okcu107#ocp279" name="selloDigital"/>
+      <OutputCollectorParameter id="mov2#mpkg4#opm101#okcu107#ocp280" name="folio"/>
+      <OutputCollectorParameter id="mov2#mpkg4#opm101#okcu107#ocp281" name="blobXMLfirmado"/>
+    </OKCollectorUnit>
+    <ModuleInstanceUnit id="mov2#mpkg4#opm101#miu158" gr:x="720" gr:y="245" action="true" moduleId="mov2#mpkg4#opm103">
+      <KOLink id="mov2#mpkg4#opm101#miu158#kln511" name="KOFlow95" to="mov2#mpkg4#opm101#kocu91">
+        <LinkParameter id="mov2#mpkg4#opm101#miu158#kln511#par4357" name="Error_Error" source="mov2#mpkg1#opm29#kocu25#ocp92" target="mov2#mpkg4#opm101#kocu91#ocp282"/>
+      </KOLink>
+      <OKLink id="mov2#mpkg4#opm101#miu158#oln1330" name="OKFlow866" to="mov2#mpkg4#opm101#okcu107">
+        <LinkParameter id="mov2#mpkg4#opm101#miu158#oln1330#par4358" name="blobXMLfimado_blobXMLfirmado" source="mov2#mpkg1#opm29#okcu31#ocp91" target="mov2#mpkg4#opm101#okcu107#ocp281"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu158#oln1330#par4359" name="folio_folio" source="mov2#mpkg1#opm29#okcu31#ocp90" target="mov2#mpkg4#opm101#okcu107#ocp280"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu158#oln1330#par4360" name="selloDigital_selloDigital" source="mov2#mpkg1#opm29#okcu31#ocp89" target="mov2#mpkg4#opm101#okcu107#ocp279"/>
+        <LinkParameter id="mov2#mpkg4#opm101#miu158#oln1330#par4361" name="uri_uriVerificacion" source="mov2#mpkg1#opm29#okcu31#ocp88" target="mov2#mpkg4#opm101#okcu107#ocp278"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <KOCollectorUnit id="mov2#mpkg4#opm101#kocu91" name="KO" gr:x="1070" gr:y="240">
+      <OutputCollectorParameter id="mov2#mpkg4#opm101#kocu91#ocp282" name="Error"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

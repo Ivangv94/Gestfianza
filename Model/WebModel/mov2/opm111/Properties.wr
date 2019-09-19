@@ -1,0 +1,70 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="250" gr:y="1530" id="mov2#opm111" name="eliminarAccionista">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm111#icu151" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm111#icu151#icp472" name="oidPF"/>
+      <Link id="mov2#opm111#icu151#ln1475" name="Flow1475" to="mov2#opm111#seu323" type="transport" validate="true" gr:bendpoints="109,52,-261,57;308,49,-62,54">
+        <LinkParameter id="mov2#opm111#icu151#ln1475#par4846" name="oidPF_KeyCondition218 [oid]" source="mov2#opm111#icu151#icp472" target="mov2#opm111#seu323#su516#kcond218.userOID"/>
+      </Link>
+      <OKLink id="mov2#opm111#icu151#oln1463" name="OKFlow1463" to="mov2#opm111#seu322" automaticCoupling="true"/>
+      <Link id="mov2#opm111#icu151#ln1479" name="Flow1479" to="mov2#opm111#dlu21" type="transport" validate="true" gr:bendpoints="163,74,-507,79;357,80,-313,85;509,71,-161,76">
+        <LinkParameter id="mov2#opm111#icu151#ln1479#par4849" name="oidAccion_KeyCondition221 [oid]" source="mov2#opm111#icu151#icp473" target="mov2#opm111#dlu21#su520#kcond221.ent61#att393"/>
+        <LinkParameter id="mov2#opm111#icu151#ln1479#par4850" name="oidPF_RoleCondition316 [oid]" source="mov2#opm111#icu151#icp472" target="mov2#opm111#dlu21#su520#rcond316.userOID"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm111#icu151#icp473" name="oidAccion"/>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="290" gr:y="50" id="mov2#opm111#seu322" name="buscaParametro" entity="ent68" linkOrder="mov2#opm111#seu322#ln1480 mov2#opm111#seu322#ln1484">
+      <Selector id="mov2#opm111#seu322#su515" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm111#seu322#su515#acond243" name="AttCondition243" predicate="eq" booleanOperator="or" implied="false" attributes="ent68#att440"/>
+      </Selector>
+      <OKLink id="mov2#opm111#seu322#oln1462" name="OKFlow1462" to="mov2#opm111#seu323" automaticCoupling="true"/>
+      <Link id="mov2#opm111#seu322#ln1476" name="Flow1476" to="mov2#opm111#dcnu2" type="transport" validate="true" gr:bendpoints="68,-70,-232,-70;234,-70,-66,-70">
+        <LinkParameter id="mov2#opm111#seu322#ln1476#par4847" name="oidPM_KeyCondition219 [oid] [PersonaMoral] [Source]" source="ent68#att441Array" target="mov2#opm111#dcnu2#su517#kcond219.userOID"/>
+      </Link>
+      <Link id="mov2#opm111#seu322#ln1480" name="Flow1480" to="mov2#opm111#miu173" type="transport" validate="true" gr:bendpoints="51,-94,-614,-54;441,-97,-224,-57">
+        <LinkParameter id="mov2#opm111#seu322#ln1480#par4852" name="oidPM_oidPM" source="ent68#att441Array" target="mov2#opm111#miu173.mov2#opm80#icu119#icp348"/>
+      </Link>
+      <Link id="mov2#opm111#seu322#ln1484" name="Flow1484" to="mov2#opm111#okcu118" type="transport" validate="true" gr:bendpoints="51,-131,-854,-41;734,-123,-171,-33">
+        <LinkParameter id="mov2#opm111#seu322#ln1484#par4862" name="oidPM_oidPm" source="ent68#att441Array" target="mov2#opm111#okcu118#ocp349"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit gr:x="290" gr:y="-60" id="mov2#opm111#gtu72" name="Get72" contextParameters="UserCtxParam">
+      <Link id="mov2#opm111#gtu72#ln1474" name="Flow1474" to="mov2#opm111#seu322" type="transport" validate="true">
+        <LinkParameter id="mov2#opm111#gtu72#ln1474#par4845" name="UserCtxParam.oid_AttCondition243" source="mov2#opm111#gtu72.UserCtxParam" target="mov2#opm111#seu322#su515#acond243"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="460" gr:y="50" id="mov2#opm111#seu323" name="Selector323" entity="ent39">
+      <Selector id="mov2#opm111#seu323#su516" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm111#seu323#su516#kcond218" name="KeyCondition218" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm111#seu323#oln1464" name="OKFlow1464" to="mov2#opm111#dcnu2" automaticCoupling="true"/>
+    </SelectorUnit>
+    <DisconnectUnit gr:x="600" gr:y="45" id="mov2#opm111#dcnu2" name="Disconnect2" relationship="rel20#role40">
+      <SourceSelector id="mov2#opm111#dcnu2#su517" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm111#dcnu2#su517#kcond219" name="KeyCondition219" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov2#opm111#dcnu2#su518" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm111#dcnu2#su518#kcond220" name="KeyCondition220" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov2#opm111#dcnu2#oln1465" name="OKFlow1465" to="mov2#opm111#dlu21" automaticCoupling="true"/>
+    </DisconnectUnit>
+    <DeleteUnit gr:x="750" gr:y="50" id="mov2#opm111#dlu21" name="eliminaAcciones" entity="ent61">
+      <Selector id="mov2#opm111#dlu21#su520" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm111#dlu21#su520#kcond221" name="KeyCondition221" predicate="in" implied="false"/>
+        <RelationshipRoleCondition id="mov2#opm111#dlu21#su520#rcond316" name="RoleCondition316" predicate="in" implied="false" role="rel37#role74"/>
+      </Selector>
+      <OKLink id="mov2#opm111#dlu21#oln1466" name="OKFlow1466" to="mov2#opm111#miu173" automaticCoupling="true"/>
+      <KOLink id="mov2#opm111#dlu21#kln576" name="KOFlow576" to="mov2#opm111#kocu101" automaticCoupling="true"/>
+    </DeleteUnit>
+    <OKCollectorUnit gr:x="1145" gr:y="-35" id="mov2#opm111#okcu118" name="OK Port118">
+      <OutputCollectorParameter id="mov2#opm111#okcu118#ocp344" name="acciones"/>
+      <OutputCollectorParameter id="mov2#opm111#okcu118#ocp349" name="oidPm"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1145" gr:y="85" id="mov2#opm111#kocu101" name="KO Port101"/>
+    <ModuleInstanceUnit gr:x="915" gr:y="20" id="mov2#opm111#miu173" action="true" moduleId="mov2#opm80">
+      <OKLink id="mov2#opm111#miu173#oln1467" name="OKFlow1467" to="mov2#opm111#okcu118">
+        <LinkParameter id="mov2#opm111#miu173#oln1467#par4853" name="oidAcciones_acciones" source="mov2#opm80#okcu85#ocp220" target="mov2#opm111#okcu118#ocp344"/>
+      </OKLink>
+      <KOLink id="mov2#opm111#miu173#kln577" name="KOFlow577" to="mov2#opm111#kocu101" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</OperationModule>

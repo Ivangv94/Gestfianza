@@ -1,0 +1,1048 @@
+[05 ago 2019 18:02:59] Building database metadata model
+[05 ago 2019 18:02:59] Properties: {partialRefresh=false, processColumnsUsingSelect=, includePrimaryKeys=true, eventSocketClient=com.webratio.commons.net.EventSocketClient@ffeaa19, includeTables=true, username=EXPEDIENTE, outputLogPath=/home/tecnologo/wr7/WebRatio/workspace/Expediente-master/.Temp~/DB.xml.log, readIndexes=null, driverClass=oracle.jdbc.driver.OracleDriver, includeSynonyms=true, metaDataProviderClass=com.webratio.commons.db.metadata.OracleMetaDataProvider, outputPath=/home/tecnologo/wr7/WebRatio/workspace/Expediente-master/.Temp~/DB.xml, schemaRegex=null, readProcedures=null, includeViews=true, derby.system.home=/home/tecnologo/wr7/WebRatio/workspace/.metadata/.plugins/com.webratio.commons.db/derby, url=jdbc:oracle:thin:@172.18.53.173:1521:orades01, tableRegex=null, readSQLDefinitions=true, includeForeignKeys=true, retrieveAllNames=false, tablesToRefresh=, eventSocketPort=36818}
+[05 ago 2019 18:02:59] URL: jdbc:oracle:thin:@172.18.53.173:1521:orades01
+[05 ago 2019 18:02:59] Product name: Oracle
+[05 ago 2019 18:02:59] Product version: Oracle Database 11g Release 11.1.0.0.0 - Production
+[05 ago 2019 18:02:59] Driver name: Oracle JDBC driver
+[05 ago 2019 18:02:59] Driver version: 10.2.0.1.0
+[05 ago 2019 18:02:59] Driver major version: 10
+[05 ago 2019 18:02:59] Driver minor version: 2
+[05 ago 2019 18:02:59] Identifier quote string: 2
+[05 ago 2019 18:02:59] Retrieving schemas
+[05 ago 2019 18:02:59]   Adding owner schema: EXPEDIENTE
+[05 ago 2019 18:02:59] Retrieving sequences
+[05 ago 2019 18:02:59] Could not read database sequences using SQL
+java.sql.SQLException: ORA-00942: la tabla o vista no existe
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:331)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:288)
+	at oracle.jdbc.driver.T4C8Oall.receive(T4C8Oall.java:743)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:213)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:796)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1031)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeMaybeDescribe(T4CPreparedStatement.java:836)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1124)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3285)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3329)
+	at com.webratio.commons.db.metadata.OracleMetaDataProvider.processSequences(OracleMetaDataProvider.java:100)
+	at com.webratio.commons.db.metadata.AbstractMetaDataProvider.getDatabase(AbstractMetaDataProvider.java:98)
+	at com.webratio.commons.db.metadata.MetaDataRetriever.runAnt(MetaDataRetriever.java:136)
+	at com.webratio.commons.db.metadata.MetaDataRetriever.main(MetaDataRetriever.java:51)
+[05 ago 2019 18:02:59] Retrieving [TABLE, VIEW, SYNONYM] for schema 'EXPEDIENTE'
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ACCIONES' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ACTIVITYINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ACTIVITYINSTANCE_CANDIDATEUSER' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ACTIVITYTYPE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ADMINISTRACION' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.AFIANZADORA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.APODERADO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.APODERADOS' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ARCHIVOXML' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ATTACHMENT' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ATTACHMENT_PROCESSINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.AUXILIARAPODERADO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.AUXILIARINSTRUMENTO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.AUXILIARM10' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.AUXINE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.BITACORA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.CADENAS' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.CALIDADFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.CATALOGOCATEGORIASOCIEDADES' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.CATALOGOMOVIMIENTOPODER' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.CATALOGOTIPOFACULTADES' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.CATALOGOTIPOSOCIEDADES' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.CONTEO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.CONTROLFIANZAS' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.CTRLFIA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.DATOSNOTARIO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.DATOSPERSONA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.DECISIONES' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.DOCUMENTOS' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ELEMENTOS_ADMINISTRABLES' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ESTADOS' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ESTATUSAFIANZADORA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ESTATUSCTRLFIANZA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ESTATUSFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ESTATUSTIPOFIANZA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ESTRUCTURAACCIONARIA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.EXPEDIENTEELECTRONICO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.FEDATARIOS' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.FIANZA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.GROUP' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.GROUP_ACTIVITYTYPE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.GROUP_MODULE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.HT_PERSONAFISICA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.HT_PERSONAMORAL' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.INSTRUMENTO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.INSTRUMENTOS' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.MANDATO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.MODULE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.MUNICIPIOS' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.NOMBRAMIENTOOCARGO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.NOMBRAMIENTOS' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.NOTE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.NOTE_ACTIVITYINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.NOTE_PROCESSINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.NOTIFICATION' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.NUMEROCONSECUTIVO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.OBSERVACIONES' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.ORGANODEVIGILANCIA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.PARAMETERINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.PARAMETERTYPE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.PARAMETROS' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.PERSONAFISICA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.PERSONAFISICA_PERSONAMORAL' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.PERSONALFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.PERSONAMORAL' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.PODER' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.PREVIOUSACTIVITYINSTANCE_NEXTA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.PROCESS' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.PROCESSINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.PRUEBA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.REVOCACIONES' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.SEQUENCEFLOW' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.TEXTO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.TIPOFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.TIPOFIANZA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.TIPOGARANTIA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.USER' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.USER_GROUP' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.USER_NOTIFICATIONS' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.VERIFICACIONIDENTIFICACION' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.XML' [type = TABLE]
+[05 ago 2019 18:03:00]   Found 'EXPEDIENTE.PROCESSINSTANCE_ATTACHMENT_COU' [type = VIEW]
+[05 ago 2019 18:03:00] Retrieving columns for 'EXPEDIENTE.ACCIONES' [type = TABLE]
+[05 ago 2019 18:03:00]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: NUMACCIONES [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: ESTRUCTURAACCIONARIA_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: PERSONAMORAL_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: PERSONAFISICA_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:00] Retrieving primary keys for 'EXPEDIENTE.ACCIONES' [type = TABLE]
+[05 ago 2019 18:03:00]   Found primary key column: OID
+[05 ago 2019 18:03:00] Retrieving columns for 'EXPEDIENTE.ACTIVITYINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: NAME [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: STATUS [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: READY_SINCE [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:00]   Found column: ACTIVE_SINCE [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:00]   Found column: COMPLETED_AT [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:00]   Found column: ABORTED_AT [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:00]   Found column: CANCELLED_AT [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:00]   Found column: WORKED_AT [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:00]   Found column: ROLLBACKABLE [type = NUMBER][SQL/XOPEN type = 3][size = 1][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: CONTEXT [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: GROUP_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: ACTIVITYTYPE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: PROCESSINSTANCE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: USER_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00] Retrieving primary keys for 'EXPEDIENTE.ACTIVITYINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found primary key column: OID
+[05 ago 2019 18:03:00] Retrieving columns for 'EXPEDIENTE.ACTIVITYINSTANCE_CANDIDATEUSER' [type = TABLE]
+[05 ago 2019 18:03:00]   Found column: ACTIVITYINSTANCE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: USER_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00] Retrieving primary keys for 'EXPEDIENTE.ACTIVITYINSTANCE_CANDIDATEUSER' [type = TABLE]
+[05 ago 2019 18:03:00]   Found primary key column: ACTIVITYINSTANCE_OID
+[05 ago 2019 18:03:00]   Found primary key column: USER_OID
+[05 ago 2019 18:03:00] Retrieving columns for 'EXPEDIENTE.ACTIVITYTYPE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: ID [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: CODE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: NAME [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: DEFAULT_INSTANCE_NAME [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: DESCRIPTION [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: TYPE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: EXECUTION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: SORT_NUMBER [type = FLOAT][SQL/XOPEN type = 6][size = 126][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: UUID [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: PROCESS_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00] Retrieving primary keys for 'EXPEDIENTE.ACTIVITYTYPE' [type = TABLE]
+[05 ago 2019 18:03:00]   Found primary key column: OID
+[05 ago 2019 18:03:00] Retrieving columns for 'EXPEDIENTE.ADMINISTRACION' [type = TABLE]
+[05 ago 2019 18:03:00]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: NOMBRAMIENTO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: DESCRIPCION [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: FACULTAD [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: TIPO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: PERSONAFISICA_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: OIDTIPOFACULTAD [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: PERSONAMORAL_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: ESTATUS [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00] Retrieving primary keys for 'EXPEDIENTE.ADMINISTRACION' [type = TABLE]
+[05 ago 2019 18:03:00]   Found primary key column: OID
+[05 ago 2019 18:03:00] Retrieving columns for 'EXPEDIENTE.AFIANZADORA' [type = TABLE]
+[05 ago 2019 18:03:00]   Found column: OIDAFIANZADORA [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: NOMBREAFIANZADORA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:00]   Found column: ESTATUSAFIANZADORA [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01] Retrieving primary keys for 'EXPEDIENTE.AFIANZADORA' [type = TABLE]
+[05 ago 2019 18:03:01]   Found primary key column: OIDAFIANZADORA
+[05 ago 2019 18:03:01] Retrieving columns for 'EXPEDIENTE.APODERADO' [type = TABLE]
+[05 ago 2019 18:03:01]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: FACULTADESAPODERADO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: TOTALPARCIAL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: ESTATUS [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: CARGO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: CURP [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: RFC [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: AUXILIARM10_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01] Retrieving primary keys for 'EXPEDIENTE.APODERADO' [type = TABLE]
+[05 ago 2019 18:03:01]   Found primary key column: OID
+[05 ago 2019 18:03:01] Retrieving columns for 'EXPEDIENTE.APODERADOS' [type = TABLE]
+[05 ago 2019 18:03:01]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: DESCRIPCIONFACULTAD [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: FACULTAD [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: PERSONAFISICA_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: PERSONAMORAL_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: OIDTIPOFACULTAD [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: ESTATUS [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01] Retrieving primary keys for 'EXPEDIENTE.APODERADOS' [type = TABLE]
+[05 ago 2019 18:03:01]   Found primary key column: OID
+[05 ago 2019 18:03:01] Retrieving columns for 'EXPEDIENTE.ARCHIVOXML' [type = TABLE]
+[05 ago 2019 18:03:01]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: XML [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01] Retrieving primary keys for 'EXPEDIENTE.ARCHIVOXML' [type = TABLE]
+[05 ago 2019 18:03:01]   Found primary key column: OID
+[05 ago 2019 18:03:01] Retrieving columns for 'EXPEDIENTE.ATTACHMENT' [type = TABLE]
+[05 ago 2019 18:03:01]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: FILE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: TITLE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: TIMESTAMP [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:01]   Found column: USER_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01] Retrieving primary keys for 'EXPEDIENTE.ATTACHMENT' [type = TABLE]
+[05 ago 2019 18:03:01]   Found primary key column: OID
+[05 ago 2019 18:03:01] Retrieving columns for 'EXPEDIENTE.ATTACHMENT_PROCESSINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:01]   Found column: ATTACHMENT_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: PROCESSINSTANCE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01] Retrieving primary keys for 'EXPEDIENTE.ATTACHMENT_PROCESSINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:01]   Found primary key column: ATTACHMENT_OID
+[05 ago 2019 18:03:01]   Found primary key column: PROCESSINSTANCE_OID
+[05 ago 2019 18:03:01] Retrieving columns for 'EXPEDIENTE.AUXILIARAPODERADO' [type = TABLE]
+[05 ago 2019 18:03:01]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: FACULTADESAPODERADO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: TOTALPARCIAL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: ESTATUS [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: CARGO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: CURP [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: RFC [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01] Retrieving primary keys for 'EXPEDIENTE.AUXILIARAPODERADO' [type = TABLE]
+[05 ago 2019 18:03:01]   Found primary key column: OID
+[05 ago 2019 18:03:01] Retrieving columns for 'EXPEDIENTE.AUXILIARINSTRUMENTO' [type = TABLE]
+[05 ago 2019 18:03:01]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: FECHAINSTRUMENTO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: LIBRO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: VOLUMEN [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: NUMERO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: AUXILIARM10_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:01] Retrieving primary keys for 'EXPEDIENTE.AUXILIARINSTRUMENTO' [type = TABLE]
+[05 ago 2019 18:03:01]   Found primary key column: OID
+[05 ago 2019 18:03:01] Retrieving columns for 'EXPEDIENTE.AUXILIARM10' [type = TABLE]
+[05 ago 2019 18:03:01]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: ANTECEDENTES [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: DATOSNOTARIO_OID [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: RFCNOTARIO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: FOLIOMERCANTIL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: RFCPM [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01] Retrieving primary keys for 'EXPEDIENTE.AUXILIARM10' [type = TABLE]
+[05 ago 2019 18:03:01]   Found primary key column: OID
+[05 ago 2019 18:03:01] Retrieving columns for 'EXPEDIENTE.AUXINE' [type = TABLE]
+[05 ago 2019 18:03:01]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: SERVICIO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: ESTATUS [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: DESCRIPCION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: ANIOREGISTRO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: APELLIDO1 [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: APELLIDO2 [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: CLAVEELECTOR [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: CURP [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: NOMBRE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: NUMEROEMISION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: VANIOEMISION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: VANIOREGISTRO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: VAPELLIDO1 [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:01]   Found column: VAPELLIDO2 [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: VCLAVEELECTOR [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: VCURP [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: VNOMBRE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: VNUMEROEMISION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: TIMESTAMP [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: USEROID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02] Retrieving primary keys for 'EXPEDIENTE.AUXINE' [type = TABLE]
+[05 ago 2019 18:03:02]   Found primary key column: OID
+[05 ago 2019 18:03:02] Retrieving columns for 'EXPEDIENTE.BITACORA' [type = TABLE]
+[05 ago 2019 18:03:02]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: OIDUSER [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: RESPONSE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: REQUEST [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: URI [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: TIMESTAMP [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: PROCESSINSTANCE_OID [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: SERVICIO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: EXITOSO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: OIDPM [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02] Retrieving primary keys for 'EXPEDIENTE.BITACORA' [type = TABLE]
+[05 ago 2019 18:03:02]   Found primary key column: OID
+[05 ago 2019 18:03:02] Retrieving columns for 'EXPEDIENTE.CADENAS' [type = TABLE]
+[05 ago 2019 18:03:02]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: XML_SIG_TAG [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: MODULUS [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: CERTIFICADO_X509 [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: NOMBRE_EMISOR_CERT [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: NOMBRE_SUJETO_X509 [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: DOCUMENTO_FIRMADO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: URI [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: SELLO_DIGITAL [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: HASH_CADENA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: FECHAS_VIGENCIA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: SERIE_CERT [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: CADENA [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: TIME_STAMP [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: CURP_O_RFC_FIRMANTE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: NOMBRE_O_RAZON_SOCIAL_FIRMANTE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: PROCESO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: FOLIO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: XMLM4 [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: ELABORADOPOR [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: FIRMADO [type = NUMBER][SQL/XOPEN type = 3][size = 1][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: XML [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: OIDPM [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02] Retrieving primary keys for 'EXPEDIENTE.CADENAS' [type = TABLE]
+[05 ago 2019 18:03:02]   Found primary key column: OID
+[05 ago 2019 18:03:02] Retrieving columns for 'EXPEDIENTE.CALIDADFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:02]   Found column: OIDCALIDADFED [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: NOMBRECALIDADFED [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02] Retrieving primary keys for 'EXPEDIENTE.CALIDADFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:02]   Found primary key column: OIDCALIDADFED
+[05 ago 2019 18:03:02] Retrieving columns for 'EXPEDIENTE.CATALOGOCATEGORIASOCIEDADES' [type = TABLE]
+[05 ago 2019 18:03:02]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: CATEGORIA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02] Retrieving primary keys for 'EXPEDIENTE.CATALOGOCATEGORIASOCIEDADES' [type = TABLE]
+[05 ago 2019 18:03:02]   Found primary key column: OID
+[05 ago 2019 18:03:02] Retrieving columns for 'EXPEDIENTE.CATALOGOMOVIMIENTOPODER' [type = TABLE]
+[05 ago 2019 18:03:02]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: TIPOMOVIMIENTO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02] Retrieving primary keys for 'EXPEDIENTE.CATALOGOMOVIMIENTOPODER' [type = TABLE]
+[05 ago 2019 18:03:02]   Found primary key column: OID
+[05 ago 2019 18:03:02] Retrieving columns for 'EXPEDIENTE.CATALOGOTIPOFACULTADES' [type = TABLE]
+[05 ago 2019 18:03:02]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: DESCRIPCION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02] Retrieving primary keys for 'EXPEDIENTE.CATALOGOTIPOFACULTADES' [type = TABLE]
+[05 ago 2019 18:03:02]   Found primary key column: OID
+[05 ago 2019 18:03:02] Retrieving columns for 'EXPEDIENTE.CATALOGOTIPOSOCIEDADES' [type = TABLE]
+[05 ago 2019 18:03:02]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: TIPOSOCIEDAD [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02] Retrieving primary keys for 'EXPEDIENTE.CATALOGOTIPOSOCIEDADES' [type = TABLE]
+[05 ago 2019 18:03:02]   Found primary key column: OID
+[05 ago 2019 18:03:02] Retrieving columns for 'EXPEDIENTE.CONTEO' [type = TABLE]
+[05 ago 2019 18:03:02]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: USERNAME [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: CURPVERIFICADO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: OIDUSER [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: FECHAVERIFICACION [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:02] Retrieving primary keys for 'EXPEDIENTE.CONTEO' [type = TABLE]
+[05 ago 2019 18:03:02]   Found primary key column: OID
+[05 ago 2019 18:03:02] Retrieving columns for 'EXPEDIENTE.CONTROLFIANZAS' [type = TABLE]
+[05 ago 2019 18:03:02]   Found column: OIDCONTROLFIANZAS [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: OIDFEDATARIO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: OIDAFIANZADORA [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: NUMEROPOLIZA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:02]   Found column: FECHAINICIO [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:02]   Found column: FECHATERMINO [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:03]   Found column: MONTOFIANZA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDESTATUSCTRLFIA [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDCALIDADFED [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDTIPOGAR [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDESTADO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDMUNICIPIO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDTIPOFIANZA [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: CONTEODIAS [type = NUMBER][SQL/XOPEN type = 3][size = 22][dec. digits = 0]
+[05 ago 2019 18:03:03] Retrieving primary keys for 'EXPEDIENTE.CONTROLFIANZAS' [type = TABLE]
+[05 ago 2019 18:03:03]   Found primary key column: OIDCONTROLFIANZAS
+[05 ago 2019 18:03:03] Retrieving columns for 'EXPEDIENTE.CTRLFIA' [type = TABLE]
+[05 ago 2019 18:03:03]   Found column: OIDCTRLFIA [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDFEDATARIO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDAFIANZADORA [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: NUMPOLIZA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: FECHAINIC [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:03]   Found column: FECHATERM [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:03]   Found column: MONTOFIA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDESTATUSCTRL [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDCALIDADFED [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDTIPOGAR [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDESTADO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDMUNICIPIO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OIDTIPOFIANZA [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03] Retrieving primary keys for 'EXPEDIENTE.CTRLFIA' [type = TABLE]
+[05 ago 2019 18:03:03]   Found primary key column: OIDCTRLFIA
+[05 ago 2019 18:03:03] Retrieving columns for 'EXPEDIENTE.DATOSNOTARIO' [type = TABLE]
+[05 ago 2019 18:03:03]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: MUNICIPIO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: ENTIDAD [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: NUMERO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: ESTATUS [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: TIPO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: PERSONAFISICA_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: ACTIVO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: LLFEDATARIO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: ESTATUSFEDATARIO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03] Retrieving primary keys for 'EXPEDIENTE.DATOSNOTARIO' [type = TABLE]
+[05 ago 2019 18:03:03]   Found primary key column: OID
+[05 ago 2019 18:03:03] Retrieving columns for 'EXPEDIENTE.DATOSPERSONA' [type = TABLE]
+[05 ago 2019 18:03:03]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: USEROID [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: RFC [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: OCR [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: NUMEMISION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: NOMBRE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: FENA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: CURP [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: CLAVEELECTORAL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: CIC [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: AP2 [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: AP1 [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: ANIOREG [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: ANIOEMISION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03] Retrieving primary keys for 'EXPEDIENTE.DATOSPERSONA' [type = TABLE]
+[05 ago 2019 18:03:03]   Found primary key column: OID
+[05 ago 2019 18:03:03] Retrieving columns for 'EXPEDIENTE.DECISIONES' [type = TABLE]
+[05 ago 2019 18:03:03]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: FORMADECARGA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: INFORMACIONVALIDA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03] Retrieving primary keys for 'EXPEDIENTE.DECISIONES' [type = TABLE]
+[05 ago 2019 18:03:03]   Found primary key column: OID
+[05 ago 2019 18:03:03] Retrieving columns for 'EXPEDIENTE.DOCUMENTOS' [type = TABLE]
+[05 ago 2019 18:03:03]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: ESQUEMADETRAMITACION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: NOMBREARCHIVO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: TAMANIO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: EXTENSION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: FOLIO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: ARCHIVO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: ETAPAVIDAEMPRESARIAL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: URI [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03] Retrieving primary keys for 'EXPEDIENTE.DOCUMENTOS' [type = TABLE]
+[05 ago 2019 18:03:03]   Found primary key column: OID
+[05 ago 2019 18:03:03] Retrieving columns for 'EXPEDIENTE.ELEMENTOS_ADMINISTRABLES' [type = TABLE]
+[05 ago 2019 18:03:03]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: ELEMENTO_ADMINISTRABLE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: VALOR [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03] Retrieving primary keys for 'EXPEDIENTE.ELEMENTOS_ADMINISTRABLES' [type = TABLE]
+[05 ago 2019 18:03:03]   Found primary key column: OID
+[05 ago 2019 18:03:03] Retrieving columns for 'EXPEDIENTE.ESTADOS' [type = TABLE]
+[05 ago 2019 18:03:03]   Found column: OIDESTADO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: NOMBREESTADO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03] Retrieving primary keys for 'EXPEDIENTE.ESTADOS' [type = TABLE]
+[05 ago 2019 18:03:03]   Found primary key column: OIDESTADO
+[05 ago 2019 18:03:03] Retrieving columns for 'EXPEDIENTE.ESTATUSAFIANZADORA' [type = TABLE]
+[05 ago 2019 18:03:03]   Found column: OIDESTATUSAFIANZADORA [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:03]   Found column: NOMBREESTATUSAFIANZADORA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:03] Retrieving primary keys for 'EXPEDIENTE.ESTATUSAFIANZADORA' [type = TABLE]
+[05 ago 2019 18:03:04]   Found primary key column: OIDESTATUSAFIANZADORA
+[05 ago 2019 18:03:04] Retrieving columns for 'EXPEDIENTE.ESTATUSCTRLFIANZA' [type = TABLE]
+[05 ago 2019 18:03:04]   Found column: OIDESTATUSCTRLFIA [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: ESTATUSCTRL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04] Retrieving primary keys for 'EXPEDIENTE.ESTATUSCTRLFIANZA' [type = TABLE]
+[05 ago 2019 18:03:04]   Found primary key column: OIDESTATUSCTRLFIA
+[05 ago 2019 18:03:04] Retrieving columns for 'EXPEDIENTE.ESTATUSFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:04]   Found column: OIDESTATUSFED [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: NOMBREESTATUSFED [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04] Retrieving primary keys for 'EXPEDIENTE.ESTATUSFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:04]   Found primary key column: OIDESTATUSFED
+[05 ago 2019 18:03:04] Retrieving columns for 'EXPEDIENTE.ESTATUSTIPOFIANZA' [type = TABLE]
+[05 ago 2019 18:03:04]   Found column: OIDESTATUSTIPFIA [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: NOMBREESTATUSTIPOFIA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04] Retrieving primary keys for 'EXPEDIENTE.ESTATUSTIPOFIANZA' [type = TABLE]
+[05 ago 2019 18:03:04]   Found primary key column: OIDESTATUSTIPFIA
+[05 ago 2019 18:03:04] Retrieving columns for 'EXPEDIENTE.ESTRUCTURAACCIONARIA' [type = TABLE]
+[05 ago 2019 18:03:04]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: VALORACCION [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 2]
+[05 ago 2019 18:03:04]   Found column: TIPOACCION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: TOTALACCIONES [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: PERSONAMORAL_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: SERIEACCION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04] Retrieving primary keys for 'EXPEDIENTE.ESTRUCTURAACCIONARIA' [type = TABLE]
+[05 ago 2019 18:03:04]   Found primary key column: OID
+[05 ago 2019 18:03:04] Retrieving columns for 'EXPEDIENTE.EXPEDIENTEELECTRONICO' [type = TABLE]
+[05 ago 2019 18:03:04]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: ANIOCONSTITUCION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: FECHACONSTITUCION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: NUMEROCONSECUTIVO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: EXPEDIENTEELECTRONICO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: PERSONAMORAL_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:04] Retrieving primary keys for 'EXPEDIENTE.EXPEDIENTEELECTRONICO' [type = TABLE]
+[05 ago 2019 18:03:04]   Found primary key column: OID
+[05 ago 2019 18:03:04] Retrieving columns for 'EXPEDIENTE.FEDATARIOS' [type = TABLE]
+[05 ago 2019 18:03:04]   Found column: OIDFEDATARIO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: NOMBREFED [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: PRIMAPELLIDO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: SEGUNAPELLIDO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: OIDESTADO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: NUMFED [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: CORREOFED [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: ESTATUSFED [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: NOMBRECOMFED [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: OIDCALIDADFED [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: OIDTIPOFED [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: RFCFED [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: CURPFED [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: OIDMUNICIPIO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: OIDOBSERVACIONES [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04] Retrieving primary keys for 'EXPEDIENTE.FEDATARIOS' [type = TABLE]
+[05 ago 2019 18:03:04]   Found primary key column: OIDFEDATARIO
+[05 ago 2019 18:03:04] Retrieving columns for 'EXPEDIENTE.FIANZA' [type = TABLE]
+[05 ago 2019 18:03:04]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: ESADICIONAL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: MONTO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: FECHATERMINO [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:04]   Found column: FECHAOROTGAMIENTO [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:04]   Found column: TIPO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: ACTIVA [type = NUMBER][SQL/XOPEN type = 3][size = 1][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: VIGENCIA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: DATOSNOTARIO_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04] Retrieving primary keys for 'EXPEDIENTE.FIANZA' [type = TABLE]
+[05 ago 2019 18:03:04]   Found primary key column: OID
+[05 ago 2019 18:03:04] Retrieving columns for 'EXPEDIENTE.GROUP' [type = TABLE]
+[05 ago 2019 18:03:04]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: GROUPNAME [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: MODULE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04] Retrieving primary keys for 'EXPEDIENTE.GROUP' [type = TABLE]
+[05 ago 2019 18:03:04]   Found primary key column: OID
+[05 ago 2019 18:03:04] Retrieving columns for 'EXPEDIENTE.GROUP_ACTIVITYTYPE' [type = TABLE]
+[05 ago 2019 18:03:04]   Found column: GROUP_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: ACTIVITYTYPE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04] Retrieving primary keys for 'EXPEDIENTE.GROUP_ACTIVITYTYPE' [type = TABLE]
+[05 ago 2019 18:03:04]   Found primary key column: GROUP_OID
+[05 ago 2019 18:03:04]   Found primary key column: ACTIVITYTYPE_OID
+[05 ago 2019 18:03:04] Retrieving columns for 'EXPEDIENTE.GROUP_MODULE' [type = TABLE]
+[05 ago 2019 18:03:04]   Found column: GROUP_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04]   Found column: MODULE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04] Retrieving primary keys for 'EXPEDIENTE.GROUP_MODULE' [type = TABLE]
+[05 ago 2019 18:03:04]   Found primary key column: GROUP_OID
+[05 ago 2019 18:03:04]   Found primary key column: MODULE_OID
+[05 ago 2019 18:03:04] Retrieving columns for 'EXPEDIENTE.HT_PERSONAFISICA' [type = TABLE]
+[05 ago 2019 18:03:04]   Found column: USER_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:04] Retrieving primary keys for 'EXPEDIENTE.HT_PERSONAFISICA' [type = TABLE]
+[05 ago 2019 18:03:05] Retrieving columns for 'EXPEDIENTE.HT_PERSONAMORAL' [type = TABLE]
+[05 ago 2019 18:03:05]   Found column: USER_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05] Retrieving primary keys for 'EXPEDIENTE.HT_PERSONAMORAL' [type = TABLE]
+[05 ago 2019 18:03:05] Retrieving columns for 'EXPEDIENTE.INSTRUMENTO' [type = TABLE]
+[05 ago 2019 18:03:05]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: FOJA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: LIBRO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: VOLUMEN [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: NUMERO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: ISESCRITURA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: FECHA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05] Retrieving primary keys for 'EXPEDIENTE.INSTRUMENTO' [type = TABLE]
+[05 ago 2019 18:03:05]   Found primary key column: OID
+[05 ago 2019 18:03:05] Retrieving columns for 'EXPEDIENTE.INSTRUMENTOS' [type = TABLE]
+[05 ago 2019 18:03:05]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: NUMEROINSTRUMENTO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: DEFECHA [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:05]   Found column: CONDURACION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: TIPOINSTRUMENTO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: LIBRO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: VOLUMEN [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05] Retrieving primary keys for 'EXPEDIENTE.INSTRUMENTOS' [type = TABLE]
+[05 ago 2019 18:03:05]   Found primary key column: OID
+[05 ago 2019 18:03:05] Retrieving columns for 'EXPEDIENTE.MANDATO' [type = TABLE]
+[05 ago 2019 18:03:05]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: FECHACADUCIDAD [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:05]   Found column: FECHAINICIO [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:05]   Found column: URIPDF [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: URIXML [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: PERSONAFISICA_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: DATOSNOTARIO_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: INSTRUMENTO_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: CARGOPF [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: ACTIVO [type = NUMBER][SQL/XOPEN type = 3][size = 1][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: TIPOFACULTAD [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: COMENTARIOSFACULTAD [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05] Retrieving primary keys for 'EXPEDIENTE.MANDATO' [type = TABLE]
+[05 ago 2019 18:03:05]   Found primary key column: OID
+[05 ago 2019 18:03:05] Retrieving columns for 'EXPEDIENTE.MODULE' [type = TABLE]
+[05 ago 2019 18:03:05]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: MODULEID [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: MODULENAME [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: MODULEDOMAINNAME [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05] Retrieving primary keys for 'EXPEDIENTE.MODULE' [type = TABLE]
+[05 ago 2019 18:03:05]   Found primary key column: OID
+[05 ago 2019 18:03:05] Retrieving columns for 'EXPEDIENTE.MUNICIPIOS' [type = TABLE]
+[05 ago 2019 18:03:05]   Found column: OIDMUNICIPIO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: NOMBREMUNICIPIO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: OIDESTADO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05] Retrieving primary keys for 'EXPEDIENTE.MUNICIPIOS' [type = TABLE]
+[05 ago 2019 18:03:05]   Found primary key column: OIDMUNICIPIO
+[05 ago 2019 18:03:05] Retrieving columns for 'EXPEDIENTE.NOMBRAMIENTOOCARGO' [type = TABLE]
+[05 ago 2019 18:03:05]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: NOMBRAMIENTO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: TIPO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: CARGO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: ADMINISTRACION_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: NOMBRAMIENTOS_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: PERSONAFISICA_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: PERSONAMORAL_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: REVOCADO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05] Retrieving primary keys for 'EXPEDIENTE.NOMBRAMIENTOOCARGO' [type = TABLE]
+[05 ago 2019 18:03:05]   Found primary key column: OID
+[05 ago 2019 18:03:05] Retrieving columns for 'EXPEDIENTE.NOMBRAMIENTOS' [type = TABLE]
+[05 ago 2019 18:03:05]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: CARGO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: DESCRIPCIONFACULTAD [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: FACULTAD [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: PERSONAFISICA_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: PERSONAMORAL_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: OIDTIPOFACULTAD [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: ESTATUS [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:05] Retrieving primary keys for 'EXPEDIENTE.NOMBRAMIENTOS' [type = TABLE]
+[05 ago 2019 18:03:05]   Found primary key column: OID
+[05 ago 2019 18:03:05] Retrieving columns for 'EXPEDIENTE.NOTE' [type = TABLE]
+[05 ago 2019 18:03:05]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: TEXT [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: TIMESTAMP [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:05]   Found column: ACTIVITYINSTANCE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05]   Found column: USER_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:05] Retrieving primary keys for 'EXPEDIENTE.NOTE' [type = TABLE]
+[05 ago 2019 18:03:05]   Found primary key column: OID
+[05 ago 2019 18:03:05] Retrieving columns for 'EXPEDIENTE.NOTE_ACTIVITYINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:05]   Found column: NOTE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: ACTIVITYINSTANCE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06] Retrieving primary keys for 'EXPEDIENTE.NOTE_ACTIVITYINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:06]   Found primary key column: NOTE_OID
+[05 ago 2019 18:03:06]   Found primary key column: ACTIVITYINSTANCE_OID
+[05 ago 2019 18:03:06] Retrieving columns for 'EXPEDIENTE.NOTE_PROCESSINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:06]   Found column: NOTE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: PROCESSINSTANCE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06] Retrieving primary keys for 'EXPEDIENTE.NOTE_PROCESSINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:06]   Found primary key column: NOTE_OID
+[05 ago 2019 18:03:06]   Found primary key column: PROCESSINSTANCE_OID
+[05 ago 2019 18:03:06] Retrieving columns for 'EXPEDIENTE.NOTIFICATION' [type = TABLE]
+[05 ago 2019 18:03:06]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: MESSAGE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: READ [type = NUMBER][SQL/XOPEN type = 3][size = 1][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: ACTIVITYINSTANCE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06] Retrieving primary keys for 'EXPEDIENTE.NOTIFICATION' [type = TABLE]
+[05 ago 2019 18:03:06]   Found primary key column: OID
+[05 ago 2019 18:03:06] Retrieving columns for 'EXPEDIENTE.NUMEROCONSECUTIVO' [type = TABLE]
+[05 ago 2019 18:03:06]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: CONSECUTIVO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: PERSONAMORAL_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: EXPEDIENTEELECTRONICO_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: ANIO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06] Retrieving primary keys for 'EXPEDIENTE.NUMEROCONSECUTIVO' [type = TABLE]
+[05 ago 2019 18:03:06]   Found primary key column: OID
+[05 ago 2019 18:03:06] Retrieving columns for 'EXPEDIENTE.OBSERVACIONES' [type = TABLE]
+[05 ago 2019 18:03:06]   Found column: OIDOBSERVACIONES [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: NOMBREOBSERVACION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06] Retrieving primary keys for 'EXPEDIENTE.OBSERVACIONES' [type = TABLE]
+[05 ago 2019 18:03:06]   Found primary key column: OIDOBSERVACIONES
+[05 ago 2019 18:03:06] Retrieving columns for 'EXPEDIENTE.ORGANODEVIGILANCIA' [type = TABLE]
+[05 ago 2019 18:03:06]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: DESCRIPCIONORGANO [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: PERSONAFISICA_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: PERSONAMORAL_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:06] Retrieving primary keys for 'EXPEDIENTE.ORGANODEVIGILANCIA' [type = TABLE]
+[05 ago 2019 18:03:06]   Found primary key column: OID
+[05 ago 2019 18:03:06] Retrieving columns for 'EXPEDIENTE.PARAMETERINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:06]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: VALUE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: CURRENT [type = NUMBER][SQL/XOPEN type = 3][size = 1][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: TIMESTAMP [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:06]   Found column: ACTIVITYINSTANCE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: PARAMETERTYPE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: PROCESSINSTANCE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06] Retrieving primary keys for 'EXPEDIENTE.PARAMETERINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:06]   Found primary key column: OID
+[05 ago 2019 18:03:06] Retrieving columns for 'EXPEDIENTE.PARAMETERTYPE' [type = TABLE]
+[05 ago 2019 18:03:06]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: NAME [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: DESCRIPTION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: TYPE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: PROCESS_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06] Retrieving primary keys for 'EXPEDIENTE.PARAMETERTYPE' [type = TABLE]
+[05 ago 2019 18:03:06]   Found primary key column: OID
+[05 ago 2019 18:03:06] Retrieving columns for 'EXPEDIENTE.PARAMETROS' [type = TABLE]
+[05 ago 2019 18:03:06]   Found column: OIDPARAMETRO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: OIDESTADO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: MONTOPARAMETRO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: FECHAINICIO [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:06]   Found column: FECHAACTUALIZACION [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:06] Retrieving primary keys for 'EXPEDIENTE.PARAMETROS' [type = TABLE]
+[05 ago 2019 18:03:06]   Found primary key column: OIDPARAMETRO
+[05 ago 2019 18:03:06] Retrieving columns for 'EXPEDIENTE.PERSONAFISICA' [type = TABLE]
+[05 ago 2019 18:03:06]   Found column: USER_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: PFTELEFONO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: FECHANAC [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: ANIONAC [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: MESNAC [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: DIANAC [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: PFACTIVO [type = NUMBER][SQL/XOPEN type = 3][size = 1][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: FECHACADUCIDAD [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:06]   Found column: FECHAINSCRIPCION [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:06]   Found column: PFNACIONALIDAD [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: ENTIDADNAC [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: PFSEXO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: RFC [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: NOMBRECOMPLETO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: APELLIDO2 [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: APELLIDO1 [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: NOMBRE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: MANDATO_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: PERSONAMORAL_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: PERSONAFISICA_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: CONFACULTADES [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:06]   Found column: FACULTADESNOM [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: FACULTADESAPO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: TIPOPF [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07] Retrieving primary keys for 'EXPEDIENTE.PERSONAFISICA' [type = TABLE]
+[05 ago 2019 18:03:07]   Found primary key column: USER_OID
+[05 ago 2019 18:03:07] Retrieving columns for 'EXPEDIENTE.PERSONAFISICA_PERSONAMORAL' [type = TABLE]
+[05 ago 2019 18:03:07]   Found column: PERSONAFISICA_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: PERSONAMORAL_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07] Retrieving primary keys for 'EXPEDIENTE.PERSONAFISICA_PERSONAMORAL' [type = TABLE]
+[05 ago 2019 18:03:07]   Found primary key column: PERSONAFISICA_OID
+[05 ago 2019 18:03:07]   Found primary key column: PERSONAMORAL_OID
+[05 ago 2019 18:03:07] Retrieving columns for 'EXPEDIENTE.PERSONALFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:07]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: OIDPERSONAL [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: DATOSNOTARIO_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:07] Retrieving primary keys for 'EXPEDIENTE.PERSONALFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:07]   Found primary key column: OID
+[05 ago 2019 18:03:07] Retrieving columns for 'EXPEDIENTE.PERSONAMORAL' [type = TABLE]
+[05 ago 2019 18:03:07]   Found column: USER_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: TELEFONO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: ACTIVO [type = NUMBER][SQL/XOPEN type = 3][size = 1][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: FECHACADUCIDAD [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:07]   Found column: FECHAINSCRIPCION [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:07]   Found column: RAZONSOCIAL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: PERSONAFISICA_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: MANDATO_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: CODIGOPOSTAL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: ENTFEDERATIVA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: MUNICIPIODELEGACION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: LOCALIDAD [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: COLONIA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: CALLE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: ENTRECALLE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: YCALLE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: NOEXTERIOR [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: NOINTERIOR [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: TIPOCAPITAL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: TIPOPM [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: FECHAAUTORIZACIONMUA [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:07]   Found column: TIPOSOCIEDAD [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: CUDONUMEXPEDIENTE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: OBJETOSOCIAL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: DENOMINACIONMUA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: INSTRUMENTOS_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: QUIENAUTORIZA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: FECHADECONSTITUCION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: CAPITALSOCIALMINIMO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: CONEXPRESION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07] Retrieving primary keys for 'EXPEDIENTE.PERSONAMORAL' [type = TABLE]
+[05 ago 2019 18:03:07]   Found primary key column: USER_OID
+[05 ago 2019 18:03:07] Retrieving columns for 'EXPEDIENTE.PODER' [type = TABLE]
+[05 ago 2019 18:03:07]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: PODERXMLAFIRMAR [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: PODERPDFAFIRMAR [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: PODERXMLFIRMADO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: PODERPDFFIRMADO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: BOLETADEINSCRIPCION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07] Retrieving primary keys for 'EXPEDIENTE.PODER' [type = TABLE]
+[05 ago 2019 18:03:07]   Found primary key column: OID
+[05 ago 2019 18:03:07] Retrieving columns for 'EXPEDIENTE.PREVIOUSACTIVITYINSTANCE_NEXTA' [type = TABLE]
+[05 ago 2019 18:03:07]   Found column: ACTIVITYINSTANCE_OID_2 [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: ACTIVITYINSTANCE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07] Retrieving primary keys for 'EXPEDIENTE.PREVIOUSACTIVITYINSTANCE_NEXTA' [type = TABLE]
+[05 ago 2019 18:03:07]   Found primary key column: ACTIVITYINSTANCE_OID_2
+[05 ago 2019 18:03:07]   Found primary key column: ACTIVITYINSTANCE_OID
+[05 ago 2019 18:03:07] Retrieving columns for 'EXPEDIENTE.PROCESS' [type = TABLE]
+[05 ago 2019 18:03:07]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: CODE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: NAME [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: DEFAULT_INSTANCE_NAME [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: DESCRIPTION [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: UUID [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: VERSION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07] Retrieving primary keys for 'EXPEDIENTE.PROCESS' [type = TABLE]
+[05 ago 2019 18:03:07]   Found primary key column: OID
+[05 ago 2019 18:03:07] Retrieving columns for 'EXPEDIENTE.PROCESSINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:07]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: NAME [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: SUBPROCESSINDEX [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: STATUS [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: ACTIVE_SINCE [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:07]   Found column: COMPLETED_AT [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:07]   Found column: CANCELLED_AT [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:07]   Found column: ABORTED_AT [type = TIMESTAMP(6)][SQL/XOPEN type = 93][size = 11][dec. digits = 6]
+[05 ago 2019 18:03:07]   Found column: PROCESS_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: PROCESSINSTANCE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07] Retrieving primary keys for 'EXPEDIENTE.PROCESSINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:07]   Found primary key column: OID
+[05 ago 2019 18:03:07] Retrieving columns for 'EXPEDIENTE.PRUEBA' [type = TABLE]
+[05 ago 2019 18:03:07]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: RFCFEDATARIO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07]   Found column: PODERDESCRIPCION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:07] Retrieving primary keys for 'EXPEDIENTE.PRUEBA' [type = TABLE]
+[05 ago 2019 18:03:08]   Found primary key column: OID
+[05 ago 2019 18:03:08] Retrieving columns for 'EXPEDIENTE.REVOCACIONES' [type = TABLE]
+[05 ago 2019 18:03:08]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: REVOCACIONTOTAL [type = NUMBER][SQL/XOPEN type = 3][size = 1][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: PERSONAFISICA_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: PERSONAMORAL_OID [type = NUMBER][SQL/XOPEN type = 3][size = 19][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: ADMINISTRACION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: NOMBRAMIENTO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: APODERADO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08] Retrieving primary keys for 'EXPEDIENTE.REVOCACIONES' [type = TABLE]
+[05 ago 2019 18:03:08]   Found primary key column: OID
+[05 ago 2019 18:03:08] Retrieving columns for 'EXPEDIENTE.SEQUENCEFLOW' [type = TABLE]
+[05 ago 2019 18:03:08]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: LABEL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: CONDITION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: DEFAULT [type = NUMBER][SQL/XOPEN type = 3][size = 1][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: SORT_NUMBER [type = FLOAT][SQL/XOPEN type = 6][size = 126][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: ACTIVITYTYPE_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: ACTIVITYTYPE_OID_2 [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08] Retrieving primary keys for 'EXPEDIENTE.SEQUENCEFLOW' [type = TABLE]
+[05 ago 2019 18:03:08]   Found primary key column: OID
+[05 ago 2019 18:03:08] Retrieving columns for 'EXPEDIENTE.TEXTO' [type = TABLE]
+[05 ago 2019 18:03:08]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: TEXTO [type = CLOB][SQL/XOPEN type = 2005][size = 4000][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: DESCRIPCION [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08] Retrieving primary keys for 'EXPEDIENTE.TEXTO' [type = TABLE]
+[05 ago 2019 18:03:08]   Found primary key column: OID
+[05 ago 2019 18:03:08] Retrieving columns for 'EXPEDIENTE.TIPOFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:08]   Found column: OIDTIPOFEDATARIO [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: NOMBRETIPOFED [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08] Retrieving primary keys for 'EXPEDIENTE.TIPOFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:08]   Found primary key column: OIDTIPOFEDATARIO
+[05 ago 2019 18:03:08] Retrieving columns for 'EXPEDIENTE.TIPOFIANZA' [type = TABLE]
+[05 ago 2019 18:03:08]   Found column: OITIDPOFIANZA [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: NOMBRETIPOFIANZA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: COMENTARIOTIPOFIANZA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: OIDESTATUSTIPOFIA [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08] Retrieving primary keys for 'EXPEDIENTE.TIPOFIANZA' [type = TABLE]
+[05 ago 2019 18:03:08]   Found primary key column: OITIDPOFIANZA
+[05 ago 2019 18:03:08] Retrieving columns for 'EXPEDIENTE.TIPOGARANTIA' [type = TABLE]
+[05 ago 2019 18:03:08]   Found column: OIDTIPOGAR [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: MBRETIPOGAR [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08] Retrieving primary keys for 'EXPEDIENTE.TIPOGARANTIA' [type = TABLE]
+[05 ago 2019 18:03:08]   Found primary key column: OIDTIPOGAR
+[05 ago 2019 18:03:08] Retrieving columns for 'EXPEDIENTE.USER' [type = TABLE]
+[05 ago 2019 18:03:08]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: USERNAME [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: PASSWORD [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: EMAIL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: GROUP_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08] Retrieving primary keys for 'EXPEDIENTE.USER' [type = TABLE]
+[05 ago 2019 18:03:08]   Found primary key column: OID
+[05 ago 2019 18:03:08] Retrieving columns for 'EXPEDIENTE.USER_GROUP' [type = TABLE]
+[05 ago 2019 18:03:08]   Found column: USER_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: GROUP_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08] Retrieving primary keys for 'EXPEDIENTE.USER_GROUP' [type = TABLE]
+[05 ago 2019 18:03:08]   Found primary key column: USER_OID
+[05 ago 2019 18:03:08]   Found primary key column: GROUP_OID
+[05 ago 2019 18:03:08] Retrieving columns for 'EXPEDIENTE.USER_NOTIFICATIONS' [type = TABLE]
+[05 ago 2019 18:03:08]   Found column: USER_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: NOTIFICATION_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08] Retrieving primary keys for 'EXPEDIENTE.USER_NOTIFICATIONS' [type = TABLE]
+[05 ago 2019 18:03:08]   Found primary key column: USER_OID
+[05 ago 2019 18:03:08]   Found primary key column: NOTIFICATION_OID
+[05 ago 2019 18:03:08] Retrieving columns for 'EXPEDIENTE.VERIFICACIONIDENTIFICACION' [type = TABLE]
+[05 ago 2019 18:03:08]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: PROCESO [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: CADENAORIGINAL [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: USEROID [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: CADENA [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08] Retrieving primary keys for 'EXPEDIENTE.VERIFICACIONIDENTIFICACION' [type = TABLE]
+[05 ago 2019 18:03:08]   Found primary key column: OID
+[05 ago 2019 18:03:08] Retrieving columns for 'EXPEDIENTE.XML' [type = TABLE]
+[05 ago 2019 18:03:08]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: INDEX [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: VALUE [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: TAG [type = VARCHAR2][SQL/XOPEN type = 12][size = 1020][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: XML_OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08] Retrieving primary keys for 'EXPEDIENTE.XML' [type = TABLE]
+[05 ago 2019 18:03:08]   Found primary key column: OID
+[05 ago 2019 18:03:08] Retrieving columns for 'EXPEDIENTE.PROCESSINSTANCE_ATTACHMENT_COU' [type = VIEW]
+[05 ago 2019 18:03:08]   Found column: OID [type = NUMBER][SQL/XOPEN type = 3][size = 10][dec. digits = 0]
+[05 ago 2019 18:03:08]   Found column: DER_ATTR [type = NUMBER][SQL/XOPEN type = 3][size = 22][dec. digits = 0]
+[05 ago 2019 18:03:09] Retrieving primary keys for 'EXPEDIENTE.PROCESSINSTANCE_ATTACHMENT_COU' [type = VIEW]
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.ACCIONES' [type = TABLE]
+[05 ago 2019 18:03:09]   Found foreign key: column ESTRUCTURAACCIONARIA_OID references ESTRUCTURAACCIONARIA(OID)
+[05 ago 2019 18:03:09]   Found foreign key: column PERSONAFISICA_OID references PERSONAFISICA(USER_OID)
+[05 ago 2019 18:03:09]   Found foreign key: column PERSONAMORAL_OID references PERSONAMORAL(USER_OID)
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.ACTIVITYINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:09]   Found foreign key: column ACTIVITYTYPE_OID references ACTIVITYTYPE(OID)
+[05 ago 2019 18:03:09]   Found foreign key: column GROUP_OID references GROUP(OID)
+[05 ago 2019 18:03:09]   Found foreign key: column PROCESSINSTANCE_OID references PROCESSINSTANCE(OID)
+[05 ago 2019 18:03:09]   Found foreign key: column USER_OID references USER(OID)
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.ACTIVITYINSTANCE_CANDIDATEUSER' [type = TABLE]
+[05 ago 2019 18:03:09]   Found foreign key: column ACTIVITYINSTANCE_OID references ACTIVITYINSTANCE(OID)
+[05 ago 2019 18:03:09]   Found foreign key: column USER_OID references USER(OID)
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.ACTIVITYTYPE' [type = TABLE]
+[05 ago 2019 18:03:09]   Found foreign key: column PROCESS_OID references PROCESS(OID)
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.ADMINISTRACION' [type = TABLE]
+[05 ago 2019 18:03:09]   Found foreign key: column PERSONAFISICA_OID references PERSONAFISICA(USER_OID)
+[05 ago 2019 18:03:09]   Found foreign key: column PERSONAMORAL_OID references PERSONAMORAL(USER_OID)
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.AFIANZADORA' [type = TABLE]
+[05 ago 2019 18:03:09]   Found foreign key: column ESTATUSAFIANZADORA references ESTATUSAFIANZADORA(OIDESTATUSAFIANZADORA)
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.APODERADO' [type = TABLE]
+[05 ago 2019 18:03:09]   Found foreign key: column AUXILIARM10_OID references AUXILIARM10(OID)
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.APODERADOS' [type = TABLE]
+[05 ago 2019 18:03:09]   Found foreign key: column PERSONAFISICA_OID references PERSONAFISICA(USER_OID)
+[05 ago 2019 18:03:09]   Found foreign key: column PERSONAMORAL_OID references PERSONAMORAL(USER_OID)
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.ARCHIVOXML' [type = TABLE]
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.ATTACHMENT' [type = TABLE]
+[05 ago 2019 18:03:09]   Found foreign key: column USER_OID references USER(OID)
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.ATTACHMENT_PROCESSINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:09]   Found foreign key: column ATTACHMENT_OID references ATTACHMENT(OID)
+[05 ago 2019 18:03:09]   Found foreign key: column PROCESSINSTANCE_OID references PROCESSINSTANCE(OID)
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.AUXILIARAPODERADO' [type = TABLE]
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.AUXILIARINSTRUMENTO' [type = TABLE]
+[05 ago 2019 18:03:09]   Found foreign key: column AUXILIARM10_OID references AUXILIARM10(OID)
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.AUXILIARM10' [type = TABLE]
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.AUXINE' [type = TABLE]
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.BITACORA' [type = TABLE]
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.CADENAS' [type = TABLE]
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.CALIDADFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.CATALOGOCATEGORIASOCIEDADES' [type = TABLE]
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.CATALOGOMOVIMIENTOPODER' [type = TABLE]
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.CATALOGOTIPOFACULTADES' [type = TABLE]
+[05 ago 2019 18:03:09] Retrieving foreign keys for 'EXPEDIENTE.CATALOGOTIPOSOCIEDADES' [type = TABLE]
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.CONTEO' [type = TABLE]
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.CONTROLFIANZAS' [type = TABLE]
+[05 ago 2019 18:03:10]   Found foreign key: column OIDAFIANZADORA references AFIANZADORA(OIDAFIANZADORA)
+[05 ago 2019 18:03:10]   Found foreign key: column OIDCALIDADFED references CALIDADFEDATARIO(OIDCALIDADFED)
+[05 ago 2019 18:03:10]   Found foreign key: column OIDESTADO references ESTADOS(OIDESTADO)
+[05 ago 2019 18:03:10]   Found foreign key: column OIDESTATUSCTRLFIA references ESTATUSCTRLFIANZA(OIDESTATUSCTRLFIA)
+[05 ago 2019 18:03:10]   Found foreign key: column OIDFEDATARIO references FEDATARIOS(OIDFEDATARIO)
+[05 ago 2019 18:03:10]   Found foreign key: column OIDMUNICIPIO references MUNICIPIOS(OIDMUNICIPIO)
+[05 ago 2019 18:03:10]   Found foreign key: column OIDTIPOFIANZA references TIPOFIANZA(OITIDPOFIANZA)
+[05 ago 2019 18:03:10]   Found foreign key: column OIDTIPOGAR references TIPOGARANTIA(OIDTIPOGAR)
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.CTRLFIA' [type = TABLE]
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.DATOSNOTARIO' [type = TABLE]
+[05 ago 2019 18:03:10]   Found foreign key: column PERSONAFISICA_OID references PERSONAFISICA(USER_OID)
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.DATOSPERSONA' [type = TABLE]
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.DECISIONES' [type = TABLE]
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.DOCUMENTOS' [type = TABLE]
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.ELEMENTOS_ADMINISTRABLES' [type = TABLE]
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.ESTADOS' [type = TABLE]
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.ESTATUSAFIANZADORA' [type = TABLE]
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.ESTATUSCTRLFIANZA' [type = TABLE]
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.ESTATUSFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.ESTATUSTIPOFIANZA' [type = TABLE]
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.ESTRUCTURAACCIONARIA' [type = TABLE]
+[05 ago 2019 18:03:10]   Found foreign key: column PERSONAMORAL_OID references PERSONAMORAL(USER_OID)
+[05 ago 2019 18:03:10] Retrieving foreign keys for 'EXPEDIENTE.EXPEDIENTEELECTRONICO' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAMORAL_OID references PERSONAMORAL(USER_OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.FEDATARIOS' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column OIDCALIDADFED references CALIDADFEDATARIO(OIDCALIDADFED)
+[05 ago 2019 18:03:11]   Found foreign key: column OIDESTADO references ESTADOS(OIDESTADO)
+[05 ago 2019 18:03:11]   Found foreign key: column ESTATUSFED references ESTATUSFEDATARIO(OIDESTATUSFED)
+[05 ago 2019 18:03:11]   Found foreign key: column OIDMUNICIPIO references MUNICIPIOS(OIDMUNICIPIO)
+[05 ago 2019 18:03:11]   Found foreign key: column OIDOBSERVACIONES references OBSERVACIONES(OIDOBSERVACIONES)
+[05 ago 2019 18:03:11]   Found foreign key: column OIDTIPOFED references TIPOFEDATARIO(OIDTIPOFEDATARIO)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.FIANZA' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column DATOSNOTARIO_OID references DATOSNOTARIO(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.GROUP' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column MODULE_OID references MODULE(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.GROUP_ACTIVITYTYPE' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column ACTIVITYTYPE_OID references ACTIVITYTYPE(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column GROUP_OID references GROUP(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.GROUP_MODULE' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column GROUP_OID references GROUP(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column MODULE_OID references MODULE(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.HT_PERSONAFISICA' [type = TABLE]
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.HT_PERSONAMORAL' [type = TABLE]
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.INSTRUMENTO' [type = TABLE]
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.INSTRUMENTOS' [type = TABLE]
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.MANDATO' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column DATOSNOTARIO_OID references DATOSNOTARIO(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column INSTRUMENTO_OID references INSTRUMENTO(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAFISICA_OID references PERSONAFISICA(USER_OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.MODULE' [type = TABLE]
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.MUNICIPIOS' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column OIDESTADO references ESTADOS(OIDESTADO)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.NOMBRAMIENTOOCARGO' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column ADMINISTRACION_OID references ADMINISTRACION(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column NOMBRAMIENTOS_OID references NOMBRAMIENTOS(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAFISICA_OID references PERSONAFISICA(USER_OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAMORAL_OID references PERSONAMORAL(USER_OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.NOMBRAMIENTOS' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAFISICA_OID references PERSONAFISICA(USER_OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAMORAL_OID references PERSONAMORAL(USER_OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.NOTE' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column ACTIVITYINSTANCE_OID references ACTIVITYINSTANCE(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column USER_OID references USER(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.NOTE_ACTIVITYINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column ACTIVITYINSTANCE_OID references ACTIVITYINSTANCE(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column NOTE_OID references NOTE(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.NOTE_PROCESSINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column NOTE_OID references NOTE(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PROCESSINSTANCE_OID references PROCESSINSTANCE(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.NOTIFICATION' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column ACTIVITYINSTANCE_OID references ACTIVITYINSTANCE(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.NUMEROCONSECUTIVO' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column EXPEDIENTEELECTRONICO_OID references EXPEDIENTEELECTRONICO(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAMORAL_OID references PERSONAMORAL(USER_OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.OBSERVACIONES' [type = TABLE]
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.ORGANODEVIGILANCIA' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAFISICA_OID references PERSONAFISICA(USER_OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAMORAL_OID references PERSONAMORAL(USER_OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.PARAMETERINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column ACTIVITYINSTANCE_OID references ACTIVITYINSTANCE(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PARAMETERTYPE_OID references PARAMETERTYPE(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PROCESSINSTANCE_OID references PROCESSINSTANCE(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.PARAMETERTYPE' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column PROCESS_OID references PROCESS(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.PARAMETROS' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column OIDESTADO references ESTADOS(OIDESTADO)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.PERSONAFISICA' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column MANDATO_OID references MANDATO(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAFISICA_OID references PERSONAFISICA(USER_OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAMORAL_OID references PERSONAMORAL(USER_OID)
+[05 ago 2019 18:03:11]   Found foreign key: column USER_OID references USER(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.PERSONAFISICA_PERSONAMORAL' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAFISICA_OID references PERSONAFISICA(USER_OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAMORAL_OID references PERSONAMORAL(USER_OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.PERSONALFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column DATOSNOTARIO_OID references DATOSNOTARIO(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.PERSONAMORAL' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column INSTRUMENTOS_OID references INSTRUMENTOS(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column MANDATO_OID references MANDATO(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAFISICA_OID references PERSONAFISICA(USER_OID)
+[05 ago 2019 18:03:11]   Found foreign key: column USER_OID references USER(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.PODER' [type = TABLE]
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.PREVIOUSACTIVITYINSTANCE_NEXTA' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column ACTIVITYINSTANCE_OID references ACTIVITYINSTANCE(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column ACTIVITYINSTANCE_OID_2 references ACTIVITYINSTANCE(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.PROCESS' [type = TABLE]
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.PROCESSINSTANCE' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column PROCESS_OID references PROCESS(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PROCESSINSTANCE_OID references PROCESSINSTANCE(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.PRUEBA' [type = TABLE]
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.REVOCACIONES' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAFISICA_OID references PERSONAFISICA(USER_OID)
+[05 ago 2019 18:03:11]   Found foreign key: column PERSONAMORAL_OID references PERSONAMORAL(USER_OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.SEQUENCEFLOW' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column ACTIVITYTYPE_OID references ACTIVITYTYPE(OID)
+[05 ago 2019 18:03:11]   Found foreign key: column ACTIVITYTYPE_OID_2 references ACTIVITYTYPE(OID)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.TEXTO' [type = TABLE]
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.TIPOFEDATARIO' [type = TABLE]
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.TIPOFIANZA' [type = TABLE]
+[05 ago 2019 18:03:11]   Found foreign key: column OIDESTATUSTIPOFIA references ESTATUSTIPOFIANZA(OIDESTATUSTIPFIA)
+[05 ago 2019 18:03:11] Retrieving foreign keys for 'EXPEDIENTE.TIPOGARANTIA' [type = TABLE]
+[05 ago 2019 18:03:12] Retrieving foreign keys for 'EXPEDIENTE.USER' [type = TABLE]
+[05 ago 2019 18:03:12]   Found foreign key: column GROUP_OID references GROUP(OID)
+[05 ago 2019 18:03:12] Retrieving foreign keys for 'EXPEDIENTE.USER_GROUP' [type = TABLE]
+[05 ago 2019 18:03:12]   Found foreign key: column GROUP_OID references GROUP(OID)
+[05 ago 2019 18:03:12]   Found foreign key: column USER_OID references USER(OID)
+[05 ago 2019 18:03:12] Retrieving foreign keys for 'EXPEDIENTE.USER_NOTIFICATIONS' [type = TABLE]
+[05 ago 2019 18:03:12]   Found foreign key: column NOTIFICATION_OID references NOTIFICATION(OID)
+[05 ago 2019 18:03:12]   Found foreign key: column USER_OID references USER(OID)
+[05 ago 2019 18:03:12] Retrieving foreign keys for 'EXPEDIENTE.VERIFICACIONIDENTIFICACION' [type = TABLE]
+[05 ago 2019 18:03:12] Retrieving foreign keys for 'EXPEDIENTE.XML' [type = TABLE]
+[05 ago 2019 18:03:12]   Found foreign key: column XML_OID references XML(OID)
+[05 ago 2019 18:03:12] Retrieving foreign keys for 'EXPEDIENTE.PROCESSINSTANCE_ATTACHMENT_COU' [type = VIEW]
+[05 ago 2019 18:03:12] Database metadata retrieved (12902 ms)
+[05 ago 2019 18:03:13] Database connection closed

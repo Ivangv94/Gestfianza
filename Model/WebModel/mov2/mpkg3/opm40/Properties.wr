@@ -1,0 +1,36 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg3#opm40" name="ambiente" gr:x="10" gr:y="10">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg3#opm40#icu51" gr:x="-10" gr:y="60">
+      <OKLink id="mov2#mpkg3#opm40#icu51#oln394" name="OKFlow51" to="mov2#mpkg3#opm40#seu68" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#mpkg3#opm40#seu68" name="ambiente" gr:x="265" gr:y="55" entity="ent2">
+      <Selector id="mov2#mpkg3#opm40#seu68#su141" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg3#opm40#seu68#su141#acond82" name="ambiente" predicate="eq" booleanOperator="or" implied="false" attributes="ent2#att11" value="ambiente"/>
+      </Selector>
+      <OKLink id="mov2#mpkg3#opm40#seu68#oln395" name="OKFlow52" to="mov2#mpkg3#opm40#switch22">
+        <LinkParameter id="mov2#mpkg3#opm40#seu68#oln395#par1340" name="valor_Switch" source="ent2#att12Array" target="mov2#mpkg3#opm40#switch22.switch"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg3#opm40#seu68#kln225" name="KOFlow11" to="mov2#mpkg3#opm40#kocu36" gr:bendpoints="83,190,-397,0">
+        <LinkParameter id="mov2#mpkg3#opm40#seu68#kln225#par1341" name="Error al obtener la variable de ambiente._msj" target="mov2#mpkg3#opm40#kocu36#ocp147" sourceValue="Error al obtener la variable de ambiente."/>
+      </KOLink>
+    </SelectorUnit>
+    <SwitchUnit id="mov2#mpkg3#opm40#switch22" name="ruteo ambiente" gr:x="480" gr:y="70">
+      <OKLink id="mov2#mpkg3#opm40#switch22#oln396" name="OKFlow53" to="mov2#mpkg3#opm40#okcu45" code="local" automaticCoupling="true" gr:bendpoints="94,-95,-191,0"/>
+      <OKLink id="mov2#mpkg3#opm40#switch22#oln397" name="OKFlow54" to="mov2#mpkg3#opm40#okcu46" code="desarrollo" automaticCoupling="true" gr:bendpoints="104,-31,-181,-1"/>
+      <OKLink id="mov2#mpkg3#opm40#switch22#oln398" name="OKFlow55" to="mov2#mpkg3#opm40#okcu48" code="qa" automaticCoupling="true" gr:bendpoints="100,85,-185,-10;149,86,-136,-9"/>
+      <OKLink id="mov2#mpkg3#opm40#switch22#oln399" name="OKFlow56" to="mov2#mpkg3#opm40#okcu48" code="prod" automaticCoupling="true" gr:bendpoints="90,93,-195,-2"/>
+      <Case value="local"/>
+      <Case value="desarrollo"/>
+      <Case value="qa"/>
+      <Case value="prod"/>
+      <OKLink id="mov2#mpkg3#opm40#switch22#oln400" name="OKFlow177" to="mov2#mpkg3#opm40#okcu47" automaticCoupling="true" gr:bendpoints="73,8,-212,-22;102,18,-183,-12;152,18,-133,-12"/>
+    </SwitchUnit>
+    <OKCollectorUnit id="mov2#mpkg3#opm40#okcu45" name="local" gr:x="715" gr:y="-35"/>
+    <OKCollectorUnit id="mov2#mpkg3#opm40#okcu46" name="desarrollo" gr:x="715" gr:y="30"/>
+    <OKCollectorUnit id="mov2#mpkg3#opm40#okcu47" name="qa" gr:x="715" gr:y="90"/>
+    <OKCollectorUnit id="mov2#mpkg3#opm40#okcu48" name="prod" gr:x="715" gr:y="155"/>
+    <KOCollectorUnit id="mov2#mpkg3#opm40#kocu36" name="KO" gr:x="715" gr:y="250">
+      <OutputCollectorParameter id="mov2#mpkg3#opm40#kocu36#ocp147" name="msj"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,100 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#page127" name="Parametros" landmark="false" localized="true" layout:pageLayout="gobmxStyle/landingFianzas" layout:frameLayout="None" gr:x="-3170" gr:y="85">
+  <ContentUnits>
+    <IndexUnit id="sv4#page127#inu25" name="Lista de Parametros" linkOrder="sv4#page127#inu25#ln1490" gr:x="25" gr:y="0" entity="ent82" displayAttributes="rel58#role115.ent97#att580 ent82#att506 ent82#att507 ent82#att508">
+      <Link id="sv4#page127#inu25#ln1490" name="Cambiar" to="sv4#page126#seu335" type="normal" validate="true" newWindow="false" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Informaci&#243;n de Parametro" ajaxWindowWidth="700" ajaxWindowHeight="550" ajaxWindowResizable="true" ajaxWindowClosable="true" ajaxWindowMaximizable="true" ajaxWindowMinimizable="true" ajaxWindowModal="true">
+        <LinkParameter id="sv4#page127#inu25#ln1490#par4335" name="oidParametro_KeyCondition222 [oidParametro]" source="data[].ent82#att504" target="sv4#page126#seu335#su521#kcond224.ent82#att504"/>
+      </Link>
+    </IndexUnit>
+    <EntryUnit id="sv4#page127#enu174" name="Form174" linkOrder="sv4#page127#enu174#ln1491" gr:x="0" gr:y="95">
+      <Link id="sv4#page127#enu174#ln1491" name="Agregar" to="sv4#page125#enu172" type="normal" automaticCoupling="true" validate="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Agregar Parametro" ajaxWindowWidth="700" ajaxWindowHeight="550" ajaxWindowResizable="false" ajaxWindowClosable="true" ajaxWindowMaximizable="false" ajaxWindowMinimizable="false" ajaxWindowModal="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page127#inu25">
+          <layout:Link link="sv4#page127#inu25#ln1490"/>
+          <layout:Attribute attribute="rel58#role115.ent97#att580"/>
+          <layout:Attribute attribute="ent82#att506"/>
+          <layout:Attribute attribute="ent82#att507"/>
+          <layout:Attribute attribute="ent82#att508"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell layout:cellLayout="Print Frame" colspan="12">
+        <layout:Grid label="Form174" containerType="grid">
+          <layout:Row>
+            <layout:Cell colspan="9"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="3">
+              <layout:Link unitId="sv4#page127#enu174" link="sv4#page127#enu174#ln1491">
+                <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+              </layout:Link>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+</Page>

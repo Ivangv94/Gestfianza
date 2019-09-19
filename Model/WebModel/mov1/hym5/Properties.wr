@@ -1,0 +1,477 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym5" gr:x="160" gr:y="120" name="Constituir Sociedad Mercantil - Fedatario - Capturar Informaci&#243;n de la sociedad." bpm:moduleType="activity" bpm:uuids="JKBD85VG_LSUK7T.JKBDDN8J_3AQX65" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym5#icu4" name="Input" gr:x="-1045" gr:y="140">
+      <OKLink id="mov1#hym5#icu4#oln27" name="OKLink" automaticCoupling="true" to="mov1#hym5#seu112"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym5#pu29" name="Complete Activity" mode="completeActivity" gr:x="800" gr:y="0"/>
+    <ProcessUnit id="mov1#hym5#pu30" name="Save Activity" mode="saveActivity" gr:x="800" gr:y="150"/>
+    <ProcessUnit id="mov1#hym5#pu31" name="Leave Activity" mode="leaveActivity" gr:x="800" gr:y="260"/>
+    <ActivityParametersUnit id="mov1#hym5#apu8" name="Set Parameters" gr:x="635" gr:y="195">
+      <OKLink id="mov1#hym5#apu8#oln28" name="OKLink" automaticCoupling="false" to="mov1#hym5#pu29" codeRef="mov1#hym5#page57#enu84#ln833"/>
+      <OKLink id="mov1#hym5#apu8#oln29" name="OKLink" automaticCoupling="false" to="mov1#hym5#pu30" codeRef="mov1#hym5#page17#enu12#ln113"/>
+      <ActivityParameter id="mov1#hym5#apu8#ap6" name="denominacion.OID" bpm:uuid="JO7UDIJ0_2IK787" enumerated="false"/>
+    </ActivityParametersUnit>
+    <SelectorUnit gr:x="-785" gr:y="135" id="mov1#hym5#seu112" name="usr" entity="ent39">
+      <Link id="mov1#hym5#seu112#ln58" name="Flow58" to="mov1#hym5#page17#enu9" type="transport" validate="true" gr:bendpoints="131,235,-364,-5">
+        <LinkParameter id="mov1#hym5#seu112#ln58#par51" name="nombre_nom" source="ent39#att272Array" target="mov1#hym5#page17#enu9#fld39_slot"/>
+        <LinkParameter id="mov1#hym5#seu112#ln58#par52" name="apellido1_primerApellido" source="ent39#att271Array" target="mov1#hym5#page17#enu9#fld300_slot"/>
+        <LinkParameter id="mov1#hym5#seu112#ln58#par54" name="apellido2_segundoApellido" source="ent39#att270Array" target="mov1#hym5#page17#enu9#fld301_slot"/>
+        <LinkParameter id="mov1#hym5#seu112#ln58#par2302" name="RFC_rfc" source="ent39#att268Array" target="mov1#hym5#page17#enu9#fld195_slot"/>
+      </Link>
+      <Selector id="mov1#hym5#seu112#su220" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym5#seu112#su220#acond123" name="USROID" predicate="eq" booleanOperator="or" implied="false" attributes="userOID"/>
+      </Selector>
+      <Link id="mov1#hym5#seu112#ln1471" name="OKFlow24" to="mov1#hym5#seu113" gr:bendpoints="68,-79,-332,-79;175,-87,-225,-87;267,-80,-133,-80" type="transport">
+        <LinkParameter id="mov1#hym5#seu112#ln1471#par4817" name="oid_PersonaFisicaToDatosNotario [oid]" source="userOIDArray" target="mov1#hym5#seu113#su221#rcond125.userOID"/>
+      </Link>
+      <OKLink id="mov1#hym5#seu112#oln1450" name="OKFlow1450" to="mov1#hym5#seu320">
+        <LinkParameter id="mov1#hym5#seu112#oln1450#par4818" name="oid_AttCondition241" source="userOIDArray" target="mov1#hym5#seu320#su512#acond241"/>
+      </OKLink>
+    </SelectorUnit>
+    <GetUnit gr:x="-775" gr:y="310" id="mov1#hym5#gtu46" name="Get46" contextParameters="UserCtxParam" linkOrder="mov1#hym5#gtu46#ln46">
+      <Link id="mov1#hym5#gtu46#ln46" name="Flow46" to="mov1#hym5#seu112" type="transport" validate="true">
+        <LinkParameter id="mov1#hym5#gtu46#ln46#par50" name="UserCtxParam.oid_USROID" source="mov1#hym5#gtu46.UserCtxParam" target="mov1#hym5#seu112#su220#acond123"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="-205" gr:y="135" id="mov1#hym5#seu113" name="datosNotario" entity="ent8">
+      <Selector id="mov1#hym5#seu113#su221" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym5#seu113#su221#rcond125" name="PersonaFisicaToDatosNotario" predicate="in" implied="false" role="rel25#role50"/>
+      </Selector>
+      <Link id="mov1#hym5#seu113#ln59" name="Flow59" to="mov1#hym5#page17#enu9" type="transport" validate="true" gr:bendpoints="-70,102,-360,-138;-65,225,-355,-15">
+        <LinkParameter id="mov1#hym5#seu113#ln59#par55" name="entidad_estado" source="ent8#att48Array" target="mov1#hym5#page17#enu9#fld147_slot"/>
+        <LinkParameter id="mov1#hym5#seu113#ln59#par59" name="municipio_municipio" source="ent8#att58Array" target="mov1#hym5#page17#enu9#fld148_slot"/>
+        <LinkParameter id="mov1#hym5#seu113#ln59#par63" name="numero_numero" source="ent8#att278Array" target="mov1#hym5#page17#enu9#fld67_slot"/>
+      </Link>
+      <Link id="mov1#hym5#seu113#ln1011" name="Flow1011" to="mov1#hym5#scu134" type="transport" validate="true" gr:bendpoints="-54,196,-79,-139">
+        <LinkParameter id="mov1#hym5#seu113#ln1011#par3145" name="tipo_tipoFed" source="ent8#att47Array" target="mov1#hym5#scu134.tipoFed"/>
+      </Link>
+      <OKLink id="mov1#hym5#seu113#oln1179" name="OKFlow1179" to="mov1#hym5#scu134" automaticCoupling="true"/>
+    </SelectorUnit>
+    <ScriptUnit id="mov1#hym5#scu88" name="quienAutoriza" gr:x="470" gr:y="345">
+      <ScriptUnitText xml:space="preserve">#input String autorizacionOpermiso
+#output mostrarSE, mostrarSRE
+
+Boolean mostrarSE = false;
+Boolean mostrarSRE = false;
+
+if(autorizacionOpermiso == "Secretar&#237;a de Relaciones Exteriores"){
+	mostrarSE = false;
+	mostrarSRE = true;
+}else{
+	mostrarSE = true;
+	mostrarSRE = false;
+}
+
+return["mostrarSE":mostrarSE,"mostrarSRE":mostrarSRE]</ScriptUnitText>
+      <OKLink id="mov1#hym5#scu88#oln797" name="OKFlow797" to="mov1#hym5#page17#enu9" gr:bendpoints="-150,32,185,22">
+        <LinkParameter id="mov1#hym5#scu88#oln797#par2493" name="mostrar_quienAutoriza" source="result(mostrarSE)" targetVariable="mov1#hym5#page17#var50"/>
+        <LinkParameter id="mov1#hym5#scu88#oln797#par2494" name="mostrarSRE_autorizaSRE" source="result(mostrarSRE)" targetVariable="mov1#hym5#page17#var51"/>
+      </OKLink>
+    </ScriptUnit>
+    <ActivityParametersUnit id="mov1#hym5#apu75" name="Get Parameters" gr:x="480" gr:y="420">
+      <ActivityParameter id="mov1#hym5#apu75#ap11" name="denominacion" bpm:uuid="JO7UDIJ0_2IK787" enumerated="false"/>
+      <Link id="mov1#hym5#apu75#ln850" name="Flow850" to="mov1#hym5#page57#enu64" type="transport" validate="true">
+        <LinkParameter id="mov1#hym5#apu75#ln850#par2496" name="denominacion_denominacion" source="mov1#hym5#apu75#ap11" target="mov1#hym5#page57#enu64#fld327_slot"/>
+      </Link>
+      <Link id="mov1#hym5#apu75#ln1020" name="Flow1020" to="mov1#hym5#apu8" type="transport" validate="true">
+        <LinkParameter id="mov1#hym5#apu75#ln1020#par3165" name="denominacion_denominacion" source="mov1#hym5#apu75#ap11" target="mov1#hym5#apu8#ap6"/>
+      </Link>
+      <Link id="mov1#hym5#apu75#ln989" name="Flow989" to="mov1#hym5#miu114" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="-69,62,76,-33"/>
+    </ActivityParametersUnit>
+    <SelectorUnit gr:x="25" gr:y="505" id="mov1#hym5#seu165" name="catalogoTipoSociedad" entity="ent63" linkOrder="mov1#hym5#seu165#ln1002">
+      <Link id="mov1#hym5#seu165#ln1002" name="Flow1002" to="mov1#hym5#page17#enu9" type="transport" validate="true">
+        <LinkParameter id="mov1#hym5#seu165#ln1002#par3104" name="tipoSociedad_tipoSociedad [label]" source="ent63#att399Array" target="mov1#hym5#page17#enu9#sfld23_label"/>
+        <LinkParameter id="mov1#hym5#seu165#ln1002#par3105" name="oid_tipoSociedad [output]" source="ent63#att399Array" target="mov1#hym5#page17#enu9#sfld23_output"/>
+      </Link>
+      <OKLink id="mov1#hym5#seu165#oln955" name="OKFlow955" to="mov1#hym5#page17#enu9" automaticCoupling="true" gr:bendpoints="38,-58,-7,57"/>
+    </SelectorUnit>
+    <ModuleInstanceUnit gr:x="280" gr:y="520" id="mov1#hym5#miu114" action="true" moduleId="mov2#opm79">
+      <Link id="mov1#hym5#miu114#ln1018" name="Flow1018" to="mov1#hym5#apu75" type="transport" validate="true">
+        <LinkParameter id="mov1#hym5#miu114#ln1018#par3164" name="OK Port84.oidPM_denominacion" source="mov2#opm79#okcu84#ocp219" target="mov1#hym5#apu75#ap11"/>
+      </Link>
+      <Link id="mov1#hym5#miu114#ln1019" name="Flow1019" to="mov1#hym5#page17#enu9" type="transport" validate="true" gr:bendpoints="-138,-53,112,72">
+        <LinkParameter id="mov1#hym5#miu114#ln1019#par3163" name="OK Port84.oidPM_denominacion" source="mov2#opm79#okcu84#ocp219" target="mov1#hym5#page17#enu9#fld166_slot"/>
+      </Link>
+      <Link id="mov1#hym5#miu114#ln1021" name="Flow1021" to="mov1#hym5#page17#apu9" type="transport" validate="true" gr:bendpoints="-175,-290,195,190">
+        <LinkParameter id="mov1#hym5#miu114#ln1021#par3166" name="OK Port84.oidPM_PASSING" source="mov2#opm79#okcu84#ocp219" passing="true"/>
+      </Link>
+      <Link id="mov1#hym5#miu114#ln1233" name="OKFlow968" to="mov1#hym5#page57#enu64" type="transport">
+        <LinkParameter id="mov1#hym5#miu114#ln1233#par3834" name="oidPM_denominacion" source="mov2#opm79#okcu84#ocp219" target="mov1#hym5#page57#enu64#fld327_slot"/>
+      </Link>
+      <OKLink id="mov1#hym5#miu114#oln1169" name="OKFlow1169" to="mov1#hym5#seu251" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ScriptUnit gr:x="-160" gr:y="485" id="mov1#hym5#scu134" name="tipoFedatario" linkOrder="mov1#hym5#scu134#ln1014">
+      <ScriptUnitText xml:space="preserve">#input String tipoFed
+#output tipoInstrumento
+
+String limpio = tipoFed.replaceAll("p&#250;blico","");
+String limpio2 = limpio.replaceAll("publico","");
+String limpio3 = limpio2.replaceAll("Publico","");
+String limpio4 = limpio3.replaceAll("P&#250;blico","");
+String tipoFedatario = limpio4.replaceAll(" ","");
+String tipoInstrumento;
+
+
+if(tipoFedatario == "Corredor")
+{
+	tipoInstrumento = "Poliza"
+}
+
+else if (tipoFedatario == "Notario")
+{
+	tipoInstrumento = "Escritura"
+}
+
+
+return ["tipoInstrumento":tipoInstrumento]</ScriptUnitText>
+      <OKLink id="mov1#hym5#scu134#oln967" name="OKFlow967" to="mov1#hym5#seu165" automaticCoupling="true"/>
+      <Link id="mov1#hym5#scu134#ln1014" name="Flow1014" to="mov1#hym5#page17#enu9" type="transport" validate="true">
+        <LinkParameter id="mov1#hym5#scu134#ln1014#par3146" name="tipoInstrumento_tipoInstrumento" source="result(tipoInstrumento)" target="mov1#hym5#page17#enu9#fld398_slot"/>
+      </Link>
+    </ScriptUnit>
+    <ScriptUnit id="mov1#hym5#scu149" name="obtenerEstados" gr:x="725" gr:y="650" linkOrder="mov1#hym5#scu149#ln1234">
+      <ScriptUnitText xml:space="preserve">#input String ambiente
+#output nombreEstado, numeroEstado, ambiente
+String endpointUrl = "http://10.100.40.5:3080/ServicioWebCatalogosSiger/webresources/estados"
+if (ambiente.equals("local")) 
+{
+    endpointUrl = "http://10.100.40.5:3080/ServicioWebCatalogosSiger/webresources/estados"
+} 
+    else if (ambiente.equals("desarrollo")) 
+{
+    endpointUrl = "http://10.100.40.5:3080/ServicioWebCatalogosSiger/webresources/estados"
+} 
+    else if (ambiente.equals("qa")) 
+{
+    endpointUrl = "http://172.18.53.139:3580/ServicioWebCatalogosSiger/webresources/estados"
+} 
+	else if (ambiente.equals("prod")) 
+{
+    endpointUrl = "http://10.100.11.16:3580/ServicioWebCatalogosSiger/webresources/estados/"
+} 
+	
+else 
+{
+    endpointUrl = "http://10.100.11.16:3580/ServicioWebCatalogosSiger/webresources/estados/"
+}
+
+
+def dirtyProc = "curl " + endpointUrl
+
+String proc = "" + dirtyProc.execute().text
+
+String estados = proc.replaceAll("\\{", "");
+String estados2 = estados.replaceAll("\\}", "");
+String estados3 = estados2.replaceAll("\"", "");
+String estados4 = estados3.replaceAll("dsestado:", "");
+String estados5 = estados4.replaceAll("llestado:", "");
+String estados6 = estados5.replaceAll("\\[", "");
+String estados7 = estados6.replaceAll("\\]", "");
+String[] dsestado = estados7.split(",");
+String[] nombreEstado = new String[dsestado.size()/2]
+String[] numeroEstado = new String[dsestado.size()/2]
+
+int j=0;
+for (int i=0; i&lt;nombreEstado.size(); i++)
+{nombreEstado[i]=dsestado[j]
+j+=2
+}
+int x=1;
+for (int i=0; i&lt;numeroEstado.size(); i++)
+{numeroEstado[i]=dsestado[x]
+x+=2
+}
+
+return["nombreEstado":nombreEstado,"numeroEstado":numeroEstado, "ambiente":ambiente]</ScriptUnitText>
+      <OKLink id="mov1#hym5#scu149#oln1171" name="OKFlow1171" to="mov1#hym5#page57#enu64">
+        <LinkParameter id="mov1#hym5#scu149#oln1171#par3836" name="nombreEstado_estado [label]" source="result(nombreEstado)" target="mov1#hym5#page57#enu64#sfld50_label"/>
+        <LinkParameter id="mov1#hym5#scu149#oln1171#par3837" name="numeroEstado_estado [output]" source="result(numeroEstado)" target="mov1#hym5#page57#enu64#sfld50_output"/>
+        <LinkParameter id="mov1#hym5#scu149#oln1171#par3838" name="ambiente_ambiente" source="result(ambiente)" target="mov1#hym5#page57#enu64#fld367_slot"/>
+      </OKLink>
+      <Link id="mov1#hym5#scu149#ln1234" name="Flow1234" to="mov1#hym5#page57#apu55" type="transport" validate="true" gr:bendpoints="167,-98,-3,107">
+        <LinkParameter id="mov1#hym5#scu149#ln1234#par3839" name="ambiente_PASSING" source="result(ambiente)" passing="true"/>
+      </Link>
+      <KOLink id="mov1#hym5#scu149#kln481" name="KOFlow481" to="mov1#hym5#page57#mssu5" gr:bendpoints="-39,-154,-204,126;-40,-275,-205,5">
+        <LinkParameter id="mov1#hym5#scu149#kln481#par3844" name="Error al obtener los Estados_Shown Messages" sourceValue="Error al obtener los Estados" target="mov1#hym5#page57#mssu5.shownMessages"/>
+      </KOLink>
+    </ScriptUnit>
+    <SelectorUnit id="mov1#hym5#seu251" name="Selector116" gr:x="507" gr:y="645" entity="ent2">
+      <Selector id="mov1#hym5#seu251#su423" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym5#seu251#su423#acond193" name="AttCondition122" predicate="eq" booleanOperator="or" implied="false" attributes="ent2#att11" value="ambiente"/>
+      </Selector>
+      <OKLink id="mov1#hym5#seu251#oln1170" name="OKFlow1170" to="mov1#hym5#scu149">
+        <LinkParameter id="mov1#hym5#seu251#oln1170#par3835" name="valor_ambiente" source="ent2#att12Array" target="mov1#hym5#scu149.ambiente"/>
+      </OKLink>
+    </SelectorUnit>
+    <ScriptUnit id="mov1#hym5#scu150" name="obtenerMunicipio" gr:x="880" gr:y="650">
+      <ScriptUnitText xml:space="preserve">#input String numeroEstado, String ambiente
+#output dsMunicipio, llmunicipio, numeroEstado, numeroMunicipio, 
+
+//String numeroEstado ="9"
+//String numeroOficina ="39"
+//String ambiente = "desarrollo"
+String endpointUrl = "http://10.100.40.5:3080/ServicioWebCatalogosSiger/webresources/municipios/"
+if (ambiente.equals("local")) 
+{
+    endpointUrl = "http://10.100.40.5:3080/ServicioWebCatalogosSiger/webresources/municipios/"
+} 
+    else if (ambiente.equals("desarrollo")) 
+{
+    endpointUrl = "http://10.100.40.5:3080/ServicioWebCatalogosSiger/webresources/municipios/"
+} 
+    else if (ambiente.equals("qa")) 
+{
+    endpointUrl = "http://172.18.53.139:3580/ServicioWebCatalogosSiger/webresources/municipios/"
+} 
+else if (ambiente.equals("prod")) 
+{
+   endpointUrl = "http://10.100.11.16:3580/ServicioWebCatalogosSiger/webresources/municipios/"
+} 
+
+else 
+{
+   endpointUrl = "http://10.100.11.16:3580/ServicioWebCatalogosSiger/webresources/municipios/"
+}
+
+def dirtyProc = "curl " + endpointUrl + numeroEstado 
+
+String proc = dirtyProc.execute().text
+
+String estados = proc.replaceAll("\\{", "");
+String estados2 = estados.replaceAll("\\}", "");
+String estados3 = estados2.replaceAll("\"", "");
+String estados4 = estados3.replaceAll("dsMunicipio:", "");
+String estados5 = estados4.replaceAll("llestado:", "");
+String estados6 = estados5.replaceAll("llmunicipio:", "");
+String estados7 = estados6.replaceAll("\\[", "");
+String estados8 = estados7.replaceAll("\\]", "");
+String[] cadena = estados8.split(",");
+String[] dsMunicipio = new String[cadena.size()/3]
+String[] llestado = new String[cadena.size()/3]
+String[] idMunicipio = new String[cadena.size()/3]
+String[] llmunicipio = new String[cadena.size()/3]
+// dsMunicipio
+int j=0;
+for (int i=0; i&lt;dsMunicipio.size(); i++)
+{
+    llmunicipio[i]=cadena[j]
+    dsMunicipio[i]=cadena[j]
+    j+=3
+}
+// llmunicipio
+int x=2;
+for (int i=0; i&lt;llmunicipio.size(); i++)
+{
+    llmunicipio[i]=cadena[x]
+    x+=3
+}
+
+
+return["dsMunicipio":dsMunicipio,"llmunicipio":llmunicipio,"numeroEstado":numeroEstado]</ScriptUnitText>
+      <OKLink id="mov1#hym5#scu150#oln1172" name="OKFlow1172" to="mov1#hym5#page57#enu64" gr:bendpoints="-63,-57,37,73">
+        <LinkParameter id="mov1#hym5#scu150#oln1172#par3842" name="dsMunicipio_municipio [label]" source="result(dsMunicipio)" target="mov1#hym5#page57#enu64#sfld52_label"/>
+        <LinkParameter id="mov1#hym5#scu150#oln1172#par3843" name="llmunicipio_municipio [output]" source="result(llmunicipio)" target="mov1#hym5#page57#enu64#sfld52_output"/>
+      </OKLink>
+      <KOLink id="mov1#hym5#scu150#kln482" name="KOFlow482" to="mov1#hym5#page57#mssu5" gr:bendpoints="61,-59,56,221;61,-235,56,45">
+        <LinkParameter id="mov1#hym5#scu150#kln482#par3845" name="Error al obtener los Municipios_Shown Messages" sourceValue="Error al obtener los Municipios" target="mov1#hym5#page57#mssu5.shownMessages"/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit gr:x="-650" gr:y="675" id="mov1#hym5#scu181" name="obtenerFechaActual" linkOrder="mov1#hym5#scu181#ln1344">
+      <ScriptUnitText xml:space="preserve">#output curTime
+
+import org.joda.time.*
+import java.text.SimpleDateFormat
+
+boolean valido = true;
+
+DateTime curTime = new DateTime();
+String dia = curTime.dayOfWeek().getAsText(Locale.ENGLISH);
+
+//String dia = "Saturday"
+if (dia.equals("Saturday") || dia.equals("Sunday"))
+valido = false;
+
+println(curTime)
+println(dia)
+
+ return["curTime":curTime]
+</ScriptUnitText>      <OKLink id="mov1#hym5#scu181#oln433" name="OKFlow433" to="mov1#hym5#scu191">        <LinkParameter id="mov1#hym5#scu181#oln433#par2336" name="curTime_fechaActual" source="result(curTime)" target="mov1#hym5#scu191.fechaActual"/>      </OKLink>      <Link id="mov1#hym5#scu181#ln1344" name="Flow1344" to="mov1#hym5#scu190" type="transport" validate="true" gr:bendpoints="128,-74,-402,-64;379,-77,-151,-67"/>    </ScriptUnit>    <ScriptUnit gr:x="-110" gr:y="665" id="mov1#hym5#scu190" name="compararFechas">      <ScriptUnitText xml:space="preserve">#input String fecha, String fechaActual
+#output valido
+
+
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.joda.time.*
+
+
+
+//String fecha = "2019-01-04";
+//String fechaActual = "2019-01-05T13:02:26.807-06:00&#8203;";
+
+String concatena2 = fechaActual.substring(0,10)
+String concatena3 = fecha.substring(0,10)
+boolean valido   
+
+SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+ 
+       int diasPromedioHabiles = 24
+        Date fechaInicial=dateFormat.parse(concatena3);
+        Date fechaFinal=dateFormat.parse(concatena2);
+ 
+        int dias=(int) ((fechaFinal.getTime()-fechaInicial.getTime())/86400000);
+ 
+        int multiplicaDias = diasPromedioHabiles * 3
+        
+        //println(dias)
+        //println(multiplicaDias)
+        
+        
+        if (multiplicaDias &lt; dias)
+        {
+        
+        valido = false
+        
+        }else if (dias &lt; multiplicaDias &amp;&amp; 0 &lt; dias)
+        {
+        
+                valido = true
+        }else if (dias &lt; 0)
+        {
+        valido = false
+        
+        }
+        
+        
+return["valido":valido]</ScriptUnitText>
+      <OKLink id="mov1#hym5#scu190#oln672" name="OKFlow672" to="mov1#hym5#switch83">
+        <LinkParameter id="mov1#hym5#scu190#oln672#par743" name="valido_Switch" source="result(valido)" target="mov1#hym5#switch83.switch"/>
+      </OKLink>
+    </ScriptUnit>
+    <SwitchUnit gr:x="65" gr:y="665" id="mov1#hym5#switch83" name="&#191;valido?">
+      <OKLink id="mov1#hym5#switch83#oln1189" name="OKFlow1189" to="mov1#hym5#scu223" automaticCoupling="true" code="true"/>
+      <OKLink id="mov1#hym5#switch83#oln1265" name="OKFlow1265" to="mov1#hym5#page17#mssu32" gr:bendpoints="-165,-78,-25,417" code="false">
+        <LinkParameter id="mov1#hym5#switch83#oln1265#par1494" name="La fecha de autorizaci&#243;n no pude ser mayor a 3 meses._Shown Messages" sourceValue="La fecha de autorizaci&#243;n no puede ser mayor a 3 meses." target="mov1#hym5#page17#mssu32.shownMessages"/>
+      </OKLink>
+      <Case value="true"/>
+      <Case value="false"/>
+    </SwitchUnit>
+    <ScriptUnit gr:x="-450" gr:y="665" id="mov1#hym5#scu191" name="validaDias">
+      <ScriptUnitText xml:space="preserve">#input String fecha, String fechaActual
+#output valido
+
+
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.joda.time.*
+
+
+
+//String fecha = "2019-01-10";
+//String fechaActual = "2019-01-05T13:02:26.807-06:00&#8203;";
+
+String concatena2 = fechaActual.substring(0,10)
+boolean valido   
+
+SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+ 
+       int diasPromedioHabiles = 24
+        Date fechaInicial=dateFormat.parse(fecha);
+        Date fechaFinal=dateFormat.parse(concatena2);
+ 
+        int dias=(int) ((fechaFinal.getTime()-fechaInicial.getTime())/86400000);
+ 
+        int multiplicaDias = diasPromedioHabiles * 3
+        
+        //println(dias)
+        //println(multiplicaDias)
+        
+        
+        if (0 &lt; dias)
+        {
+        
+        valido = true
+        
+        }else if (dias &lt; 0)
+        {
+        
+                valido = false
+        }
+        
+        //println(valido)
+        
+return["valido":valido]</ScriptUnitText>
+      <OKLink id="mov1#hym5#scu191#oln1283" name="OKFlow1283" to="mov1#hym5#switch84">
+        <LinkParameter id="mov1#hym5#scu191#oln1283#par2117" name="valido_Switch" source="result(valido)" target="mov1#hym5#switch84.switch"/>
+      </OKLink>
+    </ScriptUnit>
+    <SwitchUnit gr:x="-260" gr:y="675" id="mov1#hym5#switch84" name="validaD">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov1#hym5#switch84#oln1285" name="OKFlow1285" to="mov1#hym5#scu190" automaticCoupling="true" code="true"/>
+      <OKLink id="mov1#hym5#switch84#oln1286" name="OKFlow1286" to="mov1#hym5#page17#mssu32" code="false">
+        <LinkParameter id="mov1#hym5#switch84#oln1286#par4261" name="Fecha no v&#225;lida. No es posible ingresar una fecha posterior al d&#237;a de hoy._Shown Messages" sourceValue="Fecha no v&#225;lida. No es posible ingresar una fecha posterior al d&#237;a de hoy." target="mov1#hym5#page17#mssu32.shownMessages"/>
+      </OKLink>
+    </SwitchUnit>
+    <SelectorUnit gr:x="-655" gr:y="130" id="mov1#hym5#seu320" name="buscaParametro" entity="ent68">
+      <Selector id="mov1#hym5#seu320#su512" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym5#seu320#su512#acond241" name="AttCondition241" predicate="eq" booleanOperator="or" implied="false" attributes="ent68#att440"/>
+      </Selector>
+      <OKLink id="mov1#hym5#seu320#oln1451" name="OKFlow1451" to="mov1#hym5#inn68">
+        <LinkParameter id="mov1#hym5#seu320#oln1451#par4819" name="oid_Input" source="ent68#att435Array" target="mov1#hym5#inn68.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="-485" gr:y="150" id="mov1#hym5#inn68" name="&#191;Existe Registro?">
+      <OKLink id="mov1#hym5#inn68#oln1452" name="OKFlow1452" to="mov1#hym5#lpu8">
+        <LinkParameter id="mov1#hym5#inn68#oln1452#par4820" name="Input Value_Input Array" source="inputValue" target="mov1#hym5#lpu8.array"/>
+      </OKLink>
+      <KOLink id="mov1#hym5#inn68#kln575" name="KOFlow575" to="mov1#hym5#seu113" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <LoopUnit gr:x="-325" gr:y="260" id="mov1#hym5#lpu8" name="limpiParametro">
+      <OKLink id="mov1#hym5#lpu8#oln1453" name="OKFlow1453" to="mov1#hym5#dlu20" code="next">
+        <LinkParameter id="mov1#hym5#lpu8#oln1453#par4821" name="Next Element_KeyCondition217 [oid]" source="next" target="mov1#hym5#dlu20#su513#kcond217.ent68#att435"/>
+      </OKLink>
+      <OKLink id="mov1#hym5#lpu8#oln1455" name="OKFlow1455" to="mov1#hym5#seu113" automaticCoupling="true" code="end"/>
+    </LoopUnit>
+    <DeleteUnit gr:x="-345" gr:y="355" id="mov1#hym5#dlu20" name="eliminaParametro" entity="ent68">
+      <Selector id="mov1#hym5#dlu20#su513" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym5#dlu20#su513#kcond217" name="KeyCondition217" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym5#dlu20#oln1454" name="OKFlow1454" to="mov1#hym5#lpu8" automaticCoupling="true" gr:bendpoints="23,-61,8,49"/>
+    </DeleteUnit>
+    <ScriptUnit gr:x="180" gr:y="670" id="mov1#hym5#scu223" name="validaInstrumento">
+      <ScriptUnitText xml:space="preserve">#input String numeroInstrumento
+#output valido
+
+import java.util.*
+
+//String numeroInstrumento = "ctfvghbjknewr";
+boolean valido
+
+if (numeroInstrumento.matches("^[0-9]+"))
+{     valido = true;
+}else
+  valido = false;
+  
+return["valido":valido] </ScriptUnitText>
+      <OKLink id="mov1#hym5#scu223#oln1459" name="OKFlow1459" to="mov1#hym5#switch95">
+        <LinkParameter id="mov1#hym5#scu223#oln1459#par4838" name="valido_Switch" source="result(valido)" target="mov1#hym5#switch95.switch"/>
+      </OKLink>
+    </ScriptUnit>
+    <SwitchUnit gr:x="365" gr:y="670" id="mov1#hym5#switch95" name="&#191;valido?">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov1#hym5#switch95#oln1460" name="OKFlow1460" to="mov1#hym5#miu114" automaticCoupling="true" code="true"/>
+      <OKLink id="mov1#hym5#switch95#oln1461" name="OKFlow1461" to="mov1#hym5#page17#mssu32" gr:bendpoints="-142,-107,-7,393" code="false">
+        <LinkParameter id="mov1#hym5#switch95#oln1461#par4839" name="El instrumento debe ser n&#250;mero entero._Shown Messages" sourceValue="El instrumento no puede estar vacio o contener letras." target="mov1#hym5#page17#mssu32.shownMessages"/>
+      </OKLink>
+    </SwitchUnit>
+  </OperationUnits>
+</HybridModule>

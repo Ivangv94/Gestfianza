@@ -1,0 +1,99 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg6#opm57" name="PersonaFisica" gr:x="130" gr:y="105">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg6#opm57#icu81" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#mpkg6#opm57#icu81#icp196" name="rfc"/>
+      <InputCollectorParameter id="mov2#mpkg6#opm57#icu81#icp197" name="oid"/>
+      <InputCollectorParameter id="mov2#mpkg6#opm57#icu81#icp198" name="curp"/>
+      <OKLink id="mov2#mpkg6#opm57#icu81#oln598" name="OKFlow586" to="mov2#mpkg6#opm57#seu102">
+        <LinkParameter id="mov2#mpkg6#opm57#icu81#oln598#par2146" name="curp_curp" source="mov2#mpkg6#opm57#icu81#icp198" target="mov2#mpkg6#opm57#seu102#su192#acond109"/>
+        <LinkParameter id="mov2#mpkg6#opm57#icu81#oln598#par2147" name="oid_KeyCondition96 [oid]" source="mov2#mpkg6#opm57#icu81#icp197" target="mov2#mpkg6#opm57#seu102#su192#kcond98.userOID"/>
+        <LinkParameter id="mov2#mpkg6#opm57#icu81#oln598#par2148" name="rfc_rfc" source="mov2#mpkg6#opm57#icu81#icp196" target="mov2#mpkg6#opm57#seu102#su192#acond110"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <KOCollectorUnit id="mov2#mpkg6#opm57#kocu47" name="KO" gr:x="660" gr:y="210">
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#kocu47#ocp155" name="msj"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit id="mov2#mpkg6#opm57#okcu55" name="OK" gr:x="660" gr:y="-55">
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp173" name="dependiente"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp172" name="nombre"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp171" name="apellido2"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp170" name="apellido1"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp169" name="nombreCompleto"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp168" name="rfc"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp167" name="sexo"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp166" name="entidadNacimiento"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp165" name="Nacionalidad"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp164" name="fechaInscripcion"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp163" name="fechaCaducidad"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp162" name="activo"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp161" name="diaNacimiento"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp160" name="mesNacimiento"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp159" name="anioNacimiento"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp158" name="fechaNacimiento"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp157" name="telefono"/>
+      <OutputCollectorParameter id="mov2#mpkg6#opm57#okcu55#ocp156" name="user_oid"/>
+    </OKCollectorUnit>
+    <SelectorUnit id="mov2#mpkg6#opm57#seu102" name="buscarPF" gr:x="325" gr:y="60" entity="ent39">
+      <Selector id="mov2#mpkg6#opm57#seu102#su192" defaultPolicy="fill" booleanOperator="or">
+        <KeyCondition id="mov2#mpkg6#opm57#seu102#su192#kcond98" name="KeyCondition96" predicate="in" implied="false"/>
+        <AttributesCondition id="mov2#mpkg6#opm57#seu102#su192#acond109" name="curp" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+        <AttributesCondition id="mov2#mpkg6#opm57#seu102#su192#acond110" name="rfc" predicate="eq" booleanOperator="or" implied="false" attributes="ent39#att268"/>
+      </Selector>
+      <OKLink id="mov2#mpkg6#opm57#seu102#oln599" name="OKFlow587" to="mov2#mpkg6#opm57#inn34">
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2149" name="oid_Input" source="userOIDArray" target="mov2#mpkg6#opm57#inn34.isnotnull"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2152" name="anioNac_PASSING" source="ent39#att259Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2153" name="apellido1_PASSING" source="ent39#att271Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2154" name="apellido2_PASSING" source="ent39#att270Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2155" name="defaultGroup.oid_PASSING" source="User2DefaultGroup_groupOIDArray" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2156" name="diaNac_PASSING" source="ent39#att261Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2157" name="email_PASSING" source="emailArray" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2158" name="entidadNac_PASSING" source="ent39#att266Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2159" name="EsDependienteDE.oid_PASSING" source="rel31#role62_userOIDArray" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2160" name="fechaCaducidad_PASSING" source="ent39#att263Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2161" name="fechaInscripcion_PASSING" source="ent39#att264Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2162" name="fechaNac_PASSING" source="ent39#att258Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2163" name="group_PASSING" source="userDefaultGroupNameArray" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2164" name="mesNac_PASSING" source="ent39#att260Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2165" name="nombre_PASSING" source="ent39#att272Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2166" name="nombreCompleto_PASSING" source="ent39#att269Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2167" name="oid_PASSING" source="userOIDArray" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2168" name="password_PASSING" source="passwordArray" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2169" name="PFactivo_PASSING" source="ent39#att262Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2170" name="PFnacionalidad_PASSING" source="ent39#att265Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2171" name="PFsexo_PASSING" source="ent39#att267Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2172" name="PFtelefono_PASSING" source="ent39#att256Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2173" name="representadaPorDefault_PASSING" source="ent39#att257Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2174" name="RFC_PASSING" source="ent39#att268Array" passing="true"/>
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#oln599#par2175" name="userName_PASSING" source="userNameArray" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg6#opm57#seu102#kln285" name="KOFlow282" to="mov2#mpkg6#opm57#kocu47" gr:bendpoints="55,137,-345,2">
+        <LinkParameter id="mov2#mpkg6#opm57#seu102#kln285#par2150" name="No existe en la base de datos la persona que busca._msj" target="mov2#mpkg6#opm57#kocu47#ocp155" sourceValue="No existe en la base de datos la persona que busca."/>
+      </KOLink>
+    </SelectorUnit>
+    <IsNotNullUnit id="mov2#mpkg6#opm57#inn34" name="&#191;Existe?" gr:x="475" gr:y="85">
+      <KOLink id="mov2#mpkg6#opm57#inn34#kln286" name="KOFlow281" to="mov2#mpkg6#opm57#kocu47" gr:bendpoints="40,136,-215,1">
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#kln286#par2151" name="No existe en la base de datos la persona que busca._msj" target="mov2#mpkg6#opm57#kocu47#ocp155" sourceValue="No existe en la base de datos la persona que busca."/>
+      </KOLink>
+      <OKLink id="mov2#mpkg6#opm57#inn34#oln600" name="OKFlow588" to="mov2#mpkg6#opm57#okcu55">
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2176" name="PFactivo_PASSING_activo" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2169" target="mov2#mpkg6#opm57#okcu55#ocp162"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2177" name="anioNac_PASSING_anioNacimiento" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2152" target="mov2#mpkg6#opm57#okcu55#ocp159"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2178" name="apellido1_PASSING_apellido1" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2153" target="mov2#mpkg6#opm57#okcu55#ocp170"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2179" name="apellido2_PASSING_apellido2" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2154" target="mov2#mpkg6#opm57#okcu55#ocp171"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2180" name="EsDependienteDE.oid_PASSING_dependiente" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2159" target="mov2#mpkg6#opm57#okcu55#ocp173"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2181" name="diaNac_PASSING_diaNacimiento" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2156" target="mov2#mpkg6#opm57#okcu55#ocp161"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2182" name="entidadNac_PASSING_entidadNacimiento" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2158" target="mov2#mpkg6#opm57#okcu55#ocp166"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2183" name="fechaCaducidad_PASSING_fechaCaducidad" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2160" target="mov2#mpkg6#opm57#okcu55#ocp163"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2184" name="fechaInscripcion_PASSING_fechaInscripcion" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2161" target="mov2#mpkg6#opm57#okcu55#ocp164"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2185" name="fechaNac_PASSING_fechaNacimiento" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2162" target="mov2#mpkg6#opm57#okcu55#ocp158"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2186" name="mesNac_PASSING_mesNacimiento" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2164" target="mov2#mpkg6#opm57#okcu55#ocp160"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2187" name="PFnacionalidad_PASSING_Nacionalidad" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2170" target="mov2#mpkg6#opm57#okcu55#ocp165"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2188" name="nombre_PASSING_nombre" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2165" target="mov2#mpkg6#opm57#okcu55#ocp172"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2189" name="nombreCompleto_PASSING_nombreCompleto" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2166" target="mov2#mpkg6#opm57#okcu55#ocp169"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2190" name="RFC_PASSING_rfc" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2174" target="mov2#mpkg6#opm57#okcu55#ocp168"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2191" name="PFsexo_PASSING_sexo" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2171" target="mov2#mpkg6#opm57#okcu55#ocp167"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2192" name="PFtelefono_PASSING_telefono" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2172" target="mov2#mpkg6#opm57#okcu55#ocp157"/>
+        <LinkParameter id="mov2#mpkg6#opm57#inn34#oln600#par2193" name="nombreCompleto_PASSING_user_oid" sourceLinkParameter="mov2#mpkg6#opm57#seu102#oln599#par2166" target="mov2#mpkg6#opm57#okcu55#ocp156"/>
+      </OKLink>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

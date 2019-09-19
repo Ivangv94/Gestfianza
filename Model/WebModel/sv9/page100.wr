@@ -1,0 +1,36 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv9#page100" name="Process Diagram" landmark="false" layout:pageLayout="WRDefault/Empty" ajaxEnabled="true" gr:x="378" gr:y="878">
+  <ContentUnits>
+    <ProcessDiagramUnit id="sv9#page100#pdu9" name="Process Diagram" linkOrder="sv9#page100#pdu9#ln719" gr:x="0" gr:y="0">
+      <Link id="sv9#page100#pdu9#ln719" name="rollback" to="sv9#pu33" type="normal" validate="true">
+        <LinkParameter id="sv9#page100#pdu9#ln719#par501" name="ActivityInstance - oid_Activity Instance Oid" source="data[].activityInstance.activityInstanceOid" target="sv9#pu33.activityInstanceOid"/>
+        <LinkParameter id="sv9#page100#pdu9#ln719#par514" name="Process Instance Oid_PASSING" source="processInstanceOid" passing="true"/>
+      </Link>
+    </ProcessDiagramUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv9#page100#pdu9">
+          <layout:Link link="sv9#page100#pdu9#ln719" layout:linkVisibilityConditionVariable="sv9#page100#var45">
+            <layout:LayoutParameter name="confirmation" value="true" type="link"/>
+            <layout:LayoutParameter name="confirm-message" value="confirmRollback" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv9#page100#pdu9parentLevel"/>
+          <layout:Link link="sv9#page100#pdu9subLevel"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv9#page100#var45" name="rollbackableByUser" type="boolean" unitId="sv9#page100#pdu9" parameter="data[].rollbackableByUser"/>
+</Page>

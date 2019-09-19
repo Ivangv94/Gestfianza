@@ -1,0 +1,35 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym22" gr:x="1070" gr:y="270" name="Constituir Sociedad Mercantil - Fedatario - Documentos Firmados" bpm:moduleType="activity" bpm:uuids="JKBD85VG_LSUK7T.JO4MDMLE_HKBWP5" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym22#icu8" name="Input" gr:x="-535" gr:y="90">
+      <OKLink id="mov1#hym22#icu8#oln41" name="OKLink" automaticCoupling="true" to="mov1#hym22#seu308"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym22#pu91" name="Complete Activity" mode="completeActivity" gr:x="800" gr:y="0"/>
+    <ProcessUnit id="mov1#hym22#pu92" name="Save Activity" mode="saveActivity" gr:x="800" gr:y="150"/>
+    <ProcessUnit id="mov1#hym22#pu93" name="Leave Activity" mode="leaveActivity" gr:x="800" gr:y="260"/>
+    <ActivityParametersUnit id="mov1#hym22#apu16" name="Set Parameters" gr:x="560" gr:y="100">
+      <OKLink id="mov1#hym22#apu16#oln42" name="OKLink" automaticCoupling="false" to="mov1#hym22#pu91" codeRef="mov1#hym22#page106#enu143#ln750"/>
+      <OKLink id="mov1#hym22#apu16#oln43" name="OKLink" automaticCoupling="false" to="mov1#hym22#pu92" codeRef="mov1#hym22#page106#enu143#ln751"/>
+    </ActivityParametersUnit>
+    <SelectorUnit gr:x="-230" gr:y="85" id="mov1#hym22#seu308" name="aux" entity="ent68">
+      <Selector id="mov1#hym22#seu308#su499" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym22#seu308#su499#acond232" name="oidPM" predicate="eq" booleanOperator="or" implied="false" attributes="ent68#att440"/>
+      </Selector>
+      <OKLink id="mov1#hym22#seu308#oln1416" name="OKFlow1416" to="mov1#hym22#seu309">
+        <LinkParameter id="mov1#hym22#seu308#oln1416#par4762" name="oidPM_oidPM" source="ent68#att441Array" target="mov1#hym22#seu309#su500#acond233"/>
+      </OKLink>
+    </SelectorUnit>
+    <GetUnit gr:x="-230" gr:y="-20" id="mov1#hym22#gtu68" name="Get68" contextParameters="UserCtxParam" linkOrder="mov1#hym22#gtu68#ln1457">
+      <Link id="mov1#hym22#gtu68#ln1457" name="Flow1457" to="mov1#hym22#seu308" type="transport" validate="true">
+        <LinkParameter id="mov1#hym22#gtu68#ln1457#par4761" name="UserCtxParam.oid_oidPM" source="mov1#hym22#gtu68.UserCtxParam" target="mov1#hym22#seu308#su499#acond232"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="-225" gr:y="220" id="mov1#hym22#seu309" name="Selector309" entity="ent3">
+      <Selector id="mov1#hym22#seu309#su500" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym22#seu309#su500#acond233" name="oidPM" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att487"/>
+      </Selector>
+      <OKLink id="mov1#hym22#seu309#oln1417" name="OKFlow1417" to="mov1#hym22#page106#enu169">
+        <LinkParameter id="mov1#hym22#seu309#oln1417#par4763" name="uri_DocumentoFirmado" source="ent3#att20Array" target="mov1#hym22#page106#enu169#fld436_slot"/>
+      </OKLink>
+    </SelectorUnit>
+  </OperationUnits>
+</HybridModule>

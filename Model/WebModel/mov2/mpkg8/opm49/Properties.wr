@@ -1,0 +1,6 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="180" gr:y="80" id="mov2#mpkg8#opm49" name="validarFedatario">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg8#opm49#icu73" name="Input Collector" gr:x="30" gr:y="60"/>
+    <ModuleInstanceUnit gr:x="495" gr:y="65" id="mov2#mpkg8#opm49#miu40" action="true" moduleId="mov2#mpkg2#opm27"/>
+  </OperationUnits>
+</OperationModule>

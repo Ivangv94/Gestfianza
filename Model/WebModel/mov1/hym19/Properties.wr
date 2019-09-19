@@ -1,0 +1,67 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym19" gr:x="160" gr:y="270" name="Constituir Sociedad Mercantil - Fedatario - Organo de Vigilancia" bpm:moduleType="activity" bpm:uuids="JKBD85VG_LSUK7T.JNUXC058_MA8HWI" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym19#icu97" name="Input" gr:x="-490" gr:y="95">
+      <OKLink id="mov1#hym19#icu97#oln628" name="OKLink" automaticCoupling="true" to="mov1#hym19#page98"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#hym19#pu123" name="Complete Activity" mode="completeActivity" gr:x="800" gr:y="0"/>
+    <ProcessUnit id="mov1#hym19#pu124" name="Save Activity" mode="saveActivity" gr:x="800" gr:y="150"/>
+    <ProcessUnit id="mov1#hym19#pu125" name="Leave Activity" mode="leaveActivity" gr:x="800" gr:y="260"/>
+    <ActivityParametersUnit id="mov1#hym19#apu36" name="Set Parameters" gr:x="560" gr:y="100">
+      <OKLink id="mov1#hym19#apu36#oln629" name="OKLink" automaticCoupling="false" to="mov1#hym19#pu123"/>
+      <OKLink id="mov1#hym19#apu36#oln630" name="OKLink" automaticCoupling="false" to="mov1#hym19#pu124" codeRef="mov1#hym19#page98#enu113#ln660"/>
+      <ActivityParameter id="mov1#hym19#apu36#ap44" name="denominacion" bpm:uuid="JO7UDIJ0_2IK787"/>
+    </ActivityParametersUnit>
+    <ModuleInstanceUnit gr:x="5" gr:y="330" id="mov1#hym19#miu137" action="true" moduleId="mov2#opm92">
+      <OKLink id="mov1#hym19#miu137#oln1097" name="OKFlow1097" to="mov1#hym19#page98#mssu44">
+        <LinkParameter id="mov1#hym19#miu137#oln1097#par3588" name="mensaje_Shown Messages" source="mov2#opm92#okcu97#ocp259" target="mov1#hym19#page98#mssu44.shownMessages"/>
+      </OKLink>
+      <KOLink id="mov1#hym19#miu137#kln468" name="KOFlow468" to="mov1#hym19#page98#mssu44" gr:bendpoints="107,-128,-38,147">
+        <LinkParameter id="mov1#hym19#miu137#kln468#par3589" name="msj_Shown Messages" source="mov2#opm92#kocu82#ocp260" target="mov1#hym19#page98#mssu44.shownMessages"/>
+      </KOLink>
+      <OKLink id="mov1#hym19#miu137#oln1098" name="OKFlow1098" to="mov1#hym19#miu16">
+        <LinkParameter id="mov1#hym19#miu137#oln1098#par3720" name="oidPM_oidPM" source="mov2#opm92#okcu97#ocp261" target="mov1#hym19#miu16.mov2#opm95#icu134#icp391"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="310" gr:y="320" id="mov1#hym19#miu16" action="true" moduleId="mov2#opm95">
+      <OKLink id="mov1#hym19#miu16#oln1101" name="OKFlow1101" to="mov1#hym19#page98#mssu44">
+        <LinkParameter id="mov1#hym19#miu16#oln1101#par3405" name="Organo de vigilacia agregado con &#233;xito_Shown Messages" sourceValue="Organo de vigilacia agregado con &#233;xito" target="mov1#hym19#page98#mssu44.shownMessages"/>
+      </OKLink>
+      <KOLink id="mov1#hym19#miu16#kln379" name="KOFlow379" to="mov1#hym19#page98#mssu44" gr:bendpoints="-123,-184,92,191">
+        <LinkParameter id="mov1#hym19#miu16#kln379#par3406" name="Error al generar reqest M4_Shown Messages" target="mov1#hym19#page98#mssu44.shownMessages" source="mov2#opm95#kocu85#ocp263"/>
+      </KOLink>
+      <OKLink id="mov1#hym19#miu16#oln1475" name="OKFlow1475" to="mov1#hym19#seu328" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <SelectorUnit gr:x="-40" gr:y="655" id="mov1#hym19#seu213" name="Selector213" entity="ent38">
+      <Selector id="mov1#hym19#seu213#su383" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym19#seu213#su383#kcond155" name="KeyCondition155" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym19#seu213#oln1103" name="OKFlow1103" to="mov1#hym19#page62#enu85">
+        <LinkParameter id="mov1#hym19#seu213#oln1103#par3421" name="razonSocial_denominacionMUA" source="ent38#att255Array" target="mov1#hym19#page62#enu85#fld366_slot"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="405" gr:y="420" id="mov1#hym19#seu328" name="buscaOrigenSociedad" entity="ent68">
+      <Selector id="mov1#hym19#seu328#su524" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#hym19#seu328#su524#acond248" name="AttCondition248" predicate="eq" booleanOperator="or" implied="false" attributes="ent68#att440"/>
+      </Selector>
+      <OKLink id="mov1#hym19#seu328#oln1476" name="OKFlow1476" to="mov1#hym19#switch96">
+        <LinkParameter id="mov1#hym19#seu328#oln1476#par4873" name="origenSociedad_Switch" source="ent68#att494Array" target="mov1#hym19#switch96.switch"/>
+      </OKLink>
+    </SelectorUnit>
+    <GetUnit gr:x="255" gr:y="430" id="mov1#hym19#gtu73" name="Get73" contextParameters="UserCtxParam" linkOrder="mov1#hym19#gtu73#ln1488">
+      <Link id="mov1#hym19#gtu73#ln1488" name="Flow1488" to="mov1#hym19#seu328" type="transport" validate="true">
+        <LinkParameter id="mov1#hym19#gtu73#ln1488#par4872" name="UserCtxParam.oid_AttCondition248" source="mov1#hym19#gtu73.UserCtxParam" target="mov1#hym19#seu328#su524#acond248"/>
+      </Link>
+    </GetUnit>
+    <SwitchUnit gr:x="695" gr:y="440" id="mov1#hym19#switch96" name="Switch96" linkOrder="mov1#hym19#switch96#ln1489">
+      <Case value="Nueva"/>
+      <Case value="Escisi&#243;n"/>
+      <Case value="Fusi&#243;n"/>
+      <OKLink id="mov1#hym19#switch96#oln1477" name="OKFlow1477" to="mov1#hym19#pu123" automaticCoupling="true" code="Nueva"/>
+      <OKLink id="mov1#hym19#switch96#oln1478" name="OKFlow1478" to="mov1#hym19#page62" automaticCoupling="true" code="Fusi&#243;n"/>
+      <OKLink id="mov1#hym19#switch96#oln1479" name="OKFlow1479" to="mov1#hym19#page62" automaticCoupling="true" gr:bendpoints="-194,162,276,-188" code="Escisi&#243;n"/>
+      <Link id="mov1#hym19#switch96#ln1489" name="Flow1489" to="mov1#hym19#page62#enu85" type="transport" validate="true">
+        <LinkParameter id="mov1#hym19#switch96#ln1489#par4874" name="Switch_sociedadDerivadaDe" source="switch" target="mov1#hym19#page62#enu85#fld438_slot"/>
+      </Link>
+    </SwitchUnit>
+  </OperationUnits>
+</HybridModule>

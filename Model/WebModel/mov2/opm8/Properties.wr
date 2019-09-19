@@ -1,0 +1,34 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1550" gr:y="135" id="mov2#opm8" name="validarXML">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm8#icu13" gr:x="-130" gr:y="60">
+      <InputCollectorParameter id="mov2#opm8#icu13#icp4" name="texto"/>
+      <OKLink id="mov2#opm8#icu13#oln57" name="OKFlow57" to="mov2#opm8#inn1">
+        <LinkParameter id="mov2#opm8#icu13#oln57#par583" name="texto_Input" source="mov2#opm8#icu13#icp4" target="mov2#opm8#inn1.isnotnull"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <GetXMLUnit gr:x="325" gr:y="70" id="mov2#opm8#gxu1" name="Canonicalizar" sourceType="text">
+      <OKLink id="mov2#opm8#gxu1#oln58" name="OKFlow58" to="mov2#opm8#scu1" automaticCoupling="true"/>
+      <KOLink id="mov2#opm8#gxu1#kln14" name="KOFlow14" to="mov2#opm8#kocu2" gr:bendpoints="103,54,-352,-6;314,54,-141,-6">
+        <LinkParameter id="mov2#opm8#gxu1#kln14#par100" name="El XML se que recibi&#243; no cumple con el formato._msj" sourceValue="El XML se que recibi&#243; no cumple con el formato." target="mov2#opm8#kocu2#ocp2"/>
+      </KOLink>
+    </GetXMLUnit>
+    <OKCollectorUnit gr:x="725" gr:y="15" id="mov2#opm8#okcu5" name="OK"/>
+    <KOCollectorUnit gr:x="725" gr:y="120" id="mov2#opm8#kocu2" name="KO">
+      <OutputCollectorParameter id="mov2#opm8#kocu2#ocp2" name="msj"/>
+    </KOCollectorUnit>
+    <ScriptUnit gr:x="505" gr:y="70" id="mov2#opm8#scu1" name="extraerDatos">
+      <OKLink id="mov2#opm8#scu1#oln60" name="OKFlow60" to="mov2#opm8#okcu5" automaticCoupling="true" gr:bendpoints="68,-45,-207,0"/>
+      <KOLink id="mov2#opm8#scu1#kln13" name="KOFlow13" to="mov2#opm8#kocu2" gr:bendpoints="50,46,-225,-14;147,47,-128,-13">
+        <LinkParameter id="mov2#opm8#scu1#kln13#par101" name="El documento XML que se subi&#243; no cuenta con todos los datos necesarios._msj" sourceValue="El documento XML que se subi&#243; no cuenta con todos los datos necesarios." target="mov2#opm8#kocu2#ocp2"/>
+      </KOLink>
+    </ScriptUnit>
+    <IsNotNullUnit gr:x="165" gr:y="70" id="mov2#opm8#inn1" name="&#191;Existe?">
+      <KOLink id="mov2#opm8#inn1#kln12" name="KOFlow12" to="mov2#opm8#kocu2" gr:bendpoints="115,62,-515,2">
+        <LinkParameter id="mov2#opm8#inn1#kln12#par99" name="El documento se se intent&#243; validar es nulo._msj" sourceValue="El documento se se intent&#243; validar es nulo." target="mov2#opm8#kocu2#ocp2"/>
+      </KOLink>
+      <OKLink id="mov2#opm8#inn1#oln59" name="OKFlow59" to="mov2#opm8#gxu1">
+        <LinkParameter id="mov2#opm8#inn1#oln59#par584" name="Input Value_Text" source="inputValue" target="mov2#opm8#gxu1.text"/>
+      </OKLink>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

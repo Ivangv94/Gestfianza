@@ -1,0 +1,10 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="430" gr:y="965" id="mov2#opm78" name="insertarTipoSociedad">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm78#icu117" gr:x="-105" gr:y="65">
+      <InputCollectorParameter id="mov2#opm78#icu117#icp330" name="idTipoSociedad"/>
+      <InputCollectorParameter id="mov2#opm78#icu117#icp331" name="tipoSociedad"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="580" gr:y="45" id="mov2#opm78#okcu83" name="OK Port83"/>
+    <KOCollectorUnit gr:x="580" gr:y="130" id="mov2#opm78#kocu68" name="KO Port68"/>
+  </OperationUnits>
+</OperationModule>

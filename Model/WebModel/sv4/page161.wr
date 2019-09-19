@@ -1,0 +1,330 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#page161" name="Informaci&#243;n del Fedatario" localized="true" layout:pageLayout="gobmxStyle/landingFianzas" layout:frameLayout="None" gr:x="-2685" gr:y="1795">
+  <ContentUnits>
+    <SelectorUnit id="sv4#page161#seu349" name="Informaci&#243;n del Fedatario" gr:x="0" gr:y="0" entity="ent96" distinctAttributes="ent96#att565 ent96#att566 ent96#att567 ent96#att569 ent96#att570 ent96#att575 rel47#role93.ent98#att582">
+      <Link id="sv4#page161#seu349#ln1529" name="Cambiar" to="sv4#page161#enu187" type="transport" validate="true">
+        <LinkParameter id="sv4#page161#seu349#ln1529#par4415" name="correo_Correo" source="ent96#att570Array" target="sv4#page161#enu187#fld547_slot"/>
+        <LinkParameter id="sv4#page161#seu349#ln1529#par4418" name="nombrefed_Nombre" source="ent96#att565Array" target="sv4#page161#enu187#fld542_slot"/>
+        <LinkParameter id="sv4#page161#seu349#ln1529#par4419" name="primapellido_Primer Apellido" source="ent96#att566Array" target="sv4#page161#enu187#fld543_slot"/>
+        <LinkParameter id="sv4#page161#seu349#ln1529#par4420" name="segunapellido_Segundo Apellido" source="ent96#att567Array" target="sv4#page161#enu187#fld545_slot"/>
+        <LinkParameter id="sv4#page161#seu349#ln1529#par4784" name="numFed_No. Fedatario" source="ent96#att569Array" target="sv4#page161#enu187#fld546_slot"/>
+        <LinkParameter id="sv4#page161#seu349#ln1529#par4816" name="rfcFed_RFC" source="ent96#att575Array" target="sv4#page161#enu187#fld559_slot"/>
+        <LinkParameter id="sv4#page161#seu349#ln1529#par4891" name="FedatariosToEstatusfedatario.nombreEstatusFed_Estatus" source="rel47#role93$ent98#att582Array" target="sv4#page161#enu187#fld548_slot"/>
+      </Link>
+      <Selector id="sv4#page161#seu349#su533" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#page161#seu349#su533#kcond232" name="KeyCondition222" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#page161#seu349#ln1530" name="Flow1368" to="sv4#mfu47" type="transport" validate="true" gr:bendpoints="382,-370,-22,164">
+        <LinkParameter id="sv4#page161#seu349#ln1530#par4876" name="oidFedatario_KeyCondition216 [oidFedatario]" source="ent96#att564Array" target="sv4#mfu47#su514#kcond216.ent96#att564"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit id="sv4#page161#enu187" name="Informaci&#243;n del Fedatario" linkOrder="sv4#page161#enu187#ln1531 sv4#page161#enu187#ln1532 sv4#page161#enu187#ln1547 sv4#page161#enu187#ln1552" gr:x="235" gr:y="15" fieldOrder="sv4#page161#enu187#fld542 sv4#page161#enu187#fld543 sv4#page161#enu187#fld545 sv4#page161#enu187#fld546 sv4#page161#enu187#fld547 sv4#page161#enu187#sfld63 sv4#page161#enu187#fld548 sv4#page161#enu187#sfld73 sv4#page161#enu187#sfld75 sv4#page161#enu187#sfld76 sv4#page161#enu187#sfld93 sv4#page161#enu187#fld559">
+      <Field id="sv4#page161#enu187#fld542" name="Nombre" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#page161#enu187#fld543" name="Primer Apellido" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#page161#enu187#fld544" name="ID" type="string" modifiable="false" hidden="true" preloaded="true"/>
+      <Field id="sv4#page161#enu187#fld545" name="Segundo Apellido" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#page161#enu187#fld546" name="No. Fedatario" type="integer" modifiable="true" preloaded="true"/>
+      <Field id="sv4#page161#enu187#fld547" name="Correo" type="string" modifiable="true" preloaded="true"/>
+      <Link id="sv4#page161#enu187#ln1531" name="Aplicar Cambios" to="sv4#mfu47" type="normal" validate="true" gr:bendpoints="358,-270,188,264">
+        <LinkParameter id="sv4#page161#enu187#ln1531#par4822" name="Calidad del Fedatario_CalidadFedatario.oidCalidadFed(FedatariosToCalidadfedatario)" source="sv4#page161#enu187#sfld73" target="sv4#mfu47.rel26#role51.ent40#att273"/>
+        <LinkParameter id="sv4#page161#enu187#ln1531#par4823" name="Correo_correoFed" source="sv4#page161#enu187#fld547" target="sv4#mfu47.ent96#att570"/>
+        <LinkParameter id="sv4#page161#enu187#ln1531#par4824" name="Estado_Estados.oidEstado(FedatariosToEstados)" source="sv4#page161#enu187#sfld63" target="sv4#mfu47.rel78#role155.ent97#att579"/>
+        <LinkParameter id="sv4#page161#enu187#ln1531#par4825" name="Municipios_Municipios.oidMunicipio(FedatariosToMunicipios)" source="sv4#page161#enu187#sfld93" target="sv4#mfu47.rel50#role99.ent78#att287"/>
+        <LinkParameter id="sv4#page161#enu187#ln1531#par4826" name="Nombre_nombreFed" source="sv4#page161#enu187#fld542" target="sv4#mfu47.ent96#att565"/>
+        <LinkParameter id="sv4#page161#enu187#ln1531#par4827" name="No. Fedatario_numFed" source="sv4#page161#enu187#fld546" target="sv4#mfu47.ent96#att569"/>
+        <LinkParameter id="sv4#page161#enu187#ln1531#par4828" name="Observaciones_Observaciones.oidObservaciones(FedatariosToObservaciones)" source="sv4#page161#enu187#sfld76" target="sv4#mfu47.rel51#role101.ent79#att295"/>
+        <LinkParameter id="sv4#page161#enu187#ln1531#par4829" name="Primer Apellido_primApellido" source="sv4#page161#enu187#fld543" target="sv4#mfu47.ent96#att566"/>
+        <LinkParameter id="sv4#page161#enu187#ln1531#par4837" name="RFC_rfcFed" source="sv4#page161#enu187#fld559" target="sv4#mfu47.ent96#att575"/>
+        <LinkParameter id="sv4#page161#enu187#ln1531#par4854" name="Segundo Apellido_segunApellido" source="sv4#page161#enu187#fld545" target="sv4#mfu47.ent96#att567"/>
+        <LinkParameter id="sv4#page161#enu187#ln1531#par4875" name="Tipo de Fedatario_TipoFedatario.oidTipoFedatario(FedatariosToTipofedatario)" source="sv4#page161#enu187#sfld75" target="sv4#mfu47.rel52#role103.ent75#att285"/>
+        <LinkParameter id="sv4#page161#enu187#ln1531#par4892" name="Estatus_EstatusFedatario.oidEstatusFed(FedatariosToEstatusfedatario)" source="sv4#page161#enu187#fld548" target="sv4#mfu47.rel47#role93.ent98#att581"/>
+      </Link>
+      <SelectionField id="sv4#page161#enu187#sfld63" name="Estado" type="integer" splitOutput="false" ajaxEventEnabled="true" ajaxEventLink="sv4#page161#enu187#ln1552"/>
+      <Link id="sv4#page161#enu187#ln1532" name="Cancelar" to="sv4#page153" type="normal" validate="true" gr:bendpoints="100,-394,320,220"/>
+      <SelectionField id="sv4#page161#enu187#sfld73" name="Calidad del Fedatario" ajaxEventEnabled="false" type="string" splitOutput="false"/>
+      <SelectionField id="sv4#page161#enu187#sfld75" name="Tipo de Fedatario" type="string"/>
+      <Field id="sv4#page161#enu187#fld548" name="Estatus" type="string" modifiable="false" preloaded="true"/>
+      <SelectionField id="sv4#page161#enu187#sfld76" name="Observaciones" type="string" ajaxEventEnabled="true" ajaxEventLink="sv4#page161#enu187#ln1547"/>
+      <SelectionField id="sv4#page161#enu187#sfld93" name="Municipios" type="string"/>
+      <Field id="sv4#page161#enu187#fld559" name="RFC" type="string" modifiable="true" preloaded="true"/>
+      <Link id="sv4#page161#enu187#ln1547" name="change" to="sv4#seu353" type="normal" validate="true" ajaxEnabled="true">
+        <LinkParameter id="sv4#page161#enu187#ln1547#par4950" name="Estatus_KeyCondition237 [oidEstatusFed]" source="sv4#page161#enu187#fld548" target="sv4#seu353#su541#kcond237.ent98#att581"/>
+      </Link>
+      <Link id="sv4#page161#enu187#ln1552" name="Flow1552" to="sv4#seu324" type="normal" validate="true" ajaxEnabled="true">
+        <LinkParameter id="sv4#page161#enu187#ln1552#par4961" name="Estado_RoleCondition315 [oidEstado]" source="sv4#page161#enu187#sfld63" target="sv4#seu324#su543#rcond315.ent97#att579"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell layout:cellLayout="Print Frame" colspan="8">
+        <layout:Grid label="Cambiar Fedatarios" containerType="grid">
+          <layout:Row>
+            <layout:Cell colspan="12">
+              <layout:Field unitId="sv4#page161#enu187" field="sv4#page161#enu187#fld542" mode="full">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12">
+              <layout:Field unitId="sv4#page161#enu187" field="sv4#page161#enu187#fld543" mode="full">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12">
+              <layout:Field unitId="sv4#page161#enu187" field="sv4#page161#enu187#fld545" mode="full">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12">
+              <layout:Field unitId="sv4#page161#enu187" mode="full" field="sv4#page161#enu187#fld559">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12">
+              <layout:Field unitId="sv4#page161#enu187" field="sv4#page161#enu187#fld547" mode="full">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="5">
+              <layout:Field unitId="sv4#page161#enu187" field="sv4#page161#enu187#sfld63" mode="full">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="3"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="sv4#page161#enu187" field="sv4#page161#enu187#sfld93" mode="full">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="5">
+              <layout:Field unitId="sv4#page161#enu187" field="sv4#page161#enu187#fld548" mode="full">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="3"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="sv4#page161#enu187" field="sv4#page161#enu187#sfld75" mode="full">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="5">
+              <layout:Field unitId="sv4#page161#enu187" field="sv4#page161#enu187#sfld76" mode="full">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="3"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Field unitId="sv4#page161#enu187" field="sv4#page161#enu187#fld546" mode="full">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="5">
+              <layout:Field unitId="sv4#page161#enu187" field="sv4#page161#enu187#sfld73" mode="full">
+                <layout:LayoutParameter name="label-position" value="top" type="field"/>
+              </layout:Field>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="7"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="4"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Link unitId="sv4#page161#enu187" link="sv4#page161#enu187#ln1532">
+                <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+              </layout:Link>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell colspan="4">
+              <layout:Link unitId="sv4#page161#enu187" link="sv4#page161#enu187#ln1531">
+                <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+              </layout:Link>
+            </layout:Cell>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell colspan="12"/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:LayoutParameter name="label-position" value="top" type="field"/>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+</Page>

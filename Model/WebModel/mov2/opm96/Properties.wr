@@ -1,0 +1,241 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-185" gr:y="1470" id="mov2#opm96" name="crearDocumentosFedatario">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm96#icu135" gr:x="-455" gr:y="50" linkOrder="mov2#opm96#icu135#ln1456">
+      <OKLink id="mov2#opm96#icu135#oln107" name="OKFlow107" to="mov2#opm96#seu254">
+        <LinkParameter id="mov2#opm96#icu135#oln107#par4265" name="oidXmlAFirmar_oidPM" source="mov2#opm96#icu135#icp393" target="mov2#opm96#seu254#su241#acond230"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm96#icu135#icp393" name="oidXmlAFirmar"/>
+      <Link id="mov2#opm96#icu135#ln1456" name="Flow1456" to="mov2#opm96#okcu102" type="transport" validate="true" gr:bendpoints="165,-169,-2235,-89">
+        <LinkParameter id="mov2#opm96#icu135#ln1456#par4758" name="oidXmlAFirmar_oidDoc" source="mov2#opm96#icu135#icp393" target="mov2#opm96#okcu102#ocp338"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="255" gr:y="60" id="mov2#opm96#seu123" name="ambiente" entity="ent2" linkOrder="mov2#opm96#seu123#ln43 mov2#opm96#seu123#ln1447">
+      <Selector id="mov2#opm96#seu123#su224" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm96#seu123#su224#acond122" name="elementosAdministrables" predicate="eq" booleanOperator="or" implied="false" attributes="ent2#att11" value="ambiente"/>
+      </Selector>
+      <OKLink id="mov2#opm96#seu123#oln242" name="OKFlow242" to="mov2#opm96#tmu26" automaticCoupling="true"/>
+      <Link id="mov2#opm96#seu123#ln43" name="Flow43" to="mov2#opm96#scu10" type="transport" validate="true" gr:bendpoints="132,-51,-243,-56;208,-50,-167,-55;274,-49,-101,-54">
+        <LinkParameter id="mov2#opm96#seu123#ln43#par65" name="valor_ambiente" source="ent2#att12Array" target="mov2#opm96#scu10.ambiente"/>
+        <LinkParameter id="mov2#opm96#seu123#ln43#par66" name="1.6_numEsquema" sourceValue="1.6" target="mov2#opm96#scu10.numEsquema"/>
+        <LinkParameter id="mov2#opm96#seu123#ln43#par67" name="CONST_siglasDoc" sourceValue="EEE" target="mov2#opm96#scu10.siglasDoc"/>
+      </Link>
+      <Link id="mov2#opm96#seu123#ln1447" name="Flow1447" to="mov2#opm96#okcu102" type="transport" validate="true" gr:bendpoints="281,-173,-1439,-63;818,-180,-902,-70;1466,-183,-254,-73">
+        <LinkParameter id="mov2#opm96#seu123#ln1447#par4653" name="valor_ambiente" source="ent2#att12Array" target="mov2#opm96#okcu102#ocp337"/>
+      </Link>
+    </SelectorUnit>
+    <TimeUnit gr:x="485" gr:y="80" id="mov2#opm96#tmu26" name="timeStamp" linkOrder="mov2#opm96#tmu26#ln1353 mov2#opm96#tmu26#ln1448">
+      <OKLink id="mov2#opm96#tmu26#oln243" name="OKFlow243" to="mov2#opm96#scu10">
+        <LinkParameter id="mov2#opm96#tmu26#oln243#par58" name="Year_anio" source="year" target="mov2#opm96#scu10.anio"/>
+        <LinkParameter id="mov2#opm96#tmu26#oln243#par64" name="Month_mes" source="month" target="mov2#opm96#scu10.mes"/>
+        <LinkParameter id="mov2#opm96#tmu26#oln243#par4730" name="Current/Input Timestamp_proceso" source="currentTimestamp" target="mov2#opm96#scu10.proceso"/>
+      </OKLink>
+      <Link id="mov2#opm96#tmu26#ln1353" name="Flow1353" to="mov2#opm96#pcu20" type="transport" validate="true" gr:bendpoints="90,68,-250,38;157,73,-183,43;218,72,-122,42">
+        <LinkParameter id="mov2#opm96#tmu26#ln1353#par4213" name="Current/Input Timestamp_fechaEmision" source="currentTimestamp" target="mov2#opm96#pcu20#pcp65"/>
+      </Link>
+      <Link id="mov2#opm96#tmu26#ln1448" name="Flow1448" to="mov2#opm96#pcu20" type="transport" validate="true" gr:bendpoints="57,-81,-283,-111;153,-79,-187,-109;226,-78,-114,-108">
+        <LinkParameter id="mov2#opm96#tmu26#ln1448#par4731" name="Current/Input Timestamp_proceso" source="currentTimestamp" target="mov2#opm96#pcu20#pcp72"/>
+      </Link>
+    </TimeUnit>
+    <ScriptUnit gr:x="670" gr:y="80" id="mov2#opm96#scu10" name="creaFolio">
+      <ScriptUnitText xml:space="preserve">#input String ambiente,numEsquema,anio,String mes,proceso,String rfc,siglasDoc
+#output folioSAS,folioSASxml,folioSASpdf,folioPersistenteXml,folioPersistentePdf,mesAdosDigit,uriPersistenteXml
+
+if(mes.size().equals(1)) {
+    mesAdosDigit = "0" + mes
+    } else {
+    mesAdosDigit = mes
+    }
+
+String folioSAS = '''EEE-''' + numEsquema + '''-''' + anio + mesAdosDigit + '''-''' + rfc + proceso + siglasDoc
+
+String folioSASxml = '''EEE-''' + numEsquema + '''-''' + anio + mesAdosDigit + '''-''' + rfc + proceso + siglasDoc + '''-SIGNED'''
+
+String folioSASpdf = '''EEE-''' + numEsquema + '''-''' + anio + mesAdosDigit + '''-''' + rfc + proceso + siglasDoc
+
+String folioPersistenteXml = rfc + proceso + siglasDoc + '''-SIGNED'''
+
+String folioPersistentePdf = rfc + proceso + siglasDoc
+
+if (ambiente.equals("qa")) 
+{
+    	uriPersistenteXml = '''/u01/usuarios/qaExpediente/glassfish4/glassfish/domains/qaExpediente/archivodigital/''' + numEsquema + '''/''' + anio + mesAdosDigit + '''/EEE-''' + numEsquema + '''-''' + anio + mesAdosDigit +'''-''' + folioPersistenteXml + '''.xml''';
+}     
+else if (ambiente.equals("prod"))     
+{     	
+	uriPersistenteXml = '''/u01/usuarios/expedienteProd/glassfish4/glassfish/domains/prodExpedienteDisol/archivodigital/''' + numEsquema + '''/''' + anio + mesAdosDigit + '''/EEE-''' + numEsquema + '''-''' + anio + mesAdosDigit +'''-''' + folioPersistenteXml + '''.xml''';
+    //urlVerificacionFinal = '''http://sdsasdocumentos.economia.gob.mx/dgnm/protected/sas/''' + numEsquema + '''/''' + anio + mesAdosDigit + '''/SAS-''' + numEsquema + '''-''' + anio + mesAdosDigit +'''-''' + folioPersistenteXml + '''.xml''';
+} 
+else if (ambiente.equals("desarrollo"))     
+{     	
+	uriPersistenteXml = '''/u01/usuarios/desaEstampillado/glassfish4/glassfish/domains/desaEstampillado/archivodigital/''' + numEsquema + '''/''' + anio + mesAdosDigit + '''/EEE-''' + numEsquema + '''-''' + anio + mesAdosDigit +'''-''' + folioPersistenteXml + '''.xml''';
+    //urlVerificacionFinal = '''http://sdsasdocumentos.economia.gob.mx/dgnm/protected/sas/''' + numEsquema + '''/''' + anio + mesAdosDigit + '''/SAS-''' + numEsquema + '''-''' + anio + mesAdosDigit +'''-''' + folioPersistenteXml + '''.xml''';
+} 
+else if (ambiente.equals("local")) 
+{ 
+	uriPersistenteXml = '''/opt/wildfly/standalone/archivodigital/''' + numEsquema + '''/''' + anio + mesAdosDigit + '''/EEE-''' + numEsquema + '''-''' + anio + mesAdosDigit +'''-''' + folioPersistenteXml + '''.xml''';            
+}
+else 
+{
+	uriPersistenteXml = '''https://NO_HA_SIDO_ESPECIFICADA_LA_URL_BAJO_EL_AMBIENTE_ACTUAL/''' + numEsquema + '''/''' + anio + mesAdosDigit + '''/EEE-''' + numEsquema + '''-''' + anio + mesAdosDigit +'''-''' + folioPersistenteXml + '''.xml''';
+}
+
+return["folioSAS":folioSAS,"folioSASxml":folioSASxml,"folioSASpdf":folioSASpdf,"folioPersistenteXml":folioPersistenteXml,"folioPersistentePdf":folioPersistentePdf,"mesAdosDigit":mesAdosDigit,"uriPersistenteXml":uriPersistenteXml]</ScriptUnitText>
+      <OKLink id="mov2#opm96#scu10#oln1117" name="OKFlow1117" to="mov2#opm96#pcu20">
+        <LinkParameter id="mov2#opm96#scu10#oln1117#par4207" name="folioSAS_folioEEE" source="result(folioSAS)" target="mov2#opm96#pcu20#pcp66"/>
+        <LinkParameter id="mov2#opm96#scu10#oln1117#par4208" name="folioSASpdf_folioEEEpdf" source="result(folioSASpdf)" target="mov2#opm96#pcu20#pcp67"/>
+        <LinkParameter id="mov2#opm96#scu10#oln1117#par4209" name="folioSASxml_folioEEExml" source="result(folioSASxml)" target="mov2#opm96#pcu20#pcp68"/>
+        <LinkParameter id="mov2#opm96#scu10#oln1117#par4210" name="folioPersistentePdf_folioPersistentePdf" source="result(folioPersistentePdf)" target="mov2#opm96#pcu20#pcp69"/>
+        <LinkParameter id="mov2#opm96#scu10#oln1117#par4211" name="folioPersistenteXml_folioPersistenteXml" source="result(folioPersistenteXml)" target="mov2#opm96#pcu20#pcp70"/>
+        <LinkParameter id="mov2#opm96#scu10#oln1117#par4212" name="uriPersistenteXml_uriPersistenteXmlFirmado" source="result(uriPersistenteXml)" target="mov2#opm96#pcu20#pcp75"/>
+      </OKLink>
+    </ScriptUnit>
+    <SelectorUnit gr:x="35" gr:y="55" id="mov2#opm96#seu135" name="buscaFedatario" entity="ent39" linkOrder="mov2#opm96#seu135#ln54 mov2#opm96#seu135#ln1354">
+      <Selector id="mov2#opm96#seu135#su226" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm96#seu135#su226#kcond190" name="KeyCondition190" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm96#seu135#oln245" name="OKFlow245" to="mov2#opm96#seu123" automaticCoupling="true"/>
+      <Link id="mov2#opm96#seu135#ln54" name="Flow54" to="mov2#opm96#scu10" type="transport" validate="true" gr:bendpoints="159,76,-421,66;302,75,-278,65;455,77,-125,67">
+        <LinkParameter id="mov2#opm96#seu135#ln54#par69" name="RFC_rfc" source="ent39#att268Array" target="mov2#opm96#scu10.rfc"/>
+      </Link>
+      <Link id="mov2#opm96#seu135#ln1354" name="Flow1354" to="mov2#opm96#pcu20" type="transport" validate="true" gr:bendpoints="91,117,-649,77;357,141,-383,101;611,131,-129,91">
+        <LinkParameter id="mov2#opm96#seu135#ln1354#par4214" name="userName_curpFirmante" source="userNameArray" target="mov2#opm96#pcu20#pcp64"/>
+        <LinkParameter id="mov2#opm96#seu135#ln1354#par4215" name="nombre_nombreFirmante" source="ent39#att272Array" target="mov2#opm96#pcu20#pcp71"/>
+        <LinkParameter id="mov2#opm96#seu135#ln1354#par4216" name="RFC_rfcFirmante" source="ent39#att268Array" target="mov2#opm96#pcu20#pcp73"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit gr:x="-165" gr:y="-55" id="mov2#opm96#gtu64" name="Get64" contextParameters="UserCtxParam">
+      <Link id="mov2#opm96#gtu64#ln52" name="Flow52" to="mov2#opm96#seu135" type="transport" validate="true">
+        <LinkParameter id="mov2#opm96#gtu64#ln52#par68" name="UserCtxParam.oid_KeyCondition190 [oid]" source="mov2#opm96#gtu64.UserCtxParam" target="mov2#opm96#seu135#su226#kcond190.userOID"/>
+      </Link>
+    </GetUnit>
+    <ParameterCollectorUnit gr:x="800" gr:y="40" id="mov2#opm96#pcu20" name="guardaParametros" linkOrder="mov2#opm96#pcu20#ln1357 mov2#opm96#pcu20#ln1358 mov2#opm96#pcu20#ln1446">
+      <CollectorParameter id="mov2#opm96#pcu20#pcp75" name="uriPersistenteXmlFirmado"/>
+      <CollectorParameter id="mov2#opm96#pcu20#pcp74" name="xml"/>
+      <CollectorParameter id="mov2#opm96#pcu20#pcp73" name="rfcFirmante"/>
+      <CollectorParameter id="mov2#opm96#pcu20#pcp72" name="proceso"/>
+      <CollectorParameter id="mov2#opm96#pcu20#pcp71" name="nombreFirmante"/>
+      <CollectorParameter id="mov2#opm96#pcu20#pcp70" name="folioPersistenteXml"/>
+      <CollectorParameter id="mov2#opm96#pcu20#pcp69" name="folioPersistentePdf"/>
+      <CollectorParameter id="mov2#opm96#pcu20#pcp68" name="folioEEExml"/>
+      <CollectorParameter id="mov2#opm96#pcu20#pcp67" name="folioEEEpdf"/>
+      <CollectorParameter id="mov2#opm96#pcu20#pcp66" name="folioEEE"/>
+      <CollectorParameter id="mov2#opm96#pcu20#pcp65" name="fechaEmision"/>
+      <CollectorParameter id="mov2#opm96#pcu20#pcp64" name="curpFirmante"/>
+      <OKLink id="mov2#opm96#pcu20#oln1160" name="OKFlow1160" to="mov2#opm96#scu186">
+        <LinkParameter id="mov2#opm96#pcu20#oln1160#par4220" name="folioEEE_folio" source="mov2#opm96#pcu20#pcp66" target="mov2#opm96#scu186.folio"/>
+        <LinkParameter id="mov2#opm96#pcu20#oln1160#par4221" name="curpFirmante_curpFirmante" source="mov2#opm96#pcu20#pcp64" target="mov2#opm96#scu186.curpFirmante"/>
+        <LinkParameter id="mov2#opm96#pcu20#oln1160#par4222" name="fechaEmision_fechaEmision" source="mov2#opm96#pcu20#pcp65" target="mov2#opm96#scu186.fechaEmision"/>
+        <LinkParameter id="mov2#opm96#pcu20#oln1160#par4223" name="nombreFirmante_nombreFirmante" source="mov2#opm96#pcu20#pcp71" target="mov2#opm96#scu186.nombreFirmante"/>
+        <LinkParameter id="mov2#opm96#pcu20#oln1160#par4224" name="rfcFirmante_rfcFirmante" source="mov2#opm96#pcu20#pcp73" target="mov2#opm96#scu186.rfcFirmante"/>
+        <LinkParameter id="mov2#opm96#pcu20#oln1160#par4225" name="xml_xml" source="mov2#opm96#pcu20#pcp74" target="mov2#opm96#scu186.xml"/>
+      </OKLink>
+      <Link id="mov2#opm96#pcu20#ln1357" name="Flow1357" to="mov2#opm96#scu187" type="transport" validate="true" gr:bendpoints="131,-74,-369,-64;249,-73,-251,-63;362,-73,-138,-63">
+        <LinkParameter id="mov2#opm96#pcu20#ln1357#par4227" name="folioEEE_folio" source="mov2#opm96#pcu20#pcp66" target="mov2#opm96#scu187.folio"/>
+      </Link>
+      <Link id="mov2#opm96#pcu20#ln1358" name="Flow1358" to="mov2#opm96#scu188" type="transport" validate="true" gr:bendpoints="195,66,-585,81;402,74,-378,89;673,64,-107,79">
+        <LinkParameter id="mov2#opm96#pcu20#ln1358#par4231" name="folioEEE_folio" source="mov2#opm96#pcu20#pcp66" target="mov2#opm96#scu188.folio"/>
+      </Link>
+      <Link id="mov2#opm96#pcu20#ln1446" name="Flow1446" to="mov2#opm96#okcu102" type="transport" validate="true" gr:bendpoints="164,-170,-1056,-110;555,-184,-665,-124;848,-156,-372,-96">
+        <LinkParameter id="mov2#opm96#pcu20#ln1446#par4644" name="folioEEE_folioEEE" source="mov2#opm96#pcu20#pcp66" target="mov2#opm96#okcu102#ocp334"/>
+        <LinkParameter id="mov2#opm96#pcu20#ln1446#par4645" name="curpFirmante_curpFirmante" source="mov2#opm96#pcu20#pcp64" target="mov2#opm96#okcu102#ocp335"/>
+        <LinkParameter id="mov2#opm96#pcu20#ln1446#par4646" name="proceso_proceso" source="mov2#opm96#pcu20#pcp72" target="mov2#opm96#okcu102#ocp336"/>
+      </Link>
+    </ParameterCollectorUnit>
+    <SelectorUnit gr:x="-165" gr:y="50" id="mov2#opm96#seu254" name="buscaXML" entity="ent3">
+      <Selector id="mov2#opm96#seu254#su241" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm96#seu254#su241#acond230" name="oidPM" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att487"/>
+      </Selector>
+      <OKLink id="mov2#opm96#seu254#oln1149" name="OKFlow1149" to="mov2#opm96#seu135" automaticCoupling="true"/>
+      <Link id="mov2#opm96#seu254#ln1356" name="Flow1356" to="mov2#opm96#pcu20" type="transport" validate="true" gr:bendpoints="185,146,-815,131;488,161,-512,146;787,149,-213,134">
+        <LinkParameter id="mov2#opm96#seu254#ln1356#par4219" name="xml_xml" source="ent3#att486Array" target="mov2#opm96#pcu20#pcp74"/>
+      </Link>
+    </SelectorUnit>
+    <ScriptUnit gr:x="1010" gr:y="95" id="mov2#opm96#scu186" name="creaCadena">
+      <ScriptUnitText xml:space="preserve">#input folio,fechaEmision,xml,curpFirmante,rfcFirmante,nombreFirmante
+#output xmlOriginal
+
+String xmlOriginal = '''&lt;documento-digital-firmado-con-e-firma esquema="1.6. Avisos y comunicaciones previas"&gt;
+	&lt;encabezado&gt;
+		&lt;folio&gt;''' + folio + '''&lt;/folio&gt;
+		&lt;fecha-emision&gt;''' + fechaEmision + '''&lt;/fecha-emision&gt;
+	&lt;/encabezado&gt;
+	&lt;cuerpo&gt;
+		&lt;aviso&gt;&lt;/aviso&gt;
+		&lt;titulo&gt;Inscripcion a RPC&lt;/titulo&gt;
+		&lt;contenido&gt;''' + xml + '''&lt;/contenido&gt;
+	&lt;/cuerpo&gt;
+	&lt;pie-de-pagina&gt;
+		&lt;firmante&gt;
+			&lt;curp-firmante&gt;''' + curpFirmante + '''&lt;/curp-firmante&gt;
+			&lt;rfc-firmante&gt;''' + rfcFirmante + '''&lt;/rfc-firmante&gt;
+			&lt;nombre-firmante&gt;''' + nombreFirmante + '''&lt;/nombre-firmante&gt;
+		&lt;/firmante&gt;
+	&lt;/pie-de-pagina&gt;
+&lt;/documento-digital-firmado-con-e-firma&gt;'''
+
+return["xmlOriginal":xmlOriginal]</ScriptUnitText>
+      <OKLink id="mov2#opm96#scu186#oln1165" name="OKFlow1165" to="mov2#opm96#gxu2">
+        <LinkParameter id="mov2#opm96#scu186#oln1165#par4226" name="xmlOriginal_Text" source="result(xmlOriginal)" target="mov2#opm96#gxu2.text"/>
+      </OKLink>
+    </ScriptUnit>
+    <GetXMLUnit id="mov2#opm96#gxu2" name="canonicalizar" gr:x="1145" gr:y="95" sourceType="text" linkOrder="mov2#opm96#gxu2#ln1359">
+      <OKLink id="mov2#opm96#gxu2#oln1180" name="OKFlow1180" to="mov2#opm96#scu187" automaticCoupling="true"/>
+      <Link id="mov2#opm96#gxu2#ln1359" name="Flow1359" to="mov2#opm96#scu188" type="transport" validate="true" gr:bendpoints="112,-62,-338,-62;214,-66,-236,-66;342,-61,-108,-61">
+        <LinkParameter id="mov2#opm96#gxu2#ln1359#par4232" name="Retrieved XML Document_xmlCanonicalizado" source="xmlDocument" target="mov2#opm96#scu188.xmlCanonicalizado"/>
+      </Link>
+    </GetXMLUnit>
+    <ScriptUnit gr:x="1305" gr:y="100" id="mov2#opm96#scu187" name="creaNombreXML">
+      <ScriptUnitText xml:space="preserve">#input folio
+#output nombreXml
+
+nombreXml = folio + ".xml";
+
+return["nombreXml":nombreXml]</ScriptUnitText>
+      <OKLink id="mov2#opm96#scu187#oln1185" name="OKFlow1185" to="mov2#opm96#cru3">
+        <LinkParameter id="mov2#opm96#scu187#oln1185#par4228" name="nombreXml_archivo" source="result(nombreXml)" target="mov2#opm96#cru3.ent4#att34"/>
+        <LinkParameter id="mov2#opm96#scu187#oln1185#par4229" name="nombreXml_archivo [file name]" source="result(nombreXml)" target="mov2#opm96#cru3.ent4#att34_name"/>
+      </OKLink>
+    </ScriptUnit>
+    <CreateUnit gr:x="1470" gr:y="85" id="mov2#opm96#cru3" name="basurita" entity="ent4" linkOrder="mov2#opm96#cru3#ln1360">
+      <OKLink id="mov2#opm96#cru3#oln1186" name="OKFlow1186" to="mov2#opm96#scu188">
+        <LinkParameter id="mov2#opm96#cru3#oln1186#par4230" name="archivo_archivo" source="ent4#att34Array" target="mov2#opm96#scu188.archivo"/>
+      </OKLink>
+      <Link id="mov2#opm96#cru3#ln1360" name="Flow1360" to="mov2#opm96#okcu102" type="transport" validate="true" gr:bendpoints="23,-112,-387,-2">
+        <LinkParameter id="mov2#opm96#cru3#ln1360#par4233" name="archivo_xmlAFirmar" source="ent4#att34Array" target="mov2#opm96#okcu102#ocp74"/>
+      </Link>
+    </CreateUnit>
+    <ScriptUnit gr:x="1585" gr:y="95" id="mov2#opm96#scu188" name="escribir en disco">
+      <ScriptUnitText xml:space="preserve">#input archivo,String xmlCanonicalizado,folio
+#output nombreDocumentoFirmado,xmlCanonicalizado
+
+String bufferDir = rtx.getUploadDirectory();
+String dirtyArchivo = archivo.toString()
+String archivoXml = dirtyArchivo.substring(1,dirtyArchivo.length()-1)
+String ubicacionArchivo = bufferDir + archivoXml
+
+new File(ubicacionArchivo).write(xmlCanonicalizado)
+
+nombreDoc = folio + ".xml"; 
+
+return["nombreDocumentoFirmado":nombreDoc,"xmlCanonicalizado":xmlCanonicalizado]</ScriptUnitText>
+      <KOLink id="mov2#opm96#scu188#kln257" name="KOFlow257" to="mov2#opm96#kocu87" gr:bendpoints="74,63,-331,38;231,58,-174,33">
+        <LinkParameter id="mov2#opm96#scu188#kln257#par4249" name="Error al escribir en disco_mensaje" sourceValue="Error al escribir en disco" target="mov2#opm96#kocu87#ocp267"/>
+      </KOLink>
+      <OKLink id="mov2#opm96#scu188#oln1284" name="OKFlow1189" to="mov2#opm96#okcu102">
+        <LinkParameter id="mov2#opm96#scu188#oln1284#par4260" name="xmlCanonicalizado_xmlOriginal" source="result(xmlCanonicalizado)" target="mov2#opm96#okcu102#ocp266"/>
+      </OKLink>
+    </ScriptUnit>
+    <OKCollectorUnit gr:x="1945" gr:y="-80" id="mov2#opm96#okcu102" name="OK Port102">
+      <OutputCollectorParameter id="mov2#opm96#okcu102#ocp74" name="xmlAFirmar"/>
+      <OutputCollectorParameter id="mov2#opm96#okcu102#ocp266" name="xmlOriginal"/>
+      <OutputCollectorParameter id="mov2#opm96#okcu102#ocp336" name="proceso"/>
+      <OutputCollectorParameter id="mov2#opm96#okcu102#ocp335" name="curpFirmante"/>
+      <OutputCollectorParameter id="mov2#opm96#okcu102#ocp334" name="folioEEE"/>
+      <OutputCollectorParameter id="mov2#opm96#okcu102#ocp337" name="ambiente"/>
+      <OutputCollectorParameter id="mov2#opm96#okcu102#ocp338" name="oidDoc"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1945" gr:y="110" id="mov2#opm96#kocu87" name="KO Port87">
+      <OutputCollectorParameter id="mov2#opm96#kocu87#ocp267" name="mensaje"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,50 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="615" gr:y="1080" id="mov2#opm86" name="filtroPoderesGeneral">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm86#icu125" gr:x="30" gr:y="60">
+      <OKLink id="mov2#opm86#icu125#oln1010" name="OKFlow1010" to="mov2#opm86#miu124">
+        <LinkParameter id="mov2#opm86#icu125#oln1010#par3180" name="oidPM_oidPM" source="mov2#opm86#icu125#icp373" target="mov2#opm86#miu124.mov2#opm81#icu120#icp349"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm86#icu125#icp373" name="oidPM"/>
+    </InputCollectorUnit>
+    <ModuleInstanceUnit gr:x="300" gr:y="65" id="mov2#opm86#miu124" action="true" moduleId="mov2#opm81" linkOrder="mov2#opm86#miu124#ln1038">
+      <OKLink id="mov2#opm86#miu124#oln1011" name="OKFlow1011" to="mov2#opm86#miu125">
+        <LinkParameter id="mov2#opm86#miu124#oln1011#par3181" name="oidPM_oidPM" source="mov2#opm81#okcu86#ocp229" target="mov2#opm86#miu125.mov2#opm82#icu121#icp351"/>
+      </OKLink>
+      <KOLink id="mov2#opm86#miu124#kln433" name="KOFlow433" to="mov2#opm86#kocu76" gr:bendpoints="-3,137,-798,47;675,139,-120,49">
+        <LinkParameter id="mov2#opm86#miu124#kln433#par3195" name="Error del filtro de administraci&#243;n_msn" sourceValue="Error del filtro de administraci&#243;n" target="mov2#opm86#kocu76#ocp238"/>
+      </KOLink>
+      <Link id="mov2#opm86#miu124#ln1038" name="Flow1038" to="mov2#opm86#okcu91" type="transport" validate="true" gr:bendpoints="2,-96,-793,-96;385,-94,-410,-94;713,-93,-82,-93">
+        <LinkParameter id="mov2#opm86#miu124#ln1038#par3183" name="OK Port86.oidPF_oidAdmin" source="mov2#opm81#okcu86#ocp221" target="mov2#opm86#okcu91#ocp234"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="575" gr:y="65" id="mov2#opm86#miu125" action="true" moduleId="mov2#opm82" linkOrder="mov2#opm86#miu125#ln1039">
+      <OKLink id="mov2#opm86#miu125#oln1012" name="OKFlow1012" to="mov2#opm86#miu126">
+        <LinkParameter id="mov2#opm86#miu125#oln1012#par3182" name="oidPM_oidPM" source="mov2#opm82#okcu87#ocp230" target="mov2#opm86#miu126.mov2#opm83#icu122#icp353"/>
+      </OKLink>
+      <KOLink id="mov2#opm86#miu125#kln434" name="KOFlow434" to="mov2#opm86#kocu76" gr:bendpoints="-2,123,-522,33;387,125,-133,35">
+        <LinkParameter id="mov2#opm86#miu125#kln434#par3194" name="Error del filtro de nombramientos_msn" sourceValue="Error del filtro de nombramientos" target="mov2#opm86#kocu76#ocp238"/>
+      </KOLink>
+      <Link id="mov2#opm86#miu125#ln1039" name="Flow1039" to="mov2#opm86#okcu91" type="transport" validate="true" gr:bendpoints="0,-86,-520,-86;430,-86,-90,-86">
+        <LinkParameter id="mov2#opm86#miu125#ln1039#par3190" name="OK Port86.oidPF_oidNom" source="mov2#opm82#okcu87#ocp223" target="mov2#opm86#okcu91#ocp235"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="855" gr:y="65" id="mov2#opm86#miu126" action="true" moduleId="mov2#opm83" linkOrder="mov2#opm86#miu126#ln1040">
+      <OKLink id="mov2#opm86#miu126#oln1013" name="OKFlow1013" to="mov2#opm86#okcu91" automaticCoupling="true"/>
+      <KOLink id="mov2#opm86#miu126#kln435" name="KOFlow435" to="mov2#opm86#kocu76" gr:bendpoints="3,90,-247,0">
+        <LinkParameter id="mov2#opm86#miu126#kln435#par3192" name="Error del filtro de apoderados_msn" sourceValue="Error del filtro de apoderados" target="mov2#opm86#kocu76#ocp238"/>
+      </KOLink>
+      <Link id="mov2#opm86#miu126#ln1040" name="Flow1040" to="mov2#opm86#okcu91" type="transport" validate="true" gr:bendpoints="-3,-65,-253,-65;141,-65,-109,-65">
+        <LinkParameter id="mov2#opm86#miu126#ln1040#par3191" name="OK Port86.oidPF_oidApod" source="mov2#opm83#okcu88#ocp226" target="mov2#opm86#okcu91#ocp236"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <OKCollectorUnit gr:x="1105" gr:y="45" id="mov2#opm86#okcu91" name="OK Port91">
+      <OutputCollectorParameter id="mov2#opm86#okcu91#ocp237" name="oidPM"/>
+      <OutputCollectorParameter id="mov2#opm86#okcu91#ocp236" name="oidApod"/>
+      <OutputCollectorParameter id="mov2#opm86#okcu91#ocp235" name="oidNom"/>
+      <OutputCollectorParameter id="mov2#opm86#okcu91#ocp234" name="oidAdmin"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1105" gr:y="150" id="mov2#opm86#kocu76" name="KO Port76">
+      <OutputCollectorParameter id="mov2#opm86#kocu76#ocp238" name="msn"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

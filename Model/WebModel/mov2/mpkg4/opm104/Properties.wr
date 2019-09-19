@@ -1,0 +1,169 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg4#opm104" name="Almacenar archivo parte 2XML" gr:x="0" gr:y="55">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg4#opm104#icu144" gr:x="-240" gr:y="185">
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp431" name="ultimoNodo"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp432" name="serieCert"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp433" name="selloDigital"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp434" name="oidDelArchivo"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp435" name="nombreSujetoX509"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp436" name="nombreOrazonSocialFirmante"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp437" name="nombreEmisorCert"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp438" name="modulus"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp439" name="inscripcion"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp440" name="hashCadena"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp441" name="folio"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp442" name="fechaInscripcion"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp443" name="fechaCaducidad"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp444" name="curpOrfcFirmante"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp445" name="certificadoX509"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp446" name="caducidad"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp447" name="cadenaOriginal"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp448" name="archivo"/>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp449" name="ambiente"/>
+      <Link id="mov2#mpkg4#opm104#icu144#ln1391" name="Flow7042" to="mov2#mpkg4#opm104#gxu5" type="transport" validate="true" gr:bendpoints="177,-49,-133,-49;281,-50,-29,-50">
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1391#par4445" name="cadenaOriginal_Text" source="mov2#mpkg4#opm104#icu144#icp447" target="mov2#mpkg4#opm104#gxu5.text"/>
+      </Link>
+      <Link id="mov2#mpkg4#opm104#icu144#ln1392" name="Flow7065" to="mov2#mpkg4#opm104#scu200" type="transport" validate="true" gr:bendpoints="170,-62,-550,-62;674,-62,-161,-62">
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4446" name="ambiente_ambiente" source="mov2#mpkg4#opm104#icu144#icp449" target="mov2#mpkg4#opm104#scu200.ambiente"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4447" name="archivo_archivo" source="mov2#mpkg4#opm104#icu144#icp448" target="mov2#mpkg4#opm104#scu200.archivo"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4448" name="certificadoX509_certificadoX509" source="mov2#mpkg4#opm104#icu144#icp445" target="mov2#mpkg4#opm104#scu200.certificadoX509"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4449" name="curpOrfcFirmante_curpOrfcFirmante" source="mov2#mpkg4#opm104#icu144#icp444" target="mov2#mpkg4#opm104#scu200.curpOrfcFirmante"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4450" name="fechaCaducidad_fechaCaducidad" source="mov2#mpkg4#opm104#icu144#icp443" target="mov2#mpkg4#opm104#scu200.fechaCaducidad"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4451" name="fechaInscripcion_fechaInscripcion" source="mov2#mpkg4#opm104#icu144#icp442" target="mov2#mpkg4#opm104#scu200.fechaInscripcion"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4452" name="folio_folio" source="mov2#mpkg4#opm104#icu144#icp441" target="mov2#mpkg4#opm104#scu200.folio"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4453" name="hashCadena_hashCadena" source="mov2#mpkg4#opm104#icu144#icp440" target="mov2#mpkg4#opm104#scu200.hashCadena"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4454" name="modulus_modulus" source="mov2#mpkg4#opm104#icu144#icp438" target="mov2#mpkg4#opm104#scu200.modulus"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4455" name="nombreEmisorCert_nombreEmisorCert" source="mov2#mpkg4#opm104#icu144#icp437" target="mov2#mpkg4#opm104#scu200.nombreEmisorCert"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4456" name="nombreOrazonSocialFirmante_nombreFirmante" source="mov2#mpkg4#opm104#icu144#icp436" target="mov2#mpkg4#opm104#scu200.nombreFirmante"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4457" name="nombreSujetoX509_nombreSujetoX509" source="mov2#mpkg4#opm104#icu144#icp435" target="mov2#mpkg4#opm104#scu200.nombreSujetoX509"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4458" name="selloDigital_selloDigital" source="mov2#mpkg4#opm104#icu144#icp433" target="mov2#mpkg4#opm104#scu200.selloDigital"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1392#par4459" name="serieCert_serieCert" source="mov2#mpkg4#opm104#icu144#icp432" target="mov2#mpkg4#opm104#scu200.serieCert"/>
+      </Link>
+      <Link id="mov2#mpkg4#opm104#icu144#ln1393" name="Flow7068" to="mov2#mpkg4#opm104#scu201" type="transport" validate="true" gr:bendpoints="191,-90,-844,-90;864,-77,-171,-77">
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1393#par4460" name="ultimoNodo_ultimoNodo" source="mov2#mpkg4#opm104#icu144#icp431" target="mov2#mpkg4#opm104#scu201.ultimoNodo"/>
+      </Link>
+      <Link id="mov2#mpkg4#opm104#icu144#ln1394" name="Flow7070" to="mov2#mpkg4#opm104#scu202" type="transport" validate="true" gr:bendpoints="167,-100,-1253,-100;1325,-88,-95,-88">
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1394#par4461" name="archivo_archivo" source="mov2#mpkg4#opm104#icu144#icp448" target="mov2#mpkg4#opm104#scu202.archivo"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1394#par4462" name="folio_folio" source="mov2#mpkg4#opm104#icu144#icp441" target="mov2#mpkg4#opm104#scu202.folio"/>
+      </Link>
+      <Link id="mov2#mpkg4#opm104#icu144#ln1395" name="Flow7073" to="mov2#mpkg4#opm104#mfu41" type="transport" validate="true" gr:bendpoints="168,-123,-1512,-123;1593,-123,-87,-123;1646,-59,-34,-59">
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1395#par4463" name="certificadoX509_certificado_x509" source="mov2#mpkg4#opm104#icu144#icp445" target="mov2#mpkg4#opm104#mfu41.ent3#att16"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1395#par4464" name="curpOrfcFirmante_curp_o_rfc_firmante" source="mov2#mpkg4#opm104#icu144#icp444" target="mov2#mpkg4#opm104#mfu41.ent3#att27"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1395#par4465" name="folio_folio" source="mov2#mpkg4#opm104#icu144#icp441" target="mov2#mpkg4#opm104#mfu41.ent3#att30"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1395#par4466" name="hashCadena_hash_cadena" source="mov2#mpkg4#opm104#icu144#icp440" target="mov2#mpkg4#opm104#mfu41.ent3#att22"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1395#par4467" name="oidDelArchivo_KeyCondition59 [oid]" source="mov2#mpkg4#opm104#icu144#icp434" target="mov2#mpkg4#opm104#mfu41#su490#kcond209.ent3#att13"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1395#par4468" name="modulus_modulus" source="mov2#mpkg4#opm104#icu144#icp438" target="mov2#mpkg4#opm104#mfu41.ent3#att15"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1395#par4469" name="nombreEmisorCert_nombre_emisor_cert" source="mov2#mpkg4#opm104#icu144#icp437" target="mov2#mpkg4#opm104#mfu41.ent3#att17"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1395#par4470" name="nombreOrazonSocialFirmante_nombre_o_razon_social_firmante" source="mov2#mpkg4#opm104#icu144#icp436" target="mov2#mpkg4#opm104#mfu41.ent3#att28"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1395#par4471" name="nombreSujetoX509_nombre_sujeto_x509" source="mov2#mpkg4#opm104#icu144#icp435" target="mov2#mpkg4#opm104#mfu41.ent3#att18"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1395#par4472" name="proceso_proceso" source="mov2#mpkg4#opm104#icu144#icp450" target="mov2#mpkg4#opm104#mfu41.ent3#att29"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1395#par4473" name="selloDigital_sello_digital" source="mov2#mpkg4#opm104#icu144#icp433" target="mov2#mpkg4#opm104#mfu41.ent3#att21"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#ln1395#par4474" name="serieCert_serie_cert" source="mov2#mpkg4#opm104#icu144#icp432" target="mov2#mpkg4#opm104#mfu41.ent3#att24"/>
+      </Link>
+      <InputCollectorParameter id="mov2#mpkg4#opm104#icu144#icp450" name="proceso"/>
+      <OKLink id="mov2#mpkg4#opm104#icu144#oln1346" name="OKFlow33" to="mov2#mpkg4#opm104#sfu1">
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#oln1346#par4475" name="fechaCaducidad_fechaCaducidad" source="mov2#mpkg4#opm104#icu144#icp443" target="mov2#mpkg4#opm104#sfu1#str1"/>
+        <LinkParameter id="mov2#mpkg4#opm104#icu144#oln1346#par4476" name="fechaInscripcion_fechaInscripcion" source="mov2#mpkg4#opm104#icu144#icp442" target="mov2#mpkg4#opm104#sfu1#str2"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <GetXMLUnit id="mov2#mpkg4#opm104#gxu5" name="Canonicalizar" gr:x="345" gr:y="340" sourceType="text">
+      <OKLink id="mov2#mpkg4#opm104#gxu5#oln1347" name="OKFlow834" to="mov2#mpkg4#opm104#tmu27" automaticCoupling="true"/>
+      <Link id="mov2#mpkg4#opm104#gxu5#ln1396" name="Flow7066" to="mov2#mpkg4#opm104#scu201" type="transport" validate="true" gr:bendpoints="103,-53,-467,-53;431,-51,-139,-51">
+        <LinkParameter id="mov2#mpkg4#opm104#gxu5#ln1396#par4477" name="Retrieved XML Document_cadenaOrigCanonicalizada" source="xmlDocument" target="mov2#mpkg4#opm104#scu201.cadenaOrigCanonicalizada"/>
+      </Link>
+      <KOLink id="mov2#mpkg4#opm104#gxu5#kln525" name="KOFlow81" to="mov2#mpkg4#opm104#kocu94" gr:bendpoints="68,201,-1917,41;968,219,-1017,59;1441,219,-544,59;1642,218,-343,58;1788,217,-197,57;1861,218,-123,58">
+        <LinkParameter id="mov2#mpkg4#opm104#gxu5#kln525#par4478" name="No se puede canonicalizar_Output Port Parameter89" target="mov2#mpkg4#opm104#kocu94#ocp295" sourceValue="No se puede canonicalizar"/>
+      </KOLink>
+    </GetXMLUnit>
+    <TimeUnit id="mov2#mpkg4#opm104#tmu27" name="Timestamp" gr:x="550" gr:y="340">
+      <OKLink id="mov2#mpkg4#opm104#tmu27#oln1348" name="OKFlow835" to="mov2#mpkg4#opm104#scu200">
+        <LinkParameter id="mov2#mpkg4#opm104#tmu27#oln1348#par4479" name="Current/Input Timestamp_timeStamp" source="currentTimestamp" target="mov2#mpkg4#opm104#scu200.timeStamp"/>
+      </OKLink>
+      <Link id="mov2#mpkg4#opm104#tmu27#ln1397" name="Flow7110" to="mov2#mpkg4#opm104#mfu41" type="transport" validate="true" gr:bendpoints="83,-102,-1093,-102;1043,-94,-133,-94">
+        <LinkParameter id="mov2#mpkg4#opm104#tmu27#ln1397#par4480" name="Current/Input Timestamp_time_stamp" source="currentTimestamp" target="mov2#mpkg4#opm104#mfu41.ent3#att26"/>
+      </Link>
+      <KOLink id="mov2#mpkg4#opm104#tmu27#kln526" name="KOFlow88" to="mov2#mpkg4#opm104#kocu94" gr:bendpoints="55,198,-1735,38;865,209,-925,49;1279,207,-511,47;1625,204,-165,44">
+        <LinkParameter id="mov2#mpkg4#opm104#tmu27#kln526#par4481" name="No se puede crear timestamp_Output Port Parameter89" target="mov2#mpkg4#opm104#kocu94#ocp295" sourceValue="No se puede crear timestamp"/>
+      </KOLink>
+    </TimeUnit>
+    <ScriptUnit id="mov2#mpkg4#opm104#scu200" name="crearXMLsignature" gr:x="740" gr:y="340" script="WEB-INF/descr/groovy/crearXMLsignature.groovy">
+      <OKLink id="mov2#mpkg4#opm104#scu200#oln1349" name="OKFlow836" to="mov2#mpkg4#opm104#scu201">
+        <LinkParameter id="mov2#mpkg4#opm104#scu200#oln1349#par4482" name="dirtySignatureTag_dirtySignatureTag" source="result(dirtySignatureTag)" target="mov2#mpkg4#opm104#scu201.dirtySignatureTag"/>
+      </OKLink>
+      <Link id="mov2#mpkg4#opm104#scu200#ln1398" name="Flow7102" to="mov2#mpkg4#opm104#mfu41" type="transport" validate="true" gr:bendpoints="126,-123,-834,-123;867,-114,-93,-114">
+        <LinkParameter id="mov2#mpkg4#opm104#scu200#ln1398#par4483" name="urlVerificacionFinal_uri" source="result(urlVerificacionFinal)" target="mov2#mpkg4#opm104#mfu41.ent3#att20"/>
+        <LinkParameter id="mov2#mpkg4#opm104#scu200#ln1398#par4484" name="dirtySignatureTag_xml_sig_tag" source="result(dirtySignatureTag)" target="mov2#mpkg4#opm104#mfu41.ent3#att14"/>
+      </Link>
+      <KOLink id="mov2#mpkg4#opm104#scu200#kln527" name="KOFlow82" to="mov2#mpkg4#opm104#kocu94" gr:bendpoints="101,199,-1474,39;845,198,-730,38;1401,199,-174,39">
+        <LinkParameter id="mov2#mpkg4#opm104#scu200#kln527#par4485" name="No se ha podido crear XML signature_Output Port Parameter89" target="mov2#mpkg4#opm104#kocu94#ocp295" sourceValue="No se ha podido crear XML signature"/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit id="mov2#mpkg4#opm104#scu201" name="Crear envelopeXML" gr:x="975" gr:y="340" script="WEB-INF/descr/groovy/crearEnvelopeXML.groovy">
+      <OKLink id="mov2#mpkg4#opm104#scu201#oln1350" name="OKFlow837" to="mov2#mpkg4#opm104#gxu6">
+        <LinkParameter id="mov2#mpkg4#opm104#scu201#oln1350#par4486" name="dirtyXmlSignedEnvelope_Text" source="result(dirtyXmlSignedEnvelope)" target="mov2#mpkg4#opm104#gxu6.text"/>
+      </OKLink>
+      <Link id="mov2#mpkg4#opm104#scu201#ln1399" name="Flow7101" to="mov2#mpkg4#opm104#mfu41" type="transport" validate="true" gr:bendpoints="132,-52,-473,-52;445,-47,-160,-47">
+        <LinkParameter id="mov2#mpkg4#opm104#scu201#ln1399#par4487" name="xmlCadOrigParaBdD_cadena" source="result(xmlCadOrigParaBdD)" target="mov2#mpkg4#opm104#mfu41.ent3#att25"/>
+      </Link>
+      <KOLink id="mov2#mpkg4#opm104#scu201#kln528" name="KOFlow83" to="mov2#mpkg4#opm104#kocu94" gr:bendpoints="71,191,-1264,31;1049,192,-286,32;1160,192,-175,32">
+        <LinkParameter id="mov2#mpkg4#opm104#scu201#kln528#par4488" name="No se pudo crear envelope XML_Output Port Parameter89" target="mov2#mpkg4#opm104#kocu94#ocp295" sourceValue="No se pudo crear envelope XML"/>
+      </KOLink>
+    </ScriptUnit>
+    <GetXMLUnit id="mov2#mpkg4#opm104#gxu6" name="Canonicalizar" gr:x="1220" gr:y="340" sourceType="text">
+      <OKLink id="mov2#mpkg4#opm104#gxu6#oln1351" name="OKFlow840" to="mov2#mpkg4#opm104#scu202">
+        <LinkParameter id="mov2#mpkg4#opm104#gxu6#oln1351#par4489" name="Retrieved XML Document_xmlCanonicalizado" source="xmlDocument" target="mov2#mpkg4#opm104#scu202.xmlCanonicalizado"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg4#opm104#gxu6#kln529" name="KOFlow84" to="mov2#mpkg4#opm104#kocu94" gr:bendpoints="65,185,-1045,25;886,186,-224,26;976,173,-134,13">
+        <LinkParameter id="mov2#mpkg4#opm104#gxu6#kln529#par4490" name="No se pudo canonicalizar_Output Port Parameter89" target="mov2#mpkg4#opm104#kocu94#ocp295" sourceValue="No se pudo canonicalizar"/>
+      </KOLink>
+    </GetXMLUnit>
+    <ScriptUnit id="mov2#mpkg4#opm104#scu202" name="Escribir XML Signed en HD" gr:x="1415" gr:y="340" script="WEB-INF/descr/groovy/escribirXMLsignature.groovy">
+      <OKLink id="mov2#mpkg4#opm104#scu202#oln1352" name="OKFlow853" to="mov2#mpkg4#opm104#mfu41">
+        <LinkParameter id="mov2#mpkg4#opm104#scu202#oln1352#par4491" name="nombreDocumentoFirmado_documento_firmado [file name]" source="result(nombreDocumentoFirmado)" target="mov2#mpkg4#opm104#mfu41.ent3#att19_name"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg4#opm104#scu202#kln530" name="KOFlow85" to="mov2#mpkg4#opm104#kocu94" gr:bendpoints="96,180,-779,20;707,174,-168,14">
+        <LinkParameter id="mov2#mpkg4#opm104#scu202#kln530#par4492" name="No se pudo escribir en disco el XML signed_Output Port Parameter89" target="mov2#mpkg4#opm104#kocu94#ocp295" sourceValue="No se pudo escribir en disco el XML signed"/>
+      </KOLink>
+    </ScriptUnit>
+    <ModifyUnit id="mov2#mpkg4#opm104#mfu41" name="Actualizar cadena" gr:x="1700" gr:y="325" entity="ent3">
+      <Selector id="mov2#mpkg4#opm104#mfu41#su490" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg4#opm104#mfu41#su490#kcond209" name="KeyCondition59" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg4#opm104#mfu41#oln1353" name="OKFlow854" to="mov2#mpkg4#opm104#seu295" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg4#opm104#mfu41#kln531" name="KOFlow86" to="mov2#mpkg4#opm104#kocu94" gr:bendpoints="74,169,-541,9;464,166,-151,6">
+        <LinkParameter id="mov2#mpkg4#opm104#mfu41#kln531#par4493" name="No se pudo actualizar la cadena_Output Port Parameter89" target="mov2#mpkg4#opm104#kocu94#ocp295" sourceValue="No se pudo actualizar la cadena"/>
+      </KOLink>
+    </ModifyUnit>
+    <SelectorUnit id="mov2#mpkg4#opm104#seu295" name="Obtener respuesta" gr:x="1935" gr:y="325" entity="ent3">
+      <Selector id="mov2#mpkg4#opm104#seu295#su491" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg4#opm104#seu295#su491#kcond211" name="oid" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg4#opm104#seu295#oln1354" name="OKFlow855" to="mov2#mpkg4#opm104#okcu110">
+        <LinkParameter id="mov2#mpkg4#opm104#seu295#oln1354#par4494" name="folio_folio" source="ent3#att30Array" target="mov2#mpkg4#opm104#okcu110#ocp293"/>
+        <LinkParameter id="mov2#mpkg4#opm104#seu295#oln1354#par4495" name="sello_digital_selloDigital" source="ent3#att21Array" target="mov2#mpkg4#opm104#okcu110#ocp292"/>
+        <LinkParameter id="mov2#mpkg4#opm104#seu295#oln1354#par4496" name="uri_uri" source="ent3#att20Array" target="mov2#mpkg4#opm104#okcu110#ocp291"/>
+        <LinkParameter id="mov2#mpkg4#opm104#seu295#oln1354#par4497" name="documento_firmado_blobXMLfirmado" source="ent3#att19Array" target="mov2#mpkg4#opm104#okcu110#ocp294"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg4#opm104#seu295#kln532" name="KOFlow87" to="mov2#mpkg4#opm104#kocu94" gr:bendpoints="69,161,-311,1">
+        <LinkParameter id="mov2#mpkg4#opm104#seu295#kln532#par4498" name="No se obtuvo respuesta de cadenas_Output Port Parameter89" target="mov2#mpkg4#opm104#kocu94#ocp295" sourceValue="No se obtuvo respuesta de cadenas"/>
+      </KOLink>
+    </SelectorUnit>
+    <OKCollectorUnit id="mov2#mpkg4#opm104#okcu110" name="OK Port13" gr:x="2275" gr:y="315">
+      <OutputCollectorParameter id="mov2#mpkg4#opm104#okcu110#ocp291" name="uri"/>
+      <OutputCollectorParameter id="mov2#mpkg4#opm104#okcu110#ocp292" name="selloDigital"/>
+      <OutputCollectorParameter id="mov2#mpkg4#opm104#okcu110#ocp293" name="folio"/>
+      <OutputCollectorParameter id="mov2#mpkg4#opm104#okcu110#ocp294" name="blobXMLfirmado"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov2#mpkg4#opm104#kocu94" name="Error" gr:x="2275" gr:y="490">
+      <OutputCollectorParameter id="mov2#mpkg4#opm104#kocu94#ocp295" name="Error"/>
+    </KOCollectorUnit>
+    <StringsFunctionUnit id="mov2#mpkg4#opm104#sfu1" name="unirFechas" gr:x="155" gr:y="335" mode="concatStrings" substringType="byIndex" substringMode="afterSeparator" encryptAlgorithm="com.webratio.rtx.core.DES3UnicodeCryptImplementation" separator="-">
+      <OKLink id="mov2#mpkg4#opm104#sfu1#oln1355" name="OKFlow64" to="mov2#mpkg4#opm104#gxu5" automaticCoupling="true"/>
+      <String id="mov2#mpkg4#opm104#sfu1#str1" name="fechaCaducidad"/>
+      <String id="mov2#mpkg4#opm104#sfu1#str2" name="fechaInscripcion"/>
+      <Link id="mov2#mpkg4#opm104#sfu1#ln1400" name="Flow125" to="mov2#mpkg4#opm104#mfu41" type="transport" validate="true" gr:bendpoints="135,-113,-1435,-113;1370,-110,-200,-110">
+        <LinkParameter id="mov2#mpkg4#opm104#sfu1#ln1400#par4499" name="Result String_fechas_vigencia" source="resultString" target="mov2#mpkg4#opm104#mfu41.ent3#att23"/>
+      </Link>
+    </StringsFunctionUnit>
+  </OperationUnits>
+</OperationModule>

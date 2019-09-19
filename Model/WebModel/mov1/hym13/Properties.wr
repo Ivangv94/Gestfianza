@@ -1,0 +1,318 @@
+<HybridModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym13" gr:x="80" gr:y="-25" name="Verificar identidad - Fedatario - Elementos a validar" bpm:moduleType="activity" bpm:uuids="JIQ9818K_IRFW3S.JIQAD0O6_OQS84O" layout:singleLayout="true">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#hym13#icu52" gr:x="-275" gr:y="85">
+      <OKLink id="mov1#hym13#icu52#oln156" name="OKFlow156" to="mov1#hym13#page21" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <ModuleInstanceUnit id="mov1#hym13#miu9" gr:x="1345" gr:y="395" action="true" moduleId="mov2#opm12">
+      <OKLink id="mov1#hym13#miu9#oln125" name="OKFlow87" to="mov1#hym13#pcu1">
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1809" name="anioEmision_PASSING_AnioEmision" sourceLinkParameter="mov1#hym13#switch31#oln153#par1083" target="mov1#hym13#pcu1#pcp13"/>
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1810" name="anioReg_PASSING_AnioRegistro" sourceLinkParameter="mov1#hym13#switch31#oln153#par1200" target="mov1#hym13#pcu1#pcp12"/>
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1811" name="cic_PASSING_CIC" sourceLinkParameter="mov1#hym13#switch31#oln153#par1392" target="mov1#hym13#pcu1#pcp9"/>
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1912" name="claveElector_PASSING_ClaveElector" sourceLinkParameter="mov1#hym13#switch31#oln153#par1393" target="mov1#hym13#pcu1#pcp10"/>
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1913" name="curp_PASSING_Curp" sourceLinkParameter="mov1#hym13#switch31#oln153#par1477" target="mov1#hym13#pcu1#pcp1"/>
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1914" name="feNa_PASSING_FechaNac" sourceLinkParameter="mov1#hym13#switch31#oln153#par1478" target="mov1#hym13#pcu1#pcp6"/>
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1915" name="identico_Identico" source="mov2#opm12#okcu8#ocp32" target="mov1#hym13#pcu1#pcp38"/>
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1916" name="numEmision_PASSING_NoEmision" sourceLinkParameter="mov1#hym13#switch31#oln153#par1397" target="mov1#hym13#pcu1#pcp11"/>
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1917" name="nombres_PASSING_Nombre" sourceLinkParameter="mov1#hym13#switch31#oln153#par1480" target="mov1#hym13#pcu1#pcp2"/>
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1925" name="ocr_PASSING_OCR" sourceLinkParameter="mov1#hym13#switch31#oln153#par1398" target="mov1#hym13#pcu1#pcp8"/>
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1926" name="ap1_PASSING_PrimerApellido" sourceLinkParameter="mov1#hym13#switch31#oln153#par1475" target="mov1#hym13#pcu1#pcp4"/>
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1972" name="rfc_PASSING_RFC" sourceLinkParameter="mov1#hym13#switch31#oln153#par1481" target="mov1#hym13#pcu1#pcp7"/>
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1973" name="ap2_PASSING_SegundoApellido" sourceLinkParameter="mov1#hym13#switch31#oln153#par1476" target="mov1#hym13#pcu1#pcp5"/>
+        <LinkParameter id="mov1#hym13#miu9#oln125#par1975" name="identico_PASSING_identicoINE" sourceLinkParameter="mov1#hym13#switch31#oln153#par1479" target="mov1#hym13#pcu1#pcp39"/>
+      </OKLink>
+      <KOLink id="mov1#hym13#miu9#kln39" name="KOFlow27" to="mov1#hym13#page21#mssu3">
+        <LinkParameter id="mov1#hym13#miu9#kln39#par502" name="mensaje_Shown Messages" source="mov2#opm12#kocu8#ocp33" target="mov1#hym13#page21#mssu3.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="mov1#hym13#miu10" gr:x="1290" gr:y="155" action="true" moduleId="mov2#opm11">
+      <KOLink id="mov1#hym13#miu10#kln40" name="KOFlow17" to="mov1#hym13#page41#mssu4">
+        <LinkParameter id="mov1#hym13#miu10#kln40#par504" name="mensaje_Shown Messages" source="mov2#opm11#kocu7#ocp31" target="mov1#hym13#page41#mssu4.shownMessages"/>
+        <LinkParameter id="mov1#hym13#miu10#kln40#par505" name="anioEmision_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par665" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#kln40#par506" name="anioReg_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par666" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#kln40#par507" name="cic_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par667" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#kln40#par508" name="claveElector_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par668" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#kln40#par509" name="numEmision_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par680" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#kln40#par510" name="ocr_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par673" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#kln40#par511" name="verINE_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par674" passing="true"/>
+      </KOLink>
+      <OKLink id="mov1#hym13#miu10#oln126" name="OKFlow53" to="mov1#hym13#switch31">
+        <LinkParameter id="mov1#hym13#miu10#oln126#par512" name="anioEmision_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par665" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par513" name="anioReg_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par666" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par516" name="cic_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par667" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par517" name="claveElector_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par668" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par521" name="ocr_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par673" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par523" name="verINE_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par674" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par524" name="numEmision_PASSING" sourceLinkParameter="mov1#hym13#switch10#oln139#par680" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par525" name="verINE_PASSING_Switch" sourceLinkParameter="mov1#hym13#switch10#oln139#par674" target="mov1#hym13#switch31.switch"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par1458" name="ap1_PASSING" source="mov2#opm11#okcu7#ocp29" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par1459" name="ap2_PASSING" source="mov2#opm11#okcu7#ocp28" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par1460" name="curp_PASSING" source="mov2#opm11#okcu7#ocp25" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par1461" name="feNa_PASSING" source="mov2#opm11#okcu7#ocp30" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par1462" name="identico_PASSING" source="mov2#opm11#okcu7#ocp24" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par1463" name="nombres_PASSING" source="mov2#opm11#okcu7#ocp27" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu10#oln126#par1464" name="rfc_PASSING" source="mov2#opm11#okcu7#ocp26" passing="true"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ScriptUnit id="mov1#hym13#scu15" name="creaCadena" gr:x="155" gr:y="295">
+      <ScriptUnitText xml:space="preserve">#input seleccion
+#output cadena
+
+String cadena = seleccion[0];
+for (int i= 1; i&lt;seleccion.size();i++)
+cadena += "," + seleccion[i] 
+
+return["cadena":cadena]</ScriptUnitText>
+      <OKLink id="mov1#hym13#scu15#oln127" name="OKFlow38" to="mov1#hym13#scu19">
+        <LinkParameter id="mov1#hym13#scu15#oln127#par527" name="cadena_cadena" source="result(cadena)" target="mov1#hym13#scu19.cadena"/>
+      </OKLink>
+      <Link id="mov1#hym13#scu15#ln145" name="Flow129" to="mov1#hym13#page47#enu48" type="transport" validate="true" gr:bendpoints="-169,51,-69,-379;-173,331,-73,-99">
+        <LinkParameter id="mov1#hym13#scu15#ln145#par528" name="cadena_cadena" source="result(cadena)" target="mov1#hym13#page47#enu48#fld99_slot"/>
+        <LinkParameter id="mov1#hym13#scu15#ln145#par529" name="cadena_cadena" source="result(cadena)" targetVariable="mov1#hym13#page47#var31"/>
+      </Link>
+      <Link id="mov1#hym13#scu15#ln146" name="Flow136" to="mov1#hym13#scu18" type="transport" validate="true">
+        <LinkParameter id="mov1#hym13#scu15#ln146#par530" name="cadena_cadena" source="result(cadena)" target="mov1#hym13#scu18.cadena"/>
+      </Link>
+      <Link id="mov1#hym13#scu15#ln147" name="Flow102" to="mov1#hym13#page43#enu42" type="transport" validate="true" gr:bendpoints="-66,-6,-441,-1026;-196,32,-571,-988;-199,679,-574,-341">
+        <LinkParameter id="mov1#hym13#scu15#ln147#par531" name="cadena_cadena" source="result(cadena)" target="mov1#hym13#page43#enu42#fld80_slot"/>
+      </Link>
+    </ScriptUnit>
+    <ScriptUnit id="mov1#hym13#scu16" name="Script10" gr:x="1490" gr:y="700">
+      <ScriptUnitText xml:space="preserve">#input ocr, cic, numeroEmision, anioReg, anioEmision, claveElector, identico
+#output verOcr, verCic, verNumeroEmision, verAnioReg, verAnioEmision, verClaveElector, identico
+
+boolean verClaveElector = true
+boolean verAnioEmision = true
+boolean verAnioReg = true
+boolean verOcr = false
+boolean verCic = false
+boolean verNumeroEmision = false
+
+if (ocr != "")
+verOcr = true
+
+if (cic != "")
+verCic = true
+
+if (numeroEmision != "")
+verNumeroEmision = true
+
+
+return["verClaveElector":verClaveElector,"verAnioEmision":verAnioEmision, "verAnioReg":verAnioReg, "verOcr":verOcr, "verCic":verCic,"verNumeroEmision":verNumeroEmision, "identico": identico]</ScriptUnitText>
+      <OKLink id="mov1#hym13#scu16#oln128" name="OKFlow90" to="mov1#hym13#page48#enu50">
+        <LinkParameter id="mov1#hym13#scu16#oln128#par550" name="verAnioEmision_verAnioEmision" source="result(verAnioEmision)" targetVariable="mov1#hym13#page48#var36"/>
+        <LinkParameter id="mov1#hym13#scu16#oln128#par551" name="verAnioReg_verAnioReg" source="result(verAnioReg)" targetVariable="mov1#hym13#page48#var35"/>
+        <LinkParameter id="mov1#hym13#scu16#oln128#par552" name="verCic_verCic" source="result(verCic)" targetVariable="mov1#hym13#page48#var34"/>
+        <LinkParameter id="mov1#hym13#scu16#oln128#par553" name="verClaveElector_verClaveElector" source="result(verClaveElector)" targetVariable="mov1#hym13#page48#var37"/>
+        <LinkParameter id="mov1#hym13#scu16#oln128#par554" name="verNumeroEmision_verNumeroEmision" source="result(verNumeroEmision)" targetVariable="mov1#hym13#page48#var38"/>
+        <LinkParameter id="mov1#hym13#scu16#oln128#par555" name="verOcr_verOcr" source="result(verOcr)" targetVariable="mov1#hym13#page48#var33"/>
+        <LinkParameter id="mov1#hym13#scu16#oln128#par568" name="identico_identico" source="result(identico)" target="mov1#hym13#page48#enu50#fld112_slot"/>
+      </OKLink>
+    </ScriptUnit>
+    <SwitchUnit id="mov1#hym13#switch8" name="huboIne?" gr:x="1050" gr:y="630">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov1#hym13#switch8#oln129" name="OKFlow46" to="mov1#hym13#miu11" code="true">
+        <LinkParameter id="mov1#hym13#switch8#oln129#par569" name="pasaporte_PASSING" sourceLinkParameter="mov1#hym13#switch30#oln152#par795" passing="true"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par581" name="anioEmision_PASSING" sourceLinkParameter="mov1#hym13#switch30#oln152#par798" passing="true"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par582" name="anioReg_PASSING" sourceLinkParameter="mov1#hym13#switch30#oln152#par799" passing="true"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par585" name="ap1_PASSING" sourceLinkParameter="mov1#hym13#switch30#oln152#par800" passing="true"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par586" name="ap2_PASSING" sourceLinkParameter="mov1#hym13#switch30#oln152#par801" passing="true"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par587" name="cic_PASSING" sourceLinkParameter="mov1#hym13#switch30#oln152#par802" passing="true"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par588" name="claveElector_PASSING" sourceLinkParameter="mov1#hym13#switch30#oln152#par803" passing="true"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par589" name="curp_PASSING" sourceLinkParameter="mov1#hym13#switch30#oln152#par804" passing="true"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par590" name="nombres_PASSING" sourceLinkParameter="mov1#hym13#switch30#oln152#par805" passing="true"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par594" name="numEmision_PASSING" sourceLinkParameter="mov1#hym13#switch30#oln152#par806" passing="true"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par595" name="ocr_PASSING" sourceLinkParameter="mov1#hym13#switch30#oln152#par807" passing="true"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par596" name="cadena_PASSING" sourceLinkParameter="mov1#hym13#switch30#oln152#par809" passing="true"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par597" name="feNa_PASSING" sourceLinkParameter="mov1#hym13#switch30#oln152#par810" passing="true"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par1522" name="anioEmision_PASSING_anioEmision" sourceLinkParameter="mov1#hym13#switch30#oln152#par798" target="mov1#hym13#miu11.mov2#opm12#icu19#icp38"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par1523" name="anioReg_PASSING_anioReg" sourceLinkParameter="mov1#hym13#switch30#oln152#par799" target="mov1#hym13#miu11.mov2#opm12#icu19#icp39"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par1524" name="ap1_PASSING_ap1" sourceLinkParameter="mov1#hym13#switch30#oln152#par800" target="mov1#hym13#miu11.mov2#opm12#icu19#icp35"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par1525" name="ap2_PASSING_ap2" sourceLinkParameter="mov1#hym13#switch30#oln152#par801" target="mov1#hym13#miu11.mov2#opm12#icu19#icp34"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par1526" name="cic_PASSING_cic" sourceLinkParameter="mov1#hym13#switch30#oln152#par802" target="mov1#hym13#miu11.mov2#opm12#icu19#icp40"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par1527" name="claveElector_PASSING_claveElector" sourceLinkParameter="mov1#hym13#switch30#oln152#par803" target="mov1#hym13#miu11.mov2#opm12#icu19#icp37"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par1528" name="curp_PASSING_curp" sourceLinkParameter="mov1#hym13#switch30#oln152#par804" target="mov1#hym13#miu11.mov2#opm12#icu19#icp33"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par1529" name="nombres_PASSING_nombres" sourceLinkParameter="mov1#hym13#switch30#oln152#par805" target="mov1#hym13#miu11.mov2#opm12#icu19#icp36"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par1530" name="numEmision_PASSING_numEmision" sourceLinkParameter="mov1#hym13#switch30#oln152#par806" target="mov1#hym13#miu11.mov2#opm12#icu19#icp32"/>
+        <LinkParameter id="mov1#hym13#switch8#oln129#par1531" name="ocr_PASSING_ocr" sourceLinkParameter="mov1#hym13#switch30#oln152#par807" target="mov1#hym13#miu11.mov2#opm12#icu19#icp41"/>
+      </OKLink>
+      <OKLink id="mov1#hym13#switch8#oln578" name="OKFlow49" to="mov1#hym13#miu12" code="false">
+        <LinkParameter id="mov1#hym13#switch8#oln578#par2303" name="ap2_PASSING_ap2" sourceLinkParameter="mov1#hym13#switch30#oln152#par801" target="mov1#hym13#miu12.mov2#opm10#icu17#icp25"/>
+        <LinkParameter id="mov1#hym13#switch8#oln578#par2304" name="cadena_PASSING_cadena" sourceLinkParameter="mov1#hym13#switch30#oln152#par809" target="mov1#hym13#miu12.mov2#opm10#icu17#icp27"/>
+        <LinkParameter id="mov1#hym13#switch8#oln578#par2305" name="nombres_PASSING_nombres" sourceLinkParameter="mov1#hym13#switch30#oln152#par805" target="mov1#hym13#miu12.mov2#opm10#icu17#icp23"/>
+        <LinkParameter id="mov1#hym13#switch8#oln578#par2306" name="ap1_PASSING_ap1" sourceLinkParameter="mov1#hym13#switch30#oln152#par800" target="mov1#hym13#miu12.mov2#opm10#icu17#icp24"/>
+        <LinkParameter id="mov1#hym13#switch8#oln578#par2307" name="curp_PASSING_curp" sourceLinkParameter="mov1#hym13#switch30#oln152#par804" target="mov1#hym13#miu12.mov2#opm10#icu17#icp21"/>
+        <LinkParameter id="mov1#hym13#switch8#oln578#par2308" name="feNa_PASSING_feNa" sourceLinkParameter="mov1#hym13#switch30#oln152#par810" target="mov1#hym13#miu12.mov2#opm10#icu17#icp26"/>
+      </OKLink>
+    </SwitchUnit>
+    <ModuleInstanceUnit id="mov1#hym13#miu11" gr:x="1000" gr:y="800" action="true" moduleId="mov2#opm12">
+      <KOLink id="mov1#hym13#miu11#kln41" name="KOFlow28" to="mov1#hym13#page79#mssu26" gr:bendpoints="846,218,-669,-17"/>
+      <OKLink id="mov1#hym13#miu11#oln608" name="OKFlow54" to="mov1#hym13#miu12">
+        <LinkParameter id="mov1#hym13#miu11#oln608#par2309" name="identico_PASSING" source="mov2#opm12#okcu8#ocp32" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu11#oln608#par2310" name="ap2_PASSING_ap2" sourceLinkParameter="mov1#hym13#switch8#oln129#par586" target="mov1#hym13#miu12.mov2#opm10#icu17#icp25"/>
+        <LinkParameter id="mov1#hym13#miu11#oln608#par2311" name="feNa_PASSING_feNa" sourceLinkParameter="mov1#hym13#switch8#oln129#par597" target="mov1#hym13#miu12.mov2#opm10#icu17#icp26"/>
+        <LinkParameter id="mov1#hym13#miu11#oln608#par2312" name="cadena_PASSING_cadena" sourceLinkParameter="mov1#hym13#switch8#oln129#par596" target="mov1#hym13#miu12.mov2#opm10#icu17#icp27"/>
+        <LinkParameter id="mov1#hym13#miu11#oln608#par2313" name="curp_PASSING_curp" sourceLinkParameter="mov1#hym13#switch8#oln129#par589" target="mov1#hym13#miu12.mov2#opm10#icu17#icp21"/>
+        <LinkParameter id="mov1#hym13#miu11#oln608#par2314" name="ap1_PASSING_ap1" sourceLinkParameter="mov1#hym13#switch8#oln129#par585" target="mov1#hym13#miu12.mov2#opm10#icu17#icp24"/>
+        <LinkParameter id="mov1#hym13#miu11#oln608#par2315" name="nombres_PASSING_nombres" sourceLinkParameter="mov1#hym13#switch8#oln129#par590" target="mov1#hym13#miu12.mov2#opm10#icu17#icp23"/>
+        <LinkParameter id="mov1#hym13#miu11#oln608#par2316" name="identico_identico" source="mov2#opm12#okcu8#ocp32" target="mov1#hym13#miu12.mov2#opm10#icu17#icp28"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ScriptUnit id="mov1#hym13#scu17" name="revisaCadena" gr:x="465" gr:y="725" linkOrder="mov1#hym13#scu17#ln648">
+      <ScriptUnitText xml:space="preserve">#input cadena
+#output verINE, cadena
+
+boolean verINE = false
+
+if (cadena.indexOf('Credencial de Elector') != -1)
+verINE = true
+
+return["verINE":verINE, "cadena":cadena]
+</ScriptUnitText>      <OKLink id="mov1#hym13#scu17#oln132" name="OKFlow25" to="mov1#hym13#miu39" gr:bendpoints="45,91,-75,-79">        <LinkParameter id="mov1#hym13#scu17#oln132#par2812" name="rfc_PASSING" sourceLinkParameter="mov1#hym13#page47#enu48#ln164#par2297" passing="true"/>        <LinkParameter id="mov1#hym13#scu17#oln132#par619" name="curp_PASSING" sourceLinkParameter="mov1#hym13#page47#enu48#ln164#par885" passing="true"/>        <LinkParameter id="mov1#hym13#scu17#oln132#par855" name="curp_PASSING_CURP" sourceLinkParameter="mov1#hym13#page47#enu48#ln164#par885" target="mov1#hym13#miu39.mov2#opm66#icu92#icp207"/>        <LinkParameter id="mov1#hym13#scu17#oln132#par856" name="rfc_PASSING_RFC" sourceLinkParameter="mov1#hym13#page47#enu48#ln164#par2297" target="mov1#hym13#miu39.mov2#opm66#icu92#icp210"/>        <LinkParameter id="mov1#hym13#scu17#oln132#par857" name="verINE_verINE" source="result(verINE)" target="mov1#hym13#miu39.mov2#opm66#icu92#icp208"/>      </OKLink>      <Link id="mov1#hym13#scu17#ln151" name="Flow139" to="mov1#hym13#page43#enu42" type="transport" validate="true" gr:bendpoints="-58,52,-118,-538;-55,563,-115,-27">        <LinkParameter id="mov1#hym13#scu17#ln151#par621" name="cadena_cadena" source="result(cadena)" target="mov1#hym13#page43#enu42#fld80_slot"/>        <LinkParameter id="mov1#hym13#scu17#ln151#par622" name="cadena_cadena" source="result(cadena)" targetVariable="mov1#hym13#page43#var13"/>        <LinkParameter id="mov1#hym13#scu17#ln151#par623" name="ap1_PASSING" sourceLinkParameter="mov1#hym13#page47#enu48#ln164#par883" passing="true"/>        <LinkParameter id="mov1#hym13#scu17#ln151#par624" name="ap2_PASSING" sourceLinkParameter="mov1#hym13#page47#enu48#ln164#par884" passing="true"/>        <LinkParameter id="mov1#hym13#scu17#ln151#par625" name="curp_PASSING" sourceLinkParameter="mov1#hym13#page47#enu48#ln164#par885" passing="true"/>        <LinkParameter id="mov1#hym13#scu17#ln151#par626" name="nombres_PASSING" sourceLinkParameter="mov1#hym13#page47#enu48#ln164#par886" passing="true"/>        <LinkParameter id="mov1#hym13#scu17#ln151#par627" name="feNa_PASSING" sourceLinkParameter="mov1#hym13#page47#enu48#ln164#par887" passing="true"/>        <LinkParameter id="mov1#hym13#scu17#ln151#par2298" name="rfc_PASSING" sourceLinkParameter="mov1#hym13#page47#enu48#ln164#par2297" passing="true"/>      </Link>      <Link id="mov1#hym13#scu17#ln648" name="Flow648" to="mov1#hym13#switch9" automaticCoupling="true" type="transport" validate="true"/>    </ScriptUnit>    <ModuleInstanceUnit id="mov1#hym13#miu12" gr:x="1240" gr:y="800" action="true" moduleId="mov2#opm10">      <OKLink id="mov1#hym13#miu12#oln133" name="OKFlow93" to="mov1#hym13#switch28">        <LinkParameter id="mov1#hym13#miu12#oln133#par628" name="identico_Switch" source="mov2#opm10#okcu4#ocp22" target="mov1#hym13#switch28.switch"/>      </OKLink>      <KOLink id="mov1#hym13#miu12#kln261" name="KOFlow23" to="mov1#hym13#page79#mssu26" gr:bendpoints="196,13,-234,73">        <LinkParameter id="mov1#hym13#miu12#kln261#par346" name="mensaje_Shown Messages" source="mov2#opm10#kocu6#ocp23" target="mov1#hym13#page79#mssu26.shownMessages"/>      </KOLink>    </ModuleInstanceUnit>    <SwitchUnit id="mov1#hym13#switch9" name="verINE?" gr:x="685" gr:y="725">      <Case value="true"/>      <Case value="false"/>      <OKLink id="mov1#hym13#switch9#oln134" name="OKFlow28" to="mov1#hym13#page43" code="true" automaticCoupling="true"/>      <OKLink id="mov1#hym13#switch9#oln135" name="OKFlow29" to="mov1#hym13#scu18" code="false">        <LinkParameter id="mov1#hym13#switch9#oln135#par865" name="rfc_PASSING" sourceLinkParameter="mov1#hym13#miu39#oln382#par859" passing="true"/>        <LinkParameter id="mov1#hym13#switch9#oln135#par868" name="RFC_PASSING" sourceLinkParameter="mov1#hym13#miu39#oln382#par867" passing="true"/>        <LinkParameter id="mov1#hym13#switch9#oln135#par870" name="RFC_PASSING_rfc" sourceLinkParameter="mov1#hym13#miu39#oln382#par867" target="mov1#hym13#scu18.rfc"/>      </OKLink>      <OKLink id="mov1#hym13#switch9#oln136" name="OKFlow47" to="mov1#hym13#page21#mssu3" gr:bendpoints="2,-362,417,13">        <LinkParameter id="mov1#hym13#switch9#oln136#par630" name="Se necesita seleccionar por lo menos CURP y/o E.firma para continuar_Shown Messages" target="mov1#hym13#page21#mssu3.shownMessages" sourceValue="Se necesita seleccionar CURP y/o E.firma para continuar."/>      </OKLink>    </SwitchUnit>    <ScriptUnit id="mov1#hym13#scu18" name="revisaCadena" gr:x="835" gr:y="725">      <ScriptUnitText xml:space="preserve">#input cadena, ocr, cic, anioEmision, anioReg, numEmision, claveElector, nombres, ap1, ap2, curp, feNa, rfc
+#output verFirma, verINE, ocr, cic, anioEmision, anioReg, numEmision, claveElector, nombres, ap1, ap2, curp, cadena, feNa, rfc
+
+
+
+boolean verFirma = false
+boolean verINE = false
+
+if (cadena.indexOf('E.Firma') != -1)
+verFirma = true
+
+if (cadena.indexOf('Credencial de Elector') != -1)
+verINE = true
+
+return["verFirma":verFirma, "verINE":verINE, "ocr": ocr, "cic":cic, "anioEmision":anioEmision, "anioReg":anioReg, "numEmision":numEmision, "claveElector":claveElector, "nombres":nombres, "ap1":ap1, "ap2":ap2, "curp":curp, "cadena":cadena, "feNa":feNa, "rfc":rfc]
+</ScriptUnitText>      <OKLink id="mov1#hym13#scu18#oln137" name="OKFlow32" to="mov1#hym13#switch30">        <LinkParameter id="mov1#hym13#scu18#oln137#par631" name="verFirma_Switch" source="result(verFirma)" target="mov1#hym13#switch30.switch"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par632" name="pasaporte_PASSING" sourceLinkParameter="mov1#hym13#page47#enu48#ln165#par892" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par634" name="verINE_PASSING" source="result(verINE)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par635" name="anioEmision_PASSING" source="result(anioEmision)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par636" name="anioReg_PASSING" source="result(anioReg)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par637" name="ap1_PASSING" source="result(ap1)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par638" name="ap2_PASSING" source="result(ap2)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par639" name="cic_PASSING" source="result(cic)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par640" name="claveElector_PASSING" source="result(claveElector)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par641" name="curp_PASSING" source="result(curp)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par655" name="nombres_PASSING" source="result(nombres)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par656" name="numEmision_PASSING" source="result(numEmision)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par657" name="ocr_PASSING" source="result(ocr)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par658" name="verFirma_PASSING" source="result(verFirma)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par659" name="cadena_PASSING" source="result(cadena)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par660" name="feNa_PASSING" source="result(feNa)" passing="true"/>        <LinkParameter id="mov1#hym13#scu18#oln137#par869" name="RFC_PASSING" sourceLinkParameter="mov1#hym13#switch9#oln135#par868" passing="true"/>      </OKLink>      <Link id="mov1#hym13#scu18#ln649" name="Flow649" to="mov1#hym13#miu12" type="transport" validate="true">        <LinkParameter id="mov1#hym13#scu18#ln649#par2301" name="rfc_PASSING_rfc" target="mov1#hym13#miu12.mov2#opm10#icu17#icp22" source="result(rfc)"/>      </Link>    </ScriptUnit>    <SwitchUnit id="mov1#hym13#switch10" name="Switch1" gr:x="1370" gr:y="65">      <Case value="F&#205;SICA"/>      <Case value="MORAL"/>      <OKLink id="mov1#hym13#switch10#oln138" name="OKFlow45" to="mov1#hym13#page41#mssu4" code="MORAL">        <LinkParameter id="mov1#hym13#switch10#oln138#par661" name="La e.firma no corresponde a la de una persona fisica_Shown Messages" target="mov1#hym13#page41#mssu4.shownMessages" sourceValue="La e.firma corresponde a la de una persona moral"/>      </OKLink>      <OKLink id="mov1#hym13#switch10#oln139" name="OKFlow50" to="mov1#hym13#miu10" code="F&#205;SICA">        <LinkParameter id="mov1#hym13#switch10#oln139#par665" name="anioEmision_PASSING" sourceLinkParameter="mov1#hym13#page41#enu39#ln148#par536" passing="true"/>        <LinkParameter id="mov1#hym13#switch10#oln139#par666" name="anioReg_PASSING" sourceLinkParameter="mov1#hym13#page41#enu39#ln148#par537" passing="true"/>        <LinkParameter id="mov1#hym13#switch10#oln139#par667" name="cic_PASSING" sourceLinkParameter="mov1#hym13#page41#enu39#ln148#par538" passing="true"/>        <LinkParameter id="mov1#hym13#switch10#oln139#par668" name="claveElector_PASSING" sourceLinkParameter="mov1#hym13#page41#enu39#ln148#par539" passing="true"/>        <LinkParameter id="mov1#hym13#switch10#oln139#par673" name="ocr_PASSING" sourceLinkParameter="mov1#hym13#page41#enu39#ln148#par540" passing="true"/>        <LinkParameter id="mov1#hym13#switch10#oln139#par674" name="verINE_PASSING" sourceLinkParameter="mov1#hym13#page41#enu39#ln148#par541" passing="true"/>        <LinkParameter id="mov1#hym13#switch10#oln139#par680" name="numEmision_PASSING" sourceLinkParameter="mov1#hym13#page41#enu39#ln148#par542" passing="true"/>        <LinkParameter id="mov1#hym13#switch10#oln139#par1455" name="curpEmisor_PASSING_curp" sourceLinkParameter="mov1#hym13#page41#enu39#ln148#par532" target="mov1#hym13#miu10.mov2#opm11#icu18#icp29"/>        <LinkParameter id="mov1#hym13#switch10#oln139#par1456" name="nombreEmisor_PASSING_nombreEmisor" sourceLinkParameter="mov1#hym13#page41#enu39#ln148#par533" target="mov1#hym13#miu10.mov2#opm11#icu18#icp31"/>        <LinkParameter id="mov1#hym13#switch10#oln139#par1457" name="rfcEmisor_PASSING_rfc" sourceLinkParameter="mov1#hym13#page41#enu39#ln148#par534" target="mov1#hym13#miu10.mov2#opm11#icu18#icp30"/>      </OKLink>      <OKLink id="mov1#hym13#switch10#oln140" name="OKFlow42" to="mov1#hym13#page41#mssu4" gr:bendpoints="-137,27,143,2">        <LinkParameter id="mov1#hym13#switch10#oln140#par682" name="No es una firma electronica valida_Shown Messages" target="mov1#hym13#page41#mssu4.shownMessages" sourceValue="No es una firma electronica valida"/>      </OKLink>    </SwitchUnit>    <SwitchUnit id="mov1#hym13#switch11" name="Switch7" gr:x="2885" gr:y="665">      <Case value="Si"/>      <Case value="No"/>      <OKLink id="mov1#hym13#switch11#oln141" name="OKFlow40" to="mov1#hym13#pu69" code="No" automaticCoupling="true"/>      <OKLink id="mov1#hym13#switch11#oln142" name="OKFlow41" to="mov1#hym13#page21" code="Si" automaticCoupling="true" gr:bendpoints="-164,-691,2606,-131;-2146,-695,624,-135"/>    </SwitchUnit>    <SwitchUnit id="mov1#hym13#switch26" name="identicoFirma" gr:x="1315" gr:y="695">      <Case value="true"/>      <Case value="false"/>      <OKLink id="mov1#hym13#switch26#oln143" name="OKFlow98" to="mov1#hym13#scu16" code="true" gr:bendpoints="90,-10,-70,-15">        <LinkParameter id="mov1#hym13#switch26#oln143#par2079" name="Switch_identico" source="switch" target="mov1#hym13#scu16.identico"/>      </OKLink>      <OKLink id="mov1#hym13#switch26#oln144" name="OKFlow99" to="mov1#hym13#scu16" code="false" gr:bendpoints="75,12,-60,17">        <LinkParameter id="mov1#hym13#switch26#oln144#par2080" name="Switch_identico" source="switch" target="mov1#hym13#scu16.identico"/>      </OKLink>    </SwitchUnit>    <SwitchUnit id="mov1#hym13#switch27" name="identico?" gr:x="1370" gr:y="525">      <Case value="true"/>      <Case value="false"/>      <OKLink id="mov1#hym13#switch27#oln145" name="OKFlow88" to="mov1#hym13#scu16" code="false">        <LinkParameter id="mov1#hym13#switch27#oln145#par2076" name="Switch_identico" source="switch" target="mov1#hym13#scu16.identico"/>      </OKLink>      <OKLink id="mov1#hym13#switch27#oln146" name="OKFlow95" to="mov1#hym13#switch26" code="true">        <LinkParameter id="mov1#hym13#switch27#oln146#par783" name="Switch_PASSING" source="switch" passing="true"/>      </OKLink>    </SwitchUnit>    <SwitchUnit id="mov1#hym13#switch28" name="Switch6" gr:x="1870" gr:y="835">      <OKLink id="mov1#hym13#switch28#oln147" name="OKFlow43" to="mov1#hym13#page46" code="true"/>      <Case value="true"/>      <Case value="false"/>      <OKLink id="mov1#hym13#switch28#oln165" name="OKFlow44" to="mov1#hym13#page79" code="false"/>    </SwitchUnit>    <SwitchUnit id="mov1#hym13#switch29" name="verFormulario?" gr:x="145" gr:y="540">      <Case value="true"/>      <Case value="false"/>      <OKLink id="mov1#hym13#switch29#oln149" name="OKFlow26" to="mov1#hym13#page47" code="true" automaticCoupling="true"/>      <OKLink id="mov1#hym13#switch29#oln150" name="OKFlow27" to="mov1#hym13#switch9" code="false" automaticCoupling="true" gr:bendpoints="399,19,-116,-166"/>    </SwitchUnit>    <SwitchUnit id="mov1#hym13#switch30" name="verFirma?" gr:x="1045" gr:y="510">      <Case value="true"/>      <Case value="false"/>      <OKLink id="mov1#hym13#switch30#oln151" name="OKFlow31" to="mov1#hym13#page41#enu39" code="true">        <LinkParameter id="mov1#hym13#switch30#oln151#par788" name="anioEmision_PASSING_anioEmision" sourceLinkParameter="mov1#hym13#scu18#oln137#par635" target="mov1#hym13#page41#enu39#fld75_slot"/>        <LinkParameter id="mov1#hym13#switch30#oln151#par789" name="anioReg_PASSING_anioReg" sourceLinkParameter="mov1#hym13#scu18#oln137#par636" target="mov1#hym13#page41#enu39#fld76_slot"/>        <LinkParameter id="mov1#hym13#switch30#oln151#par790" name="cic_PASSING_cic" sourceLinkParameter="mov1#hym13#scu18#oln137#par639" target="mov1#hym13#page41#enu39#fld74_slot"/>        <LinkParameter id="mov1#hym13#switch30#oln151#par791" name="claveElector_PASSING_claveElector" sourceLinkParameter="mov1#hym13#scu18#oln137#par640" target="mov1#hym13#page41#enu39#fld77_slot"/>        <LinkParameter id="mov1#hym13#switch30#oln151#par792" name="ocr_PASSING_ocr" sourceLinkParameter="mov1#hym13#scu18#oln137#par657" target="mov1#hym13#page41#enu39#fld73_slot"/>        <LinkParameter id="mov1#hym13#switch30#oln151#par793" name="verINE_PASSING_verINE" sourceLinkParameter="mov1#hym13#scu18#oln137#par634" target="mov1#hym13#page41#enu39#fld78_slot"/>        <LinkParameter id="mov1#hym13#switch30#oln151#par794" name="numEmision_PASSING_numEmision" sourceLinkParameter="mov1#hym13#scu18#oln137#par656" target="mov1#hym13#page41#enu39#fld79_slot"/>      </OKLink>      <OKLink id="mov1#hym13#switch30#oln152" name="OKFlow60" to="mov1#hym13#switch8" code="false">        <LinkParameter id="mov1#hym13#switch30#oln152#par795" name="pasaporte_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par632" passing="true"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par797" name="verINE_PASSING_Switch" sourceLinkParameter="mov1#hym13#scu18#oln137#par634" target="mov1#hym13#switch8.switch"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par798" name="anioEmision_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par635" passing="true"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par799" name="anioReg_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par636" passing="true"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par800" name="ap1_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par637" passing="true"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par801" name="ap2_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par638" passing="true"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par802" name="cic_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par639" passing="true"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par803" name="claveElector_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par640" passing="true"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par804" name="curp_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par641" passing="true"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par805" name="nombres_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par655" passing="true"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par806" name="numEmision_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par656" passing="true"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par807" name="ocr_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par657" passing="true"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par808" name="verINE_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par634" passing="true"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par809" name="cadena_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par659" passing="true"/>        <LinkParameter id="mov1#hym13#switch30#oln152#par810" name="feNa_PASSING" sourceLinkParameter="mov1#hym13#scu18#oln137#par660" passing="true"/>      </OKLink>    </SwitchUnit>    <SwitchUnit id="mov1#hym13#switch31" name="huboINE?" gr:x="1365" gr:y="280">      <Case value="true"/>      <Case value="false"/>      <OKLink id="mov1#hym13#switch31#oln153" name="OKFlow39" to="mov1#hym13#miu9" code="true">        <LinkParameter id="mov1#hym13#switch31#oln153#par1083" name="anioEmision_PASSING" sourceLinkParameter="mov1#hym13#miu10#oln126#par512" passing="true"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1200" name="anioReg_PASSING" sourceLinkParameter="mov1#hym13#miu10#oln126#par513" passing="true"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1392" name="cic_PASSING" sourceLinkParameter="mov1#hym13#miu10#oln126#par516" passing="true"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1393" name="claveElector_PASSING" sourceLinkParameter="mov1#hym13#miu10#oln126#par517" passing="true"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1397" name="numEmision_PASSING" sourceLinkParameter="mov1#hym13#miu10#oln126#par524" passing="true"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1398" name="ocr_PASSING" sourceLinkParameter="mov1#hym13#miu10#oln126#par521" passing="true"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1465" name="anioEmision_PASSING_anioEmision" sourceLinkParameter="mov1#hym13#miu10#oln126#par512" target="mov1#hym13#miu9.mov2#opm12#icu19#icp38"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1466" name="anioReg_PASSING_anioReg" sourceLinkParameter="mov1#hym13#miu10#oln126#par513" target="mov1#hym13#miu9.mov2#opm12#icu19#icp39"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1467" name="ap1_PASSING_ap1" sourceLinkParameter="mov1#hym13#miu10#oln126#par1458" target="mov1#hym13#miu9.mov2#opm12#icu19#icp35"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1468" name="ap2_PASSING_ap2" sourceLinkParameter="mov1#hym13#miu10#oln126#par1459" target="mov1#hym13#miu9.mov2#opm12#icu19#icp34"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1469" name="cic_PASSING_cic" sourceLinkParameter="mov1#hym13#miu10#oln126#par516" target="mov1#hym13#miu9.mov2#opm12#icu19#icp40"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1470" name="claveElector_PASSING_claveElector" sourceLinkParameter="mov1#hym13#miu10#oln126#par517" target="mov1#hym13#miu9.mov2#opm12#icu19#icp37"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1471" name="curp_PASSING_curp" sourceLinkParameter="mov1#hym13#miu10#oln126#par1460" target="mov1#hym13#miu9.mov2#opm12#icu19#icp33"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1472" name="nombres_PASSING_nombres" sourceLinkParameter="mov1#hym13#miu10#oln126#par1463" target="mov1#hym13#miu9.mov2#opm12#icu19#icp36"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1473" name="numEmision_PASSING_numEmision" sourceLinkParameter="mov1#hym13#miu10#oln126#par524" target="mov1#hym13#miu9.mov2#opm12#icu19#icp32"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1474" name="ocr_PASSING_ocr" sourceLinkParameter="mov1#hym13#miu10#oln126#par521" target="mov1#hym13#miu9.mov2#opm12#icu19#icp41"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1475" name="ap1_PASSING" sourceLinkParameter="mov1#hym13#miu10#oln126#par1458" passing="true"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1476" name="ap2_PASSING" sourceLinkParameter="mov1#hym13#miu10#oln126#par1459" passing="true"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1477" name="curp_PASSING" sourceLinkParameter="mov1#hym13#miu10#oln126#par1460" passing="true"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1478" name="feNa_PASSING" sourceLinkParameter="mov1#hym13#miu10#oln126#par1461" passing="true"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1479" name="identico_PASSING" sourceLinkParameter="mov1#hym13#miu10#oln126#par1462" passing="true"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1480" name="nombres_PASSING" sourceLinkParameter="mov1#hym13#miu10#oln126#par1463" passing="true"/>        <LinkParameter id="mov1#hym13#switch31#oln153#par1481" name="rfc_PASSING" sourceLinkParameter="mov1#hym13#miu10#oln126#par1464" passing="true"/>      </OKLink>      <OKLink id="mov1#hym13#switch31#oln154" name="OKFlow89" to="mov1#hym13#page48#enu50" code="false" gr:bendpoints="93,57,-2,-268">        <LinkParameter id="mov1#hym13#switch31#oln154#par1514" name="ap1_PASSING_ap1" sourceLinkParameter="mov1#hym13#miu10#oln126#par1458" target="mov1#hym13#page48#enu50#fld100_slot"/>        <LinkParameter id="mov1#hym13#switch31#oln154#par1515" name="ap2_PASSING_ap2" sourceLinkParameter="mov1#hym13#miu10#oln126#par1459" target="mov1#hym13#page48#enu50#fld101_slot"/>        <LinkParameter id="mov1#hym13#switch31#oln154#par1516" name="curp_PASSING_curp" sourceLinkParameter="mov1#hym13#miu10#oln126#par1460" target="mov1#hym13#page48#enu50#fld103_slot"/>        <LinkParameter id="mov1#hym13#switch31#oln154#par1517" name="feNa_PASSING_feNa" sourceLinkParameter="mov1#hym13#miu10#oln126#par1461" target="mov1#hym13#page48#enu50#fld105_slot"/>        <LinkParameter id="mov1#hym13#switch31#oln154#par1518" name="identico_PASSING_identico" sourceLinkParameter="mov1#hym13#miu10#oln126#par1462" target="mov1#hym13#page48#enu50#fld112_slot"/>        <LinkParameter id="mov1#hym13#switch31#oln154#par1519" name="nombres_PASSING_nombres" sourceLinkParameter="mov1#hym13#miu10#oln126#par1463" target="mov1#hym13#page48#enu50#fld102_slot"/>        <LinkParameter id="mov1#hym13#switch31#oln154#par1520" name="ocr_PASSING_ocr" sourceLinkParameter="mov1#hym13#miu10#oln126#par521" target="mov1#hym13#page48#enu50#fld106_slot"/>        <LinkParameter id="mov1#hym13#switch31#oln154#par1521" name="rfc_PASSING_rfc" sourceLinkParameter="mov1#hym13#miu10#oln126#par1464" target="mov1#hym13#page48#enu50#fld104_slot"/>      </OKLink>    </SwitchUnit>    <ProcessUnit id="mov1#hym13#pu69" name="Complete Activity" gr:x="3045" gr:y="665" mode="completeActivity"/>    <ScriptUnit id="mov1#hym13#scu19" name="revisaCadena" gr:x="150" gr:y="420">      <ScriptUnitText xml:space="preserve">#input cadena
+#output verCurp, verRFC, verPasaporte, verFormulario, verINE,resultCode
+
+boolean verRFC = false
+boolean verPasaporte = false
+boolean verFormulario = false
+boolean verINE = false
+boolean verCurp = false
+boolean verFirma = false
+String resultCode = "error"
+
+if (cadena.indexOf('CURP') != -1 || cadena.indexOf('E.Firma') != -1)
+{
+	resultCode = "success"
+}
+if (cadena.indexOf('CURP') != -1 || cadena.indexOf('RFC') != -1)
+    verFormulario = true
+    
+if (cadena.indexOf('Credencial de Elector') != -1)
+{
+	if (cadena.indexOf('CURP') == -1 &amp;&amp; cadena.indexOf('RFC') == -1 &amp;&amp;  cadena.indexOf('E.Firma') == -1)
+    {	
+    	verINE = null
+    }
+    else
+     { 
+    	verINE= true
+     }
+}
+
+if (verFormulario == true)
+{
+	if (cadena.indexOf('RFC') != -1)
+	{
+    	verRFC = true
+	}
+
+	if (cadena.indexOf('Pasaporte') != -1)
+	{
+    	verPasaporte = true
+	}
+
+	if (cadena.indexOf('CURP') != -1)
+	{
+    	verCurp = true
+	}
+}
+
+return["verFormulario":verFormulario, "verRFC":verRFC, "verPasaporte":verPasaporte, "verINE":verINE, "verCurp":verCurp,"resultCode":resultCode]</ScriptUnitText>
+      <OKLink id="mov1#hym13#scu19#oln155" name="OKFlow25" to="mov1#hym13#switch29">
+        <LinkParameter id="mov1#hym13#scu19#oln155#par1409" name="verFormulario_Switch" source="result(verFormulario)" target="mov1#hym13#switch29.switch"/>
+      </OKLink>
+      <Link id="mov1#hym13#scu19#ln171" name="Flow128" to="mov1#hym13#page47" type="transport" validate="true" gr:bendpoints="-93,9,-93,-276;-96,199,-96,-86">
+        <LinkParameter id="mov1#hym13#scu19#ln171#par1410" name="verPasaporte_activaPasaporte" source="result(verPasaporte)" targetVariable="mov1#hym13#page47#var30"/>
+        <LinkParameter id="mov1#hym13#scu19#ln171#par1411" name="verRFC_activaRFC" source="result(verRFC)" targetVariable="mov1#hym13#page47#var29"/>
+        <LinkParameter id="mov1#hym13#scu19#ln171#par1412" name="verCurp_activaCurp" source="result(verCurp)" targetVariable="mov1#hym13#page47#var32"/>
+      </Link>
+      <Link id="mov1#hym13#scu19#ln172" name="Flow132" to="mov1#hym13#switch9" type="transport" validate="true">
+        <LinkParameter id="mov1#hym13#scu19#ln172#par1413" name="verINE_Switch" source="result(verINE)" target="mov1#hym13#switch9.switch"/>
+      </Link>
+      <KOLink id="mov1#hym13#scu19#kln259" name="KOFlow259" to="mov1#hym13#page21#mssu3">
+        <LinkParameter id="mov1#hym13#scu19#kln259#par356" name="Se necesita seleccionar CURP y/o E.firma para continuar._Shown Messages" sourceValue="Se necesita seleccionar CURP y/o E.firma para continuar." target="mov1#hym13#page21#mssu3.shownMessages"/>
+      </KOLink>
+    </ScriptUnit>
+    <ModuleInstanceUnit gr:x="565" gr:y="890" id="mov1#hym13#miu39" action="true" moduleId="mov2#opm66">
+      <OKLink id="mov1#hym13#miu39#oln382" name="OKFlow382" to="mov1#hym13#switch9">
+        <LinkParameter id="mov1#hym13#miu39#oln382#par859" name="rfc_PASSING" sourceLinkParameter="mov1#hym13#scu17#oln132#par2812" passing="true"/>
+        <LinkParameter id="mov1#hym13#miu39#oln382#par860" name="verINE_Switch" source="mov2#opm66#okcu68#ocp182" target="mov1#hym13#switch9.switch"/>
+        <LinkParameter id="mov1#hym13#miu39#oln382#par867" name="RFC_PASSING" source="mov2#opm66#okcu68#ocp183" passing="true"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ParameterCollectorUnit gr:x="1575" gr:y="465" id="mov1#hym13#pcu1" name="DatosValidos" linkOrder="mov1#hym13#pcu1#ln337 mov1#hym13#pcu1#ln646">
+      <CollectorParameter id="mov1#hym13#pcu1#pcp1" name="Curp"/>
+      <CollectorParameter id="mov1#hym13#pcu1#pcp13" name="AnioEmision"/>
+      <CollectorParameter id="mov1#hym13#pcu1#pcp12" name="AnioRegistro"/>
+      <CollectorParameter id="mov1#hym13#pcu1#pcp11" name="NoEmision"/>
+      <CollectorParameter id="mov1#hym13#pcu1#pcp10" name="ClaveElector"/>
+      <CollectorParameter id="mov1#hym13#pcu1#pcp9" name="CIC"/>
+      <CollectorParameter id="mov1#hym13#pcu1#pcp8" name="OCR"/>
+      <CollectorParameter id="mov1#hym13#pcu1#pcp7" name="RFC"/>
+      <CollectorParameter id="mov1#hym13#pcu1#pcp6" name="FechaNac"/>
+      <CollectorParameter id="mov1#hym13#pcu1#pcp5" name="SegundoApellido"/>
+      <CollectorParameter id="mov1#hym13#pcu1#pcp4" name="PrimerApellido"/>
+      <CollectorParameter id="mov1#hym13#pcu1#pcp2" name="Nombre"/>
+      <Link id="mov1#hym13#pcu1#ln160" name="Flow160" to="mov1#hym13#page48#enu50" type="transport" validate="true">
+        <LinkParameter id="mov1#hym13#pcu1#ln160#par875" name="AnioEmision_anioEmision" source="mov1#hym13#pcu1#pcp13" target="mov1#hym13#page48#enu50#fld111_slot"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln160#par876" name="AnioRegistro_anioReg" source="mov1#hym13#pcu1#pcp12" target="mov1#hym13#page48#enu50#fld110_slot"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln160#par877" name="PrimerApellido_ap1" source="mov1#hym13#pcu1#pcp4" target="mov1#hym13#page48#enu50#fld100_slot"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln160#par878" name="SegundoApellido_ap2" source="mov1#hym13#pcu1#pcp5" target="mov1#hym13#page48#enu50#fld101_slot"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln160#par879" name="CIC_cic" source="mov1#hym13#pcu1#pcp9" target="mov1#hym13#page48#enu50#fld107_slot"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln160#par880" name="ClaveElector_claveElector" source="mov1#hym13#pcu1#pcp10" target="mov1#hym13#page48#enu50#fld108_slot"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln160#par881" name="Curp_curp" source="mov1#hym13#pcu1#pcp1" target="mov1#hym13#page48#enu50#fld103_slot"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln160#par893" name="FechaNac_feNa" source="mov1#hym13#pcu1#pcp6" target="mov1#hym13#page48#enu50#fld105_slot"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln160#par1420" name="Nombre_nombres" source="mov1#hym13#pcu1#pcp2" target="mov1#hym13#page48#enu50#fld102_slot"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln160#par1431" name="NoEmision_numeroEmision" source="mov1#hym13#pcu1#pcp11" target="mov1#hym13#page48#enu50#fld109_slot"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln160#par1453" name="OCR_ocr" source="mov1#hym13#pcu1#pcp8" target="mov1#hym13#page48#enu50#fld106_slot"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln160#par1454" name="RFC_rfc" source="mov1#hym13#pcu1#pcp7" target="mov1#hym13#page48#enu50#fld104_slot"/>
+      </Link>
+      <OKLink id="mov1#hym13#pcu1#oln167" name="OKFlow167" to="mov1#hym13#switch27">
+        <LinkParameter id="mov1#hym13#pcu1#oln167#par1974" name="Identico_Switch" source="mov1#hym13#pcu1#pcp38" target="mov1#hym13#switch27.switch"/>
+      </OKLink>
+      <CollectorParameter id="mov1#hym13#pcu1#pcp38" name="Identico"/>
+      <CollectorParameter id="mov1#hym13#pcu1#pcp39" name="identicoINE"/>
+      <Link id="mov1#hym13#pcu1#ln337" name="Flow337" to="mov1#hym13#switch26" type="transport" validate="true">
+        <LinkParameter id="mov1#hym13#pcu1#ln337#par1976" name="identicoINE_Switch" source="mov1#hym13#pcu1#pcp39" target="mov1#hym13#switch26.switch"/>
+      </Link>
+      <Link id="mov1#hym13#pcu1#ln646" name="Flow646" to="mov1#hym13#scu16" type="transport" validate="true">
+        <LinkParameter id="mov1#hym13#pcu1#ln646#par1977" name="AnioEmision_anioEmision" source="mov1#hym13#pcu1#pcp13" target="mov1#hym13#scu16.anioEmision"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln646#par1978" name="AnioRegistro_anioReg" source="mov1#hym13#pcu1#pcp12" target="mov1#hym13#scu16.anioReg"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln646#par1979" name="CIC_cic" source="mov1#hym13#pcu1#pcp9" target="mov1#hym13#scu16.cic"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln646#par2030" name="ClaveElector_claveElector" source="mov1#hym13#pcu1#pcp10" target="mov1#hym13#scu16.claveElector"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln646#par2039" name="NoEmision_numeroEmision" source="mov1#hym13#pcu1#pcp11" target="mov1#hym13#scu16.numeroEmision"/>
+        <LinkParameter id="mov1#hym13#pcu1#ln646#par2075" name="OCR_ocr" source="mov1#hym13#pcu1#pcp8" target="mov1#hym13#scu16.ocr"/>
+      </Link>
+    </ParameterCollectorUnit>
+    <ParameterCollectorUnit gr:x="235" gr:y="885" id="mov1#hym13#pcu14" name="DatosCURPoRFC">
+      <CollectorParameter id="mov1#hym13#pcu14#pcp19" name="CURP"/>
+      <CollectorParameter id="mov1#hym13#pcu14#pcp18" name="RFC"/>
+      <CollectorParameter id="mov1#hym13#pcu14#pcp17" name="fechaNac"/>
+      <CollectorParameter id="mov1#hym13#pcu14#pcp16" name="ap2"/>
+      <CollectorParameter id="mov1#hym13#pcu14#pcp15" name="ap1"/>
+      <CollectorParameter id="mov1#hym13#pcu14#pcp14" name="nombres"/>
+    </ParameterCollectorUnit>
+    <ParameterCollectorUnit gr:x="1060" gr:y="1205" id="mov1#hym13#pcu15" name="datosINE">
+      <CollectorParameter id="mov1#hym13#pcu15#pcp37" name="numEmision"/>
+      <CollectorParameter id="mov1#hym13#pcu15#pcp24" name="OCR"/>
+      <CollectorParameter id="mov1#hym13#pcu15#pcp23" name="CIC"/>
+      <CollectorParameter id="mov1#hym13#pcu15#pcp22" name="a&#241;oEmision"/>
+      <CollectorParameter id="mov1#hym13#pcu15#pcp21" name="claveElector"/>
+      <CollectorParameter id="mov1#hym13#pcu15#pcp20" name="a&#241;oReg"/>
+    </ParameterCollectorUnit>
+  </OperationUnits>
+</HybridModule>

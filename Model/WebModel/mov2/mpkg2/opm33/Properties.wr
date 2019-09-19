@@ -1,0 +1,157 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg2#opm33" name="Login" gr:x="0" gr:y="0">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg2#opm33#icu44" gr:x="-165" gr:y="65">
+      <OKLink id="mov2#mpkg2#opm33#icu44#oln343" name="OKFlow62" to="mov2#mpkg2#opm33#scu62">
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1090" name="base64_base64" source="mov2#mpkg2#opm33#icu44#icp165" target="mov2#mpkg2#opm33#scu62.base64"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1091" name="curpEmisor_curpEmisor" source="mov2#mpkg2#opm33#icu44#icp164" target="mov2#mpkg2#opm33#scu62.curpEmisor"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1092" name="emailEmisor_emailEmisor" source="mov2#mpkg2#opm33#icu44#icp158" target="mov2#mpkg2#opm33#scu62.emailEmisor"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1093" name="nombreEmisor_nombreEmisor" source="mov2#mpkg2#opm33#icu44#icp166" target="mov2#mpkg2#opm33#scu62.nombreEmisor"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1094" name="rfcEmisor_rfcEmisor" source="mov2#mpkg2#opm33#icu44#icp163" target="mov2#mpkg2#opm33#scu62.rfcEmisor"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1095" name="serialEmisor_serialEmisor" source="mov2#mpkg2#opm33#icu44#icp160" target="mov2#mpkg2#opm33#scu62.serialEmisor"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1096" name="tipoPersona_tipoPersona" source="mov2#mpkg2#opm33#icu44#icp159" target="mov2#mpkg2#opm33#scu62.tipoPersona"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1097" name="Username_username" source="mov2#mpkg2#opm33#icu44#icp161" target="mov2#mpkg2#opm33#scu62.username"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1098" name="x509_x509" source="mov2#mpkg2#opm33#icu44#icp162" target="mov2#mpkg2#opm33#scu62.x509"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1099" name="base64_PASSING" source="mov2#mpkg2#opm33#icu44#icp165" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1100" name="curpEmisor_PASSING" source="mov2#mpkg2#opm33#icu44#icp164" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1101" name="emailEmisor_PASSING" source="mov2#mpkg2#opm33#icu44#icp158" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1102" name="nombreEmisor_PASSING" source="mov2#mpkg2#opm33#icu44#icp166" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1103" name="rfcEmisor_PASSING" source="mov2#mpkg2#opm33#icu44#icp163" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1104" name="serialEmisor_PASSING" source="mov2#mpkg2#opm33#icu44#icp160" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1105" name="tipoPersona_PASSING" source="mov2#mpkg2#opm33#icu44#icp159" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1106" name="Username_PASSING" source="mov2#mpkg2#opm33#icu44#icp161" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#oln343#par1107" name="x509_PASSING" source="mov2#mpkg2#opm33#icu44#icp162" passing="true"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#mpkg2#opm33#icu44#icp158" name="emailEmisor"/>
+      <InputCollectorParameter id="mov2#mpkg2#opm33#icu44#icp159" name="tipoPersona"/>
+      <InputCollectorParameter id="mov2#mpkg2#opm33#icu44#icp160" name="serialEmisor"/>
+      <InputCollectorParameter id="mov2#mpkg2#opm33#icu44#icp161" name="Username"/>
+      <InputCollectorParameter id="mov2#mpkg2#opm33#icu44#icp162" name="x509"/>
+      <InputCollectorParameter id="mov2#mpkg2#opm33#icu44#icp163" name="rfcEmisor"/>
+      <InputCollectorParameter id="mov2#mpkg2#opm33#icu44#icp164" name="curpEmisor"/>
+      <InputCollectorParameter id="mov2#mpkg2#opm33#icu44#icp165" name="base64"/>
+      <InputCollectorParameter id="mov2#mpkg2#opm33#icu44#icp166" name="nombreEmisor"/>
+      <Link id="mov2#mpkg2#opm33#icu44#ln418" name="Flow113" to="mov2#mpkg2#opm33#cru19" type="transport" validate="true" gr:bendpoints="115,-19,-1100,-194;167,-61,-1048,-236;939,-60,-276,-235;1038,173,-177,-2">
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln418#par1108" name="emailEmisor_email" source="mov2#mpkg2#opm33#icu44#icp158" target="mov2#mpkg2#opm33#cru19.email"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln418#par1109" name="serialEmisor_password" source="mov2#mpkg2#opm33#icu44#icp160" target="mov2#mpkg2#opm33#cru19.password"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln418#par1110" name="Username_userName" source="mov2#mpkg2#opm33#icu44#icp161" target="mov2#mpkg2#opm33#cru19.userName"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln418#par1111" name="1_Group.oid(defaultGroup)" target="mov2#mpkg2#opm33#cru19.User2DefaultGroup.groupOID" sourceValue="1"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln418#par1112" name="1_Group.oid(groups)" target="mov2#mpkg2#opm33#cru19.User2Group.groupOID" sourceValue="1"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln418#par1594" name="nombreEmisor_nombre" source="mov2#mpkg2#opm33#icu44#icp166" target="mov2#mpkg2#opm33#cru19.ent39#att272"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln418#par1595" name="rfcEmisor_RFC" source="mov2#mpkg2#opm33#icu44#icp163" target="mov2#mpkg2#opm33#cru19.ent39#att268"/>
+      </Link>
+      <Link id="mov2#mpkg2#opm33#icu44#ln419" name="Flow115" to="mov2#mpkg2#opm33#mfu13" type="transport" validate="true" gr:bendpoints="107,-24,-1108,56;183,-109,-1032,-29;1138,-107,-77,-27">
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln419#par1115" name="emailEmisor_email" source="mov2#mpkg2#opm33#icu44#icp158" target="mov2#mpkg2#opm33#mfu13.email"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln419#par1116" name="serialEmisor_password" source="mov2#mpkg2#opm33#icu44#icp160" target="mov2#mpkg2#opm33#mfu13.password"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln419#par1119" name="Username_userName" source="mov2#mpkg2#opm33#icu44#icp161" target="mov2#mpkg2#opm33#mfu13.userName"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln419#par1596" name="nombreEmisor_nombre" source="mov2#mpkg2#opm33#icu44#icp166" target="mov2#mpkg2#opm33#mfu13.ent39#att272"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln419#par1597" name="rfcEmisor_RFC" source="mov2#mpkg2#opm33#icu44#icp163" target="mov2#mpkg2#opm33#mfu13.ent39#att268"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln419#par415" name="nombreEmisor_nombreCompleto" source="mov2#mpkg2#opm33#icu44#icp166" target="mov2#mpkg2#opm33#mfu13.ent39#att269"/>
+      </Link>
+      <Link id="mov2#mpkg2#opm33#icu44#ln420" name="Flow118" to="mov2#mpkg2#opm33#okcu37" type="transport" validate="true" gr:bendpoints="179,-136,-1356,-56;1429,-136,-106,-56">
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln420#par1120" name="serialEmisor_password" source="mov2#mpkg2#opm33#icu44#icp160" target="mov2#mpkg2#opm33#okcu37#ocp134"/>
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln420#par1121" name="Username_userName" source="mov2#mpkg2#opm33#icu44#icp161" target="mov2#mpkg2#opm33#okcu37#ocp135"/>
+      </Link>
+      <Link id="mov2#mpkg2#opm33#icu44#ln421" name="Flow127" to="mov2#mpkg2#opm33#seu53" type="transport" validate="true" gr:bendpoints="119,-9,-711,-9;193,-51,-652,-51;736,-50,-109,-50">
+        <LinkParameter id="mov2#mpkg2#opm33#icu44#ln421#par1122" name="Username_username" source="mov2#mpkg2#opm33#icu44#icp161" target="mov2#mpkg2#opm33#seu53#su118#acond68"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#mpkg2#opm33#okcu37" name="OK" gr:x="1370" gr:y="50">
+      <OutputCollectorParameter id="mov2#mpkg2#opm33#okcu37#ocp134" name="password"/>
+      <OutputCollectorParameter id="mov2#mpkg2#opm33#okcu37#ocp135" name="userName"/>
+    </OKCollectorUnit>
+    <SwitchUnit id="mov2#mpkg2#opm33#switch18" name="tipoPersona" gr:x="540" gr:y="140">
+      <Case value="MORAL"/>
+      <Case value="F&#205;SICA"/>
+      <OKLink id="mov2#mpkg2#opm33#switch18#oln344" name="Flow108" to="mov2#mpkg2#opm33#seu53" code="F&#205;SICA"/>
+      <OKLink id="mov2#mpkg2#opm33#switch18#oln345" name="OKFlow68" to="mov2#mpkg2#opm33#kocu29" gr:bendpoints="52,222,-838,47;777,226,-113,52">
+        <LinkParameter id="mov2#mpkg2#opm33#switch18#oln345#par1123" name="La e.firma no es v&#225;lida_mensaje" target="mov2#mpkg2#opm33#kocu29#ocp136" sourceValue="La e.firma no es v&#225;lida"/>
+      </OKLink>
+    </SwitchUnit>
+    <SelectorUnit id="mov2#mpkg2#opm33#seu53" name="buscarPF" gr:x="730" gr:y="125" entity="User">
+      <OKLink id="mov2#mpkg2#opm33#seu53#oln346" name="OKFlow63" to="mov2#mpkg2#opm33#inn12">
+        <LinkParameter id="mov2#mpkg2#opm33#seu53#oln346#par1124" name="userName_Input" source="userOIDArray" target="mov2#mpkg2#opm33#inn12.isnotnull"/>
+      </OKLink>
+      <Selector id="mov2#mpkg2#opm33#seu53#su118" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg2#opm33#seu53#su118#acond68" name="username" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <KOLink id="mov2#mpkg2#opm33#seu53#kln192" name="KOFlow109" to="mov2#mpkg2#opm33#kocu29" automaticCoupling="true" gr:bendpoints="70,217,-636,43;577,220,-129,46"/>
+    </SelectorUnit>
+    <SwitchUnit id="mov2#mpkg2#opm33#switch19" name="&#191;vacio?" gr:x="375" gr:y="140">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov2#mpkg2#opm33#switch19#oln347" name="OKFlow39" to="mov2#mpkg2#opm33#switch18" code="false">
+        <LinkParameter id="mov2#mpkg2#opm33#switch19#oln347#par1125" name="tipoPersona_PASSING_Switch" sourceLinkParameter="mov2#mpkg2#opm33#scu62#oln350#par1136" target="mov2#mpkg2#opm33#switch18.switch"/>
+      </OKLink>
+      <OKLink id="mov2#mpkg2#opm33#switch19#oln348" name="OKFlow69" to="mov2#mpkg2#opm33#kocu29" code="true" gr:bendpoints="42,230,-1028,55;966,231,-104,56">
+        <LinkParameter id="mov2#mpkg2#opm33#switch19#oln348#par1126" name="La e-firma no es valida_mensaje" target="mov2#mpkg2#opm33#kocu29#ocp136" sourceValue="La e-firma no es valida."/>
+      </OKLink>
+    </SwitchUnit>
+    <IsNotNullUnit id="mov2#mpkg2#opm33#inn12" name="&#191;Existe?" gr:x="945" gr:y="140">
+      <KOLink id="mov2#mpkg2#opm33#inn12#kln193" name="KOFlow13" to="mov2#mpkg2#opm33#kocu29" gr:bendpoints="60,102,-435,-73;211,101,-284,-74;236,159,-259,-16;364,160,-131,-15">
+        <LinkParameter id="mov2#mpkg2#opm33#inn12#kln193#par1127" name="Usted no cuenta con los permisos para acceder al sistema, favor de contactar al ..._mensaje" target="mov2#mpkg2#opm33#kocu29#ocp136" sourceValue="Usted no cuenta con los permisos para acceder al sistema, favor de contactar al ..."/>
+      </KOLink>
+      <OKLink id="mov2#mpkg2#opm33#inn12#oln349" name="OKFlow64" to="mov2#mpkg2#opm33#mfu13" gr:bendpoints="14,-82,-161,-2">
+        <LinkParameter id="mov2#mpkg2#opm33#inn12#oln349#par1128" name="Input Value_KeyCondition42 [oid]" source="inputValue" target="mov2#mpkg2#opm33#mfu13#su119#kcond64.userOID"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <ScriptUnit id="mov2#mpkg2#opm33#scu62" name="verificaNulos" gr:x="160" gr:y="140">
+      <ScriptUnitText xml:space="preserve">#input String base64, String rfcEmisor, String curpEmisor, String emailEmisor,String nombreEmisor,String tipoPersona,String serialEmisor,String username,String x509
+#output vacio
+
+boolean vacio = false
+String [] datosUsuario = new String[9]
+
+datosUsuario[0] = base64
+datosUsuario[1] = rfcEmisor
+datosUsuario[2] = curpEmisor
+datosUsuario[3] = emailEmisor
+datosUsuario[4] = nombreEmisor
+datosUsuario[5] = tipoPersona
+datosUsuario[6] = serialEmisor
+datosUsuario[7] = username
+datosUsuario[8] = x509
+
+for(String item : datosUsuario) {
+  if (item == "" || item == null) vacio = true
+}
+
+return["vacio":vacio]</ScriptUnitText>
+      <OKLink id="mov2#mpkg2#opm33#scu62#oln350" name="OKFlow36" to="mov2#mpkg2#opm33#switch19">
+        <LinkParameter id="mov2#mpkg2#opm33#scu62#oln350#par1129" name="vacio_Switch" source="result(vacio)" target="mov2#mpkg2#opm33#switch19.switch"/>
+        <LinkParameter id="mov2#mpkg2#opm33#scu62#oln350#par1130" name="base64_PASSING" sourceLinkParameter="mov2#mpkg2#opm33#icu44#oln343#par1099" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#scu62#oln350#par1131" name="curpEmisor_PASSING" sourceLinkParameter="mov2#mpkg2#opm33#icu44#oln343#par1100" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#scu62#oln350#par1132" name="emailEmisor_PASSING" sourceLinkParameter="mov2#mpkg2#opm33#icu44#oln343#par1101" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#scu62#oln350#par1133" name="nombreEmisor_PASSING" sourceLinkParameter="mov2#mpkg2#opm33#icu44#oln343#par1102" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#scu62#oln350#par1134" name="rfcEmisor_PASSING" sourceLinkParameter="mov2#mpkg2#opm33#icu44#oln343#par1103" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#scu62#oln350#par1135" name="serialEmisor_PASSING" sourceLinkParameter="mov2#mpkg2#opm33#icu44#oln343#par1104" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#scu62#oln350#par1136" name="tipoPersona_PASSING" sourceLinkParameter="mov2#mpkg2#opm33#icu44#oln343#par1105" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#scu62#oln350#par1137" name="Username_PASSING" sourceLinkParameter="mov2#mpkg2#opm33#icu44#oln343#par1106" passing="true"/>
+        <LinkParameter id="mov2#mpkg2#opm33#scu62#oln350#par1138" name="x509_PASSING" sourceLinkParameter="mov2#mpkg2#opm33#icu44#oln343#par1107" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg2#opm33#scu62#kln194" name="KOFlow110" to="mov2#mpkg2#opm33#kocu29" gr:bendpoints="38,236,-1227,61;1181,236,-84,61">
+        <LinkParameter id="mov2#mpkg2#opm33#scu62#kln194#par1139" name="Error: campos nullos._mensaje" target="mov2#mpkg2#opm33#kocu29#ocp136" sourceValue="Error: campos nullos."/>
+      </KOLink>
+    </ScriptUnit>
+    <KOCollectorUnit id="mov2#mpkg2#opm33#kocu29" name="KO" gr:x="1370" gr:y="305">
+      <OutputCollectorParameter id="mov2#mpkg2#opm33#kocu29#ocp136" name="mensaje"/>
+    </KOCollectorUnit>
+    <CreateUnit id="mov2#mpkg2#opm33#cru19" name="crearPF" gr:x="1115" gr:y="305" entity="ent39">
+      <OKLink id="mov2#mpkg2#opm33#cru19#oln351" name="OKFlow65" to="mov2#mpkg2#opm33#okcu37" gr:bendpoints="67,-242,-253,13;191,-240,-129,15">
+        <LinkParameter id="mov2#mpkg2#opm33#cru19#oln351#par1140" name="password_password" source="passwordArray" target="mov2#mpkg2#opm33#okcu37#ocp134"/>
+        <LinkParameter id="mov2#mpkg2#opm33#cru19#oln351#par1141" name="userName_userName" source="userNameArray" target="mov2#mpkg2#opm33#okcu37#ocp135"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg2#opm33#cru19#kln195" name="KOFlow14" to="mov2#mpkg2#opm33#kocu29">
+        <LinkParameter id="mov2#mpkg2#opm33#cru19#kln195#par1142" name="Error al registrar_mensaje" target="mov2#mpkg2#opm33#kocu29#ocp136" sourceValue="Error al registrar"/>
+      </KOLink>
+    </CreateUnit>
+    <ModifyUnit id="mov2#mpkg2#opm33#mfu13" name="actualizarPF" gr:x="1110" gr:y="45" entity="ent39">
+      <Selector id="mov2#mpkg2#opm33#mfu13#su119" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg2#opm33#mfu13#su119#kcond64" name="KeyCondition42" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#mpkg2#opm33#mfu13#oln352" name="OKFlow66" to="mov2#mpkg2#opm33#okcu37" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg2#opm33#mfu13#kln196" name="KOFlow20" to="mov2#mpkg2#opm33#kocu29" gr:bendpoints="17,63,-303,-192;71,210,-249,-45;192,212,-128,-43">
+        <LinkParameter id="mov2#mpkg2#opm33#mfu13#kln196#par1143" name="Error al actualizar datos_mensaje" target="mov2#mpkg2#opm33#kocu29#ocp136" sourceValue="Error al actualizar datos"/>
+      </KOLink>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

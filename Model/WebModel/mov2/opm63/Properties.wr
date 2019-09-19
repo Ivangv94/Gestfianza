@@ -1,0 +1,5 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm63" name="comparaRFC" gr:x="975" gr:y="475">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm63#icu91" gr:x="30" gr:y="60"/>
+  </OperationUnits>
+</OperationModule>

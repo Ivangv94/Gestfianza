@@ -1,0 +1,53 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1010" gr:y="-150" id="sv2#page19" name="Agregar Fedatarios">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv2#page19#enu56" name="Carga por archivo" linkOrder="sv2#page19#enu56#ln111">
+      <Field id="sv2#page19#enu56#fld175" name="excel" type="blob" modifiable="true"/>
+      <Link id="sv2#page19#enu56#ln111" name="Procesar" to="sv2#exu2" type="normal" validate="true">
+        <LinkParameter id="sv2#page19#enu56#ln111#par720" name="excel_BLOB" source="sv2#page19#enu56#fld175" target="sv2#exu2.blob"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="15" gr:y="80" id="sv2#page19#mssu34" name="MENSAJES"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page19#enu56" layout:frameLayout="None">
+          <layout:Field field="sv2#page19#enu56#fld175">
+            <layout:LayoutParameter name="label-position" value="top" type="field"/>
+          </layout:Field>
+          <layout:Link link="sv2#page19#enu56#ln111">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page19#mssu34"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="show-left-column" value="false" type="page"/>
+</Page>

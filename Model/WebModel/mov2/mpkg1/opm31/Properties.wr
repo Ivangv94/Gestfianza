@@ -1,0 +1,297 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg1#opm31" name="Firma cadena" gr:x="0" gr:y="155">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg1#opm31#icu42" gr:x="-290" gr:y="40">
+      <InputCollectorParameter id="mov2#mpkg1#opm31#icu42#icp152" name="cer"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm31#icu42#icp153" name="contrasenia"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm31#icu42#icp154" name="key"/>
+      <OKLink id="mov2#mpkg1#opm31#icu42#oln304" name="OKFlow242" to="mov2#mpkg1#opm31#seu52" automaticCoupling="true"/>
+      <Link id="mov2#mpkg1#opm31#icu42#ln382" name="Flow1097" to="mov2#mpkg1#opm31#cru18" type="transport" validate="true" gr:bendpoints="144,-159,-1066,-159;709,-162,-501,-162;1060,-160,-150,-160">
+        <LinkParameter id="mov2#mpkg1#opm31#icu42#ln382#par995" name="cer_cer" source="mov2#mpkg1#opm31#icu42#icp152" target="mov2#mpkg1#opm31#cru18.ent4#att33"/>
+        <LinkParameter id="mov2#mpkg1#opm31#icu42#ln382#par996" name="key_key" source="mov2#mpkg1#opm31#icu42#icp154" target="mov2#mpkg1#opm31#cru18.ent4#att32"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#icu42#ln383" name="Flow1098" to="mov2#mpkg1#opm31#scu48" type="transport" validate="true" gr:bendpoints="159,-140,-1226,-140;1152,-148,-233,-148">
+        <LinkParameter id="mov2#mpkg1#opm31#icu42#ln383#par997" name="contrasenia_contrasenia" source="mov2#mpkg1#opm31#icu42#icp153" target="mov2#mpkg1#opm31#scu48.contrasenia"/>
+      </Link>
+      <InputCollectorParameter id="mov2#mpkg1#opm31#icu42#icp155" name="CURPoRFCdelFirmante"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm31#icu42#icp156" name="cadenaOriginal"/>
+      <Link id="mov2#mpkg1#opm31#icu42#ln384" name="Flow7117" to="mov2#mpkg1#opm31#scu52" type="transport" validate="true" gr:bendpoints="123,-224,-2462,-189;1318,-216,-1267,-181;2423,-206,-162,-171">
+        <LinkParameter id="mov2#mpkg1#opm31#icu42#ln384#par998" name="CURPoRFCdelFirmante_curpDelFirmante" source="mov2#mpkg1#opm31#icu42#icp155" target="mov2#mpkg1#opm31#scu52.curpDelFirmante"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#icu42#ln385" name="Flow7121" to="mov2#mpkg1#opm31#scu53" type="transport" validate="true" gr:bendpoints="136,-186,-3569,-131;2594,-178,-1111,-123;3607,-197,-98,-142">
+        <LinkParameter id="mov2#mpkg1#opm31#icu42#ln385#par999" name="cadenaOriginal_cadenaOriginal" source="mov2#mpkg1#opm31#icu42#icp156" target="mov2#mpkg1#opm31#scu53.cadenaOriginal"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#icu42#ln386" name="Flow7125" to="mov2#mpkg1#opm31#scu55" type="transport" validate="true" gr:bendpoints="159,171,-2401,76;1292,171,-1268,76;2408,171,-152,76">
+        <LinkParameter id="mov2#mpkg1#opm31#icu42#ln386#par1000" name="CURPoRFCdelFirmante_curpDelFirmante" source="mov2#mpkg1#opm31#icu42#icp155" target="mov2#mpkg1#opm31#scu55.curpDelFirmante"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#icu42#ln387" name="Flow7128" to="mov2#mpkg1#opm31#scu56" type="transport" validate="true" gr:bendpoints="142,29,-3483,-66;200,146,-3425,51;3593,174,-32,79">
+        <LinkParameter id="mov2#mpkg1#opm31#icu42#ln387#par1001" name="cadenaOriginal_cadenaOriginal" source="mov2#mpkg1#opm31#icu42#icp156" target="mov2#mpkg1#opm31#scu56.cadenaOriginal"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#mpkg1#opm31#seu52" name="Selector10" gr:x="130" gr:y="70" entity="ent2">
+      <Selector id="mov2#mpkg1#opm31#seu52#su117" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg1#opm31#seu52#su117#acond67" name="ambiente" predicate="eq" booleanOperator="or" implied="false" ignoreCase="false" value="ambiente" attributes="ent2#att11"/>
+      </Selector>
+      <OKLink id="mov2#mpkg1#opm31#seu52#oln305" name="OKFlow688" to="mov2#mpkg1#opm31#pwu19" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg1#opm31#seu52#kln169" name="KOFlow21" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="157,443,-3813,73;3873,439,-97,69">
+        <LinkParameter id="mov2#mpkg1#opm31#seu52#kln169#par1002" name="Error en la obtenci&#243;n de la variable de ambiente_Error Contrasenia" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Error en la obtenci&#243;n de la variable de ambiente"/>
+      </KOLink>
+      <Link id="mov2#mpkg1#opm31#seu52#ln388" name="Flow1102" to="mov2#mpkg1#opm31#miu32" type="transport" validate="true" gr:bendpoints="140,-187,-2775,-82;2713,-187,-222,-82">
+        <LinkParameter id="mov2#mpkg1#opm31#seu52#ln388#par1218" name="valor_ambiente" source="ent2#att12Array" target="mov2#mpkg1#opm31#miu32.mov2#mpkg1#opm24#icu34#icp94"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#seu52#ln389" name="Flow1102" to="mov2#mpkg1#opm31#miu33" type="transport" validate="true" gr:bendpoints="103,136,-2812,41;1835,145,-1065,50;2827,153,-88,58">
+        <LinkParameter id="mov2#mpkg1#opm31#seu52#ln389#par1217" name="valor_ambiente" source="ent2#att12Array" target="mov2#mpkg1#opm31#miu33.mov2#mpkg1#opm24#icu34#icp94"/>
+      </Link>
+    </SelectorUnit>
+    <PasswordUnit id="mov2#mpkg1#opm31#pwu19" name="Nombre CER" gr:x="345" gr:y="85" passwordSize="32" minLowerCaseCharacters="5" minUpperCaseCharacters="7" minDigits="5">
+      <OKLink id="mov2#mpkg1#opm31#pwu19#oln306" name="OKFlow692" to="mov2#mpkg1#opm31#pwu20" automaticCoupling="true"/>
+      <Link id="mov2#mpkg1#opm31#pwu19#ln390" name="Flow1096" to="mov2#mpkg1#opm31#scu47" type="transport" validate="true" gr:bendpoints="69,-49,-331,-49;324,-48,-76,-48">
+        <LinkParameter id="mov2#mpkg1#opm31#pwu19#ln390#par1005" name="Generated Password_dirtyNombreCer" source="password" target="mov2#mpkg1#opm31#scu47.dirtyNombreCer"/>
+      </Link>
+      <KOLink id="mov2#mpkg1#opm31#pwu19#kln170" name="KOFlow20" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="104,433,-3681,63;1344,433,-2441,63;3682,433,-103,63">
+        <LinkParameter id="mov2#mpkg1#opm31#pwu19#kln170#par1006" name="Error en el pre-procesamiento del archivo .CER, int&#233;ntalo nuevamente o escr&#237;benos un correo a _Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Error en el pre-procesamiento del archivo .CER, int&#233;ntalo nuevamente o escr&#237;benos un correo a "/>
+      </KOLink>
+    </PasswordUnit>
+    <PasswordUnit id="mov2#mpkg1#opm31#pwu20" name="Nombre KEY" gr:x="535" gr:y="85" passwordSize="32" minLowerCaseCharacters="7" minUpperCaseCharacters="5" minDigits="7">
+      <OKLink id="mov2#mpkg1#opm31#pwu20#oln307" name="OKFlow704" to="mov2#mpkg1#opm31#scu47">
+        <LinkParameter id="mov2#mpkg1#opm31#pwu20#oln307#par1007" name="Generated Password_dirtyNombreKey" source="password" target="mov2#mpkg1#opm31#scu47.dirtyNombreKey"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg1#opm31#pwu20#kln171" name="KOFlow19" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="79,425,-3511,55;1139,425,-2451,55;2967,425,-623,55;3475,425,-115,55">
+        <LinkParameter id="mov2#mpkg1#opm31#pwu20#kln171#par1008" name="Error en el pre-procesamiento del archivo .KEY, int&#233;ntalo nuevamente o escr&#237;benos un correo a _Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Error en el pre-procesamiento del archivo .KEY, int&#233;ntalo nuevamente o escr&#237;benos un correo a "/>
+      </KOLink>
+    </PasswordUnit>
+    <ScriptUnit id="mov2#mpkg1#opm31#scu47" name="Armar nombres" gr:x="735" gr:y="85" script="WEB-INF/descr/groovy/armarNombres.groovy">
+      <OKLink id="mov2#mpkg1#opm31#scu47#oln308" name="OKFlow705" to="mov2#mpkg1#opm31#cru18">
+        <LinkParameter id="mov2#mpkg1#opm31#scu47#oln308#par1009" name="nombreCer_cer [file name]" source="result(nombreCer)" target="mov2#mpkg1#opm31#cru18.ent4#att33_name"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu47#oln308#par1010" name="nombreKey_key [file name]" source="result(nombreKey)" target="mov2#mpkg1#opm31#cru18.ent4#att32_name"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg1#opm31#scu47#kln172" name="KOFlow18" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="86,418,-3299,48;491,418,-2894,48;2021,419,-1364,49;3263,419,-122,49">
+        <LinkParameter id="mov2#mpkg1#opm31#scu47#kln172#par1011" name="Error en el encriptamiento de seguridad para nombres, int&#233;ntalo nuevamente o escr&#237;benos un correo a  _Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Error en el encriptamiento de seguridad para nombres, int&#233;ntalo nuevamente o escr&#237;benos un correo a  "/>
+      </KOLink>
+    </ScriptUnit>
+    <CreateUnit id="mov2#mpkg1#opm31#cru18" name="Crear basura" gr:x="945" gr:y="75" entity="ent4">
+      <OKLink id="mov2#mpkg1#opm31#cru18#oln309" name="OKFlow706" to="mov2#mpkg1#opm31#scu48">
+        <LinkParameter id="mov2#mpkg1#opm31#cru18#oln309#par1012" name="key_archivoKey" source="ent4#att32Array" target="mov2#mpkg1#opm31#scu48.archivoKey"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg1#opm31#cru18#kln173" name="KOFlow17" to="mov2#mpkg1#opm31#kocu27" automaticCoupling="true" gr:bendpoints="70,409,-3110,39;1799,413,-1381,43;3050,411,-130,41"/>
+      <Link id="mov2#mpkg1#opm31#cru18#ln391" name="Flow1099" to="mov2#mpkg1#opm31#scu49" type="transport" validate="true" gr:bendpoints="57,-70,-368,-70;341,-70,-84,-70">
+        <LinkParameter id="mov2#mpkg1#opm31#cru18#ln391#par1013" name="cer_archivoCer" source="ent4#att33Array" target="mov2#mpkg1#opm31#scu49.archivoCer"/>
+      </Link>
+    </CreateUnit>
+    <OKCollectorUnit id="mov2#mpkg1#opm31#okcu34" name="OK PF" gr:x="4070" gr:y="-110">
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu34#ocp103" name="fechaCaducidad"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu34#ocp104" name="CURPfirmante"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu34#ocp105" name="serieCERT"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu34#ocp106" name="selloDigital"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu34#ocp107" name="nombreSujetoX509"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu34#ocp108" name="nombreEmisorCERT"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu34#ocp109" name="nombreCompleto"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu34#ocp110" name="modulus"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu34#ocp111" name="hashCadenaOriginal"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu34#ocp112" name="fechaInscripcion"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu34#ocp113" name="certificadoX509"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov2#mpkg1#opm31#kocu27" name="KO Port6" gr:x="4070" gr:y="445">
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#kocu27#ocp114" name="Error"/>
+    </KOCollectorUnit>
+    <ScriptUnit id="mov2#mpkg1#opm31#scu48" name="Verificar Contrasenia" gr:x="1130" gr:y="85" script="WEB-INF/descr/groovy/verificarContrase&#241;a.groovy">
+      <KOLink id="mov2#mpkg1#opm31#scu48#kln174" name="KOFlow16" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="75,401,-2895,31;1720,406,-1250,36;2832,403,-138,33">
+        <LinkParameter id="mov2#mpkg1#opm31#scu48#kln174#par1014" name="Contrase&#241;a incorrecta, por favor intentar nuevamente._Error " target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Contrase&#241;a incorrecta, por favor intentar nuevamente."/>
+      </KOLink>
+      <OKLink id="mov2#mpkg1#opm31#scu48#oln310" name="OKFlow707" to="mov2#mpkg1#opm31#scu49" automaticCoupling="true"/>
+      <Link id="mov2#mpkg1#opm31#scu48#ln392" name="Flow1100" to="mov2#mpkg1#opm31#scu50" type="transport" validate="true" gr:bendpoints="54,-61,-456,-61;390,-57,-120,-57">
+        <LinkParameter id="mov2#mpkg1#opm31#scu48#ln392#par1015" name="llave_llave" source="result(llave)" target="mov2#mpkg1#opm31#scu50.llave"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#scu48#ln393" name="Flow7120" to="mov2#mpkg1#opm31#scu53" type="transport" validate="true" gr:bendpoints="265,-220,-1995,-115;1175,-204,-1085,-99;2108,-185,-152,-80">
+        <LinkParameter id="mov2#mpkg1#opm31#scu48#ln393#par1016" name="llave_llave" source="result(llave)" target="mov2#mpkg1#opm31#scu53.llave"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#scu48#ln394" name="Flow7127" to="mov2#mpkg1#opm31#scu56" type="transport" validate="true" gr:bendpoints="82,74,-2178,-21;821,75,-1439,-20;984,0,-1276,-95;2110,8,-150,-87">
+        <LinkParameter id="mov2#mpkg1#opm31#scu48#ln394#par1017" name="llave_llave" source="result(llave)" target="mov2#mpkg1#opm31#scu56.llave"/>
+      </Link>
+    </ScriptUnit>
+    <ScriptUnit id="mov2#mpkg1#opm31#scu49" name="Obtener CERT" gr:x="1370" gr:y="85" script="WEB-INF/descr/groovy/obtenerCert.groovy">
+      <OKLink id="mov2#mpkg1#opm31#scu49#oln311" name="OKFlow708" to="mov2#mpkg1#opm31#scu50">
+        <LinkParameter id="mov2#mpkg1#opm31#scu49#oln311#par1018" name="cert_cert" source="result(cert)" target="mov2#mpkg1#opm31#scu50.cert"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#opm31#scu49#ln395" name="Flow1101" to="mov2#mpkg1#opm31#miu32" type="transport" validate="true" gr:bendpoints="251,-234,-1449,-129;1616,-234,-84,-129">
+        <LinkParameter id="mov2#mpkg1#opm31#scu49#ln395#par1219" name="cert_certX509" source="result(cert)" target="mov2#mpkg1#opm31#miu32.mov2#mpkg1#opm24#icu34#icp95"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#scu49#ln396" name="Flow1101" to="mov2#mpkg1#opm31#miu33" type="transport" validate="true" gr:bendpoints="141,67,-1559,-28;595,67,-1105,-28;766,-10,-934,-105;1531,-4,-169,-99">
+        <LinkParameter id="mov2#mpkg1#opm31#scu49#ln396#par1216" name="cert_certX509" source="result(cert)" target="mov2#mpkg1#opm31#miu33.mov2#mpkg1#opm24#icu34#icp95"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#scu49#ln397" name="Flow7119" to="mov2#mpkg1#opm31#scu53" type="transport" validate="true" gr:bendpoints="215,-244,-1830,-139;1060,-247,-985,-142;1979,-241,-66,-136">
+        <LinkParameter id="mov2#mpkg1#opm31#scu49#ln397#par1021" name="cert_cert" source="result(cert)" target="mov2#mpkg1#opm31#scu53.cert"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#scu49#ln398" name="Flow7126" to="mov2#mpkg1#opm31#scu56" type="transport" validate="true" gr:bendpoints="139,53,-1906,-42;594,60,-1451,-35;746,-17,-1299,-112;1901,-1,-144,-96">
+        <LinkParameter id="mov2#mpkg1#opm31#scu49#ln398#par1022" name="cert_cert" source="result(cert)" target="mov2#mpkg1#opm31#scu56.cert"/>
+      </Link>
+      <KOLink id="mov2#mpkg1#opm31#scu49#kln175" name="KOFlow57" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="60,394,-2695,24;2156,396,-599,26;2609,397,-146,27">
+        <LinkParameter id="mov2#mpkg1#opm31#scu49#kln175#par1023" name="Error al obtener el CERT_Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Error al obtener el CERT"/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit id="mov2#mpkg1#opm31#scu50" name="VerificarSHA1deAmbosModulusYdiscernirPFoPM" gr:x="1555" gr:y="85" script="WEB-INF/descr/groovy/verificarSHA1deAmbosModules.groovy">
+      <OKLink id="mov2#mpkg1#opm31#scu50#oln312" name="OKFlow709" to="mov2#mpkg1#opm31#switch13">
+        <LinkParameter id="mov2#mpkg1#opm31#scu50#oln312#par1024" name="ruteo_Switch" source="result(ruteo)" target="mov2#mpkg1#opm31#switch13.switch"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#opm31#scu50#ln399" name="Flow6964" to="mov2#mpkg1#opm31#switch14" type="transport" validate="true" gr:bendpoints="337,-171,-858,-66;923,-179,-272,-74">
+        <LinkParameter id="mov2#mpkg1#opm31#scu50#ln399#par1025" name="activo_Switch" source="result(activo)" target="mov2#mpkg1#opm31#switch14.switch"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#scu50#ln400" name="Flow6964" to="mov2#mpkg1#opm31#switch15" type="transport" validate="true" gr:bendpoints="136,94,-1059,-1;325,93,-870,-2;481,25,-714,-70;1090,19,-105,-76">
+        <LinkParameter id="mov2#mpkg1#opm31#scu50#ln400#par1026" name="activo_Switch" source="result(activo)" target="mov2#mpkg1#opm31#switch15.switch"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#scu50#ln401" name="Flow7116" to="mov2#mpkg1#opm31#scu51" type="transport" validate="true" gr:bendpoints="120,-34,-340,71;274,-115,-186,-10">
+        <LinkParameter id="mov2#mpkg1#opm31#scu50#ln401#par1027" name="dirtySujeto_dirtySujeto" source="result(dirtySujeto)" target="mov2#mpkg1#opm31#scu51.dirtySujeto"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#scu50#ln402" name="Flow7123" to="mov2#mpkg1#opm31#okcu34" type="transport" validate="true" gr:bendpoints="347,-235,-2128,-100;1067,-243,-1408,-108;2251,-254,-224,-119">
+        <LinkParameter id="mov2#mpkg1#opm31#scu50#ln402#par1028" name="certificadoX509_modulus" source="result(certificadoX509)" target="mov2#mpkg1#opm31#okcu34#ocp110"/>
+      </Link>
+      <Link id="mov2#mpkg1#opm31#scu50#ln403" name="Flow7130" to="mov2#mpkg1#opm31#okcu35" type="transport" validate="true" gr:bendpoints="136,85,-2339,-25;318,86,-2157,-24;477,11,-1998,-99;1248,8,-1227,-102;2244,18,-231,-92">
+        <LinkParameter id="mov2#mpkg1#opm31#scu50#ln403#par1029" name="modulus_modulus" source="result(certificadoX509)" target="mov2#mpkg1#opm31#okcu35#ocp122"/>
+      </Link>
+      <KOLink id="mov2#mpkg1#opm31#scu50#kln176" name="KOFlow58" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="150,388,-2310,18;992,390,-1468,20;2311,389,-149,19">
+        <LinkParameter id="mov2#mpkg1#opm31#scu50#kln176#par1030" name="Error al verificar el SHA1 del Modulo_Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Error al verificar el SHA1 del Modulo"/>
+      </KOLink>
+    </ScriptUnit>
+    <SwitchUnit id="mov2#mpkg1#opm31#switch13" name="Ruteo SHA1" gr:x="1980" gr:y="85">
+      <OKLink id="mov2#mpkg1#opm31#switch13#oln313" name="OKFlow710" to="mov2#mpkg1#opm31#scu51" code="1PF" automaticCoupling="true"/>
+      <OKLink id="mov2#mpkg1#opm31#switch13#oln314" name="OKFlow710" to="mov2#mpkg1#opm31#scu54" code="1PM" automaticCoupling="true"/>
+      <OKLink id="mov2#mpkg1#opm31#switch13#oln315" name="OKFlow743" to="mov2#mpkg1#opm31#kocu27" code="0PF" gr:bendpoints="-28,42,-2178,-328;68,379,-2082,9">
+        <LinkParameter id="mov2#mpkg1#opm31#switch13#oln315#par1031" name="Has intentado autenticar una persona f&#237;sica, pero no coinciden el .KEY con el .CER, intenta con los archivos correctos._Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Has intentado autenticar una persona f&#237;sica, pero no coinciden el .KEY con el .CER, intenta con los archivos correctos."/>
+      </OKLink>
+      <OKLink id="mov2#mpkg1#opm31#switch13#oln316" name="OKFlow744" to="mov2#mpkg1#opm31#kocu27" code="0PM" gr:bendpoints="4,47,-2146,-323;97,353,-2053,-17">
+        <LinkParameter id="mov2#mpkg1#opm31#switch13#oln316#par1032" name="Has intentado autenticar una persona f&#237;sica, pero no coinciden el .KEY con el .CER, intenta con los archivos correctos._Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Has intentado autenticar una persona moral, pero no coinciden el .KEY con el .CER."/>
+      </OKLink>
+      <Case value="1PM"/>
+      <Case value="0PF"/>
+      <Case value="1PF"/>
+      <Case value="0PM"/>
+      <OKLink id="mov2#mpkg1#opm31#switch13#oln317" name="OKFlow858" to="mov2#mpkg1#opm31#kocu27" automaticCoupling="true" gr:bendpoints="-15,40,-2165,-330;80,367,-2070,-3"/>
+    </SwitchUnit>
+    <SwitchUnit id="mov2#mpkg1#opm31#switch14" name="&#191;CERT activo?" gr:x="2860" gr:y="-20">
+      <Case value="true"/>
+      <OKLink id="mov2#mpkg1#opm31#switch14#oln318" name="OKFlow711" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="82,57,-1183,-418;847,67,-418,-408">
+        <LinkParameter id="mov2#mpkg1#opm31#switch14#oln318#par1033" name="Tu certificado ha caducado. Haz una cita en el SAT para renovar tu e.firma. Estamos para servirte._Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Tu certificado ha caducado. Haz una cita en el SAT para renovar tu e.firma. Estamos para servirte."/>
+      </OKLink>
+      <OKLink id="mov2#mpkg1#opm31#switch14#oln319" name="OKFlow721" to="mov2#mpkg1#opm31#miu32" code="true" automaticCoupling="true"/>
+    </SwitchUnit>
+    <ModuleInstanceUnit id="mov2#mpkg1#opm31#miu32" gr:x="3055" gr:y="-25" action="true" moduleId="mov2#mpkg1#opm24">
+      <KOLink id="mov2#mpkg1#opm31#miu32#kln177" name="KOFlow23" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="80,53,-975,-422;642,57,-413,-418">
+        <LinkParameter id="mov2#mpkg1#opm31#miu32#kln177#par1034" name="Error_Error" source="mov2#mpkg1#opm24#kocu21#ocp76" target="mov2#mpkg1#opm31#kocu27#ocp114"/>
+      </KOLink>
+      <OKLink id="mov2#mpkg1#opm31#miu32#oln320" name="OKFlow845" to="mov2#mpkg1#opm31#scu53" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="mov2#mpkg1#opm31#miu33" gr:x="3055" gr:y="175" action="true" moduleId="mov2#mpkg1#opm24">
+      <KOLink id="mov2#mpkg1#opm31#miu33#kln178" name="KOFlow23" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="61,230,-994,-45">
+        <LinkParameter id="mov2#mpkg1#opm31#miu33#kln178#par1035" name="Error_Error" source="mov2#mpkg1#opm24#kocu21#ocp76" target="mov2#mpkg1#opm31#kocu27#ocp114"/>
+      </KOLink>
+      <OKLink id="mov2#mpkg1#opm31#miu33#oln321" name="OKFlow851" to="mov2#mpkg1#opm31#scu56" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <SwitchUnit id="mov2#mpkg1#opm31#switch15" name="&#191;CERT activo?" gr:x="2860" gr:y="180">
+      <Case value="true"/>
+      <OKLink id="mov2#mpkg1#opm31#switch15#oln322" name="OKFlow711" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="48,231,-1217,-44">
+        <LinkParameter id="mov2#mpkg1#opm31#switch15#oln322#par1036" name="Tu certificado ha caducado. Haz una cita en el SAT para renovar tu e.firma. Estamos para servirte._Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Tu certificado ha caducado. Haz una cita en el SAT para renovar tu e.firma. Estamos para servirte."/>
+      </OKLink>
+      <OKLink id="mov2#mpkg1#opm31#switch15#oln323" name="OKFlow721" to="mov2#mpkg1#opm31#miu33" code="true" automaticCoupling="true"/>
+    </SwitchUnit>
+    <ScriptUnit id="mov2#mpkg1#opm31#scu51" name="Obtener datos PF" gr:x="2115" gr:y="-20" script="WEB-INF/descr/groovy/obtenerDatosPF.groovy">
+      <OKLink id="mov2#mpkg1#opm31#scu51#oln324" name="OKFlow841" to="mov2#mpkg1#opm31#scu52">
+        <LinkParameter id="mov2#mpkg1#opm31#scu51#oln324#par1037" name="CURP_curpDelCer" source="result(CURP)" target="mov2#mpkg1#opm31#scu52.curpDelCer"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#opm31#scu51#ln404" name="Flow7122" to="mov2#mpkg1#opm31#okcu34" type="transport" validate="true" gr:bendpoints="161,-116,-1854,-116;714,-135,-1301,-105;1767,-142,-248,-112">
+        <LinkParameter id="mov2#mpkg1#opm31#scu51#ln404#par1038" name="nombreCompleto_nombreCompleto" source="result(nombreCompleto)" target="mov2#mpkg1#opm31#okcu34#ocp109"/>
+      </Link>
+      <KOLink id="mov2#mpkg1#opm31#scu51#kln179" name="KOFlow64" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="97,60,-1903,-415;1556,94,-444,-381">
+        <LinkParameter id="mov2#mpkg1#opm31#scu51#kln179#par1039" name="Error al obtener los datos de la persona f&#237;sica._Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Error al obtener los datos de la persona f&#237;sica."/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit id="mov2#mpkg1#opm31#scu52" name="Comparar CURPs" gr:x="2330" gr:y="-20" script="WEB-INF/descr/groovy/compararCURPS.groovy">
+      <OKLink id="mov2#mpkg1#opm31#scu52#oln325" name="OKFlow842" to="mov2#mpkg1#opm31#switch16">
+        <LinkParameter id="mov2#mpkg1#opm31#scu52#oln325#par1040" name="ruteo_Switch" source="result(ruteo)" target="mov2#mpkg1#opm31#switch16.switch"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#opm31#scu52#ln405" name="Flow7124" to="mov2#mpkg1#opm31#okcu34" type="transport" validate="true" gr:bendpoints="363,-118,-1437,-88;1547,-125,-253,-95">
+        <LinkParameter id="mov2#mpkg1#opm31#scu52#ln405#par1041" name="curpDelCer_CURPfirmante" source="result(curpDelCer)" target="mov2#mpkg1#opm31#okcu34#ocp104"/>
+      </Link>
+      <KOLink id="mov2#mpkg1#opm31#scu52#kln180" name="KOFlow63" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="53,58,-1732,-417;1350,86,-435,-389">
+        <LinkParameter id="mov2#mpkg1#opm31#scu52#kln180#par1042" name="Error al comparar el RFC del firmante con el del certificado._Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Error al comparar el RFC del firmante con el del certificado."/>
+      </KOLink>
+    </ScriptUnit>
+    <SwitchUnit id="mov2#mpkg1#opm31#switch16" name="CURP firmante coincide" gr:x="2555" gr:y="-20">
+      <Case value="1"/>
+      <OKLink id="mov2#mpkg1#opm31#switch16#oln326" name="OKFlow843" to="mov2#mpkg1#opm31#switch14" code="1" automaticCoupling="true"/>
+      <OKLink id="mov2#mpkg1#opm31#switch16#oln327" name="OKFlow844" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="111,59,-1429,-416;690,69,-850,-406;1110,76,-430,-399">
+        <LinkParameter id="mov2#mpkg1#opm31#switch16#oln327#par1043" name="La e.firma que est&#225;s utilizando no est&#225; autorizada para firmar este documento, por favor usa la e.firma correcta._Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Favor de verificar la e.firma proporcionada ya que no corresponde con la del Representante Legal asociado a la persona moral."/>
+      </OKLink>
+    </SwitchUnit>
+    <ScriptUnit id="mov2#mpkg1#opm31#scu53" name="Firma cadena SHA 256" gr:x="3385" gr:y="-20" script="WEB-INF/descr/groovy/firmarCadenaSHA256.groovy">
+      <OKLink id="mov2#mpkg1#opm31#scu53#oln328" name="OKFlow846" to="mov2#mpkg1#opm31#okcu34">
+        <LinkParameter id="mov2#mpkg1#opm31#scu53#oln328#par1044" name="certificadoX509_certificadoX509" source="result(certificadoX509)" target="mov2#mpkg1#opm31#okcu34#ocp113"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu53#oln328#par1045" name="caducidadCertificado_fechaCaducidad" source="result(caducidadCertificado)" target="mov2#mpkg1#opm31#okcu34#ocp103"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu53#oln328#par1046" name="inscripcionCertificado_fechaInscripcion" source="result(inscripcionCertificado)" target="mov2#mpkg1#opm31#okcu34#ocp112"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu53#oln328#par1047" name="hashCadenaOriginal_hashCadenaOriginal" source="result(hashCadenaOriginal)" target="mov2#mpkg1#opm31#okcu34#ocp111"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu53#oln328#par1048" name="nombreEmisorCert_nombreEmisorCERT" source="result(nombreEmisorCert)" target="mov2#mpkg1#opm31#okcu34#ocp108"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu53#oln328#par1049" name="nombreSujetoX509_nombreSujetoX509" source="result(nombreSujetoX509)" target="mov2#mpkg1#opm31#okcu34#ocp107"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu53#oln328#par1050" name="selloDigital_selloDigital" source="result(selloDigital)" target="mov2#mpkg1#opm31#okcu34#ocp106"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu53#oln328#par1051" name="serialNum_serieCERT" source="result(serialNum)" target="mov2#mpkg1#opm31#okcu34#ocp105"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg1#opm31#scu53#kln181" name="KOFlow62" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="96,46,-614,-429;298,46,-412,-429">
+        <LinkParameter id="mov2#mpkg1#opm31#scu53#kln181#par1052" name="Error al firmas la cadena SHA 256_Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Error al firmas la cadena SHA 256"/>
+      </KOLink>
+    </ScriptUnit>
+    <OKCollectorUnit id="mov2#mpkg1#opm31#okcu35" name="OK PM" gr:x="4070" gr:y="105">
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu35#ocp115" name="fechaCaducidad"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu35#ocp116" name="RFCfirmante"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu35#ocp117" name="serieCERT"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu35#ocp118" name="selloDigital"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu35#ocp119" name="nombreSujetoX509"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu35#ocp120" name="nombreEmisorCERT"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu35#ocp121" name="razonSocial"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu35#ocp122" name="modulus"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu35#ocp123" name="hashCadenaOriginal"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu35#ocp124" name="fechaInscripcion"/>
+      <OutputCollectorParameter id="mov2#mpkg1#opm31#okcu35#ocp125" name="certificadoX509"/>
+    </OKCollectorUnit>
+    <ScriptUnit id="mov2#mpkg1#opm31#scu54" name="Obtener datos PM" gr:x="2105" gr:y="180" script="WEB-INF/descr/groovy/obtenerDatosPM.groovy">
+      <OKLink id="mov2#mpkg1#opm31#scu54#oln329" name="OKFlow847" to="mov2#mpkg1#opm31#scu55">
+        <LinkParameter id="mov2#mpkg1#opm31#scu54#oln329#par1053" name="curpRepLeg_curpDelCer" source="result(curpRepLeg)" target="mov2#mpkg1#opm31#scu55.curpDelCer"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#opm31#scu54#ln406" name="Flow7131" to="mov2#mpkg1#opm31#okcu35" type="transport" validate="true" gr:bendpoints="144,-125,-1876,-140;1801,-104,-219,-119">
+        <LinkParameter id="mov2#mpkg1#opm31#scu54#ln406#par1054" name="razonSocial_razonSocial" source="result(razonSocial)" target="mov2#mpkg1#opm31#okcu35#ocp121"/>
+      </Link>
+      <KOLink id="mov2#mpkg1#opm31#scu54#kln182" name="KOFlow59" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="104,249,-1901,-26">
+        <LinkParameter id="mov2#mpkg1#opm31#scu54#kln182#par1055" name="Error al obtener los datos de la persona moral._Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Error al obtener los datos de la persona moral."/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit id="mov2#mpkg1#opm31#scu55" name="Comparar RFCs" gr:x="2345" gr:y="180" script="WEB-INF/descr/groovy/compararCURPS.groovy">
+      <OKLink id="mov2#mpkg1#opm31#scu55#oln330" name="OKFlow848" to="mov2#mpkg1#opm31#switch17">
+        <LinkParameter id="mov2#mpkg1#opm31#scu55#oln330#par1056" name="ruteo_Switch" source="result(ruteo)" target="mov2#mpkg1#opm31#switch17.switch"/>
+      </OKLink>
+      <Link id="mov2#mpkg1#opm31#scu55#ln407" name="Flow7129" to="mov2#mpkg1#opm31#okcu35" type="transport" validate="true" gr:bendpoints="255,-112,-1535,-127;1563,-91,-227,-106">
+        <LinkParameter id="mov2#mpkg1#opm31#scu55#ln407#par1057" name="rfcDelCer_RFCfirmante" source="result(curpDelCer)" target="mov2#mpkg1#opm31#okcu35#ocp116"/>
+      </Link>
+      <KOLink id="mov2#mpkg1#opm31#scu55#kln183" name="KOFlow60" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="68,235,-1707,-40">
+        <LinkParameter id="mov2#mpkg1#opm31#scu55#kln183#par1058" name="Error al comparar el RFC del firmante con el del certificado._Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Error al comparar el RFC del firmante con el del certificado."/>
+      </KOLink>
+    </ScriptUnit>
+    <SwitchUnit id="mov2#mpkg1#opm31#switch17" name="RFC firmante coincide" gr:x="2555" gr:y="180">
+      <Case value="1"/>
+      <OKLink id="mov2#mpkg1#opm31#switch17#oln331" name="OKFlow849" to="mov2#mpkg1#opm31#switch15" code="1" automaticCoupling="true"/>
+      <OKLink id="mov2#mpkg1#opm31#switch17#oln332" name="OKFlow850" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="54,231,-1491,-44">
+        <LinkParameter id="mov2#mpkg1#opm31#switch17#oln332#par1059" name="La e.firma que est&#225;s utilizando no est&#225; autorizada para firmar este documento, por favor usa la e.firma correcta._Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Favor de verificar la informaci&#243;n de la e.firma de la sociedad ya que los datos del Representante Legal asociado a dicha persona moral no corresponden.   Si el Representante Legal cambio, debes acudir al Servicio de Administraci&#243;n Tributaria para actualizar la informaci&#243;n."/>
+      </OKLink>
+    </SwitchUnit>
+    <ScriptUnit id="mov2#mpkg1#opm31#scu56" name="Firma cadena SHA 256" gr:x="3385" gr:y="180" script="WEB-INF/descr/groovy/firmarCadenaSHA256.groovy">
+      <OKLink id="mov2#mpkg1#opm31#scu56#oln333" name="OKFlow852" to="mov2#mpkg1#opm31#okcu35">
+        <LinkParameter id="mov2#mpkg1#opm31#scu56#oln333#par1060" name="certificadoX509_certificadoX509" source="result(certificadoX509)" target="mov2#mpkg1#opm31#okcu35#ocp125"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu56#oln333#par1061" name="caducidadCertificado_fechaCaducidad" source="result(caducidadCertificado)" target="mov2#mpkg1#opm31#okcu35#ocp115"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu56#oln333#par1062" name="inscripcionCertificado_fechaInscripcion" source="result(inscripcionCertificado)" target="mov2#mpkg1#opm31#okcu35#ocp124"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu56#oln333#par1063" name="hashCadenaOriginal_hashCadenaOriginal" source="result(hashCadenaOriginal)" target="mov2#mpkg1#opm31#okcu35#ocp123"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu56#oln333#par1064" name="nombreEmisorCert_nombreEmisorCERT" source="result(nombreEmisorCert)" target="mov2#mpkg1#opm31#okcu35#ocp120"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu56#oln333#par1065" name="nombreSujetoX509_nombreSujetoX509" source="result(nombreSujetoX509)" target="mov2#mpkg1#opm31#okcu35#ocp119"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu56#oln333#par1066" name="selloDigital_selloDigital" source="result(selloDigital)" target="mov2#mpkg1#opm31#okcu35#ocp118"/>
+        <LinkParameter id="mov2#mpkg1#opm31#scu56#oln333#par1067" name="serialNum_serieCERT" source="result(serialNum)" target="mov2#mpkg1#opm31#okcu35#ocp117"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg1#opm31#scu56#kln184" name="KOFlow56" to="mov2#mpkg1#opm31#kocu27" gr:bendpoints="113,240,-597,-35">
+        <LinkParameter id="mov2#mpkg1#opm31#scu56#kln184#par1068" name="Error al firmar la cadena con SHA 256_Error" target="mov2#mpkg1#opm31#kocu27#ocp114" sourceValue="Error al firmar la cadena con SHA 256"/>
+      </KOLink>
+    </ScriptUnit>
+  </OperationUnits>
+</OperationModule>

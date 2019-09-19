@@ -1,0 +1,13 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#hym10" name="Confirmacion" gr:x="1490" gr:y="340">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#hym10#icu29" gr:x="-240" gr:y="-30">
+      <InputCollectorParameter id="mov2#hym10#icu29#icp89" name="mensaje"/>
+      <Link id="mov2#hym10#icu29#ln229" name="Flow138" to="mov2#hym10#page28#mssu10" type="transport" validate="true">
+        <LinkParameter id="mov2#hym10#icu29#ln229#par607" name="mensaje_Shown Messages" source="mov2#hym10#icu29#icp89" target="mov2#hym10#page28#mssu10.shownMessages"/>
+      </Link>
+      <OKLink id="mov2#hym10#icu29#oln161" name="OKFlow174" to="mov2#hym10#page28" automaticCoupling="true" ajaxOpenWindow="true" ajaxWindowUseTitle="false" ajaxWindowWidth="600" ajaxWindowHeight="300" ajaxWindowModal="true" gr:bendpoints="110,23,-195,-2"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#hym10#okcu24" name="OK " gr:x="400" gr:y="-50"/>
+    <KOCollectorUnit id="mov2#hym10#kocu18" name="KO" gr:x="400" gr:y="140"/>
+  </OperationUnits>
+</HybridModule>

@@ -1,0 +1,36 @@
+<OperationModule xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm52" gr:x="3915" gr:y="5" name="Poder Notarial (Web Service) - Fedatario - validarXML" bpm:moduleType="activity" bpm:uuids="JG01H7LW_FYBDCX.JLXW1RWJ_ZIAO5W">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm52#icu76" name="Input" gr:x="0" gr:y="0">
+      <OKLink id="mov1#opm52#icu76#oln168" name="OKLink" automaticCoupling="false" to="mov1#opm52#apu5"/>
+    </InputCollectorUnit>
+    <ProcessUnit id="mov1#opm52#pu15" name="Complete Activity" mode="completeActivity" gr:x="985" gr:y="0"/>
+    <ActivityParametersUnit id="mov1#opm52#apu5" name="Get Parameters" gr:x="265" gr:y="10">
+      <OKLink id="mov1#opm52#apu5#oln169" name="OKLink" automaticCoupling="false" to="mov1#opm52#seu99"/>
+    </ActivityParametersUnit>
+    <NoOpOperationUnit id="mov1#opm52#opu1" name="Operation" gr:x="440" gr:y="10">
+      <OKLink id="mov1#opm52#opu1#oln170" name="OKLink" automaticCoupling="false" to="mov1#opm52#apu23"/>
+    </NoOpOperationUnit>
+    <ActivityParametersUnit id="mov1#opm52#apu23" name="Set Parameters" gr:x="635" gr:y="10">
+      <OKLink id="mov1#opm52#apu23#oln171" name="OKLink" automaticCoupling="false" to="mov1#opm52#pu15"/>
+    </ActivityParametersUnit>
+    <SelectorUnit gr:x="430" gr:y="115" id="mov1#opm52#seu43" name="prueba" entity="ent46">
+      <Selector id="mov1#opm52#seu43#su189" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#opm52#seu43#su189#acond111" name="rfc" predicate="eq" booleanOperator="or" implied="false" attributes="ent46#att301"/>
+      </Selector>
+      <OKLink id="mov1#opm52#seu43#oln621" name="OKFlow621" to="mov1#opm52#opu1" automaticCoupling="true"/>
+    </SelectorUnit>
+    <SelectorUnit gr:x="280" gr:y="110" id="mov1#opm52#seu99" name="pf" entity="ent39">
+      <Selector id="mov1#opm52#seu99#su46" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm52#seu99#su46#kcond27" name="KeyCondition27" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm52#seu99#oln620" name="OKFlow620" to="mov1#opm52#seu43">
+        <LinkParameter id="mov1#opm52#seu99#oln620#par2222" name="RFC_rfc" source="ent39#att268Array" target="mov1#opm52#seu43#su189#acond111"/>
+      </OKLink>
+    </SelectorUnit>
+    <GetUnit gr:x="125" gr:y="120" id="mov1#opm52#gtu34" name="getUser" contextParameters="UserCtxParam" linkOrder="mov1#opm52#gtu34#ln510">
+      <Link id="mov1#opm52#gtu34#ln510" name="Flow510" to="mov1#opm52#seu99" type="transport" validate="true">
+        <LinkParameter id="mov1#opm52#gtu34#ln510#par2221" name="UserCtxParam.oid_KeyCondition27 [oid]" source="mov1#opm52#gtu34.UserCtxParam" target="mov1#opm52#seu99#su46#kcond27.userOID"/>
+      </Link>
+    </GetUnit>
+  </OperationUnits>
+</OperationModule>

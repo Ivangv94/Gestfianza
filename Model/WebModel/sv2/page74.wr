@@ -1,0 +1,54 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1370" gr:y="505" id="sv2#page74" name="Agregar Elemento" localized="true">
+  <ContentUnits>
+    <MultiMessageUnit id="sv2#page74#mssu22" name="Error" gr:x="100" gr:y="0"/>
+    <EntryUnit id="sv2#page74#enu102" name="Agregar Elemento" gr:x="0" gr:y="10" linkOrder="sv2#page74#enu102#ln342">
+      <Field id="sv2#page74#enu102#fld188" name="nombre" type="string" modifiable="true" preloaded="false"/>
+      <Field id="sv2#page74#enu102#fld189" name="valor" type="string" modifiable="true" preloaded="false"/>
+      <Link id="sv2#page74#enu102#ln342" name="Agregar Elemento" to="sv2#cru7" type="normal" validate="true">
+        <LinkParameter id="sv2#page74#enu102#ln342#par1003" name="nombre_elemento administrable" source="sv2#page74#enu102#fld188" target="sv2#cru7.ent2#att11"/>
+        <LinkParameter id="sv2#page74#enu102#ln342#par1004" name="valor_valor" source="sv2#page74#enu102#fld189" target="sv2#cru7.ent2#att12"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv2#page74#mssu22"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv2#page74#enu102" layout:frameLayout="None">
+          <layout:Field field="sv2#page74#enu102#fld188"/>
+          <layout:Field field="sv2#page74#enu102#fld189"/>
+          <layout:Link link="sv2#page74#enu102#ln342" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:LayoutParameter name="panel-type" value="danger" type="frame"/>
+  </layout:Grid>
+</Page>

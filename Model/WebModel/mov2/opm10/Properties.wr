@@ -1,0 +1,275 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm10" name="Comparacion Datos" gr:x="1155" gr:y="300">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm10#icu17" gr:x="-40" gr:y="60" linkOrder="mov2#opm10#icu17#ln643">
+      <InputCollectorParameter id="mov2#opm10#icu17#icp21" name="curp"/>
+      <InputCollectorParameter id="mov2#opm10#icu17#icp22" name="rfc"/>
+      <InputCollectorParameter id="mov2#opm10#icu17#icp23" name="nombres"/>
+      <InputCollectorParameter id="mov2#opm10#icu17#icp24" name="ap1"/>
+      <InputCollectorParameter id="mov2#opm10#icu17#icp25" name="ap2"/>
+      <InputCollectorParameter id="mov2#opm10#icu17#icp26" name="feNa"/>
+      <InputCollectorParameter id="mov2#opm10#icu17#icp27" name="cadena"/>
+      <OKLink id="mov2#opm10#icu17#oln101" name="OKFlow71" to="mov2#opm10#switch7">
+        <LinkParameter id="mov2#opm10#icu17#oln101#par261" name="curp_PASSING" source="mov2#opm10#icu17#icp21" passing="true"/>
+        <LinkParameter id="mov2#opm10#icu17#oln101#par262" name="rfc_PASSING" source="mov2#opm10#icu17#icp22" passing="true"/>
+        <LinkParameter id="mov2#opm10#icu17#oln101#par263" name="ap1_PASSING" source="mov2#opm10#icu17#icp24" passing="true"/>
+        <LinkParameter id="mov2#opm10#icu17#oln101#par264" name="ap2_PASSING" source="mov2#opm10#icu17#icp25" passing="true"/>
+        <LinkParameter id="mov2#opm10#icu17#oln101#par265" name="feNa_PASSING" source="mov2#opm10#icu17#icp26" passing="true"/>
+        <LinkParameter id="mov2#opm10#icu17#oln101#par266" name="nombres_PASSING" source="mov2#opm10#icu17#icp23" passing="true"/>
+        <LinkParameter id="mov2#opm10#icu17#oln101#par267" name="identico_Switch" source="mov2#opm10#icu17#icp28" target="mov2#opm10#switch7.switch"/>
+        <LinkParameter id="mov2#opm10#icu17#oln101#par268" name="cadena_PASSING" source="mov2#opm10#icu17#icp27" passing="true"/>
+        <LinkParameter id="mov2#opm10#icu17#oln101#par269" name="identico_PASSING" source="mov2#opm10#icu17#icp28" passing="true"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm10#icu17#icp28" name="identico"/>
+      <Link id="mov2#opm10#icu17#ln643" name="Flow643" to="mov2#opm10#miu6" type="transport" validate="true" gr:bendpoints="180,-50,-1110,-50;1140,-50,-150,-50">
+        <LinkParameter id="mov2#opm10#icu17#ln643#par300" name="rfc_rfc" source="mov2#opm10#icu17#icp22" target="mov2#opm10#miu6.mov2#opm9#icu16#icp20"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#opm10#okcu4" name="OK" gr:x="1880" gr:y="110">
+      <OutputCollectorParameter id="mov2#opm10#okcu4#ocp22" name="identico"/>
+    </OKCollectorUnit>
+    <ModuleInstanceUnit id="mov2#opm10#miu4" gr:x="790" gr:y="115" action="true" moduleId="mov2#opm5">
+      <OKLink id="mov2#opm10#miu4#oln102" name="OKFlow36" to="mov2#opm10#switch6">
+        <LinkParameter id="mov2#opm10#miu4#oln102#par270" name="verRFC_PASSING_Switch" sourceLinkParameter="mov2#opm10#switch4#oln104#par303" target="mov2#opm10#switch6.switch"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par271" name="verINE_PASSING" sourceLinkParameter="mov2#opm10#switch4#oln104#par301" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par272" name="verPasaporte_PASSING" sourceLinkParameter="mov2#opm10#switch4#oln104#par302" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par273" name="verRFC_PASSING" sourceLinkParameter="mov2#opm10#switch4#oln104#par303" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par281" name="ap1_PASSING" sourceLinkParameter="mov2#opm10#switch4#oln104#par305" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par282" name="ap2_PASSING" sourceLinkParameter="mov2#opm10#switch4#oln104#par306" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par283" name="curp_PASSING" sourceLinkParameter="mov2#opm10#switch4#oln104#par307" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par284" name="feNa_PASSING" sourceLinkParameter="mov2#opm10#switch4#oln104#par308" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par285" name="nombres_PASSING" sourceLinkParameter="mov2#opm10#switch4#oln104#par309" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par286" name="rfc_PASSING" sourceLinkParameter="mov2#opm10#switch4#oln104#par310" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par1424" name="rAnio_PASSING" source="mov2#opm5#okcu1#ocp8" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par1425" name="rAp1_PASSING" source="mov2#opm5#okcu1#ocp4" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par1426" name="rAp2_PASSING" source="mov2#opm5#okcu1#ocp5" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par1427" name="rCurp_PASSING" source="mov2#opm5#okcu1#ocp9" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par1428" name="rDia_PASSING" source="mov2#opm5#okcu1#ocp6" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par1429" name="rMes_PASSING" source="mov2#opm5#okcu1#ocp7" passing="true"/>
+        <LinkParameter id="mov2#opm10#miu4#oln102#par1430" name="rNombres_PASSING" source="mov2#opm5#okcu1#ocp1" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#opm10#miu4#kln32" name="KOFlow15" to="mov2#opm10#kocu6" gr:bendpoints="94,229,-996,-16;904,239,-186,-6">
+        <LinkParameter id="mov2#opm10#miu4#kln32#par287" name="Error al consultar CURP_mensaje" target="mov2#opm10#kocu6#ocp23" source="mov2#opm5#kocu1#ocp10"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <KOCollectorUnit id="mov2#opm10#kocu6" name="KO" gr:x="1880" gr:y="355">
+      <OutputCollectorParameter id="mov2#opm10#kocu6#ocp23" name="mensaje"/>
+    </KOCollectorUnit>
+    <SwitchUnit id="mov2#opm10#switch4" name="verCurp?" gr:x="630" gr:y="120">
+      <OKLink id="mov2#opm10#switch4#oln104" name="OKFlow73" to="mov2#opm10#miu4" code="CURP">
+        <LinkParameter id="mov2#opm10#switch4#oln104#par301" name="verINE_PASSING" sourceLinkParameter="mov2#opm10#scu8#oln106#par327" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch4#oln104#par302" name="verPasaporte_PASSING" sourceLinkParameter="mov2#opm10#scu8#oln106#par328" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch4#oln104#par303" name="verRFC_PASSING" sourceLinkParameter="mov2#opm10#scu8#oln106#par326" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch4#oln104#par305" name="ap1_PASSING" sourceLinkParameter="mov2#opm10#scu8#oln106#par332" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch4#oln104#par306" name="ap2_PASSING" sourceLinkParameter="mov2#opm10#scu8#oln106#par334" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch4#oln104#par307" name="curp_PASSING" sourceLinkParameter="mov2#opm10#scu8#oln106#par335" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch4#oln104#par308" name="feNa_PASSING" sourceLinkParameter="mov2#opm10#scu8#oln106#par337" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch4#oln104#par309" name="nombres_PASSING" sourceLinkParameter="mov2#opm10#scu8#oln106#par338" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch4#oln104#par310" name="rfc_PASSING" sourceLinkParameter="mov2#opm10#scu8#oln106#par339" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch4#oln104#par311" name="verCurp_PASSING" sourceLinkParameter="mov2#opm10#scu8#oln106#par340" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch4#oln104#par1423" name="curp_PASSING_curp" sourceLinkParameter="mov2#opm10#scu8#oln106#par335" target="mov2#opm10#miu4.mov2#opm5#icu10#icp1"/>
+      </OKLink>
+      <Case value="CURP"/>
+    </SwitchUnit>
+    <ScriptUnit id="mov2#opm10#scu8" name="revisaCadena" gr:x="445" gr:y="120">
+      <ScriptUnitText xml:space="preserve">#input cadena
+#output verCurp, verRFC, verPasaporte, verINE
+
+boolean verRFC = false
+boolean verPasaporte = false
+boolean verINE = false
+boolean verCurp = false
+
+
+if (cadena.indexOf('Credencial de Elector') != -1)
+{
+    verINE = true
+}
+
+
+if (cadena.indexOf('RFC') != -1)
+{
+    verRFC = true
+}
+
+if (cadena.indexOf('Pasaporte') != -1)
+{
+    verPasaporte = true
+}
+
+if (cadena.indexOf('CURP') != -1)
+{
+    verCurp = true
+}
+
+
+return["verRFC":verRFC, "verPasaporte":verPasaporte, "verINE":verINE, "verCurp":verCurp]</ScriptUnitText>
+      <OKLink id="mov2#opm10#scu8#oln106" name="OKFlow72" to="mov2#opm10#switch4">
+        <LinkParameter id="mov2#opm10#scu8#oln106#par325" name="verCurp_Switch" target="mov2#opm10#switch4.switch" sourceValue="CURP"/>
+        <LinkParameter id="mov2#opm10#scu8#oln106#par326" name="verRFC_PASSING" source="result(verRFC)" passing="true"/>
+        <LinkParameter id="mov2#opm10#scu8#oln106#par327" name="verINE_PASSING" source="result(verINE)" passing="true"/>
+        <LinkParameter id="mov2#opm10#scu8#oln106#par328" name="verPasaporte_PASSING" source="result(verPasaporte)" passing="true"/>
+        <LinkParameter id="mov2#opm10#scu8#oln106#par332" name="ap1_PASSING" sourceLinkParameter="mov2#opm10#switch7#oln115#par427" passing="true"/>
+        <LinkParameter id="mov2#opm10#scu8#oln106#par334" name="ap2_PASSING" sourceLinkParameter="mov2#opm10#switch7#oln115#par428" passing="true"/>
+        <LinkParameter id="mov2#opm10#scu8#oln106#par335" name="curp_PASSING" sourceLinkParameter="mov2#opm10#switch7#oln115#par429" passing="true"/>
+        <LinkParameter id="mov2#opm10#scu8#oln106#par337" name="feNa_PASSING" sourceLinkParameter="mov2#opm10#switch7#oln115#par430" passing="true"/>
+        <LinkParameter id="mov2#opm10#scu8#oln106#par338" name="nombres_PASSING" sourceLinkParameter="mov2#opm10#switch7#oln115#par431" passing="true"/>
+        <LinkParameter id="mov2#opm10#scu8#oln106#par339" name="rfc_PASSING" sourceLinkParameter="mov2#opm10#switch7#oln115#par432" passing="true"/>
+        <LinkParameter id="mov2#opm10#scu8#oln106#par340" name="verCurp_PASSING" source="result(verCurp)" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#opm10#scu8#kln49" name="KOFlow49" to="mov2#opm10#kocu6" gr:bendpoints="72,256,-1418,-9">
+        <LinkParameter id="mov2#opm10#scu8#kln49#par1419" name="Error al revisar la cadena._mensaje" sourceValue="Error al revisar la cadena." target="mov2#opm10#kocu6#ocp23"/>
+      </KOLink>
+    </ScriptUnit>
+    <SwitchUnit id="mov2#opm10#switch6" name="verRfc?" gr:x="1105" gr:y="120">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov2#opm10#switch6#oln109" name="OKFlow83" to="mov2#opm10#miu6" code="true">
+        <LinkParameter id="mov2#opm10#switch6#oln109#par355" name="verINE_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par271" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par357" name="verPasaporte_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par272" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par358" name="verRFC_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par273" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par368" name="ap1_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par281" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par369" name="ap2_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par282" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par370" name="curp_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par283" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par371" name="feNa_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par284" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par372" name="nombres_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par285" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par373" name="rfc_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par286" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par1432" name="rAnio_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par1424" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par1433" name="rAp1_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par1425" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par1434" name="rAp2_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par1426" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par1435" name="rCurp_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par1427" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par1436" name="rDia_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par1428" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par1437" name="rMes_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par1429" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch6#oln109#par1438" name="rNombres_PASSING" sourceLinkParameter="mov2#opm10#miu4#oln102#par1430" passing="true"/>
+      </OKLink>
+      <OKLink id="mov2#opm10#switch6#oln110" name="OKFlow84" to="mov2#opm10#scu11" code="false">
+        <LinkParameter id="mov2#opm10#switch6#oln110#par381" name="ap1_PASSING_ap1" sourceLinkParameter="mov2#opm10#miu4#oln102#par281" target="mov2#opm10#scu11.ap1"/>
+        <LinkParameter id="mov2#opm10#switch6#oln110#par382" name="ap2_PASSING_ap2" sourceLinkParameter="mov2#opm10#miu4#oln102#par282" target="mov2#opm10#scu11.ap2"/>
+        <LinkParameter id="mov2#opm10#switch6#oln110#par383" name="curp_PASSING_curp" sourceLinkParameter="mov2#opm10#miu4#oln102#par283" target="mov2#opm10#scu11.curp"/>
+        <LinkParameter id="mov2#opm10#switch6#oln110#par384" name="feNa_PASSING_feNa" sourceLinkParameter="mov2#opm10#miu4#oln102#par284" target="mov2#opm10#scu11.feNa"/>
+        <LinkParameter id="mov2#opm10#switch6#oln110#par385" name="nombres_PASSING_nombres" sourceLinkParameter="mov2#opm10#miu4#oln102#par285" target="mov2#opm10#scu11.nombres"/>
+        <LinkParameter id="mov2#opm10#switch6#oln110#par1446" name="rAnio_PASSING_rAnio" sourceLinkParameter="mov2#opm10#miu4#oln102#par1424" target="mov2#opm10#scu11.rAnio"/>
+        <LinkParameter id="mov2#opm10#switch6#oln110#par1447" name="rAp1_PASSING_rAp1" sourceLinkParameter="mov2#opm10#miu4#oln102#par1425" target="mov2#opm10#scu11.rAp1"/>
+        <LinkParameter id="mov2#opm10#switch6#oln110#par1448" name="rAp2_PASSING_rAp2" sourceLinkParameter="mov2#opm10#miu4#oln102#par1426" target="mov2#opm10#scu11.rAp2"/>
+        <LinkParameter id="mov2#opm10#switch6#oln110#par1449" name="rCurp_PASSING_rCurp" sourceLinkParameter="mov2#opm10#miu4#oln102#par1427" target="mov2#opm10#scu11.rCurp"/>
+        <LinkParameter id="mov2#opm10#switch6#oln110#par1450" name="rDia_PASSING_rDia" sourceLinkParameter="mov2#opm10#miu4#oln102#par1428" target="mov2#opm10#scu11.rDia"/>
+        <LinkParameter id="mov2#opm10#switch6#oln110#par1451" name="rMes_PASSING_rMes" sourceLinkParameter="mov2#opm10#miu4#oln102#par1429" target="mov2#opm10#scu11.rMes"/>
+        <LinkParameter id="mov2#opm10#switch6#oln110#par1452" name="rNombres_PASSING_rNombres" sourceLinkParameter="mov2#opm10#miu4#oln102#par1430" target="mov2#opm10#scu11.rNombres"/>
+      </OKLink>
+    </SwitchUnit>
+    <ModuleInstanceUnit id="mov2#opm10#miu6" gr:x="1265" gr:y="115" action="true" moduleId="mov2#opm9">
+      <KOLink id="mov2#opm10#miu6#kln34" name="KOFlow16" to="mov2#opm10#kocu6" gr:bendpoints="76,224,-784,-36;494,220,-136,-25">
+        <LinkParameter id="mov2#opm10#miu6#kln34#par386" name="Error al consultar RFC_mensaje" target="mov2#opm10#kocu6#ocp23" sourceValue="En este momento no se puede validar con el SAT"/>
+      </KOLink>
+      <OKLink id="mov2#opm10#miu6#oln111" name="OKFlow85" to="mov2#opm10#scu9">
+        <LinkParameter id="mov2#opm10#miu6#oln111#par388" name="anio_sAnio" source="mov2#opm9#okcu3#ocp16" target="mov2#opm10#scu9.sAnio"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par389" name="apellido1_sAp1" target="mov2#opm10#scu9.sAp1" source="mov2#opm9#okcu3#ocp18"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par393" name="apellido2_sAp2" target="mov2#opm10#scu9.sAp2" source="mov2#opm9#okcu3#ocp19"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par402" name="curp_sCurp" source="mov2#opm9#okcu3#ocp20" target="mov2#opm10#scu9.sCurp"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par403" name="dia_sDia" source="mov2#opm9#okcu3#ocp14" target="mov2#opm10#scu9.sDia"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par404" name="mes_sMes" source="mov2#opm9#okcu3#ocp15" target="mov2#opm10#scu9.sMes"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par406" name="nombres_sNombres" source="mov2#opm9#okcu3#ocp17" target="mov2#opm10#scu9.sNombres"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par417" name="ap1_PASSING_ap1" sourceLinkParameter="mov2#opm10#switch6#oln109#par368" target="mov2#opm10#scu9.ap1"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par418" name="ap2_PASSING_ap2" sourceLinkParameter="mov2#opm10#switch6#oln109#par369" target="mov2#opm10#scu9.ap2"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par419" name="curp_PASSING_curp" sourceLinkParameter="mov2#opm10#switch6#oln109#par370" target="mov2#opm10#scu9.curp"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par420" name="feNa_PASSING_feNa" sourceLinkParameter="mov2#opm10#switch6#oln109#par371" target="mov2#opm10#scu9.feNa"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par421" name="nombres_PASSING_nombres" sourceLinkParameter="mov2#opm10#switch6#oln109#par372" target="mov2#opm10#scu9.nombres"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par422" name="rfc_PASSING_rfc" sourceLinkParameter="mov2#opm10#switch6#oln109#par373" target="mov2#opm10#scu9.rfc"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par1439" name="rAnio_PASSING_rAnio" sourceLinkParameter="mov2#opm10#switch6#oln109#par1432" target="mov2#opm10#scu9.rAnio"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par1440" name="rAp1_PASSING_rAp1" sourceLinkParameter="mov2#opm10#switch6#oln109#par1433" target="mov2#opm10#scu9.rAp1"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par1441" name="rAp2_PASSING_rAp2" sourceLinkParameter="mov2#opm10#switch6#oln109#par1434" target="mov2#opm10#scu9.rAp2"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par1442" name="rCurp_PASSING_rCurp" sourceLinkParameter="mov2#opm10#switch6#oln109#par1435" target="mov2#opm10#scu9.rCurp"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par1443" name="rDia_PASSING_rDia" sourceLinkParameter="mov2#opm10#switch6#oln109#par1436" target="mov2#opm10#scu9.rDia"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par1444" name="rMes_PASSING_rMes" sourceLinkParameter="mov2#opm10#switch6#oln109#par1437" target="mov2#opm10#scu9.rMes"/>
+        <LinkParameter id="mov2#opm10#miu6#oln111#par1445" name="rNombres_PASSING_rNombres" sourceLinkParameter="mov2#opm10#switch6#oln109#par1438" target="mov2#opm10#scu9.rNombres"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ScriptUnit id="mov2#opm10#scu9" name="ComparaCurpRfc" gr:x="1530" gr:y="120">
+      <ScriptUnitText xml:space="preserve">#input rDia,rMes,rAnio,rNombres,rAp1,rAp2,rCurp,sDia,sMes,sAnio,sNombres,sAp1,sAp2,sCurp,rfc,feNa,nombres,ap1,ap2,curp
+#output feNa,nombres,ap1,ap2,curp,identico,rfc
+
+boolean identico = false
+String renapo, sat , usuario
+String [] fechaNac = feNa.split('-')
+String dia = fechaNac[2];
+String mes = fechaNac[1];
+String anio = fechaNac[0];
+
+if (ap2 == "") ap2 = rAp2
+renapo = rDia + rMes + rAnio + rNombres + rAp1 + rAp2 + rCurp
+sat = sDia + sMes + sAnio + sNombres + sAp1 + sAp2 + sCurp
+usuario = (dia + mes + anio + nombres + ap1 + ap2 + curp).toUpperCase()
+
+
+if (renapo.equals(sat) &amp;&amp; renapo.equals(usuario))
+{
+	/*feNa = rDia + "/" + rMes + "/" + rAnio
+	nombres = rNombres
+	ap1 = rAp1
+	ap2 = rAp2
+	curp = rCurp*/
+	identico = true
+}
+
+
+//return["feNa":feNa,"nombres":nombres,"ap1":ap1,"ap2":ap2,"curp":curp,"identico":identico,"rfc":rfc]
+return["identico":identico]</ScriptUnitText>
+      <OKLink id="mov2#opm10#scu9#oln112" name="OKFlow86" to="mov2#opm10#okcu4">
+        <LinkParameter id="mov2#opm10#scu9#oln112#par423" name="identico_identico" source="result(identico)" target="mov2#opm10#okcu4#ocp22"/>
+      </OKLink>
+      <KOLink id="mov2#opm10#scu9#kln52" name="KOFlow52" to="mov2#opm10#kocu6" gr:bendpoints="79,215,-571,-45;259,212,-136,-33">
+        <LinkParameter id="mov2#opm10#scu9#kln52#par1421" name="Error al comparar el CURP y el RFC._mensaje" sourceValue="Error al comparar el CURP y el RFC." target="mov2#opm10#kocu6#ocp23"/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit id="mov2#opm10#scu11" name="ComparaCurp" gr:x="1085" gr:y="280">
+      <ScriptUnitText xml:space="preserve">#input rDia,rMes,rAnio,rNombres,rAp1,rAp2,rCurp,feNa,nombres,ap1,ap2,curp
+#output feNa,nombres,ap1,ap2,curp,identico,rfc
+
+boolean identico = false
+String renapo, usuario
+String [] fechaNac = feNa.split('-')
+String dia = fechaNac[2];
+String mes = fechaNac[1];
+String anio = fechaNac[0];
+
+if (ap2 == "") ap2 = rAp2
+renapo = rDia + rMes + rAnio + rNombres + rAp1 + rAp2 + rCurp
+usuario = (dia + mes + anio + nombres + ap1 + ap2 + curp).toUpperCase()
+
+if (renapo.equals(usuario))
+{
+	/*feNa = rDia + "/" + rMes + "/" + rAnio
+	nombres = rNombres
+	ap1 = rAp1
+	ap2 = rAp2
+	curp = rCurp*/
+	identico = true
+}
+
+
+//return["feNa":feNa,"nombres":nombres,"ap1":ap1,"ap2":ap2,"curp":curp,"identico":identico,"rfc":rfc]
+return["identico":identico]</ScriptUnitText>
+      <OKLink id="mov2#opm10#scu11#oln114" name="OKFlow52" to="mov2#opm10#okcu4">
+        <LinkParameter id="mov2#opm10#scu11#oln114#par425" name="identico_identico" source="result(identico)" target="mov2#opm10#okcu4#ocp22"/>
+      </OKLink>
+      <KOLink id="mov2#opm10#scu11#kln50" name="KOFlow50" to="mov2#opm10#kocu6" gr:bendpoints="51,62,-799,-23;715,65,-135,-20">
+        <LinkParameter id="mov2#opm10#scu11#kln50#par1422" name="Error al comparar el CURP._mensaje" sourceValue="Error al comparar el CURP." target="mov2#opm10#kocu6#ocp23"/>
+      </KOLink>
+    </ScriptUnit>
+    <SwitchUnit id="mov2#opm10#switch7" name="INEidentico" gr:x="255" gr:y="120">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov2#opm10#switch7#oln115" name="OKFlow55" to="mov2#opm10#scu8">
+        <LinkParameter id="mov2#opm10#switch7#oln115#par426" name="cadena_PASSING_cadena" sourceLinkParameter="mov2#opm10#icu17#oln101#par268" target="mov2#opm10#scu8.cadena"/>
+        <LinkParameter id="mov2#opm10#switch7#oln115#par427" name="ap1_PASSING" sourceLinkParameter="mov2#opm10#icu17#oln101#par263" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch7#oln115#par428" name="ap2_PASSING" sourceLinkParameter="mov2#opm10#icu17#oln101#par264" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch7#oln115#par429" name="curp_PASSING" sourceLinkParameter="mov2#opm10#icu17#oln101#par261" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch7#oln115#par430" name="feNa_PASSING" sourceLinkParameter="mov2#opm10#icu17#oln101#par265" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch7#oln115#par431" name="nombres_PASSING" sourceLinkParameter="mov2#opm10#icu17#oln101#par266" passing="true"/>
+        <LinkParameter id="mov2#opm10#switch7#oln115#par432" name="rfc_PASSING" sourceLinkParameter="mov2#opm10#icu17#oln101#par262" passing="true"/>
+      </OKLink>
+      <OKLink id="mov2#opm10#switch7#oln116" name="OKFlow56" to="mov2#opm10#okcu4" code="false" gr:bendpoints="60,-101,-1625,-101;1498,-98,-187,-98">
+        <LinkParameter id="mov2#opm10#switch7#oln116#par433" name="identico_PASSING_identico" sourceLinkParameter="mov2#opm10#icu17#oln101#par269" target="mov2#opm10#okcu4#ocp22"/>
+      </OKLink>
+    </SwitchUnit>
+  </OperationUnits>
+</OperationModule>

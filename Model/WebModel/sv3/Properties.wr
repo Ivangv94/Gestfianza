@@ -1,0 +1,34 @@
+<SiteView xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3" name="Personal" homePage="sv3#page11" landmarks="sv3#page11 sv3#page55 sv3#page54" protected="true" bpm:uuids="JG01H7LW_FYBDCX.JL40SH4G_FCC845" secure="false">
+  <OperationUnits>
+    <ResumeActivityUnit id="sv3#rau1" name="Resume Activity" gr:x="835" gr:y="485">
+      <KOLink id="sv3#rau1#kln215" name="KOLink4" to="sv3#page56#pu78">
+        <LinkParameter id="sv3#rau1#kln215#par1681" name="Error Info_Error Info" source="errorInfo" target="sv3#page56#pu78.errorInfo"/>
+      </KOLink>
+    </ResumeActivityUnit>
+    <StartProcessUnit id="sv3#spu1" name="Start Process" gr:x="845" gr:y="230">
+      <KOLink id="sv3#spu1#kln216" name="KOLink3" to="sv3#page56#pu78">
+        <LinkParameter id="sv3#spu1#kln216#par1682" name="Error Info_Error Info" source="errorInfo" target="sv3#page56#pu78.errorInfo"/>
+      </KOLink>
+    </StartProcessUnit>
+    <DeleteUnit id="sv3#dlu1" name="Remove Notification" gr:x="459" gr:y="42" entity="Notification">
+      <Selector id="sv3#dlu1#su105" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dlu1#su105#kcond10" name="oids" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+    <ModifyUnit id="sv3#mfu3" gr:x="322" gr:y="41" name="Mark as Read" entity="Notification" bulk="false">
+      <Selector id="sv3#mfu3#su106" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu3#su106#kcond11" name="oids" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+    <LogoutUnit id="sv3#lou8" name="Logout User" gr:x="1395" gr:y="245" siteView="sv1"/>
+    <ProcessUnit id="sv3#pu73" name="Rollback Activity" gr:x="600" gr:y="906" mode="rollback">
+      <KOLink id="sv3#pu73#kln217" name="KOLink9" to="sv3#page56#pu78">
+        <LinkParameter id="sv3#pu73#kln217#par1683" name="Error Info_Error Info" source="errorInfo" target="sv3#page56#pu78.errorInfo"/>
+      </KOLink>
+      <OKLink id="sv3#pu73#oln453" name="OKLink42" to="sv3#page12#pdu3" gr:bendpoints="-133,-47,97,-47">
+        <LinkParameter id="sv3#pu73#oln453#par1684" name="Process Instance Oid_PASSING_Process Instance Oid" sourceLinkParameter="sv3#page12#pdu3#ln559#par1697" target="sv3#page12#pdu3.processInstanceOid"/>
+      </OKLink>
+    </ProcessUnit>
+  </OperationUnits>
+  <layout:LayoutParameter name="show-left-column" value="true" type="page"/>
+</SiteView>

@@ -1,0 +1,57 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym2#page80" name="Editar Elementos Administrable" localized="true" gr:x="290" gr:y="-430">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym2#page80#enu107" name="Elemento" linkOrder="mov1#hym2#page80#enu107#ln434" gr:x="0" gr:y="0">
+      <Field id="mov1#hym2#page80#enu107#fld201" name="nombre" type="string" modifiable="true" preloaded="true"/>
+      <Field id="mov1#hym2#page80#enu107#fld202" name="valor" type="string" modifiable="true" preloaded="true"/>
+      <Field id="mov1#hym2#page80#enu107#fld203" name="oid" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Link id="mov1#hym2#page80#enu107#ln434" name="Editar" to="mov1#hym2#mfu10" type="normal" validate="true" gr:bendpoints="62,59,-213,-76;240,65,-35,-70">
+        <LinkParameter id="mov1#hym2#page80#enu107#ln434#par1113" name="nombre_elemento administrable" source="mov1#hym2#page80#enu107#fld201" target="mov1#hym2#mfu10.ent2#att11"/>
+        <LinkParameter id="mov1#hym2#page80#enu107#ln434#par1114" name="oid_KeyCondition74 [oid]" source="mov1#hym2#page80#enu107#fld203" target="mov1#hym2#mfu10#su170#kcond86.ent2#att10"/>
+        <LinkParameter id="mov1#hym2#page80#enu107#ln434#par1117" name="valor_valor" source="mov1#hym2#page80#enu107#fld202" target="mov1#hym2#mfu10.ent2#att12"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit id="mov1#hym2#page80#mssu25" name="Error" gr:x="110" gr:y="0"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym2#page80#mssu25">
+          <layout:LayoutParameter name="panel-type" value="danger" type="frame"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="mov1#hym2#page80#enu107" layout:frameLayout="None">
+          <layout:Field field="mov1#hym2#page80#enu107#fld201"/>
+          <layout:Field field="mov1#hym2#page80#enu107#fld202"/>
+          <layout:Link link="mov1#hym2#page80#enu107#ln434" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

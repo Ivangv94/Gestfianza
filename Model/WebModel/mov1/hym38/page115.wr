@@ -1,0 +1,70 @@
+<Page xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym38#page115" name="Firmar poder" gr:x="10" gr:y="-5" localized="true">
+  <ContentUnits>
+    <ActivityParametersUnit id="mov1#hym38#page115#apu60" name="Get Parameters" gr:x="0" gr:y="0">
+      <ActivityParameter id="mov1#hym38#page115#apu60#ap26" name="denominacion.OID" bpm:uuid="JPSPZB22_K74AKU"/>
+      <Link id="mov1#hym38#page115#apu60#ln933" name="GetParameters" type="transport" automaticCoupling="false" to="mov1#hym38#page115#enu10">
+        <LinkParameter id="mov1#hym38#page115#apu60#ln933#par2861" name="OID" source="mov1#hym38#page115#apu60#ap26" target="mov1#hym38#page115#enu10#fld131_slot"/>
+        <LinkParameter id="mov1#hym38#page115#apu60#ln933#par2880" name="denominacion" source="mov1#hym38#page115#apu60#ap27" target="mov1#hym38#page115#enu10#fld132_slot"/>
+      </Link>
+      <ActivityParameter id="mov1#hym38#page115#apu60#ap27" name="denominacion.denominacion" bpm:uuid="JPSPZB22_K74AKU/JO7UCHCM_3Y5"/>
+    </ActivityParametersUnit>
+    <EntryUnit id="mov1#hym38#page115#enu152" name="Buttons" gr:x="260" gr:y="165">
+      <Link id="mov1#hym38#page115#enu152#ln777" name="Finish" type="normal" validate="true" automaticCoupling="false" to="mov1#hym38#apu59"/>
+      <Link id="mov1#hym38#page115#enu152#ln778" name="Save and Work Later" type="normal" validate="false" automaticCoupling="false" to="mov1#hym38#apu59" gr:bendpoints="164,-32,-64,96"/>
+      <Link id="mov1#hym38#page115#enu152#ln779" name="Cancel" type="normal" validate="false" automaticCoupling="false" to="mov1#hym38#pu143"/>
+    </EntryUnit>
+    <EntryUnit id="mov1#hym38#page115#enu10" name="denominacion" bpm:uuid="JPSPZB22_K74AKU" gr:x="150" gr:y="80">
+      <Field id="mov1#hym38#page115#enu10#fld131" name="denominacion.OID" type="string" preloaded="true" modifiable="false" hidden="true" bpm:uuid="JPSPZB22_K74AKU"/>
+      <Link id="mov1#hym38#page115#enu10#ln941" name="SetParameters" type="transport" automaticCoupling="false" to="mov1#hym38#apu59">
+        <LinkParameter id="mov1#hym38#page115#enu10#ln941#par2879" name="OID" source="mov1#hym38#page115#enu10#fld131" target="mov1#hym38#apu59#ap23"/>
+      </Link>
+      <Field id="mov1#hym38#page115#enu10#fld132" name="denominacion" type="string" preloaded="true" modifiable="false" bpm:uuid="JPSPZB22_K74AKU/JO7UCHCM_3Y5"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="8" label="Buttons" layout:cellLayout="Print Frame">
+        <layout:Unit unitId="mov1#hym38#page115#enu152" layout:frameLayout="None" manualLinks="true" manualLinkOrder="mov1#hym38#page115#enu152#ln777 mov1#hym38#page115#enu152#ln779">
+          <layout:Link link="mov1#hym38#page115#enu152#ln777" styleClass="pull-right">
+            <layout:LayoutParameter name="btn-style" value="primary" type="link"/>
+            <layout:LayoutParameter name="confirmation" value="false" type="link"/>
+            <layout:LayoutParameter name="confirm-message" value="Confirm Finish" type="link"/>
+          </layout:Link>
+          <layout:Link link="mov1#hym38#page115#enu152#ln779" styleClass="cancelar">
+            <layout:LayoutParameter name="btn-style" value="danger" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell label="denominacion" layout:cellLayout="Print Frame" colspan="12">
+        <layout:Unit unitId="mov1#hym38#page115#enu10">
+          <layout:Field field="mov1#hym38#page115#enu10#fld132" layout:fieldLayout="WRDefault/FieldValue"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="auto-refresh" value="true" type="page"/>
+</Page>

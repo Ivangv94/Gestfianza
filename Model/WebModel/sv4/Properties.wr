@@ -1,0 +1,407 @@
+<SiteView xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4" name="SuperUsuario" landmarks="sv4#page14 sv4#page24 sv4#page23" protected="true" bpm:uuids="JKBD85VG_LSUK7T.JKCX578T_VZ9QU6" secure="false" homePage="sv4#page130">
+  <OperationUnits>
+    <ResumeActivityUnit id="sv4#rau2" name="Resume Activity" gr:x="835" gr:y="485">
+      <KOLink id="sv4#rau2#kln103" name="KOLink4" to="sv4#page25#pu46">
+        <LinkParameter id="sv4#rau2#kln103#par104" name="Error Info_Error Info" source="errorInfo" target="sv4#page25#pu46.errorInfo"/>
+      </KOLink>
+    </ResumeActivityUnit>
+    <StartProcessUnit id="sv4#spu2" name="Start Process" gr:x="845" gr:y="230">
+      <KOLink id="sv4#spu2#kln104" name="KOLink3" to="sv4#page25#pu46">
+        <LinkParameter id="sv4#spu2#kln104#par105" name="Error Info_Error Info" source="errorInfo" target="sv4#page25#pu46.errorInfo"/>
+      </KOLink>
+    </StartProcessUnit>
+    <DeleteUnit id="sv4#dlu4" name="Remove Notification" gr:x="459" gr:y="42" entity="Notification">
+      <Selector id="sv4#dlu4#su53" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#dlu4#su53#kcond31" name="oids" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+    <ModifyUnit id="sv4#mfu5" gr:x="322" gr:y="41" name="Mark as Read" entity="Notification" bulk="false">
+      <Selector id="sv4#mfu5#su54" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#mfu5#su54#kcond32" name="oids" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+    <LogoutUnit id="sv4#lou4" name="Logout User" gr:x="1395" gr:y="245" siteView="sv1"/>
+    <ProcessUnit id="sv4#pu20" name="Rollback Activity" gr:x="600" gr:y="906" mode="rollback">
+      <KOLink id="sv4#pu20#kln105" name="KOLink9" to="sv4#page25#pu46">
+        <LinkParameter id="sv4#pu20#kln105#par106" name="Error Info_Error Info" source="errorInfo" target="sv4#page25#pu46.errorInfo"/>
+      </KOLink>
+      <OKLink id="sv4#pu20#oln18" name="OKLink42" to="sv4#page22#pdu5" gr:bendpoints="-133,-47,97,-47">
+        <LinkParameter id="sv4#pu20#oln18#par114" name="Process Instance Oid_PASSING_Process Instance Oid" sourceLinkParameter="sv4#page22#pdu5#ln240#par157" target="sv4#page22#pdu5.processInstanceOid"/>
+      </OKLink>
+    </ProcessUnit>
+    <UserActivitiesUnit id="sv4#uau6" name="Active" gr:x="1880" gr:y="480" activityStatus="runnable">
+      <OKLink id="sv4#uau6#oln70" name="OKFlow1224" to="sv4#seu28">
+        <LinkParameter id="sv4#uau6#oln70#par134" name="Activity Instance Oids_oids [oid]" source="activityInstanceOids" target="sv4#seu28#su65#kcond39.activityInstanceOid"/>
+      </OKLink>
+    </UserActivitiesUnit>
+    <SelectorUnit id="sv4#seu28" name="Work Items" gr:x="1715" gr:y="465" entity="ActivityInstance" maxResults="1">
+      <Selector id="sv4#seu28#su65" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#seu28#su65#kcond39" name="oids" predicate="in" implied="false"/>
+        <RelationshipRoleCondition id="sv4#seu28#su65#rcond101" name="activityType" predicate="in" implied="true" role="activityType2ActivityInstances"/>
+      </Selector>
+      <SortAttribute attribute="activityInstanceReadyTimestamp" order="descending"/>
+      <OKLink id="sv4#seu28#oln99" name="OKFlow1225" to="sv4#switch24">
+        <LinkParameter id="sv4#seu28#oln99#par135" name="Data Size_Switch" source="dataSize" target="sv4#switch24.switch"/>
+      </OKLink>
+    </SelectorUnit>
+    <StartProcessUnit id="sv4#spu5" name="Start Process" gr:x="1095" gr:y="485">
+      <KOLink id="sv4#spu5#kln18" name="KOFlow18" to="sv4#page25#pu46">
+        <LinkParameter id="sv4#spu5#kln18#par136" name="Error Info_Error Info" source="errorInfo" target="sv4#page25#pu46.errorInfo"/>
+      </KOLink>
+    </StartProcessUnit>
+    <SwitchUnit id="sv4#switch24" name="dataSize" gr:x="1565" gr:y="485">
+      <Case value="1"/>
+      <OKLink id="sv4#switch24#oln162" name="OKFlow1240" to="sv4#seu40" automaticCoupling="true"/>
+    </SwitchUnit>
+    <SelectorUnit id="sv4#seu40" name="buscarProceso" gr:x="1300" gr:y="470" entity="ActivityType">
+      <Selector id="sv4#seu40#su69" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#seu40#su69#acond26" name="name" predicate="eq" booleanOperator="or" implied="false" attributes="activityTypeName" value="Administar Sistema"/>
+      </Selector>
+      <OKLink id="sv4#seu40#oln163" name="OKFlow431" to="sv4#spu5" automaticCoupling="true"/>
+    </SelectorUnit>
+    <ParameterCollectorUnit id="sv4#pcu4" name="agregarFedatario" customURLName="agregarFedatarioSuperusuario" gr:x="2005" gr:y="485">
+      <OKLink id="sv4#pcu4#oln164" name="OKFlow1198" to="sv4#uau6" automaticCoupling="true"/>
+    </ParameterCollectorUnit>
+    <QueryUnit id="sv4#qu16" name="Query15" gr:x="-2325" gr:y="1290" mode="update" language="SQL" db="db2">
+      <QueryText xml:space="preserve">UPDATE FEDATARIOS SET NOMBRECOMFED = NOMBREFED || ' ' || PRIMAPELLIDO || ' ' || SEGUNAPELLIDO WHERE OIDFEDATARIO = (:OID)</QueryText>
+      <QueryInput id="sv4#qu16#qi13" name="OID" required="true"/>
+      <OKLink id="sv4#qu16#oln24" name="OKFlow1492" to="sv4#page153" automaticCoupling="true"/>
+    </QueryUnit>
+    <SelectorUnit id="sv4#seu321" name="tipoFed" gr:x="-3095" gr:y="955" entity="ent75">
+      <Link id="sv4#seu321#ln863" name="Flow1516" to="sv4#page162#enu188" type="transport" validate="true" gr:bendpoints="58,81,-2,-123">
+        <LinkParameter id="sv4#seu321#ln863#par93" name="nombretipofed_Tipo de Fedatario [label]" source="ent75#att286Array" target="sv4#page162#enu188#sfld96_label"/>
+        <LinkParameter id="sv4#seu321#ln863#par313" name="oid_Tipo de Fedatario [output]" source="ent75#att285Array" target="sv4#page162#enu188#sfld96_output"/>
+      </Link>
+      <OKLink id="sv4#seu321#oln1236" name="OKFlow1491" to="sv4#seu336" gr:bendpoints="140,136,-150,-104">
+        <LinkParameter id="sv4#seu321#oln1236#par4888" name="oidEstado_PASSING" sourceLinkParameter="sv4#seu350#oln1488#par4887" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="sv4#seu324" name="Municipios" gr:x="-2095" gr:y="1860" entity="ent78">
+      <OKLink id="sv4#seu324#oln1274" name="OKFlow1311" to="sv4#page161#enu187" gr:bendpoints="196,218,-209,-187">
+        <LinkParameter id="sv4#seu324#oln1274#par4962" name="nombreMunicipio_Municipios [label]" source="ent78#att288Array" target="sv4#page161#enu187#sfld93_label"/>
+        <LinkParameter id="sv4#seu324#oln1274#par4963" name="oidMunicipio_Municipios [output]" source="ent78#att287Array" target="sv4#page161#enu187#sfld93_output"/>
+      </OKLink>
+      <Selector id="sv4#seu324#su543" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#seu324#su543#rcond315" name="RoleCondition315" predicate="in" implied="false" role="rel49#role98"/>
+      </Selector>
+    </SelectorUnit>
+    <ModifyUnit id="sv4#mfu47" name="Update46" gr:x="-2140" gr:y="1340" entity="ent96">
+      <Selector id="sv4#mfu47#su514" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#mfu47#su514#kcond216" name="KeyCondition216" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv4#mfu47#oln1289" name="OKFlow1309" to="sv4#qu16" gr:bendpoints="-168,24,222,104">
+        <LinkParameter id="sv4#mfu47#oln1289#par3140" name="oid_OID" source="ent96#att564Array" target="sv4#qu16.sv4#qu16#qi13"/>
+      </OKLink>
+    </ModifyUnit>
+    <SelectorUnit id="sv4#seu333" name="Calidad" gr:x="-2480" gr:y="1590" entity="ent40">
+      <Link id="sv4#seu333#ln1496" name="Flow1497" to="sv4#page161#enu187" type="transport" validate="true">
+        <LinkParameter id="sv4#seu333#ln1496#par4315" name="descripcioncalidad_Calidad del Fedatario [label]" source="ent40#att284Array" target="sv4#page161#enu187#sfld73_label"/>
+        <LinkParameter id="sv4#seu333#ln1496#par4316" name="oid_Calidad del Fedatario [output]" source="ent40#att273Array" target="sv4#page161#enu187#sfld73_output"/>
+      </Link>
+      <OKLink id="sv4#seu333#oln1311" name="OKFlow1490" to="sv4#seu347">
+        <LinkParameter id="sv4#seu333#oln1311#par4967" name="oidFedatario_PASSING" sourceLinkParameter="sv4#seu346#oln1481#par4966" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="sv4#seu334" name="Observaciones" gr:x="-2640" gr:y="1430" entity="ent79">
+      <Link id="sv4#seu334#ln1501" name="Flow1504" to="sv4#page161#enu187" type="transport" validate="true">
+        <LinkParameter id="sv4#seu334#ln1501#par4318" name="nombreobservacion_Observaciones [label]" source="ent79#att495Array" target="sv4#page161#enu187#sfld76_label"/>
+        <LinkParameter id="sv4#seu334#ln1501#par4319" name="oidobservaciones_Observaciones [output]" source="ent79#att295Array" target="sv4#page161#enu187#sfld76_output"/>
+      </Link>
+      <OKLink id="sv4#seu334#oln1419" name="OKFlow1469" to="sv4#seu346">
+        <LinkParameter id="sv4#seu334#oln1419#par4965" name="oidFedatario_PASSING" sourceLinkParameter="sv4#page153#pwu39#ln1505#par4907" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <ScriptUnit id="sv4#scu225" name="Script138" gr:x="-2405" gr:y="1100">
+      <ScriptUnitText xml:space="preserve">#input String buscar
+#output buscarnvo
+
+String buscarnvo="%"+buscar.toUpperCase()+"%"
+return ["buscarnvo":buscarnvo]</ScriptUnitText>
+      <Link id="sv4#scu225#ln1511" name="Flow1533" to="sv4#qu18" type="transport" validate="true">
+        <LinkParameter id="sv4#scu225#ln1511#par4331" name="buscarnvo_buscar" source="result(buscarnvo)" target="sv4#qu18.sv4#qu18#qi14"/>
+      </Link>
+      <OKLink id="sv4#scu225#oln1468" name="OKFlow1433" to="sv4#qu18" automaticCoupling="true" gr:bendpoints="60,64,-80,-41"/>
+    </ScriptUnit>
+    <SelectorUnit id="sv4#seu346" name="Estados" gr:x="-2450" gr:y="1425" entity="ent97">
+      <Link id="sv4#seu346#ln1523" name="Flow1165" to="sv4#page161#enu187" type="transport" validate="true" gr:bendpoints="116,-8,16,-402">
+        <LinkParameter id="sv4#seu346#ln1523#par4404" name="nombreestado_Estado [label]" source="ent97#att580Array" target="sv4#page161#enu187#sfld63_label"/>
+        <LinkParameter id="sv4#seu346#ln1523#par4405" name="oid_Estado [output]" source="ent97#att579Array" target="sv4#page161#enu187#sfld63_output"/>
+      </Link>
+      <OKLink id="sv4#seu346#oln1481" name="OKFlow1480" to="sv4#seu333">
+        <LinkParameter id="sv4#seu346#oln1481#par4966" name="oidFedatario_PASSING" sourceLinkParameter="sv4#seu334#oln1419#par4965" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="sv4#seu347" name="tipoFed" gr:x="-2675" gr:y="1595" entity="ent75">
+      <Link id="sv4#seu347#ln1524" name="Flow1516" to="sv4#page161#enu187" type="transport" validate="true">
+        <LinkParameter id="sv4#seu347#ln1524#par4408" name="nombretipofed_Tipo de Fedatario [label]" source="ent75#att286Array" target="sv4#page161#enu187#sfld75_label"/>
+        <LinkParameter id="sv4#seu347#ln1524#par4409" name="oid_Tipo de Fedatario [output]" source="ent75#att285Array" target="sv4#page161#enu187#sfld75_output"/>
+      </Link>
+      <OKLink id="sv4#seu347#oln1482" name="OKFlow1491" to="sv4#page161#seu349" ajaxOpenWindow="false">
+        <LinkParameter id="sv4#seu347#oln1482#par4968" name="oidFedatario_PASSING_KeyCondition222 [oidFedatario]" sourceLinkParameter="sv4#seu333#oln1311#par4967" target="sv4#page161#seu349#su533#kcond232.ent96#att564"/>
+      </OKLink>
+    </SelectorUnit>
+    <QueryUnit id="sv4#qu18" name="Nombre" gr:x="-2380" gr:y="1215" mode="select" language="SQL" db="db2">
+      <QueryText xml:space="preserve">
+SELECT OIDFEDATARIO
+FROM FEDATARIOS
+WHERE (TRANSLATE(UPPER(NOMBRECOMFED), '&#193;&#201;&#205;&#211;&#218;&#225;&#233;&#237;&#243;&#250;', 'AEIOUaeiou')) LIKE (:buscar)
+OR (TRANSLATE(UPPER(RFCFED), '&#193;&#201;&#205;&#211;&#218;&#225;&#233;&#237;&#243;&#250;', 'AEIOUaeiou')) LIKE (:buscar);</QueryText>
+      <QueryInput id="sv4#qu18#qi14" name="buscar" required="true"/>
+      <QueryOutput id="sv4#qu18#qo12" name="buscarnvo"/>
+      <Link id="sv4#qu18#ln1526" name="Flow1361" to="sv4#page153#pwu39" type="transport" validate="true" gr:bendpoints="-76,-26,120,-106">
+        <LinkParameter id="sv4#qu18#ln1526#par4878" name="buscarnvo (Array)_busca [oidFedatario]" source="sv4#qu18#qo12" target="sv4#page153#pwu39#su526#kcond225.ent96#att564"/>
+      </Link>
+      <OKLink id="sv4#qu18#oln1485" name="OKFlow1289" to="sv4#page153#pwu39" gr:bendpoints="-70,-10,126,-90"/>
+    </QueryUnit>
+    <SelectorUnit id="sv4#seu350" name="Calidad" gr:x="-2925" gr:y="950" entity="ent40">
+      <Link id="sv4#seu350#ln1534" name="Flow1497" to="sv4#page162#enu188" type="transport" validate="true" gr:bendpoints="148,60,62,-166">
+        <LinkParameter id="sv4#seu350#ln1534#par4524" name="descripcioncalidad_Calidad del Fedatario [label]" source="ent40#att284Array" target="sv4#page162#enu188#sfld95_label"/>
+        <LinkParameter id="sv4#seu350#ln1534#par4656" name="oid_Calidad del Fedatario [output]" source="ent40#att273Array" target="sv4#page162#enu188#sfld95_output"/>
+      </Link>
+      <OKLink id="sv4#seu350#oln1488" name="OKFlow1490" to="sv4#seu321">
+        <LinkParameter id="sv4#seu350#oln1488#par4887" name="oidEstado_PASSING" sourceLinkParameter="sv4#seu351#oln1504#par4886" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="sv4#seu351" name="Estados" gr:x="-2700" gr:y="965" entity="ent97">
+      <Link id="sv4#seu351#ln1540" name="Flow1165" to="sv4#page162#enu188" type="transport" validate="true" gr:bendpoints="-68,170,202,-260">
+        <LinkParameter id="sv4#seu351#ln1540#par4747" name="nombreestado_Estado [label]" source="ent97#att580Array" target="sv4#page162#enu188#sfld94_label"/>
+        <LinkParameter id="sv4#seu351#ln1540#par4752" name="oid_Estado [output]" source="ent97#att579Array" target="sv4#page162#enu188#sfld94_output"/>
+      </Link>
+      <OKLink id="sv4#seu351#oln1504" name="OKFlow1504" to="sv4#seu350">
+        <LinkParameter id="sv4#seu351#oln1504#par4886" name="oidEstado_PASSING" source="ent97#att579Array" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <CreateUnit gr:x="-3030" gr:y="1645" id="sv4#cru95" name="Fedatarios" entity="ent96"/>
+    <CreateUnit id="sv4#cru88" name="Insertar Afianzadora" gr:x="-3910" gr:y="1505" entity="ent83" skipBlankRecords="false" bulk="false">
+      <OKLink id="sv4#cru88#oln1469" name="OKFlow1485" to="sv4#page133" automaticCoupling="true" gr:bendpoints="-92,-58,-88,88"/>
+    </CreateUnit>
+    <ModifyUnit id="sv4#mfu51" name="Update46" gr:x="-3355" gr:y="1360" entity="ent83">
+      <Selector id="sv4#mfu51#su529" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#mfu51#su529#kcond234" name="KeyCondition234" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv4#mfu51#oln1480" name="OKFlow1434" to="sv4#page133" automaticCoupling="true" gr:bendpoints="-140,-95,220,85"/>
+    </ModifyUnit>
+    <SelectorUnit gr:x="-3715" gr:y="1525" id="sv4#seu331" name="EstatusAfianzadora" entity="ent84" linkOrder="sv4#seu331#ln70">
+      <Link id="sv4#seu331#ln70" name="Flow70" to="sv4#page132#enu179" type="transport" validate="true">
+        <LinkParameter id="sv4#seu331#ln70#par2116" name="nombreEstatusAfianzadora_Estatus [label]" source="ent84#att519Array" target="sv4#page132#enu179#sfld59_label"/>
+        <LinkParameter id="sv4#seu331#ln70#par2284" name="oidEstatusAfianzadora_Estatus [output]" source="ent84#att518Array" target="sv4#page132#enu179#sfld59_output"/>
+      </Link>
+      <OKLink id="sv4#seu331#oln1305" name="OKFlow1305" to="sv4#page132#seu330" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Informaci&#243;n de Afianzadora" ajaxWindowWidth="600" ajaxWindowHeight="350" ajaxWindowClosable="true" ajaxWindowModal="true" gr:bendpoints="-14,80,-60,-90">
+        <LinkParameter id="sv4#seu331#oln1305#par4903" name="oidAfianzadora_PASSING_KeyCondition233 [oidAfianzadora]" sourceLinkParameter="sv4#page133#inu28#ln1508#par71" target="sv4#page132#seu330#su530#kcond233.ent83#att515"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="sv4#seu332" name="EstatusAfianzadora" gr:x="-3925" gr:y="1115" entity="ent84" linkOrder="sv4#seu332#ln1512">
+      <Link id="sv4#seu332#ln1512" name="Flow1512" to="sv4#page131#enu178" type="transport" validate="true">
+        <LinkParameter id="sv4#seu332#ln1512#par4328" name="nombreEstatusAfianzadora_Estatus [label]" source="ent84#att519Array" target="sv4#page131#enu178#sfld58_label"/>
+        <LinkParameter id="sv4#seu332#ln1512#par4332" name="oidEstatusAfianzadora_Estatus [output]" source="ent84#att518Array" target="sv4#page131#enu178#sfld58_output"/>
+      </Link>
+      <OKLink id="sv4#seu332#oln1484" name="OKFlow1484" to="sv4#page131#enu178" automaticCoupling="true" gr:bendpoints="7,108,22,-107" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowClosable="true" ajaxWindowModal="true" ajaxWindowHeight="350" ajaxWindowWidth="600" ajaxWindowTitle="Agregar Afianzadora"/>
+    </SelectorUnit>
+    <CreateUnit id="sv4#cru78" name="Insertar Tipo Fianza" gr:x="-3975" gr:y="615" entity="ent80" skipBlankRecords="false" bulk="false">
+      <OKLink id="sv4#cru78#oln1309" name="OKFlow1484" to="sv4#page63" automaticCoupling="true" gr:bendpoints="-106,-14,-72,126"/>
+    </CreateUnit>
+    <ModifyUnit id="sv4#mfu46" name="Update46" gr:x="-3385" gr:y="625" entity="ent80">
+      <Selector id="sv4#mfu46#su519" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#mfu46#su519#kcond223" name="KeyCondition216" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv4#mfu46#oln1310" name="OKFlow1274" to="sv4#page124" automaticCoupling="true"/>
+    </ModifyUnit>
+    <SelectorUnit gr:x="-3790" gr:y="760" id="sv4#seu325" name="Estatus" entity="ent81" linkOrder="sv4#seu325#ln1373">
+      <Link id="sv4#seu325#ln1373" name="Flow1373" to="sv4#page123#enu170" type="transport" validate="true">
+        <LinkParameter id="sv4#seu325#ln1373#par4269" name="nombreEstatusTipoFia_Estatus - Preselection" source="ent81#att502Array" target="sv4#page123#enu170#sfld99_presel"/>
+        <LinkParameter id="sv4#seu325#ln1373#par4281" name="nombreEstatusTipoFia_Estatus [label]" source="ent81#att502Array" target="sv4#page123#enu170#sfld99_label"/>
+        <LinkParameter id="sv4#seu325#ln1373#par4282" name="oidEstatusTipFia_Estatus [output]" source="ent81#att501Array" target="sv4#page123#enu170#sfld99_output"/>
+      </Link>
+      <OKLink id="sv4#seu325#oln1312" name="OKFlow1312" to="sv4#page123#seu314" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Informaci&#243;n Tipo Fianza" ajaxWindowWidth="600" ajaxWindowHeight="350" ajaxWindowClosable="true" ajaxWindowModal="true">
+        <LinkParameter id="sv4#seu325#oln1312#par4284" name="oiTidpoFianza_PASSING_KeyCondition222 [oiTidpoFianza]" sourceLinkParameter="sv4#page124#inu24#ln1369#par4268" target="sv4#page123#seu314#su506#kcond222.ent80#att496"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="-3905" gr:y="310" id="sv4#seu329" name="Estatus" entity="ent81" linkOrder="sv4#seu329#ln1374">
+      <Link id="sv4#seu329#ln1374" name="Flow1374" to="sv4#page63#enu89" type="transport" validate="true">
+        <LinkParameter id="sv4#seu329#ln1374#par4248" name="nombreEstatusTipoFia_Estatus [label]" source="ent81#att502Array" target="sv4#page63#enu89#sfld100_label"/>
+        <LinkParameter id="sv4#seu329#ln1374#par4250" name="oidEstatusTipFia_Estatus [output]" source="ent81#att501Array" target="sv4#page63#enu89#sfld100_output"/>
+      </Link>
+      <OKLink id="sv4#seu329#oln1433" name="OKFlow1433" to="sv4#page63#enu89" automaticCoupling="true" gr:bendpoints="-32,94,58,-81" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Agregar Tipo de Fianza" ajaxWindowWidth="600" ajaxWindowHeight="350" ajaxWindowClosable="true" ajaxWindowModal="true"/>
+    </SelectorUnit>
+    <ModifyUnit id="sv4#mfu48" name="Update46" gr:x="-2830" gr:y="150" entity="ent82">
+      <Selector id="sv4#mfu48#su525" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#mfu48#su525#kcond226" name="KeyCondition216" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv4#mfu48#oln1434" name="OKFlow1456" to="sv4#page127" automaticCoupling="true"/>
+    </ModifyUnit>
+    <CreateUnit id="sv4#cru86" name="Insertar Parametros" gr:x="-3385" gr:y="320" entity="ent82" skipBlankRecords="false" bulk="false">
+      <OKLink id="sv4#cru86#oln1486" name="OKFlow1488" to="sv4#page125" automaticCoupling="true" gr:bendpoints="-132,-54,-132,86"/>
+    </CreateUnit>
+    <SelectorUnit id="sv4#seu337" name="Tipo Fianza" gr:x="-2610" gr:y="10" entity="ent80" linkOrder="sv4#seu337#ln1525">
+      <OKLink id="sv4#seu337#oln1487" name="OKFlow1289" to="sv4#seu343" gr:bendpoints="4,81,-36,-74">
+        <LinkParameter id="sv4#seu337#oln1487#par4394" name="buscarnvo (Array)_PASSING" sourceLinkParameter="sv4#qu10#oln1491#par4417" passing="true"/>
+      </OKLink>
+      <Link id="sv4#seu337#ln1525" name="Flow1525" to="sv4#page134#enu177" type="transport" validate="true">
+        <LinkParameter id="sv4#seu337#ln1525#par4330" name="nombreTipoFianza_Tipo de Fianza [label]" source="ent80#att498Array" target="sv4#page134#enu177#sfld101_label"/>
+        <LinkParameter id="sv4#seu337#ln1525#par4333" name="oiTidpoFianza_Tipo de Fianza [output]" source="ent80#att496Array" target="sv4#page134#enu177#sfld101_output"/>
+      </Link>
+    </SelectorUnit>
+    <ScriptUnit id="sv4#scu138" name="Script138" gr:x="-1290" gr:y="105">
+      <ScriptUnitText xml:space="preserve">#input String buscar
+#output buscarnvo
+
+String buscarnvo="%"+buscar.toUpperCase()+"%"
+return ["buscarnvo":buscarnvo]</ScriptUnitText>
+      <Link id="sv4#scu138#ln1493" name="Flow1537" to="sv4#qu12" type="transport" validate="true">
+        <LinkParameter id="sv4#scu138#ln1493#par4395" name="buscarnvo_buscar" source="result(buscarnvo)" target="sv4#qu12.sv4#qu12#qi16"/>
+      </Link>
+      <OKLink id="sv4#scu138#oln1489" name="OKFlow1419" to="sv4#qu12" automaticCoupling="true" gr:bendpoints="71,17,-69,12"/>
+    </ScriptUnit>
+    <SelectorUnit id="sv4#seu338" name="Afianzadora" gr:x="-2485" gr:y="470" entity="ent83" linkOrder="sv4#seu338#ln1538">
+      <OKLink id="sv4#seu338#oln1490" name="OKFlow1310" to="sv4#page136#pwu38" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Seleccionar Fedatario" ajaxWindowWidth="1000" ajaxWindowHeight="600" ajaxWindowClosable="true" ajaxWindowModal="true">
+        <LinkParameter id="sv4#seu338#oln1490#par4329" name="buscarnvo (Array)_PASSING_busca [oidFedatario]" sourceLinkParameter="sv4#seu339#oln1494#par4325" target="sv4#page136#pwu38#su531#kcond231.ent96#att564"/>
+      </OKLink>
+      <Link id="sv4#seu338#ln1538" name="Flow1538" to="sv4#page134#enu177" type="transport" validate="true">
+        <LinkParameter id="sv4#seu338#ln1538#par4880" name="nombreAfianzadora_Afianzadora [label]" source="ent83#att516Array" target="sv4#page134#enu177#sfld102_label"/>
+        <LinkParameter id="sv4#seu338#ln1538#par4881" name="oidAfianzadora_Afianzadora [output]" source="ent83#att515Array" target="sv4#page134#enu177#sfld102_output"/>
+      </Link>
+    </SelectorUnit>
+    <QueryUnit id="sv4#qu10" name="Query10" gr:x="-2425" gr:y="25" mode="select" language="SQL" db="db2">
+      <QueryText xml:space="preserve">
+SELECT OIDFEDATARIO
+FROM FEDATARIOS
+WHERE (TRANSLATE(UPPER(NOMBRECOMFED), '&#193;&#201;&#205;&#211;&#218;&#225;&#233;&#237;&#243;&#250;', 'AEIOUaeiou')) LIKE (:buscar)
+OR (TRANSLATE(UPPER(RFCFED), '&#193;&#201;&#205;&#211;&#218;&#225;&#233;&#237;&#243;&#250;', 'AEIOUaeiou')) LIKE (:buscar);</QueryText>
+      <QueryInput id="sv4#qu10#qi15" name="buscar" required="true"/>
+      <QueryOutput id="sv4#qu10#qo11" name="buscarnvo"/>
+      <OKLink id="sv4#qu10#oln1491" name="OKFlow1495" to="sv4#seu337" gr:bendpoints="-13,69,-18,-91">
+        <LinkParameter id="sv4#qu10#oln1491#par4417" name="buscarnvo (Array)_PASSING" source="sv4#qu10#qo11" passing="true"/>
+      </OKLink>
+    </QueryUnit>
+    <QueryUnit id="sv4#qu12" name="Query10" gr:x="-1130" gr:y="75" mode="select" language="SQL" db="db2">
+      <QueryText xml:space="preserve">
+SELECT OIDFEDATARIO
+FROM FEDATARIOS
+WHERE (TRANSLATE(UPPER(NOMBRECOMFED), '&#193;&#201;&#205;&#211;&#218;&#225;&#233;&#237;&#243;&#250;', 'AEIOUaeiou')) LIKE (:buscar)
+OR (TRANSLATE(UPPER(RFCFED), '&#193;&#201;&#205;&#211;&#218;&#225;&#233;&#237;&#243;&#250;', 'AEIOUaeiou')) LIKE (:buscar);</QueryText>
+      <QueryInput id="sv4#qu12#qi16" name="buscar" required="true"/>
+      <QueryOutput id="sv4#qu12#qo13" name="buscarnvo"/>
+      <OKLink id="sv4#qu12#oln1492" name="OKFlow1289" to="sv4#page135#pwu37" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Seleccionar Fedatario" ajaxWindowHeight="600" ajaxWindowClosable="true" ajaxWindowModal="true" gr:bendpoints="-152,55,183,-35" ajaxWindowWidth="1000">
+        <LinkParameter id="sv4#qu12#oln1492#par4742" name="buscarnvo (Array)_Busca [oidFedatario]" source="sv4#qu12#qo13" target="sv4#page135#pwu37#su528#kcond228.ent96#att564"/>
+      </OKLink>
+    </QueryUnit>
+    <ScriptUnit id="sv4#scu192" name="Script138" gr:x="-2210" gr:y="25">
+      <ScriptUnitText xml:space="preserve">#input String buscar
+#output buscarnvo
+
+String buscarnvo="%"+buscar.toUpperCase()+"%"
+return ["buscarnvo":buscarnvo]</ScriptUnitText>
+      <Link id="sv4#scu192#ln1521" name="Flow1345" to="sv4#qu10" type="transport" validate="true">
+        <LinkParameter id="sv4#scu192#ln1521#par4741" name="buscarnvo_buscar" source="result(buscarnvo)" target="sv4#qu10.sv4#qu10#qi15"/>
+      </Link>
+      <OKLink id="sv4#scu192#oln1493" name="OKFlow1236" to="sv4#qu10" automaticCoupling="true" gr:bendpoints="67,15,-63,15"/>
+    </ScriptUnit>
+    <CreateUnit gr:x="-1880" gr:y="450" id="sv4#cru87" name="CtrlFianza" entity="ent87">
+      <OKLink id="sv4#cru87#oln1495" name="OKFlow1495" to="sv4#page134" automaticCoupling="true"/>
+    </CreateUnit>
+    <SelectorUnit gr:x="-3210" gr:y="1085" id="sv4#seu336" name="Estatus" entity="ent98">
+      <Link id="sv4#seu336#ln1527" name="Flow1527" to="sv4#page162#enu188" type="transport" validate="true">
+        <LinkParameter id="sv4#seu336#ln1527#par4184" name="nombreEstatusFed_Estatus [label]" source="ent98#att582Array" target="sv4#page162#enu188#sfld104_label"/>
+        <LinkParameter id="sv4#seu336#ln1527#par4217" name="oidEstatusFed_Estatus [output]" source="ent98#att581Array" target="sv4#page162#enu188#sfld104_output"/>
+      </Link>
+      <OKLink id="sv4#seu336#oln1496" name="OKFlow1496" to="sv4#page162#enu188" gr:bendpoints="38,128,92,8">
+        <LinkParameter id="sv4#seu336#oln1496#par4291" name="oidEstado_PASSING" sourceLinkParameter="sv4#seu321#oln1236#par4888" passing="true"/>
+      </OKLink>
+      <Selector id="sv4#seu336#su534" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#seu336#su534#acond214" name="AttCondition214" predicate="eq" booleanOperator="or" implied="false" attributes="ent98#att581" value="1"/>
+      </Selector>
+    </SelectorUnit>
+    <ModuleInstanceUnit gr:x="-3255" gr:y="1535" id="sv4#miu177" action="true" moduleId="mov2#mpkg9#opm113">
+      <OKLink id="sv4#miu177#oln1512" name="OKFlow1512" to="sv4#qu17" automaticCoupling="true" gr:bendpoints="322,-92,-268,217"/>
+    </ModuleInstanceUnit>
+    <SelectorUnit gr:x="-2655" gr:y="330" id="sv4#seu339" name="EstatusCtrl" entity="ent85" linkOrder="sv4#seu339#ln1535">
+      <OKLink id="sv4#seu339#oln1494" name="OKFlow1494" to="sv4#seu338">
+        <LinkParameter id="sv4#seu339#oln1494#par4325" name="buscarnvo (Array)_PASSING" sourceLinkParameter="sv4#seu343#oln1483#par4324" passing="true"/>
+      </OKLink>
+      <Link id="sv4#seu339#ln1535" name="Flow1535" to="sv4#page134#enu177" type="transport" validate="true">
+        <LinkParameter id="sv4#seu339#ln1535#par4397" name="oidEstatusCtrlFia_Estatus [label]" source="ent85#att521Array" target="sv4#page134#enu177#sfld103_label"/>
+        <LinkParameter id="sv4#seu339#ln1535#par4398" name="oidEstatusCtrlFia_Estatus [output]" source="ent85#att520Array" target="sv4#page134#enu177#sfld103_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="-2650" gr:y="150" id="sv4#seu343" name="Tipo Garant&#237;a" entity="ent86" linkOrder="sv4#seu343#ln1528">
+      <OKLink id="sv4#seu343#oln1483" name="OKFlow1483" to="sv4#seu339">
+        <LinkParameter id="sv4#seu343#oln1483#par4324" name="buscarnvo (Array)_PASSING" sourceLinkParameter="sv4#seu337#oln1487#par4394" passing="true"/>
+      </OKLink>
+      <Link id="sv4#seu343#ln1528" name="Flow1528" to="sv4#page134#enu177" type="transport" validate="true">
+        <LinkParameter id="sv4#seu343#ln1528#par4392" name="mbreTipoGar_Tipo de Garant&#237;a [label]" source="ent86#att523Array" target="sv4#page134#enu177#sfld97_label"/>
+        <LinkParameter id="sv4#seu343#ln1528#par4393" name="oidTipoGar_Tipo de Garant&#237;a [output]" source="ent86#att522Array" target="sv4#page134#enu177#sfld97_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="-1760" gr:y="-60" id="sv4#seu345" name="Selector345" entity="ent87">
+      <Selector id="sv4#seu345#su544" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#seu345#su544#acond252" name="30" predicate="eq" booleanOperator="or" implied="false" attributes="ent87#att546" value="30"/>
+      </Selector>
+      <OKLink id="sv4#seu345#oln1502" name="OKFlow1502" to="sv4#page128#pwu41" automaticCoupling="true"/>
+    </SelectorUnit>
+    <QueryUnit gr:x="-1490" gr:y="10" id="sv4#qu11" name="Query11" mode="select" language="SQL" db="db2" linkOrder="sv4#qu11#ln1544">
+      <QueryText xml:space="preserve">Select oidcontrolfianzas from controlfianzas where conteodias = '15';</QueryText>
+      <QueryOutput id="sv4#qu11#qo14" name="Query15dias"/>
+      <OKLink id="sv4#qu11#oln1505" name="OKFlow1505" to="sv4#qu13" automaticCoupling="true"/>
+      <Link id="sv4#qu11#ln1544" name="Flow1544" to="sv4#page128#pwu45" type="transport" validate="true">
+        <LinkParameter id="sv4#qu11#ln1544#par4948" name="Query15dias (Array)_KeyCondition236 [oidcontrolfianzas]" source="sv4#qu11#qo14" target="sv4#page128#pwu45#su545#kcond236.ent87#att524"/>
+      </Link>
+    </QueryUnit>
+    <QueryUnit id="sv4#qu13" name="Query11" gr:x="-1312" gr:y="14" mode="select" language="SQL" db="db2">
+      <QueryText xml:space="preserve">Select oidcontrolfianzas from controlfianzas where conteodias = '1';</QueryText>
+      <QueryOutput id="sv4#qu13#qo15" name="Query1dia"/>
+      <Link id="sv4#qu13#ln1545" name="Flow1545" to="sv4#page128#pwu46" type="transport" validate="true" gr:bendpoints="166,-154,106,176">
+        <LinkParameter id="sv4#qu13#ln1545#par4949" name="Query1dia (Array)_KeyCondition239 [oidcontrolfianzas]" source="sv4#qu13#qo15" target="sv4#page128#pwu46#su546#kcond239.ent87#att524"/>
+      </Link>
+      <OKLink id="sv4#qu13#oln1510" name="OKFlow1510" to="sv4#seu345" automaticCoupling="true"/>
+    </QueryUnit>
+    <SelectorUnit gr:x="-2210" gr:y="1680" id="sv4#seu353" name="Estatus" entity="ent98">
+      <Selector id="sv4#seu353#su541" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#seu353#su541#kcond237" name="KeyCondition237" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv4#seu353#oln1501" name="OKFlow1501" to="sv4#page161#enu187" gr:bendpoints="-93,94,92,-56">
+        <LinkParameter id="sv4#seu353#oln1501#par4964" name="2_Estatus" sourceValue="2" target="sv4#page161#enu187#fld548_slot"/>
+      </OKLink>
+    </SelectorUnit>
+    <QueryUnit id="sv4#qu17" name="Query15" gr:x="-2940" gr:y="1530" mode="update" language="SQL" db="db2">
+      <QueryText xml:space="preserve">UPDATE FEDATARIOS SET NOMBRECOMFED = NOMBREFED || ' ' || PRIMAPELLIDO || ' ' || SEGUNAPELLIDO</QueryText>
+      <OKLink id="sv4#qu17#oln1518" name="OKFlow1518" to="sv4#page153" automaticCoupling="true"/>
+    </QueryUnit>
+    <SelectorUnit gr:x="-2485" gr:y="860" id="sv4#seu354" name="Selector354" entity="ent97">
+      <OKLink id="sv4#seu354#oln1519" name="OKFlow1519" to="sv4#page138#enu184">
+        <LinkParameter id="sv4#seu354#oln1519#par4952" name="nombreEstado_Estado [label]" source="ent97#att580Array" target="sv4#page138#enu184#sfld105_label"/>
+        <LinkParameter id="sv4#seu354#oln1519#par4953" name="oidEstado_Estado [output]" source="ent97#att579Array" target="sv4#page138#enu184#sfld105_output"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="-2485" gr:y="990" id="sv4#seu355" name="Selector355" entity="ent78">
+      <OKLink id="sv4#seu355#oln1520" name="OKFlow1520" to="sv4#page138#enu184" gr:bendpoints="90,-27,-80,53">
+        <LinkParameter id="sv4#seu355#oln1520#par4955" name="nombreMunicipio_Municipio [label]" source="ent78#att288Array" target="sv4#page138#enu184#sfld106_label"/>
+        <LinkParameter id="sv4#seu355#oln1520#par4956" name="oidMunicipio_Municipio [output]" source="ent78#att287Array" target="sv4#page138#enu184#sfld106_output"/>
+      </OKLink>
+      <Selector id="sv4#seu355#su542" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#seu355#su542#rcond309" name="RoleCondition309" predicate="in" implied="false" role="rel49#role98"/>
+      </Selector>
+    </SelectorUnit>
+    <SelectorUnit gr:x="-3220" gr:y="1260" id="sv4#seu356" name="Selector356" entity="ent78">
+      <Selector id="sv4#seu356#su548" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#seu356#su548#rcond317" name="RoleCondition317" predicate="in" implied="false" role="rel49#role98"/>
+      </Selector>
+      <OKLink id="sv4#seu356#oln1521" name="OKFlow1521" to="sv4#page162#enu188" gr:bendpoints="107,84,-103,-46">
+        <LinkParameter id="sv4#seu356#oln1521#par4970" name="nombreMunicipio_Municipios [label]" source="ent78#att288Array" target="sv4#page162#enu188#sfld98_label"/>
+        <LinkParameter id="sv4#seu356#oln1521#par4971" name="oidMunicipio_Municipios [output]" source="ent78#att287Array" target="sv4#page162#enu188#sfld98_output"/>
+      </OKLink>
+    </SelectorUnit>
+    <ModuleInstanceUnit gr:x="-1030" gr:y="-65" id="sv4#miu180" action="true" moduleId="mov2#mpkg9#opm117">
+      <OKLink id="sv4#miu180#oln1537" name="OKFlow1537" to="sv4#page128" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="-1005" gr:y="-160" id="sv4#miu184" action="true" moduleId="mov2#mpkg9#opm126">
+      <OKLink id="sv4#miu184#oln1665" name="OKFlow1665" to="sv4#page128" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="-960" gr:y="50" id="sv4#miu185" action="true" moduleId="mov2#mpkg9#opm124">
+      <OKLink id="sv4#miu185#oln1664" name="OKFlow1664" to="sv4#page128" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="-1015" gr:y="-250" id="sv4#miu186" action="true" moduleId="mov2#mpkg9#opm125">
+      <OKLink id="sv4#miu186#oln1666" name="OKFlow1666" to="sv4#page128" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+  <layout:LayoutParameter name="show-left-column" value="true" type="page"/>
+</SiteView>

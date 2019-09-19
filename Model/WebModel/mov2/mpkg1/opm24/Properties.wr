@@ -1,0 +1,53 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg1#opm24" name="OCSP" gr:x="295" gr:y="150">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg1#opm24#icu34" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#mpkg1#opm24#icu34#icp94" name="ambiente"/>
+      <InputCollectorParameter id="mov2#mpkg1#opm24#icu34#icp95" name="certX509"/>
+      <OKLink id="mov2#mpkg1#opm24#icu34#oln256" name="OKFlow712" to="mov2#mpkg1#opm24#okcu27" gr:bendpoints="156,-50,-1094,-50;1094,-45,-156,-45">
+        <LinkParameter id="mov2#mpkg1#opm24#icu34#oln256#par767" name="SUCCESSFUL_mensaje " target="mov2#mpkg1#opm24#okcu27#ocp77" sourceValue="SUCCESSFUL"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <ScriptUnit id="mov2#mpkg1#opm24#scu29" name="Validar OCSP" gr:x="325" gr:y="70" script="WEB-INF/descr/groovy/validarOSCP.groovy">
+      <KOLink id="mov2#mpkg1#opm24#scu29#kln142" name="KOFlow22" to="mov2#mpkg1#opm24#kocu21" gr:bendpoints="2,202,-1008,-3">
+        <LinkParameter id="mov2#mpkg1#opm24#scu29#kln142#par768" name="INTERNAL_SERVER_ERROR: favor de escribir un correo a iuc@tsjqroo.com.mx inform&#225;ndonos brevemente de las circunstancias. Muchas gracias por tu paciencia y colaboraci&#243;n._Error" target="mov2#mpkg1#opm24#kocu21#ocp76" sourceValue="INTERNAL_SERVER_ERROR: favor de escribir un correo a @economia.gob.mx inform&#225;ndonos brevemente de las circunstancias. Muchas gracias por tu paciencia y colaboraci&#243;n."/>
+      </KOLink>
+      <OKLink id="mov2#mpkg1#opm24#scu29#oln257" name="OKFlow713" to="mov2#mpkg1#opm24#switch12">
+        <LinkParameter id="mov2#mpkg1#opm24#scu29#oln257#par769" name="respuestaOcsp_Switch" source="result(respuestaOcsp)" target="mov2#mpkg1#opm24#switch12.switch"/>
+      </OKLink>
+    </ScriptUnit>
+    <KOCollectorUnit id="mov2#mpkg1#opm24#kocu21" name="KO Port7" gr:x="1280" gr:y="265">
+      <OutputCollectorParameter id="mov2#mpkg1#opm24#kocu21#ocp76" name="Error"/>
+    </KOCollectorUnit>
+    <SwitchUnit id="mov2#mpkg1#opm24#switch12" name="Switch5" gr:x="495" gr:y="70">
+      <Case value="INTERNAL_ERROR"/>
+      <Case value="MALFORMED_REQUEST"/>
+      <Case value="SIG_REQUIRED"/>
+      <Case value="SUCCESSFUL"/>
+      <Case value="TRY_LATER"/>
+      <Case value="UNAUTHORIZED"/>
+      <Case value="ERROR_DESCONOCIDO"/>
+      <OKLink id="mov2#mpkg1#opm24#switch12#oln258" name="OKFlow714" to="mov2#mpkg1#opm24#okcu27" code="SUCCESSFUL">
+        <LinkParameter id="mov2#mpkg1#opm24#switch12#oln258#par770" name="Switch_mensaje " source="switch" target="mov2#mpkg1#opm24#okcu27#ocp77"/>
+      </OKLink>
+      <OKLink id="mov2#mpkg1#opm24#switch12#oln259" name="OKFlow715" to="mov2#mpkg1#opm24#kocu21" automaticCoupling="true" gr:bendpoints="59,117,-801,-88"/>
+      <OKLink id="mov2#mpkg1#opm24#switch12#oln260" name="OKFlow716" to="mov2#mpkg1#opm24#kocu21" code="TRY_LATER" gr:bendpoints="34,141,-826,-64">
+        <LinkParameter id="mov2#mpkg1#opm24#switch12#oln260#par771" name="TRY_LATER: escr&#237;benos un correo a sascontacto@economia.gob.mx inform&#225;ndonos brevemente de las circunstancias. Muchas gracias por tu paciencia y colaboraci&#243;n._Error" target="mov2#mpkg1#opm24#kocu21#ocp76" sourceValue="TRY_LATER: escr&#237;benos un correo a @economia.gob.mx inform&#225;ndonos brevemente de las circunstancias. Muchas gracias por tu paciencia y colaboraci&#243;n."/>
+      </OKLink>
+      <OKLink id="mov2#mpkg1#opm24#switch12#oln261" name="OKFlow717" to="mov2#mpkg1#opm24#kocu21" code="SIG_REQUIRED" gr:bendpoints="89,96,-771,-109">
+        <LinkParameter id="mov2#mpkg1#opm24#switch12#oln261#par772" name="SIG_REQUIRED: escr&#237;benos un correo a sascontacto@economia.gob.mx inform&#225;ndonos brevemente de las circunstancias. Muchas gracias por tu paciencia y colaboraci&#243;n._Error" target="mov2#mpkg1#opm24#kocu21#ocp76" sourceValue="SIG_REQUIRED: escr&#237;benos un correo a @economia.gob.mx inform&#225;ndonos brevemente de las circunstancias. Muchas gracias por tu paciencia y colaboraci&#243;n."/>
+      </OKLink>
+      <OKLink id="mov2#mpkg1#opm24#switch12#oln262" name="OKFlow718" to="mov2#mpkg1#opm24#kocu21" code="ERROR_DESCONOCIDO" gr:bendpoints="3,164,-857,-41">
+        <LinkParameter id="mov2#mpkg1#opm24#switch12#oln262#par773" name="ERROR_DESCONOCIDO: escr&#237;benos un correo a sascontacto@economia.gob.mx inform&#225;ndonos brevemente de las circunstancias. Muchas gracias por tu paciencia y colaboraci&#243;n._Error" target="mov2#mpkg1#opm24#kocu21#ocp76" sourceValue="ERROR_DESCONOCIDO: escr&#237;benos un correo a @economia.gob.mx inform&#225;ndonos brevemente de las circunstancias. Muchas gracias por tu paciencia y colaboraci&#243;n."/>
+      </OKLink>
+      <OKLink id="mov2#mpkg1#opm24#switch12#oln263" name="OKFlow719" to="mov2#mpkg1#opm24#kocu21" code="MALFORMED_REQUEST" gr:bendpoints="111,76,-749,-129">
+        <LinkParameter id="mov2#mpkg1#opm24#switch12#oln263#par774" name="MALFORMED_REQUEST: escr&#237;benos un correo a sascontacto@economia.gob.mx inform&#225;ndonos brevemente de las circunstancias. Muchas gracias por tu paciencia y colaboraci&#243;n._Error" target="mov2#mpkg1#opm24#kocu21#ocp76" sourceValue="MALFORMED_REQUEST: escr&#237;benos un correo a @economia.gob.mx inform&#225;ndonos brevemente de las circunstancias. Muchas gracias por tu paciencia y colaboraci&#243;n."/>
+      </OKLink>
+      <OKLink id="mov2#mpkg1#opm24#switch12#oln264" name="OKFlow720" to="mov2#mpkg1#opm24#kocu21" code="INTERNAL_ERROR" gr:bendpoints="133,56,-727,-149">
+        <LinkParameter id="mov2#mpkg1#opm24#switch12#oln264#par775" name="INTERNAL_SERVER_ERROR: escr&#237;benos un correo a sascontacto@economia.gob.mx inform&#225;ndonos brevemente de las circunstancias. Muchas gracias por tu paciencia y colaboraci&#243;n._Error" target="mov2#mpkg1#opm24#kocu21#ocp76" sourceValue="INTERNAL_SERVER_ERROR: escr&#237;benos un correo a @economia.gob.mx inform&#225;ndonos brevemente de las circunstancias. Muchas gracias por tu paciencia y colaboraci&#243;n."/>
+      </OKLink>
+    </SwitchUnit>
+    <OKCollectorUnit id="mov2#mpkg1#opm24#okcu27" name="OK Port8" gr:x="1280" gr:y="60">
+      <OutputCollectorParameter id="mov2#mpkg1#opm24#okcu27#ocp77" name="mensaje "/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

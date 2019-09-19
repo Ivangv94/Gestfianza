@@ -1,0 +1,107 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg2#opm27" name="validarFianza" gr:x="0" gr:y="50">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg2#opm27#icu37" gr:x="-185" gr:y="60">
+      <InputCollectorParameter id="mov2#mpkg2#opm27#icu37#icp106" name="curp"/>
+      <OKLink id="mov2#mpkg2#opm27#icu37#oln555" name="OKFlow555" to="mov2#mpkg2#opm27#seu91">
+        <LinkParameter id="mov2#mpkg2#opm27#icu37#oln555#par2029" name="rfc_rfc" source="mov2#mpkg2#opm27#icu37#icp106" target="mov2#mpkg2#opm27#seu91#su182#acond105"/>
+        <LinkParameter id="mov2#mpkg2#opm27#icu37#oln555#par46" name="rfc_rfc" source="mov2#mpkg2#opm27#icu37#icp189" target="mov2#mpkg2#opm27#seu91#su182#acond99"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#mpkg2#opm27#icu37#icp189" name="rfc"/>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="105" gr:y="50" id="mov2#mpkg2#opm27#seu91" name="buscarFedatario" entity="ent39">
+      <Selector id="mov2#mpkg2#opm27#seu91#su182" defaultPolicy="fill" booleanOperator="or">
+        <AttributesCondition id="mov2#mpkg2#opm27#seu91#su182#acond105" name="curp" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+        <AttributesCondition id="mov2#mpkg2#opm27#seu91#su182#acond99" name="rfc" predicate="eq" booleanOperator="or" implied="false" attributes="ent39#att268"/>
+      </Selector>
+      <OKLink id="mov2#mpkg2#opm27#seu91#oln556" name="OKFlow556" to="mov2#mpkg2#opm27#seu92" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg2#opm27#seu91#kln267" name="KOFlow267" to="mov2#mpkg2#opm27#kocu40" gr:bendpoints="74,127,-1176,7">
+        <LinkParameter id="mov2#mpkg2#opm27#seu91#kln267#par2118" name="Error al obtener los datos de la persona fError al obtener las garant&#237;as en la base de dato f&#237;sica en la base de datos._msj" sourceValue="Error al obtener los datos de la persona fError al obtener las garant&#237;as en la base de dato f&#237;sica en la base de datos." target="mov2#mpkg2#opm27#kocu40#ocp144"/>
+      </KOLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="325" gr:y="55" id="mov2#mpkg2#opm27#seu92" name="buscarDFedatario" entity="ent8" linkOrder="mov2#mpkg2#opm27#seu92#ln439">
+      <Selector id="mov2#mpkg2#opm27#seu92#su183" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg2#opm27#seu92#su183#rcond105" name="oid_PF" predicate="in" implied="false" role="rel25#role50"/>
+      </Selector>
+      <KOLink id="mov2#mpkg2#opm27#seu92#kln268" name="KOFlow268" to="mov2#mpkg2#opm27#kocu40" gr:bendpoints="96,125,-919,5">
+        <LinkParameter id="mov2#mpkg2#opm27#seu92#kln268#par2051" name="Error al obtener los datos del fedatario en la base de datos._msj" sourceValue="Error al obtener los datos del fedatario en la base de datos." target="mov2#mpkg2#opm27#kocu40#ocp144"/>
+      </KOLink>
+      <Link id="mov2#mpkg2#opm27#seu92#ln438" name="OKFlow557" to="mov2#mpkg2#opm27#seu93" automaticCoupling="true" type="transport" gr:bendpoints="106,-54,-229,-54;233,-54,-102,-54"/>
+      <OKLink id="mov2#mpkg2#opm27#seu92#oln33" name="OKFlow33" to="mov2#mpkg2#opm27#switch37">
+        <LinkParameter id="mov2#mpkg2#opm27#seu92#oln33#par476" name="estatus_Switch" source="ent8#att281Array" target="mov2#mpkg2#opm27#switch37.switch"/>
+      </OKLink>
+      <Link id="mov2#mpkg2#opm27#seu92#ln439" name="Flow439" to="mov2#mpkg2#opm27#okcu42" type="transport" validate="true" gr:bendpoints="152,-63,-863,-78;790,-54,-225,-69">
+        <LinkParameter id="mov2#mpkg2#opm27#seu92#ln439#par477" name="estatus_fianzaVigente" source="ent8#att281Array" target="mov2#mpkg2#opm27#okcu42#ocp146"/>
+      </Link>
+    </SelectorUnit>
+    <KOCollectorUnit gr:x="1305" gr:y="180" id="mov2#mpkg2#opm27#kocu40" name="KO">
+      <OutputCollectorParameter id="mov2#mpkg2#opm27#kocu40#ocp144" name="msj"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit gr:x="1305" gr:y="45" id="mov2#mpkg2#opm27#okcu42" name="OK">
+      <OutputCollectorParameter id="mov2#mpkg2#opm27#okcu42#ocp148" name="finVigencia"/>
+      <OutputCollectorParameter id="mov2#mpkg2#opm27#okcu42#ocp146" name="fianzaVigente"/>
+      <OutputCollectorParameter id="mov2#mpkg2#opm27#okcu42#ocp145" name="isFedatario"/>
+    </OKCollectorUnit>
+    <SelectorUnit gr:x="675" gr:y="55" id="mov2#mpkg2#opm27#seu93" name="buscarGarantia" linkOrder="mov2#mpkg2#opm27#seu93#ln481">
+      <OKLink id="mov2#mpkg2#opm27#seu93#oln558" name="OKFlow558" to="mov2#mpkg2#opm27#tmu9">
+        <LinkParameter id="mov2#mpkg2#opm27#seu93#oln558#par2042" name="fechaTermino_PASSING" source="ent40#att286Array" passing="true"/>
+      </OKLink>
+      <Selector id="mov2#mpkg2#opm27#seu93#su184" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#mpkg2#opm27#seu93#su184#rcond106" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov2#mpkg2#opm27#seu93#kln273" name="KOFlow273" to="mov2#mpkg2#opm27#kocu40" gr:bendpoints="60,123,-620,3">
+        <LinkParameter id="mov2#mpkg2#opm27#seu93#kln273#par2050" name="Error al obtener las garant&#237;as en la base de datos._msj" sourceValue="Error al obtener las garant&#237;as en la base de datos." target="mov2#mpkg2#opm27#kocu40#ocp144"/>
+      </KOLink>
+      <Link id="mov2#mpkg2#opm27#seu93#ln481" name="Flow481" to="mov2#mpkg2#opm27#okcu42" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="84,-60,-596,-60;445,-59,-235,-59"/>
+    </SelectorUnit>
+    <ScriptUnit gr:x="1110" gr:y="70" id="mov2#mpkg2#opm27#scu27" name="validarFianza">
+      <ScriptUnitText xml:space="preserve">#input dateTime fechaVencimientoGarantia, fechaActual
+#output resultCode
+/*
+fechaVencimientoGarantia
+fechaActual
+
+*/
+String resultCode = "success";
+
+if(fechaActual&lt;=fechaVencimientoGarantia[0])
+{
+    resultCode = "success";
+}
+else
+{
+    resultCode = "error";
+}
+
+return["resultCode":resultCode]</ScriptUnitText>
+      <OKLink id="mov2#mpkg2#opm27#scu27#oln564" name="OKFlow564" to="mov2#mpkg2#opm27#okcu42">
+        <LinkParameter id="mov2#mpkg2#opm27#scu27#oln564#par1677" name="fechaTermino_PASSING_finVigencia" sourceLinkParameter="mov2#mpkg2#opm27#tmu9#oln563#par478" target="mov2#mpkg2#opm27#okcu42#ocp148"/>
+        <LinkParameter id="mov2#mpkg2#opm27#scu27#oln564#par1762" name="TRUE_isFedatario" sourceValue="TRUE" target="mov2#mpkg2#opm27#okcu42#ocp145"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg2#opm27#scu27#kln271" name="KOFlow271" to="mov2#mpkg2#opm27#kocu40" gr:bendpoints="54,122,-196,2">
+        <LinkParameter id="mov2#mpkg2#opm27#scu27#kln271#par2048" name="La garant&#237;a con la que cuenta se encuentra vencida._msj" sourceValue="La garant&#237;a con la que cuenta se encuentra vencida." target="mov2#mpkg2#opm27#kocu40#ocp144"/>
+      </KOLink>
+    </ScriptUnit>
+    <TimeUnit gr:x="935" gr:y="70" id="mov2#mpkg2#opm27#tmu9" name="Time9">
+      <OKLink id="mov2#mpkg2#opm27#tmu9#oln563" name="OKFlow563" to="mov2#mpkg2#opm27#scu27">
+        <LinkParameter id="mov2#mpkg2#opm27#tmu9#oln563#par2041" name="Current/Input Date_fechaActual" source="currentTimestamp" target="mov2#mpkg2#opm27#scu27.fechaActual"/>
+        <LinkParameter id="mov2#mpkg2#opm27#tmu9#oln563#par2043" name="fechaTermino_PASSING_fechaVencimientoGarantia" sourceLinkParameter="mov2#mpkg2#opm27#seu93#oln558#par2042" target="mov2#mpkg2#opm27#scu27.fechaVencimientoGarantia"/>
+        <LinkParameter id="mov2#mpkg2#opm27#tmu9#oln563#par478" name="fechaTermino_PASSING" sourceLinkParameter="mov2#mpkg2#opm27#seu93#oln558#par2042" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#mpkg2#opm27#tmu9#kln272" name="KOFlow272" to="mov2#mpkg2#opm27#kocu40" gr:bendpoints="44,120,-401,0">
+        <LinkParameter id="mov2#mpkg2#opm27#tmu9#kln272#par2049" name="Error obteniendo el tiempo actual._msj" sourceValue="Error obteniendo el tiempo actual." target="mov2#mpkg2#opm27#kocu40#ocp144"/>
+      </KOLink>
+    </TimeUnit>
+    <SwitchUnit gr:x="545" gr:y="70" id="mov2#mpkg2#opm27#switch37" name="&#191;Activo?">
+      <Case value="activo"/>
+      <Case value="Inactivo"/>
+      <Case value="bloqueado"/>
+      <OKLink id="mov2#mpkg2#opm27#switch37#oln122" name="OKFlow122" to="mov2#mpkg2#opm27#seu93" automaticCoupling="true" code="activo"/>
+      <OKLink id="mov2#mpkg2#opm27#switch37#oln148" name="OKFlow148" to="mov2#mpkg2#opm27#kocu40" gr:bendpoints="131,123,-699,3" code="Inactivo">
+        <LinkParameter id="mov2#mpkg2#opm27#switch37#oln148#par365" name="El Fedatario que se encuentra inactivo, favor de consultar su garant&#237;a con la entidad correspondiente._msj" sourceValue="El Fedatario que se encuentra inactivo, favor de consultar su garant&#237;a con la entidad correspondiente." target="mov2#mpkg2#opm27#kocu40#ocp144"/>
+      </OKLink>
+      <OKLink id="mov2#mpkg2#opm27#switch37#oln374" name="OKFlow374" to="mov2#mpkg2#opm27#kocu40" gr:bendpoints="10,34,-820,-86;110,123,-720,3" code="bloqueado">
+        <LinkParameter id="mov2#mpkg2#opm27#switch37#oln374#par449" name="El Fedatario que se encuentra bloqueado, favor de consultar su garant&#237;a con la entidad correspondiente._msj" sourceValue="El Fedatario que se encuentra bloqueado, favor de consultar su garant&#237;a con la entidad correspondiente." target="mov2#mpkg2#opm27#kocu40#ocp144"/>
+      </OKLink>
+    </SwitchUnit>
+  </OperationUnits>
+</OperationModule>
